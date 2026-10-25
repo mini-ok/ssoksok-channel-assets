@@ -195,6 +195,141 @@
    "vocals": null,
    "speech_band_share": 0.46,
    "busy": true
+  },
+  {
+   "file": "Shimmering Dreams.mp3",
+   "title": "Shimmering Dreams",
+   "sec": 187,
+   "lufs": -15.3,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -5.5,
+   "busy": true,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "Untitled.mp3",
+   "title": "Untitled",
+   "sec": 68,
+   "lufs": -14.3,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -9.4,
+   "busy": false,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "빈 의자.mp3",
+   "title": "빈 의자",
+   "sec": 136,
+   "lufs": -15.9,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -7.5,
+   "busy": true,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "우리만 아는 리듬.mp3",
+   "title": "우리만 아는 리듬",
+   "sec": 150,
+   "lufs": -15.9,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -10.6,
+   "busy": false,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "우리만 아는 리듬 (1).mp3",
+   "title": "우리만 아는 리듬 (짧은 버전)",
+   "sec": 107,
+   "lufs": -15.1,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -10.3,
+   "busy": false,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "처음 같지 않은 처음 (1).mp3",
+   "title": "처음 같지 않은 처음",
+   "sec": 119,
+   "lufs": -14.9,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -11.4,
+   "busy": false,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "처음이라 웃겨.mp3",
+   "title": "처음이라 웃겨",
+   "sec": 210,
+   "lufs": -16.2,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": null,
+   "speech_band_rel_db": -6.7,
+   "busy": true,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "첫 만남 허밍송 (1).mp3",
+   "title": "첫 만남 허밍송 (1)",
+   "sec": 152,
+   "lufs": -15.6,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": "humming",
+   "speech_band_rel_db": -8.5,
+   "busy": false,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
+  },
+  {
+   "file": "첫 만남 허밍송.mp3",
+   "title": "첫 만남 허밍송",
+   "sec": 151,
+   "lufs": -15.1,
+   "mood": null,
+   "series": [
+    "*"
+   ],
+   "use": "long",
+   "vocals": "humming",
+   "speech_band_rel_db": -7.2,
+   "busy": true,
+   "note": "2026-10-25 추가. mood는 첫 사용 때 들어 보고 채운다."
   }
  ],
  "고르는 법": [
@@ -205,5 +340,20 @@
   "5) vocals가 null(아직 확인 안 됨)인 곡은 처음 30초를 분석해 사람 목소리(가사)가 뚜렷하면 그 실행에서 빼고 보고한다.",
   "6) busy가 true인 곡(말소리 대역 300~4000Hz 에너지가 많거나 음이 촘촘한 곡, 오케스트라·디즈니풍)은 나레이션을 묻을 수 있다. 나레이션 구간 밑에는 busy가 false인 곡을 우선 쓰고, busy 곡은 나레이션 없는 구간(오프닝 1~2초, 장면 전환, 엔딩 카드)에만 쓰거나 아래 믹스 규칙의 더 낮은 음량으로 쓴다."
  ],
- "믹스": "나레이션 구간: 음악 통합 약 -30 LUFS(busy 곡은 -32), 나레이션이 나오는 동안 덕킹 10~12dB, 음악에 말소리 대역 EQ 컷(1~4kHz를 약 -4~-6dB, 넓은 벨)을 걸어 목소리 자리를 비운다. 나레이션 없는 구간: 약 -24~-26 LUFS까지 올려도 된다. 최종 영상 통합 약 -14 LUFS, 트루피크 -1dB 이하. 검수: 나레이션 구간에서 음성 대 음악 차이가 단기 음량(3초) 기준 12dB 이상인지 ffmpeg ebur128로 확인하고, 모자라면 음악을 더 낮춘다."
+ "믹스": "나레이션 구간: 음악 통합 약 -30 LUFS(busy 곡은 -32), 나레이션이 나오는 동안 덕킹 10~12dB, 음악에 말소리 대역 EQ 컷(1~4kHz를 약 -4~-6dB, 넓은 벨)을 걸어 목소리 자리를 비운다. 나레이션 없는 구간: 약 -24~-26 LUFS까지 올려도 된다. 최종 영상 통합 약 -14 LUFS, 트루피크 -1dB 이하. 검수: 나레이션 구간에서 음성 대 음악 차이가 단기 음량(3초) 기준 12dB 이상인지 ffmpeg ebur128로 확인하고, 모자라면 음악을 더 낮춘다.",
+ "고정 배정": {
+  "_설명": "사용자 지시(2026-10-25). 아래가 '고르는 법'보다 우선한다.",
+  "숏폼 1번(A)": {
+   "file": "nimble_motifs.mp3",
+   "note": "https://youtu.be/FhKgJc-O0B8 에 쓰인 곡. 매 실행 숏폼 A는 항상 이 곡 곡 0:00부터 시작."
+  },
+  "숏폼 2번(B)": {
+   "file": "buoyant_kitchen_groove.mp3",
+   "note": "https://youtu.be/oeZo1G2zYAA 에 쓰인 곡. 매 실행 숏폼 B는 항상 이 곡. 곡 0:00부터 시작."
+  },
+  "롱폼 기본 메인": {
+   "file": "첫 만남 허밍송 (1).mp3",
+   "note": "롱폼 기본 곡. 장면 분위기(위기·절정·감동)에 맞춰 다른 곡으로 바꾸거나 섞어도 된다(장면 전환 지점에서 1초 크로스페이드). 허밍(사람 목소리 멜로디)이 있어 대사와 겹치면 대사가 묻히므로 대사 구간은 덕킹 14dB 이상, 허밍이 크게 나오는 구간은 대사 없는 곳(오프닝·전환·엔딩 카드)에 오게 배치한다."
+  }
+ }
 }
