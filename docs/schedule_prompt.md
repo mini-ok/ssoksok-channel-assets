@@ -14,11 +14,11 @@
 
 1) 스킬을 먼저 끝까지 읽고 따른다: ssoksok-health-factory(워크플로), ssoksok-engine-code(lib/common/body/engine/tts 코드), ssoksok-example-episodes(캐릭터 9종 chars.py, 대본·장면 예시), 그리고 youtube-agent(후크 공식 21개·후크 점수표·제목/썸네일 기준·SEO·챕터·쇼츠 규칙). 단 그림·렌더는 0)이 우선한다. 앞의 ssoksok 스킬 3개가 없거나 읽히지 않으면 지어내지 말고 그 사실만 보고하고 끝낸다. youtube-agent가 없으면 아래 5-1)의 요약 기준만 적용한다. 옛 방식(눈동이·커피잔 마스코트, 에피소드 번호 #N, 04/09/14/19 슬롯, 스킬 안의 주제 인덱스 공식)은 폐기됐다. ssoksok 스킬에 적힌 "유튜브 업로드는 하지 않는다"와 "'풀버전 보러가기' 장면(cta)은 쓰지 않는다", youtube-agent의 "게시는 사용자가 한다"는 이 예약에서는 사용자 지시로 바뀌었다: 업로드는 아래 6)이 하고, 영상 끝의 구독·좋아요 멘트는 아래 3-4)를 따른다(단 롱폼을 보러 가라는 '풀버전·본편 보기' 광고 문구는 영상 안에서 여전히 쓰지 않는다). youtube-agent의 '사용자 목소리 영상 3개 요구'는 적용하지 않고 쏙쏙 건강백과/Tiny Body Co.의 기존 톤(귀엽고 직관적, 믿을 만하게, 유머)을 목소리로 삼는다.
 2) 주제 인덱스(0부터, 스킬 후보 목록 순서) = max(0, (실행일 KST − 2026-10-24 일수) × 5 + 슬롯 + 1). 슬롯은 KST 시각으로 00시대 0, 05시대 1, 10시대 2, 15시대 3, 20시대 4 (그 밖의 시각이면 가장 가까운 슬롯). 같은 인덱스가 겹치거나 이미 만든 주제면 다음 미사용 주제를 쓴다. 후보가 부족하면 새 주제를 만든다.
-3) 결과물(모두 만들어야 완료, 총 mp4 6개 + 썸네일 6장: 롱폼 2장 + 숏폼 4장): 롱폼 한국어 1 + 롱폼 영어 1 (각 75~120초 + 3-5의 엔딩 카드 6~8초, 최대 3분, 끝에 유머 뒤 구독·좋아요 멘트 포함) + 숏폼 한국어 2 + 숏폼 영어 2 (각 30~50초, 끝 멘트 포함, 서로 다른 각도, 롱폼 장면·음성 재사용, 단독 완결, 끝은 유머 뒤 짧은 멘트, 3-6의 숏폼 내용 규칙 적용). 나레이션과 쉼이 1.25배 빨라졌으므로(3-2) 같은 내용이면 길이가 이전보다 짧아진다. 길이를 맞추려고 내용을 억지로 늘리지 말고, 짧아진 대로 둔다. 롱폼이 75초보다 너무 짧을 때만 필요한 근거·한계 설명을 보강한다. 숏폼은 짧아져도 한계 설명으로 채우지 않는다(3-6). 화면 태그는 '쏙쏙 건강백과' / 'Tiny Body Co.'만, 번호 없음. 몸속 회사 세계관과 승인된 캐릭터를 그대로 쓴다. 화풍·움직임·글자는 0)과 STYLE_GUIDE.md를 따른다(통통 튀고 귀엽게, 지루하지 않게, 핵심어는 크게).
+3) 결과물(모두 만들어야 완료, 총 mp4 6개 + 썸네일 6장: 롱폼 2장 + 숏폼 4장): 롱폼 한국어 1 + 롱폼 영어 1 (각 75~120초 + 3-5의 엔딩 카드 6~8초, 최대 3분, 끝에 유머 뒤 구독·좋아요 멘트 포함) + 숏폼 한국어 2 + 숏폼 영어 2 (각 30~50초, 끝 멘트 포함, 서로 다른 각도, 롱폼 장면·음성 재사용, 단독 완결, 끝은 유머 뒤 짧은 멘트, 3-6의 숏폼 내용 규칙 적용). 길이는 배속 없이 글로 맞춘다(3-2). 길이를 맞추려고 내용을 억지로 늘리지 말고, 짧아진 대로 둔다. 롱폼이 75초보다 너무 짧을 때만 필요한 근거·한계 설명을 보강한다. 숏폼은 짧아져도 한계 설명으로 채우지 않는다(3-6). 화면 태그는 '쏙쏙 건강백과' / 'Tiny Body Co.'만, 번호 없음. 몸속 회사 세계관과 승인된 캐릭터를 그대로 쓴다. 화풍·움직임·글자는 0)과 STYLE_GUIDE.md를 따른다(통통 튀고 귀엽게, 지루하지 않게, 핵심어는 크게).
 
 3-1) 롱폼 구성(참고 예시이며 꼭 따를 필요는 없다): 후크(유머) → 원인 짧게 → 해결·근거(연구 규모와 한계를 함께 말한다) → 어떤 부위·무엇이 어떻게 달라지는지 → 따라 하기 3가지(동작·실천 방법을 구체적으로, 횟수·시간은 '한 연구 기준'이라고 밝힌다) → 걸리는 기간 → 주의(통증이 계속되면 전문가 상담 등) → 유머 엔딩 → 구독·좋아요 멘트(3-4) → 엔딩 카드(3-5). 이 순서와 항목은 주제와 확인된 근거에 맞춰 유연하게 바꿔도 된다. 주제에 따라 빼거나 합치거나 순서를 바꾸고, 운동·스트레칭이 아닌 주제는 '따라 하기'를 생활 실천으로 바꾸거나 생략한다. 반드시 지킬 것은 세 가지다: ① 적당한 유머가 있어야 한다(시작 후크와 끝 엔딩의 유머는 필수, 흐름이 길거나 무거워질 때만 중간에 한 번 더. 웃기려고 사실을 흐리거나 과장하지 않고 억지로 넣지 않는다). ② 수치는 확인된 출처와 한계를 함께 말하고 의학적 단정·치료 권유는 하지 않는다. ③ 길이는 75~120초(최대 3분)이며 굳이 늘리지 않는다. 숏폼은 롱폼 조각 중 후크+핵심+유머를 골라 쓰되, 연구 한계·장기 효과 미상·'한 연구 기준' 같은 조각은 숏폼에 넣지 않는다(3-6).
 
-3-2) 나레이션 쉼·속도 규칙(조각의 tts 필드): 합성 음성(Chirp 3 HD)은 쉼표와 쉼 태그를 자주 무시해서 단어가 붙어 나온다는 사용자 지적이 있었다(실측: 쉼표만 쓰면 쉼이 0~0.3초로 들쭉날쭉). 그래서 쉼은 음성에 맡기지 않고 아래 tts.py가 문장·구 단위로 따로 합성해 정해진 길이의 무음을 직접 붙인다. 사용자 지시로 나레이션과 모든 쉼(띄어 읽기 무음)을 함께 1.25배 빠르게 한다: tts.py가 조각을 말과 무음까지 모두 이어 붙인 뒤 ffmpeg atempo=1.25로 통째로 가속한다(피치 유지, 그래서 음성 속도 옵션은 건드리지 않는다). 가속 후 실제 무음은 문장 사이 약 0.44초(0.55÷1.25), 쉼표 약 0.22초, 말줄임표 약 0.56초, 조각 끝 약 0.24~0.52초이다. 대본 쪽 규칙: ① 문장이 바뀔 때는 반드시 마침표·물음표·느낌표로 끝내 문장을 나눈다. 나열형 짧은 말("화면 줄이기! 저녁엔 …")도 문장 단위로 끊어 쓴다. ② 문장 안에서 의미 단위마다 쉼표를 확실히 찍는다(주어 뒤, 숫자와 단위 사이, 강조어 앞, 나열 항목 사이). 한 문장에 쉼표는 2~4개. ③ 유머 대사·머뭇거림·여운은 말줄임표(…)로 쓴다. 대시(—, -)는 쉼표로 취급된다. ④ 한 구가 너무 길지 않게(한국어 약 15자 안팎, 영어 약 6~8단어) 쉼표로 끊는다. 속도가 빨라졌으므로 구를 너무 길게 이어 붙이지 않는다. ⑤ 맞춤법은 표준(예: "낼게요"), 숫자는 한글 읽기, 기관명은 띄어쓰기. 자막(disp)은 읽기 표기와 달라도 된다. 영어도 같은 원칙(문장 나누기·쉼표·…)이다. ⑥ 조각을 합친 뒤 롱폼이 75~120초(엔딩 카드 제외, 최대 3분), 숏폼이 30~50초 안인지 확인한다. 자막·장면 타이밍은 가속 후의 manifest 길이를 기준으로 한다.
+3-2) 나레이션 대본 쓰기(사용자 지시, Gemini-TTS의 연기력을 살리는 원칙, 조각의 tts·act 필드): 음성은 이제 조각을 통째로 연기 지시와 함께 합성한다(아래 [음성]). 그래서 쉼을 무음으로 만들지 않고 글 자체로 리듬을 만든다. ① 말하듯 쓴다: 문어체·나열체 금지. '~이다/~한다' 대신 '~거든요, ~잖아요, ~대요'. 한 문장은 짧게(한국어 25자 안팎, 영어 12단어 안팎), 길면 둘로 나눈다. ② 한 조각 = 한 사람의 한 호흡(대사 1~3문장). 해설과 캐릭터 대사는 다른 조각으로 나누고 캐릭터 대사는 그 캐릭터 sid로 쓴다(직원 회의·티키타카가 들리게). ③ 감정이 바뀌는 줄에는 act 필드로 연기를 지시한다(상황+감정+속도, 한 줄). 대사에 감탄사·의성어(헉, 아이고, 휴우, 으악, 오~)와 말줄임표(…)를 자연스럽게 넣어 연기할 거리를 준다. 물음표·느낌표를 아끼지 않는다. ④ 문장 끝을 다양하게(질문, 감탄, 혼잣말, 속삭임). 같은 어미가 세 번 연달아 나오지 않게 한다. ⑤ 숫자는 한글 읽기로, 어려운 용어는 한 번만 쓰고 바로 쉬운 말로 풀어 준다. 맞춤법은 표준, 자막(disp)은 읽기 표기와 달라도 된다. ⑥ 조각을 합친 뒤 롱폼이 75~120초(엔딩 카드 제외, 최대 3분), 숏폼이 30~50초 안인지 확인한다. 넘으면 문장을 줄인다(배속하지 않는다). 자막·장면 타이밍은 manifest 길이를 기준으로 한다. 영어도 같은 원칙이다.
 
 3-4) 엔딩 구독·좋아요 멘트(사용자 지시): 모든 롱폼과 숏폼의 맨 끝, 유머 엔딩 뒤에 귀엽고 짧은 멘트를 넣어 구독자와 조회수를 늘린다. 구걸하는 느낌이 아니라 몸속 회사 세계관의 유머로 한다. 채널 슬로건은 '하루 한 뼘 더 건강하게'(영어는 "Meet the tiny team keeping you alive.")이며 멘트마다 문구를 조금씩 바꿔 반복감을 줄이되 이 슬로건을 기본으로 삼는다.
 - 롱폼(한·영): 해설자 한 문장 + 캐릭터 한 줄의 짧은 멘트, 합쳐 3~5초. 구독과 좋아요를 모두 청한다. 한국어 예: "하루 한 뼘, 더 건강해지고 싶다면, 구독!" / 뇌 팀장: "좋아요도, 꾹… 눌러 주면, 오늘 칼퇴할게요!" 영어 예: "Want to get a little healthier every day? Subscribe!" / "And a like… would make our whole team's day!" 엔딩 화면: 구독 버튼 알약(빨강), 엄지 척 또는 하트 아이콘(좋아요), 종 아이콘을 종이 조각으로 귀엽게 팝업하고 캐릭터들이 손을 흔든다. 번호·광고 문구 없음. 이 멘트 뒤에 3-5의 엔딩 카드가 이어진다.
@@ -35,26 +35,50 @@
 
 3-6) 숏폼 내용 규칙(사용자 지시): 숏폼의 나레이션·자막에는 건강 정보, 운동·실천 방법, 지킬 점 등 시청자가 바로 써먹을 내용만 넣는다. 연구 한계·불확실성·근거 범위를 설명하는 말은 숏폼 영상 안에 넣지 않는다(시간만 잡아먹는다는 사용자 판단). 빼는 예: "하루짜리 실험이에요", "장기 효과는 아직 몰라요", "작은 연구예요", "연구에 한계가 있어요", "실험 결과는 한 연구 기준이에요", "횟수는 한 연구 기준이에요", "사람마다 다를 수 있어요", "아직 더 연구가 필요해요"와 같은 문장, 그리고 문장 안에 끼워 넣는 "한 연구 기준으로", "한 연구에선" 같은 꼬리표도 숏폼에서는 쓰지 않는다. 그 대신 같은 내용을 숏폼 설명란 맨 끝 출처 바로 위에 한 줄로 적는다(예: "참고: 횟수·시간은 한 연구 기준이며, 하루짜리 실험이라 장기 효과는 아직 확인되지 않았어요." 영어도 같은 취지). 그 결과 숏폼이 짧아져도(30초까지) 괜찮으며 다른 말로 채우지 않는다. 다만 사실을 넘어서는 단정은 여전히 하지 않는다: 공공기관 권고 수치는 기관 이름만 짧게 붙여도 된다(예: "NIH 기준, 20분 이내!"). 단일 연구 수치는 꼬리표 없이 '~래요/~했대요' 같은 전해 들은 말투나 '~하면 좋아요' 수준으로 말하고, "무조건·반드시 낫는다·확실히·100%" 같은 표현을 쓰지 않는다. 수치가 모형 추정값인 경우처럼 한계를 빼면 사실이 틀려지는 경우에만 아주 짧게(두세 단어, 예: "추정치로는") 붙인다. 롱폼은 지금처럼 연구 규모와 한계, '한 연구 기준'을 함께 말한다(3-1).
 
-[음성: Google Cloud TTS Chirp 3 HD] 스킬의 Supertonic/sherpa-onnx(모델 다운로드, 받아쓰기 검증)는 쓰지 않는다. 설치는 pip install --break-system-packages skia-python scipy numpy pillow requests 만 한다(한글 폰트 NotoSansCJK가 없으면 apt-get install -y fonts-noto-cjk libegl1, Black 굵기가 없으면 Bold로 대체. ffmpeg·ffprobe는 영상 합성에도 쓰는 필수 도구이니 없으면 apt-get install -y ffmpeg). 이 환경에는 texttospeech.googleapis.com 접속 허용과 x-goog-api-key 헤더를 자동으로 붙이는 네트워크 시크릿이 있다. 키는 직접 넣지 않고(헤더 없이 요청하면 프록시가 붙인다) 찾거나 출력하지 않는다.
-a) 시작 시 연결 확인: POST https://texttospeech.googleapis.com/v1/text:synthesize 에 {"input":{"text":"테스트"},"voice":{"languageCode":"ko-KR","name":"ko-KR-Chirp3-HD-Despina"},"audioConfig":{"audioEncoding":"LINEAR16","sampleRateHertz":24000}}. HTTP 200이 아니면 상태와 본문(키 가림)만 한국어로 보고하고 끝낸다. 다른 음성으로 대체하지 않는다.
-b) 음성 배정: 한국어 해설자 = ko-KR-Chirp3-HD-Despina, 영어 해설자 = en-US-Chirp3-HD-Despina. 뇌 팀장(sid 5) = Orus, 멜라토닌 = Leda, 그 밖의 캐릭터는 Chirp3-HD의 서로 다른 음성(아래 SID_VOICE 참고, 필요하면 GET https://texttospeech.googleapis.com/v1/voices?languageCode=ko-KR|en-US 로 목록 확인). 같은 sid는 에피소드·언어가 달라도 같은 이름의 음성을 쓰고 어떤 음성을 썼는지 보고한다.
-c) /home/claude/shorts-health/tts.py 를 아래 코드 그대로 쓴다(engine-code의 tts.py 대신, 이미 실제 합성과 ffmpeg 가속으로 검증된 코드다). 사용법 python3 -I tts.py <episode_dir> / 숏폼은 REUSE=<롱폼폴더> python3 -I tts.py <숏폼폴더>(같은 id의 롱폼 wav를 복사해 재사용하며 이미 가속된 파일이라 다시 가속하지 않는다. 숏폼 전용 새 조각 id는 새로 합성하고 가속한다). script.py의 LANG과 CHUNKS(id, tts, sid)를 읽는다. sid가 SID_VOICE에 없는 새 캐릭터가 있으면 SID_VOICE에 항목을 추가한다. 속도는 환경 변수 TTS_SPEED(기본 1.25)로 바꿀 수 있으나 사용자 지시가 있기 전에는 바꾸지 않는다.
+[음성: Gemini-TTS flash (사용자 지시, 2026-10-25부터 기본)] 사용자가 샘플을 비교해 gemini-2.5-flash-tts가 가장 낫다고 골랐다. 옛 Chirp 방식이 어색했던 원인: ① 쉼표 구절마다 따로 합성해 이어 붙여서 구절마다 문장 끝 억양(내려앉음)이 반복되고 문장 전체의 높낮이 흐름이 끊겼다 ② 앞뒤 무음을 잘라 숨·여운이 사라졌다 ③ ffmpeg atempo 1.25배 가속이 음색을 얇게 만들었다 ④ 연기 지시(감정·캐릭터) 없이 읽었다. 그래서 이제는 조각(대사 한 덩어리)을 통째로 한 번에, 연기 지시 프롬프트와 함께 합성하고 가속하지 않는다. 스킬의 Supertonic/sherpa-onnx는 쓰지 않는다. 설치는 pip install --break-system-packages skia-python scipy numpy pillow requests google-auth 만 한다(한글 폰트 NotoSansCJK가 없으면 apt-get install -y fonts-noto-cjk libegl1, Black 굵기가 없으면 Bold로 대체. ffmpeg·ffprobe가 없으면 apt-get install -y ffmpeg).
+- 인증: 환경 변수 GCP_TTS_SA_KEY_B64(서비스 계정 키, base64)를 tts.py가 메모리에서만 읽는다. 값을 출력·저장·커밋하지 않는다. 엔드포인트는 반드시 https://us-texttospeech.googleapis.com/v1/text:synthesize 이고 헤더 x-goog-user-project: ssokssok-health-tts 를 붙인다(기본 호스트 texttospeech.googleapis.com은 프록시가 다른 프로젝트 키를 붙여 Gemini 요청이 403이 된다).
+a) 시작 시 연결 확인: python3 -I tts.py --check (Gemini flash로 "테스트" 한 번). 실패하면 상태와 오류 reason만 보고에 적고 환경 변수 TTS_ENGINE=chirp 로 바꿔 진행한다(대체 방식: 기본 호스트의 Chirp 3 HD로 조각 통째 합성, 1.15배 가속). 대체 방식으로 만들었으면 보고에 분명히 적는다.
+b) 음성·연기 배정: 해설자(sid 0) = Despina. 캐릭터별 음성과 연기 지시는 아래 SID 표를 쓰고, CHARACTER_BIBLE.md의 성격과 맞춘다. 같은 sid는 에피소드·언어가 달라도 같은 음성을 쓴다. 조각마다 script.py에 선택 필드 act(그 줄의 감정·상황 한 줄, 예: "야근 3일째라 지쳤지만 애써 밝게", "속삭이듯 비밀 얘기")를 적으면 연기 지시에 덧붙는다. 한국어 대본은 한국어 지시, 영어 대본은 영어 지시로 쓴다.
+c) /home/claude/shorts-health/tts.py 를 아래 코드 그대로 쓴다. 사용법 python3 -I tts.py <episode_dir> / 숏폼은 REUSE=<롱폼폴더> python3 -I tts.py <숏폼폴더>(같은 id의 롱폼 wav를 복사해 재사용, 새 조각 id만 새로 합성). script.py의 LANG과 CHUNKS(id, tts, sid, 선택 act)를 읽는다.
 ```python
-import base64, importlib.util, io, json, os, re, shutil, subprocess, sys, tempfile, time, wave
+import base64, importlib.util, io, json, os, shutil, subprocess, sys, tempfile, time, wave
 import numpy as np
 import requests
 
-URL = "https://texttospeech.googleapis.com/v1/text:synthesize"   # 키 헤더는 프록시가 붙인다
 SR = 24000
-GAP_COMMA = 0.28      # 쉼표(구 사이)
-GAP_SENT = 0.55       # . ? !  (문장이 바뀔 때, 반드시 줌)
-GAP_ELLIPSIS = 0.70   # … (여운·머뭇거림)
-TAIL = {"sent": 0.50, "ellipsis": 0.65, "other": 0.30}   # 조각 끝 쉼(다음 조각과 붙지 않게)
-HEAD = 0.03
-SPEED = float(os.environ.get("TTS_SPEED", "1.25"))   # 나레이션과 모든 무음을 함께 이 배속으로 빠르게(피치 유지)
-EDGE = 0.02           # 합성 결과 앞뒤 무음을 이만큼만 남기고 자름
-SID_VOICE = {0: "Despina", 5: "Orus", 7: "Leda", 3: "Puck", 1: "Kore", 2: "Charon", 4: "Fenrir", 6: "Aoede", 8: "Zephyr"}
+ENGINE = os.environ.get("TTS_ENGINE", "gemini")
+MODEL = os.environ.get("TTS_MODEL", "gemini-2.5-flash-tts")
+G_URL = "https://us-texttospeech.googleapis.com/v1/text:synthesize"
+C_URL = "https://texttospeech.googleapis.com/v1/text:synthesize"   # chirp 대체용, 키는 프록시가 붙인다
+PROJECT = "ssokssok-health-tts"
+CHIRP_SPEED = 1.15
+TAIL = 0.35   # 조각 끝 여유 무음(다음 조각과 붙지 않게)
+# sid: (음성, 한국어 연기 지시, 영어 연기 지시)
+SID = {
+    0: ("Despina", "밝고 다정한 어린이 교육 애니메이션 내레이터. 경쾌한 속도로, 살짝 웃음기 있게, 문장 끝은 또렷하게.", "Warm, playful kids' animation narrator. Brisk and bright, a smile in the voice."),
+    5: ("Orus", "걱정 많은 완벽주의 기획팀장. 빠르게 정리하다가 당황하면 말이 꼬인다.", "A worried perfectionist team lead. Quick, organized, flustered when things go wrong."),
+    1: ("Puck", "열정 과다 영업 에이스. 숨차지만 씩씩하고 힘차게.", "An overenthusiastic sales ace. Breathless but upbeat and energetic."),
+    2: ("Aoede", "수다쟁이 총무팀 직원. 소문 전하듯 신나고 호들갑스럽게.", "A chatty office gossip. Excited, a little dramatic."),
+    3: ("Charon", "묵묵히 야근하는 과장. 낮고 차분하게, 한숨 섞어, 다정함이 묻어나게.", "A quiet, overworked manager. Low and calm, a tired sigh, secretly kind."),
+    4: ("Fenrir", "단순 명쾌한 헬스 덕후. 우렁차고 자신만만하게.", "A cheerful gym buff. Loud, simple, confident."),
+    6: ("Kore", "원칙주의 보안팀장. 또박또박 단호하게, 살짝 과장된 진지함.", "A by-the-book security chief. Crisp, firm, comically serious."),
+    7: ("Leda", "소심하고 졸린 신입. 작고 조심스럽게, 하품 섞어.", "A shy, sleepy new hire. Soft, hesitant, yawning."),
+    8: ("Zephyr", "피로 보고서 담당. 지치고 축 처진 목소리.", "The fatigue-report clerk. Drained and droopy."),
+    9: ("Sadachbia", "능글맞은 외부 컨설턴트. 여유롭고 장난스럽게, 말끝을 늘인다.", "A smug, smooth consultant. Relaxed, teasing, drawn-out endings."),
+}
 CHARS = 0
+_tok = {"t": None, "exp": 0}
+
+def token():
+    if _tok["t"] and time.time() < _tok["exp"] - 120:
+        return _tok["t"]
+    from google.oauth2 import service_account
+    import google.auth.transport.requests as tr
+    info = json.loads(base64.b64decode(os.environ["GCP_TTS_SA_KEY_B64"]))
+    c = service_account.Credentials.from_service_account_info(info, scopes=["https://www.googleapis.com/auth/cloud-platform"])
+    c.refresh(tr.Request())
+    _tok["t"], _tok["exp"] = c.token, time.time() + 3000
+    return c.token
 
 def load_script(ep):
     spec = importlib.util.spec_from_file_location("ep_script", os.path.join(ep, "script.py"))
@@ -62,88 +86,50 @@ def load_script(ep):
     spec.loader.exec_module(m)
     return getattr(m, "LANG", "ko"), m.CHUNKS
 
-def normalize(s):
-    s = s.replace("...", "…").replace("。", ".")
-    s = re.sub(r"\s*[—–]\s*|(?<=\S)-(?=\s|$)|\s-\s", ", ", s)   # 대시·끝 하이픈은 쉼표로
-    s = re.sub(r"([!?.])\1+", r"\1", s)                          # !! ?? .. → 하나
-    s = re.sub(r"[~*_\[\]]", "", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
+def decode(r):
+    w = wave.open(io.BytesIO(base64.b64decode(r.json()["audioContent"])))
+    return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
-def split_units(text):
-    """[(phrase, gap_after, kind)] — 문장 끝은 GAP_SENT/GAP_ELLIPSIS, 문장 안 쉼표는 GAP_COMMA"""
-    text = normalize(text)
-    sentences = re.findall(r"[^.!?…]+[.!?…]*", text)
-    units = []
-    for sent in sentences:
-        sent = sent.strip()
-        if not sent:
-            continue
-        end = sent[-1] if sent[-1] in ".!?…" else ""
-        body = sent.rstrip(".!?…").strip()
-        phrases = [p.strip() for p in re.split(r"[,，、;:]", body) if p.strip()]
-        for i, p in enumerate(phrases):
-            last = i == len(phrases) - 1
-            if not last:
-                units.append((p, GAP_COMMA, "comma"))
-            elif end == "…":
-                units.append((p + "…", GAP_ELLIPSIS, "ellipsis"))
-            elif end in ".!?":
-                units.append((p + end, GAP_SENT, "sent"))
-            else:
-                units.append((p, GAP_SENT, "other"))
-    return units
-
-def synth(text, voice, lang):
+def synth(text, sid, lang, act=""):
     global CHARS
-    body = {"input": {"text": text}, "voice": {"languageCode": lang, "name": f"{lang}-Chirp3-HD-{voice}"},
-            "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": SR, "speakingRate": 1.0}}
-    for wait in (0, 2, 4, 8):
+    voice, ko, en = SID.get(sid, SID[0])
+    if ENGINE == "gemini":
+        prompt = (ko if lang == "ko-KR" else en) + (" " + act if act else "")
+        url, hd = G_URL, {"Authorization": "Bearer " + token(), "x-goog-user-project": PROJECT}
+        body = {"input": {"text": text, "prompt": prompt}, "voice": {"languageCode": lang, "name": voice, "modelName": MODEL},
+                "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": SR}}
+    else:
+        url, hd = C_URL, {}
+        body = {"input": {"text": text}, "voice": {"languageCode": lang, "name": f"{lang}-Chirp3-HD-{voice}"},
+                "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": SR}}
+    for wait in (0, 2, 4, 8, 16):
         time.sleep(wait)
-        r = requests.post(URL, json=body, timeout=90)
+        r = requests.post(url, headers=hd, json=body, timeout=120)
         if r.status_code == 200:
             CHARS += len(text)
-            w = wave.open(io.BytesIO(base64.b64decode(r.json()["audioContent"])))
-            return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+            return decode(r)
         if r.status_code not in (429, 500, 502, 503, 504):
             break
-    raise RuntimeError(f"TTS {r.status_code}: {r.text[:200]}")
+    raise RuntimeError(f"TTS {r.status_code}: {r.text[:300]}")
 
-def trim(x):
-    win = int(0.01 * SR)
-    n = len(x) // win
+def trim_edges(x, keep=0.06):
+    """앞뒤의 긴 무음만 줄인다(문장 안 쉼과 숨은 건드리지 않는다)."""
+    win = int(0.01 * SR); n = len(x) // win
+    if n == 0:
+        return x
     e = np.sqrt((x[:n * win].reshape(n, win) ** 2).mean(1))
-    idx = np.where(e > max(0.004, 0.03 * e.max()))[0]
+    idx = np.where(e > max(0.003, 0.02 * e.max()))[0]
     if len(idx) == 0:
         return x
-    a = max(0, idx[0] * win - int(EDGE * SR))
-    b = min(len(x), (idx[-1] + 1) * win + int(EDGE * SR))
+    a = max(0, idx[0] * win - int(keep * SR)); b = min(len(x), (idx[-1] + 1) * win + int(keep * SR))
     return x[a:b]
-
-def silence(sec):
-    return np.zeros(int(sec * SR), dtype=np.float32)
-
-def render_chunk(text, voice, lang):
-    units = split_units(text)
-    parts = [silence(HEAD)]
-    last_kind = "other"
-    for i, (phrase, gap, kind) in enumerate(units):
-        parts.append(trim(synth(phrase, voice, lang)))
-        last_kind = kind
-        if i < len(units) - 1:
-            parts.append(silence(gap))
-    tail = TAIL["sent"] if last_kind == "sent" else TAIL["ellipsis"] if last_kind == "ellipsis" else TAIL["other"]
-    parts.append(silence(tail))
-    return np.concatenate(parts)
 
 def save_wav(path, x):
     w = wave.open(path, "wb")
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
-    w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
-    w.close()
+    w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes()); w.close()
 
 def speed_up(x, speed):
-    """ffmpeg atempo로 전체(말+무음)를 speed배 빠르게. 피치는 유지된다."""
     if abs(speed - 1.0) < 1e-3:
         return x
     with tempfile.TemporaryDirectory() as d:
@@ -156,34 +142,32 @@ def speed_up(x, speed):
 def main(ep):
     lang_s, chunks = load_script(ep)
     lang = "en-US" if lang_s == "en" else "ko-KR"
-    out = os.path.join(ep, "audio")
-    os.makedirs(out, exist_ok=True)
+    out = os.path.join(ep, "audio"); os.makedirs(out, exist_ok=True)
     reuse = os.environ.get("REUSE")
-    src_manifest = {}
-    if reuse:
-        src_manifest = {m["id"]: m for m in json.load(open(os.path.join(reuse, "audio", "manifest.json")))}
+    src = {m["id"]: m for m in json.load(open(os.path.join(reuse, "audio", "manifest.json")))} if reuse else {}
     manifest = []
     for c in chunks:
-        cid = c["id"]
-        dst = os.path.join(out, cid + ".wav")
-        if reuse and cid in src_manifest:
-            shutil.copy(os.path.join(reuse, "audio", cid + ".wav"), dst)
-            manifest.append(dict(src_manifest[cid]))
-            continue
-        voice = SID_VOICE.get(c.get("sid", 0), "Despina")
-        x = speed_up(render_chunk(c["tts"], voice, lang), SPEED)
+        cid = c["id"]; dst = os.path.join(out, cid + ".wav")
+        if reuse and cid in src:
+            shutil.copy(os.path.join(reuse, "audio", cid + ".wav"), dst); manifest.append(dict(src[cid])); continue
+        x = trim_edges(synth(c["tts"], c.get("sid", 0), lang, c.get("act", "")))
+        if ENGINE != "gemini":
+            x = speed_up(x, CHIRP_SPEED)
+        x = np.concatenate([x, np.zeros(int(TAIL * SR), dtype=np.float32)])
         save_wav(dst, x)
         manifest.append({"id": cid, "dur": round(len(x) / SR, 3), "sr": SR})
-        print(f"{cid:12s} {voice:9s} {len(x) / SR:6.2f}s")
+        print(f"{cid:12s} sid{c.get('sid', 0)} {len(x) / SR:6.2f}s")
     json.dump(manifest, open(os.path.join(out, "manifest.json"), "w"), ensure_ascii=False)
-    total = sum(m["dur"] for m in manifest)
-    print(f"total {total:.1f}s  chars_used {CHARS}  (월 무료 100만 자 대비 {CHARS / 10000:.3f}%)")
+    print(f"engine {ENGINE}/{MODEL}  total {sum(m['dur'] for m in manifest):.1f}s  chars_used {CHARS}")
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    if sys.argv[1] == "--check":
+        x = synth("테스트", 0, "ko-KR"); print("OK", ENGINE, round(len(x) / SR, 2), "s")
+    else:
+        main(sys.argv[1])
 ```
-d) 합성 뒤 확인: 조각 길이를 출력해 비정상(0.4초 미만, 지나치게 긴 것)이 없는지 보고, 문장이 바뀌는 지점 몇 곳(롱폼에서 최소 5곳, 엔딩 멘트 포함)을 골라 해당 wav에서 에너지 기반으로 무음을 측정해 문장 경계 무음이 0.36초 이상, 쉼표 무음이 0.18초 이상인지 확인한다(1.25배 가속 후 기준이며, 부족하면 해당 조각의 tts 표기를 고쳐 다시 합성). 말이 너무 빨라 발음이 뭉개지거나 어색한 조각이 있으면 그 조각의 문장을 짧게 나누거나 표기를 고쳐 다시 합성한다. 쉼 때문에 조각 구간이 너무 끊기거나 늘어지면 문장을 합치거나 줄인다.
-e) 사용한 글자 수를 세어 최종 보고에 월 무료 100만 자 대비로 적는다(tts.py가 출력).
+d) 합성 뒤 확인: 조각 길이를 출력해 비정상(0.4초 미만, 글자 수에 비해 지나치게 긴 것, 앞뒤에 다른 말이 섞인 것)이 없는지 본다. 롱폼에서 조각 5개 이상을 골라 길이가 글자 수와 맞는지(한국어 대략 초당 6~8자) 확인하고, 이상하면 그 조각만 다시 합성한다(Gemini는 가끔 지시문을 읽거나 말을 빼먹으므로 같은 조각 길이가 예상의 1.6배 이상이거나 0.6배 이하이면 재합성). 롱폼 길이 규칙(3-2 ⑥)을 넘으면 대본을 줄인다(가속하지 않는다).
+e) 사용한 글자 수를 최종 보고에 적는다. Gemini-TTS는 Chirp 무료 100만 자 한도와 별개로 과금되며 현재 무료 체험 크레딧에서 차감된다.
 
 3-3) 후크와 숏폼 설계(조회수 기준, youtube-agent): ① 대본을 쓰기 전에 제목 후보를 먼저 정하고(5-1 참고), 롱폼의 첫 문장이 그 제목의 약속을 바로 확인하게 한다. 첫 15초 안에 시청자가 닫을 수 없는 질문을 열고, 자기소개·구독 요청·"시작하기 전에"로 시작하지 않는다(구독 멘트는 맨 끝에만). ② 후크는 공식 21개 중 맞는 것으로 5개를 써서 후크 점수표(구체성·호명·판돈·호기심·간결성, 총점=평균×0.6+최저점×0.4)로 채점하고 가장 높은 것을 쓴다. 72 미만이면 가장 낮은 속성을 고쳐 다시 쓴다. 단, 우리 채널은 귀여운 유머 톤이므로 유머를 해치지 않는 범위에서 구체적 숫자·질문을 앞세우고, 공포 조장·과장·지어낸 수치는 어떤 점수가 높아도 쓰지 않는다. ③ 숏폼 각각: 원 롱폼 첫 줄이 앞 맥락을 전제하면 단독으로 이해되는 새 첫 줄을 쓰고(후크 점수표로 채점), 첫 2초 화면 자막은 말과 다른 단어로 넣고(큰 칩으로 팝), 숏폼의 첫 프레임(0~0.3초)은 그 숏폼 썸네일과 같은 구도·문구의 표지 화면으로 만들어(큰 칩 제목 + 캐릭터가 이미 화면에 있는 상태에서 시작) 피드에서 첫 장면이 썸네일 역할도 하게 하고, 마지막 줄(유머)이 첫 줄에 대한 답이 되도록 루프 포인트를 만든다(그 뒤에 3-4의 3초 이내 멘트). 숏폼 본문은 3-6에 따라 써먹을 정보만 남긴다. ④ 롱폼은 각 구간이 약속하는 내용이 바뀌는 지점을 기록해 5-1의 챕터에 쓴다.
 
@@ -228,4 +212,4 @@ e) 사용한 글자 수를 세어 최종 보고에 월 무료 100만 자 대비�
   e) 오류 처리: quotaExceeded/uploadLimitExceeded면 즉시 중단하고 못 올린 영상 목록과 원인을 보고한다(수동 업로드용 자료는 이미 전달됨). 업로드 쿼터가 부족해 보이면 영상 업로드를 우선하고 재생목록·첫 댓글·링크 업데이트는 건너뛴다. 401/403(권한·토큰 만료·invalid_grant, 권한 범위 부족 포함)이면 해당 기능만 중단하고 원인만 보고한다(토큰 값은 가리고). 다른 방법으로 우회하거나 다른 계정·채널에 올리지 않는다.
   f) 응답의 status.privacyStatus가 실제로 public인지 확인해 보고에 적는다(공식 문서상 검수 전 프로젝트도 비공개로 제한되지 않지만 실제 상태를 사실대로 보고한다).
 
-7) 결과물(mp4 6개, 썸네일 PNG 6장(롱폼 2 + 숏폼 4), 한·영 업로드 자료 md)을 SendUserFile로 보낸다(업로드 성공 여부와 관계없이 항상). 막히면 억지로 만들지 말고 무엇이 막혔는지만 짧게 보고한다. 최종 보고는 파일 목록, 주제, 화풍(종이 스타일 적용 여부·해상도), STYLE_GUIDE 보완 9항목 결과와 새로 발견한 어색한 점, 쓴 배경음악과 측정 음량(LUFS)·음성 대 음악 차이(dB), 선택한 후크 점수·제목, 영상별 엔딩 멘트 문구, 엔딩 카드에서 추천한 영상(제목·링크·고른 이유), 출처, 사용 음성, 글자 수 사용량, 나레이션 속도(1.25배)와 쉼 검증 결과(확인한 문장 경계 수와 측정 무음), 영상별 길이, 렌더 시간, 유튜브 업로드 결과(영상별 링크·공개 상태·썸네일 설정 여부·소속 재생목록 이름과 API가 돌려준 실제 링크·바뀐 재생목록 이름(이전→새)·첫 댓글·링크 업데이트·실패 사유), 사용자가 Studio에서 직접 할 일(롱폼 마지막 구간에 최종 화면 요소 올리기, 댓글 고정)을 한 줄로, 특이사항만 간단히.
+7) 결과물(mp4 6개, 썸네일 PNG 6장(롱폼 2 + 숏폼 4), 한·영 업로드 자료 md)을 SendUserFile로 보낸다(업로드 성공 여부와 관계없이 항상). 막히면 억지로 만들지 말고 무엇이 막혔는지만 짧게 보고한다. 최종 보고는 파일 목록, 주제, 화풍(종이 스타일 적용 여부·해상도), STYLE_GUIDE 보완 9항목 결과와 새로 발견한 어색한 점, 쓴 배경음악과 측정 음량(LUFS)·음성 대 음악 차이(dB), 선택한 후크 점수·제목, 영상별 엔딩 멘트 문구, 엔딩 카드에서 추천한 영상(제목·링크·고른 이유), 출처, 사용 음성, 글자 수 사용량, 음성 엔진(Gemini flash 또는 대체 Chirp)과 재합성한 조각 수, 영상별 길이, 렌더 시간, 유튜브 업로드 결과(영상별 링크·공개 상태·썸네일 설정 여부·소속 재생목록 이름과 API가 돌려준 실제 링크·바뀐 재생목록 이름(이전→새)·첫 댓글·링크 업데이트·실패 사유), 사용자가 Studio에서 직접 할 일(롱폼 마지막 구간에 최종 화면 요소 올리기, 댓글 고정)을 한 줄로, 특이사항만 간단히.
