@@ -36,3 +36,7 @@
 - 회차마다 직장인 공감 장면 1개 이상(야근, 떠넘기기, 회의, 월요병, 칼퇴의 기쁨).
 - 감동은 짧게 한 줄. 설교하지 않는다. 주인님 탓만 하지 않고 "같이 잘해보자"로 끝낸다.
 - 숏폼은 캐릭터 1~2명 + 리액션 한 방 + 정보 한 줄 + 반전.
+
+## 목소리 배정 (tts.py SID 표, Gemini flash)
+해설 sid0 Despina · 뇌 sid5 Orus · 심장 sid1 Puck · 장 sid2 Aoede · 간 sid3 Charon · 근육 sid4 Fenrir · 면역 sid6 Kore · 멜라토닌 sid7 Leda · 아데노신 sid8 Zephyr · 카페인 sid9 Sadachbia.
+감정이 바뀌는 줄은 script.py 조각에 act(상황+감정+속도 한 줄)를 적는다.
