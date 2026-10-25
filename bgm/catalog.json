@@ -177,6 +177,24 @@
    "vocals": null,
    "speech_band_share": 0.4,
    "busy": false
+  },
+  {
+   "file": "bike_rides.mp3",
+   "title": "Bike Rides",
+   "sec": 112.0,
+   "lufs": -13.3,
+   "mood": [
+    "upbeat",
+    "fresh"
+   ],
+   "series": [
+    "운동·활동",
+    "*"
+   ],
+   "use": "바깥 활동·가벼운 운동·경쾌한 장면",
+   "vocals": null,
+   "speech_band_share": 0.46,
+   "busy": true
   }
  ],
  "고르는 법": [
