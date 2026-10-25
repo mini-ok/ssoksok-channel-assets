@@ -1,22 +1,191 @@
 {
-  "_설명": "배경음악 목록. 예약 제작은 이 파일을 읽고 영상 분위기(mood)와 주제 시리즈(series)에 맞는 곡을 고른다. mood·series 태그는 곡 제목과 음향 분석(빠르기·밝기)으로 추정한 값이며, 사용자가 들어 보고 고치면 그 값을 따른다. vocals가 true인 곡은 나레이션과 겹치므로 쓰지 않는다.",
-  "tracks": [
-    {"file": "main_tema.mp3", "title": "Main Tema", "sec": 89.6, "lufs": -15.8, "mood": ["calm", "explain"], "series": ["*"], "use": "기본 설명 장면(기본값)", "vocals": false},
-    {"file": "nimble_motifs.mp3", "title": "Nimble Motifs", "sec": 88.7, "lufs": -16.2, "mood": ["curious", "playful"], "series": ["*"], "use": "후크·질문·호기심·경쾌한 전환", "vocals": false},
-    {"file": "buant_pop_groove.mp3", "title": "Buant Pop Groove", "sec": 91.2, "lufs": -15.3, "mood": ["upbeat", "ending"], "series": ["*"], "use": "활기찬 장면, 엔딩·구독 멘트", "vocals": false},
-    {"file": "buoyant_kitchen_groove.mp3", "title": "Buoyant Kitchen Groove", "sec": 102.2, "lufs": -15.4, "mood": ["upbeat", "playful"], "series": ["물·음식·영양", "손씻기·위생·면역"], "use": "음식·부엌·생활 습관 주제", "vocals": null},
-    {"file": "find_the_morning.mp3", "title": "Find the Morning", "sec": 157.2, "lufs": -15.6, "mood": ["fresh", "uplifting"], "series": ["수면·휴식", "운동·활동"], "use": "아침·기상·상쾌함", "vocals": null},
-    {"file": "la_silla_vacia.mp3", "title": "La Silla Vacía", "sec": 127.2, "lufs": -15.9, "mood": ["calm", "warm"], "series": ["마음·스트레스", "자세·목·허리"], "use": "차분한 공감·쉬어 가기", "vocals": null},
-    {"file": "lingering_piano_note.mp3", "title": "Lingering Piano Note", "sec": 187.2, "lufs": -16.4, "mood": ["calm", "sleepy"], "series": ["수면·휴식", "마음·스트레스", "눈 건강"], "use": "잠·휴식·눈 쉬기처럼 느린 장면", "vocals": null},
-    {"file": "rising_hope.mp3", "title": "Rising Hope", "sec": 163.4, "lufs": -14.7, "mood": ["uplifting", "ending"], "series": ["운동·활동", "*"], "use": "변화·결과·희망적인 마무리", "vocals": null},
-    {"file": "rising_hope_v2.mp3", "title": "Rising Hope (버전 2)", "sec": 147.2, "lufs": -16.5, "mood": ["uplifting"], "series": ["운동·활동", "*"], "use": "Rising Hope 다른 버전(같은 실행에서 둘 다 쓰지 않음)", "vocals": null},
-    {"file": "rising_octaves.mp3", "title": "Rising Octaves", "sec": 168.6, "lufs": -15.4, "mood": ["energetic", "uplifting"], "series": ["운동·활동", "자세·목·허리"], "use": "운동·따라 하기·동작 장면", "vocals": null}
-  ],
-  "고르는 법": [
-    "1) 영상의 중심 분위기(mood) 하나와 주제 시리즈를 정한다.",
-    "2) series에 그 시리즈나 '*'가 있고 mood가 맞는 곡을 후보로 모은다(vocals가 true인 곡 제외).",
-    "3) 후보가 여러 개면 주제 인덱스(2번 규칙의 값)를 후보 수로 나눈 나머지로 하나를 고른다(실행마다 자연스럽게 돌아가며 쓰임).",
-    "4) 같은 실행의 롱폼·숏폼 A·숏폼 B는 서로 다른 곡을 쓴다(후보가 모자라면 '*' 곡으로 채운다).",
-    "5) vocals가 null(아직 확인 안 됨)인 곡은 처음 30초를 분석해 사람 목소리(가사)가 뚜렷하면 그 실행에서 빼고 보고한다."
-  ]
+ "_설명": "배경음악 목록. 예약 제작은 이 파일을 읽고 영상 분위기(mood)와 주제 시리즈(series)에 맞는 곡을 고른다. mood·series 태그는 곡 제목과 음향 분석(빠르기·밝기)으로 추정한 값이며, 사용자가 들어 보고 고치면 그 값을 따른다. vocals가 true인 곡은 나레이션과 겹치므로 쓰지 않는다.",
+ "tracks": [
+  {
+   "file": "main_tema.mp3",
+   "title": "Main Tema",
+   "sec": 89.6,
+   "lufs": -15.8,
+   "mood": [
+    "calm",
+    "explain"
+   ],
+   "series": [
+    "*"
+   ],
+   "use": "기본 설명 장면(기본값)",
+   "vocals": false,
+   "speech_band_share": 0.73,
+   "busy": true
+  },
+  {
+   "file": "nimble_motifs.mp3",
+   "title": "Nimble Motifs",
+   "sec": 88.7,
+   "lufs": -16.2,
+   "mood": [
+    "curious",
+    "playful"
+   ],
+   "series": [
+    "*"
+   ],
+   "use": "후크·질문·호기심·경쾌한 전환",
+   "vocals": false,
+   "speech_band_share": 0.57,
+   "busy": true
+  },
+  {
+   "file": "buant_pop_groove.mp3",
+   "title": "Buant Pop Groove",
+   "sec": 91.2,
+   "lufs": -15.3,
+   "mood": [
+    "upbeat",
+    "ending"
+   ],
+   "series": [
+    "*"
+   ],
+   "use": "활기찬 장면, 엔딩·구독 멘트",
+   "vocals": false,
+   "speech_band_share": 0.57,
+   "busy": true
+  },
+  {
+   "file": "buoyant_kitchen_groove.mp3",
+   "title": "Buoyant Kitchen Groove",
+   "sec": 102.2,
+   "lufs": -15.4,
+   "mood": [
+    "upbeat",
+    "playful"
+   ],
+   "series": [
+    "물·음식·영양",
+    "손씻기·위생·면역"
+   ],
+   "use": "음식·부엌·생활 습관 주제",
+   "vocals": null,
+   "speech_band_share": 0.53,
+   "busy": true
+  },
+  {
+   "file": "find_the_morning.mp3",
+   "title": "Find the Morning",
+   "sec": 157.2,
+   "lufs": -15.6,
+   "mood": [
+    "fresh",
+    "uplifting"
+   ],
+   "series": [
+    "수면·휴식",
+    "운동·활동"
+   ],
+   "use": "아침·기상·상쾌함",
+   "vocals": null,
+   "speech_band_share": 0.68,
+   "busy": true
+  },
+  {
+   "file": "la_silla_vacia.mp3",
+   "title": "La Silla Vacía",
+   "sec": 127.2,
+   "lufs": -15.9,
+   "mood": [
+    "calm",
+    "warm"
+   ],
+   "series": [
+    "마음·스트레스",
+    "자세·목·허리"
+   ],
+   "use": "차분한 공감·쉬어 가기",
+   "vocals": null,
+   "speech_band_share": 0.54,
+   "busy": false
+  },
+  {
+   "file": "lingering_piano_note.mp3",
+   "title": "Lingering Piano Note",
+   "sec": 187.2,
+   "lufs": -16.4,
+   "mood": [
+    "calm",
+    "sleepy"
+   ],
+   "series": [
+    "수면·휴식",
+    "마음·스트레스",
+    "눈 건강"
+   ],
+   "use": "잠·휴식·눈 쉬기처럼 느린 장면",
+   "vocals": null,
+   "speech_band_share": 0.51,
+   "busy": false
+  },
+  {
+   "file": "rising_hope.mp3",
+   "title": "Rising Hope",
+   "sec": 163.4,
+   "lufs": -14.7,
+   "mood": [
+    "uplifting",
+    "ending"
+   ],
+   "series": [
+    "운동·활동",
+    "*"
+   ],
+   "use": "변화·결과·희망적인 마무리",
+   "vocals": null,
+   "speech_band_share": 0.48,
+   "busy": true
+  },
+  {
+   "file": "rising_hope_v2.mp3",
+   "title": "Rising Hope (버전 2)",
+   "sec": 147.2,
+   "lufs": -16.5,
+   "mood": [
+    "uplifting"
+   ],
+   "series": [
+    "운동·활동",
+    "*"
+   ],
+   "use": "Rising Hope 다른 버전(같은 실행에서 둘 다 쓰지 않음)",
+   "vocals": null,
+   "speech_band_share": 0.46,
+   "busy": false
+  },
+  {
+   "file": "rising_octaves.mp3",
+   "title": "Rising Octaves",
+   "sec": 168.6,
+   "lufs": -15.4,
+   "mood": [
+    "energetic",
+    "uplifting"
+   ],
+   "series": [
+    "운동·활동",
+    "자세·목·허리"
+   ],
+   "use": "운동·따라 하기·동작 장면",
+   "vocals": null,
+   "speech_band_share": 0.4,
+   "busy": false
+  }
+ ],
+ "고르는 법": [
+  "1) 영상의 중심 분위기(mood) 하나와 주제 시리즈를 정한다.",
+  "2) series에 그 시리즈나 '*'가 있고 mood가 맞는 곡을 후보로 모은다(vocals가 true인 곡 제외).",
+  "3) 후보가 여러 개면 주제 인덱스(2번 규칙의 값)를 후보 수로 나눈 나머지로 하나를 고른다(실행마다 자연스럽게 돌아가며 쓰임).",
+  "4) 같은 실행의 롱폼·숏폼 A·숏폼 B는 서로 다른 곡을 쓴다(후보가 모자라면 '*' 곡으로 채운다).",
+  "5) vocals가 null(아직 확인 안 됨)인 곡은 처음 30초를 분석해 사람 목소리(가사)가 뚜렷하면 그 실행에서 빼고 보고한다.",
+  "6) busy가 true인 곡(말소리 대역 300~4000Hz 에너지가 많거나 음이 촘촘한 곡, 오케스트라·디즈니풍)은 나레이션을 묻을 수 있다. 나레이션 구간 밑에는 busy가 false인 곡을 우선 쓰고, busy 곡은 나레이션 없는 구간(오프닝 1~2초, 장면 전환, 엔딩 카드)에만 쓰거나 아래 믹스 규칙의 더 낮은 음량으로 쓴다."
+ ],
+ "믹스": "나레이션 구간: 음악 통합 약 -30 LUFS(busy 곡은 -32), 나레이션이 나오는 동안 덕킹 10~12dB, 음악에 말소리 대역 EQ 컷(1~4kHz를 약 -4~-6dB, 넓은 벨)을 걸어 목소리 자리를 비운다. 나레이션 없는 구간: 약 -24~-26 LUFS까지 올려도 된다. 최종 영상 통합 약 -14 LUFS, 트루피크 -1dB 이하. 검수: 나레이션 구간에서 음성 대 음악 차이가 단기 음량(3초) 기준 12dB 이상인지 ffmpeg ebur128로 확인하고, 모자라면 음악을 더 낮춘다."
 }
