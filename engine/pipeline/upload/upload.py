@@ -1,0 +1,42 @@
+import sys, os, json, time, requests
+sys.path.insert(0, "/home/claude/work/up")
+from yt import *
+REC = "/home/claude/shorts-health/uploads.json"
+def load_rec():
+    return json.load(open(REC)) if os.path.exists(REC) else []
+def save_rec(r): json.dump(r, open(REC, "w"), ensure_ascii=False, indent=1)
+
+def verify(lang):
+    t, e = token(lang)
+    if not t: return None, f"token fail {e}"
+    s, j = api(t, "GET", "channels", params=dict(part="snippet", mine="true"))
+    if s != 200: return None, f"channels {s} {str(j)[:200]}"
+    cu = j["items"][0]["snippet"].get("customUrl", "")
+    want = "@ssoksok-health" if lang == "ko" else "@tinybodyco"
+    if cu.lower() != want: return None, f"channel mismatch {cu}"
+    return t, None
+
+def upload_video(tok, path, snippet):
+    size = os.path.getsize(path)
+    h = {"Authorization": "Bearer " + tok, "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size), "Content-Type": "application/json; charset=UTF-8"}
+    body = {"snippet": snippet, "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "embeddable": True, "publicStatsViewable": True}}
+    r = requests.post("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status", headers=h, json=body, timeout=60)
+    if r.status_code != 200:
+        return None, f"init {r.status_code} {r.text[:300]}"
+    loc = r.headers["Location"]
+    data = open(path, "rb").read()
+    for wait in (0, 2, 4, 8):
+        if wait: time.sleep(wait)
+        try:
+            r2 = requests.put(loc, headers={"Content-Type": "video/mp4", "Content-Length": str(size)}, data=data, timeout=900)
+        except Exception as ex:
+            continue
+        if r2.status_code in (200, 201):
+            j = r2.json(); return j, None
+        if r2.status_code < 500: return None, f"put {r2.status_code} {r2.text[:300]}"
+    return None, "put failed after retries"
+
+def set_thumb(tok, vid, path):
+    r = requests.post(f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}",
+                      headers={"Authorization": "Bearer " + tok, "Content-Type": "image/png"}, data=open(path, "rb").read(), timeout=300)
+    return r.status_code == 200, f"{r.status_code} {r.text[:200]}"
