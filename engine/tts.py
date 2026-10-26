@@ -66,20 +66,30 @@ def clean_text(text):
     t = re.sub(r"[ \t]{2,}", " ", t)
     return t.strip() or text
 
-def build_prompt(sid, lang, act=""):
-    """Gemini-TTS에 보내는 연기 지시문(검수에서 '지시문을 읽었는지' 비교할 때도 쓴다)."""
+def build_prompt(sid, lang, act="", mode=None):
+    """Gemini-TTS에 보내는 연기 지시문. mode=None 전체, "min" 인물 한 문장만, "none" 지시문 없음.
+    지시문이 읽을 글보다 훨씬 길면 모델이 지시문을 소리 내어 읽는다(예: '네.' 한 마디에 지시문 전체를 읽음, 2026-10-26 검수에서 확인).
+    그래서 아주 짧은 글(synth가 자동 판단)과 재시도 때는 'min'/'none'을 쓴다."""
     voice, ko, en = SID.get(sid, SID[0])
+    base = ko if lang == "ko-KR" else en
+    if mode == "none":
+        return ""
+    if mode == "min":
+        return re.split(r"(?<=[.。])\s", base)[0]
     pace = " 평소 대화보다 살짝 빠르고 경쾌한 템포로, 늘어지지 않게." if lang == "ko-KR" else " Slightly faster than normal conversation, lively, never dragging."
-    return (ko if lang == "ko-KR" else en) + pace + (" " + act if act else "")
+    return base + pace + (" " + act if act else "")
 
-def synth(text, sid, lang, act=""):
+def synth(text, sid, lang, act="", mode=None):
     global CHARS
     text = clean_text(text)
     voice, ko, en = SID.get(sid, SID[0])
     if ENGINE == "gemini":
-        prompt = build_prompt(sid, lang, act)
+        spoken = len(re.sub(r"[\s.,!?…\-—'\"]", "", text))
+        if mode is None and spoken < 10:      # 아주 짧은 글은 지시문을 읽기 쉬워 한 문장짜리로 줄인다
+            mode = "min"
+        prompt = build_prompt(sid, lang, act, mode)
         url, hd = G_URL, {"Authorization": "Bearer " + token(), "x-goog-user-project": PROJECT}
-        body = {"input": {"text": text, "prompt": prompt}, "voice": {"languageCode": lang, "name": voice, "modelName": MODEL},
+        body = {"input": ({"text": text, "prompt": prompt} if prompt else {"text": text}), "voice": {"languageCode": lang, "name": voice, "modelName": MODEL},
                 "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": SR}}
     else:
         url, hd = C_URL, {}
