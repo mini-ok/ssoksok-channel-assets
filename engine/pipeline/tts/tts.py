@@ -66,13 +66,18 @@ def clean_text(text):
     t = re.sub(r"[ \t]{2,}", " ", t)
     return t.strip() or text
 
+def build_prompt(sid, lang, act=""):
+    """Gemini-TTS에 보내는 연기 지시문(검수에서 '지시문을 읽었는지' 비교할 때도 쓴다)."""
+    voice, ko, en = SID.get(sid, SID[0])
+    pace = " 평소 대화보다 살짝 빠르고 경쾌한 템포로, 늘어지지 않게." if lang == "ko-KR" else " Slightly faster than normal conversation, lively, never dragging."
+    return (ko if lang == "ko-KR" else en) + pace + (" " + act if act else "")
+
 def synth(text, sid, lang, act=""):
     global CHARS
     text = clean_text(text)
     voice, ko, en = SID.get(sid, SID[0])
     if ENGINE == "gemini":
-        pace = " 평소 대화보다 살짝 빠르고 경쾌한 템포로, 늘어지지 않게." if lang == "ko-KR" else " Slightly faster than normal conversation, lively, never dragging."
-        prompt = (ko if lang == "ko-KR" else en) + pace + (" " + act if act else "")
+        prompt = build_prompt(sid, lang, act)
         url, hd = G_URL, {"Authorization": "Bearer " + token(), "x-goog-user-project": PROJECT}
         body = {"input": {"text": text, "prompt": prompt}, "voice": {"languageCode": lang, "name": voice, "modelName": MODEL},
                 "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": SR}}
