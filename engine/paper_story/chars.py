@@ -314,3 +314,25 @@ CAST = [
     ("adenosine", adenosine, "아데노신(졸음이)", "Adenosine · Sleepy Signal", "깨어 있을수록 늘어나는 졸음"),
     ("caffeine", caffeine, "카페인 요원", "Caffeine · Agent", "졸음이 자리를 가로채는 요원"),
 ]
+
+
+def stomach(cv, x, y, s=1.0, mood="happy", lt=0.0):
+    """위 대리(소화1팀): 주머니 모양 연어빛 몸 + 위쪽 식도 꼬리 + 파란 넥타이 + 사원증"""
+    C0, L0 = 0xF59A8E, 0xFFD4CA
+    cv.save(); cv.translate(x, y); cv.scale(s, s)
+    shadow(cv, 150)
+    feet(cv, 162, 0xE88A80)
+    limb(cv, -138, 40, -176, 84, C0); limb(cv, 138, 30, 178, -6, C0)
+    body = union(circle_path(14, 22, 136), circle_path(-62, -56, 78), oval_path(-44, -120, 70, 70))
+    blob(cv, body, C0, L0, shade=0xF1A89C)
+    # 식도 꼬리 끝
+    cv.drawOval(skia.Rect.MakeXYWH(-80, -158, 52, 30), P(0xE88A80, a=170))
+    face(cv, 14, 18, 1.0, mood, blush=0xFFB3C1)
+    # 넥타이 + 사원증
+    tie = skia.Path(); tie.moveTo(0, 88); tie.lineTo(30, 88); tie.lineTo(38, 112); tie.lineTo(15, 146); tie.lineTo(-8, 112); tie.close()
+    cv.drawPath(tie, P(0x3D8BFF)); cv.drawPath(tie, P(INK, "stroke", 5))
+    cv.drawRect(skia.Rect.MakeXYWH(2, 78, 26, 16), P(0x2C6FD6)); cv.drawRect(skia.Rect.MakeXYWH(2, 78, 26, 16), P(INK, "stroke", 4))
+    cv.drawLine(-60, 58, -92, 100, P(INK, "stroke", 5))
+    rrect(cv, -122, 96, 54, 66, 10, fill=WHITE, stroke=INK, sw=5)
+    cv.drawCircle(-95, 120, 11, P(0xF5C842)); cv.drawLine(-112, 143, -78, 143, P(INK, "stroke", 4))
+    cv.restore()

@@ -101,3 +101,7 @@ apt-get update -q && apt-get install -y -q libegl1 fonts-noto-cjk
 3. `pick.py`를 **롱폼 렌더 전에** 돌려 `endinfo.json`을 만든다.
 4. `run_upload.py`의 제목·설명·태그 문자열과 `post.py`의 첫 댓글 문구를 새 주제로 바꾼다.
 5. 재생목록 id는 바뀌지 않았다면 `run_upload.py`의 `PL` 딕셔너리를 그대로 쓸 수 있다(실행 전 `pl.py`로 확인).
+
+## 위 대리(stomach) 병합 (2026-10-26)
+`stomach()`(위 대리, sid 10)는 이제 `engine/paper_story/chars.py` 맨 끝에 병합되어 있다. setup.sh가 ps/로 복사하므로 별도 패치 불필요
+(`engine/pipeline/chars_stomach_patch.py`는 참고용 원본). 호출: `chsp("stomach", mood)` / `paper.char_fn("stomach", mood)`.
