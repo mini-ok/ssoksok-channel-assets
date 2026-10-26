@@ -8,7 +8,7 @@ MODEL = os.environ.get("TTS_MODEL", "gemini-2.5-flash-tts")
 G_URL = "https://us-texttospeech.googleapis.com/v1/text:synthesize"
 C_URL = "https://texttospeech.googleapis.com/v1/text:synthesize"   # chirp 대체용, 키는 프록시가 붙인다
 PROJECT = "ssokssok-health-tts"
-SPEED = float(os.environ.get("TTS_SPEED", "1.25"))   # 사용자 지시: 쇼츠·롱폼 모두 1.25배
+SPEED = float(os.environ.get("TTS_SPEED", "1.3"))    # 사용자 지시(2026-10-26): 쇼츠·롱폼 모두 1.3배
 TAIL = 0.35   # 조각 끝 여유 무음(다음 조각과 붙지 않게)
 # sid: (음성, 한국어 연기 지시, 영어 연기 지시)
 SID = {
