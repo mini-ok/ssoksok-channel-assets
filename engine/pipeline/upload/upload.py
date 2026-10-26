@@ -20,7 +20,9 @@ def upload_video(tok, path, snippet):
     size = os.path.getsize(path)
     h = {"Authorization": "Bearer " + tok, "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size), "Content-Type": "application/json; charset=UTF-8"}
     body = {"snippet": snippet, "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "embeddable": True, "publicStatsViewable": True}}
-    r = requests.post("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status", headers=h, json=body, timeout=60)
+    # 구독자 알림 폭주 방지(사용자 허락 2026-10-26, 설정 분석 반영): 숏폼은 알림을 보내지 않고 롱폼만 보낸다
+    notify = "false" if "#shorts" in snippet.get("title", "").lower() else "true"
+    r = requests.post(f"https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status&notifySubscribers={notify}", headers=h, json=body, timeout=60)
     if r.status_code != 200:
         return None, f"init {r.status_code} {r.text[:300]}"
     loc = r.headers["Location"]
