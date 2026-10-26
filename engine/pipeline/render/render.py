@@ -189,7 +189,9 @@ def cap_sp(disp, size, maxw):
     widest = max(lw(sg, size) for sg in segl)
     if widest > maxw: size = size * maxw / widest; widest = maxw
     lh = size * 1.32
-    w = int(widest + 140); h = int(lh * len(lines) + 86)
+    # 상하 여백을 같게: 첫 줄 위 여백 ≈ 마지막 줄 아래 여백(글자 아래 끝이 박스에 닿던 문제, 사용자 지시 2026-10-26)
+    bot = 22 + size * 0.22
+    w = int(widest + 140); h = int(62 + size * 0.98 + lh * (len(lines) - 1) + bot + 40)
     key = f"cap_{LANG}_{disp}_{size:.1f}"
     def fn(img):
         pad = 34
