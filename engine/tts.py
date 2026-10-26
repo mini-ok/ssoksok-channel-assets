@@ -48,11 +48,23 @@ def decode(r):
     w = wave.open(io.BytesIO(base64.b64decode(r.json()["audioContent"])))
     return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
-_SYM = re.compile(r"[~〜～♪♬♥♡★☆↑↓→←▶▲▼✔✓※·]|[\U0001F000-\U0001FAFF\u2600-\u27BF]")
+_TILDE = re.compile(r"[~〜～]+")
+_SYM = re.compile(r"[♪♬♥♡★☆↑↓→←▶▲▼✔✓※·]|[\U0001F000-\U0001FAFF\u2600-\u27BF]")
 def clean_text(text):
-    """성우가 '물결표' 등 기호를 읽지 않도록 읽는 글에서 기호를 지운다(자막 disp는 그대로)."""
-    t = _SYM.sub("", text)
-    return re.sub(r"\s{2,}", " ", t).strip() or text
+    """성우가 '물결표' 등 기호를 읽지 않게 한다. 기호를 그냥 지우면 앞뒤 문장이 붙어 읽히므로
+    물결표는 뒤에 문장부호가 없으면 마침표로 바꿔 문장 경계(쉼·억양)를 지킨다. 그 밖의 기호는 공백으로 바꾼다.
+    (자막 disp는 그대로)"""
+    def _t(m):
+        before = text[:m.start()].rstrip()[-1:]
+        if before in ".!?…," or re.match(r"\s*[.!?…,]", text[m.end():]):
+            return ""
+        if before.isalnum() and text[m.end():m.end()+1].isalnum():   # 3~5, A~B 같은 범위
+            return " "
+        return "."
+    t = _TILDE.sub(_t, text)
+    t = _SYM.sub(" ", t)
+    t = re.sub(r"[ \t]{2,}", " ", t)
+    return t.strip() or text
 
 def synth(text, sid, lang, act=""):
     global CHARS
