@@ -1,4 +1,4 @@
-import base64, importlib.util, io, json, os, shutil, subprocess, sys, tempfile, time, wave
+import re, base64, importlib.util, io, json, os, shutil, subprocess, sys, tempfile, time, wave
 import numpy as np
 import requests
 
@@ -48,8 +48,15 @@ def decode(r):
     w = wave.open(io.BytesIO(base64.b64decode(r.json()["audioContent"])))
     return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
+_SYM = re.compile(r"[~〜～♪♬♥♡★☆↑↓→←▶▲▼✔✓※·]|[\U0001F000-\U0001FAFF\u2600-\u27BF]")
+def clean_text(text):
+    """성우가 '물결표' 등 기호를 읽지 않도록 읽는 글에서 기호를 지운다(자막 disp는 그대로)."""
+    t = _SYM.sub("", text)
+    return re.sub(r"\s{2,}", " ", t).strip() or text
+
 def synth(text, sid, lang, act=""):
     global CHARS
+    text = clean_text(text)
     voice, ko, en = SID.get(sid, SID[0])
     if ENGINE == "gemini":
         pace = " 평소 대화보다 살짝 빠르고 경쾌한 템포로, 늘어지지 않게." if lang == "ko-KR" else " Slightly faster than normal conversation, lively, never dragging."
