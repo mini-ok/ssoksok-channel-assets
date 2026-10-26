@@ -6,9 +6,10 @@
 
 | 순서 | 주제 | 대본 파일 | 상태 |
 |---|---|---|---|
-| 1 | 짠맛 주의보, 심장 에이스의 혈압 게이지 (나트륨) | docs/episodes/ep_sodium_draft_v1.md | 제작 대기(수정 지시 없음) |
+| 1 | 뇌 팀장의 달콤한 청구서 (첨가당) | docs/episodes/ep_sugar_draft_v2.md | 제작 대기(수정 지시 없음) |
 
 ## 제작 완료(참고)
+- 짠맛 주의보, 심장 에이스의 혈압 게이지(나트륨) — ep_sodium_draft_v1.md (2026-10-26 23시, 쇼츠는 ep_sodium_shorts_v2.md로 재제작 중)
 - 야식 습격 사건 — ep_yasik_draft.md (2026-10-26 13시)
 - 카페인 컨설턴트의 청구서 — ep_caffeine_draft.md (2026-10-26 18시, 사용자 평가: 전반적으로 괜찮음)
 
