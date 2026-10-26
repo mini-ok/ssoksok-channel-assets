@@ -16,10 +16,12 @@ def verify(lang):
     if cu.lower() != want: return None, f"channel mismatch {cu}"
     return t, None
 
-def upload_video(tok, path, snippet):
+def upload_video(tok, path, snippet, publish_at=None):
     size = os.path.getsize(path)
     h = {"Authorization": "Bearer " + tok, "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size), "Content-Type": "application/json; charset=UTF-8"}
     body = {"snippet": snippet, "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "embeddable": True, "publicStatsViewable": True}}
+    if publish_at:   # 예약 공개: 비공개로 올리고 publishAt(UTC ISO8601)에 자동 공개(sched.py가 시각을 정한다)
+        body["status"]["privacyStatus"] = "private"; body["status"]["publishAt"] = publish_at
     # 구독자 알림 폭주 방지(사용자 허락 2026-10-26, 설정 분석 반영): 숏폼은 알림을 보내지 않고 롱폼만 보낸다
     notify = "false" if "#shorts" in snippet.get("title", "").lower() else "true"
     r = requests.post(f"https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status&notifySubscribers={notify}", headers=h, json=body, timeout=60)
