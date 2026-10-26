@@ -5,8 +5,8 @@ def load(ep):
     spec = importlib.util.spec_from_file_location("s", ep + "/script.py"); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 def expected(lang, text):
     t = re.sub(r"[\s\.\,\!\?…\-—'\"]", "", text)
-    if lang == "ko": return len(t) / 7.4 + 0.5
-    return len(text.split()) / 3.0 + 0.5
+    if lang == "ko": return len(t) / 7.7 + 0.5
+    return len(text.split()) / 3.1 + 0.5
 bad = []
 for ep in [a for a in sys.argv[1:] if not a.startswith("--")]:
     m = load(ep)

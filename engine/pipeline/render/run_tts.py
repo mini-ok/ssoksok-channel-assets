@@ -9,8 +9,8 @@ out = os.path.join(ep, "audio"); os.makedirs(out, exist_ok=True)
 
 def expected(text):
     if lang_s == "ko":
-        return len(re.sub(r"[\s\.\,\!\?…\-—'\"]", "", text)) / 7.4 + 0.5
-    return len(text.split()) / 3.0 + 0.5
+        return len(re.sub(r"[\s\.\,\!\?…\-—'\"]", "", text)) / 7.7 + 0.5
+    return len(text.split()) / 3.1 + 0.5
 
 man = []
 resyn = 0
