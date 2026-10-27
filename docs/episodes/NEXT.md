@@ -8,8 +8,7 @@
 
 | 순서 | 주제 | 대본 파일 | 상태 |
 |---|---|---|---|
-| 1 | 뇌 팀장의 건물 점검 대소동 (치매 위험 낮추기) | docs/episodes/ep_dementia_draft_v1.md | 제작 대기(수정 지시 없음) |
-| 2 | 뇌 팀장의 민원 폭탄 주간 (스트레스) | docs/episodes/ep_stress_draft_v2.md | 제작 대기(수정 지시 없음) |
+| 1 | 근육 직원의 구조조정 위기 (오래 사는 운동 공식) | docs/episodes/ep_longevity_draft_v1.md | **확인 대기**(사용자 확인 후 제작) |
 
 ## 제작 완료(참고)
 - 멜라토닌 과장의 칼퇴 투쟁(수면 7시간) — ep_sleep_draft_v1.md (2026-10-27 11:41 실행, 예약 공개 한국어 롱폼 10/27 17:00 KST)
@@ -20,3 +19,6 @@
 
 ## 보류(미확정)
 - 거북목 편 — ep_geobugmok_draft.md (대기열에 넣지 않음)
+
+## 보류(미확정·사용자 평가 낮음)
+- 치매 편 ep_dementia_draft_v1.md, 스트레스 편 ep_stress_draft_v2.md (2026-10-27)
