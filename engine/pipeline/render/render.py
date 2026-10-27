@@ -732,7 +732,7 @@ def finish_arr(s, tm, fno):
     i = chunk_at(tm)
     if "flashback" in CH_LIST[i].get("fx", []):
         import flashfx
-        arr = flashfx.apply(arr, tm - S_BEG[i], fno)
+        arr = flashfx.apply(arr, tm - S_BEG[i], fno, stamp=flashfx.stamp_of(CH_LIST[i]), lang=LANG, ui=not CH_LIST[i].get("no_cctv_ui", False))
     return arr
 
 def main():

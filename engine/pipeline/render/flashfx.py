@@ -1,47 +1,80 @@
-"""회상(되감기) 화면 효과 — 장면 fx에 "flashback"을 넣으면 그 조각의 프레임 전체에 적용된다 (2026-10-27, 사용자 지시:
-'타임카드를 되감기하면 화면이 회상 느낌이 있었는데 그게 사라졌다 → 그대로 살려라').
-효과: 따뜻한 세피아 톤 + 채도 낮춤, 부드러운 번짐(글로), 가장자리 비네트, 필름 입자, 가끔 흔들리는 세로 줄(필름 스크래치),
-조각 시작 0.55초 동안 물결치듯 일렁이는 '되감기 리플'(점점 잦아듦).
-apply(arr, lt, frame_no, rewind_label=None): arr = (H, W, 4) uint8 RGBA, lt = 이 조각 시작 후 경과 초.
+"""CCTV·되감기 회상 효과 — 장면 fx에 "flashback"을 넣으면 그 조각의 프레임 전체에 적용된다
+(2026-10-27, 사용자 지시: '되감기 됐을 때 화면에 줄무늬가 들어갔다, 그 컷처럼' → 가로 줄무늬(스캔라인) CCTV 화면을 되살림).
+구성: ① 가로 스캔라인 줄무늬 + 천천히 올라가는 밝은 띠 ② 채도 살짝 낮춤 + 회색빛 톤 ③ 약한 비네트·입자
+      ④ 뷰파인더 모서리 괄호 + 'REC' 빨간 점(깜빡) + 우하단 시각 'PM 3:00' ⑤ 조각 시작 0.5초 되감기 리플.
+조각 필드(선택): ch["stamp"] = "PM 3:00" 같은 우하단 문구(없으면 time=(h,m)에서 만든다). 영어는 lang="en".
+apply(arr, lt, fno, stamp=None, lang="ko"): arr = (H, W, 4) uint8 RGBA.
 """
+import os
 import numpy as np
 from scipy import ndimage as ndi
+from PIL import Image, ImageDraw, ImageFont
 
-RIPPLE = 0.55
-
-
-def _blur(a, s):
-    h, w = a.shape[:2]
-    sm = a[::4, ::4].astype(np.float32)
-    sm = np.stack([ndi.gaussian_filter(sm[..., i], s / 4) for i in range(3)], 2)
-    return np.repeat(np.repeat(sm, 4, 0), 4, 1)[:h, :w]
+RIPPLE = 0.5
+_FONTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "paper_story", "fonts")
 
 
-def apply(arr, lt, fno):
+def _font(name, size):
+    for base in (_FONTS, "/home/claude/ps/fonts", "/home/claude/assets/engine/paper_story/fonts"):
+        p = os.path.join(base, name)
+        if os.path.exists(p):
+            return ImageFont.truetype(p, size)
+    return ImageFont.load_default()
+
+
+def stamp_of(ch, lang="ko"):
+    if ch.get("stamp"): return ch["stamp"]
+    t = ch.get("time")
+    if not t: return None
+    h, m = t
+    ap = "PM" if h >= 12 else "AM"
+    hh = h % 12 or 12
+    return f"{ap} {hh}:{m:02d}"
+
+
+def apply(arr, lt, fno, stamp=None, lang="ko", ui=True):
     h, w = arr.shape[:2]
     rgb = arr[..., :3].astype(np.float32)
-    # 1) 되감기 리플(조각 시작): 줄마다 좌우로 일렁
+    # 1) 되감기 리플(조각 시작)
     if lt < RIPPLE:
         k = 1 - lt / RIPPLE
         ys = np.arange(h, dtype=np.float32)
-        shift = (np.sin(ys / 17.0 + fno * 0.9) * 26 * k + np.sin(ys / 5.0 + fno * 1.7) * 7 * k).astype(np.int32)
+        shift = (np.sin(ys / 15.0 + fno * 0.9) * 22 * k + np.sin(ys / 5.0 + fno * 1.7) * 6 * k).astype(np.int32)
         idx = (np.arange(w)[None, :] + shift[:, None]) % w
         rgb = rgb[np.arange(h)[:, None], idx]
-    # 2) 채도 낮춤 + 세피아 톤
+    # 2) 채도 낮춤 + 회색빛 톤
     g = rgb @ np.array([0.299, 0.587, 0.114], np.float32)
-    rgb = rgb * 0.55 + g[..., None] * 0.45
-    rgb = rgb * np.array([1.04, 0.98, 0.86], np.float32) + np.array([6, 3, -4], np.float32)
-    # 3) 부드러운 글로
-    rgb = rgb * 0.78 + _blur(rgb, 10) * 0.30
-    # 4) 비네트
+    rgb = rgb * 0.72 + g[..., None] * 0.28
+    rgb = rgb * np.array([0.98, 0.99, 1.0], np.float32) * 0.97 + 6
+    # 3) 가로 줄무늬(스캔라인): 3행마다 1행 어둡게 + 약한 밝은 띠가 천천히 위로
+    ys = np.arange(h)
+    line = np.where(ys % 4 == 0, 0.84, np.where(ys % 4 == 1, 0.93, 1.0)).astype(np.float32)
+    band_c = (h - (fno * 3.2) % (h * 1.4)) % (h * 1.4)
+    band = 1 + 0.06 * np.exp(-((ys - band_c) / (h * 0.06)) ** 2).astype(np.float32)
+    rgb = rgb * (line * band)[:, None, None]
+    # 4) 약한 비네트 + 입자
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     d = np.sqrt(((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2)
-    rgb = rgb * (1 - 0.30 * np.clip(d - 0.55, 0, 1) ** 1.3)[..., None]
-    # 5) 필름 입자(프레임마다 다른 잡음) + 가끔 세로 스크래치
+    rgb = rgb * (1 - 0.18 * np.clip(d - 0.6, 0, 1) ** 1.3)[..., None]
     rng = np.random.default_rng(fno)
-    rgb = rgb + rng.normal(0, 4.5, (h, w, 1)).astype(np.float32)
-    if fno % 23 in (0, 1):
-        x0 = int(rng.integers(w // 8, w * 7 // 8)); rgb[:, x0:x0 + 2] += 22
-    out = arr.copy()
-    out[..., :3] = np.clip(rgb, 0, 255).astype(np.uint8)
-    return out
+    rgb = rgb + rng.normal(0, 3.2, (h, w, 1)).astype(np.float32)
+    img = Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)).convert("RGBA")
+    if not ui:
+        return np.array(img)
+    # 5) 뷰파인더 괄호 · REC · 시각 (ui=False면 생략: 장면이 이미 그렸을 때)
+    dr = ImageDraw.Draw(img)
+    s = h / 1080.0
+    m, L, tw = int(0.025 * w), int(54 * s), max(3, int(5 * s))
+    wh = (246, 244, 236, 235)
+    for sx, sy in ((m, m), (w - m, m), (m, h - m), (w - m, h - m)):
+        dx = 1 if sx < w / 2 else -1; dy = 1 if sy < h / 2 else -1
+        dr.line([(sx, sy), (sx + dx * L, sy)], fill=wh, width=tw)
+        dr.line([(sx, sy), (sx, sy + dy * L)], fill=wh, width=tw)
+    if (fno // 15) % 2 == 0:   # 0.5초마다 깜빡
+        r = int(11 * s); cx, cy = int(0.775 * w), int(0.101 * h)
+        dr.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(255, 84, 60, 255))
+    dr.text((int(0.788 * w), int(0.101 * h)), "REC", font=_font("Geist-Black.ttf", int(30 * s)), fill=(40, 52, 96, 255), anchor="lm")
+    st = stamp
+    if st:
+        dr.text((int(0.918 * w), int(0.909 * h)), st, font=_font("Geist-Black.ttf", int(40 * s)), fill=(40, 52, 96, 255), anchor="rm")
+    return np.array(img)
