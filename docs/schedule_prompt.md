@@ -71,7 +71,7 @@ e) 사용한 글자 수를 최종 보고에 적는다. Gemini-TTS는 Chirp 무�
 
 6) 유튜브 업로드 (YouTube Data API v3, 직접 REST 호출)
 - 채널: 한국어 영상 → 쏙쏙 건강백과(쇼츠 '쏙쏙 건강백과' + 롱폼 '몸속 주식회사' 시리즈) https://www.youtube.com/@ssoksok-health , 영어 영상 → Tiny Body Co. https://www.youtube.com/@tinybodyco . 한국어 영상을 영어 채널에 올리거나 그 반대로 올리는 일이 없도록 파일명·언어를 확인하고 올린다.
-- 공개 설정(사용자 지시, 2026-10-26 예약 공개 전략): 모든 영상을 **비공개로 올리고 status.publishAt(UTC)에 자동 공개**한다. 시각은 `python3 /home/claude/work/up/sched.py ko|en`(저장소 engine/pipeline/upload/sched.py)이 정한다: 한국어 채널은 Asia/Seoul 07:00·17:00, 영어 채널은 America/New_York 07:00·17:00에 롱폼, 같은 편 쇼츠(1편)는 롱폼 +4시간(07시 편은 11시, 17시 편은 21시). 이미 예약된 영상과 겹치지 않는 가장 빠른 칸을 고르고 업로드 완료까지 45분 이상 여유를 둔다. 업로드는 upload.py의 `upload_video(tok, path, snippet, publish_at=<sched 결과>)`를 쓴다. 즉시 공개(public)로 올리지 않는다.
+- 공개 설정(사용자 지시, 2026-10-26 예약 공개 전략): 모든 영상을 **비공개로 올리고 status.publishAt(UTC)에 자동 공개**한다. 시각은 `python3 /home/claude/work/up/sched.py ko|en`(저장소 engine/pipeline/upload/sched.py)이 정한다: 한국어 채널은 Asia/Seoul 07:00·17:00, 영어 채널은 America/New_York 07:00·17:00에 롱폼, 같은 편 쇼츠(1편)는 롱폼과 같은 시각(사용자 지시 2026-10-27: 새 쇼츠 시리즈를 만들 계획이라 그때까지 롱폼과 함께 공개). 이미 예약된 영상과 겹치지 않는 가장 빠른 칸을 고르고 업로드 완료까지 45분 이상 여유를 둔다. 업로드는 upload.py의 `upload_video(tok, path, snippet, publish_at=<sched 결과>)`를 쓴다. 즉시 공개(public)로 올리지 않는다.
 - 자격 증명은 환경 변수에서 읽는다: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN_KO(쏙쏙 건강백과 채널용), YT_REFRESH_TOKEN_EN(Tiny Body Co. 채널용). 값은 출력·로그·보고에 절대 남기지 않고 존재 여부(set/unset)만 확인한다.
 - 필수 변수가 하나라도 없으면 해당 언어의 업로드를 건너뛰고 "어떤 변수가 없어서 업로드 못 함"만 보고한다(영상·썸네일 제작과 SendUserFile 전달은 그대로 한다). 있으면 이렇게 올린다.
   a) POST https://oauth2.googleapis.com/token (grant_type=refresh_token, client_id, client_secret, refresh_token)로 access_token을 받는다.
