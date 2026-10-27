@@ -726,12 +726,22 @@ def render_frame(cv, tm):
 def surface_arr(s):
     return s.makeImageSnapshot().toarray(colorType=skia.kRGBA_8888_ColorType, alphaType=skia.kUnpremul_AlphaType)
 
+def finish_arr(s, tm, fno):
+    """프레임 배열을 만들고, 조각 fx에 'flashback'(회상·타임카드 되감기)이 있으면 회상 효과를 입힌다(flashfx.py)."""
+    arr = surface_arr(s)
+    i = chunk_at(tm)
+    if "flashback" in CH_LIST[i].get("fx", []):
+        import flashfx
+        arr = flashfx.apply(arr, tm - S_BEG[i], fno)
+    return arr
+
 def main():
     out = sys.argv[2]; os.makedirs(out, exist_ok=True)
     if len(sys.argv) > 3 and sys.argv[3] == "preview":
         for t in sys.argv[4:]:
             s = skia.Surface(RW, RH); render_frame(s.getCanvas(), float(t))
-            s.makeImageSnapshot().save(f"{out}/prev_{VARIANT}_{float(t):06.2f}.png", skia.kPNG)
+            from PIL import Image
+            Image.fromarray(finish_arr(s, float(t), int(float(t) * FPS))).save(f"{out}/prev_{VARIANT}_{float(t):06.2f}.png")
         print("END", round(END, 2)); return
     if len(sys.argv) > 3 and sys.argv[3] == "info":
         print("END", round(END, 2)); [print(i, c["id"], round(S_BEG[i], 2), round(S_LEN[i], 2)) for i, c in enumerate(CH_LIST)]; return
@@ -745,7 +755,7 @@ def main():
     s = skia.Surface(RW, RH); cv = s.getCanvas()
     for f in range(a0, a1):
         render_frame(cv, f / FPS)
-        pr.stdin.write(np.ascontiguousarray(surface_arr(s)).tobytes())
+        pr.stdin.write(np.ascontiguousarray(finish_arr(s, f / FPS, f)).tobytes())
         if f % 300 == 0: print("frame", f, "/", a1, flush=True)
     pr.stdin.close(); pr.wait(); print("part done", part)
 
