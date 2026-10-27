@@ -36,21 +36,54 @@ def union(*paths):
     return out
 
 
+def _drop(cv, x, y, s=1.0):
+    """땀방울/눈물방울(하늘색 + 윤곽선)"""
+    d = skia.Path(); d.moveTo(x, y - 16 * s); d.quadTo(x + 12 * s, y + 2 * s, x, y + 12 * s); d.quadTo(x - 12 * s, y + 2 * s, x, y - 16 * s); d.close()
+    cv.drawPath(d, P(0x8ED8F8)); cv.drawPath(d, P(INK, "stroke", 3.5))
+
+
+EXTRA_MOODS = ("angry", "cry", "shock", "panic", "relieved", "dizzy", "sparkle", "yawn", "proud")
+
+
 def face(cv, x, y, s=1.0, mood="happy", blush=PINK, look=(0, 0), gap=46):
-    """큰 반짝 눈 + 볼터치 + 작은 입. mood: happy/tired/wow/sleepy/smug/worry/serious/awake/happy_closed"""
+    """큰 반짝 눈 + 볼터치 + 작은 입.
+    mood: happy/tired/wow/sleepy/smug/worry/serious/awake/happy_closed
+    + 확장(2026-10-26, 표정 강화 지시): angry 화남 / cry 울먹 / shock 충격 / panic 당황·식은땀 / relieved 안도 /
+      dizzy 어질 / sparkle 반짝 감동 / yawn 하품 / proud 뿌듯"""
     cv.save(); cv.translate(x, y); cv.scale(s, s)
     for sx in (-1, 1):
         ex = sx * gap + look[0] * 6
         ey = look[1] * 5
-        if mood in ("sleepy",):
+        if mood in ("sleepy", "yawn"):
             pth = skia.Path(); pth.moveTo(ex - 15, ey); pth.quadTo(ex, ey + 12, ex + 15, ey); cv.drawPath(pth, P(INK, "stroke", 6))
-        elif mood == "happy_closed":
+        elif mood in ("happy_closed", "relieved", "proud"):
             pth = skia.Path(); pth.moveTo(ex - 15, ey + 5); pth.quadTo(ex, ey - 12, ex + 15, ey + 5); cv.drawPath(pth, P(INK, "stroke", 6))
+            if mood == "proud":
+                cv.drawLine(ex - sx * 14, ey - 24, ex + sx * 14, ey - 28, P(INK, "stroke", 5))
+        elif mood == "dizzy":
+            for r, w in ((16, 5), (8, 4)):
+                cv.drawCircle(ex, ey, r, P(INK, "stroke", w))
+        elif mood in ("shock", "panic"):
+            r = skia.Rect.MakeXYWH(ex - 19, ey - 23, 38, 46)
+            cv.drawOval(r, P(WHITE)); cv.drawOval(r, P(INK, "stroke", 5))
+            cv.drawCircle(ex + look[0] * 3, ey + look[1] * 3, 5.5 if mood == "shock" else 4.5, P(INK))
+            if mood == "panic":
+                cv.drawLine(ex - sx * 14, ey - 30, ex + sx * 14, ey - 38, P(INK, "stroke", 6))
         else:
-            h = 34 if mood not in ("wow", "awake") else 40
-            w = 26 if mood not in ("wow", "awake") else 30
+            h = 34 if mood not in ("wow", "awake", "sparkle", "cry") else 40
+            w = 26 if mood not in ("wow", "awake", "sparkle", "cry") else 30
+            if mood == "sparkle":
+                h, w = 46, 34
             cv.drawOval(skia.Rect.MakeXYWH(ex - w / 2, ey - h / 2, w, h), P(INK))
             cv.drawCircle(ex - 4, ey - 8, 6.5, P(WHITE)); cv.drawCircle(ex + 5, ey + 7, 3, P(WHITE))
+            if mood == "sparkle":
+                cv.drawCircle(ex + 7, ey - 12, 3.5, P(WHITE)); cv.drawCircle(ex - 8, ey + 10, 2.5, P(WHITE))
+            if mood == "cry":
+                cv.drawOval(skia.Rect.MakeXYWH(ex - w / 2 + 3, ey + h / 2 - 12, w - 6, 9), P(0x8ED8F8, a=200))
+                tr = skia.Path(); tr.moveTo(ex + sx * 8, ey + 20); tr.quadTo(ex + sx * 14, ey + 40, ex + sx * 10, ey + 60); cv.drawPath(tr, P(0x8ED8F8, "stroke", 7, a=210))
+                cv.drawLine(ex - sx * 14, ey - 26, ex + sx * 14, ey - 34, P(INK, "stroke", 6))
+            if mood == "angry":
+                cv.drawLine(ex + sx * 17, ey - 38, ex - sx * 14, ey - 22, P(INK, "stroke", 8))
             if mood == "tired":
                 cv.drawRect(skia.Rect.MakeLTRB(ex - 18, ey - 24, ex + 18, ey - 4), P(0, a=0))
                 lid = skia.Path(); lid.moveTo(ex - 17, ey - 4); lid.lineTo(ex + 17, ey - 4)
@@ -61,22 +94,42 @@ def face(cv, x, y, s=1.0, mood="happy", blush=PINK, look=(0, 0), gap=46):
                 cv.drawLine(ex - sx * 14, ey - 26, ex + sx * 14, ey - 32, P(INK, "stroke", 6))
         if mood == "tired":
             bg = skia.Path(); bg.moveTo(ex - 13, ey + 26); bg.quadTo(ex, ey + 34, ex + 13, ey + 26); cv.drawPath(bg, P(PURPLE, "stroke", 4, a=170))
-    cv.drawOval(skia.Rect.MakeXYWH(-gap - 38, 22, 34, 18), P(blush, a=150))
-    cv.drawOval(skia.Rect.MakeXYWH(gap + 4, 22, 34, 18), P(blush, a=150))
+    bl = 230 if mood in ("proud", "sparkle", "relieved") else 150
+    cv.drawOval(skia.Rect.MakeXYWH(-gap - 38, 22, 34, 18), P(blush, a=bl))
+    cv.drawOval(skia.Rect.MakeXYWH(gap + 4, 22, 34, 18), P(blush, a=bl))
     my = 30
     mp = skia.Path()
-    if mood == "awake":
+    if mood in ("awake", "sparkle"):
         mp.moveTo(-16, my - 4); mp.quadTo(0, my + 20, 16, my - 4); mp.close(); cv.drawPath(mp, P(INK))
-    elif mood in ("happy", "happy_closed", "sleepy"):
+        if mood == "sparkle": cv.drawOval(skia.Rect.MakeXYWH(-7, my + 6, 14, 7), P(PINK))
+    elif mood in ("happy", "happy_closed", "sleepy", "relieved"):
         mp.moveTo(-11, my - 2); mp.quadTo(-5, my + 8, 0, my); mp.quadTo(5, my + 8, 11, my - 2); cv.drawPath(mp, P(INK, "stroke", 5))
+    elif mood == "proud":
+        mp.moveTo(-14, my - 4); mp.quadTo(0, my + 14, 14, my - 4); cv.drawPath(mp, P(INK, "stroke", 5))
     elif mood == "wow":
         cv.drawOval(skia.Rect.MakeXYWH(-10, my - 6, 20, 22), P(INK)); cv.drawOval(skia.Rect.MakeXYWH(-6, my + 6, 12, 8), P(PINK))
+    elif mood == "shock":
+        cv.drawOval(skia.Rect.MakeXYWH(-8, my - 6, 16, 24), P(INK))
+    elif mood == "yawn":
+        cv.drawOval(skia.Rect.MakeXYWH(-14, my - 8, 28, 32), P(INK)); cv.drawOval(skia.Rect.MakeXYWH(-9, my + 8, 18, 12), P(PINK))
     elif mood == "smug":
         mp.moveTo(-10, my + 2); mp.quadTo(4, my + 10, 14, my - 4); cv.drawPath(mp, P(INK, "stroke", 5))
     elif mood in ("tired", "worry"):
         mp.moveTo(-10, my + 4); mp.quadTo(0, my - 2, 10, my + 4); cv.drawPath(mp, P(INK, "stroke", 5))
+    elif mood == "angry":
+        mp.moveTo(-13, my + 8); mp.quadTo(0, my - 8, 13, my + 8); cv.drawPath(mp, P(INK, "stroke", 6))
+    elif mood == "cry":
+        mp.moveTo(-12, my + 8); mp.quadTo(-6, my - 4, 0, my + 6); mp.quadTo(6, my - 4, 12, my + 8); cv.drawPath(mp, P(INK, "stroke", 5))
+    elif mood == "panic":
+        mp.moveTo(-12, my + 4); mp.lineTo(-6, my - 2); mp.lineTo(0, my + 6); mp.lineTo(6, my - 2); mp.lineTo(12, my + 4); cv.drawPath(mp, P(INK, "stroke", 5))
+    elif mood == "dizzy":
+        mp.moveTo(-12, my + 2); mp.quadTo(-6, my - 6, 0, my + 2); mp.quadTo(6, my + 10, 12, my + 2); cv.drawPath(mp, P(INK, "stroke", 5))
     else:
         cv.drawLine(-9, my + 2, 9, my + 2, P(INK, "stroke", 5))
+    if mood in ("panic", "relieved"):
+        _drop(cv, gap + 52, -30)
+    if mood == "panic":
+        _drop(cv, -gap - 56, -14, 0.8)
     cv.restore()
 
 
