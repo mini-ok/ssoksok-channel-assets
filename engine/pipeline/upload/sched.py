@@ -1,8 +1,8 @@
 """예약 공개 시각 계산 (사용자 지시 2026-10-26: 롱폼 하루 2번, 현지 오전 7시·오후 5시).
 한국어 채널 = Asia/Seoul 07:00·17:00, 영어 채널 = America/New_York 07:00·17:00.
-쇼츠는 같은 편 롱폼 공개 뒤 2.5시간(A)·5시간(B)에 공개(점심·저녁 피크에 걸치게).
+쇼츠(편당 1개, 2026-10-27 개정)는 같은 편 롱폼 공개 뒤 4시간에 공개(07시 편은 11시, 17시 편은 21시 — 점심·저녁 피크).
 이미 예약된(비공개 + publishAt) 영상과 겹치지 않는 가장 빠른 칸을 고른다. 업로드가 끝나기까지 여유 45분 이상.
-사용: python3 sched.py ko|en  → {"long":..., "A":..., "B":...} (UTC ISO8601, publishAt에 그대로 쓴다)
+사용: python3 sched.py ko|en  → {"long":..., "S":...} (UTC ISO8601, publishAt에 그대로 쓴다)
 """
 import sys, os, json, re, datetime as dt
 from zoneinfo import ZoneInfo
@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import yt
 
 CFG = {"ko": ("Asia/Seoul", (7, 17)), "en": ("America/New_York", (7, 17))}
-OFF = {"A": dt.timedelta(hours=2.5), "B": dt.timedelta(hours=5)}
+OFF = {"S": dt.timedelta(hours=4)}
 LEAD = dt.timedelta(minutes=45)
 
 
