@@ -26,3 +26,5 @@
 - 쇼츠: "좋아요 한 번이면, 뇌 팀장이 오늘 칼퇴해요! 구독도 환영!" / "구독은 사원증 발급! 좋아요는 야근 수당이에요!" (EN: "One like, and the Brain clocks out on time!" / "Subscribe for your employee badge, like for overtime pay!")
 - 롱폼(좋아요+구독, 알림 설정은 청하지 않음): "오늘 야근 수당은… 좋아요 한 번이면 충분해요!" + 그 편 주인공 캐릭터 "구독해 주시면, 내일도 열심히 뜁니다!" (EN: "Our overtime pay? Just one like!" + "Subscribe, and I'll keep pumping tomorrow!")
 - 슬로건: 쏙쏙 건강백과 '하루 한 뼘 더 건강하게' / 몸속 주식회사 '오늘도 야근 중! 내 몸속 직원들의 건강 시트콤' / EN "The office sitcom inside your body."
+
+- 원인·진단 단정 금지(사용자 지시 2026-10-27): 원인은 '~일지도 몰라요', '~일 수 있어요', 'might be'처럼 가능성으로 말한다. '원인은 ~예요'로 끊지 않는다. 롱폼·쇼츠 공통.

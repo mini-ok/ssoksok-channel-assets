@@ -63,8 +63,8 @@
 2. 해설(0): 지나친 걱정과 긴장, 두통이나 몸의 통증, 혈압 상승, 잠 못 드는 밤.
    (민원 서류 4장이 차례로 팝, 장마다 2초 이상 — ①걱정·긴장(뇌 팀장 땀) ②두통·몸의 통증(어깨 근육 직원이 서류에 눌림) ③혈압 상승(심장 에이스 게이지 상승, 화살표는 도형) ④잠 못 드는 밤(멜라토닌 하품하다 눈 말똥). 출처 자막 '미국 NIMH 스트레스 안내 (NIH 20-MH-8125)')
 3. 뇌 팀장(5) — 놀라서: 이게 다 저한테 온 민원이에요?!
-4. 해설(0): 원인은 쌓인 스트레스예요. 마감이나 걱정, 해야 할 일이 쌓이면 몸이 신호를 보내요.
-   (원인 칩 '쌓인 스트레스' + 서류 탑이 점점 높아지는 연출, 2.5초 이상)
+4. 해설(0): 원인은, 쌓인 스트레스일지도 몰라요! 마감이나 걱정, 해야 할 일이 쌓이면 몸이 신호를 보낼 수 있어요.
+   (원인 칩 '원인은? 쌓인 스트레스일지도' + 서류 탑이 점점 높아지는 연출, 2.5초 이상)
 5. 해설(0): 해결은 딱 세 가지예요. 하나, 심호흡 같은 이완 연습으로 숨 고르기.
    (칩 ① '숨 고르기' + 시연: 뇌 팀장이 코로 들이쉬고 길게 내쉬면 서류 탑이 한 장 줄어듦, 3초 이상)
 6. 해설(0): 둘, 운동과 식사, 잠을 규칙적으로.   (칩 ② + 걷기·식사·잠 아이콘, 3초 이상)
@@ -75,7 +75,7 @@
    (간 과장 손이 서류를 받쳐 준다. 칩 ③ 번쩍)
 10. 끝 멘트 해설(0): 좋아요 한 번이면, 뇌 팀장이 오늘 칼퇴해요! 구독도 환영이에요!
 (설명란 '참고:' 줄: 일반 생활 관리 안내이며, 힘든 상태가 계속되면 전문가와 상담하세요.)
-영어판: "Feeling any of these?" → worry & tension / headaches or body pain / high blood pressure / trouble sleeping → "The cause: stress piling up" → 3 fixes (slow breathing/relaxation, regular exercise-meals-sleep, lean on friends or family) → punchline "…Third one — I take it back. Help!" 출처 'Source: NIMH, Stress (NIH 20-MH-8125)'.
+영어판: "Feeling any of these?" → worry & tension / headaches or body pain / high blood pressure / trouble sleeping → "The cause might be: stress piling up" → 3 fixes (slow breathing/relaxation, regular exercise-meals-sleep, lean on friends or family) → punchline "…Third one — I take it back. Help!" 출처 'Source: NIMH, Stress (NIH 20-MH-8125)'.
 
 ---
 ## 확인 메모
