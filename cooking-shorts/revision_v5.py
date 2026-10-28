@@ -455,7 +455,7 @@ def prepare_mix(rows):
         clock+=s['duration']
     source=ROOT.parent/'bgm'/'buoyant_kitchen_groove.mp3'
     music=np.frombuffer(subprocess.run([r.FF,'-v','error','-i',str(source),'-t',str(dur),'-ac','1','-ar',str(sr),'-f','f32le','pipe:1'],capture_output=True,check=True).stdout,np.float32).copy()
-    music=np.pad(music,(0,max(0,n-len(music))))[:n];music*=.0145/max(np.sqrt(np.mean(music*music)),.001)
+    music=np.pad(music,(0,max(0,n-len(music))))[:n];music*=.0125/max(np.sqrt(np.mean(music*music)),.001)
     from scipy.ndimage import maximum_filter1d,gaussian_filter1d
     act=maximum_filter1d(np.abs(voice[::240]),size=18)>.035
     env=1-gaussian_filter1d(act.astype(np.float32),2)*.67
