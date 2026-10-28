@@ -609,9 +609,57 @@ def P_endcard(cv, i, lt, lte, tm, a):
     slg = "오늘도 야근 중! 내 몸속 직원들의 건강 시트콤" if LANG == "ko" else "The office sitcom inside your body."
     blit(cv, txt_sprite("slg_" + LANG, slg, 36, face), 960, 938, 1.0, 0, *pop(lte, 0.5, 22, 0.6, 0.06))
 
+
+def P_pose(cv, i, lt, lte, tm, a):
+    """운동·자세 동작 시연용 뼈대(관절) 다이어그램(사용자 지시 2026-10-28: 캐릭터 연기만으로는 동작이
+    이해되지 않는다 → 캐릭터 옆에 관절점+뼈대선 진단판을 띄워 자세 변화를 명확히 보여준다).
+    a 필드:
+      x, y: 진단판(카드) 중심. sc: 전체 배율(기본 1). card_w/card_h: 카드 크기(기본 420x520).
+      key: 캐시 키(장면마다 다르게). title_ko/title_en: 카드 위쪽 제목칩(선택).
+      root: 관절 체인 시작점, 카드 중심 기준 상대좌표 (x,y)(기본 (0, card_h*0.22)).
+      bones: [{length, width, color, frm, to, key(선택, 뼈 이름), joint_r(선택)}, ...] 순서대로 이어 그리는 관절 체인.
+             frm/to는 수직(12시) 기준 시계방향 각도(도). 이전 뼈의 끝점이 다음 뼈의 시작점이 된다.
+      hold: 전환이 시작되는 시각(초, lte 기준). dur: frm→to 전환 길이(초).
+      loop: True면 sin으로 frm↔to를 왕복(반복 동작, 기본 False=한 번만 전환해 유지).
+      loop_speed: loop일 때 왕복 속도(기본 1.6).
+      ghost: True(기본)면 시작 자세를 옅게 겹쳐 보여줘(전/후 비교) 변화가 뚜렷해진다.
+      badge: "10번" 같은 작은 숫자 배지 문구(선택, 카드 아래쪽에 표시).
+    """
+    cx, cy = a["x"], a["y"]; sc = a.get("sc", 1.0)
+    cw, chh = a.get("card_w", 420), a.get("card_h", 520)
+    key = a.get("key", "pose")
+    appear_sx, appear_sy = pop(lte, a.get("hold", 0.0) - 0.2, 24, 0.55, 0.12)
+    blit(cv, PR.pose_card(cw, chh, key), cx, cy, sc, 0, appear_sx, appear_sy)
+    title = a.get("title_ko") if LANG == "ko" else a.get("title_en")
+    if title:
+        tsp = chip_sprite(f"posetitle_{LANG}_{title}", title, 38, "jua" if LANG == "ko" else "geist", MINTC, 0, tcol=NAVYC)
+        blit(cv, tsp, cx, cy - chh * sc / 2 + 50 * sc, sc, 0, appear_sx, appear_sy)
+    if a.get("loop"):
+        u = (math.sin(lte * a.get("loop_speed", 1.6)) + 1) / 2
+    else:
+        u = eo(clamp01((lte - a.get("hold", 0.0)) / max(a.get("dur", 1.0), 0.01)))
+    rootx, rooty = a.get("root", (0, chh * 0.22))
+    px0, py0 = cx + rootx * sc, cy + rooty * sc
+    bones = a["bones"]
+    if a.get("ghost", True) and not a.get("loop"):
+        px, py = px0, py0
+        for b in bones:
+            ang = b["frm"]
+            blit(cv, PR.pose_bone(b["length"], b["width"], b["color"], key + "_" + b.get("key", "b")), px, py, sc, ang, 1, 1, 0.28 * appear_sx)
+            px, py = px + sc * b["length"] * math.sin(math.radians(ang)), py - sc * b["length"] * math.cos(math.radians(ang))
+    px, py = px0, py0
+    for b in bones:
+        ang = b["frm"] + (b["to"] - b["frm"]) * u
+        blit(cv, PR.pose_bone(b["length"], b["width"], b["color"], key + "_" + b.get("key", "b")), px, py, sc, ang, 1, 1, appear_sx)
+        blit(cv, PR.pose_joint(b.get("joint_r", b["width"] * 0.55), 0x26304F, key), px, py, sc, 0, 1, 1, appear_sx)
+        px, py = px + sc * b["length"] * math.sin(math.radians(ang)), py - sc * b["length"] * math.cos(math.radians(ang))
+    blit(cv, PR.pose_joint(bones[-1].get("joint_r", bones[-1]["width"] * 0.55), 0x26304F, key + "_tip"), px, py, sc, 0, 1, 1, appear_sx)
+    if a.get("badge"):
+        blit(cv, PR.pose_angle_badge(a["badge"], key), cx, cy + chh * sc / 2 - 60 * sc, sc, 0, appear_sx, appear_sy)
+
 PROPS = dict(remote=P_remote, burst=P_burst, board=P_board, food1=P_food("food1"), food2=P_food("food2"), food3=P_food("food3"), clip=P_clip, stamp=P_stamp,
              stampmk=P_stampmk, sweat=P_sweat, belt=P_belt, crates=P_crates, acid=P_acid, cups=P_cups, hearts=P_hearts, sparkles=P_sparkles, lights_out=P_lights_out,
-             notice=P_notice, thumbup=P_thumbup, bellp=P_bellp, pillow=P_pillow, sstar=P_sstar, sclock=P_sclock, sclock1=P_sclock1, subchip=P_subchip, endcard=P_endcard)
+             notice=P_notice, thumbup=P_thumbup, bellp=P_bellp, pillow=P_pillow, sstar=P_sstar, sclock=P_sclock, sclock1=P_sclock1, subchip=P_subchip, endcard=P_endcard, pose=P_pose)
 
 # ───────── 효과 ─────────
 def alarm_fx(cv, tm, loc):

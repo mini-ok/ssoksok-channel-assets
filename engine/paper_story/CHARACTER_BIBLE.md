@@ -93,6 +93,41 @@
 ## 정보 체류·건강 가치 (사용자 지시, 2026-10-27)
 - 목표: "이 채널을 하루 두 개씩 보면 건강해지겠다." 증상 소개, 원인 설명, 해결방안, 운동법은 화면으로 시간을 들여 보여 준다. 롱폼 정보 구간 40% 이상, 항목당 칩·소품·시연 4초 이상(쇼츠 3초 이상, 증상은 하나씩 2초 이상). 운동은 캐릭터가 단계별 시연. 한 편 안에 증상 → 원인 → 해결이 모두 나온다. 엔딩 직전 '오늘 따라 할 한 가지' 칩.
 
+## 운동·자세 동작 시연 — 뼈대(관절) 다이어그램 필수 (사용자 지시, 2026-10-28: 목·허리 편에서 캐릭터 연기만으로는
+동작이 이해되지 않는다는 평가 → "실패, 다시 만들어". 초기 영상(목 27kg 시리즈)처럼 각도·관절이 보이는 그림을 되살린다)
+- **운동·자세를 설명하는 장면에는 캐릭터 연기만으로 끝내지 않고, 반드시 `pose` 소품(관절점+뼈대선 진단판)을 같이 띄운다.**
+  턱 당기기·무릎 굴리기·스쿼트·팔굽혀펴기처럼 자세 각도가 핵심인 모든 시연 장면에 적용한다(단순 "일어나 걷기"처럼 각도가 핵심이 아닌 동작은 생략 가능).
+- 코드: `props.py`의 `pose_card/pose_bone/pose_joint/pose_angle_badge` + `render.py`의 `P_pose`(소품 이름 `"pose"`). `draw_props`가 자동으로 그린다.
+- **부를 때**: `props=[("pose", dict(x=.., y=.., card_w=460, card_h=560, key="고유키", title_ko="턱 당기기", title_en="Chin Tuck",
+  root=(관절 체인 시작점, 카드 중심 기준 상대좌표 (x,y)), bones=[{length, width, color, frm, to, joint_r(선택)}, ...],
+  hold=전환 시작 시각, dur=전환 길이(초), badge="10번" 같은 작은 배지(선택)))]`
+  - `bones`는 순서대로 이어 그리는 관절 체인(이전 뼈의 끝점이 다음 뼈의 시작점). `frm`/`to`는 수직(12시) 기준 시계방향 각도(도), 전/후 자세를 나타낸다.
+  - 마지막 뼈에 `joint_r`을 크게 주면(예: 55~65) 머리처럼 보이는 둥근 관절로 쓸 수 있다(별도 머리 스프라이트 불필요).
+  - 기본으로 **전(frm) 자세가 옅은 회색 잔상(ghost)으로 같이 보인다** — 이게 핵심이다. 따로 끄지 않는다.
+  - **카드 밖으로 뼈가 나가지 않게** `length`·`root`를 고르고, 반드시 `render.py <변형> <폴더> preview <시각>`으로 먼저 눈으로 확인한 뒀 실제 대본에 반영한다(화면 비율: 카드 460x560 기준 세로는 중심에서 위로 약 250, 아래로 약 250, 가로는 좌우 약 200 안쪽).
+- **검증된 예시 3개(그대로 복사해 길이·각도만 바꿔 쓴다):**
+  ```python
+  # 턱 당기기(앞으로 빠진 머리 → 턱 당김)
+  props=[("pose", dict(x=1430, y=640, card_w=460, card_h=560, key="chintuck",
+      title_ko="턱 당기기", title_en="Chin Tuck", root=(0, 235),
+      bones=[dict(key="torso", length=170, width=50, color=0xE9776E, frm=-3, to=-3),
+             dict(key="neck",  length=70,  width=30, color=0x8FCFB4, frm=28, to=-10, joint_r=62)],
+      hold=0.3, dur=1.2, badge="10번"))]
+  # 무릎 굴리기(좌우로 눕히기)
+  props=[("pose", dict(x=1430, y=640, card_w=460, card_h=560, key="kneeroll",
+      title_ko="무릎 굴리기", title_en="Knee Rolls", root=(0, 40),
+      bones=[dict(key="legs", length=190, width=64, color=0x9CC6E6, frm=-34, to=34, joint_r=46)],
+      hold=0.3, dur=1.3, badge="좌우 천천히"))]
+  # 무릎 가슴으로 당기기(누워서 무릎 접어 올리기)
+  props=[("pose", dict(x=1430, y=640, card_w=460, card_h=560, key="kneehug",
+      title_ko="무릎 가슴으로", title_en="Knee to Chest", root=(-70, 210),
+      bones=[dict(key="thigh", length=130, width=44, color=0x5AA6D6, frm=58, to=0),
+             dict(key="shin",  length=120, width=34, color=0x9CC6E6, frm=58, to=145, joint_r=26)],
+      hold=0.3, dur=1.3, badge="10번 안팎"))]
+  ```
+  브릿지·스쿼트 등 새 동작은 위 `thigh`+`shin` 2단 체인 패턴을 각도만 바꿔 쓰되, **preview로 카드 안에 들어오는지 반드시 확인**한다(처음 값을 그대로 베끼면 카드 밖으로 나갈 수 있다. 예: 브릿지는 root을 카드 하단 중앙 쪽(세로 +150 안쪽)으로 두고 frm/to 차이를 25~40도로 작게 잡는다).
+- 다이어그램은 캐릭터 옆(화면 오른쪽이 기본)에 띄우고, 캐릭터의 실제 동작 연기는 그대로 둔다(둘 다 보여준다 — 다이어그램만으로 대체하지 않는다).
+
 ## 캐릭터성·표정·상품화 대비 (사용자 지시, 2026-10-27)
 - 표정: 기본 9종 + 확장 9종(angry, cry, shock, panic, relieved, dizzy, sparkle, yawn, proud). 표 이미지 `branding/characters/expressions_extended.png`. 대사마다 표정 변경, 같은 표정 연속 금지, 리액션 컷 활용.
 - 디자인 불변: 실루엣·대표 색·시그니처 소품. 새 캐릭터는 둥근 실루엣 + 분리 가능한 소품 1개 + 대표 색 + 말버릇 1개.

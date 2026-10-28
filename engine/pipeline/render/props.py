@@ -290,3 +290,38 @@ def speech_notice(key, lines, w=860, size=50, title=None, tag=None):
             y += int(size * 1.5)
         return img
     return sprite("notice_" + key, N1, N2, fn)
+
+# ───────── 운동·자세 시연용 뼈대(관절) 다이어그램 (사용자 지시 2026-10-28: 캐릭터 연기만으로는
+# 동작이 이해되지 않는다 → 관절점+뼈대선 진단판을 캐릭터 옆에 띄운다. P_pose(render.py)가 쓴다) ─────────
+def pose_card(w, h, key):
+    """진단판 종이 카드(크림색, 둥근 모서리)"""
+    N1, N2 = int(w + 120), int(h + 120)
+    def fn(img):
+        return P_(img, rr(N1, N2, 60, 60, 60 + w, 60 + h, 38), hx(0xFFFCF3), 9, soft=9, sh=(7, 11), blur=10, k=0.26, depth=0.6)
+    return sprite(f"posecard_{key}_{int(w)}_{int(h)}", N1, N2, fn)
+
+def pose_bone(length, width, color, key):
+    """뼈대 한 토막: 스프라이트 중심(피벗)에서 위쪽(12시 방향)으로 length만큼 뻗은 둥근 선.
+    blit(..., rot=각도)로 피벗을 중심으로 회전시켜 쓴다(시계 바늘과 같은 기법)."""
+    N = int(length + width + 70)
+    def fn(img):
+        m = M(N, N); m.cv.drawLine(N / 2, N / 2, N / 2, N / 2 - length, paint(width))
+        return P_(img, m.arr(), hx(color), 6, soft=4, sh=(3, 4), blur=4, k=0.22, depth=0.55)
+    return sprite(f"posebone_{key}_{int(length)}_{int(width)}_{color}", N, N, fn)
+
+def pose_joint(r, color, key):
+    """관절점(동그라미)"""
+    N = int(r * 2 + 44)
+    def fn(img):
+        return P_(img, circ(N, N, N / 2, N / 2, r), hx(color), 5, soft=3, sh=(2, 2), blur=3, k=0.2, depth=0.45)
+    return sprite(f"posejoint_{key}_{int(r)}_{color}", N, N, fn)
+
+def pose_angle_badge(text, key):
+    """각도/횟수 등 작은 숫자 배지(글자 길이에 맞춰 너비 자동, 별도 함수로 둬 chip_sprite와 캐시 키가 겹치지 않게 한다)"""
+    size = 42
+    N1, N2 = int(tw(text, size, "black") + 70), 104
+    def fn(img):
+        img = P_(img, rr(N1, N2, 10, 10, N1 - 10, N2 - 10, 24), hx(0x26304F), 3, soft=4, sh=(3, 4), blur=4, k=0.22)
+        img, _ = put_text(img, N1, N2, text, N1 / 2, N2 / 2 + 16, size, "black", hx(0xFFF8EE), "c", shadow=False)
+        return img
+    return sprite(f"poseangle_{key}_{text}", N1, N2, fn)
