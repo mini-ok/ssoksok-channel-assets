@@ -479,8 +479,8 @@ def prepare_mix(rows):
     music*=np.minimum(np.arange(n)/sr/.4,1)*np.minimum((n-np.arange(n))/sr/1.2,1)
     mix=voice+music+fx
     peak=np.abs(mix).max()
-    if peak>0.89:  # safety limiter: a longer line (cause/benefit) can peak hot after mixing; scale the whole mix down to avoid clipping
-        g=0.89/peak; voice*=g; music*=g; fx*=g; mix=voice+music+fx
+    if peak>0.6:  # safety limiter: sample-peak alone underestimates true (inter-sample) peak by ~1dB+, so target well below 0dBFS
+        g=0.6/peak; voice*=g; music*=g; fx*=g; mix=voice+music+fx
     for name,a in [('voice',voice),('music',music),('mix',mix)]:r.wavwrite(OUT/f'liver_ko_{name}.wav',a)
     def stamp(t):
         m=round(t*1000);return f'{m//3600000:02}:{m//60000%60:02}:{m//1000%60:02},{m%1000:03}'
