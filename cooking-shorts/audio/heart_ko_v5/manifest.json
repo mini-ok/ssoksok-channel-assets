@@ -1,0 +1,92 @@
+[
+  {
+    "id": "hook",
+    "text": "심장도 아침밥은 챙겨야죠!",
+    "title": "아침도 없이 뛰라고요?",
+    "mood": "happy",
+    "speech_duration": 1.9660833333333334,
+    "duration": 3.541,
+    "speaker": "심장 쉐프"
+  },
+  {
+    "id": "ingredients",
+    "text": "귀리 사십 그램, 물 이백 밀리리터, 바나나 반 개!",
+    "title": "재료는 딱 세 가지",
+    "mood": "wow",
+    "speech_duration": 3.397125,
+    "duration": 5.0,
+    "speaker": "여성 내레이터"
+  },
+  {
+    "id": "pour",
+    "text": "냄비에 귀리랑 물을 넣어요.",
+    "title": "01  귀리와 물을 넣어요",
+    "mood": "serious",
+    "speech_duration": 2.098125,
+    "duration": 4.0,
+    "speaker": "심장 쉐프"
+  },
+  {
+    "id": "cook",
+    "text": "끓으면 약불로! 저으면서 부드럽게 익혀요.",
+    "title": "02  약불로 저어 익혀요",
+    "mood": "happy",
+    "speech_duration": 3.527375,
+    "duration": 5.0,
+    "speaker": "심장 쉐프"
+  },
+  {
+    "id": "chop",
+    "text": "익는 동안, 바나나는 얇게 썰고요.",
+    "title": "03  바나나를 얇게 썰어요",
+    "mood": "serious",
+    "speech_duration": 2.63925,
+    "duration": 4.089,
+    "speaker": "여성 내레이터"
+  },
+  {
+    "id": "top",
+    "text": "그릇에 담고 바나나를 올리면 끝!",
+    "title": "그릇에 담고, 바나나 톡!",
+    "mood": "sparkle",
+    "speech_duration": 2.057875,
+    "duration": 3.8,
+    "speaker": "심장 쉐프"
+  },
+  {
+    "id": "benefit",
+    "text": "귀리의 식이섬유로, 심장 챙기는 한 끼예요.",
+    "title": "귀리의 식이섬유로 든든하게",
+    "mood": "proud",
+    "speech_duration": 2.6402916666666667,
+    "duration": 5.2,
+    "speaker": "여성 내레이터"
+  },
+  {
+    "id": "serve",
+    "text": "단맛은 바나나로. 설탕은 안 넣었어요!",
+    "title": "단맛은 바나나로 충분해요",
+    "mood": "happy_closed",
+    "speech_duration": 2.5406666666666666,
+    "duration": 4.0,
+    "speaker": "여성 내레이터"
+  },
+  {
+    "id": "joke",
+    "text": "제 밥인데, 주인님이 다 드시네요?",
+    "title": "제 아침밥인데요?!",
+    "mood": "wow",
+    "speech_duration": 2.017,
+    "duration": 3.467,
+    "speaker": "심장 쉐프"
+  },
+  {
+    "id": "end",
+    "text": "구독은 사원증 발급! 좋아요는 보너스!",
+    "title": "캡처해서 내일 아침에!",
+    "mood": "happy_closed",
+    "speech_duration": 3.007375,
+    "duration": 10.0,
+    "speaker": "심장 쉐프"
+  }
+]

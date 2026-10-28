@@ -6,7 +6,14 @@ from PIL import Image, ImageDraw, ImageFilter
 import render as r
 import style_reference_still as sty
 sty.paper_chip=functools.lru_cache(maxsize=32)(sty.paper_chip)
+import sys,os
+sys.path.insert(0,str(Path(__file__).resolve().parent/'runtime'))
+import channel_tts
+_own_token=channel_tts.token
 import make_audio as speech
+channel_tts.token=_own_token   # make_audio swaps in ADC; this environment signs with the channel key instead
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'engine'/'pipeline'/'render'))
+os.environ.setdefault('ASR_BACKEND','whisper')
 _original_prop=r.prop
 @functools.lru_cache(maxsize=64)
 def cooking_prop(kind):
@@ -26,7 +33,7 @@ r.place=cooking_place
 
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'output_v5';OUT.mkdir(exist_ok=True)
-AUDIO=ROOT/'audio'/'heart_ko_v3';AUDIO.mkdir(exist_ok=True)
+AUDIO=ROOT/'audio'/'heart_ko_v5';AUDIO.mkdir(exist_ok=True)
 W,H,FPS=1080,1920,24
 BG='#F5EFE2';INK='#26304F';MINT='#86BDA4';CORAL='#E97786'
 CTA='구독은 사원증 발급! 좋아요는 보너스!'
@@ -57,22 +64,59 @@ TRANSITIONS={
 def smooth(x):
     x=max(0.,min(1.,x));return x*x*(3-2*x)
 
+import requests,time
+# Voices: the cooking chef is a bright female voice (user feedback: the male Puck voice did not fit); narrator stays Despina.
+VOICE={'심장 쉐프':('Aoede','밝고 귀여운 요리 쇼츠 쉐프.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}
+# Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
+ACTS={'hook':'윙크하듯 통통 튀게.','ingredients':'신나게 하나씩 짚으며.','pour':'집중하지만 들뜬 목소리로.',
+ 'cook':'약불로에 힘주고 부드럽게.','chop':'차분하고 다정하게.','top':'완성에 들떠서 환호하듯.',
+ 'benefit':'믿음직하고 따뜻하게.','serve':'으쓱하며 활짝 웃는 말투로.','joke':'억울해서 토라진 말투로.','end':'경쾌하게 윙크하듯.'}
+import asr_qa
+
+def gsynth(text,voice,prompt):
+    body={"input":({"text":text,"prompt":prompt} if prompt else {"text":text}),"voice":{"languageCode":"ko-KR","name":voice,"modelName":channel_tts.MODEL},
+          "audioConfig":{"audioEncoding":"LINEAR16","sampleRateHertz":channel_tts.SR}}
+    for wait in (0,2,4,8):
+        time.sleep(wait)
+        r=requests.post(channel_tts.G_URL,headers={"Authorization":"Bearer "+channel_tts.token(),"x-goog-user-project":channel_tts.PROJECT},json=body,timeout=120)
+        if r.status_code==200:return channel_tts.decode(r)
+    raise RuntimeError(f'TTS {r.status_code}: {r.text[:200]}')
+
+def synth_line(text,speaker,act,path):
+    voice,persona=VOICE[speaker];spoken=channel_tts.clean_text(text);best=None;why='';fallback_only=True
+    for attempt in range(5):
+        prompt=(persona+' '+act) if attempt<3 else (persona if attempt==3 else '')
+        x=speech.tts.squeeze_gaps(speech.tts.trim_edges(gsynth(spoken,voice,prompt)))
+        ok,heard,why=asr_qa.check(x,24000,spoken,'ko',prompt)
+        print(f'  {path.stem} try{attempt+1} {len(x)/24000:.2f}s {why} | {heard[:40]}',flush=True)
+        # Whisper writes numbers as digits ('40g'), which can fail the text match although the take is fine,
+        # so a take that merely mismatches in coverage is kept as a fallback; leaked prompts / extra words are never kept.
+        if ok:best=x;break
+        if not (why.startswith('leak') or why.startswith('extra') or why=='empty'):
+            if best is None or fallback_only:best=x;fallback_only=False
+        elif best is None:best=x;fallback_only=True
+    x=speech.speed(best,1.3);speech.tts.save_wav(str(path),x);return why
+
 def prepare_audio():
     source=ROOT/'audio'/'heart_ko'
     manifest=json.loads((source/'manifest.json').read_text(encoding='utf-8'))
+    qa={}
     for item in manifest:
         path=AUDIO/(item['id']+'.wav')
-        if item['id']!='end':
-            if not path.exists():path.write_bytes((source/path.name).read_bytes())
-        else:
-            if not path.exists():
-                print('Synthesizing revised ending...',flush=True)
-                x=speech.tts.squeeze_gaps(speech.tts.trim_edges(speech.tts.synth(CTA,1,'ko-KR',mode='none')))
-                x=speech.speed(x,1.14);speech.tts.save_wav(str(path),x)
-            item['text']=CTA;item['duration']=10.0
+        speaker=json.loads((ROOT/'audio'/'heart_ko_v3'/'manifest.json').read_text(encoding='utf-8'))
+        speaker={m['id']:m for m in speaker}[item['id']]
+        item['speaker']=speaker['speaker'];item['mood']=speaker['mood']
+        text=CTA if item['id']=='end' else speaker['text']
+        item['text']=text
+        if not path.exists():
+            print('Synthesizing',item['id'],flush=True)
+            qa[item['id']]=synth_line(text,item['speaker'],ACTS[item['id']],path)
         with wave.open(str(path)) as f:item['speech_duration']=f.getnframes()/f.getframerate()
+        delay=.18 if item['id']=='hook' else 1.0
+        item['duration']=10.0 if item['id']=='end' else round(max(speaker['duration'],delay+item['speech_duration']+.45),3)
         item['title']=TITLES[item['id']]
     (AUDIO/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+    if qa:(AUDIO/'speech_qa.json').write_text(json.dumps(qa,ensure_ascii=False,indent=2),encoding='utf-8')
     return manifest
 
 @functools.lru_cache(maxsize=1)
@@ -374,7 +418,7 @@ def prepare_mix(rows):
         with wave.open(str(AUDIO/(s['id']+'.wav'))) as f:x=np.frombuffer(f.readframes(f.getnframes()),np.int16).astype(np.float32)/32768
         # Existing source takes were made at 1.22x (the revised ending at 1.14x).
         # Bring speech to the user's channel-standard 1.30x without shortening reading/recipe holds.
-        x=x  # V3 dialogue already performed and mastered at 1.3x
+        x=x  # v5 dialogue is acted per line and sped to the channel standard 1.3x in synth_line
         x*=.14/max(np.sqrt(np.mean(x*x)),.001)
         delay=.18 if idx==0 else 1.0
         start=int((clock+delay)*sr);voice[start:start+len(x)]+=x[:max(0,n-start)]
@@ -409,9 +453,9 @@ def prepare_mix(rows):
         if s['id']=='top':
             for j in range(5):add(.65+j*.38,.15,'plop',.07)
         clock+=s['duration']
-    source=ROOT.parent/'bgm'/'nimble_motifs.mp3'
+    source=ROOT.parent/'bgm'/'buoyant_kitchen_groove.mp3'
     music=np.frombuffer(subprocess.run([r.FF,'-v','error','-i',str(source),'-t',str(dur),'-ac','1','-ar',str(sr),'-f','f32le','pipe:1'],capture_output=True,check=True).stdout,np.float32).copy()
-    music=np.pad(music,(0,max(0,n-len(music))))[:n];music*=.0105/max(np.sqrt(np.mean(music*music)),.001)
+    music=np.pad(music,(0,max(0,n-len(music))))[:n];music*=.0145/max(np.sqrt(np.mean(music*music)),.001)
     from scipy.ndimage import maximum_filter1d,gaussian_filter1d
     act=maximum_filter1d(np.abs(voice[::240]),size=18)>.035
     env=1-gaussian_filter1d(act.astype(np.float32),2)*.67
