@@ -509,9 +509,10 @@ def render():
     target=OUT/'쏙쏙건강요리_병아리콩샐러드_v1.mp4'
     command=[r.FF,'-y','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','pipe:0',
          '-i',str(mix),'-map','0:v:0','-map','1:a:0','-c:v','libx264','-crf','19','-preset','fast','-threads','4',
-        # AAC encoding itself adds true-peak overshoot (~2dB) on top of the PCM peak, so the
-        # pre-encode ceiling must sit well below the dBTP target, not just under 0dBFS.
-        '-pix_fmt','yuv420p','-af','loudnorm=I=-14:TP=-1.5:LRA=8,alimiter=limit=0.6:attack=5:release=50','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(target)]
+        # ffmpeg's alimiter defaults to level=true, which auto-boosts quiet audio UP to the
+        # ceiling (makeup gain) instead of only clamping peaks above it -- that's why earlier
+        # attempts got LOUDER as the ceiling was lowered. level=disabled makes it a pure limiter.
+        '-pix_fmt','yuv420p','-af','loudnorm=I=-14:TP=-1.5:LRA=8,alimiter=limit=0.89:attack=5:release=50:level=disabled','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(target)]
     with (OUT/'encode.log').open('wb') as log:
         proc=subprocess.Popen(command,stdin=subprocess.PIPE,stderr=log)
         idx=0;start=0
