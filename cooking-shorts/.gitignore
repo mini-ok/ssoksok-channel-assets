@@ -1,0 +1,12 @@
+__pycache__/
+cache/
+models/
+*.log
+*.tmp
+*_mix.wav
+*_voice.wav
+*_music.wav
+.env
+secrets/
+*credentials*.json
+*service_account*.json

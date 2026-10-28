@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hook",
+    "text": "Even a heart needs a breakfast break!",
+    "title": "PUMPING\nON EMPTY?",
+    "mood": "happy",
+    "speech_duration": 2.4013333333333335,
+    "duration": 3.2
+  },
+  {
+    "id": "ingredients",
+    "text": "Forty grams of oats, two hundred mils of water, half a banana.",
+    "title": "JUST 3 INGREDIENTS",
+    "mood": "wow",
+    "speech_duration": 3.505125,
+    "duration": 5.0
+  },
+  {
+    "id": "pour",
+    "text": "Tip the oats and water into a small pan.",
+    "title": "01 / OATS + WATER",
+    "mood": "serious",
+    "speech_duration": 2.576375,
+    "duration": 4.0
+  },
+  {
+    "id": "cook",
+    "text": "Bring to a simmer. Stir over low heat until soft.",
+    "title": "02 / SIMMER & STIR",
+    "mood": "happy",
+    "speech_duration": 3.4110416666666667,
+    "duration": 5.0
+  },
+  {
+    "id": "chop",
+    "text": "While it cooks, slice the banana.",
+    "title": "03 / SLICE THE BANANA",
+    "mood": "serious",
+    "speech_duration": 1.9977083333333334,
+    "duration": 4.0
+  },
+  {
+    "id": "top",
+    "text": "Spoon into a bowl, add banana, and breakfast is ready!",
+    "title": "TOP IT. LOVE IT.",
+    "mood": "sparkle",
+    "speech_duration": 3.146333333333333,
+    "duration": 3.8
+  },
+  {
+    "id": "benefit",
+    "text": "Oats bring soluble fiber to a heart-friendly breakfast.",
+    "title": "WHY HEART CHOSE OATS",
+    "mood": "proud",
+    "speech_duration": 3.0391666666666666,
+    "duration": 5.2
+  },
+  {
+    "id": "serve",
+    "text": "The banana brings the sweetness. No added sugar here!",
+    "title": "SWEETENED BY BANANA",
+    "mood": "happy_closed",
+    "speech_duration": 3.390833333333333,
+    "duration": 4.0
+  },
+  {
+    "id": "joke",
+    "text": "Wait. My breakfast, and you get to eat it?",
+    "title": "THAT WAS MY BREAKFAST!",
+    "mood": "wow",
+    "speech_duration": 2.941,
+    "duration": 3.491
+  },
+  {
+    "id": "end",
+    "text": "Subscribe for your employee badge, and like for overtime pay!",
+    "title": "SAVE FOR TOMORROW!",
+    "mood": "happy_closed",
+    "speech_duration": 4.04975,
+    "duration": 4.6
+  }
+]

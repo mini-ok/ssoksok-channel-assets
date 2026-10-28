@@ -1,0 +1,48 @@
+"""Cooking sample: shared visual actions, localized dialogue and measured recipes."""
+EPISODES = {
+ 'heart': {
+  'character':'heart','sid':1,'color':'#E97786','bg':'#F6EBDF',
+  'ko':{'brand':'쏙쏙 건강백과','series':'몸속 식당 / 심장 셰프','dish':'바나나 오트밀','badge':'아침 / 재료 3개',
+        'ingredients':['롤드 오트 40g','물 200mL','바나나 1/2개'],
+        'benefit':['귀리의 수용성 식이섬유','심장 건강을 챙기는 식습관'],'source':'미국심장협회 / 귀리와 심장 건강',
+        'recipe':['1인분 / 약 5분','귀리 + 물 → 약불로 저어 익히기','바나나 올리면 완성!']},
+  'en':{'brand':'Tiny Body Co.','series':'BODY KITCHEN / CHEF HEART','dish':'Banana oatmeal','badge':'BREAKFAST / 3 INGREDIENTS',
+        'ingredients':['Rolled oats 40 g','Water 200 mL','1/2 banana'],
+        'benefit':['Soluble fiber from oats','A heart-friendly eating pattern'],'source':'American Heart Association / Oats & heart health',
+        'recipe':['1 serving / about 5 minutes','Oats + water → simmer and stir','Top with banana. Done!']},
+  'scenes':[
+   ('hook',3.2,'happy', ['심장도 아침밥은 챙겨야죠!','Even a heart needs a breakfast break!'],['아침도 없이\n뛰라고요?','PUMPING\nON EMPTY?']),
+   ('ingredients',5.0,'wow',['귀리 사십 그램, 물 이백 밀리리터, 바나나 반 개!','Forty grams of oats, two hundred mils of water, half a banana.'],['재료는 딱 3개','JUST 3 INGREDIENTS']),
+   ('pour',4.0,'serious',['냄비에 귀리랑 물을 넣어요.','Tip the oats and water into a small pan.'],['01 / 귀리 + 물','01 / OATS + WATER']),
+   ('cook',5.0,'happy',['끓으면 약불로! 저으면서 부드럽게 익혀요.','Bring to a simmer. Stir over low heat until soft.'],['02 / 약불로 저어요','02 / SIMMER & STIR']),
+   ('chop',4.0,'serious',['익는 동안, 바나나는 얇게 썰고요.','While it cooks, slice the banana.'],['03 / 바나나 썰기','03 / SLICE THE BANANA']),
+   ('top',3.8,'sparkle',['그릇에 담고 바나나를 올리면 끝!','Spoon into a bowl, add banana, and breakfast is ready!'],['바나나를 올리면 끝!','TOP IT. LOVE IT.']),
+   ('benefit',5.2,'proud',['귀리의 식이섬유로, 심장 챙기는 한 끼예요.','Oats bring soluble fiber to a heart-friendly breakfast.'],['심장이 고른 이유','WHY HEART CHOSE OATS']),
+   ('serve',4.0,'happy_closed',['단맛은 바나나로. 설탕은 안 넣었어요!','The banana brings the sweetness. No added sugar here!'],['단맛은 바나나로','SWEETENED BY BANANA']),
+   ('joke',3.2,'wow',['제 밥인데, 주인님이 다 드시네요?','Wait. My breakfast, and you get to eat it?'],['제 아침밥인데요?!','THAT WAS MY BREAKFAST!']),
+   ('end',4.5,'happy_closed',['구독은 사원증 발급! 좋아요는 야근 수당이에요!','Subscribe for your employee badge, and like for overtime pay!'],['저장하고 내일 아침에!','SAVE FOR TOMORROW!'])],
+  'sources':['https://www.heart.org/en/news/2022/09/01/take-a-fresh-look-at-oatmeal-its-not-as-simple-as-you-think']},
+ 'liver': {
+  'character':'liver','sid':3,'color':'#4EAFA3','bg':'#EAF0E5',
+  'ko':{'brand':'쏙쏙 건강백과','series':'몸속 식당 / 간 셰프','dish':'병아리콩 샐러드','badge':'가벼운 곁들임 / 불 없이',
+        'ingredients':['익힌 병아리콩 100g','오이 1/4개 + 작은 토마토 1개','레몬즙 1작은술','올리브유 1작은술'],
+        'benefit':['콩 + 채소 + 불포화지방','간 건강도 식습관부터'],'source':'Cambridge University Hospitals / MASLD 식사 안내',
+        'recipe':['1인 곁들임 / 약 3분','익힌 콩 + 씻어 썬 채소','레몬즙 + 올리브유 → 섞기']},
+  'en':{'brand':'Tiny Body Co.','series':'BODY KITCHEN / CHEF LIVER','dish':'Chickpea salad','badge':'EASY SIDE / NO COOKING',
+        'ingredients':['Cooked chickpeas 100 g','1/4 cucumber + 1 small tomato','Lemon juice 1 tsp','Olive oil 1 tsp'],
+        'benefit':['Beans + veg + unsaturated fat','Liver health starts with habits'],'source':'Cambridge University Hospitals / MASLD nutrition',
+        'recipe':['1 side serving / about 3 minutes','Cooked chickpeas + washed, diced veg','Lemon + olive oil → toss']},
+  'scenes':[
+   ('hook',3.2,'tired',['오늘은 뒷정리 말고, 요리할게요.','Today, I cook. Someone else can clean up.'],['간 과장,\n오늘은 셰프!','LIVER IS\nOFF CLEANUP DUTY!']),
+   ('ingredients',5.8,'happy',['익힌 병아리콩, 오이, 토마토. 레몬즙과 올리브유요.','Cooked chickpeas, cucumber, tomato, lemon juice, and olive oil.'],['익힌 콩으로 3분 요리','COOKED CHICKPEAS. 3 MIN.']),
+   ('rinse',3.8,'serious',['통조림 콩은 헹궈서 물기를 빼요.','Rinse canned chickpeas, then drain them well.'],['01 / 헹구고 물 빼기','01 / RINSE & DRAIN']),
+   ('chop',4.5,'serious',['씻은 오이랑 토마토는 작게 썰어요.','Wash the cucumber and tomato, then dice them.'],['02 / 씻고 작게 썰기','02 / WASH & DICE']),
+   ('pour',4.0,'happy',['볼에 콩이랑 채소를 한데 담고요.','Tip the chickpeas and vegetables into a bowl.'],['03 / 볼에 모두 담기','03 / INTO THE BOWL']),
+   ('mix',5.0,'happy',['레몬즙, 올리브유 한 작은술씩. 살살 섞어요.','One teaspoon each of lemon juice and olive oil. Gently toss.'],['04 / 1작은술씩 + 섞기','04 / 1 TSP EACH + TOSS']),
+   ('benefit',5.2,'proud',['콩과 채소 중심 식사, 간 건강도 식습관부터요.','Beans and vegetables fit a liver-friendly eating pattern.'],['간이 고른 이유','WHY LIVER CHOSE THIS']),
+   ('serve',4.0,'happy_closed',['간 해독 마법은 없어요. 맛있는 습관이죠.','No magic liver detox. Just a tasty everyday habit.'],['마법 말고, 좋은 습관','NO DETOX MAGIC. JUST HABITS.']),
+   ('joke',3.6,'wow',['설거지도요? 그건 심장 씨가요.','The dishes, too? Heart can handle those.'],['설거지는 심장 씨가...','DISHES? ASK HEART...']),
+   ('end',4.5,'happy_closed',['구독은 사원증 발급! 좋아요는 야근 수당이에요!','Subscribe for your employee badge, and like for overtime pay!'],['저장하고 오늘 곁들임으로!','SAVE FOR YOUR NEXT MEAL!'])],
+  'sources':['https://www.cuh.nhs.uk/patient-information/metabolic-dysfunction-associated-steatotic-liver-disease-masld/',
+             'https://www.niddk.nih.gov/health-information/liver-disease/nafld-nash/eating-diet-nutrition']}
+}

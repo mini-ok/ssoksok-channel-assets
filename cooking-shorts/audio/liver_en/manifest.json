@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hook",
+    "text": "Today, I cook. Someone else can clean up.",
+    "title": "LIVER IS\nOFF CLEANUP DUTY!",
+    "mood": "tired",
+    "speech_duration": 2.5083333333333333,
+    "duration": 3.2
+  },
+  {
+    "id": "ingredients",
+    "text": "Cooked chickpeas, cucumber, tomato, lemon juice, and olive oil.",
+    "title": "COOKED CHICKPEAS. 3 MIN.",
+    "mood": "happy",
+    "speech_duration": 4.267166666666666,
+    "duration": 5.8
+  },
+  {
+    "id": "rinse",
+    "text": "Rinse canned chickpeas, then drain them well.",
+    "title": "01 / RINSE & DRAIN",
+    "mood": "serious",
+    "speech_duration": 2.7129166666666666,
+    "duration": 3.8
+  },
+  {
+    "id": "chop",
+    "text": "Wash the cucumber and tomato, then dice them.",
+    "title": "02 / WASH & DICE",
+    "mood": "serious",
+    "speech_duration": 2.45425,
+    "duration": 4.5
+  },
+  {
+    "id": "pour",
+    "text": "Tip the chickpeas and vegetables into a bowl.",
+    "title": "03 / INTO THE BOWL",
+    "mood": "happy",
+    "speech_duration": 2.67225,
+    "duration": 4.0
+  },
+  {
+    "id": "mix",
+    "text": "One teaspoon each of lemon juice and olive oil. Gently toss.",
+    "title": "04 / 1 TSP EACH + TOSS",
+    "mood": "happy",
+    "speech_duration": 3.8317083333333333,
+    "duration": 5.0
+  },
+  {
+    "id": "benefit",
+    "text": "Beans and vegetables fit a liver-friendly eating pattern.",
+    "title": "WHY LIVER CHOSE THIS",
+    "mood": "proud",
+    "speech_duration": 3.1472083333333334,
+    "duration": 5.2
+  },
+  {
+    "id": "serve",
+    "text": "No magic liver detox. Just a tasty everyday habit.",
+    "title": "NO DETOX MAGIC. JUST HABITS.",
+    "mood": "happy_closed",
+    "speech_duration": 3.5825416666666667,
+    "duration": 4.133
+  },
+  {
+    "id": "joke",
+    "text": "The dishes, too? Heart can handle those.",
+    "title": "DISHES? ASK HEART...",
+    "mood": "wow",
+    "speech_duration": 2.2010833333333335,
+    "duration": 3.6
+  },
+  {
+    "id": "end",
+    "text": "Subscribe for your employee badge, and like for overtime pay!",
+    "title": "SAVE FOR YOUR NEXT MEAL!",
+    "mood": "happy_closed",
+    "speech_duration": 4.13175,
+    "duration": 4.682
+  }
+]

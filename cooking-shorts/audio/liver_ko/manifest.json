@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hook",
+    "text": "오늘은 뒷정리 말고, 요리할게요.",
+    "title": "간 과장,\n오늘은 셰프!",
+    "mood": "tired",
+    "speech_duration": 2.1835416666666667,
+    "duration": 3.2
+  },
+  {
+    "id": "ingredients",
+    "text": "익힌 병아리콩, 오이, 토마토. 레몬즙과 올리브유요.",
+    "title": "익힌 콩으로 3분 요리",
+    "mood": "happy",
+    "speech_duration": 3.943125,
+    "duration": 5.8
+  },
+  {
+    "id": "rinse",
+    "text": "통조림 콩은 헹궈서 물기를 빼요.",
+    "title": "01 / 헹구고 물 빼기",
+    "mood": "serious",
+    "speech_duration": 2.3,
+    "duration": 3.8
+  },
+  {
+    "id": "chop",
+    "text": "씻은 오이랑 토마토는 작게 썰어요.",
+    "title": "02 / 씻고 작게 썰기",
+    "mood": "serious",
+    "speech_duration": 2.281833333333333,
+    "duration": 4.5
+  },
+  {
+    "id": "pour",
+    "text": "볼에 콩이랑 채소를 한데 담고요.",
+    "title": "03 / 볼에 모두 담기",
+    "mood": "happy",
+    "speech_duration": 2.2255833333333332,
+    "duration": 4.0
+  },
+  {
+    "id": "mix",
+    "text": "레몬즙, 올리브유 한 작은술씩. 살살 섞어요.",
+    "title": "04 / 1작은술씩 + 섞기",
+    "mood": "happy",
+    "speech_duration": 3.56775,
+    "duration": 5.0
+  },
+  {
+    "id": "benefit",
+    "text": "콩과 채소 중심 식사, 간 건강도 식습관부터요.",
+    "title": "간이 고른 이유",
+    "mood": "proud",
+    "speech_duration": 3.4669583333333334,
+    "duration": 5.2
+  },
+  {
+    "id": "serve",
+    "text": "간 해독 마법은 없어요. 맛있는 습관이죠.",
+    "title": "마법 말고, 좋은 습관",
+    "mood": "happy_closed",
+    "speech_duration": 2.721625,
+    "duration": 4.0
+  },
+  {
+    "id": "joke",
+    "text": "설거지도요? 그건 심장 씨가요.",
+    "title": "설거지는 심장 씨가...",
+    "mood": "wow",
+    "speech_duration": 2.216083333333333,
+    "duration": 3.6
+  },
+  {
+    "id": "end",
+    "text": "구독은 사원증 발급! 좋아요는 야근 수당이에요!",
+    "title": "저장하고 오늘 곁들임으로!",
+    "mood": "happy_closed",
+    "speech_duration": 3.4098333333333333,
+    "duration": 4.5
+  }
+]

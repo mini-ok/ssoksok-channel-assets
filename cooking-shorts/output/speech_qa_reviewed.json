@@ -1,0 +1,294 @@
+[
+  {
+    "variant": "heart_en",
+    "id": "hook",
+    "expected": "Even a heart needs a breakfast break!",
+    "heard": "even a heart needs a breakfast break.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "ingredients",
+    "expected": "Forty grams of oats, two hundred mils of water, half a banana.",
+    "heard": "40 grams of oats, 200 mills of water, half a banana.",
+    "similarity": 0.759
+  },
+  {
+    "variant": "heart_en",
+    "id": "pour",
+    "expected": "Tip the oats and water into a small pan.",
+    "heard": "Tip the oats and water into a small pan.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "cook",
+    "expected": "Bring to a simmer. Stir over low heat until soft.",
+    "heard": "Bring to a simmer, stir over low heat until soft.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "chop",
+    "expected": "While it cooks, slice the banana.",
+    "heard": "while it cooks, slice the banana.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "top",
+    "expected": "Spoon into a bowl, add banana, and breakfast is ready!",
+    "heard": "Spoon into a bowl, add banana, and breakfast is ready!",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "benefit",
+    "expected": "Oats bring soluble fiber to a heart-friendly breakfast.",
+    "heard": "Oats brings soluble fiber to a heart-friendly breakfast.",
+    "similarity": 0.989
+  },
+  {
+    "variant": "heart_en",
+    "id": "serve",
+    "expected": "The banana brings the sweetness. No added sugar here!",
+    "heard": "The banana brings the sweetness, no added sugar here.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "joke",
+    "expected": "Wait. My breakfast, and you get to eat it?",
+    "heard": "Wait, my breakfast and you get to eat it?",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_en",
+    "id": "end",
+    "expected": "Subscribe for your employee badge, and like for overtime pay!",
+    "heard": "Subscribe for your employee badge and like for overtime pay.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_ko",
+    "id": "hook",
+    "expected": "심장도 아침밥은 챙겨야죠!",
+    "heard": "심장도 아침 밥은 챙겨야죠.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_ko",
+    "id": "ingredients",
+    "expected": "귀리 사십 그램, 물 이백 밀리리터, 바나나 반 개!",
+    "heard": "길이 40g, 물 200ml, 바나나 반계",
+    "similarity": 0.294,
+    "review_heard": "귀리 40g, 물 200ml, 바나나 반개"
+  },
+  {
+    "variant": "heart_ko",
+    "id": "pour",
+    "expected": "냄비에 귀리랑 물을 넣어요.",
+    "heard": "냄비에 귤이랑 물을 넣어요",
+    "similarity": 0.818,
+    "review_heard": "냄비에 귀리랑 물을 넣어요"
+  },
+  {
+    "variant": "heart_ko",
+    "id": "cook",
+    "expected": "끓으면 약불로! 저으면서 부드럽게 익혀요.",
+    "heard": "끓으면 약불로 저으면서 부드럽게 익혀요.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_ko",
+    "id": "chop",
+    "expected": "익는 동안, 바나나는 얇게 썰고요.",
+    "heard": "잇는 동안 바나나는 얇게 썰고요.",
+    "similarity": 0.923,
+    "review_heard": "익는 동안 바나나는 얇게 썰고요"
+  },
+  {
+    "variant": "heart_ko",
+    "id": "top",
+    "expected": "그릇에 담고 바나나를 올리면 끝!",
+    "heard": "그릇에 담고, 바나나를 올리면 끝!",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_ko",
+    "id": "benefit",
+    "expected": "귀리의 식이섬유로, 심장 챙기는 한 끼예요.",
+    "heard": "규리의 식이서미로 심장챙기는 한 끼에요",
+    "similarity": 0.765,
+    "review_heard": "귀리의 식이섬유로 심장 챙기는 한 끼예요"
+  },
+  {
+    "variant": "heart_ko",
+    "id": "serve",
+    "expected": "단맛은 바나나로. 설탕은 안 넣었어요!",
+    "heard": "단맛은 바나나로 설탕은 안 넣었어요",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_ko",
+    "id": "joke",
+    "expected": "제 밥인데, 주인님이 다 드시네요?",
+    "heard": "제밥인데 주인님이 다 드시네요.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "heart_ko",
+    "id": "end",
+    "expected": "구독은 사원증 발급! 좋아요는 야근 수당이에요!",
+    "heard": "구독은 사원증 발급, 좋아요는 약은 수당이에요.",
+    "similarity": 0.895,
+    "review_heard": "구독은 사원증 발급, 좋아요는 야근 수당이에요"
+  },
+  {
+    "variant": "liver_en",
+    "id": "hook",
+    "expected": "Today, I cook. Someone else can clean up.",
+    "heard": "Today, I cook. Someone else can clean up.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "ingredients",
+    "expected": "Cooked chickpeas, cucumber, tomato, lemon juice, and olive oil.",
+    "heard": "cooked chickpeas, cucumber, tomato, lemon juice, and olive oil.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "rinse",
+    "expected": "Rinse canned chickpeas, then drain them well.",
+    "heard": "Rinse canned chickpeas, then drain them well.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "chop",
+    "expected": "Wash the cucumber and tomato, then dice them.",
+    "heard": "Wash the cucumber and tomato, then dice them.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "pour",
+    "expected": "Tip the chickpeas and vegetables into a bowl.",
+    "heard": "Tip the chickpeas and vegetables into a bowl.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "mix",
+    "expected": "One teaspoon each of lemon juice and olive oil. Gently toss.",
+    "heard": "1 teaspoon each of lemon juice and olive oil, gently toss.",
+    "similarity": 0.957
+  },
+  {
+    "variant": "liver_en",
+    "id": "benefit",
+    "expected": "Beans and vegetables fit a liver-friendly eating pattern.",
+    "heard": "Beans and vegetables fit a liver-friendly eating pattern.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "serve",
+    "expected": "No magic liver detox. Just a tasty everyday habit.",
+    "heard": "no magic liver detox, just to tasty everyday habit.",
+    "similarity": 0.963
+  },
+  {
+    "variant": "liver_en",
+    "id": "joke",
+    "expected": "The dishes, too? Heart can handle those.",
+    "heard": "The dishes too, heart can handle those.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_en",
+    "id": "end",
+    "expected": "Subscribe for your employee badge, and like for overtime pay!",
+    "heard": "Subscribe for your employee badge and like for overtime pay.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_ko",
+    "id": "hook",
+    "expected": "오늘은 뒷정리 말고, 요리할게요.",
+    "heard": "오늘은 뒷정리 말고 요리할게요.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_ko",
+    "id": "ingredients",
+    "expected": "익힌 병아리콩, 오이, 토마토. 레몬즙과 올리브유요.",
+    "heard": "익힌 병아리 콩 5-2 토마토 레몬즙과 올리브유요",
+    "similarity": 0.9,
+    "review_heard": "익힌 병아리콩, 오이, 토마토, 레몬즙과 올리브유여"
+  },
+  {
+    "variant": "liver_ko",
+    "id": "rinse",
+    "expected": "통조림 콩은 헹궈서 물기를 빼요.",
+    "heard": "통조림공은 헹궈서 물기를 빼요.",
+    "similarity": 0.923,
+    "review_heard": "통조림 콩은 헹거서 물기를 빼요"
+  },
+  {
+    "variant": "liver_ko",
+    "id": "chop",
+    "expected": "씻은 오이랑 토마토는 작게 썰어요.",
+    "heard": "시슨 5위랑 토마토는 작게 썰어요.",
+    "similarity": 0.714,
+    "review_heard": "씻은 오이랑 토마토는 작게 썰어요."
+  },
+  {
+    "variant": "liver_ko",
+    "id": "pour",
+    "expected": "볼에 콩이랑 채소를 한데 담고요.",
+    "heard": "볼에 콩이랑 채소를 한 대 담고요.",
+    "similarity": 0.923,
+    "review_heard": "볼에 콩이랑 채소를 한 대 담고요."
+  },
+  {
+    "variant": "liver_ko",
+    "id": "mix",
+    "expected": "레몬즙, 올리브유 한 작은술씩. 살살 섞어요.",
+    "heard": "레몬즙 올리브유 한 작은 술씩 살살 섞어요",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_ko",
+    "id": "benefit",
+    "expected": "콩과 채소 중심 식사, 간 건강도 식습관부터요.",
+    "heard": "콩과 채소 중심 식사 간 건강도 식습관 부터요.",
+    "similarity": 1.0
+  },
+  {
+    "variant": "liver_ko",
+    "id": "serve",
+    "expected": "간 해독 마법은 없어요. 맛있는 습관이죠.",
+    "heard": "간 해동 마법은 없어요.  맛있는 습관이죠.",
+    "similarity": 0.938,
+    "review_heard": "간 해동 마법은 없어요.  맛있는 습관이죠."
+  },
+  {
+    "variant": "liver_ko",
+    "id": "joke",
+    "expected": "설거지도요? 그건 심장 씨가요.",
+    "heard": "설거지도요, 그건 심장시가요.",
+    "similarity": 0.917,
+    "review_heard": "설거지도요, 그건 심장시 가요"
+  },
+  {
+    "variant": "liver_ko",
+    "id": "end",
+    "expected": "구독은 사원증 발급! 좋아요는 야근 수당이에요!",
+    "heard": "구독은 사원증 발급, 좋아요는 약은 수당이에요.",
+    "similarity": 0.895,
+    "review_heard": "구독은 사원증 발겹, 좋아요는 야근 수당이에요"
+  }
+]

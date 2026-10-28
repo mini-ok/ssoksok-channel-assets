@@ -1,0 +1,26 @@
+{
+  "file": "쏙쏙건강요리_바나나오트밀_전환비교_v2.mp4",
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "seconds": 47.417,
+  "frames_decoded": 1138,
+  "audio_samples_decoded": 4550400,
+  "full_decode": "passed",
+  "integrated_lufs": -15.44,
+  "true_peak_dbtp": -1.18,
+  "minimum_speech_music_gap_db": 13.7,
+  "static_full_recipe_hold_seconds": 8.85,
+  "ending_asr": "구독은 사원증 발급! 좋아요는 보너스!",
+  "transition_max_frame_delta": {
+    "A": 1.02,
+    "B": 1.56,
+    "C": 3.13,
+    "D": 2.07
+  },
+  "old_footer": "removed",
+  "chef_label": "오늘의 요리사 : 심장 쉐프",
+  "top_right_label": "쏙쏙 건강요리"
+}
