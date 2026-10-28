@@ -325,3 +325,15 @@ def pose_angle_badge(text, key):
         img, _ = put_text(img, N1, N2, text, N1 / 2, N2 / 2 + 16, size, "black", hx(0xFFF8EE), "c", shadow=False)
         return img
     return sprite(f"poseangle_{key}_{text}", N1, N2, fn)
+
+def pose_part_tag(text, color, key):
+    """다이어그램 안에 붙이는 신체 부위 이름표('목', '허리' 등, 사용자 지시 2026-10-28:
+    스틸컷만 봐도 어디가 목이고 어디가 허리인지 알 수 있어야 한다). 작은 색 점 + 글자."""
+    size = 40
+    N1, N2 = int(tw(text, size, "black") + 90), 92
+    def fn(img):
+        img = P_(img, rr(N1, N2, 8, 8, N1 - 8, N2 - 8, 22), hx(0xFFFFFF), 4, soft=3, sh=(2, 3), blur=3, k=0.18)
+        img = P_(img, circ(N1, N2, 46, N2 / 2, 14), hx(color), 2, soft=2, sh=(1, 1), blur=2, k=0.1)
+        img, _ = put_text(img, N1, N2, text, 74, N2 / 2 + 14, size, "black", hx(0x26304F), "l", shadow=False)
+        return img
+    return sprite(f"posepart_{key}_{text}_{color}", N1, N2, fn)

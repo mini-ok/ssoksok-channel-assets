@@ -10,3 +10,22 @@ models/
 secrets/
 *credentials*.json
 *service_account*.json
+
+# 2026-10-28 사용자 지시: 완성 영상·음성은 git에 반복 커밋하지 않는다(패킷·저장소 용량 낭비).
+# 전달은 SendUserFile로 하고, 저장소에는 코드·검증 수치(json)·검수용 정지화면만 남긴다.
+output/*.mp4
+output_v*/*.mp4
+output_liver/*.mp4
+audio/**/*.wav
+!audio/**/manifest.json
+output_v*/scene_*.png
+output_liver/scene_*.png
+output_v*/storyboard*.jpg
+output_liver/storyboard*.jpg
+output_v*/transition_midpoints.jpg
+output_liver/transition_midpoints.jpg
+output/*.srt
+output/
+output_v2/
+output_v3/
+output_v4/

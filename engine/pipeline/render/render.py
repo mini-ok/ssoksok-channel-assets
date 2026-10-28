@@ -624,6 +624,9 @@ def P_pose(cv, i, lt, lte, tm, a):
       loop_speed: loop일 때 왕복 속도(기본 1.6).
       ghost: True(기본)면 시작 자세를 옅게 겹쳐 보여줘(전/후 비교) 변화가 뚜렷해진다.
       badge: "10번" 같은 작은 숫자 배지 문구(선택, 카드 아래쪽에 표시).
+      tags: [{"text":"목", "color":0x8FCFB4, "x":.., "y":..}, ...] — 스틸컷만 봐도 어디가 목/허리인지 알 수 있게
+            뼈대 옆에 붙이는 작은 신체 부위 이름표(사용자 지시 2026-10-28, 필수: 목·허리처럼 부위가 2곳 이상 나오면 꼭 넣는다).
+            x,y는 카드 중심 기준 상대좌표. color는 해당 뼈(bones)의 color와 맞춘다.
     """
     cx, cy = a["x"], a["y"]; sc = a.get("sc", 1.0)
     cw, chh = a.get("card_w", 420), a.get("card_h", 520)
@@ -656,6 +659,9 @@ def P_pose(cv, i, lt, lte, tm, a):
     blit(cv, PR.pose_joint(bones[-1].get("joint_r", bones[-1]["width"] * 0.55), 0x26304F, key + "_tip"), px, py, sc, 0, 1, 1, appear_sx)
     if a.get("badge"):
         blit(cv, PR.pose_angle_badge(a["badge"], key), cx, cy + chh * sc / 2 - 60 * sc, sc, 0, appear_sx, appear_sy)
+    for tag in a.get("tags", []):
+        tsp2 = PR.pose_part_tag(tag["text"], tag.get("color", 0x26304F), key + "_" + tag["text"])
+        blit(cv, tsp2, cx + tag["x"] * sc, cy + tag["y"] * sc, sc, 0, appear_sx, appear_sy)
 
 PROPS = dict(remote=P_remote, burst=P_burst, board=P_board, food1=P_food("food1"), food2=P_food("food2"), food3=P_food("food3"), clip=P_clip, stamp=P_stamp,
              stampmk=P_stampmk, sweat=P_sweat, belt=P_belt, crates=P_crates, acid=P_acid, cups=P_cups, hearts=P_hearts, sparkles=P_sparkles, lights_out=P_lights_out,

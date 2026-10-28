@@ -4,6 +4,16 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 import render as r
+import functools as _ft
+_original_prop=r.prop
+@_ft.lru_cache(maxsize=64)
+def cooking_prop(kind):
+    # Base spoon sprite points the wrong way for cooking shots (confirmed bug, user feedback 2026-10-28:
+    # liver short's stirring spoon was backwards again — same fix applied to heart's cooking-shorts render must
+    # also be applied here, since liver's mix scene reuses render.prop('spoon') too).
+    im=_original_prop(kind)
+    return im.rotate(180) if kind=='spoon' else im
+r.prop=cooking_prop
 import style_reference_still as sty
 sty.paper_chip=functools.lru_cache(maxsize=32)(sty.paper_chip)
 import sys,os
@@ -51,13 +61,13 @@ def smooth(x):
 
 import requests,time
 # Voices: liver chef is a calm, easy-going male voice (Umbriel), different from the heart chef; narrator stays Despina.
-VOICE={'간 쉐프':('Umbriel','느긋하고 다정한 청년 요리 쇼츠 쉐프.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}
+VOICE={'간 쉐프':('Charon','묵묵히 야근하는 간 과장. 낮고 차분하게, 한숨 섞어, 다정함이 묻어나게.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
 SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'간 쉐프','chop':'여성 내레이터','pour':'간 쉐프','mix':'간 쉐프',
  'benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
-ACTS={'hook':'피곤해도 신나게 외치듯.','ingredients':'신나게 하나씩 짚으며.','rinse':'집중해서 차분하게.','chop':'차분하고 다정하게.',
- 'pour':'느긋하고 다정하게.','mix':'살살 어르듯 부드럽게.','benefit':'믿음직하고 따뜻하게.','serve':'또렷하게 안심시키듯.',
- 'joke':'깜짝 놀라 어이없다는 듯.','end':'경쾌하게 윙크하듯.'}
+ACTS={'hook':'피곤한 한숨 섞어 담담하게.','ingredients':'낮고 차분하게 하나씩.','rinse':'묵묵하게.','chop':'차분하고 다정하게.',
+ 'pour':'느긋하게.','mix':'살살, 다정하게.','benefit':'낮고 믿음직하게.','serve':'담담하게 다정하게.',
+ 'joke':'놀라서 담담하게.','end':'살짝 웃음기 있게.'}
 import asr_qa
 
 def gsynth(text,voice,prompt):
