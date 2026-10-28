@@ -490,7 +490,10 @@ def render():
     target=OUT/'쏙쏙건강요리_바나나오트밀_조리효과음_v5.mp4'
     command=[r.FF,'-y','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','pipe:0',
          '-i',str(mix),'-map','0:v:0','-map','1:a:0','-c:v','libx264','-crf','19','-preset','fast','-threads','4',
-        '-pix_fmt','yuv420p','-af','loudnorm=I=-14:TP=-1.5:LRA=8','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(target)]
+        # Safety-net limiter (see revision_liver.py for the full rationale): loudnorm's dynamic
+        # mode alone doesn't reliably hold the true-peak target, especially with AAC's own
+        # encode-time peak overshoot on top.
+        '-pix_fmt','yuv420p','-af','loudnorm=I=-14:TP=-1.5:LRA=8,alimiter=limit=0.7:attack=1:release=50:level=disabled','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(target)]
     with (OUT/'encode.log').open('wb') as log:
         proc=subprocess.Popen(command,stdin=subprocess.PIPE,stderr=log)
         idx=0;start=0
