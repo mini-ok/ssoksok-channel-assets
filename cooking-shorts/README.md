@@ -11,7 +11,11 @@ v4의 대사·음성·효과음·전환·레시피 카드는 그대로 두고 �
 - 연기: 장면 안에서 표정이 바뀜(윙크 → 반짝, 진지 → 안도), 안도 때 하트가 떠오름, 반전 장면에 땀방울과 느낌표.
 - 장면 보강: 재료 장면에 아이콘과 순서대로 나타나는 줄, 반짝이는 쉐프. 효능 장면에 쉐프와 출처 카드. '설탕 무첨가' 도장.
 
-재생성: `python cooking-shorts/revision_v5.py preview` → `render` → `python cooking-shorts/verify_v5.py`.
+- 목소리(2026-10-28 사용자 피드백 반영): 심장 쉐프를 남자 목소리(Puck)에서 밝은 여성 목소리(Aoede)로 교체, 해설은 Despina 그대로. 대사마다 짧은 연기 지시를 붙이고 채널 표준 1.3배로 만들었으며, 연기 지시를 읽어 버리는 경우는 받아쓰기 검수로 걸러 다시 녹음했습니다. 재료 장면과 '설탕은 안 넣었어요' 장면은 지시를 넣으면 성우가 읽어서 지시 없이 갔습니다. 다른 쉐프 목소리 후보 샘플: `audio/voice_candidates/`.
+- 음악: `bgm/buoyant_kitchen_groove.mp3`(음식·부엌용 경쾌한 곡)로 교체하고 음량을 조금 키웠습니다(말소리와 최소 12.1dB 차이 유지).
+- 음성 파일: `audio/heart_ko_v5/`.
+
+재생성: `python cooking-shorts/revision_v5.py audio`(새 음성, 채널 TTS 키 필요) → `render` → `python cooking-shorts/verify_v5.py`.
 
 ## 이전 수정 v4
 
