@@ -477,7 +477,11 @@ def prepare_mix(rows):
     env=1-gaussian_filter1d(act.astype(np.float32),2)*.67
     music*=np.interp(np.arange(n),np.arange(len(env))*240,env)
     music*=np.minimum(np.arange(n)/sr/.4,1)*np.minimum((n-np.arange(n))/sr/1.2,1)
-    for name,a in [('voice',voice),('music',music),('mix',voice+music+fx)]:r.wavwrite(OUT/f'liver_ko_{name}.wav',a)
+    mix=voice+music+fx
+    peak=np.abs(mix).max()
+    if peak>0.89:  # safety limiter: a longer line (cause/benefit) can peak hot after mixing; scale the whole mix down to avoid clipping
+        g=0.89/peak; voice*=g; music*=g; fx*=g; mix=voice+music+fx
+    for name,a in [('voice',voice),('music',music),('mix',mix)]:r.wavwrite(OUT/f'liver_ko_{name}.wav',a)
     def stamp(t):
         m=round(t*1000);return f'{m//3600000:02}:{m//60000%60:02}:{m//1000%60:02},{m%1000:03}'
     text=[];clock=0

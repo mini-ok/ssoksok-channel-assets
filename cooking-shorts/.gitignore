@@ -29,3 +29,7 @@ output/
 output_v2/
 output_v3/
 output_v4/
+output_v*/encoded_*.jpg
+!output_v*/encoded_review.jpg
+output_liver/encoded_*.jpg
+!output_liver/encoded_review.jpg
