@@ -4,7 +4,7 @@
     "text": "심장도 아침밥은 챙겨야죠!",
     "title": "아침도 없이 뛰라고요?",
     "mood": "happy",
-    "speech_duration": 2.2186666666666666,
+    "speech_duration": 2.4709583333333334,
     "duration": 3.541,
     "speaker": "심장 쉐프"
   },
@@ -22,7 +22,7 @@
     "text": "냄비에 귀리랑 물을 넣어요.",
     "title": "01  귀리와 물을 넣어요",
     "mood": "serious",
-    "speech_duration": 2.213625,
+    "speech_duration": 2.0500416666666665,
     "duration": 4.0,
     "speaker": "심장 쉐프"
   },
@@ -31,7 +31,7 @@
     "text": "끓으면 약불로! 저으면서 부드럽게 익혀요.",
     "title": "02  약불로 저어 익혀요",
     "mood": "happy",
-    "speech_duration": 3.2365416666666667,
+    "speech_duration": 3.08375,
     "duration": 5.0,
     "speaker": "심장 쉐프"
   },
@@ -49,8 +49,8 @@
     "text": "그릇에 담고 바나나를 올리면 끝!",
     "title": "그릇에 담고, 바나나 톡!",
     "mood": "sparkle",
-    "speech_duration": 2.196,
-    "duration": 3.8,
+    "speech_duration": 2.353458333333333,
+    "duration": 3.803,
     "speaker": "심장 쉐프"
   },
   {
@@ -76,8 +76,8 @@
     "text": "제 밥인데, 주인님이 다 드시네요?",
     "title": "제 아침밥인데요?!",
     "mood": "wow",
-    "speech_duration": 2.17275,
-    "duration": 3.623,
+    "speech_duration": 2.2379583333333333,
+    "duration": 3.688,
     "speaker": "심장 쉐프"
   },
   {
@@ -85,7 +85,7 @@
     "text": "구독은 사원증 발급! 좋아요는 보너스!",
     "title": "캡처해서 내일 아침에!",
     "mood": "happy_closed",
-    "speech_duration": 2.7508333333333335,
+    "speech_duration": 2.9310416666666668,
     "duration": 10.0,
     "speaker": "심장 쉐프"
   }

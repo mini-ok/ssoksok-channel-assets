@@ -65,8 +65,8 @@ def smooth(x):
     x=max(0.,min(1.,x));return x*x*(3-2*x)
 
 import requests,time
-# Voices: the chef stays male but smooth (Algieba), unlike the rough Puck used for the channel heart (user feedback); narrator stays Despina.
-VOICE={'심장 쉐프':('Algieba','밝고 다정한 청년 요리 쇼츠 쉐프.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}
+# Voices: the chef stays male but smooth (Zubenelgenubi, chosen by the user from auditions), unlike the rough Puck used for the channel heart (user feedback); narrator stays Despina.
+VOICE={'심장 쉐프':('Zubenelgenubi','밝고 다정한 청년 요리 쇼츠 쉐프.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
 ACTS={'hook':'윙크하듯 통통 튀게.','ingredients':'신나게 하나씩 짚으며.','pour':'집중하지만 들뜬 목소리로.',
  'cook':'약불로에 힘주고 부드럽게.','chop':'차분하고 다정하게.','top':'완성에 들떠서 환호하듯.',
