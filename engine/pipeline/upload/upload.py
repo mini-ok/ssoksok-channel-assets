@@ -40,7 +40,18 @@ def upload_video(tok, path, snippet, publish_at=None):
         if r2.status_code < 500: return None, f"put {r2.status_code} {r2.text[:300]}"
     return None, "put failed after retries"
 
+def _thumb_jpeg(path, limit=1_900_000):
+    """썸네일을 JPEG로 변환하고 2MB 안쪽으로 맞춘다(쇼츠 맞춤 썸네일은 용량·형식에 까다롭다는 사용자 지시, 2026-10-28)."""
+    import io
+    from PIL import Image
+    im = Image.open(path).convert("RGB")
+    for q in (92, 88, 84, 80, 75, 70):
+        b = io.BytesIO(); im.save(b, "JPEG", quality=q, optimize=True, subsampling=0 if q >= 88 else 2)
+        if b.tell() <= limit: return b.getvalue()
+    im = im.resize((im.width * 3 // 4, im.height * 3 // 4), Image.LANCZOS)
+    b = io.BytesIO(); im.save(b, "JPEG", quality=80, optimize=True); return b.getvalue()
+
 def set_thumb(tok, vid, path):
     r = requests.post(f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}",
-                      headers={"Authorization": "Bearer " + tok, "Content-Type": "image/png"}, data=open(path, "rb").read(), timeout=300)
+                      headers={"Authorization": "Bearer " + tok, "Content-Type": "image/jpeg"}, data=_thumb_jpeg(path), timeout=300)
     return r.status_code == 200, f"{r.status_code} {r.text[:200]}"
