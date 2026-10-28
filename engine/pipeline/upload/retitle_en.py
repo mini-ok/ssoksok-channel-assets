@@ -8,15 +8,23 @@ LOG = os.path.join(os.path.dirname(__file__), "../../../docs/title_changes_en_20
 log = json.load(open(LOG)) if os.path.exists(LOG) else []
 done = {l[0] for l in log if l[1] == "ok"}
 tok, _ = yt.token("en")
+
+def call(*a, **k):
+    """quotaExceeded(403)가 요청의 절반쯤에 간헐적으로 나므로(2026-10-28 확인) 바로 재시도한다."""
+    for i in range(12):
+        c, j = yt.api(tok, *a, **k)
+        if c != 403: return c, j
+        time.sleep(3)
+    return c, j
 for vid, new in NEW.items():
     if vid in done: continue
-    c, j = yt.api(tok, "GET", "videos", params=dict(part="snippet", id=vid))
+    c, j = call("GET", "videos", params=dict(part="snippet", id=vid))
     if c != 200 or not j.get("items"): print("stop", vid, c, str(j)[:100]); break
     sn = j["items"][0]["snippet"]; old = sn["title"]
     if old == new: continue
     sn["title"] = new
     body = {"id": vid, "snippet": {k: sn[k] for k in ("title", "description", "categoryId", "tags", "defaultLanguage", "defaultAudioLanguage") if k in sn}}
-    c, j2 = yt.api(tok, "PUT", "videos", params=dict(part="snippet"), json=body)
+    c, j2 = call("PUT", "videos", params=dict(part="snippet"), json=body)
     if c != 200: print("stop", vid, c, str(j2)[:100]); break
     log.append([vid, "ok", old, new]); json.dump(log, open(LOG, "w"), ensure_ascii=False, indent=1)
 print(len([l for l in log if l[1] == "ok"]), "of", len(NEW), "done")
