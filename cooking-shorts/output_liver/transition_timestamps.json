@@ -1,0 +1,56 @@
+[
+  {
+    "at_seconds": 3.2,
+    "type": "A",
+    "name": "부드러운 겹침",
+    "duration": 0.95
+  },
+  {
+    "at_seconds": 9.0,
+    "type": "A",
+    "name": "부드러운 겹침",
+    "duration": 0.9
+  },
+  {
+    "at_seconds": 13.05,
+    "type": "A",
+    "name": "부드러운 겹침",
+    "duration": 0.9
+  },
+  {
+    "at_seconds": 17.55,
+    "type": "B",
+    "name": "살짝 확대하며 연결",
+    "duration": 1.05
+  },
+  {
+    "at_seconds": 22.22,
+    "type": "C",
+    "name": "접시 모양 원형 연결",
+    "duration": 1.1
+  },
+  {
+    "at_seconds": 27.83,
+    "type": "A",
+    "name": "부드러운 겹침",
+    "duration": 0.95
+  },
+  {
+    "at_seconds": 33.03,
+    "type": "B",
+    "name": "살짝 확대하며 연결",
+    "duration": 1.05
+  },
+  {
+    "at_seconds": 37.54,
+    "type": "A",
+    "name": "부드러운 겹침",
+    "duration": 0.9
+  },
+  {
+    "at_seconds": 41.73,
+    "type": "D",
+    "name": "레시피 카드 펼침",
+    "duration": 1.15
+  }
+]
