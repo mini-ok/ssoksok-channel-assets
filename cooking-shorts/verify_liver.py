@@ -50,10 +50,12 @@ def main():
         if vr>.025:ratios.append(20*np.log10(vr/max(mr,1e-8)))
     assert min(ratios)>12
     # Ensure the complete recipe stays motionless throughout its readable ending hold.
-    assert np.array_equal(np.asarray(v.frame(9,2)),np.asarray(v.frame(9,9))), 'Capture card moves'
+    # Scene index of 'end' shifted from 9 to 10 once the 'cause' scene was inserted.
+    end_idx=[i for i,row in enumerate(v.manifest()) if row['id']=='end'][0]
+    assert np.array_equal(np.asarray(v.frame(end_idx,2)),np.asarray(v.frame(end_idx,9))), 'Capture card moves'
     # Inspect transition frame-to-frame changes on the actual layout, including the incoming frame.
     deltas={}
-    for idx in [1,4,5,9]:
+    for idx in [1,4,5,10]:
         span=v.TRANSITIONS[idx][2]
         frames=[np.asarray(v.frame(idx,t).resize((108,192))).astype(float) for t in np.arange(0,span+.05,1/24)]
         diffs=[float(np.abs(a-b).mean()) for a,b in zip(frames,frames[1:])]

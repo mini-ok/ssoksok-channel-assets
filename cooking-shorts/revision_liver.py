@@ -52,10 +52,12 @@ TRANSITIONS={
  3:('A','부드러운 겹침',.9),
  4:('B','살짝 확대하며 연결',1.05),
  5:('C','접시 모양 원형 연결',1.10),
- 6:('A','부드러운 겹침',.95),
- 7:('B','살짝 확대하며 연결',1.05),
- 8:('A','부드러운 겹침',.9),
- 9:('D','레시피 카드 펼침',1.15)}
+ # scene indices 6-9 below shifted to 7-10 when the 'cause' scene was inserted at index 6;
+ # 'cause' itself (index 6) uses the default plain transition.
+ 7:('A','부드러운 겹침',.95),
+ 8:('B','살짝 확대하며 연결',1.05),
+ 9:('A','부드러운 겹침',.9),
+ 10:('D','레시피 카드 펼침',1.15)}
 
 def smooth(x):
     x=max(0.,min(1.,x));return x*x*(3-2*x)
