@@ -96,7 +96,7 @@ def synth_line(text,speaker,act,path):
         if not (why.startswith('leak') or why.startswith('extra') or why=='empty'):
             if best is None or fallback_only:best=x;fallback_only=False
         elif best is None:best=x;fallback_only=True
-    x=speech.speed(best,1.3);speech.tts.save_wav(str(path),x);return why
+    x=speech.speed(best,1.4);speech.tts.save_wav(str(path),x);return why
 
 def prepare_audio():
     source=ROOT/'audio'/MANIFEST_SOURCE
