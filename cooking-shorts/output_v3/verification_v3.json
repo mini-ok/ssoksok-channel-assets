@@ -1,0 +1,26 @@
+{
+  "file": "쏙쏙건강요리_바나나오트밀_종이질감_v3.mp4",
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "seconds": 47.917,
+  "frames_decoded": 1150,
+  "audio_samples_decoded": 4590800,
+  "full_decode": "passed",
+  "integrated_lufs": -14.68,
+  "true_peak_dbtp": -1.27,
+  "minimum_speech_music_gap_db": 14.2,
+  "static_full_recipe_hold_seconds": 8.85,
+  "ending_asr": "구독은 사원증 발급! 좋아요는 보너스!",
+  "transition_max_frame_delta": {
+    "A": 1.28,
+    "B": 1.75,
+    "C": 3.29,
+    "D": 1.81
+  },
+  "old_footer": "removed",
+  "chef_label": "오늘의 요리사 : 심장 쉐프",
+  "top_right_label": "쏙쏙 건강요리"
+}
