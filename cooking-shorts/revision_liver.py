@@ -68,9 +68,9 @@ VOICE={'간 쉐프':('Charon','묵묵히 야근하는 간 과장. 낮고 차분�
 SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'간 쉐프','chop':'여성 내레이터','pour':'간 쉐프','mix':'간 쉐프',
  'cause':'여성 내레이터','benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
-ACTS={'hook':'피곤한 한숨 섞어 담담하게.','ingredients':'낮고 차분하게 하나씩.','rinse':'묵묵하게.','chop':'차분하고 다정하게.',
- 'pour':'느긋하게.','mix':'살살, 다정하게.','cause':'낮고 진지하게.','benefit':'낮고 믿음직하게.','serve':'담담하게 다정하게.',
- 'joke':'놀라서 담담하게.','end':'살짝 웃음기 있게.'}
+ACTS={'hook':'오늘은 설거지 말고 요리라서 신나고 홀가분하게!','ingredients':'밝고 또랑또랑하게 하나씩 짚으며.','rinse':'경쾌하고 야무지게.','chop':'즐겁고 통통 튀게.',
+ 'pour':'들뜬 목소리로 착착.','mix':'신나게, 리듬 타듯.','cause':'친근하고 똑부러지게, 궁금증을 짚어주듯.','benefit':'자신 있고 밝게.','serve':'으쓱하며 유쾌하게.',
+ 'joke':'억울해서 발랄하게 투덜대는 말투로.','end':'경쾌하게 활짝 웃으며.'}
 import asr_qa
 
 def gsynth(text,voice,prompt):
