@@ -48,8 +48,16 @@
     "duration": 5.0
   },
   {
+    "id": "cause",
+    "text": "간에 지방이 쌓이는 흔한 이유는, 쓰는 것보다 많이 먹어서 그런 거래요.",
+    "title": "왜 간에 지방이 쌓일까",
+    "mood": "serious",
+    "speech_duration": 0,
+    "duration": 4.5
+  },
+  {
     "id": "benefit",
-    "text": "콩과 채소 중심 식사, 간 건강도 식습관부터요.",
+    "text": "식이섬유가 많고 혈당을 천천히 올리는 지중해식 식단은, 간 지방을 줄이는 것과 관련 있어요!",
     "title": "간이 고른 이유",
     "mood": "proud",
     "speech_duration": 3.4669583333333334,

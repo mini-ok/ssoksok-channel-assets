@@ -40,7 +40,8 @@ TITLES={
  'chop':'02  씻고 작게 썰기',
  'pour':'03  볼에 모두 담기',
  'mix':'04  한 작은술씩 섞기',
- 'benefit':'간이 고른 이유',
+ 'cause':'왜 간에 지방이 쌓일까',
+ 'benefit':'지중해식 식단이 좋은 이유',
  'serve':'마법 말고, 좋은 습관',
  'joke':'설거지는 심장 씨가?',
  'end':'캡처해서 오늘 곁들임에!'}
@@ -63,10 +64,10 @@ import requests,time
 # Voices: liver chef is a calm, easy-going male voice (Umbriel), different from the heart chef; narrator stays Despina.
 VOICE={'간 쉐프':('Charon','묵묵히 야근하는 간 과장. 낮고 차분하게, 한숨 섞어, 다정함이 묻어나게.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
 SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'간 쉐프','chop':'여성 내레이터','pour':'간 쉐프','mix':'간 쉐프',
- 'benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
+ 'cause':'여성 내레이터','benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
 ACTS={'hook':'피곤한 한숨 섞어 담담하게.','ingredients':'낮고 차분하게 하나씩.','rinse':'묵묵하게.','chop':'차분하고 다정하게.',
- 'pour':'느긋하게.','mix':'살살, 다정하게.','benefit':'낮고 믿음직하게.','serve':'담담하게 다정하게.',
+ 'pour':'느긋하게.','mix':'살살, 다정하게.','cause':'낮고 진지하게.','benefit':'낮고 믿음직하게.','serve':'담담하게 다정하게.',
  'joke':'놀라서 담담하게.','end':'살짝 웃음기 있게.'}
 import asr_qa
 
@@ -151,7 +152,8 @@ def set_stage():
 
 SPEAKER={'간 쉐프':('간 쉐프',0xEBCB78),'여성 내레이터':('해설',0x9ACDB4)}
 KEYWORDS={'hook':{'뒷정리','요리할게요.'},'ingredients':{'병아리콩,','오이,','토마토.','레몬즙과','올리브유요.'},'rinse':{'헹궈서','물기를'},
- 'chop':{'작게'},'pour':{'한데'},'mix':{'한','작은술씩.','살살'},'benefit':{'콩과','채소','식습관부터요.'},
+ 'chop':{'작게'},'pour':{'한데'},'mix':{'한','작은술씩.','살살'},
+ 'cause':{'쓰는','것보다','많이','먹어서'},'benefit':{'식이섬유가','지중해식','식단은','간','지방을'},
  'serve':{'해독','마법은','습관이죠.'},'joke':{'설거지도요?','심장'}}
 KEYWORDS={k:{w.strip('!?.,') for w in v} for k,v in KEYWORDS.items()}
 
@@ -304,9 +306,26 @@ def scene_content(idx,t):
     elif action=='chop':
         layer=Image.new('RGBA',(W,H));r.board(layer,'liver',t)
         crop=layer.crop((0,470,W,1330));im.alpha_composite(crop,(0,650))
+    elif action=='cause':
+        r.label(im,'쓰는 것보다 많이 먹으면',(540,750),56,fill='#4F8A6E')
+        r.label(im,'간에 지방이 쌓일지도 몰라요',(540,834),50)
+        # simple balance beam: eat-side sinks as t advances (heavier), burn-side rises
+        tilt=min(t/1.2,1.0)*14
+        cx,cy=540,980
+        bx1,by1=cx-230,cy-tilt*5; bx2,by2=cx+230,cy+tilt*5
+        d=ImageDraw.Draw(im)
+        d.rectangle((cx-9,cy+10,cx+9,cy+190),fill='#8B7355')          # post
+        r.rounded(im,(cx-70,cy+186,cx+70,cy+224),'#6F5A43',r=14,shadow=4)  # base
+        d.line((bx1,by1,bx2,by2),fill='#4F8A6E',width=16)             # beam
+        d.ellipse((cx-16,cy-16,cx+16,cy+16),fill='#4F8A6E')           # fulcrum
+        r.rounded(im,(bx1-110,by1+30,bx1+110,by1+150),'#FFE3C2',r=28,shadow=6)
+        r.label(im,'먹는 양',(bx1,by1+90),42,fill='#8B5A2B')
+        r.rounded(im,(bx2-110,by2+30,bx2+110,by2+150),'#D7EFE6',r=28,shadow=6)
+        r.label(im,'쓰는 양',(bx2,by2+90),42,fill='#3E7F68')
+        r.place(im,r.chef('liver','serious'),250,1420,.46,angle=math.sin(t*1.6)*2)
     elif action=='benefit':
-        r.label(im,'콩과 채소 중심 식사',(540,780),70,fill='#4F8A6E')
-        r.label(im,'간 건강도 식습관부터',(540,878),58)
+        r.label(im,'식이섬유 많고, 혈당 천천히',(540,760),58,fill='#4F8A6E')
+        r.label(im,'지중해식 식단, 간 지방 줄여요',(540,852),50)
         r.rounded(im,(120,965,960,1140),'#FFFCF3',r=38,shadow=8)
         r.rounded(im,(150,1005,282,1075),'#4EAFA3',r=30,shadow=3)
         r.label(im,'출처',(216,1040),48,fill='#FFFFFF')

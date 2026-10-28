@@ -39,6 +39,7 @@ EPISODES = {
    ('chop',4.5,'serious',['씻은 오이랑 토마토는 작게 썰어요.','Wash the cucumber and tomato, then dice them.'],['02 / 씻고 작게 썰기','02 / WASH & DICE']),
    ('pour',4.0,'happy',['볼에 콩이랑 채소를 한데 담고요.','Tip the chickpeas and vegetables into a bowl.'],['03 / 볼에 모두 담기','03 / INTO THE BOWL']),
    ('mix',5.0,'happy',['레몬즙, 올리브유 한 작은술씩. 살살 섞어요.','One teaspoon each of lemon juice and olive oil. Gently toss.'],['04 / 1작은술씩 + 섞기','04 / 1 TSP EACH + TOSS']),
+   ('cause',4.5,'serious',['간에 지방이 쌓이는 흔한 이유는, 쓰는 것보다 많이 먹어서 그런 거래요.','A common reason fat builds up in the liver? Eating more than you burn.'],['왜 간에 지방이 쌓일까','WHY LIVER FAT BUILDS UP']),
    ('benefit',5.2,'proud',['콩과 채소 중심 식사, 간 건강도 식습관부터요.','Beans and vegetables fit a liver-friendly eating pattern.'],['간이 고른 이유','WHY LIVER CHOSE THIS']),
    ('serve',4.0,'happy_closed',['간 해독 마법은 없어요. 맛있는 습관이죠.','No magic liver detox. Just a tasty everyday habit.'],['마법 말고, 좋은 습관','NO DETOX MAGIC. JUST HABITS.']),
    ('joke',3.6,'wow',['설거지도요? 그건 심장 씨가요.','The dishes, too? Heart can handle those.'],['설거지는 심장 씨가...','DISHES? ASK HEART...']),
