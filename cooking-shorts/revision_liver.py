@@ -78,7 +78,8 @@ def synth_line(text,speaker,act,path):
         print(f'  {path.stem} try{attempt+1} {len(x)/24000:.2f}s {why} | {heard[:40]}',flush=True)
         # Whisper writes numbers as digits ('40g'), which can fail the text match although the take is fine,
         # so a take that merely mismatches in coverage is kept as a fallback; leaked prompts / extra words are never kept.
-        if ok:best=x;break
+        # The closing line must say 보너스 exactly (a take heard as 버너스/뽀러스 is rejected).
+        if ok and (path.stem!='end' or '보너스' in heard.replace(' ','')):best=x;break
         if not (why.startswith('leak') or why.startswith('extra') or why=='empty'):
             if best is None or fallback_only:best=x;fallback_only=False
         elif best is None:best=x;fallback_only=True
@@ -196,8 +197,8 @@ def recipe_card():
     rows=[
       ('1','통조림 콩은 헹궈 물기를 빼요.'),
       ('','가능하면 무염 제품으로'),
-      ('2','오이·토마토를 작게 썰어요.'),
-      ('3','볼에 담고 레몬즙·올리브유를'),
+      ('2','오이와 토마토를 작게 썰어요.'),
+      ('3','볼에 담고 레몬즙과 올리브유를'),
       ('','살살 섞어요.')]
     ys=[925,1000,1090,1190,1264]
     for (number,line),y in zip(rows,ys):

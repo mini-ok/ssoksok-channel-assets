@@ -11,6 +11,17 @@ OUT=v.OUT
 def read_wav(path):
     with wave.open(str(path)) as f:return np.frombuffer(f.readframes(f.getnframes()),np.int16).astype(np.float32)/32768
 
+def ending_asr(movie):
+    # Measured, not a constant: transcribe the last 9.5 s of the final file (whisper small) and require the closing line.
+    import os,sys
+    sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'engine'/'pipeline'/'render'));os.environ.setdefault('ASR_BACKEND','whisper')
+    import asr_qa
+    dur=float(re.search(r'Duration: (\d+):(\d+):([\d.]+)',subprocess.run([v.r.FF,'-i',str(movie)],capture_output=True).stderr.decode()).group(0).split()[1].split(':')[0])
+    raw=subprocess.run([v.r.FF,'-v','error','-sseof','-9.6','-i',str(movie),'-ac','1','-ar','24000','-f','f32le','pipe:1'],capture_output=True,check=True).stdout
+    heard=asr_qa.transcribe(np.frombuffer(raw,np.float32),24000,'ko')
+    assert '보너스' in heard.replace(' ',''),'Ending not heard as 보너스: '+heard
+    return heard.strip()
+
 def main():
     movie=OUT/'쏙쏙건강요리_바나나오트밀_조리효과음_v5.mp4'
     container=av.open(str(movie));stream=container.streams.video[0]
@@ -54,7 +65,7 @@ def main():
     report={'file':movie.name,'dimensions':[1080,1920],'fps':24,'seconds':round(n/24,3),'frames_decoded':n,
             'audio_samples_decoded':samples,'full_decode':'passed','integrated_lufs':float(stats['input_i']),
             'true_peak_dbtp':float(stats['input_tp']),'minimum_speech_music_gap_db':round(float(min(ratios)),1),
-            'static_full_recipe_hold_seconds':8.85,'ending_asr':'구독은 사원증 발급! 좋아요는 보너스!',
+            'static_full_recipe_hold_seconds':8.85,'ending_asr':ending_asr(movie),
             'transition_max_frame_delta':deltas,'old_footer':'removed','chef_label':'오늘의 요리사 : 심장 쉐프',
             'top_right_label':'쏙쏙 건강요리'}
     (OUT/'verification_v5.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

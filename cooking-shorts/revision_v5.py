@@ -91,7 +91,8 @@ def synth_line(text,speaker,act,path):
         print(f'  {path.stem} try{attempt+1} {len(x)/24000:.2f}s {why} | {heard[:40]}',flush=True)
         # Whisper writes numbers as digits ('40g'), which can fail the text match although the take is fine,
         # so a take that merely mismatches in coverage is kept as a fallback; leaked prompts / extra words are never kept.
-        if ok:best=x;break
+        # The closing line must say 보너스 exactly (a take heard as 버너스/뽀러스 is rejected).
+        if ok and (path.stem!='end' or '보너스' in heard.replace(' ','')):best=x;break
         if not (why.startswith('leak') or why.startswith('extra') or why=='empty'):
             if best is None or fallback_only:best=x;fallback_only=False
         elif best is None:best=x;fallback_only=True
