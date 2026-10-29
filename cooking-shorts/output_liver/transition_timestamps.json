@@ -30,25 +30,25 @@
     "duration": 1.1
   },
   {
-    "at_seconds": 33.87,
+    "at_seconds": 36.48,
     "type": "A",
     "name": "부드러운 겹침",
     "duration": 0.95
   },
   {
-    "at_seconds": 41.0,
+    "at_seconds": 43.61,
     "type": "B",
     "name": "살짝 확대하며 연결",
     "duration": 1.05
   },
   {
-    "at_seconds": 45.35,
+    "at_seconds": 47.96,
     "type": "A",
     "name": "부드러운 겹침",
     "duration": 0.9
   },
   {
-    "at_seconds": 49.7,
+    "at_seconds": 51.97,
     "type": "D",
     "name": "레시피 카드 펼침",
     "duration": 1.15
