@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "Greens Chosen by Gut",
+    "text": "Today, a green side dish for your gut! I'm cooking garlic broccoli!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.9855416666666668,
+    "duration": 5.432
+  },
+  {
+    "id": "ingredients",
+    "title": "Simple, Everyday Ingredients",
+    "text": "One hundred fifty grams of broccoli, one garlic clove, one teaspoon of oil, and two tablespoons of water.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.142666666666667,
+    "duration": 7.543
+  },
+  {
+    "id": "chop",
+    "title": "01  Slice the Stalk Too",
+    "text": "Wash and cut into bite-sized florets. Thinly slice the stalk, so you can eat that too!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.733708333333333,
+    "duration": 6.134
+  },
+  {
+    "id": "steam",
+    "title": "02  Add Water and Cover",
+    "text": "Put broccoli and water in the pan. Cover and cook over medium heat for about three minutes.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.2655,
+    "duration": 6.665
+  },
+  {
+    "id": "fry",
+    "title": "03  Gently Fry with Garlic",
+    "text": "Let the water evaporate, then turn the heat to medium-low. Add oil and minced garlic. Fry for about one minute.",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 6.886041666666666,
+    "duration": 8.286
+  },
+  {
+    "id": "serve",
+    "title": "Tender Stalks? Ready!",
+    "text": "Once the stalks are tender, it's ready! Season lightly, just how you like it.",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.6810833333333335,
+    "duration": 6.081
+  },
+  {
+    "id": "benefit",
+    "title": "Why Did Gut Choose This?",
+    "text": "Broccoli adds fiber. Fiber and enough fluids help keep stools soft and easier to pass.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.735666666666667,
+    "duration": 8.348
+  },
+  {
+    "id": "habit",
+    "title": "Build Up Slowly. Drink Water.",
+    "text": "Build up your fiber slowly, rather than all at once! And remember water. That's Chef Gut's tip!",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.794958333333334,
+    "duration": 7.195
+  },
+  {
+    "id": "joke",
+    "title": "Save Me Some Water!",
+    "text": "Don't just save my vegetables. Save me a glass of water too! I'm thirsty!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.815958333333334,
+    "duration": 6.216
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Side!",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.5675416666666666,
+    "duration": 10
+  }
+]

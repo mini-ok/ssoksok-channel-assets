@@ -1,9 +1,9 @@
 """Exercise the packaged uploader with a fake YouTube API; never contacts a real service."""
-import json,hashlib,tempfile,importlib.util,os,contextlib,io
+import json,hashlib,tempfile,importlib.util,os,contextlib,io,sys
 from pathlib import Path
 from unittest.mock import patch
 WORK=Path(__file__).resolve().parents[3]
-SOURCE=WORK/'toast_upload_handoff'
+SOURCE=Path(sys.argv[1]) if len(sys.argv)>1 else WORK/'toast_upload_handoff'
 class Response:
  def __init__(self,body,headers=None):self.body=body;self.headers=headers or {};self.ok=True;self.status_code=200
  def json(self):return self.body

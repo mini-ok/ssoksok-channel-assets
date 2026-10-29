@@ -5,3 +5,8 @@ __pycache__/
 output/scene_*.png
 output/encoded_*.jpg
 !output/encoded_review.jpg
+output_en/*
+!output_en/*.json
+!output_en/encoded_review.jpg
+!output_en/GarlicBroccoli_EN.srt
+!output_en/GarlicBroccoli_recipe_EN.png

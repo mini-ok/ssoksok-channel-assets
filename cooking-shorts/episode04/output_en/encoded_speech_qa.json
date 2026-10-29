@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Today, a green side dish for your gut! I'm cooking garlic broccoli!",
+    "heard": "Today, a green side dish for your gut! I'm cooking garlic broccoli.",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "One hundred fifty grams of broccoli, one garlic clove, one teaspoon of oil, and two tablespoons of water.",
+    "heard": "150 grams of broccoli, 1 garlic clove, 1 teaspoon of oil, and 2 tablespoons of water.",
+    "similarity": 1.0
+  },
+  {
+    "id": "chop",
+    "expected": "Wash and cut into bite-sized florets. Thinly slice the stalk, so you can eat that too!",
+    "heard": "Wash and cut into bite-sized florets, thinly slice the stock, so you can eat that, too!",
+    "similarity": 0.9701492537313433
+  },
+  {
+    "id": "steam",
+    "expected": "Put broccoli and water in the pan. Cover and cook over medium heat for about three minutes.",
+    "heard": "Put broccoli and water in the pan. Cover and cook over medium heat for about 3 minutes.",
+    "similarity": 1.0
+  },
+  {
+    "id": "fry",
+    "expected": "Let the water evaporate, then turn the heat to medium-low. Add oil and minced garlic. Fry for about one minute.",
+    "heard": "Let the water evaporate, then turn the heat to medium low.  Add oil and minced garlic.  Fry for about one minute.",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "Once the stalks are tender, it's ready! Season lightly, just how you like it.",
+    "heard": "Once the stalks are tender, it's ready! Season lightly just how you like it!",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Broccoli adds fiber. Fiber and enough fluids help keep stools soft and easier to pass.",
+    "heard": "Broccoli adds fiber. Fiber and enough fluids help keep stools soft and easier to pass.",
+    "similarity": 1.0
+  },
+  {
+    "id": "habit",
+    "expected": "Build up your fiber slowly, rather than all at once! And remember water. That's Chef Gut's tip!",
+    "heard": "Build up your fiber slowly rather than all at once and remember water. That's Chef  Gott's tip.",
+    "similarity": 0.9795918367346939
+  },
+  {
+    "id": "joke",
+    "expected": "Don't just save my vegetables. Save me a glass of water too! I'm thirsty!",
+    "heard": "Don't just save my vegetables! Save me a glass of water, too! I'm thirsty!",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your Employee Badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

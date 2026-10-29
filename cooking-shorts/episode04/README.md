@@ -38,4 +38,15 @@
 ..\.venv-cooking\Scripts\python.exe cooking-shorts\episode04\package_download.py
 ```
 
-MP4·WAV와 인증 파일은 저장소에 올리지 않는다. GitHub에는 코드·대본·기획서·자막·검증 결과·검수 정지화면을 저장한다. 한글판 제작만 수행했으며 영어판 제작과 유튜브 업로드는 실행하지 않는다.
+MP4·WAV와 인증 파일은 저장소에 올리지 않는다. GitHub에는 코드·대본·기획서·자막·검증 결과·검수 정지화면을 저장한다. 한국어·영어 영상을 제작했으며 실제 유튜브 업로드는 실행하지 않았다.
+
+## 영어판과 업로드 폴더
+
+- `produce_en.py`가 승인한 4편 그림·동작·음악·건강 해설을 현지화한다. 장 쉐프 Aoede와 여성 해설 Despina, 1.3배 속도를 유지한다.
+- 영어의 긴 자막은 3줄 배치로 글자 크기를 확보하고 이름표·자막판과 겹치지 않게 조정했다.
+- 영어 제작: `produce_en.py audio`, `preview`, `render`, `verify`, `check`.
+- 결과: `output_en/TinyBodyCo_GarlicBroccoli_EN.mp4`, 영어 자막·레시피 이미지·검증 JSON.
+- `package_upload.py`가 `K:/AI채널/4편_브로콜리마늘볶음_업로드용` 폴더와 `K:/AI채널/브로콜리마늘볶음_한영_클라우드업로드묶음.zip`을 만든다.
+- 두 언어 영상·자막·레시피·검증 결과·업로드 메타데이터·실행 스크립트·안내를 포함한다. 인증 정보는 포함하지 않는다.
+- 한국어 @ssoksok-health, 영어 @tinybodyco와 기존 건강요리 숏츠 재생목록을 사용한다. 업로드 완료 기록은 언어+파일 해시별로 구분하며 채널·실제 공개 상태를 확인한다.
+- 업로드 스크립트는 `episode03/test_upload_package.py`에 이 폴더 경로를 넘겨 API 모의 테스트한다. 실제 인증·업로드 결과 검증과 구분한다.

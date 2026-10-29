@@ -1,0 +1,25 @@
+{
+  "file": "TinyBodyCo_GarlicBroccoli_EN.mp4",
+  "seconds": 71.91666666666667,
+  "frames_decoded": 1726,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.72,
+  "true_peak": -5.75,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "d82e54b50c51f609fecca562f21992e4a6a5632718b81bded239e299a06ea16a",
+  "evidence_reference": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "recipe_note": "Fiber and hydration support bowel habits; not a claim that this dish treats constipation. No kitchen or taste test.",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_episode_music": "buant_pop_groove.mp3",
+  "selected_music_stem_correlation": 0.869,
+  "previous_music_stem_correlation": 0.0088,
+  "different_music_verified": "passed",
+  "chef_voice": "Aoede",
+  "narrator_voice": "Despina"
+}
