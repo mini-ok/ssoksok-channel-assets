@@ -64,15 +64,15 @@ def smooth(x):
 
 import requests,time
 # Voices: liver chef is a calm, easy-going male voice (Umbriel), different from the heart chef; narrator stays Despina.
-VOICE={'간 쉐프':('Charon','오늘은 요리할 생각에 신난 간 과장. 밝고 또랑또랑하게, 활기차게, 한숨이나 힘빠진 소리 없이.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
-# 사용자 지시(2026-10-29): 위 persona가 "낮고 차분하게, 한숨 섞어"였던 탓에 ACTS를 밝게 바꿔도 한숨이 계속 섞여 나왔다.
-# persona(기본 톤) 쪽을 고치는 게 근본 수정 — 요리 숏츠는 ACTS뿐 아니라 persona도 항상 밝은 톤으로 적어야 한다.
+VOICE={'간 쉐프':('Charon','묵묵히 야근하는 간 과장. 낮고 차분하게, 한숨 섞어, 다정함이 묻어나게.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
+# 사용자 지시(2026-10-29): "활기차게" 버전으로 바꿔 봤지만, 비교해보니 제일 처음 만든(이 낮고 차분한, 한숨 섞인) 버전이
+# 가장 낫다고 해서 원상복구함. 이 캐릭터는 예외로 둔다 — CLAUDE.md의 "요리 숏츠는 항상 밝은 톤" 기본 규칙과 다르게 간다.
 SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'간 쉐프','chop':'여성 내레이터','pour':'간 쉐프','mix':'간 쉐프',
  'cause':'여성 내레이터','benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
-ACTS={'hook':'산뜻하고 들뜬 목소리로, 홀가분하게.','ingredients':'밝고 또랑또랑하게 하나씩 짚으며.','rinse':'경쾌하고 야무지게.','chop':'즐겁고 통통 튀게.',
- 'pour':'들뜬 목소리로 착착.','mix':'신나게, 리듬 타듯.','cause':'친근하고 똑부러지게, 궁금증을 짚어주듯.','benefit':'자신 있고 밝게.','serve':'으쓱하며 유쾌하게.',
- 'joke':'억울해서 발랄하게 투덜대는 말투로.','end':'경쾌하게 활짝 웃으며.'}
+ACTS={'hook':'피곤한 한숨 섞어 담담하게.','ingredients':'낮고 차분하게 하나씩.','rinse':'묵묵하게.','chop':'차분하고 다정하게.',
+ 'pour':'느긋하게.','mix':'살살, 다정하게.','cause':'낮고 진지하게.','benefit':'낮고 믿음직하게.','serve':'담담하게 다정하게.',
+ 'joke':'놀라서 담담하게.','end':'살짝 웃음기 있게.'}
 import asr_qa
 
 def gsynth(text,voice,prompt):
