@@ -5,6 +5,8 @@
   "chef": "",
   "main_ingredients": [],
   "cooking_style": "",
+  "global_accessibility": {"common_ingredients": [], "substitutions": [], "basic_tools": []},
+  "organ_rotation_note": "",
   "health_focus": "",
   "reason_for_chef": "",
   "evidence": [{"url": "", "title": "", "checked_at": "", "supported_claim": "", "conditions_and_limits": ""}],

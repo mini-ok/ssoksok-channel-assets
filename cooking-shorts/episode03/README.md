@@ -46,3 +46,15 @@
 인증 파일은 저장소 밖에 두며 결과물에 포함하지 않는다. MP4·WAV는 반복 커밋하지 않는다. 업로드는 실행하지 않는다.
 
 이번 3편은 심장으로 마무리하라는 사용자 지시를 따랐다. 다음 편부터는 가능한 한 다른 장기를 우선하며 건강 근거 적합성을 우선한다.
+
+## 영어판과 클라우드 업로드 묶음
+
+`produce_toast_en.py`는 최종 한글 렌더러를 문자열 단위로 현지화한다. 레시피와 그림·동작·조리 후 여성 건강 해설·출처·대체 섭취 조건을 유지한다. 심장 쉐프 Zubenelgenubi와 여성 해설 Despina, 1.3배 속도. 영어 폰트와 긴 문장의 폭을 맞췄다.
+
+- 영상: `output_toast_en/TinyBodyCo_ApplePeanutButterToast_EN.mp4`.
+- 재생성: `produce_toast_en.py audio`, `preview`, `render`, `verify`, `check`.
+- 원음/최종 MP4 음성 받아쓰기: `speech_qa.json`, `encoded_speech_qa.json`.
+- 전체 프레임 디코딩·음량·레시피 고정: `verification.json`.
+- `package_upload.py`로 `K:/AI채널/사과땅콩버터토스트_한영_클라우드업로드묶음.zip` 생성. 한글/영문 영상·자막·레시피·메타데이터·실행 스크립트·안내·검증 결과 포함. 인증 파일·토큰은 포함하지 않는다.
+- 기존 @ssoksok-health와 @tinybodyco에 공개 업로드하고 기존 건강요리 재생목록을 재사용하는 스크립트다. 실제 업로드는 이 PC에서 실행하지 않았다.
+- `test_upload_package.py`는 네트워크를 모두 가짜 응답으로 대체해 양쪽 채널·언어·기존 재생목록·중복 방지·해시 오류·잘못된 채널·비공개 상태 거부를 검증한다. 실제 인증·유튜브 공개 결과 검증과는 구분한다.

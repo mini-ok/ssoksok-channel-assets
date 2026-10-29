@@ -9,3 +9,8 @@ output_toast/*
 !output_toast/encoded_review.jpg
 !output_toast/사과땅콩버터토스트_전체레시피.png
 !output_toast/사과땅콩버터토스트_한글.srt
+output_toast_en/*
+!output_toast_en/*.json
+!output_toast_en/encoded_review.jpg
+!output_toast_en/ApplePeanutButterToast_recipe_EN.png
+!output_toast_en/ApplePeanutButterToast_EN.srt

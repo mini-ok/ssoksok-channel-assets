@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Peanut butter instead of butter! This toast is a little treat for your heart.",
+    "heard": "Peanut butter instead of butter. This toast is a little treat for your heart.",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "One slice of whole-wheat bread, half an apple, and twenty grams of peanut butter.",
+    "heard": "One slice of whole wheat bread, half an apple, and 20 grams of peanut butter.",
+    "similarity": 1.0
+  },
+  {
+    "id": "chop",
+    "expected": "Wash and core the apple, then slice it thinly. Keep the peel on!",
+    "heard": "Wash and core the apple, then slice it thinly. Keep the peel on.",
+    "similarity": 1.0
+  },
+  {
+    "id": "spread",
+    "expected": "Choose one hundred percent peanuts, with no added sugar or salt. Spread it evenly!",
+    "heard": "Choose 100% peanuts with no added sugar or salt. Spread it evenly.",
+    "similarity": 1.0
+  },
+  {
+    "id": "top",
+    "expected": "Layer on the apple slices. Crunchy toast, ready to go!",
+    "heard": "Layer on the apple slices. Crunchy toast, ready to go!",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "Still rich and nutty, even without butter! Here's why I picked this snack.",
+    "heard": "Still rich and nutty, even without butter, here's why I picked this snack.",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Replacing saturated fat with unsaturated fat can help manage LDL, the bad cholesterol.",
+    "heard": "Replacing saturated fat with unsaturated fat can help manage LDL, the bad cholesterol.",
+    "similarity": 1.0
+  },
+  {
+    "id": "swap",
+    "expected": "So swap butter for peanut butter! It's a replacement, not an extra serving. That's the heart-friendly choice.",
+    "heard": "So swap butter for peanut butter. It's a replacement, not an extra serving. That's the heart-friendly choice.",
+    "similarity": 1.0
+  },
+  {
+    "id": "joke",
+    "expected": "Taking care of your heart is great, but please don't eat the chef's snack too!",
+    "heard": "Taking care of your heart is great, but please don't eat the chef's snack too!",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

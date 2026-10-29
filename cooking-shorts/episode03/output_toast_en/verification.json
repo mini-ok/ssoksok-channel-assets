@@ -1,0 +1,18 @@
+{
+  "file": "TinyBodyCo_ApplePeanutButterToast_EN.mp4",
+  "seconds": 64.08333333333333,
+  "frames_decoded": 1538,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.78,
+  "true_peak": -5.63,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "94ef209b63411099e53270c033faf01f011907a4679d162b4f25f6b2fa06e147",
+  "evidence_reference": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fats-in-foods",
+  "recipe_note": "Original recipe illustrating a saturated-to-unsaturated fat swap; not a trial of this toast or a treatment claim. No kitchen/taste test."
+}

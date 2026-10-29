@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "A Heart-Friendly Swap",
+    "text": "Peanut butter instead of butter! This toast is a little treat for your heart.",
+    "speaker": "Chef Heart",
+    "voice": "Zubenelgenubi",
+    "speed": 1.3,
+    "speech_duration": 3.9389166666666666,
+    "duration": 5.595
+  },
+  {
+    "id": "ingredients",
+    "title": "Just Three Ingredients",
+    "text": "One slice of whole-wheat bread, half an apple, and twenty grams of peanut butter.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.399791666666666,
+    "duration": 5.8
+  },
+  {
+    "id": "chop",
+    "title": "01  Slice the Apple",
+    "text": "Wash and core the apple, then slice it thinly. Keep the peel on!",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.010666666666666,
+    "duration": 5.411
+  },
+  {
+    "id": "spread",
+    "title": "02  Swap Your Spread",
+    "text": "Choose one hundred percent peanuts, with no added sugar or salt. Spread it evenly!",
+    "speaker": "Chef Heart",
+    "voice": "Zubenelgenubi",
+    "speed": 1.3,
+    "speech_duration": 4.456666666666667,
+    "duration": 5.857
+  },
+  {
+    "id": "top",
+    "title": "03  Add the Apple",
+    "text": "Layer on the apple slices. Crunchy toast, ready to go!",
+    "speaker": "Chef Heart",
+    "voice": "Zubenelgenubi",
+    "speed": 1.3,
+    "speech_duration": 3.877083333333333,
+    "duration": 5.277
+  },
+  {
+    "id": "serve",
+    "title": "Why Did Heart Choose This?",
+    "text": "Still rich and nutty, even without butter! Here's why I picked this snack.",
+    "speaker": "Chef Heart",
+    "voice": "Zubenelgenubi",
+    "speed": 1.3,
+    "speech_duration": 4.055166666666667,
+    "duration": 5.455
+  },
+  {
+    "id": "benefit",
+    "title": "Choose Unsaturated Fats",
+    "text": "Replacing saturated fat with unsaturated fat can help manage LDL, the bad cholesterol.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.198833333333333,
+    "duration": 7.599
+  },
+  {
+    "id": "swap",
+    "title": "Swap It. Don't Just Add It.",
+    "text": "So swap butter for peanut butter! It's a replacement, not an extra serving. That's the heart-friendly choice.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.21675,
+    "duration": 7.617
+  },
+  {
+    "id": "joke",
+    "title": "Save Some for the Chef!",
+    "text": "Taking care of your heart is great, but please don't eat the chef's snack too!",
+    "speaker": "Chef Heart",
+    "voice": "Zubenelgenubi",
+    "speed": 1.3,
+    "speech_duration": 4.008125,
+    "duration": 5.489
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Snack!",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Heart",
+    "voice": "Zubenelgenubi",
+    "speed": 1.3,
+    "speech_duration": 3.46975,
+    "duration": 10
+  }
+]
