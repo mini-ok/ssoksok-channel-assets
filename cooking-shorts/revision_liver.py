@@ -64,7 +64,9 @@ def smooth(x):
 
 import requests,time
 # Voices: liver chef is a calm, easy-going male voice (Umbriel), different from the heart chef; narrator stays Despina.
-VOICE={'간 쉐프':('Charon','묵묵히 야근하는 간 과장. 낮고 차분하게, 한숨 섞어, 다정함이 묻어나게.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
+VOICE={'간 쉐프':('Charon','오늘은 요리할 생각에 신난 간 과장. 밝고 또랑또랑하게, 활기차게, 한숨이나 힘빠진 소리 없이.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
+# 사용자 지시(2026-10-29): 위 persona가 "낮고 차분하게, 한숨 섞어"였던 탓에 ACTS를 밝게 바꿔도 한숨이 계속 섞여 나왔다.
+# persona(기본 톤) 쪽을 고치는 게 근본 수정 — 요리 숏츠는 ACTS뿐 아니라 persona도 항상 밝은 톤으로 적어야 한다.
 SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'간 쉐프','chop':'여성 내레이터','pour':'간 쉐프','mix':'간 쉐프',
  'cause':'여성 내레이터','benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.

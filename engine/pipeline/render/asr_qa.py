@@ -14,6 +14,9 @@ _state = {"backend": None, "whisper": None, "warned": False}
 # 연기 지시·기호 낭독에서 자주 나오는 낱말(원문에 없는데 받아쓰기에 있으면 의심)
 LEAK_WORDS_KO = ["물결", "템포", "속도로", "경쾌", "연기", "말투", "목소리", "톤으로", "내레이터", "어린이 교육", "씩씩하게", "느끼하게", "호들갑", "또박또박", "숨차", "한숨 섞어", "묵묵하게", "담담하게", "믿음직하게", "다정하게", "차분하게"]
 LEAK_WORDS_EN = ["tilde", "wave dash", "squiggle", "narrator", "tempo", "speak", "voice", "tone"]
+# 한숨/탄식 필러(사용자 지시 2026-10-29: "간 쉐프가 한숨 쉬는데 이게 맞아?" — 대본에 없는 "하...", "하아" 같은
+# 한숨 소리가 글자 수가 짧아 extra-head 문턱(6자)에 안 걸리고 통과하던 문제). 원문에 없는데 머리에 붙으면 바로 탈락시킨다.
+FILLER_HEAD_KO = ["하아", "하", "허", "흐음", "흠", "후", "어휴", "휴"]
 
 
 def norm(s, lang):
@@ -92,6 +95,12 @@ def check(x, sr, text, lang_s, prompt=""):
         nw = norm(w, lang_s)
         if nw and nw in nh and nw not in ne:
             return False, heard, f"leak-word:{w}"
+    # 1b) 머리에 붙은 한숨/탄식 필러: 원문에 없는 "하...", "하아" 등으로 시작하면 탈락(길이가 짧아 2번 문턱을 안 넘기므로 먼저 잡는다)
+    if lang_s == "ko":
+        for w in FILLER_HEAD_KO:
+            nw = norm(w, lang_s)
+            if nw and nh.startswith(nw) and not ne.startswith(nw):
+                return False, heard, f"filler-head:{w}"
     # 2) 지시문 조각: 지시문의 4글자 창이 원문에는 없는데 받아쓰기에 있으면 낭독 의심(한국어)
     if lang_s == "ko" and prompt:
         npm = norm(prompt, "ko")
