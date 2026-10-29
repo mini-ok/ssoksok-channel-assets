@@ -5,20 +5,20 @@
     1920
   ],
   "fps": 24,
-  "seconds": 59.708,
-  "frames_decoded": 1433,
-  "audio_samples_decoded": 5731200,
+  "seconds": 61.958,
+  "frames_decoded": 1487,
+  "audio_samples_decoded": 5947008,
   "full_decode": "passed",
-  "integrated_lufs": -16.46,
-  "true_peak_dbtp": -2.7,
-  "minimum_speech_music_gap_db": 19.5,
+  "integrated_lufs": -16.5,
+  "true_peak_dbtp": -5.55,
+  "minimum_speech_music_gap_db": 12.8,
   "static_full_recipe_hold_seconds": 8.85,
   "ending_asr": "구독은 사원증 발급, 좋아요는 보너스!",
   "transition_max_frame_delta": {
     "A": 1.85,
     "B": 2.33,
-    "C": 1.72,
-    "D": 2.43
+    "C": 1.9,
+    "D": 2.4
   },
   "old_footer": "removed",
   "chef_label": "오늘의 요리사 : 간 쉐프",
