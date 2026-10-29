@@ -518,10 +518,11 @@ def render():
         # ffmpeg's alimiter defaults to level=true, which auto-boosts quiet audio UP to the
         # ceiling (makeup gain) instead of only clamping peaks above it -- that's why earlier
         # attempts got LOUDER as the ceiling was lowered. level=disabled makes it a pure limiter.
-        # A livelier, more energetic vocal take has sharper transient attacks than a flat/tired
-        # one, so attack=5ms let peaks slip through; attack=1ms catches them, and limit=0.7 (vs
-        # 0.89) leaves enough margin to absorb AAC's own encode-time peak overshoot.
-        '-pix_fmt','yuv420p','-af','loudnorm=I=-14:TP=-1.5:LRA=8,alimiter=limit=0.7:attack=1:release=50:level=disabled','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(target)]
+        # loudnorm's dynamic (single-pass) mode measures slightly differently when muxed with
+        # video in this same ffmpeg call vs. run standalone on the audio alone -- true peak on
+        # the real encoded file has come out ~1-3dB hotter than an isolated test of the same
+        # filter string predicts. limit=0.5 keeps a large enough margin to absorb that drift.
+        '-pix_fmt','yuv420p','-af','loudnorm=I=-14:TP=-1.5:LRA=8,alimiter=limit=0.5:attack=1:release=50:level=disabled','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(target)]
     with (OUT/'encode.log').open('wb') as log:
         proc=subprocess.Popen(command,stdin=subprocess.PIPE,stderr=log)
         idx=0;start=0
