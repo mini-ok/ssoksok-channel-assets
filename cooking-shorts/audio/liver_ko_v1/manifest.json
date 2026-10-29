@@ -4,8 +4,8 @@
     "text": "오늘은 뒷정리 말고, 요리할게요.",
     "title": "간 과장, 오늘은 셰프!",
     "mood": "tired",
-    "speech_duration": 3.344875,
-    "duration": 3.975,
+    "speech_duration": 3.202916666666667,
+    "duration": 3.833,
     "speaker": "간 쉐프"
   },
   {
@@ -13,7 +13,7 @@
     "text": "익힌 병아리콩, 오이, 토마토. 레몬즙과 올리브유요.",
     "title": "재료는 딱 다섯 가지",
     "mood": "happy",
-    "speech_duration": 4.20725,
+    "speech_duration": 4.019416666666666,
     "duration": 5.8,
     "speaker": "여성 내레이터"
   },
@@ -22,8 +22,8 @@
     "text": "통조림 콩은 헹궈서 물기를 빼요.",
     "title": "01  헹구고 물 빼기",
     "mood": "serious",
-    "speech_duration": 3.8502083333333332,
-    "duration": 5.3,
+    "speech_duration": 2.738125,
+    "duration": 4.188,
     "speaker": "간 쉐프"
   },
   {
@@ -31,7 +31,7 @@
     "text": "씻은 오이랑 토마토는 작게 썰어요.",
     "title": "02  씻고 작게 썰기",
     "mood": "serious",
-    "speech_duration": 2.543083333333333,
+    "speech_duration": 2.522291666666667,
     "duration": 4.5,
     "speaker": "여성 내레이터"
   },
@@ -40,8 +40,8 @@
     "text": "볼에 콩이랑 채소를 한데 담고요.",
     "title": "03  볼에 모두 담기",
     "mood": "happy",
-    "speech_duration": 4.3155833333333335,
-    "duration": 5.766,
+    "speech_duration": 3.109625,
+    "duration": 4.56,
     "speaker": "간 쉐프"
   },
   {
@@ -49,8 +49,8 @@
     "text": "레몬즙, 올리브유 한 작은술씩. 살살 섞어요.",
     "title": "04  한 작은술씩 섞기",
     "mood": "happy",
-    "speech_duration": 4.78925,
-    "duration": 6.239,
+    "speech_duration": 4.0696666666666665,
+    "duration": 5.52,
     "speaker": "간 쉐프"
   },
   {
@@ -58,8 +58,8 @@
     "text": "간에 지방이 쌓이는 흔한 이유는, 쓰는 것보다 많이 먹어서 그런 거래요.",
     "title": "왜 간에 지방이 쌓일까",
     "mood": "serious",
-    "speech_duration": 4.53875,
-    "duration": 5.989,
+    "speech_duration": 4.018291666666666,
+    "duration": 5.468,
     "speaker": "여성 내레이터"
   },
   {
@@ -67,8 +67,8 @@
     "text": "식이섬유가 많고 혈당을 천천히 올리는 지중해식 식단은, 간 지방을 줄이는 것과 관련 있어요!",
     "title": "지중해식 식단이 좋은 이유",
     "mood": "proud",
-    "speech_duration": 5.854333333333333,
-    "duration": 7.304,
+    "speech_duration": 5.682,
+    "duration": 7.132,
     "speaker": "여성 내레이터"
   },
   {
@@ -76,8 +76,8 @@
     "text": "간 해독 마법은 없어요. 맛있는 습관이죠.",
     "title": "마법 말고, 좋은 습관",
     "mood": "happy_closed",
-    "speech_duration": 2.8093333333333335,
-    "duration": 4.259,
+    "speech_duration": 2.8998333333333335,
+    "duration": 4.35,
     "speaker": "여성 내레이터"
   },
   {
@@ -85,8 +85,8 @@
     "text": "설거지도요? 그건 심장 씨가요.",
     "title": "설거지는 심장 씨가?",
     "mood": "wow",
-    "speech_duration": 2.9390416666666668,
-    "duration": 4.389,
+    "speech_duration": 2.8990833333333335,
+    "duration": 4.349,
     "speaker": "간 쉐프"
   },
   {
@@ -94,7 +94,7 @@
     "text": "구독은 사원증 발급! 좋아요는 보너스!",
     "title": "캡처해서 오늘 곁들임에!",
     "mood": "happy_closed",
-    "speech_duration": 4.112833333333334,
+    "speech_duration": 3.271708333333333,
     "duration": 10.0,
     "speaker": "간 쉐프"
   }
