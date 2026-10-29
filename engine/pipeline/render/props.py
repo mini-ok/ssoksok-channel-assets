@@ -300,21 +300,163 @@ def pose_card(w, h, key):
         return P_(img, rr(N1, N2, 60, 60, 60 + w, 60 + h, 38), hx(0xFFFCF3), 9, soft=9, sh=(7, 11), blur=10, k=0.26, depth=0.6)
     return sprite(f"posecard_{key}_{int(w)}_{int(h)}", N1, N2, fn)
 
-def pose_bone(length, width, color, key):
-    """뼈대 한 토막: 스프라이트 중심(피벗)에서 위쪽(12시 방향)으로 length만큼 뻗은 둥근 선.
-    blit(..., rot=각도)로 피벗을 중심으로 회전시켜 쓴다(시계 바늘과 같은 기법)."""
-    N = int(length + width + 70)
-    def fn(img):
-        m = M(N, N); m.cv.drawLine(N / 2, N / 2, N / 2, N / 2 - length, paint(width))
-        return P_(img, m.arr(), hx(color), 6, soft=4, sh=(3, 4), blur=4, k=0.22, depth=0.55)
-    return sprite(f"posebone_{key}_{int(length)}_{int(width)}_{color}", N, N, fn)
+# ───────── 사람모형(마네킹) 포즈 — 뼈대 다이어그램을 대체 (사용자 지시 2026-10-28·29: 뼈대는
+# 투박해서 못 알아본다. 머리+몸통+팔다리를 가진 둥글둥글한 사람모형이 의자에 앉아 동작하는 모습으로
+# 그린다. 측면(側面) 전용 — 의자도 측면, 사람도 측면. 포즈 전체를 하나의 포즈=하나의 스프라이트로
+# 미리 굽는다(관절 체인을 매 프레임 합성하지 않음 — 이음매 어긋남 버그를 피하려고 2026-10-28에
+# 통째로 굽는 방식으로 바꿨다). 색은 고정: 살색(목·머리·팔), 몸통 전용 초록(민트그린), 하의 네이비,
+# 신발 진네이비. 자세한 검증 과정과 예시는 CHARACTER_BIBLE.md "운동·자세 동작 시연" 참고.
+POSE_SKIN, POSE_SKIN_SH = 0xF6C9A0, 0xE8AE7E
+POSE_SHIRT = 0x6FB6A8
+POSE_PANTS = 0x4F7D8C
+POSE_SHOE = 0x3E4A5E
+POSE_HAIR = 0x4A3A2E
+POSE_WOOD = 0xC9A877
 
-def pose_joint(r, color, key):
-    """관절점(동그라미)"""
-    N = int(r * 2 + 44)
+def pose_mannequin_chin_tuck(key, neck_lean):
+    """측면으로 의자에 앉은 사람모형 — 턱 당기기 등 '목이 앞뒤로 기우는' 동작용.
+    neck_lean: 목이 앞으로 기운 정도(양수=턱이 앞으로 나옴/목 폄, 음수=턱을 당김). P_pose가
+    neck_lean_from→neck_lean_to 두 값으로 이 함수를 두 번 불러 전/후(ghost+now)를 겹쳐 보여준다.
+    검증된 값: turtle-neck(기본 자세) neck_lean=70, 턱 당긴 자세 neck_lean=-20."""
+    N1, N2 = 560, 700
     def fn(img):
-        return P_(img, circ(N, N, N / 2, N / 2, r), hx(color), 5, soft=3, sh=(2, 2), blur=3, k=0.2, depth=0.45)
-    return sprite(f"posejoint_{key}_{int(r)}_{color}", N, N, fn)
+        m = M(N1, N2)
+        ox, oy = 50, 500
+        m.cv.drawRect(skia.Rect(ox + 170, oy + 34, ox + 190, oy + 176), paint())
+        m.cv.drawRect(skia.Rect(ox, oy + 34, ox + 20, oy + 176), paint())
+        seat = skia.Path(); seat.moveTo(ox, oy); seat.lineTo(ox + 190, oy); seat.lineTo(ox + 178, oy + 34); seat.lineTo(ox + 12, oy + 34); seat.close()
+        m.cv.drawPath(seat, paint())
+        m.cv.drawRoundRect(skia.Rect(ox - 8, oy - 260, ox + 26, oy + 10), 10, 10, paint())
+        img = P_(img, m.arr(), hx(POSE_WOOD), 3, soft=5, sh=(3, 4), blur=5, k=0.16, depth=0.42)
+
+        hipx, hipy = 290, oy - 4
+        # 다리(먼저 그려 몸통 뒤에 깔림): 엉덩이→무릎(앞쪽)→바닥에 닿은 발까지
+        mleg = M(N1, N2)
+        kneex, kneey = hipx + 150, hipy - 14
+        mleg.cv.drawLine(hipx - 10, hipy - 20, kneex, kneey, paint(66))
+        footx, footy = kneex - 6, hipy + 176
+        mleg.cv.drawLine(kneex, kneey, footx, footy, paint(52))
+        img = P_(img, mleg.arr(), hx(POSE_PANTS), 4, soft=5, sh=(3, 4), blur=5, k=0.18, depth=0.5)
+        mfoot = M(N1, N2)
+        foot = skia.Path(); foot.moveTo(footx - 28, footy - 18); foot.lineTo(footx + 14, footy - 18); foot.quadTo(footx + 58, footy - 18, footx + 58, footy + 6)
+        foot.quadTo(footx + 58, footy + 26, footx + 18, footy + 26); foot.lineTo(footx - 28, footy + 26); foot.close()
+        mfoot.cv.drawPath(foot, paint())
+        img = P_(img, mfoot.arr(), hx(POSE_SHOE), 4, soft=3, sh=(1, 2), blur=3, k=0.14, depth=0.4)
+
+        # 몸통: 초록색 자체가 몸통(밑에 살색 레이어 없음 — 겹쳐서 삐져나오는 문제를 원천 차단)
+        mtorso = M(N1, N2)
+        torso_top = hipy - 205
+        mtorso.cv.drawRRect(skia.RRect.MakeRectXY(skia.Rect(hipx - 95, torso_top, hipx + 95, hipy), 44, 70), paint())
+        img = P_(img, mtorso.arr(), hx(POSE_SHIRT), 5, soft=5, sh=(3, 5), blur=5, k=0.2, depth=0.56)
+
+        # 팔(무릎 위에 걸쳐 쉬는 자세), 몸통 위에 그림
+        marm = M(N1, N2); marm.cv.drawLine(hipx - 84, torso_top + 34, hipx - 10, hipy - 34, paint(30))
+        img = P_(img, marm.arr(), hx(POSE_SKIN), 6, soft=4, sh=(2, 3), blur=4, k=0.18, depth=0.5)
+
+        # 목+머리를 하나의 도형으로 합쳐 그림(union) — 목 아래쪽이 몸통 속으로 파고들게 해서
+        # 이음매 틈이 절대 생기지 않는다. neck_lean으로 목이 앞뒤로 기우는 각도 조절.
+        shoulderx, shouldery = hipx + 6, torso_top + 40
+        neck_tip_x, neck_tip_y = shoulderx + neck_lean * 0.62, shouldery - 78
+        nw = 30
+        neck = skia.Path()
+        neck.moveTo(shoulderx - nw, shouldery + 34); neck.lineTo(neck_tip_x - nw, neck_tip_y)
+        neck.arcTo(skia.Rect(neck_tip_x - nw, neck_tip_y - nw, neck_tip_x + nw, neck_tip_y + nw), 180, 180, False)
+        neck.lineTo(shoulderx + nw, shouldery + 34); neck.close()
+        headR = 58
+        head_cx, head_cy = neck_tip_x + neck_lean * 0.30, neck_tip_y - headR * 0.55
+        head = skia.Path(); head.addCircle(head_cx, head_cy, headR)
+        union = skia.Op(neck, head, skia.PathOp.kUnion_PathOp)
+        mhead = M(N1, N2); mhead.cv.drawPath(union, paint())
+        img = P_(img, mhead.arr(), hx(POSE_SKIN), 7, soft=5, sh=(4, 6), blur=6, k=0.2, depth=0.56)
+
+        # 귀(머리 위쪽 뒤편, 목 이음매와 겹치지 않는 자리)
+        mear = M(N1, N2); mear.cv.drawCircle(head_cx - headR * 0.74, head_cy + headR * 0.1, headR * 0.19, paint())
+        img = P_(img, mear.arr(), hx(POSE_SKIN), 8, soft=3, sh=(1, 2), blur=2, k=0.12)
+        # 머리카락
+        mhair = M(N1, N2); mhair.cv.drawArc(skia.Rect(head_cx - headR * 1.02, head_cy - headR * 1.08, head_cx + headR * 1.02, head_cy + headR * 0.35), 195, 170, True, paint())
+        img = P_(img, mhair.arr(), hx(POSE_HAIR), 9, soft=3, sh=(1, 2), blur=2, k=0.1, depth=0.38)
+        # 얼굴: 눈, 코, 입
+        mface = M(N1, N2)
+        mface.cv.drawCircle(head_cx + headR * 0.26, head_cy - headR * 0.06, headR * 0.09, paint())
+        nose = skia.Path(); nose.moveTo(head_cx + headR * 0.48, head_cy - headR * 0.02); nose.quadTo(head_cx + headR * 0.62, head_cy + headR * 0.1, head_cx + headR * 0.46, head_cy + headR * 0.16)
+        mface.cv.drawPath(nose, paint(headR * 0.05))
+        a = mface.arr()[..., None]; img = img * (1 - a) + hx(0x26304F)[None, None, :] * a
+        mmouth = M(N1, N2); sm = skia.Path(); sm.moveTo(head_cx + headR * 0.1, head_cy + headR * 0.22); sm.quadTo(head_cx + headR * 0.30, head_cy + headR * 0.34, head_cx + headR * 0.46, head_cy + headR * 0.2)
+        mmouth.cv.drawPath(sm, paint(headR * 0.045)); a2 = mmouth.arr()[..., None]; img = img * (1 - a2) + hx(0xB5583F)[None, None, :] * a2
+        return img
+    return sprite(f"posemannequin_{key}_{neck_lean}", N1, N2, fn)
+
+def pose_mannequin_knee_hug(key):
+    """측면으로 의자에 앉아 한쪽 무릎을 가슴 쪽으로 당겨 안은 사람모형 — 정적 유지 동작(예: 무릎 당기기)용.
+    다리는 하나만 그린다(들어 올린 쪽) — 바닥에 닿은 다른 쪽 다리까지 같이 그리면 둘이 겹쳐 보여
+    '무릎만 당긴' 모양이 아니라 '다리 전체가 그대로 바닥에 있는' 것처럼 보인다(2026-10-29 확인).
+    허벅지만 가슴 높이까지 들어 올리고, 무릎 아래(정강이+발)는 짧게 접어 바닥에서 뚜렷이 떨어뜨린다
+    (처음엔 자연스럽게 늘어뜨렸더니 발이 다시 바닥 높이까지 내려와 '보통 앉은 다리'처럼 보였다 — 작은
+    카드 크기에서 뚜렷이 읽히려면 다리 전체를 압축해 몸 쪽에 바짝 붙여야 한다)."""
+    N1, N2 = 560, 700
+    def fn(img):
+        m = M(N1, N2)
+        ox, oy = 50, 500
+        m.cv.drawRect(skia.Rect(ox + 170, oy + 34, ox + 190, oy + 176), paint())
+        m.cv.drawRect(skia.Rect(ox, oy + 34, ox + 20, oy + 176), paint())
+        seat = skia.Path(); seat.moveTo(ox, oy); seat.lineTo(ox + 190, oy); seat.lineTo(ox + 178, oy + 34); seat.lineTo(ox + 12, oy + 34); seat.close()
+        m.cv.drawPath(seat, paint())
+        m.cv.drawRoundRect(skia.Rect(ox - 8, oy - 260, ox + 26, oy + 10), 10, 10, paint())
+        img = P_(img, m.arr(), hx(POSE_WOOD), 3, soft=5, sh=(3, 4), blur=5, k=0.16, depth=0.42)
+
+        hipx, hipy = 290, oy - 4
+        # 몸통
+        mtorso = M(N1, N2)
+        torso_top = hipy - 205
+        mtorso.cv.drawRRect(skia.RRect.MakeRectXY(skia.Rect(hipx - 95, torso_top, hipx + 95, hipy), 44, 70), paint())
+        img = P_(img, mtorso.arr(), hx(POSE_SHIRT), 5, soft=5, sh=(3, 5), blur=5, k=0.2, depth=0.56)
+
+        # 목+머리(곧게, 턱당기기 기울임 없음) — chin_tuck과 같은 유니언 기법
+        shoulderx, shouldery = hipx + 6, torso_top + 40
+        neck_tip_x, neck_tip_y = shoulderx, shouldery - 78
+        nw = 30
+        neck = skia.Path()
+        neck.moveTo(shoulderx - nw, shouldery + 34); neck.lineTo(neck_tip_x - nw, neck_tip_y)
+        neck.arcTo(skia.Rect(neck_tip_x - nw, neck_tip_y - nw, neck_tip_x + nw, neck_tip_y + nw), 180, 180, False)
+        neck.lineTo(shoulderx + nw, shouldery + 34); neck.close()
+        headR = 58
+        head_cx, head_cy = neck_tip_x, neck_tip_y - headR * 0.55
+        head = skia.Path(); head.addCircle(head_cx, head_cy, headR)
+        union = skia.Op(neck, head, skia.PathOp.kUnion_PathOp)
+        mhead = M(N1, N2); mhead.cv.drawPath(union, paint())
+        img = P_(img, mhead.arr(), hx(POSE_SKIN), 7, soft=5, sh=(4, 6), blur=6, k=0.2, depth=0.56)
+        mear = M(N1, N2); mear.cv.drawCircle(head_cx - headR * 0.74, head_cy + headR * 0.1, headR * 0.19, paint())
+        img = P_(img, mear.arr(), hx(POSE_SKIN), 8, soft=3, sh=(1, 2), blur=2, k=0.12)
+        mhair = M(N1, N2); mhair.cv.drawArc(skia.Rect(head_cx - headR * 1.02, head_cy - headR * 1.08, head_cx + headR * 1.02, head_cy + headR * 0.35), 195, 170, True, paint())
+        img = P_(img, mhair.arr(), hx(POSE_HAIR), 9, soft=3, sh=(1, 2), blur=2, k=0.1, depth=0.38)
+        mface = M(N1, N2)
+        mface.cv.drawCircle(head_cx + headR * 0.26, head_cy - headR * 0.06, headR * 0.09, paint())
+        nose = skia.Path(); nose.moveTo(head_cx + headR * 0.48, head_cy - headR * 0.02); nose.quadTo(head_cx + headR * 0.62, head_cy + headR * 0.1, head_cx + headR * 0.46, head_cy + headR * 0.16)
+        mface.cv.drawPath(nose, paint(headR * 0.05))
+        a = mface.arr()[..., None]; img = img * (1 - a) + hx(0x26304F)[None, None, :] * a
+        mmouth = M(N1, N2); sm = skia.Path(); sm.moveTo(head_cx + headR * 0.1, head_cy + headR * 0.22); sm.quadTo(head_cx + headR * 0.30, head_cy + headR * 0.34, head_cx + headR * 0.46, head_cy + headR * 0.2)
+        mmouth.cv.drawPath(sm, paint(headR * 0.045)); a2 = mmouth.arr()[..., None]; img = img * (1 - a2) + hx(0xB5583F)[None, None, :] * a2
+
+        # 들어 올린 다리: 허벅지만 가슴 쪽으로(hipx+70, torso_top+30), 무릎 아래는 짧게 접어
+        # 몸 쪽에 붙임 — 몸통/머리보다 나중에 그려 앞쪽에 겹쳐 보이게 한다.
+        kneex, kneey = hipx + 70, torso_top + 30
+        mleg = M(N1, N2); mleg.cv.drawLine(hipx - 10, hipy - 20, kneex, kneey, paint(66))
+        footx, footy = kneex - 6, kneey + 85
+        mleg.cv.drawLine(kneex, kneey, footx, footy, paint(50))
+        img = P_(img, mleg.arr(), hx(POSE_PANTS), 10, soft=5, sh=(3, 4), blur=5, k=0.18, depth=0.5)
+        mfoot = M(N1, N2)
+        foot = skia.Path(); foot.moveTo(footx - 20, footy - 14); foot.lineTo(footx + 22, footy - 14); foot.quadTo(footx + 46, footy - 14, footx + 46, footy + 6)
+        foot.quadTo(footx + 46, footy + 22, footx + 10, footy + 22); foot.lineTo(footx - 20, footy + 22); foot.close()
+        mfoot.cv.drawPath(foot, paint())
+        img = P_(img, mfoot.arr(), hx(POSE_SHOE), 10, soft=3, sh=(1, 2), blur=3, k=0.14, depth=0.4)
+
+        # 양팔로 허벅지/무릎을 감싸 안음 — 다리보다 더 나중에 그려 맨 앞에 보이게 한다.
+        marm = M(N1, N2)
+        marm.cv.drawLine(hipx - 84, torso_top + 34, kneex - 16, kneey + 36, paint(30))
+        marm.cv.drawLine(hipx - 70, torso_top + 60, kneex + 18, kneey + 30, paint(28))
+        img = P_(img, marm.arr(), hx(POSE_SKIN), 11, soft=4, sh=(2, 3), blur=4, k=0.18, depth=0.5)
+        return img
+    return sprite(f"posemannequinknee_{key}", N1, N2, fn)
 
 def pose_angle_badge(text, key):
     """각도/횟수 등 작은 숫자 배지(글자 길이에 맞춰 너비 자동, 별도 함수로 둬 chip_sprite와 캐시 키가 겹치지 않게 한다)"""

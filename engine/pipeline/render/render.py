@@ -611,54 +611,57 @@ def P_endcard(cv, i, lt, lte, tm, a):
 
 
 def P_pose(cv, i, lt, lte, tm, a):
-    """운동·자세 동작 시연용 뼈대(관절) 다이어그램(사용자 지시 2026-10-28: 캐릭터 연기만으로는 동작이
-    이해되지 않는다 → 캐릭터 옆에 관절점+뼈대선 진단판을 띄워 자세 변화를 명확히 보여준다).
-    a 필드:
-      x, y: 진단판(카드) 중심. sc: 전체 배율(기본 1). card_w/card_h: 카드 크기(기본 420x520).
-      key: 캐시 키(장면마다 다르게). title_ko/title_en: 카드 위쪽 제목칩(선택).
-      root: 관절 체인 시작점, 카드 중심 기준 상대좌표 (x,y)(기본 (0, card_h*0.22)).
-      bones: [{length, width, color, frm, to, key(선택, 뼈 이름), joint_r(선택)}, ...] 순서대로 이어 그리는 관절 체인.
-             frm/to는 수직(12시) 기준 시계방향 각도(도). 이전 뼈의 끝점이 다음 뼈의 시작점이 된다.
-      hold: 전환이 시작되는 시각(초, lte 기준). dur: frm→to 전환 길이(초).
-      loop: True면 sin으로 frm↔to를 왕복(반복 동작, 기본 False=한 번만 전환해 유지).
-      loop_speed: loop일 때 왕복 속도(기본 1.6).
-      ghost: True(기본)면 시작 자세를 옅게 겹쳐 보여줘(전/후 비교) 변화가 뚜렷해진다.
-      badge: "10번" 같은 작은 숫자 배지 문구(선택, 카드 아래쪽에 표시).
-      tags: [{"text":"목", "color":0x8FCFB4, "x":.., "y":..}, ...] — 스틸컷만 봐도 어디가 목/허리인지 알 수 있게
-            뼈대 옆에 붙이는 작은 신체 부위 이름표(사용자 지시 2026-10-28, 필수: 목·허리처럼 부위가 2곳 이상 나오면 꼭 넣는다).
-            x,y는 카드 중심 기준 상대좌표. color는 해당 뼈(bones)의 color와 맞춘다.
+    """운동·자세 동작 시연용 사람모형(마네킹) 진단판(사용자 지시 2026-10-28: 캐릭터 연기만으로는 동작이
+    이해되지 않는다 → 캐릭터 옆에 진단판을 띄워 자세 변화를 명확히 보여준다). 2026-10-28~29에 뼈대(관절)
+    다이어그램 → 둥글둥글한 사람모형이 측면 의자에 앉은 모습으로 디자인을 바꿨다(여러 차례 사용자 확인
+    거침 — 자세한 검증 과정·스샷은 CHARACTER_BIBLE.md "운동·자세 동작 시연" 참고).
+
+    a 필드(공통):
+      x, y: 진단판(카드) 중심. sc: 전체 배율(기본 1). card_w/card_h: 카드 크기(기본 460x560).
+      key: 캐시 키(장면마다 다르게, 포즈마다도 다르게). title_ko/title_en: 카드 위쪽 제목칩(선택).
+      hold: 카드가 나타나기 시작하는 시각(초, lte 기준, 팝인 애니메이션 기준점).
+      badge: "10번"/"15초" 같은 작은 배지 문구(선택, 카드 아래쪽).
+      tags: [{"text":"목", "color":0xF6C9A0, "x":.., "y":..}, ...] — 스틸컷만 봐도 어디가 목/허리인지
+            알 수 있게 붙이는 작은 신체 부위 이름표(필수: 부위가 2곳 이상 나오면 꼭 넣는다). x,y는 카드
+            중심 기준 상대좌표.
+      pose: "chin_tuck"(목이 앞뒤로 기우는 동작, 반복 왕복) 또는 "knee_hug"(정적 유지 동작) 중 하나.
+
+    pose="chin_tuck" 전용 필드:
+      neck_lean_from/neck_lean_to: 목이 앞으로 기운 정도(검증된 기본값 70 → -20, 양수=턱이 나옴, 음수=턱 당김).
+      dur: from→to 한 번 전환하는 길이(초, 기본 1.0). loop: True(기본)면 sin으로 왕복(반복 동작).
+      ghost: True(기본)면 시작 자세를 옅게 겹쳐 보여줘 변화가 뚜렷해진다.
+
+    pose="knee_hug" 전용 필드: 없음(정적 유지 자세라서 애니메이션 파라미터가 필요 없다).
     """
     cx, cy = a["x"], a["y"]; sc = a.get("sc", 1.0)
-    cw, chh = a.get("card_w", 420), a.get("card_h", 520)
+    cw, chh = a.get("card_w", 460), a.get("card_h", 560)
     key = a.get("key", "pose")
     appear_sx, appear_sy = pop(lte, a.get("hold", 0.0) - 0.2, 24, 0.55, 0.12)
     blit(cv, PR.pose_card(cw, chh, key), cx, cy, sc, 0, appear_sx, appear_sy)
     title = a.get("title_ko") if LANG == "ko" else a.get("title_en")
     if title:
-        tsp = chip_sprite(f"posetitle_{LANG}_{title}", title, 38, "jua" if LANG == "ko" else "geist", MINTC, 0, tcol=NAVYC)
-        blit(cv, tsp, cx, cy - chh * sc / 2 + 50 * sc, sc, 0, appear_sx, appear_sy)
-    if a.get("loop"):
-        u = (math.sin(lte * a.get("loop_speed", 1.6)) + 1) / 2
+        tsp = chip_sprite(f"posetitle_{LANG}_{title}", title, 40, "jua" if LANG == "ko" else "geist", MINTC, 0, tcol=NAVYC)
+        blit(cv, tsp, cx, cy - chh * sc / 2 + 46 * sc, sc, 0, appear_sx, appear_sy)
+
+    py = cy + chh * sc / 2 - 16 * sc
+    pose = a.get("pose", "chin_tuck")
+    if pose == "knee_hug":
+        now = PR.pose_mannequin_knee_hug(key)
+        blit(cv, now, cx - 30 * sc, py, sc * 0.78, 0, 1, 1, appear_sx, anchor=(now["cw"] / 2, now["ch"] - 6))
     else:
-        u = eo(clamp01((lte - a.get("hold", 0.0)) / max(a.get("dur", 1.0), 0.01)))
-    rootx, rooty = a.get("root", (0, chh * 0.22))
-    px0, py0 = cx + rootx * sc, cy + rooty * sc
-    bones = a["bones"]
-    if a.get("ghost", True) and not a.get("loop"):
-        px, py = px0, py0
-        for b in bones:
-            ang = b["frm"]
-            blit(cv, PR.pose_bone(b["length"], b["width"], b["color"], key + "_" + b.get("key", "b")), px, py, sc, ang, 1, 1, 0.28 * appear_sx)
-            px, py = px + sc * b["length"] * math.sin(math.radians(ang)), py - sc * b["length"] * math.cos(math.radians(ang))
-    px, py = px0, py0
-    for b in bones:
-        ang = b["frm"] + (b["to"] - b["frm"]) * u
-        blit(cv, PR.pose_bone(b["length"], b["width"], b["color"], key + "_" + b.get("key", "b")), px, py, sc, ang, 1, 1, appear_sx)
-        blit(cv, PR.pose_joint(b.get("joint_r", b["width"] * 0.55), 0x26304F, key), px, py, sc, 0, 1, 1, appear_sx)
-        px, py = px + sc * b["length"] * math.sin(math.radians(ang)), py - sc * b["length"] * math.cos(math.radians(ang))
-    blit(cv, PR.pose_joint(bones[-1].get("joint_r", bones[-1]["width"] * 0.55), 0x26304F, key + "_tip"), px, py, sc, 0, 1, 1, appear_sx)
+        lean_from, lean_to = a.get("neck_lean_from", 70), a.get("neck_lean_to", -20)
+        if a.get("loop", True):
+            u = (math.sin(lte * a.get("loop_speed", 1.6)) + 1) / 2
+        else:
+            u = eo(clamp01((lte - a.get("hold", 0.0)) / max(a.get("dur", 1.0), 0.01)))
+        ghost = PR.pose_mannequin_chin_tuck(key, lean_from)
+        now = PR.pose_mannequin_chin_tuck(key, round(lean_from + (lean_to - lean_from) * u))
+        if a.get("ghost", True):
+            blit(cv, ghost, cx - 30 * sc, py, sc * 0.78, 0, 1, 1, 0.35 * appear_sx, anchor=(ghost["cw"] / 2, ghost["ch"] - 6))
+        blit(cv, now, cx - 30 * sc, py, sc * 0.78, 0, 1, 1, appear_sx, anchor=(now["cw"] / 2, now["ch"] - 6))
+
     if a.get("badge"):
-        blit(cv, PR.pose_angle_badge(a["badge"], key), cx, cy + chh * sc / 2 - 60 * sc, sc, 0, appear_sx, appear_sy)
+        blit(cv, PR.pose_angle_badge(a["badge"], key), cx + 150 * sc, cy + chh * sc / 2 - 58 * sc, sc, 0, appear_sx, appear_sy)
     for tag in a.get("tags", []):
         tsp2 = PR.pose_part_tag(tag["text"], tag.get("color", 0x26304F), key + "_" + tag["text"])
         blit(cv, tsp2, cx + tag["x"] * sc, cy + tag["y"] * sc, sc, 0, appear_sx, appear_sy)
