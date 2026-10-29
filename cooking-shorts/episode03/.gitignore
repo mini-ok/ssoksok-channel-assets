@@ -1,0 +1,6 @@
+*.mp4
+*.wav
+*.log
+__pycache__/
+preview*/
+output/scene_*.png

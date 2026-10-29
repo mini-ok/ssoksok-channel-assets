@@ -1,0 +1,18 @@
+{
+  "file": "쏙쏙건강요리_버섯달걀볶음_한글_v1.mp4",
+  "seconds": 57.75,
+  "frames_decoded": 1386,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.48,
+  "true_peak": -4.72,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "273a69dbd8807a2e076cef2e3356dc1e72c423724235999f823bbe82779c5f0f",
+  "cooking_reference": "https://www.canada.ca/en/health-canada/services/food-guide/eating-support/kitchen/recipes/egg-veggie-scramble.html",
+  "recipe_note": "Original simplified adaptation; not an official Health Canada recipe; no real kitchen or taste test."
+}
