@@ -1,0 +1,22 @@
+{
+  "file": "쏙쏙건강요리_사과땅콩버터토스트_한글_v2.mp4",
+  "seconds": 60.166666666666664,
+  "frames_decoded": 1444,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.45,
+  "true_peak": -5.75,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "b46ed5b4e169147b88bc3629be11209ea0fccd01a62a42816d9879a5e6f9f9d3",
+  "evidence_reference": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fats-in-foods",
+  "recipe_note": "Original recipe illustrating a saturated-to-unsaturated fat swap; not a trial of this toast or a treatment claim. No kitchen/taste test.",
+  "encoded_speech_qa": "passed",
+  "post_cooking_health_explanation": "passed",
+  "large_source_card_visual_review": "passed",
+  "structural_guard_negative_test": "passed"
+}

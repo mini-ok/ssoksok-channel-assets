@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hook",
+    "title": "심장이 고른 지방 바꾸기",
+    "text": "버터 대신 땅콩버터! 오늘은 제 심장을 챙기는 토스트예요.",
+    "speaker": "심장 쉐프",
+    "speech_duration": 4.194833333333333,
+    "duration": 5.595
+  },
+  {
+    "id": "ingredients",
+    "title": "재료는 딱 세 가지",
+    "text": "통밀빵 한 장, 사과 반 개, 땅콩버터 이십 그램이에요.",
+    "speaker": "여성 내레이터",
+    "speech_duration": 3.443208333333333,
+    "duration": 4.843
+  },
+  {
+    "id": "chop",
+    "title": "01  사과를 얇게 썰어요",
+    "text": "사과는 씻어 씨를 빼고 얇게 썰어요. 껍질은 그대로요!",
+    "speaker": "여성 내레이터",
+    "speech_duration": 3.869875,
+    "duration": 5.27
+  },
+  {
+    "id": "spread",
+    "title": "02  버터 대신 땅콩버터",
+    "text": "땅콩 백 퍼센트, 무가당 무염으로! 빵에 고르게 발라요.",
+    "speaker": "심장 쉐프",
+    "speech_duration": 3.8220833333333335,
+    "duration": 5.222
+  },
+  {
+    "id": "top",
+    "title": "03  사과를 차곡차곡",
+    "text": "사과를 차곡차곡! 아삭한 토스트, 완성이에요!",
+    "speaker": "심장 쉐프",
+    "speech_duration": 3.675125,
+    "duration": 5.075
+  },
+  {
+    "id": "serve",
+    "title": "왜 심장이 골랐을까요?",
+    "text": "버터를 뺐는데도 고소하죠? 제가 이걸 고른 이유가 있어요!",
+    "speaker": "심장 쉐프",
+    "speech_duration": 3.732458333333333,
+    "duration": 5.132
+  },
+  {
+    "id": "benefit",
+    "title": "지방의 종류를 바꿔요",
+    "text": "포화지방을 불포화지방으로 바꿔 먹으면, 나쁜 콜레스테롤 관리에 도움이 돼요.",
+    "speaker": "여성 내레이터",
+    "speech_duration": 4.599916666666667,
+    "duration": 6.0
+  },
+  {
+    "id": "swap",
+    "title": "더하기보다 바꿔 먹기",
+    "text": "그래서 버터 대신 땅콩버터! 더 먹는 게 아니라 바꿔 먹는 게, 심장을 위한 포인트예요.",
+    "speaker": "여성 내레이터",
+    "speech_duration": 6.150625,
+    "duration": 7.551
+  },
+  {
+    "id": "joke",
+    "title": "제 간식도 남겨주세요!",
+    "text": "심장 챙기는 건 좋은데, 제 간식까지 다 드시면 곤란해요!",
+    "speaker": "심장 쉐프",
+    "speech_duration": 4.089291666666667,
+    "duration": 5.489
+  },
+  {
+    "id": "end",
+    "title": "캡처해서 다음 간식에!",
+    "text": "구독은 사원증 발급! 좋아요는 보너스!",
+    "speaker": "심장 쉐프",
+    "speech_duration": 3.1016666666666666,
+    "duration": 10.0
+  }
+]

@@ -1,4 +1,4 @@
-"""Approved episode 03: Korean mushroom and egg scramble, 1080x1920."""
+"""Shared production template; mushroom draft superseded by produce_toast.py."""
 import os,sys,json,math,wave,subprocess,functools,re,difflib,hashlib
 from pathlib import Path
 import numpy as np
@@ -9,6 +9,9 @@ import revision_liver as v
 r=v.r;OUT=ROOT/'output';AUDIO=ROOT/'audio'
 OUT.mkdir(exist_ok=True);AUDIO.mkdir(exist_ok=True)
 TARGET=OUT/'쏙쏙건강요리_버섯달걀볶음_한글_v1.mp4'
+CARD_FILE='버섯달걀볶음_전체레시피.png'
+SRT_FILE='버섯달걀볶음_한글.srt'
+RECIPE_NOTE='Superseded draft: no specific organ benefit. Do not publish.'
 ROWS=[
  ('hook','팬 하나로 맛있게!','오늘은 버섯이랑 달걀! 팬 하나면 충분해요.','심장 쉐프','신나고 자신 있게.'),
  ('ingredients','주재료는 딱 두 가지','양송이 백 그램, 달걀 두 개. 식용유는 한 작은술이에요.','여성 내레이터','밝고 또랑또랑하게.'),
@@ -35,31 +38,37 @@ def auth():
   return creds.token
  v.channel_tts.token=token
 
+def speech_normalize(s):
+ s=s.lower().replace('100g','백그램').replace('100 g','백그램').replace('100그램','백그램').replace('2개','두개').replace('2 개','두개').replace('1 작은술','한작은술').replace('1작은술','한작은술').replace('1 작은 술','한작은술')
+ s=s.replace('100%','백퍼센트').replace('100 %','백퍼센트').replace('20g','이십그램').replace('20 g','이십그램').replace('20그램','이십그램').replace('20 그램','이십그램').replace('1장','한장').replace('1 장','한장').replace('1/2개','반개').replace('1/2 개','반개')
+ return re.sub('[^가-힣a-z0-9]','',s)
+
 def audio():
  auth();os.environ['HF_HOME']=str(REPO.parent/'cooking_shorts_sample/models')
  from faster_whisper import WhisperModel
  from scipy.signal import resample_poly
  model=WhisperModel('small',device='cpu',compute_type='int8',cpu_threads=3)
  report=[];manifest=[]
+ cached={x['id']:x for x in rows()} if (AUDIO/'manifest.json').exists() else {}
  for sid,title,text,speaker,act in ROWS:
   path=AUDIO/(sid+'.wav');voice='Despina' if speaker=='여성 내레이터' else 'Zubenelgenubi'
+  cached_take=cached.get(sid,{})
+  needs_take=not path.exists() or cached_take.get('text')!=text or cached_take.get('voice',voice)!=voice
   for attempt in range(3):
-   if not path.exists() or attempt:
+   if needs_take or attempt:
     prompt=('밝고 명랑한 요리 애니메이션. '+act) if attempt==0 else ''
     x=v.gsynth(text,voice,prompt);x=v.speech.speed(v.speech.tts.squeeze_gaps(v.speech.tts.trim_edges(x)),1.3)
     v.speech.tts.save_wav(str(path),x)
    with wave.open(str(path)) as f:x=np.frombuffer(f.readframes(f.getnframes()),np.int16).astype(np.float32)/32768
    seg,_=model.transcribe(resample_poly(x,2,3),language='ko',beam_size=5,condition_on_previous_text=False)
    heard=' '.join(s.text for s in seg).strip()
-   def norm(s):
-    s=s.lower().replace('100g','백그램').replace('100 g','백그램').replace('100그램','백그램').replace('2개','두개').replace('2 개','두개').replace('1 작은술','한작은술').replace('1작은술','한작은술').replace('1 작은 술','한작은술')
-    return re.sub('[^가-힣a-z0-9]','',s)
+   norm=speech_normalize
    score=difflib.SequenceMatcher(None,norm(text),norm(heard)).ratio()
    print(sid,round(score,3),heard,flush=True)
    if score>.87 and (sid!='end' or '보너스' in heard):break
    if attempt==2:raise RuntimeError('Speech QA failed: '+sid)
   report.append(dict(id=sid,heard=heard,expected=text,similarity=round(score,3)))
-  manifest.append(dict(id=sid,title=title,text=text,speaker=speaker,speech_duration=len(x)/24000,duration=10.0 if sid=='end' else round(max(3.4,len(x)/24000+1.4),3)))
+  manifest.append(dict(id=sid,title=title,text=text,speaker=speaker,voice=voice,speed=1.3,speech_duration=len(x)/24000,duration=10.0 if sid=='end' else round(max(3.4,len(x)/24000+1.4),3)))
  (AUDIO/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
  (OUT/'speech_qa.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 
@@ -201,7 +210,7 @@ def preview():
  for i in range(len(ROWS)):
   image=frame(i,2.1);image.save(OUT/f'scene_{i:02}.png');sheet.paste(image.resize((216,384)),((i%5)*216,(i//5)*384))
  sheet.save(OUT/'storyboard.jpg',quality=95)
- frame(9,3).save(OUT/'버섯달걀볶음_전체레시피.png')
+ frame(9,3).save(OUT/CARD_FILE)
 
 def render():
  manifest=rows();duration=sum(x['duration'] for x in manifest);audio=mix()
@@ -234,9 +243,9 @@ def verify():
  stats=json.loads(re.findall(r'\{[^{}]+\}',p.stderr.decode())[-1]);assert float(stats['input_tp'])<-.8
  assert np.array_equal(np.asarray(frame(9,2)),np.asarray(frame(9,9)))
  sheet.save(OUT/'encoded_review.jpg',quality=95)
- report=dict(file=TARGET.name,seconds=n/24,frames_decoded=n,resolution=[1080,1920],fps=24,full_decode='passed',integrated_lufs=float(stats['input_i']),true_peak=float(stats['input_tp']),static_recipe_card='passed',speech_qa='passed',sha256=hashlib.sha256(TARGET.read_bytes()).hexdigest(),cooking_reference=SOURCE_URL,recipe_note='Original simplified adaptation; not an official Health Canada recipe; no real kitchen or taste test.')
+ report=dict(file=TARGET.name,seconds=n/24,frames_decoded=n,resolution=[1080,1920],fps=24,full_decode='passed',integrated_lufs=float(stats['input_i']),true_peak=float(stats['input_tp']),static_recipe_card='passed',speech_qa='passed',sha256=hashlib.sha256(TARGET.read_bytes()).hexdigest(),evidence_reference=SOURCE_URL,recipe_note=RECIPE_NOTE)
  (OUT/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(report,ensure_ascii=False),flush=True)
- shutil.copy2(OUT/'liver_ko.srt',OUT/'버섯달걀볶음_한글.srt')
+ shutil.copy2(OUT/'liver_ko.srt',OUT/SRT_FILE)
  shutil.copy2(TARGET,REPO.parent/TARGET.name)
 
-if __name__=='__main__':globals()[sys.argv[1]]()
+if __name__=='__main__':raise SystemExit('Superseded mushroom draft. Use episode03/produce_toast.py for the final episode.')

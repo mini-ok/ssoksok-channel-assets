@@ -4,3 +4,8 @@
 __pycache__/
 preview*/
 output/scene_*.png
+output_toast/*
+!output_toast/*.json
+!output_toast/encoded_review.jpg
+!output_toast/사과땅콩버터토스트_전체레시피.png
+!output_toast/사과땅콩버터토스트_한글.srt

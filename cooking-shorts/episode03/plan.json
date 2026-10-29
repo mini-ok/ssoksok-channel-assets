@@ -1,0 +1,26 @@
+{
+  "episode": 3,
+  "dish": "사과 땅콩버터 토스트",
+  "organ": "심장",
+  "chef": "심장 쉐프",
+  "main_ingredients": ["땅콩버터", "사과", "통밀빵"],
+  "cooking_style": "빵에 스프레드 바르기·과일 얹기",
+  "health_focus": "포화지방을 불포화지방으로 대체하는 식습관과 LDL 콜레스테롤 관리",
+  "reason_for_chef": "버터 대신 땅콩의 불포화지방을 선택하는 토스트로 LDL 콜레스테롤 관리와 심장·혈관 건강을 연결한다.",
+  "evidence": [{
+    "url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fats-in-foods",
+    "title": "American Heart Association · Fats in Foods",
+    "checked_at": "2026-10-29",
+    "supported_claim": "포화지방을 단일·다중 불포화지방으로 대체하면 LDL 콜레스테롤 감소와 심혈관 위험 관리에 도움이 될 수 있다. 견과류는 해당 대체 식품에 포함된다.",
+    "conditions_and_limits": "버터에 더해 먹는 것이 아니라 대체 섭취하는 식습관에 관한 근거다. 이 토스트 한 번 또는 땅콩버터 20g의 독립적 치료 효과를 입증한 연구가 아니다. 사과의 단독 효능은 주장하지 않는다. 땅콩 100%, 무가당·무염 제품을 사용한다."
+  }],
+  "cooking_scene_ids": ["chop", "spread", "top", "serve"],
+  "health_narration_scene_ids": ["benefit", "swap"],
+  "source_screen_scene_ids": ["benefit", "swap"],
+  "health_narration_expected": {
+    "benefit": "포화지방을 불포화지방으로 바꿔 먹으면, 나쁜 콜레스테롤 관리에 도움이 돼요.",
+    "swap": "그래서 버터 대신 땅콩버터! 더 먹는 게 아니라 바꿔 먹는 게, 심장을 위한 포인트예요."
+  },
+  "review": {"evidence_matches_recipe": true, "organ_connection_is_specific": true, "menu_history_checked": true},
+  "rotation": "이번 편은 사용자 지시로 심장 쉐프. 다음 편부터 가능하면 다른 장기로 순환하되 건강 근거 적합성을 우선한다."
+}

@@ -1,0 +1,16 @@
+{
+  "episode": null,
+  "dish": "",
+  "organ": "",
+  "chef": "",
+  "main_ingredients": [],
+  "cooking_style": "",
+  "health_focus": "",
+  "reason_for_chef": "",
+  "evidence": [{"url": "", "title": "", "checked_at": "", "supported_claim": "", "conditions_and_limits": ""}],
+  "cooking_scene_ids": [],
+  "health_narration_scene_ids": [],
+  "source_screen_scene_ids": [],
+  "health_narration_expected": {},
+  "review": {"evidence_matches_recipe": false, "organ_connection_is_specific": false, "menu_history_checked": false}
+}
