@@ -1,0 +1,28 @@
+{
+  "file": "쏙쏙건강요리_브로콜리마늘볶음_한글_v1.mp4",
+  "seconds": 64.41666666666667,
+  "frames_decoded": 1546,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.51,
+  "true_peak": -5.14,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "5a757e0f7678dca4a6d86232ce84dbe921cacc34f7e90baee36bb528c07e2c32",
+  "evidence_reference": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "recipe_note": "Fiber and hydration support bowel habits; not a claim that this dish treats constipation. No kitchen or taste test.",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_episode_music": "buant_pop_groove.mp3",
+  "selected_music_stem_correlation": 0.872,
+  "previous_music_stem_correlation": 0.0081,
+  "different_music_verified": "passed",
+  "chef_voice": "Aoede",
+  "narrator_voice": "Despina",
+  "encoded_speech_qa": "passed",
+  "post_cooking_health_explanation": "passed",
+  "large_source_visual_review": "passed"
+}

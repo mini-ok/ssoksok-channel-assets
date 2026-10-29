@@ -43,6 +43,9 @@ def speech_normalize(s):
  s=s.replace('100%','백퍼센트').replace('100 %','백퍼센트').replace('20g','이십그램').replace('20 g','이십그램').replace('20그램','이십그램').replace('20 그램','이십그램').replace('1장','한장').replace('1 장','한장').replace('1/2개','반개').replace('1/2 개','반개')
  return re.sub('[^가-힣a-z0-9]','',s)
 
+VOICE_BY_SPEAKER={'심장 쉐프':'Zubenelgenubi','여성 내레이터':'Despina'}
+SPEECH_ACCEPT=lambda sid,heard:True
+
 def audio():
  auth();os.environ['HF_HOME']=str(REPO.parent/'cooking_shorts_sample/models')
  from faster_whisper import WhisperModel
@@ -51,7 +54,7 @@ def audio():
  report=[];manifest=[]
  cached={x['id']:x for x in rows()} if (AUDIO/'manifest.json').exists() else {}
  for sid,title,text,speaker,act in ROWS:
-  path=AUDIO/(sid+'.wav');voice='Despina' if speaker=='여성 내레이터' else 'Zubenelgenubi'
+  path=AUDIO/(sid+'.wav');voice=VOICE_BY_SPEAKER.get(speaker,'Zubenelgenubi')
   cached_take=cached.get(sid,{})
   needs_take=not path.exists() or cached_take.get('text')!=text or cached_take.get('voice',voice)!=voice
   for attempt in range(3):
@@ -65,7 +68,7 @@ def audio():
    norm=speech_normalize
    score=difflib.SequenceMatcher(None,norm(text),norm(heard)).ratio()
    print(sid,round(score,3),heard,flush=True)
-   if score>.87 and (sid!='end' or '보너스' in heard):break
+   if score>.87 and (sid!='end' or '보너스' in heard) and SPEECH_ACCEPT(sid,heard):break
    if attempt==2:raise RuntimeError('Speech QA failed: '+sid)
   report.append(dict(id=sid,heard=heard,expected=text,similarity=round(score,3)))
   manifest.append(dict(id=sid,title=title,text=text,speaker=speaker,voice=voice,speed=1.3,speech_duration=len(x)/24000,duration=10.0 if sid=='end' else round(max(3.4,len(x)/24000+1.4),3)))

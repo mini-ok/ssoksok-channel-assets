@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "장이 고른 초록 반찬",
+    "text": "오늘은 장을 위한 초록 반찬! 브로콜리, 제가 볶아볼게요!",
+    "speaker": "장 쉐프",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.032,
+    "duration": 5.432
+  },
+  {
+    "id": "ingredients",
+    "title": "해외에서도 쉬운 재료",
+    "text": "브로콜리 백오십 그램, 마늘 한 쪽, 식용유 한 작은술. 물은 두 큰술이에요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.355583333333334,
+    "duration": 6.756
+  },
+  {
+    "id": "chop",
+    "title": "01  줄기도 얇게 썰어요",
+    "text": "씻어서 한입 크기로! 줄기도 얇게 썰면 같이 먹을 수 있어요.",
+    "speaker": "장 쉐프",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.288,
+    "duration": 5.688
+  },
+  {
+    "id": "steam",
+    "title": "02  물 넣고 뚜껑 덮기",
+    "text": "팬에 브로콜리와 물을 넣고, 뚜껑을 덮어 중불로 삼 분쯤 익혀요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.169875,
+    "duration": 5.57
+  },
+  {
+    "id": "fry",
+    "title": "03  중약불로 마늘과 볶기",
+    "text": "물기를 날리고 중약불! 기름이랑 다진 마늘을 넣어 일 분쯤 볶아요.",
+    "speaker": "장 쉐프",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.458666666666667,
+    "duration": 5.859
+  },
+  {
+    "id": "serve",
+    "title": "줄기가 익으면 완성!",
+    "text": "줄기가 먹기 좋게 익으면 완성! 간은 취향껏 조금만요.",
+    "speaker": "장 쉐프",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.2699166666666666,
+    "duration": 4.67
+  },
+  {
+    "id": "benefit",
+    "title": "왜 장 쉐프가 골랐을까요?",
+    "text": "브로콜리는 식이섬유를 보태줘요. 식이섬유와 충분한 수분은 변을 부드럽게 하고, 배변을 돕는 데 좋아요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.9475,
+    "duration": 8.348
+  },
+  {
+    "id": "habit",
+    "title": "조금씩 꾸준히 · 물도 함께",
+    "text": "한 번에 듬뿍보다 조금씩 꾸준히! 물도 함께 챙기는 게 장 쉐프의 포인트예요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.173916666666667,
+    "duration": 6.574
+  },
+  {
+    "id": "joke",
+    "title": "물컵도 챙겨주세요!",
+    "text": "제 반찬만 챙기지 말고, 물컵도 챙겨주세요. 저도 목말라요!",
+    "speaker": "장 쉐프",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.134041666666667,
+    "duration": 5.534
+  },
+  {
+    "id": "end",
+    "title": "캡처해서 다음 반찬으로!",
+    "text": "구독은 사원증 발급! 좋아요는 보너스!",
+    "speaker": "장 쉐프",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.1533333333333333,
+    "duration": 10.0
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "episode": 4,
+  "dish": "브로콜리 마늘볶음",
+  "organ": "장",
+  "chef": "장 쉐프",
+  "main_ingredients": ["브로콜리"],
+  "cooking_style": "팬에서 소량의 물로 익힌 뒤 마늘과 볶기",
+  "global_accessibility": {"common_ingredients": ["브로콜리", "마늘", "식용유", "물"], "substitutions": ["생브로콜리 대신 냉동 제품", "마늘은 생략 가능"], "basic_tools": ["팬", "뚜껑", "칼"]},
+  "health_focus": "식이섬유와 충분한 수분으로 원활한 배변을 돕는 습관",
+  "reason_for_chef": "브로콜리로 식이섬유를 보태고 수분도 함께 챙기는 습관을 장 쉐프가 안내한다.",
+  "evidence": [{"url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition", "title": "NIDDK · Eating, Diet, & Nutrition for Constipation", "checked_at": "2026-10-29", "supported_claim": "브로콜리는 식이섬유 공급원 중 하나이며 충분한 식이섬유와 수분은 변을 부드럽게 하고 배출을 돕는다.", "conditions_and_limits": "이 요리 한 번으로 변비 치료를 보장하지 않는다. 섬유는 조금씩 늘리고 수분을 함께 챙긴다. 마늘의 단독 효능을 주장하지 않는다."}],
+  "cooking_scene_ids": ["chop", "steam", "fry", "serve"],
+  "health_narration_scene_ids": ["benefit", "habit"],
+  "source_screen_scene_ids": ["benefit", "habit"],
+  "music": {"file": "buoyant_kitchen_groove.mp3", "previous_episode_file": "buant_pop_groove.mp3", "reason": "사용자 지시: 연속 회차에 같은 음악 사용하지 않기"},
+  "organ_rotation_note": "심장 → 간 → 심장 → 장",
+  "review": {"evidence_matches_recipe": true, "organ_connection_is_specific": true, "menu_history_checked": true}
+}

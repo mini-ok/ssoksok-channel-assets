@@ -1,0 +1,7 @@
+*.mp4
+*.wav
+*.log
+__pycache__/
+output/scene_*.png
+output/encoded_*.jpg
+!output/encoded_review.jpg
