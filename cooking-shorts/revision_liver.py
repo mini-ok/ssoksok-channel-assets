@@ -64,15 +64,17 @@ def smooth(x):
 
 import requests,time
 # Voices: liver chef is a calm, easy-going male voice (Umbriel), different from the heart chef; narrator stays Despina.
-VOICE={'간 쉐프':('Charon','묵묵히 야근하는 간 과장. 낮고 차분하게, 한숨 섞어, 다정함이 묻어나게.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}  # 사용자 지시(2026-10-28): 기본은 건강백과 채널 기존 캐릭터 목소리(sid 3)를 그대로 쓴다 — 심장 쉐프만 사용자가 예외로 바꾸라고 했다
-# 사용자 지시(2026-10-29): "활기차게" 버전으로 바꿔 봤지만, 비교해보니 제일 처음 만든(이 낮고 차분한, 한숨 섞인) 버전이
-# 가장 낫다고 해서 원상복구함. 이 캐릭터는 예외로 둔다 — CLAUDE.md의 "요리 숏츠는 항상 밝은 톤" 기본 규칙과 다르게 간다.
+VOICE={'간 쉐프':('Umbriel','느긋하고 다정한 청년 요리 쇼츠 쉐프.'),'여성 내레이터':('Despina','다정한 요리 쇼츠 내레이터.')}
+# 사용자 지시(2026-10-29): "밝게"로 바꿔도 보고, "처음 만든(낮고 차분한) 버전"으로도 되돌려 봤지만 둘 다 아니었다 —
+# 사용자가 말한 "처음"은 ACTS 톤이 아니라 이 Umbriel 목소리 자체였다(이후 "채널 기본 목소리를 쓰자"는 지시로 Charon으로
+# 바꿨던 적이 있음). 목소리를 Umbriel로 되돌림. 이 캐릭터는 예외로 둔다 — CLAUDE.md "요리 숏츠는 항상 밝은 톤" 기본
+# 규칙과는 별개로, 목소리 모델 자체가 사용자가 원래 좋아했던 것으로 고정.
 SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'간 쉐프','chop':'여성 내레이터','pour':'간 쉐프','mix':'간 쉐프',
  'cause':'여성 내레이터','benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
-ACTS={'hook':'피곤한 한숨 섞어 담담하게.','ingredients':'낮고 차분하게 하나씩.','rinse':'묵묵하게.','chop':'차분하고 다정하게.',
- 'pour':'느긋하게.','mix':'살살, 다정하게.','cause':'낮고 진지하게.','benefit':'낮고 믿음직하게.','serve':'담담하게 다정하게.',
- 'joke':'놀라서 담담하게.','end':'살짝 웃음기 있게.'}
+ACTS={'hook':'피곤해도 신나게 외치듯.','ingredients':'신나게 하나씩 짚으며.','rinse':'집중해서 차분하게.','chop':'차분하고 다정하게.',
+ 'pour':'느긋하고 다정하게.','mix':'살살 어르듯 부드럽게.','cause':'차분하게 설명하듯.','benefit':'믿음직하고 따뜻하게.','serve':'또렷하게 안심시키듯.',
+ 'joke':'깜짝 놀라 어이없다는 듯.','end':'경쾌하게 윙크하듯.'}
 import asr_qa
 
 def gsynth(text,voice,prompt):
