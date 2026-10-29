@@ -43,7 +43,7 @@ TITLES={
  'cause':'왜 간에 지방이 쌓일까',
  'benefit':'지중해식 식단이 좋은 이유',
  'serve':'마법 말고, 좋은 습관',
- 'joke':'설거지는 심장 씨가?',
+ 'joke':'간도 좋아졌는데...',
  'end':'캡처해서 오늘 곁들임에!'}
 
 TRANSITIONS={
@@ -73,8 +73,8 @@ SPEAKER_BY_ID={'hook':'간 쉐프','ingredients':'여성 내레이터','rinse':'
  'cause':'여성 내레이터','benefit':'여성 내레이터','serve':'여성 내레이터','joke':'간 쉐프','end':'간 쉐프'}
 # Short acting directions only: a long prompt on a short line gets read aloud by the voice model.
 ACTS={'hook':'피곤해도 신나게 외치듯.','ingredients':'신나게 하나씩 짚으며.','rinse':'집중해서 차분하게.','chop':'차분하고 다정하게.',
- 'pour':'느긋하고 다정하게.','mix':'살살 어르듯 부드럽게.','cause':'차분하게 설명하듯.','benefit':'믿음직하고 따뜻하게.','serve':'또렷하게 안심시키듯.',
- 'joke':'깜짝 놀라 어이없다는 듯.','end':'경쾌하게 윙크하듯.'}
+ 'pour':'느긋하고 다정하게.','mix':'살살 어르듯 부드럽게, 마지막엔 뿌듯하게.','cause':'차분하게 설명하듯.','benefit':'믿음직하고 따뜻하게.','serve':'또렷하게 안심시키듯.',
+ 'joke':'능청스럽게 장난치듯.','end':'경쾌하게 윙크하듯.'}
 import asr_qa
 
 def gsynth(text,voice,prompt):
@@ -158,9 +158,9 @@ def set_stage():
 
 SPEAKER={'간 쉐프':('간 쉐프',0xEBCB78),'여성 내레이터':('해설',0x9ACDB4)}
 KEYWORDS={'hook':{'뒷정리','요리할게요.'},'ingredients':{'병아리콩,','오이,','토마토.','레몬즙과','올리브유요.'},'rinse':{'헹궈서','물기를'},
- 'chop':{'작게'},'pour':{'한데'},'mix':{'한','작은술씩.','살살'},
+ 'chop':{'작게'},'pour':{'한데'},'mix':{'한','작은술씩.','살살','완성!'},
  'cause':{'쓰는','것보다','많이','먹어서'},'benefit':{'식이섬유가','지중해식','식단은','간','지방을'},
- 'serve':{'해독','마법은','습관이죠.'},'joke':{'설거지도요?','심장'}}
+ 'serve':{'해독','마법은','습관이죠.'},'joke':{'간도','한잔'}}
 KEYWORDS={k:{w.strip('!?.,') for w in v} for k,v in KEYWORDS.items()}
 
 def split_lines(text,size,d):
