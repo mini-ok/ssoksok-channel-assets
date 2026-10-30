@@ -1,0 +1,68 @@
+{
+  "episode": 5,
+  "dish": "참치 감자전",
+  "organ": "근육",
+  "chef": "근육 쉐프",
+  "main_ingredients": [
+    "참치",
+    "감자"
+  ],
+  "cooking_style": "작은 전/팬케이크 부치기",
+  "global_accessibility": {
+    "common_ingredients": [
+      "물담금 통조림 참치",
+      "감자",
+      "밀가루",
+      "물",
+      "식용유"
+    ],
+    "substitutions": [
+      "기름담금 참치는 기름을 빼고 팬 기름 조절"
+    ],
+    "basic_tools": [
+      "팬",
+      "볼",
+      "강판 또는 칼"
+    ]
+  },
+  "organ_rotation_note": "장 → 근육 → 면역",
+  "music": {
+    "file": "",
+    "previous_episode_file": "",
+    "reason": "대본 단계 미선정; 제작 시 직전 편과 다른 곡 선택"
+  },
+  "health_focus": "근육 유지·보수에 필요한 단백질을 식사로 보태기",
+  "reason_for_chef": "참치의 단백질이 근육 조직을 유지·보수하는 재료를 제공하므로 근육 쉐프가 요리한다.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+      "title": "NIH ODS · Protein and Muscle",
+      "checked_at": "2026-10-30",
+      "supported_claim": "단백질은 근육 형성·유지·보수에 필요하며 생선은 필수 아미노산 공급 식품이다.",
+      "conditions_and_limits": "이 요리 한 번의 근육 증가를 입증한 자료가 아니다. 운동과 충분한 식사도 필요하다."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit"
+  ],
+  "health_narration_expected": {
+    "benefit": "참치의 단백질은 근육을 유지하고 보수하는 재료예요. 몸은 단백질을 아미노산으로 나눠, 근육을 만드는 데 써요.",
+    "context": "한 접시로 근육이 뿅 생기진 않아요. 꾸준한 운동과 충분한 식사도 함께 챙겨요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "status": "draft_only"
+}

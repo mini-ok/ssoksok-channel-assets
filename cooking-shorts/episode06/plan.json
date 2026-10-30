@@ -1,0 +1,67 @@
+{
+  "episode": 6,
+  "dish": "당근 달걀찜",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "당근",
+    "달걀"
+  ],
+  "cooking_style": "그릇에 담아 찌는 달걀찜",
+  "global_accessibility": {
+    "common_ingredients": [
+      "당근",
+      "달걀",
+      "물"
+    ],
+    "substitutions": [
+      "별도 육수나 한국 전용 양념 필요 없음"
+    ],
+    "basic_tools": [
+      "냄비",
+      "뚜껑",
+      "찜받침",
+      "내열그릇"
+    ]
+  },
+  "organ_rotation_note": "장 → 근육 → 면역",
+  "music": {
+    "file": "",
+    "previous_episode_file": "",
+    "reason": "대본 단계 미선정; 제작 시 직전 편과 다른 곡 선택"
+  },
+  "health_focus": "비타민 A와 정상적인 면역 기능",
+  "reason_for_chef": "당근의 베타카로틴이 비타민 A 공급에 기여하며 비타민 A는 정상 면역 기능에 필요하므로 면역 쉐프가 요리한다.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminA-Consumer/",
+      "title": "NIH ODS · Vitamin A and Carotenoids",
+      "checked_at": "2026-10-30",
+      "supported_claim": "베타카로틴은 비타민 A로 전환될 수 있으며 비타민 A는 정상적인 면역 기능에 필요하다.",
+      "conditions_and_limits": "더 먹을수록 면역력이 강해지거나 감염이 예방된다는 뜻이 아니다. 레시피 자체의 임상 효과나 정확한 전환량을 주장하지 않는다."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit"
+  ],
+  "health_narration_expected": {
+    "benefit": "당근의 베타카로틴은 몸에서 비타민 에이로 바뀌어요. 비타민 에이는 면역 체계가 정상적으로 일하는 데 필요해요.",
+    "context": "많이 먹을수록 무적이 된다는 뜻은 아니에요. 필요한 영양을 다양한 음식으로 챙기는 거예요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "status": "draft_only"
+}
