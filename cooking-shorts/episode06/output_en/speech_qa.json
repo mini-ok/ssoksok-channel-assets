@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Carrot, access granted! Today, steamed eggs to help nourish my immune team!",
+    "heard": "Carrot, access granted.  Today, steamed eggs to help nourish my immune team.",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "Two eggs, fifty grams of carrot, and one hundred milliliters of water. Just a little salt if you like.",
+    "heard": "2 eggs, 50 grams of carrot and 100 milliliters of water, just a little salt if you like.",
+    "similarity": 1.0
+  },
+  {
+    "id": "prep",
+    "expected": "Finely grate the carrot. Small pieces cook tenderly inside the eggs!",
+    "heard": "finely grate the carrot. Small pieces cook tenderly inside the eggs.",
+    "similarity": 1.0
+  },
+  {
+    "id": "mix",
+    "expected": "Beat the eggs, mix in water and carrot, and pour into a heatproof bowl.",
+    "heard": "Beat the eggs, mix in water and carrot and pour into a heat-proof bowl.",
+    "similarity": 1.0
+  },
+  {
+    "id": "cook",
+    "expected": "Into the steaming pot, then cover! Cook over medium-low heat for about twelve minutes.",
+    "heard": "Into the steaming pot, then cover. Cook over medium-low heat for about 12 minutes.",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "No runny egg in the center! Soft steamed eggs, dotted with carrot, are ready!",
+    "heard": "No runny egg in the center! Soft steamed eggs, dotted with carrot, are ready!",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Your body can turn the beta-carotene in carrots into vitamin A. Vitamin A is needed for your immune system to work normally.",
+    "heard": "Your body can turn the beta-carotene in carrots into vitamin A.  Vitamin A is needed for your immune system to work normally.",
+    "similarity": 1.0
+  },
+  {
+    "id": "context",
+    "expected": "Eating more doesn't make you invincible! Get the nutrients you need from a variety of foods.",
+    "heard": "Eating more doesn't make you invincible.  Get the nutrients you need from a variety of foods.",
+    "similarity": 1.0
+  },
+  {
+    "id": "joke",
+    "expected": "I'll handle the taste inspection. Hmm, I think this needs another inspection. One more bite!",
+    "heard": "I'll handle the taste inspection.  Hmm, I think this needs another inspection.  One more bite.",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

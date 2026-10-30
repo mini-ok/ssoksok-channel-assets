@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "Swap the Dumbbell for a Spatula!",
+    "text": "Today, a spatula instead of a dumbbell! Let's make tuna potato pancakes for my muscles!",
+    "speaker": "Chef Muscle",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 5.550791666666667,
+    "duration": 6.951
+  },
+  {
+    "id": "ingredients",
+    "title": "Simple, Everyday Ingredients",
+    "text": "One hundred fifty grams of potato and eighty grams of drained tuna. One tablespoon each of flour and water.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.567083333333334,
+    "duration": 7.967
+  },
+  {
+    "id": "prep",
+    "title": "01  Slice Thinly and Drain",
+    "text": "Thinly shred the potato and gently squeeze out some water. Drain the tuna well too!",
+    "speaker": "Chef Muscle",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 4.9623333333333335,
+    "duration": 6.362
+  },
+  {
+    "id": "mix",
+    "title": "02  Mix a Thick Batter",
+    "text": "Mix in flour and water. It should hold together, rather than drip off the spoon.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.50875,
+    "duration": 5.909
+  },
+  {
+    "id": "cook",
+    "title": "03  Small, Thin Pancakes",
+    "text": "Use a lightly oiled pan. Keep them small and thin! Cook both sides over medium-low heat until the potato is cooked through.",
+    "speaker": "Chef Muscle",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 7.257125,
+    "duration": 8.657
+  },
+  {
+    "id": "serve",
+    "title": "Tender Potato? Ready!",
+    "text": "Golden outside! Once the potato is soft all the way through, they're ready.",
+    "speaker": "Chef Muscle",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 4.197625,
+    "duration": 5.598
+  },
+  {
+    "id": "benefit",
+    "title": "Protein Chosen by Muscle",
+    "text": "Protein from tuna helps maintain and repair muscles. Your body breaks protein into amino acids and uses them to make muscle proteins.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 8.398541666666667,
+    "duration": 9.799
+  },
+  {
+    "id": "context",
+    "title": "Food and Exercise Work Together",
+    "text": "One plate won't magically grow muscles! Regular exercise and enough food matter too.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.9805,
+    "duration": 7.38
+  },
+  {
+    "id": "joke",
+    "title": "Put the Pancake Down First!",
+    "text": "A spatula workout while I cook? Oh, you mean I should put the pancake down first?",
+    "speaker": "Chef Muscle",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 4.507291666666666,
+    "duration": 5.907
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Side!",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Muscle",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 3.43775,
+    "duration": 10
+  }
+]

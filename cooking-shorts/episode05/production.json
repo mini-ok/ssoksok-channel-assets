@@ -1,0 +1,182 @@
+{
+  "character": "muscle",
+  "chef_ko": "근육 쉐프",
+  "chef_en": "Chef Muscle",
+  "voice": "Fenrir",
+  "dish_ko": "참치 감자전",
+  "dish_en": "Tuna Potato Pancakes",
+  "slug": "TunaPotatoPancakes",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "단백질과 근육 유지·보수",
+  "source_en": "Protein and Muscle Maintenance",
+  "time_ko": "1~2인 곁들임 / 약 15~20분",
+  "time_en": "1–2 side servings / about 15–20 min",
+  "ingredients": [
+    [
+      "감자",
+      "Potato",
+      "150g",
+      "150 g",
+      "potato"
+    ],
+    [
+      "물기 뺀 참치",
+      "Drained tuna",
+      "80g",
+      "80 g",
+      "tuna"
+    ],
+    [
+      "밀가루·물",
+      "Flour / water",
+      "각 1큰술",
+      "1 tbsp each",
+      "flour"
+    ],
+    [
+      "식용유",
+      "Oil",
+      "2작은술",
+      "2 tsp",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "아령 대신 뒤집개!",
+    "세계 어디서나 쉬운 재료",
+    "01  가늘게 썰고 물기 빼기",
+    "02  되직하게 섞어요",
+    "03  작고 얇게 부쳐요",
+    "감자 속까지 익으면 완성!",
+    "근육이 고른 단백질",
+    "운동과 충분한 식사도 함께",
+    "전은 내려놓고 운동해요!",
+    "캡처해서 다음 반찬으로!"
+  ],
+  "headings_en": [
+    "Swap the Dumbbell for a Spatula!",
+    "Simple, Everyday Ingredients",
+    "01  Slice Thinly and Drain",
+    "02  Mix a Thick Batter",
+    "03  Small, Thin Pancakes",
+    "Tender Potato? Ready!",
+    "Protein Chosen by Muscle",
+    "Food and Exercise Work Together",
+    "Put the Pancake Down First!",
+    "Screenshot Your Next Side!"
+  ],
+  "dialogue_en": [
+    "Today, a spatula instead of a dumbbell! Let's make tuna potato pancakes for my muscles!",
+    "One hundred fifty grams of potato and eighty grams of drained tuna. One tablespoon each of flour and water.",
+    "Thinly shred the potato and gently squeeze out some water. Drain the tuna well too!",
+    "Mix in flour and water. It should hold together, rather than drip off the spoon.",
+    "Use a lightly oiled pan. Keep them small and thin! Cook both sides over medium-low heat until the potato is cooked through.",
+    "Golden outside! Once the potato is soft all the way through, they're ready.",
+    "Protein from tuna helps maintain and repair muscles. Your body breaks protein into amino acids and uses them to make muscle proteins.",
+    "One plate won't magically grow muscles! Regular exercise and enough food matter too.",
+    "A spatula workout while I cook? Oh, you mean I should put the pancake down first?",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "감자 150g · 물기 뺀 참치 80g",
+    "밀가루·물 각 1큰술 · 기름 2작은술",
+    "1  감자는 가늘게 썰고 물기를 살짝 짜요.",
+    "2  참치·밀가루·물을 넣고 되직하게 섞어요.",
+    "3  기름 두른 팬에 1cm 이하로 얇게 펴요.",
+    "4  중약불로 앞뒤 약 3~4분씩 구워요.",
+    "감자와 반죽 속까지 완전히 익혀요."
+  ],
+  "recipe_en": [
+    "Potato 150 g / drained tuna 80 g",
+    "Flour 1 tbsp / water 1 tbsp / oil 2 tsp",
+    "1  Shred potato; gently squeeze out water.",
+    "2  Mix with tuna, flour and water until thick.",
+    "3  Shape small pancakes, no thicker than 1 cm.",
+    "4  Fry on medium-low, about 3–4 min per side.",
+    "Cook the potato and batter all the way through."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "아령 대신 뒤집개!",
+      "title_en": "Swap the Dumbbell for a Spatula!",
+      "text_ko": "오늘은 아령 말고 뒤집개! 제 근육 챙기는 참치 감자전, 부쳐볼까요?",
+      "text_en": "Today, a spatula instead of a dumbbell! Let's make tuna potato pancakes for my muscles!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "세계 어디서나 쉬운 재료",
+      "title_en": "Simple, Everyday Ingredients",
+      "text_ko": "감자 백오십 그램, 물기 뺀 참치 팔십 그램. 밀가루와 물은 한 큰술씩이에요.",
+      "text_en": "One hundred fifty grams of potato and eighty grams of drained tuna. One tablespoon each of flour and water.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01  가늘게 썰고 물기 빼기",
+      "title_en": "01  Slice Thinly and Drain",
+      "text_ko": "감자는 가늘게 썰고 물기를 살짝 짜요. 참치도 물기를 쏙 빼고요!",
+      "text_en": "Thinly shred the potato and gently squeeze out some water. Drain the tuna well too!",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02  되직하게 섞어요",
+      "title_en": "02  Mix a Thick Batter",
+      "text_ko": "밀가루와 물을 넣어 섞어요. 뚝뚝 흐르지 않고 서로 붙을 정도면 돼요.",
+      "text_en": "Mix in flour and water. It should hold together, rather than drip off the spoon.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03  작고 얇게 부쳐요",
+      "title_en": "03  Small, Thin Pancakes",
+      "text_ko": "기름 두른 팬에 작고 얇게! 중약불로 앞뒤를 굽고, 감자 속까지 익혀요.",
+      "text_en": "Use a lightly oiled pan. Keep them small and thin! Cook both sides over medium-low heat until the potato is cooked through.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "감자 속까지 익으면 완성!",
+      "title_en": "Tender Potato? Ready!",
+      "text_ko": "노릇노릇! 감자가 부드럽게 익었으면 완성이에요.",
+      "text_en": "Golden outside! Once the potato is soft all the way through, they're ready.",
+      "narrator": false
+    },
+    {
+      "id": "benefit",
+      "title_ko": "근육이 고른 단백질",
+      "title_en": "Protein Chosen by Muscle",
+      "text_ko": "참치의 단백질은 근육을 유지하고 보수하는 재료예요. 몸은 단백질을 아미노산으로 나눠, 근육을 만드는 데 써요.",
+      "text_en": "Protein from tuna helps maintain and repair muscles. Your body breaks protein into amino acids and uses them to make muscle proteins.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "운동과 충분한 식사도 함께",
+      "title_en": "Food and Exercise Work Together",
+      "text_ko": "한 접시로 근육이 뿅 생기진 않아요. 꾸준한 운동과 충분한 식사도 함께 챙겨요.",
+      "text_en": "One plate won't magically grow muscles! Regular exercise and enough food matter too.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "전은 내려놓고 운동해요!",
+      "title_en": "Put the Pancake Down First!",
+      "text_ko": "뒤집개로 팔 운동까지? 아, 전은 내려놓고 하라고요?",
+      "text_en": "A spatula workout while I cook? Oh, you mean I should put the pancake down first?",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 반찬으로!",
+      "title_en": "Screenshot Your Next Side!",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "episode": 5
+}

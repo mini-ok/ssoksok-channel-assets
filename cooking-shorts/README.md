@@ -10,6 +10,8 @@
 
 4편은 [장 쉐프의 브로콜리 마늘볶음](episode04/README.md) 한·영판이다. 조리 후 식이섬유·수분과 배변 건강을 설명한다. 사용자 지시로 직전 편과 다른 배경음악을 사용했다.
 
+5편 [근육 쉐프의 참치 감자전](episode05/README.md), 6편 [면역 쉐프의 당근 달걀찜](episode06/README.md)도 한글·영문 제작과 검수를 마쳤다. 장 → 근육 → 면역 순환이며, 편마다 다른 음악을 사용한다. `produce_episodes.py`로 제작하고 `package_episodes.py`로 편별 업로드 폴더·ZIP과 5·6편 통합 ZIP을 만든다. 유튜브 업로드는 아직 실행하지 않았다.
+
 ## 최신 수정 v5
 
 [자막 디자인·연기 보강 영상](output_v5/쏙쏙건강요리_바나나오트밀_조리효과음_v5.mp4) / [화면 검수](output_v5/encoded_review.jpg) / [검증 수치](output_v5/verification_v5.json)

@@ -1,0 +1,175 @@
+{
+  "character": "immune",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "voice": "Kore",
+  "dish_ko": "당근 달걀찜",
+  "dish_en": "Carrot Steamed Eggs",
+  "slug": "CarrotSteamedEggs",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "비타민 A와 정상 면역 기능",
+  "source_en": "Vitamin A and Normal Immune Function",
+  "time_ko": "1인 곁들임 / 약 20분",
+  "time_en": "1 side serving / about 20 minutes",
+  "ingredients": [
+    [
+      "달걀",
+      "Eggs",
+      "2개",
+      "2",
+      "egg"
+    ],
+    [
+      "당근",
+      "Carrot",
+      "50g",
+      "50 g",
+      "carrot"
+    ],
+    [
+      "물",
+      "Water",
+      "100mL",
+      "100 mL",
+      "water"
+    ]
+  ],
+  "headings_ko": [
+    "면역팀을 위한 한 그릇",
+    "재료는 딱 세 가지",
+    "01  당근을 곱게 갈아요",
+    "02  풀고 섞어 내열그릇에",
+    "03  김 오른 뒤 중약불로",
+    "가운데까지 완전히 익혀요",
+    "면역팀이 당근을 고른 이유",
+    "필요한 영양을 골고루",
+    "맛 검문은 제가 합니다!",
+    "캡처해서 다음 반찬으로!"
+  ],
+  "headings_en": [
+    "A Bowl for the Immune Team",
+    "Just Three Ingredients",
+    "01  Finely Grate the Carrot",
+    "02  Beat, Mix, and Pour",
+    "03  Steam over Medium-Low Heat",
+    "Cook the Center All the Way Through",
+    "Why Immune Chose Carrot",
+    "Get Nutrients from Varied Foods",
+    "Taste Inspection Is My Job!",
+    "Screenshot Your Next Side!"
+  ],
+  "dialogue_en": [
+    "Carrot, access granted! Today, steamed eggs to help nourish my immune team!",
+    "Two eggs, fifty grams of carrot, and one hundred milliliters of water. Just a little salt if you like.",
+    "Finely grate the carrot. Small pieces cook tenderly inside the eggs!",
+    "Beat the eggs, mix in water and carrot, and pour into a heatproof bowl.",
+    "Into the steaming pot, then cover! Cook over medium-low heat for about twelve minutes.",
+    "No runny egg in the center! Soft steamed eggs, dotted with carrot, are ready!",
+    "Your body can turn the beta-carotene in carrots into vitamin A. Vitamin A is needed for your immune system to work normally.",
+    "Eating more doesn't make you invincible! Get the nutrients you need from a variety of foods.",
+    "I'll handle the taste inspection. Hmm, I think this needs another inspection. One more bite!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "달걀 2개 · 당근 50g · 물 100mL",
+    "소금은 선택 / 가열용 내열그릇 사용",
+    "1  당근은 씻어 손질한 뒤 곱게 갈아요.",
+    "2  달걀을 풀고 물·당근과 섞어 담아요.",
+    "3  그릇을 내열접시로 덮고 찜냄비에 넣어요.",
+    "4  김 오른 뒤 중약불로 약 12~15분 쪄요.",
+    "가운데에 흐르는 달걀이 남으면 더 익혀요."
+  ],
+  "recipe_en": [
+    "2 eggs / carrot 50 g / water 100 mL",
+    "Salt optional / use a heatproof bowl",
+    "1  Wash, trim and finely grate the carrot.",
+    "2  Beat eggs; mix with water and carrot.",
+    "3  Cover bowl with a heatproof plate in a steamer.",
+    "4  Once steaming, cook on medium-low 12–15 min.",
+    "Cook longer if the center still has runny egg."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "면역팀을 위한 한 그릇",
+      "title_en": "A Bowl for the Immune Team",
+      "text_ko": "당근, 통과! 면역팀을 위한 달걀찜, 제가 만들게요!",
+      "text_en": "Carrot, access granted! Today, steamed eggs to help nourish my immune team!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료는 딱 세 가지",
+      "title_en": "Just Three Ingredients",
+      "text_ko": "달걀 두 개, 당근 오십 그램, 물 백 밀리리터. 소금은 취향껏 조금만요.",
+      "text_en": "Two eggs, fifty grams of carrot, and one hundred milliliters of water. Just a little salt if you like.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01  당근을 곱게 갈아요",
+      "title_en": "01  Finely Grate the Carrot",
+      "text_ko": "당근은 곱게 갈아요. 작게 만들어야 달걀 속에서도 부드럽게 익어요!",
+      "text_en": "Finely grate the carrot. Small pieces cook tenderly inside the eggs!",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02  풀고 섞어 내열그릇에",
+      "title_en": "02  Beat, Mix, and Pour",
+      "text_ko": "달걀을 풀고 물과 당근을 섞어, 내열그릇에 담아요.",
+      "text_en": "Beat the eggs, mix in water and carrot, and pour into a heatproof bowl.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03  김 오른 뒤 중약불로",
+      "title_en": "03  Steam over Medium-Low Heat",
+      "text_ko": "김 오른 찜냄비에 넣고 뚜껑 덮기! 중약불로 십이 분쯤 익혀요.",
+      "text_en": "Into the steaming pot, then cover! Cook over medium-low heat for about twelve minutes.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "가운데까지 완전히 익혀요",
+      "title_en": "Cook the Center All the Way Through",
+      "text_ko": "가운데까지 흐르는 달걀 없이! 당근 콕콕, 보들보들 완성이에요!",
+      "text_en": "No runny egg in the center! Soft steamed eggs, dotted with carrot, are ready!",
+      "narrator": false
+    },
+    {
+      "id": "benefit",
+      "title_ko": "면역팀이 당근을 고른 이유",
+      "title_en": "Why Immune Chose Carrot",
+      "text_ko": "당근의 베타카로틴은 몸에서 비타민 에이로 바뀌어요. 비타민 에이는 면역 체계가 정상적으로 일하는 데 필요해요.",
+      "text_en": "Your body can turn the beta-carotene in carrots into vitamin A. Vitamin A is needed for your immune system to work normally.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "필요한 영양을 골고루",
+      "title_en": "Get Nutrients from Varied Foods",
+      "text_ko": "많이 먹을수록 무적이 된다는 뜻은 아니에요. 필요한 영양을 다양한 음식으로 챙기는 거예요.",
+      "text_en": "Eating more doesn't make you invincible! Get the nutrients you need from a variety of foods.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "맛 검문은 제가 합니다!",
+      "title_en": "Taste Inspection Is My Job!",
+      "text_ko": "맛 검문은 제가 합니다. 음, 재검사가 필요하겠는데요? 한입 더!",
+      "text_en": "I'll handle the taste inspection. Hmm, I think this needs another inspection. One more bite!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 반찬으로!",
+      "title_en": "Screenshot Your Next Side!",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "episode": 6
+}

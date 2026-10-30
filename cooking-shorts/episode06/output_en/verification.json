@@ -1,0 +1,28 @@
+{
+  "file": "TinyBodyCo_CarrotSteamedEggs_EN.mp4",
+  "seconds": 71.875,
+  "frames_decoded": 1725,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.23,
+  "true_peak": -5.57,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "fecb835891fb63fc97552985196aaa44ad80182dbaa2d5b91e3c761656b4dca8",
+  "evidence_reference": "https://ods.od.nih.gov/factsheets/VitaminA-Consumer/",
+  "recipe_note": "더 먹을수록 면역력이 강해지거나 감염이 예방된다는 뜻이 아니다. 레시피 자체의 임상 효과나 정확한 전환량을 주장하지 않는다. No real kitchen or taste test.",
+  "language": "en",
+  "chef_voice": "Kore",
+  "narrator_voice": "Despina",
+  "music": "buant_pop_groove.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.867,
+  "previous_music_correlation": -0.0003,
+  "encoded_speech_qa": "passed",
+  "post_cooking_health_narration": "passed",
+  "source_card_visual_review": "passed"
+}

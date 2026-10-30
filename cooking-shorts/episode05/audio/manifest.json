@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "아령 대신 뒤집개!",
+    "text": "오늘은 아령 말고 뒤집개! 제 근육 챙기는 참치 감자전, 부쳐볼까요?",
+    "speaker": "근육 쉐프",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 5.193375,
+    "duration": 6.593
+  },
+  {
+    "id": "ingredients",
+    "title": "세계 어디서나 쉬운 재료",
+    "text": "감자 백오십 그램, 물기 뺀 참치 팔십 그램. 밀가루와 물은 한 큰술씩이에요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.697583333333333,
+    "duration": 6.098
+  },
+  {
+    "id": "prep",
+    "title": "01  가늘게 썰고 물기 빼기",
+    "text": "감자는 가늘게 썰고 물기를 살짝 짜요. 참치도 물기를 쏙 빼고요!",
+    "speaker": "근육 쉐프",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 4.511958333333333,
+    "duration": 5.912
+  },
+  {
+    "id": "mix",
+    "title": "02  되직하게 섞어요",
+    "text": "밀가루와 물을 넣어 섞어요. 뚝뚝 흐르지 않고 서로 붙을 정도면 돼요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.384166666666666,
+    "duration": 5.784
+  },
+  {
+    "id": "cook",
+    "title": "03  작고 얇게 부쳐요",
+    "text": "기름 두른 팬에 작고 얇게! 중약불로 앞뒤를 굽고, 감자 속까지 익혀요.",
+    "speaker": "근육 쉐프",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 5.162041666666667,
+    "duration": 6.562
+  },
+  {
+    "id": "serve",
+    "title": "감자 속까지 익으면 완성!",
+    "text": "노릇노릇! 감자가 부드럽게 익었으면 완성이에요.",
+    "speaker": "근육 쉐프",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 3.54975,
+    "duration": 4.95
+  },
+  {
+    "id": "benefit",
+    "title": "근육이 고른 단백질",
+    "text": "참치의 단백질은 근육을 유지하고 보수하는 재료예요. 몸은 단백질을 아미노산으로 나눠, 근육을 만드는 데 써요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.994291666666666,
+    "duration": 8.394
+  },
+  {
+    "id": "context",
+    "title": "운동과 충분한 식사도 함께",
+    "text": "한 접시로 근육이 뿅 생기진 않아요. 꾸준한 운동과 충분한 식사도 함께 챙겨요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.077416666666666,
+    "duration": 6.477
+  },
+  {
+    "id": "joke",
+    "title": "전은 내려놓고 운동해요!",
+    "text": "뒤집개로 팔 운동까지? 아, 전은 내려놓고 하라고요?",
+    "speaker": "근육 쉐프",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 3.0635833333333333,
+    "duration": 4.464
+  },
+  {
+    "id": "end",
+    "title": "캡처해서 다음 반찬으로!",
+    "text": "구독은 사원증 발급! 좋아요는 보너스!",
+    "speaker": "근육 쉐프",
+    "voice": "Fenrir",
+    "speed": 1.3,
+    "speech_duration": 3.0315416666666666,
+    "duration": 10
+  }
+]

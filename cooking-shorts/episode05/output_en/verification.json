@@ -1,0 +1,28 @@
+{
+  "file": "TinyBodyCo_TunaPotatoPancakes_EN.mp4",
+  "seconds": 74.54166666666667,
+  "frames_decoded": 1789,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.58,
+  "true_peak": -5.44,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "82ec61c785b5522e09ef8d326c2aba8c2986e15d52602ae830f1bd16bd714901",
+  "evidence_reference": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+  "recipe_note": "이 요리 한 번의 근육 증가를 입증한 자료가 아니다. 운동과 충분한 식사도 필요하다. No real kitchen or taste test.",
+  "language": "en",
+  "chef_voice": "Fenrir",
+  "narrator_voice": "Despina",
+  "music": "nimble_motifs.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.8714,
+  "previous_music_correlation": -0.009,
+  "encoded_speech_qa": "passed",
+  "post_cooking_health_narration": "passed",
+  "source_card_visual_review": "passed"
+}

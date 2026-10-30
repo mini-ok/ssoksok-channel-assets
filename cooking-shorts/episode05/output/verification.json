@@ -1,0 +1,28 @@
+{
+  "file": "쏙쏙건강요리_참치감자전_한글_v1.mp4",
+  "seconds": 65.25,
+  "frames_decoded": 1566,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.7,
+  "true_peak": -5.65,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "d5d1cdcf8e1996e5b77e99c6503a0f191693bb00c2f27f9c062a77f062a11a77",
+  "evidence_reference": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+  "recipe_note": "이 요리 한 번의 근육 증가를 입증한 자료가 아니다. 운동과 충분한 식사도 필요하다. No real kitchen or taste test.",
+  "language": "ko",
+  "chef_voice": "Fenrir",
+  "narrator_voice": "Despina",
+  "music": "nimble_motifs.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.8728,
+  "previous_music_correlation": -0.0103,
+  "encoded_speech_qa": "passed",
+  "post_cooking_health_narration": "passed",
+  "source_card_visual_review": "passed"
+}

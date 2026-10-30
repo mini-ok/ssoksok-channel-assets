@@ -27,9 +27,9 @@
   },
   "organ_rotation_note": "장 → 근육 → 면역",
   "music": {
-    "file": "",
-    "previous_episode_file": "",
-    "reason": "대본 단계 미선정; 제작 시 직전 편과 다른 곡 선택"
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "연속 회차와 다른 기존 보유곡"
   },
   "health_focus": "근육 유지·보수에 필요한 단백질을 식사로 보태기",
   "reason_for_chef": "참치의 단백질이 근육 조직을 유지·보수하는 재료를 제공하므로 근육 쉐프가 요리한다.",
@@ -64,5 +64,5 @@
     "organ_connection_is_specific": true,
     "menu_history_checked": true
   },
-  "status": "draft_only"
+  "status": "bilingual_videos_verified"
 }

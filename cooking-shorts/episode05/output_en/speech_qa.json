@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Today, a spatula instead of a dumbbell! Let's make tuna potato pancakes for my muscles!",
+    "heard": "Today, a spatula instead of a dumbbell, let's make tuna potato pancakes for my muscles!",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "One hundred fifty grams of potato and eighty grams of drained tuna. One tablespoon each of flour and water.",
+    "heard": "150 grams of potato and 80 grams of drained tuna,  one tablespoon each of flour and water.",
+    "similarity": 1.0
+  },
+  {
+    "id": "prep",
+    "expected": "Thinly shred the potato and gently squeeze out some water. Drain the tuna well too!",
+    "heard": "Thinly shred the potato and gently squeeze out some water.  Drain the tuna well too!",
+    "similarity": 1.0
+  },
+  {
+    "id": "mix",
+    "expected": "Mix in flour and water. It should hold together, rather than drip off the spoon.",
+    "heard": "Mix in flour and water. It should hold together rather than drip off the spoon.",
+    "similarity": 1.0
+  },
+  {
+    "id": "cook",
+    "expected": "Use a lightly oiled pan. Keep them small and thin! Cook both sides over medium-low heat until the potato is cooked through.",
+    "heard": "Use a lightly oiled pan. Keep them small and thin. Cook both sides over medium-low heat until the potato is cooked through.",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "Golden outside! Once the potato is soft all the way through, they're ready.",
+    "heard": "golden outside. Once the potato is soft all the way through, they're ready!",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Protein from tuna helps maintain and repair muscles. Your body breaks protein into amino acids and uses them to make muscle proteins.",
+    "heard": "Protein from tuna helps maintain and repair muscles.  Your body breaks protein into amino acids  and uses them to make muscle proteins.",
+    "similarity": 1.0
+  },
+  {
+    "id": "context",
+    "expected": "One plate won't magically grow muscles! Regular exercise and enough food matter too.",
+    "heard": "One plate won't magically grow muscles.  Regular exercise and enough food matter too.",
+    "similarity": 1.0
+  },
+  {
+    "id": "joke",
+    "expected": "A spatula workout while I cook? Oh, you mean I should put the pancake down first?",
+    "heard": "A spatula workout while I cook?  Oh, you mean I should put the pancake down first?",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

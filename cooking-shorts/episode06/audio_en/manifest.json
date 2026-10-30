@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "A Bowl for the Immune Team",
+    "text": "Carrot, access granted! Today, steamed eggs to help nourish my immune team!",
+    "speaker": "Chef Immune",
+    "voice": "Kore",
+    "speed": 1.3,
+    "speech_duration": 5.56675,
+    "duration": 6.967
+  },
+  {
+    "id": "ingredients",
+    "title": "Just Three Ingredients",
+    "text": "Two eggs, fifty grams of carrot, and one hundred milliliters of water. Just a little salt if you like.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.821541666666667,
+    "duration": 7.222
+  },
+  {
+    "id": "prep",
+    "title": "01  Finely Grate the Carrot",
+    "text": "Finely grate the carrot. Small pieces cook tenderly inside the eggs!",
+    "speaker": "Chef Immune",
+    "voice": "Kore",
+    "speed": 1.3,
+    "speech_duration": 4.084458333333333,
+    "duration": 5.484
+  },
+  {
+    "id": "mix",
+    "title": "02  Beat, Mix, and Pour",
+    "text": "Beat the eggs, mix in water and carrot, and pour into a heatproof bowl.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.092208333333334,
+    "duration": 5.492
+  },
+  {
+    "id": "cook",
+    "title": "03  Steam over Medium-Low Heat",
+    "text": "Into the steaming pot, then cover! Cook over medium-low heat for about twelve minutes.",
+    "speaker": "Chef Immune",
+    "voice": "Kore",
+    "speed": 1.3,
+    "speech_duration": 5.224208333333333,
+    "duration": 6.624
+  },
+  {
+    "id": "serve",
+    "title": "Cook the Center All the Way Through",
+    "text": "No runny egg in the center! Soft steamed eggs, dotted with carrot, are ready!",
+    "speaker": "Chef Immune",
+    "voice": "Kore",
+    "speed": 1.3,
+    "speech_duration": 4.912458333333333,
+    "duration": 6.312
+  },
+  {
+    "id": "benefit",
+    "title": "Why Immune Chose Carrot",
+    "text": "Your body can turn the beta-carotene in carrots into vitamin A. Vitamin A is needed for your immune system to work normally.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 8.095458333333333,
+    "duration": 9.495
+  },
+  {
+    "id": "context",
+    "title": "Get Nutrients from Varied Foods",
+    "text": "Eating more doesn't make you invincible! Get the nutrients you need from a variety of foods.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.2375,
+    "duration": 6.637
+  },
+  {
+    "id": "joke",
+    "title": "Taste Inspection Is My Job!",
+    "text": "I'll handle the taste inspection. Hmm, I think this needs another inspection. One more bite!",
+    "speaker": "Chef Immune",
+    "voice": "Kore",
+    "speed": 1.3,
+    "speech_duration": 6.223375,
+    "duration": 7.623
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Side!",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Immune",
+    "voice": "Kore",
+    "speed": 1.3,
+    "speech_duration": 3.447583333333333,
+    "duration": 10
+  }
+]
