@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "So Easy! Strawberry Yogurt Bark",
+    "text": "Body construction crew, snack project starts now! Yogurt brings calcium, a nutrient our bones need!",
+    "speaker": "Chef Bone",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 6.826666666666667,
+    "duration": 8.227
+  },
+  {
+    "id": "ingredients",
+    "title": "Just Two Ingredients",
+    "text": "Two hundred grams of unsweetened plain low-fat yogurt and about five strawberries. That is all!",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.219083333333334,
+    "duration": 7.619
+  },
+  {
+    "id": "prep",
+    "title": "01 Wash, Dry, and Slice",
+    "text": "Wash the strawberries and pat them dry! Slice thinly so they are easier to eat after freezing.",
+    "speaker": "Chef Bone",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 5.0296666666666665,
+    "duration": 6.43
+  },
+  {
+    "id": "mix",
+    "title": "02 Spread Thinly and Evenly",
+    "text": "Line a freezer-safe tray with parchment. Spread the yogurt into a thin, even layer.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.130583333333333,
+    "duration": 6.531
+  },
+  {
+    "id": "cook",
+    "title": "03 Add Strawberries and Freeze",
+    "text": "Press in the strawberry tiles! Cover and freeze for three to four hours, or until completely firm!",
+    "speaker": "Chef Bone",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 6.114791666666667,
+    "duration": 7.515
+  },
+  {
+    "id": "serve",
+    "title": "04 Divide into Small Pieces",
+    "text": "Let it soften briefly, then divide into small pieces. If it is too hard, wait a little longer.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.351041666666666,
+    "duration": 7.751
+  },
+  {
+    "id": "benefit",
+    "title": "Why Bone Chose Yogurt",
+    "text": "Yogurt provides calcium. Your body needs calcium to build and maintain strong bones.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.867208333333333,
+    "duration": 9
+  },
+  {
+    "id": "context",
+    "title": "How Much Calcium per Serving?",
+    "text": "The serving shown is half of this recipe. Calcium content varies between yogurt products.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.7155,
+    "duration": 9
+  },
+  {
+    "id": "joke",
+    "title": "Snack Construction Complete!",
+    "text": "Looks sturdy, but this is not flooring! This construction project is finished when we eat it!",
+    "speaker": "Chef Bone",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 5.8115,
+    "duration": 7.211
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Snack",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Bone",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 3.9723333333333333,
+    "duration": 10
+  }
+]

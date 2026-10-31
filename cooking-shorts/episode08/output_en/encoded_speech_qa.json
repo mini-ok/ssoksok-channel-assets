@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Body construction crew, snack project starts now! Yogurt brings calcium, a nutrient our bones need!",
+    "heard": "Body construction crew snack project starts now yogurt brings calcium a nutrient our bones need",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "Two hundred grams of unsweetened plain low-fat yogurt and about five strawberries. That is all!",
+    "heard": "200 grams of unsweetened plain low-fat yogurt and about five strawberries. That is all!",
+    "similarity": 1.0
+  },
+  {
+    "id": "prep",
+    "expected": "Wash the strawberries and pat them dry! Slice thinly so they are easier to eat after freezing.",
+    "heard": "Watch the strawberries and pat them dry.  Slice thinly so they are easier to eat after freezing.",
+    "similarity": 0.9803921568627451
+  },
+  {
+    "id": "mix",
+    "expected": "Line a freezer-safe tray with parchment. Spread the yogurt into a thin, even layer.",
+    "heard": "Line a freezer safe tray with parchment. Spread the yogurt into a thin, even layer.",
+    "similarity": 1.0
+  },
+  {
+    "id": "cook",
+    "expected": "Press in the strawberry tiles! Cover and freeze for three to four hours, or until completely firm!",
+    "heard": "Press in the strawberry tiles, cover and freeze for 3-4 hours or until completely firm!",
+    "similarity": 0.9871794871794872
+  },
+  {
+    "id": "serve",
+    "expected": "Let it soften briefly, then divide into small pieces. If it is too hard, wait a little longer.",
+    "heard": "Let it soften briefly, then divide into small pieces.  If it is too hard, wait a little longer.",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Yogurt provides calcium. Your body needs calcium to build and maintain strong bones.",
+    "heard": "Yogurt provides calcium. Your body needs calcium to build and maintain strong bones.",
+    "similarity": 1.0
+  },
+  {
+    "id": "context",
+    "expected": "The serving shown is half of this recipe. Calcium content varies between yogurt products.",
+    "heard": "The serving shown is half of this recipe.  Calcium content varies between yogurt products.",
+    "similarity": 1.0
+  },
+  {
+    "id": "joke",
+    "expected": "Looks sturdy, but this is not flooring! This construction project is finished when we eat it!",
+    "heard": "Looks dirty, but this is not flooring!  This construction project is finished when we eat it!",
+    "similarity": 0.9530201342281879
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

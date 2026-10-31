@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-31",
+  "basis": "생 양식 대서양연어, 조리 전",
+  "input_sources": [
+    "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+    "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/"
+  ],
+  "recipe_mg": 1050,
+  "per_serving_mg": 1050.0,
+  "daily_reference_mg": null,
+  "daily_percent": null,
+  "display_recipe_mg": 1000,
+  "display_serving_mg": 1000,
+  "display_daily_percent": null,
+  "limitations": "Ingredient-based estimate, not laboratory measurement of finished dish. Product, species and cooking differences apply. DHA alone has no established U.S. RDA."
+}

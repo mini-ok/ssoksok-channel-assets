@@ -1,5 +1,5 @@
 """Bilingual production for approved episodes 05/06; shared paper renderer and channel voices."""
-import sys,os,json,math,re,wave,subprocess,inspect,importlib.util,functools,difflib,hashlib
+import sys,os,json,math,re,wave,subprocess,inspect,importlib.util,functools,difflib,hashlib,time
 from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
@@ -43,7 +43,7 @@ exec(inspect.getsource(v.prepare_mix).replace("'buant_pop_groove.mp3'",repr(C['m
 
 def preflight():
  ids=[x[0] for x in p.ROWS]
- assert NUM in (5,6) and LANG in ('ko','en') and all(PLAN['review'].values())
+ assert NUM in (5,6,7,8) and LANG in ('ko','en') and all(PLAN['review'].values())
  assert max(ids.index(x) for x in PLAN['cooking_scene_ids'])<min(ids.index(x) for x in PLAN['health_narration_scene_ids'])
  assert all(p.ROWS[ids.index(x)][3]==narrator for x in PLAN['health_narration_scene_ids'])
  a=p.REPO/'bgm'/C['music'];b=p.REPO/'bgm'/C['previous_music']
@@ -51,10 +51,12 @@ def preflight():
 
 def norm(s):
  s=s.lower()
+ s=s.replace('디에이치에이','dha').replace('디 에이치 에이','dha').replace('디에이치 에이','dha')
  if LANG=='en':
-  for n,w in [('150','one hundred fifty'),('100','one hundred'),('80','eighty'),('50','fifty'),('12','twelve'),('4','four'),('3','three'),('2','two'),('1','one')]:s=re.sub(r'\b'+n+r'\b',w,s)
+  for n,w in [('200','two hundred'),('150','one hundred fifty'),('100','one hundred'),('80','eighty'),('63','sixty three'),('50','fifty'),('15','fifteen'),('12','twelve'),('5','five'),('4','four'),('3','three'),('2','two'),('1','one')]:s=re.sub(r'\b'+n+r'\b',w,s)
   return re.sub('[^a-z0-9]','',s.replace('one hundred and fifty','one hundred fifty'))
- for n,w in [('150','백오십'),('100','백'),('80','팔십'),('50','오십'),('12','십이')]:s=s.replace(n,w)
+ for n,w in [('200','이백'),('150','백오십'),('100','백'),('80','팔십'),('63','육십삼'),('50','오십'),('15','십오'),('12','십이')]:s=s.replace(n,w)
+ s=s.replace('오메가3','오메가삼').replace('5알','다섯알')
  s=s.replace('그램','g').replace('밀리리터','ml').replace('비타민 a','비타민에이').replace('비타민a','비타민에이')
  for n,w in [('2개','두개'),('2 개','두개'),('1큰술','한큰술'),('1 큰술','한큰술')]:s=s.replace(n,w)
  return re.sub('[^가-힣a-z0-9]','',s)
@@ -70,9 +72,12 @@ def audio():
   path=p.AUDIO/(sid+'.wav');voice='Despina' if speaker==narrator else C['voice'];take=cached.get(sid,{})
   for attempt in range(4):
    if not path.exists() or take.get('text')!=text or take.get('voice',voice)!=voice or attempt:
-    inp={'text':text}
-    if not attempt:inp['prompt']=L('밝고 신나는 요리 애니메이션. 또렷하고 경쾌하게.','Bright, lively cooking animation. Cheerful and clear, with playful energy.')
-    response=requests.post(v.channel_tts.G_URL,headers={'Authorization':'Bearer '+v.channel_tts.token(),'x-goog-user-project':v.channel_tts.PROJECT},json={'input':inp,'voice':{'languageCode':'ko-KR' if LANG=='ko' else 'en-US','name':voice,'modelName':v.channel_tts.MODEL},'audioConfig':{'audioEncoding':'LINEAR16','sampleRateHertz':24000}},timeout=120)
+    inp={'text':text.replace('! 좋아요','!\n좋아요') if sid=='end' else text}
+    if not attempt or sid=='end':inp['prompt']=L('밝고 신나는 요리 애니메이션. 또렷하고 경쾌하게. 단어를 뭉개지 말고 자음을 분명히 발음하세요.','Bright, lively cooking animation. Cheerful and clear, with playful energy and crisp consonants.')
+    for retry in range(8):
+     response=requests.post(v.channel_tts.G_URL,headers={'Authorization':'Bearer '+v.channel_tts.token(),'x-goog-user-project':v.channel_tts.PROJECT},json={'input':inp,'voice':{'languageCode':'ko-KR' if LANG=='ko' else 'en-US','name':voice,'modelName':v.channel_tts.MODEL},'audioConfig':{'audioEncoding':'LINEAR16','sampleRateHertz':24000}},timeout=120)
+     if response.status_code not in (429,500,502,503,504):break
+     wait=min(45,8*(retry+1));print('TTS temporarily busy; retry in',wait,'seconds',flush=True);time.sleep(wait)
     if response.status_code!=200:raise RuntimeError('TTS HTTP '+str(response.status_code))
     x=v.channel_tts.squeeze_gaps(v.channel_tts.trim_edges(v.channel_tts.decode(response)));v.speech.tts.save_wav(str(path),v.speech.speed(x,1.3))
    with wave.open(str(path)) as f:x=np.frombuffer(f.readframes(f.getnframes()),np.int16).astype(np.float32)/32768
@@ -81,7 +86,9 @@ def audio():
    print(NUM,LANG,sid,round(score,3),heard,flush=True)
    if score>.86 and (LANG!='ko' or sid!='end' or '보너스' in heard):break
    if attempt==3:raise RuntimeError('Speech QA failed: '+sid)
-  reports.append(dict(id=sid,expected=text,heard=heard,similarity=score));rows.append(dict(id=sid,title=title,text=text,speaker=speaker,voice=voice,speed=1.3,speech_duration=len(x)/24000,duration=10 if sid=='end' else round(max(3.8,len(x)/24000+1.4),3)))
+  reports.append(dict(id=sid,expected=text,heard=heard,similarity=score));rows.append(dict(id=sid,title=title,text=text,speaker=speaker,voice=voice,speed=1.3,speech_duration=len(x)/24000,duration=10 if sid=='end' else round(max(9 if NUM in (7,8) and sid in ('benefit','context') else 3.8,len(x)/24000+1.4),3)))
+  # Checkpoint accepted scenes, so interrupted API calls never discard good takes.
+  (p.AUDIO/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8');(p.OUT/'speech_qa.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
  (p.AUDIO/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8');(p.OUT/'speech_qa.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
 
 @functools.lru_cache(None)
@@ -170,14 +177,14 @@ def caption(idx):
   f=r.font(size)
   for count in [2,3]:
    if count==3 and size>48:continue
+   best=[]
    for i in range(1,len(words)):
     candidates=[(words[:i],words[i:])] if count==2 else [(words[:i],words[i:j],words[j:]) for j in range(i+1,len(words))]
-    best=[]
     for parts in candidates:
      widths=[d.textlength(' '.join(part),font=f) for part in parts]
      if max(widths)<=900:best.append((max(widths)-min(widths),parts))
-    if best:
-     result=min(best,key=lambda x:x[0]);chosen=(size,result[1]);break
+   if best:
+    result=min(best,key=lambda x:x[0]);chosen=(size,result[1])
    if chosen:break
   if chosen:break
  assert chosen is not None
@@ -277,6 +284,8 @@ def check():
   report.append(dict(id=row['id'],expected=row['text'],heard=heard,similarity=score));clock+=row['duration']
  (p.OUT/'encoded_speech_qa.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 
+if NUM in (7,8):
+ exec(compile((SOURCE/'episode78_visuals.py').read_text(encoding='utf-8'),str(SOURCE/'episode78_visuals.py'),'exec'),globals())
 preflight()
 if COMMAND in ('audio','verify','check'):globals()[COMMAND]()
 elif COMMAND=='preview':

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Chef Brain reporting for kitchen duty! Salmon brings DHA, a building block in brain cell membranes!",
+    "heard": "Chef Brain, reporting for kitchen duty.  Salmon brings DHA, a building block in brain cell membranes.",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "One salmon fillet, one bell pepper, and a teaspoon of oil. Add a little pepper if you like.",
+    "heard": "one salmon filet, one bell pepper, and a teaspoon of oil.  Add a little pepper if you like.",
+    "similarity": 0.9928057553956835
+  },
+  {
+    "id": "prep",
+    "expected": "Pat the salmon dry and check for bones! Slice the pepper thinly so it cooks alongside the fish.",
+    "heard": "pat the salmon dry and check for bones, slice the pepper thinly so it cooks alongside the  fish.",
+    "similarity": 1.0
+  },
+  {
+    "id": "mix",
+    "expected": "Spread everything on an oven-safe tray. Coat lightly with oil and a little pepper.",
+    "heard": "Spread everything on an oven safe tray, coat lightly with oil and a little pepper.",
+    "similarity": 1.0
+  },
+  {
+    "id": "cook",
+    "expected": "Into an oven preheated to two hundred degrees Celsius! Check after fifteen minutes. Thicker pieces need longer!",
+    "heard": "into an oven preheated to 200 degrees Celsius.  Check after 15 minutes.  Thicker pieces need longer.",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "Check that the thickest part of the salmon reaches sixty-three degrees Celsius.",
+    "heard": "Check that the thickest part of the salmon reaches 63 degrees Celsius.",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Salmon provides DHA, an omega-three fatty acid. DHA is a component of the membranes around brain cells.",
+    "heard": "Salmon provides DHA and omega-3 fatty acid.  DHA is a component of the membranes around brain cells.",
+    "similarity": 0.9940119760479041
+  },
+  {
+    "id": "context",
+    "expected": "The amount shown is estimated from the uncooked salmon. Fish type and cooking conditions can change the amount.",
+    "heard": "The amount shown is estimated from the uncooked salmon.  Fish type and cooking conditions can change the amount.",
+    "similarity": 1.0
+  },
+  {
+    "id": "joke",
+    "expected": "One bite will not make you a genius! But I did solve the mystery of what is for dinner!",
+    "heard": "One bite will not make you a genius, but I did solve the mystery of what is for dinner.",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge. Likes are your bonus.",
+    "similarity": 1.0
+  }
+]

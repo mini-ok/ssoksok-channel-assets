@@ -1,0 +1,187 @@
+{
+  "character": "brain",
+  "voice": "Orus",
+  "chef_ko": "뇌 쉐프",
+  "chef_en": "Chef Brain",
+  "dish_ko": "연어 파프리카 오븐구이",
+  "dish_en": "Salmon and Pepper Bake",
+  "slug": "SalmonPepperBake",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "DHA와 뇌세포막",
+  "source_en": "DHA and Brain Cell Membranes",
+  "time_ko": "1인분 / 약 25분 · 예열 별도",
+  "time_en": "1 serving / about 25 min + preheating",
+  "ingredients": [
+    [
+      "연어",
+      "Salmon",
+      "150g",
+      "150 g",
+      "salmon"
+    ],
+    [
+      "파프리카",
+      "Bell pepper",
+      "1개 · 약 150g",
+      "1 / about 150 g",
+      "pepper"
+    ],
+    [
+      "식물성 기름",
+      "Vegetable oil",
+      "1작은술",
+      "1 tsp",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "뇌 팀장도 주방 출근!",
+    "세 가지 재료로 준비",
+    "01 물기·뼈 확인하고 썰기",
+    "02 펼쳐 담고 기름 골고루",
+    "03 예열한 오븐에 굽기",
+    "가장 두꺼운 중심을 확인",
+    "연어를 고른 이유",
+    "이 분량에 DHA는 얼마나?",
+    "오늘 저녁 고민 해결!",
+    "캡처해서 만들어 보세요"
+  ],
+  "headings_en": [
+    "Brain Takes a Kitchen Shift!",
+    "Three Simple Ingredients",
+    "01 Pat Dry, Check Bones, Slice",
+    "02 Arrange and Lightly Oil",
+    "03 Bake in a Preheated Oven",
+    "Check the Thickest Center",
+    "Why Brain Chose Salmon",
+    "How Much DHA in This Recipe?",
+    "Dinner Decision: Solved!",
+    "Screenshot the Full Recipe"
+  ],
+  "ko": [
+    "오늘은 뇌 팀장도 주방 출근! 뇌세포막의 재료, 디에이치에이를 연어로 챙겨볼게요!",
+    "연어 한 토막, 파프리카 한 개, 기름 한 작은술. 후추는 조금만 준비해요.",
+    "연어는 물기 닦고 뼈 확인! 파프리카는 가늘게 썰어야 같이 잘 익어요.",
+    "재료를 겹치지 않게 담고, 기름과 후추를 고르게 묻혀요.",
+    "이백 도로 예열한 오븐에! 십오 분쯤부터 확인해요. 두꺼우면 조금 더!",
+    "연어는 가장 두꺼운 중심이 육십삼 도에 도달했는지 확인해요.",
+    "연어에는 오메가삼 지방산인 디에이치에이가 들어 있어요. 디에이치에이는 뇌세포막의 구성 성분이에요.",
+    "화면의 함량은 조리 전 연어 기준이에요. 연어 종류와 조리 조건에 따라 달라질 수 있어요.",
+    "한입에 천재가 되는 건 아니고요! 오늘 저녁 메뉴 고민은 제가 해결했죠?",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Brain reporting for kitchen duty! Salmon brings DHA, a building block in brain cell membranes!",
+    "One salmon fillet, one bell pepper, and a teaspoon of oil. Add a little pepper if you like.",
+    "Pat the salmon dry and check for bones! Slice the pepper thinly so it cooks alongside the fish.",
+    "Spread everything on an oven-safe tray. Coat lightly with oil and a little pepper.",
+    "Into an oven preheated to two hundred degrees Celsius! Check after fifteen minutes. Thicker pieces need longer!",
+    "Check that the thickest part of the salmon reaches sixty-three degrees Celsius.",
+    "Salmon provides DHA, an omega-three fatty acid. DHA is a component of the membranes around brain cells.",
+    "The amount shown is estimated from the uncooked salmon. Fish type and cooking conditions can change the amount.",
+    "One bite will not make you a genius! But I did solve the mystery of what is for dinner!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "연어 150g / 파프리카 1개(약 150g)",
+    "식물성 기름 1작은술 / 후추 조금 · 소금 선택",
+    "1 오븐 200°C 예열. 연어 물기·뼈 확인.",
+    "2 파프리카 씨를 빼고 1cm 폭으로 썰기.",
+    "3 팬에 펼쳐 담고 기름·후추 고루 묻히기.",
+    "4 약 15~20분 굽고 연어 중심 63°C 확인.",
+    "두께에 따라 시간 조절 · 냉동 연어는 먼저 해동"
+  ],
+  "recipe_en": [
+    "Salmon 150 g / 1 bell pepper (about 150 g)",
+    "Oil 1 tsp / pepper to taste / salt optional",
+    "1 Preheat to 200°C (392°F). Pat fish dry; check bones.",
+    "2 Deseed pepper and cut into 1 cm strips.",
+    "3 Arrange on oven-safe tray; coat with oil and pepper.",
+    "4 Bake about 15–20 min; fish center must reach 63°C.",
+    "145°F internal / adjust time to thickness / thaw first"
+  ],
+  "episode": 7,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "뇌 팀장도 주방 출근!",
+      "title_en": "Brain Takes a Kitchen Shift!",
+      "text_ko": "오늘은 뇌 팀장도 주방 출근! 뇌세포막의 재료, 디에이치에이를 연어로 챙겨볼게요!",
+      "text_en": "Chef Brain reporting for kitchen duty! Salmon brings DHA, a building block in brain cell membranes!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "세 가지 재료로 준비",
+      "title_en": "Three Simple Ingredients",
+      "text_ko": "연어 한 토막, 파프리카 한 개, 기름 한 작은술. 후추는 조금만 준비해요.",
+      "text_en": "One salmon fillet, one bell pepper, and a teaspoon of oil. Add a little pepper if you like.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 물기·뼈 확인하고 썰기",
+      "title_en": "01 Pat Dry, Check Bones, Slice",
+      "text_ko": "연어는 물기 닦고 뼈 확인! 파프리카는 가늘게 썰어야 같이 잘 익어요.",
+      "text_en": "Pat the salmon dry and check for bones! Slice the pepper thinly so it cooks alongside the fish.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 펼쳐 담고 기름 골고루",
+      "title_en": "02 Arrange and Lightly Oil",
+      "text_ko": "재료를 겹치지 않게 담고, 기름과 후추를 고르게 묻혀요.",
+      "text_en": "Spread everything on an oven-safe tray. Coat lightly with oil and a little pepper.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 예열한 오븐에 굽기",
+      "title_en": "03 Bake in a Preheated Oven",
+      "text_ko": "이백 도로 예열한 오븐에! 십오 분쯤부터 확인해요. 두꺼우면 조금 더!",
+      "text_en": "Into an oven preheated to two hundred degrees Celsius! Check after fifteen minutes. Thicker pieces need longer!",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "가장 두꺼운 중심을 확인",
+      "title_en": "Check the Thickest Center",
+      "text_ko": "연어는 가장 두꺼운 중심이 육십삼 도에 도달했는지 확인해요.",
+      "text_en": "Check that the thickest part of the salmon reaches sixty-three degrees Celsius.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "연어를 고른 이유",
+      "title_en": "Why Brain Chose Salmon",
+      "text_ko": "연어에는 오메가삼 지방산인 디에이치에이가 들어 있어요. 디에이치에이는 뇌세포막의 구성 성분이에요.",
+      "text_en": "Salmon provides DHA, an omega-three fatty acid. DHA is a component of the membranes around brain cells.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "이 분량에 DHA는 얼마나?",
+      "title_en": "How Much DHA in This Recipe?",
+      "text_ko": "화면의 함량은 조리 전 연어 기준이에요. 연어 종류와 조리 조건에 따라 달라질 수 있어요.",
+      "text_en": "The amount shown is estimated from the uncooked salmon. Fish type and cooking conditions can change the amount.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "오늘 저녁 고민 해결!",
+      "title_en": "Dinner Decision: Solved!",
+      "text_ko": "한입에 천재가 되는 건 아니고요! 오늘 저녁 메뉴 고민은 제가 해결했죠?",
+      "text_en": "One bite will not make you a genius! But I did solve the mystery of what is for dinner!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 만들어 보세요",
+      "title_en": "Screenshot the Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ]
+}

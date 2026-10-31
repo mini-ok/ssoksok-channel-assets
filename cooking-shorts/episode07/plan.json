@@ -1,0 +1,89 @@
+{
+  "episode": 7,
+  "dish": "연어 파프리카 오븐구이",
+  "organ": "뇌",
+  "chef": "뇌 쉐프",
+  "main_ingredients": [
+    "연어",
+    "파프리카"
+  ],
+  "cooking_style": "오븐 굽기",
+  "global_accessibility": {
+    "common_ingredients": [
+      "연어",
+      "파프리카"
+    ],
+    "substitutions": [
+      "냉동 연어를 제품 안내에 따라 해동"
+    ],
+    "basic_tools": [
+      "오븐",
+      "오븐용 팬",
+      "식품용 온도계"
+    ]
+  },
+  "organ_rotation_note": "근육·면역 다음 뇌·뼈 순환",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "제작 시 직전 편과 다른 곡 선정"
+  },
+  "health_focus": "DHA는 뇌세포막의 구성 성분",
+  "reason_for_chef": "DHA는 뇌세포막의 구성 성분",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
+      "title": "NIH ODS · Omega-3 Fatty Acids",
+      "checked_at": "2026-10-31",
+      "supported_claim": "DHA는 뇌세포막의 구성 성분",
+      "conditions_and_limits": "특정 레시피의 임상 효과나 1회 섭취의 치료·예방 효과를 주장하지 않는다."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "연어에는 오메가삼 지방산인 디에이치에이가 들어 있어요. 디에이치에이는 뇌세포막의 구성 성분이에요.",
+    "context": "화면의 함량은 조리 전 연어 기준이에요. 연어 종류와 조리 조건에 따라 달라질 수 있어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "status": "bilingual_videos_verified",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "DHA",
+    "recipe_amount_mg": 1050,
+    "servings": 1,
+    "daily_reference_mg": null,
+    "reference_population": "미국 DHA 단독 권장량 미설정",
+    "display": "연어 150g(조리 전) · DHA 약 1,000mg · DHA 단독 일일 권장량 미설정",
+    "calculation": "700mg/100g × 150g",
+    "source_urls": [
+      "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+      "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/"
+    ],
+    "checked_at": "2026-10-31",
+    "basis": "생 양식 대서양연어, 조리 전",
+    "uncertainty_note": "재료 기준 추정, 제품·어종·조리 조건에 따라 다름"
+  },
+  "production_notes": [
+    "수치 박스 benefit/context 장면을 각각 최소 9초로 표시",
+    "8편은 무가당 저지방 일반 요거트 기준으로 고정",
+    "TTS 발음에 맞춰 의미를 유지하며 일부 조리 대사 정리"
+  ]
+}

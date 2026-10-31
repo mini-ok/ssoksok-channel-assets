@@ -1,0 +1,88 @@
+{
+  "episode": 8,
+  "dish": "딸기 요거트 바크",
+  "organ": "뼈",
+  "chef": "뼈 쉐프",
+  "main_ingredients": [
+    "무가당 요거트"
+  ],
+  "cooking_style": "펴서 얼리는 냉동 디저트",
+  "global_accessibility": {
+    "common_ingredients": [
+      "무가당 요거트"
+    ],
+    "substitutions": [
+      "바로 먹는 용도 냉동 딸기, 물기 제거"
+    ],
+    "basic_tools": [
+      "냉동실",
+      "냉동용 트레이",
+      "종이호일"
+    ]
+  },
+  "organ_rotation_note": "근육·면역 다음 뇌·뼈 순환",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "제작 시 직전 편과 다른 곡 선정"
+  },
+  "health_focus": "요거트의 칼슘은 뼈 형성·유지에 필요",
+  "reason_for_chef": "요거트의 칼슘은 뼈 형성·유지에 필요",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Calcium-Consumer/",
+      "title": "NIH ODS · Calcium",
+      "checked_at": "2026-10-31",
+      "supported_claim": "요거트의 칼슘은 뼈 형성·유지에 필요",
+      "conditions_and_limits": "특정 레시피의 임상 효과나 1회 섭취의 치료·예방 효과를 주장하지 않는다."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "요거트는 칼슘을 공급해요. 칼슘은 뼈를 만들고 유지하는 데 필요한 영양소예요.",
+    "context": "화면은 이 간식을 반씩 나눠 먹는 기준이에요. 요거트 제품에 따라 칼슘 함량은 달라질 수 있어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "status": "bilingual_videos_verified",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount_mg": 381.96735522689676,
+    "servings": 2,
+    "daily_reference_mg": 1000,
+    "reference_population": "미국 19~50세 성인",
+    "display": "전체 칼슘 약 380mg · 절반 약 190mg · 하루 권장량 1,000mg의 약 19%",
+    "calculation": "415mg / 226.796185g × 200g + 20mg/100g × 80g; 절반 / 1000mg × 100",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+      "https://www.matvaretabellen.no/en/strawberries-raw/"
+    ],
+    "checked_at": "2026-10-31",
+    "basis": "무가당 저지방 일반 요거트·생딸기, 2회분",
+    "uncertainty_note": "재료 기준 추정, 제품·어종·조리 조건에 따라 다름"
+  },
+  "upload_title_ko": "완전 쉽다! 딸기 요거트 바크 | 뼈 쉐프의 칼슘 간식 #Shorts",
+  "production_notes": [
+    "수치 박스 benefit/context 장면을 각각 최소 9초로 표시",
+    "8편은 무가당 저지방 일반 요거트 기준으로 고정",
+    "TTS 발음에 맞춰 의미를 유지하며 일부 조리 대사 정리"
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "Brain Takes a Kitchen Shift!",
+    "text": "Chef Brain reporting for kitchen duty! Salmon brings DHA, a building block in brain cell membranes!",
+    "speaker": "Chef Brain",
+    "voice": "Orus",
+    "speed": 1.3,
+    "speech_duration": 6.5845416666666665,
+    "duration": 7.985
+  },
+  {
+    "id": "ingredients",
+    "title": "Three Simple Ingredients",
+    "text": "One salmon fillet, one bell pepper, and a teaspoon of oil. Add a little pepper if you like.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.4150833333333335,
+    "duration": 6.815
+  },
+  {
+    "id": "prep",
+    "title": "01 Pat Dry, Check Bones, Slice",
+    "text": "Pat the salmon dry and check for bones! Slice the pepper thinly so it cooks alongside the fish.",
+    "speaker": "Chef Brain",
+    "voice": "Orus",
+    "speed": 1.3,
+    "speech_duration": 5.527166666666667,
+    "duration": 6.927
+  },
+  {
+    "id": "mix",
+    "title": "02 Arrange and Lightly Oil",
+    "text": "Spread everything on an oven-safe tray. Coat lightly with oil and a little pepper.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.7880416666666665,
+    "duration": 6.188
+  },
+  {
+    "id": "cook",
+    "title": "03 Bake in a Preheated Oven",
+    "text": "Into an oven preheated to two hundred degrees Celsius! Check after fifteen minutes. Thicker pieces need longer!",
+    "speaker": "Chef Brain",
+    "voice": "Orus",
+    "speed": 1.3,
+    "speech_duration": 7.209083333333333,
+    "duration": 8.609
+  },
+  {
+    "id": "serve",
+    "title": "Check the Thickest Center",
+    "text": "Check that the thickest part of the salmon reaches sixty-three degrees Celsius.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.3460833333333335,
+    "duration": 5.746
+  },
+  {
+    "id": "benefit",
+    "title": "Why Brain Chose Salmon",
+    "text": "Salmon provides DHA, an omega-three fatty acid. DHA is a component of the membranes around brain cells.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 8.093041666666666,
+    "duration": 9.493
+  },
+  {
+    "id": "context",
+    "title": "How Much DHA in This Recipe?",
+    "text": "The amount shown is estimated from the uncooked salmon. Fish type and cooking conditions can change the amount.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.861833333333333,
+    "duration": 9
+  },
+  {
+    "id": "joke",
+    "title": "Dinner Decision: Solved!",
+    "text": "One bite will not make you a genius! But I did solve the mystery of what is for dinner!",
+    "speaker": "Chef Brain",
+    "voice": "Orus",
+    "speed": 1.3,
+    "speech_duration": 5.141333333333334,
+    "duration": 6.541
+  },
+  {
+    "id": "end",
+    "title": "Screenshot the Full Recipe",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Brain",
+    "voice": "Orus",
+    "speed": 1.3,
+    "speech_duration": 3.595875,
+    "duration": 10
+  }
+]

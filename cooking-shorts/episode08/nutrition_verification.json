@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-31",
+  "basis": "무가당 저지방 일반 요거트·생딸기, 2회분",
+  "input_sources": [
+    "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+    "https://www.matvaretabellen.no/en/strawberries-raw/"
+  ],
+  "recipe_mg": 381.96735522689676,
+  "per_serving_mg": 190.98367761344838,
+  "daily_reference_mg": 1000,
+  "daily_percent": 19.098367761344836,
+  "display_recipe_mg": 380,
+  "display_serving_mg": 190,
+  "display_daily_percent": 19,
+  "limitations": "Uses plain low-fat regular yogurt. Recalculate for other yogurt products. U.S. RDA for adults 19–50, not FDA Daily Value."
+}

@@ -1,0 +1,180 @@
+{
+  "character": "bone",
+  "voice": "Achird",
+  "chef_ko": "뼈 쉐프",
+  "chef_en": "Chef Bone",
+  "dish_ko": "딸기 요거트 바크",
+  "dish_en": "Strawberry Yogurt Bark",
+  "slug": "StrawberryYogurtBark",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "칼슘과 뼈 형성·유지",
+  "source_en": "Calcium and Bone Maintenance",
+  "time_ko": "간식 2회분 / 준비 10분 + 냉동 3~4시간 이상",
+  "time_en": "2 snack servings / prep 10 min + freeze 3–4+ hr",
+  "ingredients": [
+    [
+      "무가당 저지방 요거트",
+      "Plain low-fat yogurt",
+      "200g",
+      "200 g",
+      "yogurt"
+    ],
+    [
+      "딸기",
+      "Strawberries",
+      "약 80g · 5알",
+      "80 g / about 5",
+      "strawberry"
+    ]
+  ],
+  "headings_ko": [
+    "완전 쉽다! 딸기 요거트 바크",
+    "재료는 딱 두 가지",
+    "01 씻고 물기 닦아 썰기",
+    "02 얇고 고르게 펼치기",
+    "03 딸기 얹고 냉동실로",
+    "04 작게 나눠 먹기",
+    "요거트를 고른 이유",
+    "한 번 먹는 양의 칼슘은?",
+    "간식 공사 완료!",
+    "캡처하고 냉동실에 준비!"
+  ],
+  "headings_en": [
+    "So Easy! Strawberry Yogurt Bark",
+    "Just Two Ingredients",
+    "01 Wash, Dry, and Slice",
+    "02 Spread Thinly and Evenly",
+    "03 Add Strawberries and Freeze",
+    "04 Divide into Small Pieces",
+    "Why Bone Chose Yogurt",
+    "How Much Calcium per Serving?",
+    "Snack Construction Complete!",
+    "Screenshot Your Next Snack"
+  ],
+  "ko": [
+    "몸속 건축팀, 간식 공사 시작! 뼈에 필요한 칼슘을 요거트로 챙겨볼게요!",
+    "무가당 저지방 플레인 요거트 이백 그램, 딸기 다섯 알 정도면 돼요.",
+    "딸기는 씻고 물기 톡톡! 얇게 썰어야 얼려도 먹기 편해요.",
+    "종이호일을 깔고, 요거트를 얇고 고르게 펴주세요.",
+    "딸기 타일 꾹꾹! 덮어서 냉동실에 서너 시간, 단단해질 때까지요!",
+    "꺼내서 조금 두고, 자를 수 있을 때 작은 조각으로 나눠요. 너무 딱딱하면 더 기다려요.",
+    "요거트는 칼슘을 공급해요. 칼슘은 뼈를 만들고 유지하는 데 필요한 영양소예요.",
+    "화면은 이 간식을 반씩 나눠 먹는 기준이에요. 요거트 제품에 따라 칼슘 함량은 달라질 수 있어요.",
+    "튼튼해 보이지만 바닥재 아닙니다! 이 공사는 먹어야 완공이에요!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Body construction crew, snack project starts now! Yogurt brings calcium, a nutrient our bones need!",
+    "Two hundred grams of unsweetened plain low-fat yogurt and about five strawberries. That is all!",
+    "Wash the strawberries and pat them dry! Slice thinly so they are easier to eat after freezing.",
+    "Line a freezer-safe tray with parchment. Spread the yogurt into a thin, even layer.",
+    "Press in the strawberry tiles! Cover and freeze for three to four hours, or until completely firm!",
+    "Let it soften briefly, then divide into small pieces. If it is too hard, wait a little longer.",
+    "Yogurt provides calcium. Your body needs calcium to build and maintain strong bones.",
+    "The serving shown is half of this recipe. Calcium content varies between yogurt products.",
+    "Looks sturdy, but this is not flooring! This construction project is finished when we eat it!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "무가당 저지방 일반 요거트 200g",
+    "딸기 약 80g(중간 크기 약 5알)",
+    "1 딸기를 씻고 물기·꼭지 제거 후 얇게 썰기.",
+    "2 종이호일 위 요거트를 5~7mm로 펼치기.",
+    "3 딸기 얹어 누르고 덮어 3~4시간 이상 냉동.",
+    "4 꺼내 2~5분 두고 작은 조각으로 나누기.",
+    "딱딱하면 더 기다리기 / 남은 것은 밀폐 냉동"
+  ],
+  "recipe_en": [
+    "Unsweetened plain low-fat yogurt 200 g",
+    "Strawberries 80 g (about 5 medium berries)",
+    "1 Wash, dry, hull, and thinly slice strawberries.",
+    "2 Spread yogurt 5–7 mm thick on parchment.",
+    "3 Press in berries; cover; freeze 3–4+ hr until firm.",
+    "4 Soften 2–5 min; divide into small pieces.",
+    "Wait longer if too hard / keep leftovers frozen"
+  ],
+  "episode": 8,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "완전 쉽다! 딸기 요거트 바크",
+      "title_en": "So Easy! Strawberry Yogurt Bark",
+      "text_ko": "몸속 건축팀, 간식 공사 시작! 뼈에 필요한 칼슘을 요거트로 챙겨볼게요!",
+      "text_en": "Body construction crew, snack project starts now! Yogurt brings calcium, a nutrient our bones need!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료는 딱 두 가지",
+      "title_en": "Just Two Ingredients",
+      "text_ko": "무가당 저지방 플레인 요거트 이백 그램, 딸기 다섯 알 정도면 돼요.",
+      "text_en": "Two hundred grams of unsweetened plain low-fat yogurt and about five strawberries. That is all!",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 씻고 물기 닦아 썰기",
+      "title_en": "01 Wash, Dry, and Slice",
+      "text_ko": "딸기는 씻고 물기 톡톡! 얇게 썰어야 얼려도 먹기 편해요.",
+      "text_en": "Wash the strawberries and pat them dry! Slice thinly so they are easier to eat after freezing.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 얇고 고르게 펼치기",
+      "title_en": "02 Spread Thinly and Evenly",
+      "text_ko": "종이호일을 깔고, 요거트를 얇고 고르게 펴주세요.",
+      "text_en": "Line a freezer-safe tray with parchment. Spread the yogurt into a thin, even layer.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 딸기 얹고 냉동실로",
+      "title_en": "03 Add Strawberries and Freeze",
+      "text_ko": "딸기 타일 꾹꾹! 덮어서 냉동실에 서너 시간, 단단해질 때까지요!",
+      "text_en": "Press in the strawberry tiles! Cover and freeze for three to four hours, or until completely firm!",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "04 작게 나눠 먹기",
+      "title_en": "04 Divide into Small Pieces",
+      "text_ko": "꺼내서 조금 두고, 자를 수 있을 때 작은 조각으로 나눠요. 너무 딱딱하면 더 기다려요.",
+      "text_en": "Let it soften briefly, then divide into small pieces. If it is too hard, wait a little longer.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "요거트를 고른 이유",
+      "title_en": "Why Bone Chose Yogurt",
+      "text_ko": "요거트는 칼슘을 공급해요. 칼슘은 뼈를 만들고 유지하는 데 필요한 영양소예요.",
+      "text_en": "Yogurt provides calcium. Your body needs calcium to build and maintain strong bones.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "한 번 먹는 양의 칼슘은?",
+      "title_en": "How Much Calcium per Serving?",
+      "text_ko": "화면은 이 간식을 반씩 나눠 먹는 기준이에요. 요거트 제품에 따라 칼슘 함량은 달라질 수 있어요.",
+      "text_en": "The serving shown is half of this recipe. Calcium content varies between yogurt products.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "간식 공사 완료!",
+      "title_en": "Snack Construction Complete!",
+      "text_ko": "튼튼해 보이지만 바닥재 아닙니다! 이 공사는 먹어야 완공이에요!",
+      "text_en": "Looks sturdy, but this is not flooring! This construction project is finished when we eat it!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처하고 냉동실에 준비!",
+      "title_en": "Screenshot Your Next Snack",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ]
+}

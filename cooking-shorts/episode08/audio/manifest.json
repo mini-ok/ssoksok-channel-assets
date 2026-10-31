@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "완전 쉽다! 딸기 요거트 바크",
+    "text": "몸속 건축팀, 간식 공사 시작! 뼈에 필요한 칼슘을 요거트로 챙겨볼게요!",
+    "speaker": "뼈 쉐프",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 4.99925,
+    "duration": 6.399
+  },
+  {
+    "id": "ingredients",
+    "title": "재료는 딱 두 가지",
+    "text": "무가당 저지방 플레인 요거트 이백 그램, 딸기 다섯 알 정도면 돼요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.020375,
+    "duration": 5.42
+  },
+  {
+    "id": "prep",
+    "title": "01 씻고 물기 닦아 썰기",
+    "text": "딸기는 씻고 물기 톡톡! 얇게 썰어야 얼려도 먹기 편해요.",
+    "speaker": "뼈 쉐프",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 4.337125,
+    "duration": 5.737
+  },
+  {
+    "id": "mix",
+    "title": "02 얇고 고르게 펼치기",
+    "text": "종이호일을 깔고, 요거트를 얇고 고르게 펴주세요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 3.6026666666666665,
+    "duration": 5.003
+  },
+  {
+    "id": "cook",
+    "title": "03 딸기 얹고 냉동실로",
+    "text": "딸기 타일 꾹꾹! 덮어서 냉동실에 서너 시간, 단단해질 때까지요!",
+    "speaker": "뼈 쉐프",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 4.593041666666666,
+    "duration": 5.993
+  },
+  {
+    "id": "serve",
+    "title": "04 작게 나눠 먹기",
+    "text": "꺼내서 조금 두고, 자를 수 있을 때 작은 조각으로 나눠요. 너무 딱딱하면 더 기다려요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.099458333333334,
+    "duration": 7.499
+  },
+  {
+    "id": "benefit",
+    "title": "요거트를 고른 이유",
+    "text": "요거트는 칼슘을 공급해요. 칼슘은 뼈를 만들고 유지하는 데 필요한 영양소예요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.486875,
+    "duration": 9
+  },
+  {
+    "id": "context",
+    "title": "한 번 먹는 양의 칼슘은?",
+    "text": "화면은 이 간식을 반씩 나눠 먹는 기준이에요. 요거트 제품에 따라 칼슘 함량은 달라질 수 있어요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.724916666666667,
+    "duration": 9
+  },
+  {
+    "id": "joke",
+    "title": "간식 공사 완료!",
+    "text": "튼튼해 보이지만 바닥재 아닙니다! 이 공사는 먹어야 완공이에요!",
+    "speaker": "뼈 쉐프",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 4.30225,
+    "duration": 5.702
+  },
+  {
+    "id": "end",
+    "title": "캡처하고 냉동실에 준비!",
+    "text": "구독은 사원증 발급! 좋아요는 보너스!",
+    "speaker": "뼈 쉐프",
+    "voice": "Achird",
+    "speed": 1.3,
+    "speech_duration": 3.1258333333333335,
+    "duration": 10
+  }
+]

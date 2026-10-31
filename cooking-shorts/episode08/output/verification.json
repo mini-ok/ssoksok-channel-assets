@@ -1,0 +1,25 @@
+{
+  "file": "쏙쏙건강요리_딸기요거트바크_한글_v1.mp4",
+  "seconds": 69.75,
+  "frames_decoded": 1674,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.95,
+  "true_peak": -5.73,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "ad748eb11b3f41bcf16f19cf233d175ff92503d0045098c023dc0fe9b2e9253a",
+  "evidence_reference": "https://ods.od.nih.gov/factsheets/Calcium-Consumer/",
+  "recipe_note": "특정 레시피의 임상 효과나 1회 섭취의 치료·예방 효과를 주장하지 않는다. No real kitchen or taste test.",
+  "language": "ko",
+  "chef_voice": "Achird",
+  "narrator_voice": "Despina",
+  "music": "buoyant_kitchen_groove.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.8703,
+  "previous_music_correlation": -0.007
+}

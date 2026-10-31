@@ -5,15 +5,51 @@
   "chef": "",
   "main_ingredients": [],
   "cooking_style": "",
-  "global_accessibility": {"common_ingredients": [], "substitutions": [], "basic_tools": []},
+  "global_accessibility": {
+    "common_ingredients": [],
+    "substitutions": [],
+    "basic_tools": []
+  },
   "organ_rotation_note": "",
-  "music": {"file": "", "previous_episode_file": "", "reason": "직전 편과 다른 곡 사용"},
+  "music": {
+    "file": "",
+    "previous_episode_file": "",
+    "reason": "직전 편과 다른 곡 사용"
+  },
   "health_focus": "",
   "reason_for_chef": "",
-  "evidence": [{"url": "", "title": "", "checked_at": "", "supported_claim": "", "conditions_and_limits": ""}],
+  "evidence": [
+    {
+      "url": "",
+      "title": "",
+      "checked_at": "",
+      "supported_claim": "",
+      "conditions_and_limits": ""
+    }
+  ],
   "cooking_scene_ids": [],
   "health_narration_scene_ids": [],
   "source_screen_scene_ids": [],
   "health_narration_expected": {},
-  "review": {"evidence_matches_recipe": false, "organ_connection_is_specific": false, "menu_history_checked": false}
+  "review": {
+    "evidence_matches_recipe": false,
+    "organ_connection_is_specific": false,
+    "menu_history_checked": false
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "",
+    "recipe_amount": "",
+    "per_serving_amount": "",
+    "raw_or_cooked_basis": "",
+    "reference_population": "",
+    "daily_reference_amount": null,
+    "percent_of_daily_reference": null,
+    "source_rows": [],
+    "calculation": "",
+    "display_lines": [],
+    "uncertainty_note": "",
+    "checked_at": ""
+  }
 }

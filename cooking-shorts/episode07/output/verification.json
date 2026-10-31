@@ -1,0 +1,25 @@
+{
+  "file": "쏙쏙건강요리_연어파프리카오븐구이_한글_v1.mp4",
+  "seconds": 69.83333333333333,
+  "frames_decoded": 1676,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.76,
+  "true_peak": -5.8,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "415b88f7d77c5d389dda89e458983370fbcbc859653a0d56f337bdc633a5649d",
+  "evidence_reference": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
+  "recipe_note": "특정 레시피의 임상 효과나 1회 섭취의 치료·예방 효과를 주장하지 않는다. No real kitchen or taste test.",
+  "language": "ko",
+  "chef_voice": "Orus",
+  "narrator_voice": "Despina",
+  "music": "nimble_motifs.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.8685,
+  "previous_music_correlation": -0.0056
+}
