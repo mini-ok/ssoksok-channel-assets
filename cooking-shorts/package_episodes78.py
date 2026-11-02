@@ -1,10 +1,10 @@
-"""Package approved episodes 07/08 into separate bilingual upload folders and a combined ZIP."""
+"""Package approved episodes 07/08 into separate bilingual upload folders."""
 import json,hashlib,zipfile,shutil
 from pathlib import Path
 SOURCE=Path(__file__).resolve().parent;WORK=SOURCE.parent.parent
 uploader=(SOURCE/'episode03/upload_template.py').read_text(encoding='utf-8')
 uploader=uploader.replace("record.update(done=True,privacy=check['status']['privacyStatus'],playlist_url=", "if check['status']['privacyStatus']!='public':raise RuntimeError('Video is not public; check Studio before marking complete.')\n        record.update(done=True,privacy=check['status']['privacyStatus'],playlist_url=")
-compile(uploader,'upload.py','exec');bundles=[]
+compile(uploader,'upload.py','exec')
 for num in [7,8]:
  root=SOURCE/f'episode{num:02}';c=json.loads((root/'production.json').read_text(encoding='utf-8'));plan=json.loads((root/'plan.json').read_text(encoding='utf-8'))
  dest=WORK/f"{num}편_{c['dish_ko'].replace(' ','')}_업로드용";dest.mkdir(exist_ok=True)
@@ -50,11 +50,4 @@ Python과 requests가 필요합니다. 기존 환경 변수 YT_CLIENT_ID, YT_CLI
  with zipfile.ZipFile(zip_path) as z:
   assert z.testzip() is None
   for item in items:assert hashlib.sha256(z.read(item['file'])).hexdigest()==item['sha256']
- bundles.append((dest,names));print('Verified:',zip_path,round(zip_path.stat().st_size/1024**2,1),'MB',flush=True)
-combined=WORK/'7_8편_한영_클라우드업로드묶음.zip'
-with zipfile.ZipFile(combined,'w',zipfile.ZIP_DEFLATED) as z:
- z.writestr('README.md','7편과 8편을 각각 별도 폴더에 묶었습니다. 기존 인증 클라우드에서 각 폴더의 README.md를 확인하고 upload.py를 실행하세요. 총 4개 영상(회차별 한글/영문)이며 실제 업로드는 아직 실행하지 않았습니다. 인증 정보는 포함하지 않습니다.')
- for dest,names in bundles:
-  for name in names:z.write(dest/name,dest.name+'/'+name)
-with zipfile.ZipFile(combined) as z:assert z.testzip() is None
-print('Combined ZIP verified:',combined,round(combined.stat().st_size/1024**2,1),'MB',flush=True)
+ print('Verified:',zip_path,round(zip_path.stat().st_size/1024**2,1),'MB',flush=True)
