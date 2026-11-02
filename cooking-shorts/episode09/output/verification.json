@@ -1,0 +1,25 @@
+{
+  "file": "쏙쏙건강요리_렌틸콩양파수프_한글_v1.mp4",
+  "seconds": 70.625,
+  "frames_decoded": 1695,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.68,
+  "true_peak": -5.67,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "1bcd6de6f5b9c5eb5fae09dfbfb16b04b56e642febc444afb93a2c3e235f5809",
+  "evidence_reference": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "recipe_note": "특정 레시피가 질환을 치료하거나 시력을 개선한다는 주장이 아니다. 영양 수치는 공인 식품성분의 추정값이며 개인별 효과의 수치가 아니다. No real kitchen or taste test.",
+  "language": "ko",
+  "chef_voice": "Aoede",
+  "narrator_voice": "Despina",
+  "music": "nimble_motifs.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.8728,
+  "previous_music_correlation": -0.004
+}

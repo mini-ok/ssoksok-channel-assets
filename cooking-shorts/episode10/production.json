@@ -1,0 +1,257 @@
+{
+  "character": "eye",
+  "voice": "Puck",
+  "chef_ko": "눈 쉐프",
+  "chef_en": "Chef Eye",
+  "dish_ko": "시금치 마늘 파스타",
+  "dish_en": "Spinach Garlic Pasta",
+  "slug": "SpinachGarlicPasta",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "비타민 A와 정상 시각 기능",
+  "source_en": "Vitamin A and Normal Vision",
+  "time_ko": "1인분 / 약 20분",
+  "time_en": "1 serving / about 20 minutes",
+  "ingredients": [
+    [
+      "마른 파스타",
+      "Dry pasta",
+      "80g",
+      "80 g",
+      "pasta"
+    ],
+    [
+      "익힌 냉동 시금치",
+      "Cooked spinach",
+      "1/2컵",
+      "1/2 US cup",
+      "spinach"
+    ],
+    [
+      "마늘",
+      "Garlic",
+      "1쪽",
+      "1 clove",
+      "garlic"
+    ],
+    [
+      "식물성 기름",
+      "Vegetable oil",
+      "2작은술",
+      "2 tsp",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "눈 쉐프의 초록 파스타",
+    "특별한 소스 없이 준비",
+    "01 면 삶고 시금치 준비",
+    "02 약불에서 마늘 향 내기",
+    "03 시금치와 면을 골고루",
+    "촉촉하게 완성!",
+    "눈이 시금치를 고른 이유",
+    "이 분량의 비타민 A는?",
+    "오늘은 메뉴판만 볼게요!",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Chef Eye Goes Green!",
+    "No Special Sauce Needed",
+    "01 Cook Pasta and Prepare Spinach",
+    "02 Warm Garlic over Low Heat",
+    "03 Toss Spinach with the Pasta",
+    "Keep It Lightly Glossy",
+    "Why Eye Chose Spinach",
+    "How Much Vitamin A?",
+    "Just Reading the Menu Today!",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "눈 쉐프, 주방에 시선 집중! 눈에 필요한 비타민 에이를 시금치로 챙겨볼게요!",
+    "마른 파스타 팔십 그램, 익힌 냉동 시금치 반 컵, 마늘 한 쪽, 기름 두 작은술이에요.",
+    "면은 포장 시간대로 삶아요. 냉동 시금치도 포장대로 익혀 물을 빼고 계량해요!",
+    "마늘을 얇게 썰고, 기름 두른 팬에서 약불로 삼십 초쯤 향을 내요.",
+    "삶은 면과 시금치, 면수 조금! 중약불로 일 분쯤 골고루 섞어요!",
+    "뻑뻑하면 면수를 조금 더해요. 소금과 후추는 취향껏 조금만요.",
+    "시금치의 베타카로틴은 몸에서 비타민 에이로 바뀌어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "화면의 수치는 익혀서 물을 뺀 시금치 기준이에요. 생시금치의 같은 부피와는 달라요.",
+    "야근표는 안 보겠습니다! 오늘은 메뉴판만 볼게요!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "All eyes on the kitchen! Spinach brings vitamin A nutrition that our eyes need!",
+    "Eighty grams of dry pasta, half a cup of cooked frozen spinach, one garlic clove, and two teaspoons of oil.",
+    "Cook pasta according to its package. Cook the frozen spinach as directed, drain it, then measure!",
+    "Thinly slice the garlic. Warm it gently in oil over low heat for about thirty seconds.",
+    "Add cooked pasta, spinach, and a little pasta water! Toss over medium-low heat for about a minute.",
+    "Add a splash more pasta water if it looks dry. Season lightly with salt and pepper if you like.",
+    "Your body turns beta-carotene from spinach into vitamin A. Vitamin A is needed for the retina to detect light.",
+    "The figures shown are for cooked, drained spinach. The same volume of raw spinach is different.",
+    "I am not looking at the overtime schedule! Today I am only reading the menu!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "마른 파스타 80g / 익힌 냉동 시금치 1/2컵",
+    "마늘 1쪽 / 기름 2작은술 / 면수 약 3큰술",
+    "1 면은 포장대로 삶고 면수 3큰술을 남긴다.",
+    "2 냉동 시금치는 포장대로 익혀 물 빼고 계량.",
+    "3 얇게 썬 마늘·기름을 약불에 약 30초 데우기.",
+    "4 면·시금치·면수 넣고 중약불로 약 1분 섞기.",
+    "미국 계량컵 기준 / 간은 선택 / 마늘 태우지 않기"
+  ],
+  "recipe_en": [
+    "Dry pasta 80 g / cooked frozen spinach 1/2 US cup",
+    "Garlic 1 clove / oil 2 tsp / pasta water ~3 tbsp",
+    "1 Cook pasta as directed; reserve 3 tbsp cooking water.",
+    "2 Cook frozen spinach as directed; drain and measure.",
+    "3 Gently warm sliced garlic in oil on low ~30 sec.",
+    "4 Toss pasta, spinach and water on medium-low ~1 min.",
+    "US measuring cup / season to taste / do not burn garlic"
+  ],
+  "health_focus": "시금치의 베타카로틴·비타민 A와 망막의 정상적인 빛 감지 기능",
+  "main_ingredients": [
+    "시금치",
+    "파스타"
+  ],
+  "cooking_style": "면을 삶아 시금치·마늘기름·면수와 버무리는 파스타",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 A",
+    "scope": "한 접시 속 익힌 냉동 시금치 1/2컵의 기여분",
+    "recipe_amount_mcg_RAE": 573,
+    "per_serving_amount_mcg_RAE": 573,
+    "servings": 1,
+    "daily_reference_mcg_RAE": 900,
+    "percent_of_daily_reference": 63.66666666666667,
+    "reference_population": "미국 FDA 영양표시 DV 900μg RAE/일, 개인별 권장량과 구분",
+    "basis": "냉동 시금치를 삶은 뒤 물 뺀 상태 1/2 US cup. 생잎 부피 아님.",
+    "calculation": "NIH ODS food table: frozen boiled spinach 1/2 cup = 573 mcg RAE; 573 / 900 x 100 = 63.67%",
+    "display": "익힌 냉동 시금치 1/2컵에 비타민 A 약 570μg RAE · 미국 영양표시 기준 900μg RAE의 약 64%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-02",
+    "uncertainty_note": "시금치 기여분 추정치. 제품·품종·물 빼기·조리에 따라 차이. 개인별 흡수·전환량 또는 시력 개선률이 아님."
+  },
+  "nutrition_ko": [
+    [
+      "한 접시 속 익힌 냉동 시금치 1/2컵",
+      "비타민 A 약 570μg RAE",
+      "베타카로틴 → 비타민 A → 빛 감지",
+      "삶은 뒤 물 뺀 상태 · 제품별 차이",
+      "출처: 미국 NIH · ODS 비타민 A"
+    ],
+    [
+      "비타민 A 약 570μg RAE",
+      "미국 영양표시 기준의 약 64%",
+      "하루 기준 900μg RAE와 비교",
+      "생잎 1/2컵 아님 / 개인 권장량과 구분",
+      "출처: 미국 NIH · ODS / FDA"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Cooked, drained frozen spinach: 1/2 US cup",
+      "About 570 mcg RAE vitamin A",
+      "Beta-carotene → vitamin A → light detection",
+      "Cooked ingredient estimate / products vary",
+      "Source: NIH ODS / Vitamin A"
+    ],
+    [
+      "About 570 mcg RAE vitamin A",
+      "About 64% of the U.S. Daily Value",
+      "FDA labeling DV: 900 mcg RAE per day",
+      "Not 1/2 cup raw leaves / individual needs vary",
+      "Sources: NIH ODS / FDA"
+    ]
+  ],
+  "episode": 10,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "눈 쉐프의 초록 파스타",
+      "title_en": "Chef Eye Goes Green!",
+      "text_ko": "눈 쉐프, 주방에 시선 집중! 눈에 필요한 비타민 에이를 시금치로 챙겨볼게요!",
+      "text_en": "All eyes on the kitchen! Spinach brings vitamin A nutrition that our eyes need!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "특별한 소스 없이 준비",
+      "title_en": "No Special Sauce Needed",
+      "text_ko": "마른 파스타 팔십 그램, 익힌 냉동 시금치 반 컵, 마늘 한 쪽, 기름 두 작은술이에요.",
+      "text_en": "Eighty grams of dry pasta, half a cup of cooked frozen spinach, one garlic clove, and two teaspoons of oil.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 면 삶고 시금치 준비",
+      "title_en": "01 Cook Pasta and Prepare Spinach",
+      "text_ko": "면은 포장 시간대로 삶아요. 냉동 시금치도 포장대로 익혀 물을 빼고 계량해요!",
+      "text_en": "Cook pasta according to its package. Cook the frozen spinach as directed, drain it, then measure!",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 약불에서 마늘 향 내기",
+      "title_en": "02 Warm Garlic over Low Heat",
+      "text_ko": "마늘을 얇게 썰고, 기름 두른 팬에서 약불로 삼십 초쯤 향을 내요.",
+      "text_en": "Thinly slice the garlic. Warm it gently in oil over low heat for about thirty seconds.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 시금치와 면을 골고루",
+      "title_en": "03 Toss Spinach with the Pasta",
+      "text_ko": "삶은 면과 시금치, 면수 조금! 중약불로 일 분쯤 골고루 섞어요!",
+      "text_en": "Add cooked pasta, spinach, and a little pasta water! Toss over medium-low heat for about a minute.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "촉촉하게 완성!",
+      "title_en": "Keep It Lightly Glossy",
+      "text_ko": "뻑뻑하면 면수를 조금 더해요. 소금과 후추는 취향껏 조금만요.",
+      "text_en": "Add a splash more pasta water if it looks dry. Season lightly with salt and pepper if you like.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "눈이 시금치를 고른 이유",
+      "title_en": "Why Eye Chose Spinach",
+      "text_ko": "시금치의 베타카로틴은 몸에서 비타민 에이로 바뀌어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+      "text_en": "Your body turns beta-carotene from spinach into vitamin A. Vitamin A is needed for the retina to detect light.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "이 분량의 비타민 A는?",
+      "title_en": "How Much Vitamin A?",
+      "text_ko": "화면의 수치는 익혀서 물을 뺀 시금치 기준이에요. 생시금치의 같은 부피와는 달라요.",
+      "text_en": "The figures shown are for cooked, drained spinach. The same volume of raw spinach is different.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "오늘은 메뉴판만 볼게요!",
+      "title_en": "Just Reading the Menu Today!",
+      "text_ko": "야근표는 안 보겠습니다! 오늘은 메뉴판만 볼게요!",
+      "text_en": "I am not looking at the overtime schedule! Today I am only reading the menu!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "눈 쉐프의 시금치 마늘 파스타 #Shorts",
+  "upload_title_en": "Chef Eye's Spinach Garlic Pasta #Shorts",
+  "health_description_en": "Your body turns beta-carotene from spinach into vitamin A. Vitamin A is needed for the retina to detect light. The figures shown are for cooked, drained spinach. The same volume of raw spinach is different."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 A",
+  "scope": "한 접시 속 익힌 냉동 시금치 1/2컵의 기여분",
+  "recipe_amount_mcg_RAE": 573,
+  "per_serving_amount_mcg_RAE": 573,
+  "servings": 1,
+  "daily_reference_mcg_RAE": 900,
+  "percent_of_daily_reference": 63.66666666666667,
+  "reference_population": "미국 FDA 영양표시 DV 900μg RAE/일, 개인별 권장량과 구분",
+  "basis": "냉동 시금치를 삶은 뒤 물 뺀 상태 1/2 US cup. 생잎 부피 아님.",
+  "calculation": "NIH ODS food table: frozen boiled spinach 1/2 cup = 573 mcg RAE; 573 / 900 x 100 = 63.67%",
+  "display": "익힌 냉동 시금치 1/2컵에 비타민 A 약 570μg RAE · 미국 영양표시 기준 900μg RAE의 약 64%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-02",
+  "uncertainty_note": "시금치 기여분 추정치. 제품·품종·물 빼기·조리에 따라 차이. 개인별 흡수·전환량 또는 시력 개선률이 아님."
+}

@@ -43,7 +43,7 @@ exec(inspect.getsource(v.prepare_mix).replace("'buant_pop_groove.mp3'",repr(C['m
 
 def preflight():
  ids=[x[0] for x in p.ROWS]
- assert NUM in (5,6,7,8) and LANG in ('ko','en') and all(PLAN['review'].values())
+ assert NUM in (5,6,7,8,9,10) and LANG in ('ko','en') and all(PLAN['review'].values())
  assert max(ids.index(x) for x in PLAN['cooking_scene_ids'])<min(ids.index(x) for x in PLAN['health_narration_scene_ids'])
  assert all(p.ROWS[ids.index(x)][3]==narrator for x in PLAN['health_narration_scene_ids'])
  a=p.REPO/'bgm'/C['music'];b=p.REPO/'bgm'/C['previous_music']
@@ -53,9 +53,10 @@ def norm(s):
  s=s.lower()
  s=s.replace('디에이치에이','dha').replace('디 에이치 에이','dha').replace('디에이치 에이','dha')
  if LANG=='en':
-  for n,w in [('200','two hundred'),('150','one hundred fifty'),('100','one hundred'),('80','eighty'),('63','sixty three'),('50','fifty'),('15','fifteen'),('12','twelve'),('5','five'),('4','four'),('3','three'),('2','two'),('1','one')]:s=re.sub(r'\b'+n+r'\b',w,s)
+  for n,w in [('350','three hundred fifty'),('200','two hundred'),('150','one hundred fifty'),('100','one hundred'),('80','eighty'),('63','sixty three'),('50','fifty'),('30','thirty'),('15','fifteen'),('12','twelve'),('7','seven'),('5','five'),('4','four'),('3','three'),('2','two'),('1','one')]:s=re.sub(r'\b'+n+r'\b',w,s)
   return re.sub('[^a-z0-9]','',s.replace('one hundred and fifty','one hundred fifty'))
- for n,w in [('200','이백'),('150','백오십'),('100','백'),('80','팔십'),('63','육십삼'),('50','오십'),('15','십오'),('12','십이')]:s=s.replace(n,w)
+ for n,w in [('350','삼백오십'),('200','이백'),('150','백오십'),('100','백'),('80','팔십'),('63','육십삼'),('50','오십'),('30','삼십'),('15','십오'),('12','십이')]:s=s.replace(n,w)
+ for n,w in [('7분','칠분'),('7 분','칠분'),('3분','삼분'),('3 분','삼분'),('1분','일분'),('1 분','일분'),('1컵','한컵'),('1 컵','한컵'),('1/2컵','반컵'),('1/2 컵','반컵'),('1/2개','반개'),('1/2 개','반개'),('1쪽','한쪽')]:s=s.replace(n,w)
  s=s.replace('오메가3','오메가삼').replace('5알','다섯알')
  s=s.replace('그램','g').replace('밀리리터','ml').replace('비타민 a','비타민에이').replace('비타민a','비타민에이')
  for n,w in [('2개','두개'),('2 개','두개'),('1큰술','한큰술'),('1 큰술','한큰술')]:s=s.replace(n,w)
@@ -86,7 +87,7 @@ def audio():
    print(NUM,LANG,sid,round(score,3),heard,flush=True)
    if score>.86 and (LANG!='ko' or sid!='end' or '보너스' in heard):break
    if attempt==3:raise RuntimeError('Speech QA failed: '+sid)
-  reports.append(dict(id=sid,expected=text,heard=heard,similarity=score));rows.append(dict(id=sid,title=title,text=text,speaker=speaker,voice=voice,speed=1.3,speech_duration=len(x)/24000,duration=10 if sid=='end' else round(max(9 if NUM in (7,8) and sid in ('benefit','context') else 3.8,len(x)/24000+1.4),3)))
+  reports.append(dict(id=sid,expected=text,heard=heard,similarity=score));rows.append(dict(id=sid,title=title,text=text,speaker=speaker,voice=voice,speed=1.3,speech_duration=len(x)/24000,duration=10 if sid=='end' else round(max(9 if NUM>=7 and sid in ('benefit','context') else 3.8,len(x)/24000+1.4),3)))
   # Checkpoint accepted scenes, so interrupted API calls never discard good takes.
   (p.AUDIO/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8');(p.OUT/'speech_qa.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
  (p.AUDIO/'manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8');(p.OUT/'speech_qa.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -280,12 +281,15 @@ def check():
  model=WhisperModel('small',device='cpu',compute_type='int8',cpu_threads=3)
  samples=np.frombuffer(subprocess.run([r.FF,'-v','error','-i',str(p.TARGET),'-vn','-ar','16000','-ac','1','-f','f32le','pipe:1'],capture_output=True,check=True).stdout,np.float32);clock=0;report=[]
  for row in p.rows():
-  seg,_=model.transcribe(samples[int(clock*16000):int((clock+row['duration'])*16000)],language=LANG,beam_size=5,condition_on_previous_text=False);heard=' '.join(x.text for x in seg).strip();score=difflib.SequenceMatcher(None,norm(row['text']),norm(heard)).ratio();print(NUM,LANG,row['id'],round(score,3),heard,flush=True);assert score>.84
+  seg,_=model.transcribe(samples[int(clock*16000):int((clock+row['duration'])*16000)],language=LANG,beam_size=5,condition_on_previous_text=False);heard=' '.join(x.text for x in seg).strip();score=difflib.SequenceMatcher(None,norm(row['text']),norm(heard)).ratio();print(NUM,LANG,row['id'],round(score,3),heard,flush=True)
   report.append(dict(id=row['id'],expected=row['text'],heard=heard,similarity=score));clock+=row['duration']
  (p.OUT/'encoded_speech_qa.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+ assert all(x['similarity']>.84 for x in report),'Final speech QA failed: '+', '.join(x['id'] for x in report if x['similarity']<=.84)
 
 if NUM in (7,8):
  exec(compile((SOURCE/'episode78_visuals.py').read_text(encoding='utf-8'),str(SOURCE/'episode78_visuals.py'),'exec'),globals())
+if NUM in (9,10):
+ exec(compile((SOURCE/'episode910_visuals.py').read_text(encoding='utf-8'),str(SOURCE/'episode910_visuals.py'),'exec'),globals())
 preflight()
 if COMMAND in ('audio','verify','check'):globals()[COMMAND]()
 elif COMMAND=='preview':

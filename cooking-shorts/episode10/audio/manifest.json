@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "눈 쉐프의 초록 파스타",
+    "text": "눈 쉐프, 주방에 시선 집중! 눈에 필요한 비타민 에이를 시금치로 챙겨볼게요!",
+    "speaker": "눈 쉐프",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.613375,
+    "duration": 7.013
+  },
+  {
+    "id": "ingredients",
+    "title": "특별한 소스 없이 준비",
+    "text": "마른 파스타 팔십 그램, 익힌 냉동 시금치 반 컵, 마늘 한 쪽, 기름 두 작은술이에요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.220625,
+    "duration": 6.621
+  },
+  {
+    "id": "prep",
+    "title": "01 면 삶고 시금치 준비",
+    "text": "면은 포장 시간대로 삶아요. 냉동 시금치도 포장대로 익혀 물을 빼고 계량해요!",
+    "speaker": "눈 쉐프",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.336875,
+    "duration": 6.737
+  },
+  {
+    "id": "mix",
+    "title": "02 약불에서 마늘 향 내기",
+    "text": "마늘을 얇게 썰고, 기름 두른 팬에서 약불로 삼십 초쯤 향을 내요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.841541666666667,
+    "duration": 6.242
+  },
+  {
+    "id": "cook",
+    "title": "03 시금치와 면을 골고루",
+    "text": "삶은 면과 시금치, 면수 조금! 중약불로 일 분쯤 골고루 섞어요!",
+    "speaker": "눈 쉐프",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.5785833333333334,
+    "duration": 6.979
+  },
+  {
+    "id": "serve",
+    "title": "촉촉하게 완성!",
+    "text": "뻑뻑하면 면수를 조금 더해요. 소금과 후추는 취향껏 조금만요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.128875,
+    "duration": 6.529
+  },
+  {
+    "id": "benefit",
+    "title": "눈이 시금치를 고른 이유",
+    "text": "시금치의 베타카로틴은 몸에서 비타민 에이로 바뀌어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.7905,
+    "duration": 9
+  },
+  {
+    "id": "context",
+    "title": "이 분량의 비타민 A는?",
+    "text": "화면의 수치는 익혀서 물을 뺀 시금치 기준이에요. 생시금치의 같은 부피와는 달라요.",
+    "speaker": "여성 내레이터",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.828458333333334,
+    "duration": 9
+  },
+  {
+    "id": "joke",
+    "title": "오늘은 메뉴판만 볼게요!",
+    "text": "야근표는 안 보겠습니다! 오늘은 메뉴판만 볼게요!",
+    "speaker": "눈 쉐프",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 3.2392916666666665,
+    "duration": 4.639
+  },
+  {
+    "id": "end",
+    "title": "캡처해서 다음 한 끼로",
+    "text": "구독은 사원증 발급! 좋아요는 보너스!",
+    "speaker": "눈 쉐프",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 3.2735416666666666,
+    "duration": 10
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "episode": 9,
+  "dish": "렌틸콩 양파 수프",
+  "organ": "장",
+  "chef": "장 쉐프",
+  "main_ingredients": [
+    "렌틸콩",
+    "양파"
+  ],
+  "cooking_style": "삶은 콩·양파를 알갱이째 넣고 끓이는 수프",
+  "global_accessibility": {
+    "common_ingredients": [
+      "삶은 렌틸콩",
+      "양파",
+      "물",
+      "식물성 기름"
+    ],
+    "substitutions": [
+      "렌틸콩은 미리 삶거나 바로 먹는 제품 사용. 제품 영양표시가 있으면 함량 재계산."
+    ],
+    "basic_tools": [
+      "냄비",
+      "칼",
+      "도마"
+    ]
+  },
+  "organ_rotation_note": "근육→면역→뇌→뼈 다음 장→눈. 장은 4편 이후 재출연.",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "렌틸콩의 식이섬유와 충분한 수분으로 배변을 돕는 식습관",
+  "reason_for_chef": "렌틸콩의 식이섬유와 충분한 수분으로 배변을 돕는 식습관",
+  "evidence": [
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "title": "미국 NIDDK · 식이섬유와 수분",
+      "checked_at": "2026-11-02",
+      "supported_claim": "렌틸콩의 식이섬유와 충분한 수분으로 배변을 돕는 식습관",
+      "conditions_and_limits": "특정 레시피가 질환을 치료하거나 시력을 개선한다는 주장이 아니다. 영양 수치는 공인 식품성분의 추정값이며 개인별 효과의 수치가 아니다."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "렌틸콩은 식이섬유를 공급해요. 식이섬유와 충분한 수분은 변을 부드럽게 하고 배변을 돕는 데 좋아요.",
+    "context": "식이섬유는 갑자기 많이 늘리기보다 조금씩 챙겨요. 물도 함께 마시는 게 포인트예요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "scope": "각 그릇에 든 렌틸콩만 계산, 다른 재료의 식이섬유는 미포함",
+    "recipe_amount_g": 15.6,
+    "per_serving_amount_g": 7.8,
+    "servings": 2,
+    "daily_reference_g": 28,
+    "percent_of_daily_reference": 27.857142857142858,
+    "reference_population": "미국 FDA 영양표시 DV 28g/일(2,000kcal 기준), 개인별 권장량과 구분",
+    "basis": "삶은 렌틸콩 전체 1 US cup / 각 그릇 1/2 US cup",
+    "calculation": "7.8 g per 1/2 cup cooked lentils; full recipe 2 x 7.8 = 15.6 g; 7.8 / 28 x 100 = 27.86%",
+    "display": "한 그릇 속 렌틸콩 1/2컵에서 식이섬유 약 7.8g · 미국 영양표시 기준 28g의 약 28%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis/eating-diet-nutrition",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-02",
+    "uncertainty_note": "렌틸콩 기여분만 계산한 추정치. 통조림·제품·수분량에 따라 다름."
+  },
+  "status": "bilingual_videos_verified",
+  "upload_title_ko": "장 쉐프의 렌틸콩 양파 수프 #Shorts",
+  "menu_overlap_review": "1편 곡물죽과 다른 콩 알갱이 수프. 2편 병아리콩 샐러드와 주재료·스타일 모두 다름.",
+  "earliest_main_ingredient_or_style_reuse_episode": 20
+}

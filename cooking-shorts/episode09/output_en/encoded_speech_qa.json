@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "Chef Gut is warming things up today! Lentil soup brings fiber to the table!",
+    "heard": "Chef Gut is warming things up today.  Lentil soup brings fiber to the table.",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "One cup of cooked lentils, half an onion, and three hundred fifty milliliters of water. Add a teaspoon of oil.",
+    "heard": "1 cup of cooked lentils, half an onion, and 350 milliliters of water.  Add a teaspoon of oil.",
+    "similarity": 1.0
+  },
+  {
+    "id": "prep",
+    "expected": "Finely chop the onion. Small pieces soften quickly in our soup!",
+    "heard": "Finally, chop the onion. Small pieces soften quickly in our soup.",
+    "similarity": 0.970873786407767
+  },
+  {
+    "id": "mix",
+    "expected": "Add oil to a pot. Soften the onion over medium-low heat for about three minutes.",
+    "heard": "Add oil to a pot. Soften the onion over medium-low heat for about three minutes.",
+    "similarity": 1.0
+  },
+  {
+    "id": "cook",
+    "expected": "Add the cooked lentils and water! Bring to a boil, then simmer gently for about seven minutes.",
+    "heard": "Add the cooked lentils and water. Bring to a boil then simmer gently for about 7 minutes.",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "Once the onion is tender, divide into two bowls. Season lightly with salt and pepper if you like.",
+    "heard": "Once the onion is tender, divide into two bowls.  Season lightly with salt and pepper if you like.",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Lentils provide fiber. Fiber and enough fluids help soften stools and support easier bowel movements.",
+    "heard": "Lentils provide fiber.  Fiber and enough fluids help soften stools and support easier bowel movements.",
+    "similarity": 1.0
+  },
+  {
+    "id": "context",
+    "expected": "Increase fiber gradually rather than all at once. Remember to drink water too!",
+    "heard": "Increase fiber gradually rather than all at once.  Remember to drink water too!",
+    "similarity": 1.0
+  },
+  {
+    "id": "joke",
+    "expected": "Spoons, please join the queue! One of these bowls is mine!",
+    "heard": "Spoons, please join the queue! One of these bowls is mine!",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

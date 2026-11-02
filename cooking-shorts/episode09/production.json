@@ -1,0 +1,257 @@
+{
+  "character": "gut",
+  "voice": "Aoede",
+  "chef_ko": "장 쉐프",
+  "chef_en": "Chef Gut",
+  "dish_ko": "렌틸콩 양파 수프",
+  "dish_en": "Lentil Onion Soup",
+  "slug": "LentilOnionSoup",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "식이섬유·수분과 배변",
+  "source_en": "Fiber, Fluids and Bowel Habits",
+  "time_ko": "2그릇 / 약 15분 · 삶은 콩 준비 별도",
+  "time_en": "2 bowls / about 15 min / precooked lentils",
+  "ingredients": [
+    [
+      "삶은 렌틸콩",
+      "Cooked lentils",
+      "1컵 · 약 200g",
+      "1 cup / about 200 g",
+      "lentil"
+    ],
+    [
+      "양파",
+      "Onion",
+      "반 개 · 약 100g",
+      "1/2 / about 100 g",
+      "onion"
+    ],
+    [
+      "물",
+      "Water",
+      "350mL",
+      "350 mL",
+      "water"
+    ],
+    [
+      "식물성 기름",
+      "Vegetable oil",
+      "1작은술",
+      "1 tsp",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "장 쉐프의 따뜻한 한 그릇",
+    "삶은 콩으로 빠르게",
+    "01 양파를 잘게 썰어요",
+    "02 양파부터 부드럽게",
+    "03 콩과 물 넣어 보글보글",
+    "두 그릇에 나눠 담아요",
+    "장이 렌틸콩을 고른 이유",
+    "한 그릇 속 식이섬유는?",
+    "숟가락도 줄 서세요!",
+    "캡처해서 따뜻하게 한 그릇"
+  ],
+  "headings_en": [
+    "A Warm Bowl from Chef Gut",
+    "Start with Precooked Lentils",
+    "01 Finely Chop the Onion",
+    "02 Soften the Onion First",
+    "03 Add Lentils and Simmer",
+    "Divide into Two Bowls",
+    "Why Gut Chose Lentils",
+    "How Much Fiber in One Bowl?",
+    "Spoons, Join the Queue!",
+    "Screenshot Your Next Warm Bowl"
+  ],
+  "ko": [
+    "장 쉐프, 따뜻한 수프 나갑니다! 콩으로 식이섬유를 챙겨볼게요!",
+    "삶은 렌틸콩 한 컵, 양파 반 개, 물 삼백오십 밀리리터. 기름은 한 작은술이에요.",
+    "양파는 잘게 썰어요. 작게 썰어야 짧게 끓여도 부드러워요!",
+    "냄비에 기름을 두르고, 중약불로 양파를 삼 분쯤 부드럽게 볶아요.",
+    "삶은 렌틸콩과 물을 넣고 끓여요! 끓기 시작하면 약불로 칠 분쯤 더!",
+    "양파가 부드러워지면 두 그릇에 나눠요. 소금과 후추는 취향껏 조금만요.",
+    "렌틸콩은 식이섬유를 공급해요. 식이섬유와 충분한 수분은 변을 부드럽게 하고 배변을 돕는 데 좋아요.",
+    "식이섬유는 갑자기 많이 늘리기보다 조금씩 챙겨요. 물도 함께 마시는 게 포인트예요.",
+    "숟가락도 줄 서세요! 한 그릇은 제 몫이거든요!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Gut is warming things up today! Lentil soup brings fiber to the table!",
+    "One cup of cooked lentils, half an onion, and three hundred fifty milliliters of water. Add a teaspoon of oil.",
+    "Finely chop the onion. Small pieces soften quickly in our soup!",
+    "Add oil to a pot. Soften the onion over medium-low heat for about three minutes.",
+    "Add the cooked lentils and water! Bring to a boil, then simmer gently for about seven minutes.",
+    "Once the onion is tender, divide into two bowls. Season lightly with salt and pepper if you like.",
+    "Lentils provide fiber. Fiber and enough fluids help soften stools and support easier bowel movements.",
+    "Increase fiber gradually rather than all at once. Remember to drink water too!",
+    "Spoons, please join the queue! One of these bowls is mine!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "삶은 렌틸콩 1컵(약 200g) / 양파 반 개(100g)",
+    "물 350mL / 기름 1작은술 / 소금·후추 선택",
+    "1 양파를 잘게 썬다. 콩은 완전히 익힌 것 사용.",
+    "2 냄비에 기름·양파 넣고 중약불 약 3분 볶기.",
+    "3 콩·물 넣어 끓으면 약불로 약 7분 더 끓이기.",
+    "4 양파가 부드러우면 간하고 두 그릇에 나누기.",
+    "미국 계량컵 기준 / 마른 콩의 삶는 시간은 별도"
+  ],
+  "recipe_en": [
+    "Cooked lentils 1 US cup (~200 g) / onion 100 g",
+    "Water 350 mL / oil 1 tsp / salt and pepper optional",
+    "1 Finely chop onion; use fully cooked lentils.",
+    "2 Add oil; soften onion on medium-low about 3 min.",
+    "3 Add lentils and water; boil, then simmer ~7 min.",
+    "4 Once onion is tender, season and divide into 2 bowls.",
+    "US measuring cup / dry-lentil cooking time is extra"
+  ],
+  "health_focus": "렌틸콩의 식이섬유와 충분한 수분으로 배변을 돕는 식습관",
+  "main_ingredients": [
+    "렌틸콩",
+    "양파"
+  ],
+  "cooking_style": "삶은 콩·양파를 알갱이째 넣고 끓이는 수프",
+  "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "scope": "각 그릇에 든 렌틸콩만 계산, 다른 재료의 식이섬유는 미포함",
+    "recipe_amount_g": 15.6,
+    "per_serving_amount_g": 7.8,
+    "servings": 2,
+    "daily_reference_g": 28,
+    "percent_of_daily_reference": 27.857142857142858,
+    "reference_population": "미국 FDA 영양표시 DV 28g/일(2,000kcal 기준), 개인별 권장량과 구분",
+    "basis": "삶은 렌틸콩 전체 1 US cup / 각 그릇 1/2 US cup",
+    "calculation": "7.8 g per 1/2 cup cooked lentils; full recipe 2 x 7.8 = 15.6 g; 7.8 / 28 x 100 = 27.86%",
+    "display": "한 그릇 속 렌틸콩 1/2컵에서 식이섬유 약 7.8g · 미국 영양표시 기준 28g의 약 28%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis/eating-diet-nutrition",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-02",
+    "uncertainty_note": "렌틸콩 기여분만 계산한 추정치. 통조림·제품·수분량에 따라 다름."
+  },
+  "nutrition_ko": [
+    [
+      "삶은 렌틸콩 1컵 · 수프 전체 2그릇",
+      "렌틸콩의 식이섬유 약 15.6g",
+      "식이섬유 + 충분한 수분 → 배변 돕기",
+      "다른 재료의 식이섬유는 미포함",
+      "출처: 미국 NIDDK · USDA 식품성분"
+    ],
+    [
+      "한 그릇 속 렌틸콩 1/2컵 기준",
+      "식이섬유 약 7.8g · 약 28%",
+      "미국 영양표시 기준: 하루 28g",
+      "제품별 차이 / 개인 권장량과는 달라요",
+      "출처: 미국 NIDDK · FDA"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 US cup cooked lentils / full recipe: 2 bowls",
+      "About 15.6 g fiber from the lentils",
+      "Fiber + enough fluids support bowel habits",
+      "Fiber from other ingredients is not included",
+      "Sources: NIDDK / USDA food composition"
+    ],
+    [
+      "Lentils in one bowl: 1/2 US cup cooked",
+      "About 7.8 g fiber / 28% Daily Value",
+      "U.S. FDA labeling DV: 28 g per day",
+      "Products vary / individual needs differ",
+      "Sources: NIDDK / FDA"
+    ]
+  ],
+  "episode": 9,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "장 쉐프의 따뜻한 한 그릇",
+      "title_en": "A Warm Bowl from Chef Gut",
+      "text_ko": "장 쉐프, 따뜻한 수프 나갑니다! 콩으로 식이섬유를 챙겨볼게요!",
+      "text_en": "Chef Gut is warming things up today! Lentil soup brings fiber to the table!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "삶은 콩으로 빠르게",
+      "title_en": "Start with Precooked Lentils",
+      "text_ko": "삶은 렌틸콩 한 컵, 양파 반 개, 물 삼백오십 밀리리터. 기름은 한 작은술이에요.",
+      "text_en": "One cup of cooked lentils, half an onion, and three hundred fifty milliliters of water. Add a teaspoon of oil.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 양파를 잘게 썰어요",
+      "title_en": "01 Finely Chop the Onion",
+      "text_ko": "양파는 잘게 썰어요. 작게 썰어야 짧게 끓여도 부드러워요!",
+      "text_en": "Finely chop the onion. Small pieces soften quickly in our soup!",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 양파부터 부드럽게",
+      "title_en": "02 Soften the Onion First",
+      "text_ko": "냄비에 기름을 두르고, 중약불로 양파를 삼 분쯤 부드럽게 볶아요.",
+      "text_en": "Add oil to a pot. Soften the onion over medium-low heat for about three minutes.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 콩과 물 넣어 보글보글",
+      "title_en": "03 Add Lentils and Simmer",
+      "text_ko": "삶은 렌틸콩과 물을 넣고 끓여요! 끓기 시작하면 약불로 칠 분쯤 더!",
+      "text_en": "Add the cooked lentils and water! Bring to a boil, then simmer gently for about seven minutes.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "두 그릇에 나눠 담아요",
+      "title_en": "Divide into Two Bowls",
+      "text_ko": "양파가 부드러워지면 두 그릇에 나눠요. 소금과 후추는 취향껏 조금만요.",
+      "text_en": "Once the onion is tender, divide into two bowls. Season lightly with salt and pepper if you like.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "장이 렌틸콩을 고른 이유",
+      "title_en": "Why Gut Chose Lentils",
+      "text_ko": "렌틸콩은 식이섬유를 공급해요. 식이섬유와 충분한 수분은 변을 부드럽게 하고 배변을 돕는 데 좋아요.",
+      "text_en": "Lentils provide fiber. Fiber and enough fluids help soften stools and support easier bowel movements.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "한 그릇 속 식이섬유는?",
+      "title_en": "How Much Fiber in One Bowl?",
+      "text_ko": "식이섬유는 갑자기 많이 늘리기보다 조금씩 챙겨요. 물도 함께 마시는 게 포인트예요.",
+      "text_en": "Increase fiber gradually rather than all at once. Remember to drink water too!",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "숟가락도 줄 서세요!",
+      "title_en": "Spoons, Join the Queue!",
+      "text_ko": "숟가락도 줄 서세요! 한 그릇은 제 몫이거든요!",
+      "text_en": "Spoons, please join the queue! One of these bowls is mine!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 따뜻하게 한 그릇",
+      "title_en": "Screenshot Your Next Warm Bowl",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "장 쉐프의 렌틸콩 양파 수프 #Shorts",
+  "upload_title_en": "Chef Gut's Lentil Onion Soup #Shorts",
+  "health_description_en": "Lentils provide fiber. Fiber and enough fluids help soften stools and support easier bowel movements. Increase fiber gradually rather than all at once. Remember to drink water too!"
+}

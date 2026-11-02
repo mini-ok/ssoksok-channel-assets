@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "Chef Eye Goes Green!",
+    "text": "All eyes on the kitchen! Spinach brings vitamin A nutrition that our eyes need!",
+    "speaker": "Chef Eye",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.094291666666667,
+    "duration": 6.494
+  },
+  {
+    "id": "ingredients",
+    "title": "No Special Sauce Needed",
+    "text": "Eighty grams of dry pasta, half a cup of cooked frozen spinach, one garlic clove, and two teaspoons of oil.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.607208333333333,
+    "duration": 8.007
+  },
+  {
+    "id": "prep",
+    "title": "01 Cook Pasta and Prepare Spinach",
+    "text": "Cook pasta according to its package. Cook the frozen spinach as directed, drain it, then measure!",
+    "speaker": "Chef Eye",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.87575,
+    "duration": 7.276
+  },
+  {
+    "id": "mix",
+    "title": "02 Warm Garlic over Low Heat",
+    "text": "Thinly slice the garlic. Warm it gently in oil over low heat for about thirty seconds.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.184,
+    "duration": 6.584
+  },
+  {
+    "id": "cook",
+    "title": "03 Toss Spinach with the Pasta",
+    "text": "Add cooked pasta, spinach, and a little pasta water! Toss over medium-low heat for about a minute.",
+    "speaker": "Chef Eye",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.717333333333333,
+    "duration": 7.117
+  },
+  {
+    "id": "serve",
+    "title": "Keep It Lightly Glossy",
+    "text": "Add a splash more pasta water if it looks dry. Season lightly with salt and pepper if you like.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.34,
+    "duration": 6.74
+  },
+  {
+    "id": "benefit",
+    "title": "Why Eye Chose Spinach",
+    "text": "Your body turns beta-carotene from spinach into vitamin A. Vitamin A is needed for the retina to detect light.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 7.777291666666667,
+    "duration": 9.177
+  },
+  {
+    "id": "context",
+    "title": "How Much Vitamin A?",
+    "text": "The figures shown are for cooked, drained spinach. The same volume of raw spinach is different.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.472583333333334,
+    "duration": 9
+  },
+  {
+    "id": "joke",
+    "title": "Just Reading the Menu Today!",
+    "text": "I am not looking at the overtime schedule! Today I am only reading the menu!",
+    "speaker": "Chef Eye",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 5.4995416666666666,
+    "duration": 6.9
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Meal",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Eye",
+    "voice": "Puck",
+    "speed": 1.3,
+    "speech_duration": 3.4743333333333335,
+    "duration": 10
+  }
+]

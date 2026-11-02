@@ -1,0 +1,93 @@
+{
+  "episode": 10,
+  "dish": "시금치 마늘 파스타",
+  "organ": "눈",
+  "chef": "눈 쉐프",
+  "main_ingredients": [
+    "시금치",
+    "파스타"
+  ],
+  "cooking_style": "면을 삶아 시금치·마늘기름·면수와 버무리는 파스타",
+  "global_accessibility": {
+    "common_ingredients": [
+      "마른 파스타",
+      "익힌 냉동 시금치",
+      "마늘",
+      "식물성 기름"
+    ],
+    "substitutions": [
+      "생시금치도 가능하지만 수치 박스는 냉동·삶은 항목과 다르므로 재계산."
+    ],
+    "basic_tools": [
+      "냄비",
+      "칼",
+      "도마",
+      "팬"
+    ]
+  },
+  "organ_rotation_note": "근육→면역→뇌→뼈 다음 장→눈. 장은 4편 이후 재출연.",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "시금치의 베타카로틴·비타민 A와 망막의 정상적인 빛 감지 기능",
+  "reason_for_chef": "시금치의 베타카로틴·비타민 A와 망막의 정상적인 빛 감지 기능",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+      "title": "NIH ODS · Vitamin A",
+      "checked_at": "2026-11-02",
+      "supported_claim": "시금치의 베타카로틴·비타민 A와 망막의 정상적인 빛 감지 기능",
+      "conditions_and_limits": "특정 레시피가 질환을 치료하거나 시력을 개선한다는 주장이 아니다. 영양 수치는 공인 식품성분의 추정값이며 개인별 효과의 수치가 아니다."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "시금치의 베타카로틴은 몸에서 비타민 에이로 바뀌어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "context": "화면의 수치는 익혀서 물을 뺀 시금치 기준이에요. 생시금치의 같은 부피와는 달라요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 A",
+    "scope": "한 접시 속 익힌 냉동 시금치 1/2컵의 기여분",
+    "recipe_amount_mcg_RAE": 573,
+    "per_serving_amount_mcg_RAE": 573,
+    "servings": 1,
+    "daily_reference_mcg_RAE": 900,
+    "percent_of_daily_reference": 63.66666666666667,
+    "reference_population": "미국 FDA 영양표시 DV 900μg RAE/일, 개인별 권장량과 구분",
+    "basis": "냉동 시금치를 삶은 뒤 물 뺀 상태 1/2 US cup. 생잎 부피 아님.",
+    "calculation": "NIH ODS food table: frozen boiled spinach 1/2 cup = 573 mcg RAE; 573 / 900 x 100 = 63.67%",
+    "display": "익힌 냉동 시금치 1/2컵에 비타민 A 약 570μg RAE · 미국 영양표시 기준 900μg RAE의 약 64%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-02",
+    "uncertainty_note": "시금치 기여분 추정치. 제품·품종·물 빼기·조리에 따라 차이. 개인별 흡수·전환량 또는 시력 개선률이 아님."
+  },
+  "status": "bilingual_videos_verified",
+  "upload_title_ko": "눈 쉐프의 시금치 마늘 파스타 #Shorts",
+  "menu_overlap_review": "4편 채소 볶음과 달리 면을 삶아 버무리는 파스타. 시금치·파스타는 첫 주재료 사용.",
+  "earliest_main_ingredient_or_style_reuse_episode": 21
+}

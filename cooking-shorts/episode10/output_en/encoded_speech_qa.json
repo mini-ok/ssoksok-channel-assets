@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "expected": "All eyes on the kitchen! Spinach brings vitamin A nutrition that our eyes need!",
+    "heard": "All eyes on the kitchen! Spinach brings vitamin A nutrition that our eyes need!",
+    "similarity": 1.0
+  },
+  {
+    "id": "ingredients",
+    "expected": "Eighty grams of dry pasta, half a cup of cooked frozen spinach, one garlic clove, and two teaspoons of oil.",
+    "heard": "80 grams of dry pasta, half a cup of cooked frozen spinach, one garlic clove, and two teaspoons  of oil.",
+    "similarity": 1.0
+  },
+  {
+    "id": "prep",
+    "expected": "Cook pasta according to its package. Cook the frozen spinach as directed, drain it, then measure!",
+    "heard": "Cook pasta according to its package. Cook the frozen spinach as directed, drain it, then measure.",
+    "similarity": 1.0
+  },
+  {
+    "id": "mix",
+    "expected": "Thinly slice the garlic. Warm it gently in oil over low heat for about thirty seconds.",
+    "heard": "Thinly slice the garlic. Warm it gently in oil over low heat for about 30 seconds.",
+    "similarity": 1.0
+  },
+  {
+    "id": "cook",
+    "expected": "Add cooked pasta, spinach, and a little pasta water! Toss over medium-low heat for about a minute.",
+    "heard": "Add cooked pasta, spinach, and a little pasta water.  Toss over medium-low heat for about a minute.",
+    "similarity": 1.0
+  },
+  {
+    "id": "serve",
+    "expected": "Add a splash more pasta water if it looks dry. Season lightly with salt and pepper if you like.",
+    "heard": "Add a splash more pasta water if it looks dry.  Season lightly with salt and pepper if you like.",
+    "similarity": 1.0
+  },
+  {
+    "id": "benefit",
+    "expected": "Your body turns beta-carotene from spinach into vitamin A. Vitamin A is needed for the retina to detect light.",
+    "heard": "Your body turns beta-carotene from spinach into vitamin A. Vitamin A is needed for the retina to detect light.",
+    "similarity": 1.0
+  },
+  {
+    "id": "context",
+    "expected": "The figures shown are for cooked, drained spinach. The same volume of raw spinach is different.",
+    "heard": "The figures shown are for cooked drain spinach.  The same volume of raw spinach is different.",
+    "similarity": 0.9868421052631579
+  },
+  {
+    "id": "joke",
+    "expected": "I am not looking at the overtime schedule! Today I am only reading the menu!",
+    "heard": "I am not looking at the overtime schedule, today I am only reading the menu!",
+    "similarity": 1.0
+  },
+  {
+    "id": "end",
+    "expected": "Subscribe for your employee badge! Likes are your bonus!",
+    "heard": "Subscribe for your employee badge! Likes are your bonus!",
+    "similarity": 1.0
+  }
+]

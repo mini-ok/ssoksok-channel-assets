@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "식이섬유",
+  "scope": "각 그릇에 든 렌틸콩만 계산, 다른 재료의 식이섬유는 미포함",
+  "recipe_amount_g": 15.6,
+  "per_serving_amount_g": 7.8,
+  "servings": 2,
+  "daily_reference_g": 28,
+  "percent_of_daily_reference": 27.857142857142858,
+  "reference_population": "미국 FDA 영양표시 DV 28g/일(2,000kcal 기준), 개인별 권장량과 구분",
+  "basis": "삶은 렌틸콩 전체 1 US cup / 각 그릇 1/2 US cup",
+  "calculation": "7.8 g per 1/2 cup cooked lentils; full recipe 2 x 7.8 = 15.6 g; 7.8 / 28 x 100 = 27.86%",
+  "display": "한 그릇 속 렌틸콩 1/2컵에서 식이섬유 약 7.8g · 미국 영양표시 기준 28g의 약 28%",
+  "source_urls": [
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/diverticulosis-diverticulitis/eating-diet-nutrition",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-02",
+  "uncertainty_note": "렌틸콩 기여분만 계산한 추정치. 통조림·제품·수분량에 따라 다름."
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hook",
+    "title": "A Warm Bowl from Chef Gut",
+    "text": "Chef Gut is warming things up today! Lentil soup brings fiber to the table!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 4.564375,
+    "duration": 5.964
+  },
+  {
+    "id": "ingredients",
+    "title": "Start with Precooked Lentils",
+    "text": "One cup of cooked lentils, half an onion, and three hundred fifty milliliters of water. Add a teaspoon of oil.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.769916666666667,
+    "duration": 8.17
+  },
+  {
+    "id": "prep",
+    "title": "01 Finely Chop the Onion",
+    "text": "Finely chop the onion. Small pieces soften quickly in our soup!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.869,
+    "duration": 5.269
+  },
+  {
+    "id": "mix",
+    "title": "02 Soften the Onion First",
+    "text": "Add oil to a pot. Soften the onion over medium-low heat for about three minutes.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.252583333333333,
+    "duration": 6.653
+  },
+  {
+    "id": "cook",
+    "title": "03 Add Lentils and Simmer",
+    "text": "Add the cooked lentils and water! Bring to a boil, then simmer gently for about seven minutes.",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 5.450958333333333,
+    "duration": 6.851
+  },
+  {
+    "id": "serve",
+    "title": "Divide into Two Bowls",
+    "text": "Once the onion is tender, divide into two bowls. Season lightly with salt and pepper if you like.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 5.773416666666667,
+    "duration": 7.173
+  },
+  {
+    "id": "benefit",
+    "title": "Why Gut Chose Lentils",
+    "text": "Lentils provide fiber. Fiber and enough fluids help soften stools and support easier bowel movements.",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 6.911041666666667,
+    "duration": 9
+  },
+  {
+    "id": "context",
+    "title": "How Much Fiber in One Bowl?",
+    "text": "Increase fiber gradually rather than all at once. Remember to drink water too!",
+    "speaker": "Narrator",
+    "voice": "Despina",
+    "speed": 1.3,
+    "speech_duration": 4.920375,
+    "duration": 9
+  },
+  {
+    "id": "joke",
+    "title": "Spoons, Join the Queue!",
+    "text": "Spoons, please join the queue! One of these bowls is mine!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.9450416666666666,
+    "duration": 5.345
+  },
+  {
+    "id": "end",
+    "title": "Screenshot Your Next Warm Bowl",
+    "text": "Subscribe for your employee badge! Likes are your bonus!",
+    "speaker": "Chef Gut",
+    "voice": "Aoede",
+    "speed": 1.3,
+    "speech_duration": 3.9587916666666665,
+    "duration": 10
+  }
+]

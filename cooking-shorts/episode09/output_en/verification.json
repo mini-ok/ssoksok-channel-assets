@@ -1,0 +1,25 @@
+{
+  "file": "TinyBodyCo_LentilOnionSoup_EN.mp4",
+  "seconds": 73.41666666666667,
+  "frames_decoded": 1762,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "full_decode": "passed",
+  "integrated_lufs": -16.49,
+  "true_peak": -5.77,
+  "static_recipe_card": "passed",
+  "speech_qa": "passed",
+  "sha256": "11f2ac2460bfd37a34f2ed2acbdec0e5719968f1f90c3eb2e8d219b41ff5d61a",
+  "evidence_reference": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "recipe_note": "특정 레시피가 질환을 치료하거나 시력을 개선한다는 주장이 아니다. 영양 수치는 공인 식품성분의 추정값이며 개인별 효과의 수치가 아니다. No real kitchen or taste test.",
+  "language": "en",
+  "chef_voice": "Aoede",
+  "narrator_voice": "Despina",
+  "music": "nimble_motifs.mp3",
+  "different_music_verified": "passed",
+  "selected_music_correlation": 0.871,
+  "previous_music_correlation": -0.0106
+}
