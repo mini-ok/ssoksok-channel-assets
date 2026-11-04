@@ -2,7 +2,7 @@
 
 이 작업은 사용자가 2026-11-04에 승인한 유튜브 공개 업로드다. 시금치 마늘 파스타(10편)는 이미 올라갔으므로 재업로드하지 않는다. 새 11·12편의 한글·영문 총 네 영상만 처리한다.
 
-1. GitHub mini-ok/ssoksok-channel-assets의 Actions run https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41851897541 상태를 확인한다. 실패·진행 중이면 완성됐다고 하지 않는다.
+1. GitHub mini-ok/ssoksok-channel-assets의 Actions run https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41853937674 상태를 확인한다. 실패·진행 중이면 완성됐다고 하지 않는다.
 2. 아래 정식 Release 두 개가 공개되고 manifest.json의 test_run=false, upload_ready=true인지 확인한다.
    - https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0011
    - https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0012
