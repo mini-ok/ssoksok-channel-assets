@@ -1,4 +1,14 @@
-exec("def bone(cv,x,y,s=1.0,mood='happy',lt=0.0):\n    cv.save();cv.translate(x,y);cv.scale(s,s)\n    shadow(cv,160);feet(cv,145,0xE5D9BE,gap=50)\n    limb(cv,-80,25,-140,77,0xF6EBD5);limb(cv,80,25,140,77,0xF6EBD5)\n    shape=union(oval_path(0,20,155,265),circle_path(-55,-90,62),circle_path(55,-90,62),circle_path(-48,118,47),circle_path(48,118,47))\n    blob(cv,shape,0xEFE4CC,0xFFF9EC,shade=0xD7C5A1)\n    face(cv,0,-10,.91,mood,blush=0xEBAFAA)\n    cv.restore()\n\n", r.ch.__dict__)
+def bone(cv,x,y,s=1.0,mood='happy',lt=0.0):
+    cv.save();cv.translate(x,y);cv.scale(s,s)
+    shadow(cv,160);feet(cv,145,0xE5D9BE,gap=50)
+    limb(cv,-80,25,-140,77,0xF6EBD5);limb(cv,80,25,140,77,0xF6EBD5)
+    shape=union(oval_path(0,20,155,265),circle_path(-55,-90,62),circle_path(55,-90,62),circle_path(-48,118,47),circle_path(48,118,47))
+    blob(cv,shape,0xEFE4CC,0xFFF9EC,shade=0xD7C5A1)
+    face(cv,0,-10,.91,mood,blush=0xEBAFAA)
+    cv.restore()
+
+r.ch.bone=bone
+
 """Episode-specific seed rice balls / chilled milk chia pudding."""
 color=0xB6D5BB if NUM==11 else 0xD3DCE8
 v.SPEAKER={chef:(chef,color),narrator:(L('해설','Narrator'),0x9ACDB4)}
