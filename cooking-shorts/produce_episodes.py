@@ -43,7 +43,7 @@ exec(inspect.getsource(v.prepare_mix).replace("'buant_pop_groove.mp3'",repr(C['m
 
 def preflight():
  ids=[x[0] for x in p.ROWS]
- assert NUM in (5,6,7,8,9,10) and LANG in ('ko','en') and all(PLAN['review'].values())
+ assert NUM>=5 and LANG in ('ko','en') and all(PLAN['review'].values())
  assert max(ids.index(x) for x in PLAN['cooking_scene_ids'])<min(ids.index(x) for x in PLAN['health_narration_scene_ids'])
  assert all(p.ROWS[ids.index(x)][3]==narrator for x in PLAN['health_narration_scene_ids'])
  a=p.REPO/'bgm'/C['music'];b=p.REPO/'bgm'/C['previous_music']
@@ -285,11 +285,15 @@ def check():
   report.append(dict(id=row['id'],expected=row['text'],heard=heard,similarity=score));clock+=row['duration']
  (p.OUT/'encoded_speech_qa.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
  assert all(x['similarity']>.84 for x in report),'Final speech QA failed: '+', '.join(x['id'] for x in report if x['similarity']<=.84)
+ (p.OUT/'speech_provenance.json').write_text(json.dumps(dict(video_sha256=hashlib.sha256(p.TARGET.read_bytes()).hexdigest(),all_passed=True),indent=2),encoding='utf-8')
 
 if NUM in (7,8):
  exec(compile((SOURCE/'episode78_visuals.py').read_text(encoding='utf-8'),str(SOURCE/'episode78_visuals.py'),'exec'),globals())
 if NUM in (9,10):
  exec(compile((SOURCE/'episode910_visuals.py').read_text(encoding='utf-8'),str(SOURCE/'episode910_visuals.py'),'exec'),globals())
+if NUM>10:
+ assert (ROOT/'visuals.py').is_file(),'New episodes need their own visuals.py'
+ exec(compile((ROOT/'visuals.py').read_text(encoding='utf-8'),str(ROOT/'visuals.py'),'exec'),globals())
 preflight()
 if COMMAND in ('audio','verify','check'):globals()[COMMAND]()
 elif COMMAND=='preview':

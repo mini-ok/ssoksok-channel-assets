@@ -32,7 +32,11 @@ SOURCE_URL='https://www.canada.ca/en/health-canada/services/food-guide/eating-su
 def auth():
  from google.oauth2 import service_account
  from google.auth.transport.requests import Request
- creds=service_account.Credentials.from_service_account_file(str(next((REPO.parent/'tts').glob('*.json'))),scopes=['https://www.googleapis.com/auth/cloud-platform'])
+ if os.environ.get('GCP_TTS_SA_KEY_B64'):
+  import base64
+  creds=service_account.Credentials.from_service_account_info(json.loads(base64.b64decode(os.environ['GCP_TTS_SA_KEY_B64'])),scopes=['https://www.googleapis.com/auth/cloud-platform'])
+ else:
+  creds=service_account.Credentials.from_service_account_file(str(next((REPO.parent/'tts').glob('*.json'))),scopes=['https://www.googleapis.com/auth/cloud-platform'])
  def token():
   if not creds.valid:creds.refresh(Request())
   return creds.token
@@ -249,6 +253,6 @@ def verify():
  report=dict(file=TARGET.name,seconds=n/24,frames_decoded=n,resolution=[1080,1920],fps=24,full_decode='passed',integrated_lufs=float(stats['input_i']),true_peak=float(stats['input_tp']),static_recipe_card='passed',speech_qa='passed',sha256=hashlib.sha256(TARGET.read_bytes()).hexdigest(),evidence_reference=SOURCE_URL,recipe_note=RECIPE_NOTE)
  (OUT/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(report,ensure_ascii=False),flush=True)
  shutil.copy2(OUT/'liver_ko.srt',OUT/SRT_FILE)
- shutil.copy2(TARGET,REPO.parent/TARGET.name)
+ if not os.environ.get('GITHUB_ACTIONS'):shutil.copy2(TARGET,REPO.parent/TARGET.name)
 
 if __name__=='__main__':raise SystemExit('Superseded mushroom draft. Use episode03/produce_toast.py for the final episode.')

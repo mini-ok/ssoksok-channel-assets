@@ -1,0 +1,92 @@
+name: Cooking Shorts Cloud Render
+run-name: Cooking cloud render (${{ github.event_name }})
+on:
+  push:
+    paths:
+      - 'cooking-shorts/cloud/queue/*.json'
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: 'One or two committed episode numbers, e.g. 11,12'
+        required: true
+        type: string
+      test_run:
+        description: 'Publish as a test prerelease; never mark ready for YouTube'
+        required: true
+        default: false
+        type: boolean
+permissions:
+  contents: write
+concurrency:
+  group: cooking-cloud-production
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONIOENCODING: utf-8
+      GCP_TTS_SA_KEY_B64: ${{ secrets.GCP_TTS_SA_KEY_B64 }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: cooking-shorts/requirements.txt
+      - name: Check cloud credentials and inputs
+        id: batch
+        env:
+          EPISODES: ${{ inputs.episodes }}
+          TEST_RUN: ${{ inputs.test_run }}
+        run: |
+          python - <<'PY'
+          import os,json,subprocess,re
+          from pathlib import Path
+          assert os.environ.get('GCP_TTS_SA_KEY_B64'), 'Missing GitHub Secret GCP_TTS_SA_KEY_B64'
+          if os.environ['GITHUB_EVENT_NAME']=='push':
+              event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+              before=event['before']
+              args=['git','diff','--name-only',before,event['after']] if set(before)!={'0'} else ['git','show','--format=','--name-only',event['after']]
+              changed=subprocess.check_output(args,text=True).splitlines()
+              queue=[x for x in changed if re.fullmatch(r'cooking-shorts/cloud/queue/[A-Za-z0-9_-]+\.json',x) and Path(x).is_file()]
+              assert len(queue)==1, 'Commit exactly one production queue request at a time'
+              request=json.loads(Path(queue[0]).read_text())
+              assert request.get('schema')==1 and isinstance(request.get('test_run',False),bool)
+              nums=request['episodes'];test=request.get('test_run',False)
+              assert all(type(x) is int for x in nums)
+          else:
+              nums=[int(x.strip()) for x in os.environ['EPISODES'].split(',')]
+              test=os.environ.get('TEST_RUN')=='true'
+          assert 1<=len(nums)<=2 and len(set(nums))==len(nums) and all(x>=5 for x in nums)
+          assert test or len(nums)==2, 'Daily production requires two episodes'
+          for n in nums:
+              assert Path(f'cooking-shorts/episode{n:02}/production.json').is_file(), f'Episode {n} source is missing'
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('episodes='+','.join(map(str,nums))+'\n')
+              f.write('test_run='+str(test).lower()+'\n')
+          PY
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libegl1 ffmpeg
+          python -m pip install -r cooking-shorts/requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: ../cooking_shorts_sample/models
+          key: cooking-whisper-small-v1
+      - name: Render, verify and publish raw assets
+        env:
+          EPISODES: ${{ steps.batch.outputs.episodes }}
+          TEST_RUN: ${{ steps.batch.outputs.test_run }}
+        run: |
+          python - <<'PY'
+          import os,subprocess,sys
+          args=[sys.executable,'cooking-shorts/cloud/run_batch.py','--episodes',os.environ['EPISODES']]
+          if os.environ['TEST_RUN']=='true':args.append('--test')
+          subprocess.run(args,check=True)
+          PY
