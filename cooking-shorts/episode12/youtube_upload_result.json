@@ -1,0 +1,29 @@
+{
+  "episode": 12,
+  "title": "Milk Chia Pudding",
+  "verified_at": "2026-11-04T16:41:45Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "u_mEKPwX4bE",
+      "video_url": "https://youtu.be/u_mEKPwX4bE",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "MilkChiaPudding_KO.mp4",
+      "sha256": "df591da61f73d35c1f2e7f70b806c3dee2d2900d23a7b1dd3e5fafc6e0295424"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "iS8Nc5AlkS0",
+      "video_url": "https://youtu.be/iS8Nc5AlkS0",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "MilkChiaPudding_EN.mp4",
+      "sha256": "d4f4fe585374ae502f7f010c0e747d12561ad743cf645f7fa29afe362e3f44b0"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "episode": 11,
+  "title": "Pumpkin Seed Rice Balls",
+  "verified_at": "2026-11-04T16:41:45Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "x5Q-g7kq-RM",
+      "video_url": "https://youtu.be/x5Q-g7kq-RM",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "PumpkinSeedRiceBalls_KO.mp4",
+      "sha256": "099cba70984fe43915d6a4f82e67aa99da2d146faa37f1102a6fcfbb1fff720a"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "mbYjvgQ8Dh4",
+      "video_url": "https://youtu.be/mbYjvgQ8Dh4",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "PumpkinSeedRiceBalls_EN.mp4",
+      "sha256": "fe5f03d10872570ef76c01a47ec8a81cc328a6a1220f122f60bb22f40b78e1ae"
+    }
+  ]
+}
