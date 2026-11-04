@@ -67,3 +67,9 @@
 - 11편: 면역 쉐프 / 호박씨 현미 주먹밥. 주재료 현미·볶은 무염 호박씨. 익힌 밥과 씨앗을 섞어 손으로 성형; 볶음·죽·전과 다르다. 정상 면역세포 기능에 필요한 아연을 설명. 호박씨 약 28g의 아연 약 2.2mg, 미국 표시 DV 11mg의 약 20%. 다른 재료 기여분 제외. 재등장은 22편부터. 음악 nimble_motifs.mp3.
 - 12편: 뼈 쉐프 / 우유 치아푸딩. 주재료 무지방 우유·치아씨드. 냉장 수화 푸딩이며 8편 냉동 요거트 바크와 구분. 우유 1 US cup 299mg + 치아씨드 3 tbsp 76×3mg = 칼슘 527mg, 전체 2인분. 1인분 263.5mg, 약 260mg = 미국 표시 DV 1,300mg의 약 20%. 재등장은 23편부터. 음악 buoyant_kitchen_groove.mp3.
 - 출처: NIH ODS Zinc / Calcium, 2026-11-04 실제 확인. production·plan·영양 검산·한영 대본·visuals.py 저장 완료. Actions https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41851897541 실행 중. 아직 완성·유튜브 업로드로 기록하지 않는다.
+
+
+11·12편 한글·영문 총 네 영상 클라우드 제작·자동검수·정식 Release 게시 완료(2026-11-05 Asia/Seoul). 11편 약 71.7/76.0초, 12편 약 72.8/77.5초, 1080×1920 24fps. 전체 디코딩·음량·음성·음악 차이·레시피 정지 검사 통과. 12편 캐릭터 소스 등록을 수정한 뒤 복구 성공했고 11편은 재사용했다. 직접 시청·청취 및 실물 요리·맛 평가는 수행하지 않았다. 유튜브 업로드는 아직 확인하지 못했다.
+- 11편: https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0011
+- 12편: https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0012
+- 성공 실행: https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41854633815
