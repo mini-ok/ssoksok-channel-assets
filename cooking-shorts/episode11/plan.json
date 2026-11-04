@@ -1,0 +1,89 @@
+{
+  "episode": 11,
+  "dish": "호박씨 현미 주먹밥",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "현미",
+    "호박씨"
+  ],
+  "cooking_style": "익힌 밥에 다진 씨앗을 섞어 손으로 뭉치는 주먹밥",
+  "global_accessibility": {
+    "common_ingredients": [
+      "익힌 현미밥",
+      "볶은 무염 호박씨",
+      "참기름",
+      "물"
+    ],
+    "substitutions": [
+      "즉석 현미밥 사용 가능; 호박씨는 껍질 벗긴 볶은 무염 제품. 다른 씨앗은 재계산 필요."
+    ],
+    "basic_tools": [
+      "도마",
+      "칼",
+      "볼"
+    ]
+  },
+  "organ_rotation_note": "눈 다음 면역→뼈; 최근 주재료·스타일과 중복 없음",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "아연과 정상적인 면역세포 기능",
+  "reason_for_chef": "아연은 면역세포가 정상적으로 일하는 데 필요해요. 호박씨는 아연을 식사에 더하는 한 가지 방법이에요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "title": "NIH ODS Zinc",
+      "checked_at": "2026-11-04",
+      "supported_claim": "아연과 정상적인 면역세포 기능",
+      "conditions_and_limits": "정상 영양 기능 설명; 이 요리가 질병을 치료·예방하거나 면역·골밀도 개선을 보장한다는 주장 아님. 표준 재료 성분의 계산값이며 완성품 실측 아님."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "아연은 면역세포가 정상적으로 일하는 데 필요해요. 호박씨는 아연을 식사에 더하는 한 가지 방법이에요.",
+    "context": "수치는 볶은 호박씨만 계산했어요. 먹은 아연이 모두 흡수되는 건 아니며, 감기 예방을 보장하지 않아요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "아연",
+    "recipe_amount_mg": 2.2,
+    "per_serving_amount_mg": 2.2,
+    "servings": 1,
+    "daily_reference_mg": 11,
+    "percent_of_daily_reference": 20,
+    "reference_population": "미국 FDA 표시 DV: 성인 및 4세 이상; 개인 RDA와 구분",
+    "basis": "볶은 무염 껍질 벗긴 호박씨 1oz 약28g만; 다른 재료 제외",
+    "calculation": "NIH ODS roasted pumpkin seeds 1oz = 2.2mg; 2.2/11*100=20%",
+    "display": "1인분 2개 속 볶은 호박씨 28g / 아연 약 2.2mg / 호박씨만의 함량 추정 · 밥 등 제외 / 원자료 1oz(약 28g) · 제품별 차이 / 출처: 미국 NIH ODS · 아연\n1인분 아연 약 2.2mg / 미국 표시 DV의 약 20% / 표시 기준 11mg · 개인 권장량 아님 / 함량은 흡수량·감기 예방률이 아님 / 출처: 미국 NIH ODS · 아연",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-04",
+    "uncertainty_note": "투입 재료 표준 성분의 추정값; 제품·조리 차이; 완성품 실측·흡수량·효과 보장 아님"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 22,
+  "menu_overlap_review": "밥을 끓여 죽을 만들지 않음; 익힌 현미를 씨앗과 섞고 손으로 성형. 팬 전·샐러드·수프와 구분."
+}

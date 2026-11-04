@@ -1,0 +1,255 @@
+{
+  "character": "immune",
+  "voice": "Kore",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "호박씨 현미 주먹밥",
+  "dish_en": "Pumpkin Seed Rice Balls",
+  "slug": "PumpkinSeedRiceBalls",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "아연과 정상 면역 기능",
+  "source_en": "Zinc and Normal Immune Function",
+  "time_ko": "1인분 · 2개 / 약 15분",
+  "time_en": "1 serving, 2 balls / about 15 minutes",
+  "ingredients": [
+    [
+      "익힌 현미밥",
+      "Cooked brown rice",
+      "150g",
+      "150 g",
+      "rice"
+    ],
+    [
+      "볶은 무염 호박씨",
+      "Roasted pumpkin seeds",
+      "28g",
+      "28 g",
+      "seed"
+    ],
+    [
+      "참기름",
+      "Sesame oil",
+      "1작은술",
+      "1 tsp",
+      "oil"
+    ],
+    [
+      "물",
+      "Water",
+      "손 적실 만큼",
+      "For wet hands",
+      "water"
+    ]
+  ],
+  "headings_ko": [
+    "면역 쉐프의 고소한 한 끼",
+    "현미밥과 볶은 호박씨",
+    "01 호박씨 잘게 다지기",
+    "02 따뜻한 밥에 섞어요",
+    "03 두 개로 꼭꼭 뭉쳐요",
+    "따뜻할 때 바로 먹어요",
+    "면역이 호박씨를 고른 이유",
+    "아연 수치의 기준은?",
+    "보안 검색도 고소하게!",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "A Crunchy Meal for Chef Immune",
+    "Rice and Roasted Seeds",
+    "01 Chop the Pumpkin Seeds",
+    "02 Mix into Warm Rice",
+    "03 Shape Two Rice Balls",
+    "Enjoy Freshly Made",
+    "Why Immune Chose Seeds",
+    "What Does the Zinc Number Mean?",
+    "Crunchy Security Check!",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "면역 쉐프 출동! 정상 면역 기능에 필요한 아연을 호박씨로 챙겨볼게요!",
+    "익힌 현미밥 백오십 그램, 볶은 무염 호박씨 이십팔 그램, 참기름 한 작은술이에요.",
+    "호박씨를 도마에 놓고 잘게 다져요. 큰 조각이 남지 않게 준비해요.",
+    "따뜻한 현미밥에 다진 호박씨와 참기름을 넣고 골고루 섞어요.",
+    "깨끗한 손을 물로 적시고, 밥을 반으로 나눠 주먹밥 두 개를 만들어요!",
+    "한 번에 삼키지 말고 꼭꼭 씹어요. 만든 뒤에는 따뜻할 때 바로 먹어요.",
+    "아연은 면역세포가 정상적으로 일하는 데 필요해요. 호박씨는 아연을 식사에 더하는 한 가지 방법이에요.",
+    "수치는 볶은 호박씨만 계산했어요. 먹은 아연이 모두 흡수되는 건 아니며, 감기 예방을 보장하지 않아요.",
+    "주방 보안 검색 완료! 고소함은 반입 허용입니다!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune reporting! Pumpkin seeds bring zinc, a nutrient needed for normal immune function!",
+    "Use one hundred fifty grams of cooked brown rice, twenty eight grams of roasted unsalted pumpkin seeds, and one teaspoon of sesame oil.",
+    "Finely chop the pumpkin seeds on a board. Break up any large pieces.",
+    "Mix the chopped seeds and sesame oil evenly into the warm cooked rice.",
+    "Wet clean hands with water. Divide the rice in half and gently press into two rice balls!",
+    "Take small bites and chew well. Enjoy the rice balls warm, soon after making them.",
+    "Zinc helps immune cells function normally. Pumpkin seeds are one way to include zinc in a varied diet.",
+    "The figures count only the roasted seeds. Not all the zinc eaten is absorbed, and this meal does not guarantee cold prevention.",
+    "Kitchen security check complete! Crunch is cleared for entry!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "익힌 현미밥 150g / 볶은 무염 호박씨 28g",
+    "참기름 1작은술 / 손 적실 물 조금",
+    "1 호박씨를 잘게 다진다.",
+    "2 따뜻한 밥에 호박씨와 참기름을 섞는다.",
+    "3 깨끗한 손을 적셔 두 개로 뭉친다.",
+    "4 작게 베어 꼭꼭 씹어 바로 먹는다.",
+    "남으면 신속히 냉장 / 씨앗 알레르기 확인"
+  ],
+  "recipe_en": [
+    "Cooked brown rice 150 g / roasted seeds 28 g",
+    "Sesame oil 1 tsp / water for wet hands",
+    "1 Finely chop unsalted roasted pumpkin seeds.",
+    "2 Mix seeds and sesame oil into warm rice.",
+    "3 Wet clean hands; shape two equal rice balls.",
+    "4 Take small bites, chew well and eat promptly.",
+    "Refrigerate leftovers promptly / check seed allergies"
+  ],
+  "health_focus": "아연과 정상적인 면역세포 기능",
+  "main_ingredients": [
+    "현미",
+    "호박씨"
+  ],
+  "cooking_style": "익힌 밥에 다진 씨앗을 섞어 손으로 뭉치는 주먹밥",
+  "source_url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "아연",
+    "recipe_amount_mg": 2.2,
+    "per_serving_amount_mg": 2.2,
+    "servings": 1,
+    "daily_reference_mg": 11,
+    "percent_of_daily_reference": 20,
+    "reference_population": "미국 FDA 표시 DV: 성인 및 4세 이상; 개인 RDA와 구분",
+    "basis": "볶은 무염 껍질 벗긴 호박씨 1oz 약28g만; 다른 재료 제외",
+    "calculation": "NIH ODS roasted pumpkin seeds 1oz = 2.2mg; 2.2/11*100=20%",
+    "display": "1인분 2개 속 볶은 호박씨 28g / 아연 약 2.2mg / 호박씨만의 함량 추정 · 밥 등 제외 / 원자료 1oz(약 28g) · 제품별 차이 / 출처: 미국 NIH ODS · 아연\n1인분 아연 약 2.2mg / 미국 표시 DV의 약 20% / 표시 기준 11mg · 개인 권장량 아님 / 함량은 흡수량·감기 예방률이 아님 / 출처: 미국 NIH ODS · 아연",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-04",
+    "uncertainty_note": "투입 재료 표준 성분의 추정값; 제품·조리 차이; 완성품 실측·흡수량·효과 보장 아님"
+  },
+  "nutrition_ko": [
+    [
+      "1인분 2개 속 볶은 호박씨 28g",
+      "아연 약 2.2mg",
+      "호박씨만의 함량 추정 · 밥 등 제외",
+      "원자료 1oz(약 28g) · 제품별 차이",
+      "출처: 미국 NIH ODS · 아연"
+    ],
+    [
+      "1인분 아연 약 2.2mg",
+      "미국 표시 DV의 약 20%",
+      "표시 기준 11mg · 개인 권장량 아님",
+      "함량은 흡수량·감기 예방률이 아님",
+      "출처: 미국 NIH ODS · 아연"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Roasted seeds: 28 g in 2 rice balls",
+      "About 2.2 mg zinc per serving",
+      "Seed contribution only / excludes rice",
+      "Source portion: 1 oz, about 28 g / varies",
+      "Source: NIH ODS / Zinc"
+    ],
+    [
+      "About 2.2 mg zinc per serving",
+      "About 20% of the U.S. Daily Value",
+      "Labeling DV: 11 mg / not individual RDA",
+      "Content is not absorption or cold prevention",
+      "Source: NIH ODS / Zinc"
+    ]
+  ],
+  "episode": 11,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "면역 쉐프의 고소한 한 끼",
+      "title_en": "A Crunchy Meal for Chef Immune",
+      "text_ko": "면역 쉐프 출동! 정상 면역 기능에 필요한 아연을 호박씨로 챙겨볼게요!",
+      "text_en": "Chef Immune reporting! Pumpkin seeds bring zinc, a nutrient needed for normal immune function!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "현미밥과 볶은 호박씨",
+      "title_en": "Rice and Roasted Seeds",
+      "text_ko": "익힌 현미밥 백오십 그램, 볶은 무염 호박씨 이십팔 그램, 참기름 한 작은술이에요.",
+      "text_en": "Use one hundred fifty grams of cooked brown rice, twenty eight grams of roasted unsalted pumpkin seeds, and one teaspoon of sesame oil.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 호박씨 잘게 다지기",
+      "title_en": "01 Chop the Pumpkin Seeds",
+      "text_ko": "호박씨를 도마에 놓고 잘게 다져요. 큰 조각이 남지 않게 준비해요.",
+      "text_en": "Finely chop the pumpkin seeds on a board. Break up any large pieces.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 따뜻한 밥에 섞어요",
+      "title_en": "02 Mix into Warm Rice",
+      "text_ko": "따뜻한 현미밥에 다진 호박씨와 참기름을 넣고 골고루 섞어요.",
+      "text_en": "Mix the chopped seeds and sesame oil evenly into the warm cooked rice.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 두 개로 꼭꼭 뭉쳐요",
+      "title_en": "03 Shape Two Rice Balls",
+      "text_ko": "깨끗한 손을 물로 적시고, 밥을 반으로 나눠 주먹밥 두 개를 만들어요!",
+      "text_en": "Wet clean hands with water. Divide the rice in half and gently press into two rice balls!",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "따뜻할 때 바로 먹어요",
+      "title_en": "Enjoy Freshly Made",
+      "text_ko": "한 번에 삼키지 말고 꼭꼭 씹어요. 만든 뒤에는 따뜻할 때 바로 먹어요.",
+      "text_en": "Take small bites and chew well. Enjoy the rice balls warm, soon after making them.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "면역이 호박씨를 고른 이유",
+      "title_en": "Why Immune Chose Seeds",
+      "text_ko": "아연은 면역세포가 정상적으로 일하는 데 필요해요. 호박씨는 아연을 식사에 더하는 한 가지 방법이에요.",
+      "text_en": "Zinc helps immune cells function normally. Pumpkin seeds are one way to include zinc in a varied diet.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "아연 수치의 기준은?",
+      "title_en": "What Does the Zinc Number Mean?",
+      "text_ko": "수치는 볶은 호박씨만 계산했어요. 먹은 아연이 모두 흡수되는 건 아니며, 감기 예방을 보장하지 않아요.",
+      "text_en": "The figures count only the roasted seeds. Not all the zinc eaten is absorbed, and this meal does not guarantee cold prevention.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "보안 검색도 고소하게!",
+      "title_en": "Crunchy Security Check!",
+      "text_ko": "주방 보안 검색 완료! 고소함은 반입 허용입니다!",
+      "text_en": "Kitchen security check complete! Crunch is cleared for entry!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 호박씨 현미 주먹밥 #Shorts",
+  "upload_title_en": "Chef Immune's Pumpkin Seed Rice Balls #Shorts",
+  "health_description_en": "Zinc helps immune cells function normally. Pumpkin seeds are one way to include zinc in a varied diet. The figures count only the roasted seeds. Not all the zinc eaten is absorbed, and this meal does not guarantee cold prevention."
+}

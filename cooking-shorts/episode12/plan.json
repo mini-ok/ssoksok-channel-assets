@@ -1,0 +1,90 @@
+{
+  "episode": 12,
+  "dish": "우유 치아푸딩",
+  "organ": "뼈",
+  "chef": "뼈 쉐프",
+  "main_ingredients": [
+    "우유",
+    "치아씨드"
+  ],
+  "cooking_style": "우유에 씨앗을 수화해 냉장 응고하는 푸딩; 냉동하지 않음",
+  "global_accessibility": {
+    "common_ingredients": [
+      "무지방 우유",
+      "치아씨드",
+      "바닐라 추출물",
+      "메이플 시럽"
+    ],
+    "substitutions": [
+      "무지방 락토프리 우유 가능하나 제품 영양표 확인; 우유 대체 음료는 재계산."
+    ],
+    "basic_tools": [
+      "볼",
+      "숟가락",
+      "뚜껑",
+      "냉장고"
+    ]
+  },
+  "organ_rotation_note": "눈 다음 면역→뼈; 최근 주재료·스타일과 중복 없음",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "칼슘과 뼈의 구조 유지",
+  "reason_for_chef": "칼슘은 뼈의 구조를 이루는 재료예요. 우유와 치아씨드로 칼슘을 식사에 더할 수 있어요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+      "title": "NIH ODS Calcium",
+      "checked_at": "2026-11-04",
+      "supported_claim": "칼슘과 뼈의 구조 유지",
+      "conditions_and_limits": "정상 영양 기능 설명; 이 요리가 질병을 치료·예방하거나 면역·골밀도 개선을 보장한다는 주장 아님. 표준 재료 성분의 계산값이며 완성품 실측 아님."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "칼슘은 뼈의 구조를 이루는 재료예요. 우유와 치아씨드로 칼슘을 식사에 더할 수 있어요.",
+    "context": "수치는 두 재료의 표준 성분을 더한 추정치예요. 실제 제품에 따라 다르며, 골절 예방 효과를 뜻하지 않아요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount_mg": 527,
+    "per_serving_amount_mg": 263.5,
+    "servings": 2,
+    "daily_reference_mg": 1300,
+    "percent_of_daily_reference": 20.26923076923077,
+    "reference_population": "미국 FDA 표시 DV: 성인 및 4세 이상; 개인 RDA와 구분",
+    "basis": "무지방 우유 1 US cup + 치아씨드 3 tbsp; 기타 제외",
+    "calculation": "NIH ODS nonfat milk 1cup=299mg; chia 1tbsp=76mg; 299+76*3=527; /2=263.5; /1300*100=20.27%",
+    "display": "전체 2컵: 우유 1컵 + 치아씨드 3큰술 / 칼슘 약 530mg / 한 컵 약 260mg / 299 + 76 × 3 = 527mg / 반 = 263.5mg / 표준 재료 계산값 · 제품별 차이 / 출처: 미국 NIH ODS · 칼슘\n한 컵의 칼슘 약 260mg / 미국 표시 DV의 약 20% / 하루 표시 기준 1,300mg과 비교 / 개인 권장량·흡수량·골절 예방률 아님 / 출처: 미국 NIH ODS · 칼슘",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-04",
+    "uncertainty_note": "투입 재료 표준 성분의 추정값; 제품·조리 차이; 완성품 실측·흡수량·효과 보장 아님"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 23,
+  "menu_overlap_review": "우유·치아씨드 첫 주재료; 냉장 수화 푸딩이며 요거트 냉동 바크와 재료·온도·제법이 다름."
+}

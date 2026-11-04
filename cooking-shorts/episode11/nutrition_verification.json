@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "아연",
+  "recipe_amount_mg": 2.2,
+  "per_serving_amount_mg": 2.2,
+  "servings": 1,
+  "daily_reference_mg": 11,
+  "percent_of_daily_reference": 20,
+  "reference_population": "미국 FDA 표시 DV: 성인 및 4세 이상; 개인 RDA와 구분",
+  "basis": "볶은 무염 껍질 벗긴 호박씨 1oz 약28g만; 다른 재료 제외",
+  "calculation": "NIH ODS roasted pumpkin seeds 1oz = 2.2mg; 2.2/11*100=20%",
+  "display": "1인분 2개 속 볶은 호박씨 28g / 아연 약 2.2mg / 호박씨만의 함량 추정 · 밥 등 제외 / 원자료 1oz(약 28g) · 제품별 차이 / 출처: 미국 NIH ODS · 아연\n1인분 아연 약 2.2mg / 미국 표시 DV의 약 20% / 표시 기준 11mg · 개인 권장량 아님 / 함량은 흡수량·감기 예방률이 아님 / 출처: 미국 NIH ODS · 아연",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-04",
+  "uncertainty_note": "투입 재료 표준 성분의 추정값; 제품·조리 차이; 완성품 실측·흡수량·효과 보장 아님",
+  "status": "passed"
+}

@@ -1,0 +1,255 @@
+{
+  "character": "bone",
+  "voice": "Achird",
+  "chef_ko": "뼈 쉐프",
+  "chef_en": "Chef Bone",
+  "dish_ko": "우유 치아푸딩",
+  "dish_en": "Milk Chia Pudding",
+  "slug": "MilkChiaPudding",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "칼슘과 뼈의 구조",
+  "source_en": "Calcium and Bone Structure",
+  "time_ko": "2인분 / 준비 10분 + 냉장 4시간",
+  "time_en": "2 servings / 10 min prep + 4 hours chilled",
+  "ingredients": [
+    [
+      "무지방 우유",
+      "Nonfat milk",
+      "1 미국컵",
+      "1 US cup",
+      "milk"
+    ],
+    [
+      "치아씨드",
+      "Chia seeds",
+      "3큰술",
+      "3 tbsp",
+      "chia"
+    ],
+    [
+      "바닐라 추출물",
+      "Vanilla extract",
+      "1/4작은술",
+      "1/4 tsp",
+      "vanilla"
+    ],
+    [
+      "메이플 시럽",
+      "Maple syrup",
+      "선택 1작은술",
+      "Optional 1 tsp",
+      "syrup"
+    ]
+  ],
+  "headings_ko": [
+    "뼈 쉐프의 냉장 푸딩",
+    "우유와 치아씨드 준비",
+    "01 우유에 씨앗 넣기",
+    "02 쉬었다 한 번 더 섞어요",
+    "03 덮어서 냉장 4시간",
+    "두 컵으로 나눠요",
+    "뼈가 칼슘을 고른 이유",
+    "한 컵에 들어간 칼슘은?",
+    "오늘은 냉장고가 요리사!",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Chef Bone's Chilled Pudding",
+    "Milk and Chia Seeds",
+    "01 Add Seeds to Milk",
+    "02 Rest, Then Stir Again",
+    "03 Cover and Chill Four Hours",
+    "Divide into Two Cups",
+    "Why Bone Chose Calcium",
+    "Calcium in Each Serving",
+    "The Fridge Is Cooking Today!",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "뼈 쉐프입니다! 뼈를 구성하는 칼슘을 챙기는 우유 치아푸딩, 불 없이 만들어요!",
+    "무지방 우유 한 미국컵, 치아씨드 세 큰술, 바닐라 조금! 메이플 시럽은 취향껏 조금만요.",
+    "볼에 우유와 치아씨드를 넣고, 바닐라를 더해 골고루 저어요.",
+    "오 분 두었다가 바닥과 가장자리까지 다시 저어요. 씨앗 덩어리를 풀어주세요.",
+    "뚜껑을 덮어 냉장고에 네 시간 이상 넣어요. 씨앗이 충분히 불 때까지 기다려요!",
+    "걸쭉하게 불어난 푸딩을 두 컵에 똑같이 나눠요. 마른 씨앗째 삼키지 않아요.",
+    "칼슘은 뼈의 구조를 이루는 재료예요. 우유와 치아씨드로 칼슘을 식사에 더할 수 있어요.",
+    "수치는 두 재료의 표준 성분을 더한 추정치예요. 실제 제품에 따라 다르며, 골절 예방 효과를 뜻하지 않아요.",
+    "오늘은 냉장고가 요리사! 저는 칼슘 담당입니다!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Bone here! Make milk chia pudding without a stove, with calcium that helps form bone structure!",
+    "Use one US cup of nonfat milk, three tablespoons of chia seeds, and a little vanilla. Maple syrup is optional.",
+    "Put milk and chia seeds in a bowl. Add vanilla and stir until evenly mixed.",
+    "Rest for five minutes, then stir again along the bottom and sides. Break up seed clumps.",
+    "Cover and refrigerate for at least four hours. Let the seeds absorb liquid and swell fully!",
+    "Divide the thickened pudding equally between two cups. Do not swallow dry chia seeds.",
+    "Calcium is a building material in bones. Milk and chia seeds can add calcium to a varied diet.",
+    "These figures add standard values for the two ingredients. Products vary, and the numbers do not measure fracture prevention.",
+    "The fridge is cooking today! I am in charge of calcium!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "무지방 우유 1 미국컵 / 치아씨드 3큰술",
+    "바닐라 1/4작은술 / 메이플 시럽 선택 1작은술",
+    "1 볼에 모든 재료를 넣고 골고루 젓는다.",
+    "2 5분 뒤 다시 저어 씨앗 덩어리를 푼다.",
+    "3 덮어서 냉장 4시간 이상 충분히 불린다.",
+    "4 두 컵에 똑같이 나눠 차갑게 먹는다.",
+    "미국컵 약 240mL / 우유·씨앗 알레르기 확인"
+  ],
+  "recipe_en": [
+    "Nonfat milk 1 US cup / chia seeds 3 tbsp",
+    "Vanilla 1/4 tsp / optional maple syrup 1 tsp",
+    "1 Stir all ingredients together in a bowl.",
+    "2 Wait 5 min; stir again to break up clumps.",
+    "3 Cover; chill at least 4 hours until swollen.",
+    "4 Divide equally into two cups; serve chilled.",
+    "US cup about 240 mL / check milk and seed allergies"
+  ],
+  "health_focus": "칼슘과 뼈의 구조 유지",
+  "main_ingredients": [
+    "우유",
+    "치아씨드"
+  ],
+  "cooking_style": "우유에 씨앗을 수화해 냉장 응고하는 푸딩; 냉동하지 않음",
+  "source_url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount_mg": 527,
+    "per_serving_amount_mg": 263.5,
+    "servings": 2,
+    "daily_reference_mg": 1300,
+    "percent_of_daily_reference": 20.26923076923077,
+    "reference_population": "미국 FDA 표시 DV: 성인 및 4세 이상; 개인 RDA와 구분",
+    "basis": "무지방 우유 1 US cup + 치아씨드 3 tbsp; 기타 제외",
+    "calculation": "NIH ODS nonfat milk 1cup=299mg; chia 1tbsp=76mg; 299+76*3=527; /2=263.5; /1300*100=20.27%",
+    "display": "전체 2컵: 우유 1컵 + 치아씨드 3큰술 / 칼슘 약 530mg / 한 컵 약 260mg / 299 + 76 × 3 = 527mg / 반 = 263.5mg / 표준 재료 계산값 · 제품별 차이 / 출처: 미국 NIH ODS · 칼슘\n한 컵의 칼슘 약 260mg / 미국 표시 DV의 약 20% / 하루 표시 기준 1,300mg과 비교 / 개인 권장량·흡수량·골절 예방률 아님 / 출처: 미국 NIH ODS · 칼슘",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-04",
+    "uncertainty_note": "투입 재료 표준 성분의 추정값; 제품·조리 차이; 완성품 실측·흡수량·효과 보장 아님"
+  },
+  "nutrition_ko": [
+    [
+      "전체 2컵: 우유 1컵 + 치아씨드 3큰술",
+      "칼슘 약 530mg / 한 컵 약 260mg",
+      "299 + 76 × 3 = 527mg / 반 = 263.5mg",
+      "표준 재료 계산값 · 제품별 차이",
+      "출처: 미국 NIH ODS · 칼슘"
+    ],
+    [
+      "한 컵의 칼슘 약 260mg",
+      "미국 표시 DV의 약 20%",
+      "하루 표시 기준 1,300mg과 비교",
+      "개인 권장량·흡수량·골절 예방률 아님",
+      "출처: 미국 NIH ODS · 칼슘"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Total: 1 cup milk + 3 tbsp chia seeds",
+      "About 530 mg calcium / 260 mg per cup",
+      "299 + 76 x 3 = 527 mg / half = 263.5 mg",
+      "Standard ingredient estimate / products vary",
+      "Source: NIH ODS / Calcium"
+    ],
+    [
+      "About 260 mg calcium per serving",
+      "About 20% of the U.S. Daily Value",
+      "FDA labeling DV: 1,300 mg per day",
+      "Not individual RDA or fracture prevention",
+      "Source: NIH ODS / Calcium"
+    ]
+  ],
+  "episode": 12,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "뼈 쉐프의 냉장 푸딩",
+      "title_en": "Chef Bone's Chilled Pudding",
+      "text_ko": "뼈 쉐프입니다! 뼈를 구성하는 칼슘을 챙기는 우유 치아푸딩, 불 없이 만들어요!",
+      "text_en": "Chef Bone here! Make milk chia pudding without a stove, with calcium that helps form bone structure!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "우유와 치아씨드 준비",
+      "title_en": "Milk and Chia Seeds",
+      "text_ko": "무지방 우유 한 미국컵, 치아씨드 세 큰술, 바닐라 조금! 메이플 시럽은 취향껏 조금만요.",
+      "text_en": "Use one US cup of nonfat milk, three tablespoons of chia seeds, and a little vanilla. Maple syrup is optional.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 우유에 씨앗 넣기",
+      "title_en": "01 Add Seeds to Milk",
+      "text_ko": "볼에 우유와 치아씨드를 넣고, 바닐라를 더해 골고루 저어요.",
+      "text_en": "Put milk and chia seeds in a bowl. Add vanilla and stir until evenly mixed.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 쉬었다 한 번 더 섞어요",
+      "title_en": "02 Rest, Then Stir Again",
+      "text_ko": "오 분 두었다가 바닥과 가장자리까지 다시 저어요. 씨앗 덩어리를 풀어주세요.",
+      "text_en": "Rest for five minutes, then stir again along the bottom and sides. Break up seed clumps.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 덮어서 냉장 4시간",
+      "title_en": "03 Cover and Chill Four Hours",
+      "text_ko": "뚜껑을 덮어 냉장고에 네 시간 이상 넣어요. 씨앗이 충분히 불 때까지 기다려요!",
+      "text_en": "Cover and refrigerate for at least four hours. Let the seeds absorb liquid and swell fully!",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "두 컵으로 나눠요",
+      "title_en": "Divide into Two Cups",
+      "text_ko": "걸쭉하게 불어난 푸딩을 두 컵에 똑같이 나눠요. 마른 씨앗째 삼키지 않아요.",
+      "text_en": "Divide the thickened pudding equally between two cups. Do not swallow dry chia seeds.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "뼈가 칼슘을 고른 이유",
+      "title_en": "Why Bone Chose Calcium",
+      "text_ko": "칼슘은 뼈의 구조를 이루는 재료예요. 우유와 치아씨드로 칼슘을 식사에 더할 수 있어요.",
+      "text_en": "Calcium is a building material in bones. Milk and chia seeds can add calcium to a varied diet.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "한 컵에 들어간 칼슘은?",
+      "title_en": "Calcium in Each Serving",
+      "text_ko": "수치는 두 재료의 표준 성분을 더한 추정치예요. 실제 제품에 따라 다르며, 골절 예방 효과를 뜻하지 않아요.",
+      "text_en": "These figures add standard values for the two ingredients. Products vary, and the numbers do not measure fracture prevention.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "오늘은 냉장고가 요리사!",
+      "title_en": "The Fridge Is Cooking Today!",
+      "text_ko": "오늘은 냉장고가 요리사! 저는 칼슘 담당입니다!",
+      "text_en": "The fridge is cooking today! I am in charge of calcium!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "뼈 쉐프의 우유 치아푸딩 #Shorts",
+  "upload_title_en": "Chef Bone's Milk Chia Pudding #Shorts",
+  "health_description_en": "Calcium is a building material in bones. Milk and chia seeds can add calcium to a varied diet. These figures add standard values for the two ingredients. Products vary, and the numbers do not measure fracture prevention."
+}
