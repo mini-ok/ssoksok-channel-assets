@@ -45,11 +45,17 @@ def _drop(cv, x, y, s=1.0):
 EXTRA_MOODS = ("angry", "cry", "shock", "panic", "relieved", "dizzy", "sparkle", "yawn", "proud")
 
 
-def face(cv, x, y, s=1.0, mood="happy", blush=PINK, look=(0, 0), gap=46):
+TALK_MOUTHS = 3  # 입 벌림 단계 수(러프 립싱크용)
+
+
+def face(cv, x, y, s=1.0, mood="happy", blush=PINK, look=(0, 0), gap=46, talk=None):
     """큰 반짝 눈 + 볼터치 + 작은 입.
     mood: happy/tired/wow/sleepy/smug/worry/serious/awake/happy_closed
     + 확장(2026-10-26, 표정 강화 지시): angry 화남 / cry 울먹 / shock 충격 / panic 당황·식은땀 / relieved 안도 /
-      dizzy 어질 / sparkle 반짝 감동 / yawn 하품 / proud 뿌듯"""
+      dizzy 어질 / sparkle 반짝 감동 / yawn 하품 / proud 뿌듯
+    talk: 정밀 립싱크 아님 — "말하는 중"임을 입 크기 2~3단계 순환으로만 보여줄 때 프레임 인덱스(또는 시간값)를
+      넘긴다. None/False면 기존 mood별 고정 입 모양을 그대로 쓴다(기존 호출 전부 영향 없음).
+      shock/yawn/wow처럼 입 모양 자체가 표정인 mood에서는 talk를 무시하고 기존 모양을 유지한다."""
     cv.save(); cv.translate(x, y); cv.scale(s, s)
     for sx in (-1, 1):
         ex = sx * gap + look[0] * 6
@@ -99,7 +105,15 @@ def face(cv, x, y, s=1.0, mood="happy", blush=PINK, look=(0, 0), gap=46):
     cv.drawOval(skia.Rect.MakeXYWH(gap + 4, 22, 34, 18), P(blush, a=bl))
     my = 30
     mp = skia.Path()
-    if mood in ("awake", "sparkle"):
+    if talk is not None and mood not in ("wow", "shock", "yawn"):
+        frame = int(talk) % TALK_MOUTHS
+        if frame == 0:
+            cv.drawLine(-9, my + 2, 9, my + 2, P(INK, "stroke", 5))
+        elif frame == 1:
+            cv.drawOval(skia.Rect.MakeXYWH(-10, my - 10, 20, 22), P(INK))
+        else:
+            cv.drawOval(skia.Rect.MakeXYWH(-13, my - 18, 26, 36), P(INK))
+    elif mood in ("awake", "sparkle"):
         mp.moveTo(-16, my - 4); mp.quadTo(0, my + 20, 16, my - 4); mp.close(); cv.drawPath(mp, P(INK))
         if mood == "sparkle": cv.drawOval(skia.Rect.MakeXYWH(-7, my + 6, 14, 7), P(PINK))
     elif mood in ("happy", "happy_closed", "sleepy", "relieved"):
