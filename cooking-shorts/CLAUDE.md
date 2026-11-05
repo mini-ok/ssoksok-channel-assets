@@ -50,3 +50,26 @@
 - 필요한 환경변수(`YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN_KO`, `YT_REFRESH_TOKEN_EN`)는 이미
   이 세션 환경에 설정돼 있다. 업로드 후 영상·재생목록 링크와 실제 공개 상태를 보고하고, 키·토큰 값은 절대
   출력하지 않는다.
+
+## 대사 구간 러프 립싱크(입 2~3단계 순환) — 검증된 예시 (2026-11-05, 사용자 승인)
+- 대화 세션에서 작게 샘플 렌더로 확인·승인받은 기능이다(루트 CLAUDE.md "샘플 → 컨펌 → 전체 진행" 규칙 적용 사례).
+  **정밀 립싱크가 아니라 "말하는 중 vs 쉬는 중"만 입 크기 3단계(닫힘/작게 벌림/크게 벌림)로 순환시키는 러프한
+  버전**이다. 다음 제작부터 대사가 있는 장면에 기본 적용한다.
+- 구현 위치: `runtime/chars.py`의 `face()`에 `talk`(0/1/2 또는 None) 파라미터가 있고, 캐릭터 9종 래퍼(brain/heart/
+  gut/liver/muscle/immune/melatonin/adenosine/caffeine) 전부 기존에 쓰이지 않던 `lt` 인자를 이 `talk`로 그대로
+  전달한다 — `lt=0.0`(기존 모든 호출의 기본값)은 `talk=None`과 동일해서 **과거 렌더와 완전히 동일하게 유지**된다.
+- `render.py`의 `chef(name, mood, talk=None)` / `chef_fn(name, mood, talk=None)`도 같은 식으로 확장되어 있다.
+  `talk=None`이면 기존 디스크 캐시 파일명(`chef_v3_{name}_{mood}.png`)을 그대로 쓰고, `talk=0/1/2`는
+  `chef_v3_{name}_{mood}_talk{N}.png`로 **별도 캐시 파일**에 저장된다(스프라이트 캐시가 key 기반이라는 루트
+  CLAUDE.md 경고 사례와 같은 함정을 피하려고 일부러 캐시 키를 나눴다).
+- **실제 사용 예시(검증됨, `revision_liver.py` 스타일의 `scene_content(idx, t)` 처럼 매 프레임 `t`를 갖고 있는
+  곳에서)**:
+  ```python
+  # 이 쉐프가 지금 대사 중인 장면에서만, 쉬는 구간(내레이터 반응컷 등)은 talk=None 유지
+  talk_frame = int(t * 8) % 3   # 초당 약 8회 순환 — 사람 말하기 리듬에서 "입 벌렸다 닫혔다"로 읽히는 정도로 확인됨
+  r.place(im, r.chef('heart', 'happy', talk=talk_frame), 330, 905, .94, angle=math.sin(t*2)*1.4)
+  ```
+  대사 없는 캐릭터·멈춰 있는 리액션 샷은 `talk=` 인자를 아예 쓰지 않거나 `talk=None`으로 둬서 기존 캐시를 그대로
+  쓴다(불필요하게 새 스프라이트를 안 만들어도 됨).
+- 확인 방법: 실제 렌더 크기(축소 없이)로 `talk=None/0/1/2` 네 프레임을 나란히 렌더해 입 모양이 뚜렷이 구분되는지
+  눈으로 확인한 뒤 적용한다(2026-11-05 `heart` 캐릭터로 확인 완료, `/tmp/claude-0/ck/lipsync_chef_test.png`).

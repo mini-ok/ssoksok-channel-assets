@@ -74,8 +74,9 @@ def pop(t):
     if t>=.42:return 1
     x=t/.42-1;return 1+2.2*x**3+1.2*x**2
 
-def chef_fn(name,mood):
+def chef_fn(name,mood,talk=None):
     # Preserve the original silhouettes, faces and identity accessories; remove work tools.
+    # talk: None=기존 고정 입(변화 없음). 0/1/2=러프 립싱크 입 벌림 단계(캐시 키에도 포함되므로 매 변형이 별도 스프라이트로 저장됨).
     src=inspect.getsource(getattr(ch,name))
     if name=='liver':
         start=src.index('    cv.drawLine(215')
@@ -89,7 +90,7 @@ def chef_fn(name,mood):
     def draw(cv,S):
         k=S/576; x=S/2; y=S*.62
         old=ch.FLAGS.copy();ch.FLAGS['shadow']=False
-        base(cv,x,y,k,mood,0)
+        base(cv,x,y,k,mood,0.001+talk if talk is not None else 0)
         ch.FLAGS.update(old)
         # A small apron leaves the face and characteristic body shape visible.
         cv.save();cv.translate(x,y);cv.scale(k,k)
@@ -104,12 +105,15 @@ def chef_fn(name,mood):
         cv.restore()
     return draw
 
-@functools.lru_cache(maxsize=24)
-def chef(name,mood='happy'):
-    path=CACHE/f'chef_v3_{name}_{mood}.png'
+@functools.lru_cache(maxsize=48)
+def chef(name,mood='happy',talk=None):
+    # talk=None은 기존 캐시 파일명과 동일(저장된 이전 캐시 그대로 재사용). talk=0/1/2는 별도 파일로 저장되는
+    # 러프 립싱크(입 벌림 단계) 변형 — 대사 구간에서만 t 기반으로 순환시켜 넘긴다(쉬는 구간/내레이터 반응컷은 talk=None 유지).
+    suffix='' if talk is None else f'_talk{talk}'
+    path=CACHE/f'chef_v3_{name}_{mood}{suffix}.png'
     if path.exists():return Image.open(path).convert('RGBA')
     N,S=830,690
-    fn=chef_fn(name,mood)
+    fn=chef_fn(name,mood,talk)
     def render(value):return p.puff_char(np.full((N,N,3),value,np.float32),fn,N/2,N/2,S,seed=19 if name=='heart' else 23)
     black=render(0);white=render(1)
     a=np.clip(1-(white-black).mean(2),0,1)
