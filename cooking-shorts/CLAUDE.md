@@ -51,6 +51,29 @@
   이 세션 환경에 설정돼 있다. 업로드 후 영상·재생목록 링크와 실제 공개 상태를 보고하고, 키·토큰 값은 절대
   출력하지 않는다.
 
+## GitHub Release 기반 업로드 — 검증된 절차 (2026-11-04~05, episode11~14로 확립)
+- `cooking-shorts/cloud/CLAUDE_UPLOAD_*.md` 핸드오프가 가리키는 GitHub Release(예: `cooking-episode-00NN`)에서
+  원본 자산을 받아 업로드하는 흐름은 위 zip 흐름과 같은 원칙(가벼운 검증 + 바로 업로드)을 쓰되, 자산이 ZIP이
+  아니라 Release 자산이라는 점만 다르다. 매일 11:50 KST 예약(`trig_013oeNd41DbB2f5QywzCBkr1`)이 이 절차를 쓴다.
+- **다운로드**: `gh release download`는 이 환경에서 GraphQL 403이 나므로 쓰지 않는다. 대신 각 자산의
+  `browser_download_url`(`gh api repos/{owner}/{repo}/releases/tags/{tag}`로 조회)을 `curl -sSL -o <name> <url>`로
+  받는다. 각 에피소드를 별도 임시 폴더(`/tmp/claude-0/ck/relNN` 등)에 받는다.
+- **검증**: Release의 `manifest.json`에서 `test_run=false`, `upload_ready=true`를 확인하고, 받은 모든 파일의
+  `sha256sum`을 manifest 값과 전수 대조한다. `upload.py`는 `googleapis.com`/`oauth2.googleapis.com` 공식 API만
+  쓰는지, 이전 버전(`e2880a3f0fe7e6e02cba752c848544dda888240180cf332d7f86f3fb580f4f26`)과 같은지 확인한다.
+  `metadata.json`에서 채널(`@ssoksok-health`=한글, `@tinybodyco`=영문)·제목·설명·재생목록이 맞는지 본다.
+- **중복 체크**: 업로드 전 YouTube Data API로 두 채널의 실제 업로드 목록(playlistItems)을 조회해 제목으로 이미
+  올라가 있는지 확인한다. 있으면 재업로드하지 않는다.
+- **실행**: 각 에피소드 폴더에서 `python3 -I upload.py`. 성공하면 `upload_result.json`에 video id·playlist id·
+  `privacy: public`이 기록된다.
+- **독립 재확인(스크립트 자체 성공 메시지만 믿지 않는다)**: 업로드 후 YouTube Videos API(`part=snippet,status`)로
+  실제 `privacyStatus=public`과 `channelId`가 맞는 채널인지 다시 조회해 확인한다.
+- **기록**: 비밀값 없는 `cooking-shorts/episodeNN/youtube_upload_result.json`(에피소드·언어·영상 URL/ID·채널·공개
+  상태·업로드 파일 SHA256·확인 시각)을 써서 `git pull --rebase origin main` 후 커밋·푸시한다(다른 파이프라인의
+  동시 커밋과 충돌하면 재시도).
+- 핸드오프 파일이 그날 없으면 "오늘은 업로드할 새 핸드오프가 없음"만 보고하고 끝낸다(에피소드를 임의로 다시
+  올리거나 지어내지 않는다).
+
 ## 대사 구간 러프 립싱크(입 2~3단계 순환) — 검증된 예시 (2026-11-05, 사용자 승인)
 - 대화 세션에서 작게 샘플 렌더로 확인·승인받은 기능이다(루트 CLAUDE.md "샘플 → 컨펌 → 전체 진행" 규칙 적용 사례).
   **정밀 립싱크가 아니라 "말하는 중 vs 쉬는 중"만 입 크기 3단계(닫힘/작게 벌림/크게 벌림)로 순환시키는 러프한
