@@ -1,0 +1,29 @@
+{
+  "episode": 14,
+  "title": "Almond Pear Toast",
+  "verified_at": "2026-11-05T04:44:41Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "ivopJ2UoEuM",
+      "video_url": "https://youtu.be/ivopJ2UoEuM",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "AlmondPearToast_KO.mp4",
+      "sha256": "90b61d727811a0a32c7e94dc7ebdb6ae5dc93d8eb96e276296f9d092c1078d45"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "UPy54JySEXI",
+      "video_url": "https://youtu.be/UPy54JySEXI",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "AlmondPearToast_EN.mp4",
+      "sha256": "ad959c29614e5cb1aed75519f3907f1c4e1726c53edfcef32793e2333019d3ad"
+    }
+  ]
+}

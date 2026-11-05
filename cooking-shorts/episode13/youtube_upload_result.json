@@ -1,0 +1,29 @@
+{
+  "episode": 13,
+  "title": "Kidney Bean Lemon Salad",
+  "verified_at": "2026-11-05T04:44:41Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "MxlvBiExs60",
+      "video_url": "https://youtu.be/MxlvBiExs60",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "KidneyBeanLemonSalad_KO.mp4",
+      "sha256": "a9aae05cb3ab75796a1e8f402cde8e1bd7cf7064244c210759332c4127d3ebb7"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "XCbB-Uv-lVg",
+      "video_url": "https://youtu.be/XCbB-Uv-lVg",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "KidneyBeanLemonSalad_EN.mp4",
+      "sha256": "9c92ee418ef2fabb6a26c33bbb9c801f65284306b3ea2e47420be7b561401eec"
+    }
+  ]
+}
