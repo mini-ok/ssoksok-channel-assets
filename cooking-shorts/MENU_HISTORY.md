@@ -79,3 +79,8 @@
 - 13편 근육 쉐프 / 강낭콩 레몬 샐러드. 주재료 강낭콩·오이. 비가열 콩샐러드는 2편 이후 10편을 사이에 두어 재사용. 통조림 강낭콩 1US cup의 칼륨 약607mg, 미국 표시DV4700mg의 약13%; 다른 재료 제외, 제품·헹굼 차이. 근육 수축·신경 신호의 정상 기능 설명. NIH ODS Potassium 확인. 음악 nimble_motifs.mp3. 재등장24편부터.
 - 14편 면역 쉐프 / 아몬드 배 토스트. 주재료 아몬드·배·통밀빵. 스프레드 과일 토스트는3편 이후10편을 사이에 둠. 볶은 아몬드28g의 비타민E 약6.8mg, 표시DV15mg의 약45%; 빵·배 제외. 정상 면역·항산화 기능 설명. NIH ODS Vitamin E 확인. 음악 buant_pop_groove.mp3. 재등장25편부터.
 - 소스 저장·Actions 시작: https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41965166211 . 아직 완료 아님. 유튜브 업로드 미실행.
+
+
+13·14편 한영 총4영상 클라우드 제작·정식 Release 게시 완료(2026-11-05). 성공 실행 https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41965166211 . 두 Release의 한영 MP4·자막·레시피·검수·업로드 자산 각12개 확인. 전체 디코딩·음량·음성·음악차이·레시피 고정 자동검수 통과. 직접 시청·청취/실물 요리 검수는 수행하지 않음. 유튜브 업로드 미실행. 입모양변화는 이번 실행 시작 후 추가된 규칙이므로 다음 새 회차부터 적용.
+- 13편 https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0013
+- 14편 https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0014
