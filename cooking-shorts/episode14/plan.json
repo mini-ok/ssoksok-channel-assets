@@ -1,0 +1,90 @@
+{
+  "episode": 14,
+  "dish": "아몬드 배 토스트",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "볶은 무염 아몬드",
+    "통밀빵"
+  ],
+  "cooking_style": "견과 스프레드 과일 토스트; 3편 이후 10편을 사이에 둔 스타일 재사용",
+  "global_accessibility": {
+    "common_ingredients": [
+      "볶은 무염 아몬드",
+      "통밀빵",
+      "배",
+      "물"
+    ],
+    "substitutions": [
+      "다른 제품 사용 시 영양 재계산; 해외에서 구할 기본 식재료"
+    ],
+    "basic_tools": [
+      "믹서",
+      "토스터",
+      "칼",
+      "도마"
+    ]
+  },
+  "organ_rotation_note": "눈 다음 면역→뼈; 최근 주재료·스타일과 중복 없음",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+  "reason_for_chef": "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/",
+      "title": "NIH ODS Vitamin E",
+      "checked_at": "2026-11-05",
+      "supported_claim": "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+      "conditions_and_limits": "정상 영양 기능 설명; 질병 치료·예방 보장 아님; 재료 표준값 추정"
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+    "context": "화면 수치는 볶은 아몬드만 계산했어요. 많이 먹는다고 면역력이 계속 높아지는 건 아니에요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 E",
+    "recipe_amount_mg": 6.8,
+    "per_serving_amount_mg": 6.8,
+    "servings": 1,
+    "daily_reference_mg": 15,
+    "percent_of_daily_reference": 45.33333333333333,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상; 개인 RDA와 구분",
+    "basis": "볶은 아몬드 1oz 약28g만; 빵·배 제외; 제품별 차이",
+    "calculation": "NIH ODS source serving=6.8mg; 6.8/15*100=45.33333333333333%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-05",
+    "uncertainty_note": "재료 표준값 추정; 완성품 실측·흡수량·질병 예방률 아님",
+    "display": "볶은 아몬드 28g / 비타민 E 약 6.8mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리 조건별 차이 / 출처: 미국 NIH ODS / 비타민 E 약 6.8mg / 미국 표시 DV의 약 45% / 표시 기준 15mg · 개인 RDA 아님 / 면역력 향상률·질병 예방률 아님 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 25,
+  "menu_overlap_review": "견과 스프레드 과일 토스트; 3편 이후 10편을 사이에 둔 스타일 재사용"
+}

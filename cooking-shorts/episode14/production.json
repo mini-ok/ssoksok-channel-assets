@@ -1,0 +1,255 @@
+{
+  "character": "immune",
+  "voice": "Kore",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "아몬드 배 토스트",
+  "dish_en": "Almond Pear Toast",
+  "slug": "AlmondPearToast",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "비타민 E와 정상 기능",
+  "source_en": "Vitamin E and Normal Function",
+  "time_ko": "1인분 / 약15분",
+  "time_en": "1 serving / about 15 minutes",
+  "ingredients": [
+    [
+      "볶은 무염 아몬드",
+      "Dry roasted almonds",
+      "28g",
+      "28 g",
+      "almond"
+    ],
+    [
+      "통밀빵",
+      "Whole wheat bread",
+      "1장",
+      "1 slice",
+      "bread"
+    ],
+    [
+      "배",
+      "Pear",
+      "50g",
+      "50 g",
+      "pear"
+    ],
+    [
+      "물",
+      "Water",
+      "1~2작은술",
+      "1–2 tsp",
+      "water"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "01 재료 준비",
+    "02 맛있게 준비",
+    "03 마무리 조리",
+    "완성해서 한 그릇",
+    "이 요리를 고른 이유",
+    "수치의 기준과 조건",
+    "쉐프의 한마디",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Meet Today's Chef",
+    "Ingredients and Amounts",
+    "01 Prepare Ingredients",
+    "02 Build the Flavor",
+    "03 Finish the Dish",
+    "Ready to Serve",
+    "Why This Chef Chose It",
+    "Numbers and Conditions",
+    "A Word from the Chef",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "면역 쉐프입니다! 정상 면역 기능에 필요한 비타민 이를 아몬드로 챙겨요!",
+    "볶은 무염 아몬드 이십팔 그램, 통밀빵 한 장, 배 오십 그램과 물 조금이에요.",
+    "아몬드를 작은 믹서로 곱게 갈아요. 물을 조금씩 더해 촉촉한 스프레드로 만들어요.",
+    "배는 씻어 씨를 빼고 얇게 썰어요. 빵은 토스터에서 가볍게 구워요.",
+    "구운 빵에 아몬드 스프레드를 골고루 바르고 배 조각을 차례로 올려요!",
+    "먹기 편하게 잘라 바로 먹어요. 아몬드는 큰 조각 없이 곱게 갈아주세요.",
+    "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+    "화면 수치는 볶은 아몬드만 계산했어요. 많이 먹는다고 면역력이 계속 높아지는 건 아니에요.",
+    "오늘 보안 암호는 고소함! 배 조각은 출입 허가입니다!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune here! Almonds bring vitamin E for normal immune function!",
+    "Use twenty eight grams of dry roasted unsalted almonds, one slice of whole wheat bread, fifty grams of pear, and a little water.",
+    "Grind almonds finely in a small blender. Add water gradually to make a moist spread.",
+    "Wash, core and thinly slice the pear. Lightly toast the bread in a toaster.",
+    "Spread the almond mixture evenly on the toast. Arrange the pear slices on top!",
+    "Cut into manageable pieces and eat promptly. Grind almonds finely without large chunks.",
+    "Vitamin E helps protect cells from oxidative damage and is involved in normal immune function. Almonds provide this nutrient.",
+    "The figures count only dry roasted almonds. Eating more does not mean your immune system keeps getting stronger.",
+    "Today's security password is crunch! Pear slices are cleared for entry!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "볶은 무염 아몬드 28g / 통밀빵 1장",
+    "배 50g / 물 1~2작은술",
+    "1 아몬드를 곱게 갈고 물을 조금씩 넣는다.",
+    "2 배는 씻어 씨 빼고 얇게 썬다.",
+    "3 빵을 가볍게 굽고 아몬드를 바른다.",
+    "4 배를 올리고 잘라 바로 먹는다.",
+    "견과·밀 알레르기 확인 / 큰 아몬드 조각 없게"
+  ],
+  "recipe_en": [
+    "Dry roasted almonds 28 g / whole wheat bread 1 slice",
+    "Pear 50 g / water 1–2 tsp",
+    "1 Grind almonds finely; add water gradually.",
+    "2 Wash, core and thinly slice pear.",
+    "3 Lightly toast bread; spread almond mixture.",
+    "4 Top with pear, cut and eat promptly.",
+    "Check nut and wheat allergies / no large nut pieces"
+  ],
+  "health_focus": "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+  "main_ingredients": [
+    "볶은 무염 아몬드",
+    "통밀빵"
+  ],
+  "cooking_style": "견과 스프레드 과일 토스트; 3편 이후 10편을 사이에 둔 스타일 재사용",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 E",
+    "recipe_amount_mg": 6.8,
+    "per_serving_amount_mg": 6.8,
+    "servings": 1,
+    "daily_reference_mg": 15,
+    "percent_of_daily_reference": 45.33333333333333,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상; 개인 RDA와 구분",
+    "basis": "볶은 아몬드 1oz 약28g만; 빵·배 제외; 제품별 차이",
+    "calculation": "NIH ODS source serving=6.8mg; 6.8/15*100=45.33333333333333%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-05",
+    "uncertainty_note": "재료 표준값 추정; 완성품 실측·흡수량·질병 예방률 아님",
+    "display": "볶은 아몬드 28g / 비타민 E 약 6.8mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리 조건별 차이 / 출처: 미국 NIH ODS / 비타민 E 약 6.8mg / 미국 표시 DV의 약 45% / 표시 기준 15mg · 개인 RDA 아님 / 면역력 향상률·질병 예방률 아님 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "볶은 아몬드 28g",
+      "비타민 E 약 6.8mg",
+      "해당 재료만 계산 · 다른 재료 제외",
+      "표준값 추정 · 제품·조리 조건별 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 E 약 6.8mg",
+      "미국 표시 DV의 약 45%",
+      "표시 기준 15mg · 개인 RDA 아님",
+      "면역력 향상률·질병 예방률 아님",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Dry roasted almonds: 28 g",
+      "About 6.8 mg Vitamin E",
+      "Ingredient contribution only / other foods excluded",
+      "Standard estimate / products and preparation vary",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 6.8 mg Vitamin E",
+      "About 45% of the U.S. Daily Value",
+      "Labeling DV: 15 mg / not individual RDA",
+      "Not an immune improvement or prevention rate",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 14,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet Today's Chef",
+      "text_ko": "면역 쉐프입니다! 정상 면역 기능에 필요한 비타민 이를 아몬드로 챙겨요!",
+      "text_en": "Chef Immune here! Almonds bring vitamin E for normal immune function!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients and Amounts",
+      "text_ko": "볶은 무염 아몬드 이십팔 그램, 통밀빵 한 장, 배 오십 그램과 물 조금이에요.",
+      "text_en": "Use twenty eight grams of dry roasted unsalted almonds, one slice of whole wheat bread, fifty grams of pear, and a little water.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 재료 준비",
+      "title_en": "01 Prepare Ingredients",
+      "text_ko": "아몬드를 작은 믹서로 곱게 갈아요. 물을 조금씩 더해 촉촉한 스프레드로 만들어요.",
+      "text_en": "Grind almonds finely in a small blender. Add water gradually to make a moist spread.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 맛있게 준비",
+      "title_en": "02 Build the Flavor",
+      "text_ko": "배는 씻어 씨를 빼고 얇게 썰어요. 빵은 토스터에서 가볍게 구워요.",
+      "text_en": "Wash, core and thinly slice the pear. Lightly toast the bread in a toaster.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 마무리 조리",
+      "title_en": "03 Finish the Dish",
+      "text_ko": "구운 빵에 아몬드 스프레드를 골고루 바르고 배 조각을 차례로 올려요!",
+      "text_en": "Spread the almond mixture evenly on the toast. Arrange the pear slices on top!",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "완성해서 한 그릇",
+      "title_en": "Ready to Serve",
+      "text_ko": "먹기 편하게 잘라 바로 먹어요. 아몬드는 큰 조각 없이 곱게 갈아주세요.",
+      "text_en": "Cut into manageable pieces and eat promptly. Grind almonds finely without large chunks.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Chef Chose It",
+      "text_ko": "비타민 이는 세포를 산화 손상으로부터 보호하고 정상 면역 기능에 관여해요. 아몬드는 그 공급원이에요.",
+      "text_en": "Vitamin E helps protect cells from oxidative damage and is involved in normal immune function. Almonds provide this nutrient.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치의 기준과 조건",
+      "title_en": "Numbers and Conditions",
+      "text_ko": "화면 수치는 볶은 아몬드만 계산했어요. 많이 먹는다고 면역력이 계속 높아지는 건 아니에요.",
+      "text_en": "The figures count only dry roasted almonds. Eating more does not mean your immune system keeps getting stronger.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "오늘 보안 암호는 고소함! 배 조각은 출입 허가입니다!",
+      "text_en": "Today's security password is crunch! Pear slices are cleared for entry!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 아몬드 배 토스트 #Shorts",
+  "upload_title_en": "Chef Immune's Almond Pear Toast #Shorts",
+  "health_description_en": "Vitamin E helps protect cells from oxidative damage and is involved in normal immune function. Almonds provide this nutrient. The figures count only dry roasted almonds. Eating more does not mean your immune system keeps getting stronger."
+}

@@ -1,0 +1,90 @@
+{
+  "episode": 13,
+  "dish": "강낭콩 레몬 샐러드",
+  "organ": "근육",
+  "chef": "근육 쉐프",
+  "main_ingredients": [
+    "통조림 강낭콩",
+    "오이"
+  ],
+  "cooking_style": "비가열 콩 샐러드; 2편 이후 10편을 사이에 둔 스타일 재사용",
+  "global_accessibility": {
+    "common_ingredients": [
+      "통조림 강낭콩",
+      "오이",
+      "레몬즙",
+      "올리브유"
+    ],
+    "substitutions": [
+      "다른 제품 사용 시 영양 재계산; 해외에서 구할 기본 식재료"
+    ],
+    "basic_tools": [
+      "볼",
+      "칼",
+      "도마",
+      "숟가락"
+    ]
+  },
+  "organ_rotation_note": "눈 다음 면역→뼈; 최근 주재료·스타일과 중복 없음",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+  "reason_for_chef": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+      "title": "NIH ODS Potassium",
+      "checked_at": "2026-11-05",
+      "supported_claim": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+      "conditions_and_limits": "정상 영양 기능 설명; 질병 치료·예방 보장 아님; 재료 표준값 추정"
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+    "context": "수치는 통조림 콩의 표준값이에요. 신장질환이나 칼륨 제한이 있다면 개인 식사 지침을 따라야 해요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼륨",
+    "recipe_amount_mg": 607,
+    "per_serving_amount_mg": 607,
+    "servings": 1,
+    "daily_reference_mg": 4700,
+    "percent_of_daily_reference": 12.914893617021276,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상; 개인 RDA와 구분",
+    "basis": "통조림 강낭콩 1 US cup 표준값; 다른 재료 제외; 제품·헹굼에 따라 차이",
+    "calculation": "NIH ODS source serving=607mg; 607/4700*100=12.914893617021276%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-05",
+    "uncertainty_note": "재료 표준값 추정; 완성품 실측·흡수량·질병 예방률 아님",
+    "display": "통조림 강낭콩 1 미국컵 / 칼륨 약 607mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리 조건별 차이 / 출처: 미국 NIH ODS / 칼륨 약 607mg / 미국 표시 DV의 약 13% / 표시 기준 4700mg · 개인 RDA 아님 / 칼륨 제한 시 개인 식사 지침 준수 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 24,
+  "menu_overlap_review": "비가열 콩 샐러드; 2편 이후 10편을 사이에 둔 스타일 재사용"
+}

@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 E",
+  "recipe_amount_mg": 6.8,
+  "per_serving_amount_mg": 6.8,
+  "servings": 1,
+  "daily_reference_mg": 15,
+  "percent_of_daily_reference": 45.33333333333333,
+  "reference_population": "미국 FDA 표시 DV 성인·4세 이상; 개인 RDA와 구분",
+  "basis": "볶은 아몬드 1oz 약28g만; 빵·배 제외; 제품별 차이",
+  "calculation": "NIH ODS source serving=6.8mg; 6.8/15*100=45.33333333333333%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-05",
+  "uncertainty_note": "재료 표준값 추정; 완성품 실측·흡수량·질병 예방률 아님",
+  "display": "볶은 아몬드 28g / 비타민 E 약 6.8mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리 조건별 차이 / 출처: 미국 NIH ODS / 비타민 E 약 6.8mg / 미국 표시 DV의 약 45% / 표시 기준 15mg · 개인 RDA 아님 / 면역력 향상률·질병 예방률 아님 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

@@ -1,0 +1,255 @@
+{
+  "character": "muscle",
+  "voice": "Puck",
+  "chef_ko": "근육 쉐프",
+  "chef_en": "Chef Muscle",
+  "dish_ko": "강낭콩 레몬 샐러드",
+  "dish_en": "Kidney Bean Lemon Salad",
+  "slug": "KidneyBeanLemonSalad",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "칼륨와 정상 기능",
+  "source_en": "Potassium and Normal Function",
+  "time_ko": "1인분 / 약15분",
+  "time_en": "1 serving / about 15 minutes",
+  "ingredients": [
+    [
+      "통조림 강낭콩",
+      "Canned kidney beans",
+      "1 미국컵",
+      "1 US cup",
+      "bean"
+    ],
+    [
+      "오이",
+      "Cucumber",
+      "50g",
+      "50 g",
+      "cucumber"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "1큰술",
+      "1 tbsp",
+      "lemon"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "1작은술",
+      "1 tsp",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "01 재료 준비",
+    "02 맛있게 준비",
+    "03 마무리 조리",
+    "완성해서 한 그릇",
+    "이 요리를 고른 이유",
+    "수치의 기준과 조건",
+    "쉐프의 한마디",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Meet Today's Chef",
+    "Ingredients and Amounts",
+    "01 Prepare Ingredients",
+    "02 Build the Flavor",
+    "03 Finish the Dish",
+    "Ready to Serve",
+    "Why This Chef Chose It",
+    "Numbers and Conditions",
+    "A Word from the Chef",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "근육 쉐프 출동! 근육 수축에 필요한 칼륨을 강낭콩으로 챙겨요!",
+    "바로 먹는 통조림 강낭콩 한 미국컵, 오이 오십 그램, 레몬즙과 기름을 준비해요.",
+    "오이는 씻어서 작게 썰어요. 콩은 바로 먹을 수 있는 통조림 제품을 사용해요.",
+    "볼에 강낭콩과 오이를 담고 레몬즙 한 큰술, 올리브유 한 작은술을 넣어요.",
+    "숟가락으로 아래에서 위로 살살 섞어요. 콩이 으깨지지 않게 가볍게 버무려요!",
+    "한 그릇에 담으면 완성! 소금은 더하지 않고 레몬의 산뜻한 맛을 살려요.",
+    "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+    "수치는 통조림 콩의 표준값이에요. 신장질환이나 칼륨 제한이 있다면 개인 식사 지침을 따라야 해요.",
+    "근육도 힘 조절! 콩까지 으깨면 샐러드가 삐칩니다!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Muscle reporting! Kidney beans bring potassium for normal muscle contraction!",
+    "Prepare one US cup of ready to eat canned kidney beans, fifty grams of cucumber, lemon juice, and oil.",
+    "Wash and dice cucumber. Use ready to eat canned kidney beans, not raw dried beans.",
+    "Put beans and cucumber in a bowl. Add one tablespoon of lemon juice and one teaspoon of olive oil.",
+    "Lift and fold gently with a spoon. Toss lightly so the beans keep their shape!",
+    "Serve in one bowl. Skip added salt and let the fresh lemon flavor shine.",
+    "Potassium is needed for nerve signals and normal muscle contraction. Kidney beans can add potassium to a varied diet.",
+    "The figures use a standard canned bean value. Follow personal dietary advice for kidney disease or a potassium restriction.",
+    "Muscle needs a gentle touch! Do not turn this salad into mashed beans!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "통조림 강낭콩 1 미국컵 / 오이 50g",
+    "레몬즙 1큰술 / 올리브유 1작은술",
+    "1 오이를 씻고 잘게 썬다.",
+    "2 볼에 바로 먹는 통조림 콩과 오이를 넣는다.",
+    "3 레몬즙·기름 넣고 살살 버무린다.",
+    "4 한 그릇에 담아 바로 먹는다.",
+    "미국컵 약240mL / 콩 제품·헹굼별 함량 차이"
+  ],
+  "recipe_en": [
+    "Ready to eat canned beans 1 US cup / cucumber 50 g",
+    "Lemon juice 1 tbsp / olive oil 1 tsp",
+    "1 Wash and dice cucumber.",
+    "2 Put canned beans and cucumber in a bowl.",
+    "3 Add lemon and oil; toss gently.",
+    "4 Serve one portion and eat promptly.",
+    "US cup about 240 mL / product and rinsing vary"
+  ],
+  "health_focus": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+  "main_ingredients": [
+    "통조림 강낭콩",
+    "오이"
+  ],
+  "cooking_style": "비가열 콩 샐러드; 2편 이후 10편을 사이에 둔 스타일 재사용",
+  "source_url": "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼륨",
+    "recipe_amount_mg": 607,
+    "per_serving_amount_mg": 607,
+    "servings": 1,
+    "daily_reference_mg": 4700,
+    "percent_of_daily_reference": 12.914893617021276,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상; 개인 RDA와 구분",
+    "basis": "통조림 강낭콩 1 US cup 표준값; 다른 재료 제외; 제품·헹굼에 따라 차이",
+    "calculation": "NIH ODS source serving=607mg; 607/4700*100=12.914893617021276%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-05",
+    "uncertainty_note": "재료 표준값 추정; 완성품 실측·흡수량·질병 예방률 아님",
+    "display": "통조림 강낭콩 1 미국컵 / 칼륨 약 607mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리 조건별 차이 / 출처: 미국 NIH ODS / 칼륨 약 607mg / 미국 표시 DV의 약 13% / 표시 기준 4700mg · 개인 RDA 아님 / 칼륨 제한 시 개인 식사 지침 준수 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "통조림 강낭콩 1 미국컵",
+      "칼륨 약 607mg",
+      "해당 재료만 계산 · 다른 재료 제외",
+      "표준값 추정 · 제품·조리 조건별 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "칼륨 약 607mg",
+      "미국 표시 DV의 약 13%",
+      "표시 기준 4700mg · 개인 RDA 아님",
+      "칼륨 제한 시 개인 식사 지침 준수",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Canned kidney beans: 1 US cup",
+      "About 607 mg Potassium",
+      "Ingredient contribution only / other foods excluded",
+      "Standard estimate / products and preparation vary",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 607 mg Potassium",
+      "About 13% of the U.S. Daily Value",
+      "Labeling DV: 4700 mg / not individual RDA",
+      "Follow personal advice for potassium restrictions",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 13,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet Today's Chef",
+      "text_ko": "근육 쉐프 출동! 근육 수축에 필요한 칼륨을 강낭콩으로 챙겨요!",
+      "text_en": "Chef Muscle reporting! Kidney beans bring potassium for normal muscle contraction!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients and Amounts",
+      "text_ko": "바로 먹는 통조림 강낭콩 한 미국컵, 오이 오십 그램, 레몬즙과 기름을 준비해요.",
+      "text_en": "Prepare one US cup of ready to eat canned kidney beans, fifty grams of cucumber, lemon juice, and oil.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "01 재료 준비",
+      "title_en": "01 Prepare Ingredients",
+      "text_ko": "오이는 씻어서 작게 썰어요. 콩은 바로 먹을 수 있는 통조림 제품을 사용해요.",
+      "text_en": "Wash and dice cucumber. Use ready to eat canned kidney beans, not raw dried beans.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "02 맛있게 준비",
+      "title_en": "02 Build the Flavor",
+      "text_ko": "볼에 강낭콩과 오이를 담고 레몬즙 한 큰술, 올리브유 한 작은술을 넣어요.",
+      "text_en": "Put beans and cucumber in a bowl. Add one tablespoon of lemon juice and one teaspoon of olive oil.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "03 마무리 조리",
+      "title_en": "03 Finish the Dish",
+      "text_ko": "숟가락으로 아래에서 위로 살살 섞어요. 콩이 으깨지지 않게 가볍게 버무려요!",
+      "text_en": "Lift and fold gently with a spoon. Toss lightly so the beans keep their shape!",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "완성해서 한 그릇",
+      "title_en": "Ready to Serve",
+      "text_ko": "한 그릇에 담으면 완성! 소금은 더하지 않고 레몬의 산뜻한 맛을 살려요.",
+      "text_en": "Serve in one bowl. Skip added salt and let the fresh lemon flavor shine.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Chef Chose It",
+      "text_ko": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 강낭콩으로 식사에 칼륨을 더할 수 있어요.",
+      "text_en": "Potassium is needed for nerve signals and normal muscle contraction. Kidney beans can add potassium to a varied diet.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치의 기준과 조건",
+      "title_en": "Numbers and Conditions",
+      "text_ko": "수치는 통조림 콩의 표준값이에요. 신장질환이나 칼륨 제한이 있다면 개인 식사 지침을 따라야 해요.",
+      "text_en": "The figures use a standard canned bean value. Follow personal dietary advice for kidney disease or a potassium restriction.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "근육도 힘 조절! 콩까지 으깨면 샐러드가 삐칩니다!",
+      "text_en": "Muscle needs a gentle touch! Do not turn this salad into mashed beans!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "근육 쉐프의 강낭콩 레몬 샐러드 #Shorts",
+  "upload_title_en": "Chef Muscle's Kidney Bean Lemon Salad #Shorts",
+  "health_description_en": "Potassium is needed for nerve signals and normal muscle contraction. Kidney beans can add potassium to a varied diet. The figures use a standard canned bean value. Follow personal dietary advice for kidney disease or a potassium restriction."
+}
