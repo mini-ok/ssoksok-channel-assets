@@ -84,3 +84,9 @@
 13·14편 한영 총4영상 클라우드 제작·정식 Release 게시 완료(2026-11-05). 성공 실행 https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/41965166211 . 두 Release의 한영 MP4·자막·레시피·검수·업로드 자산 각12개 확인. 전체 디코딩·음량·음성·음악차이·레시피 고정 자동검수 통과. 직접 시청·청취/실물 요리 검수는 수행하지 않음. 유튜브 업로드 미실행. 입모양변화는 이번 실행 시작 후 추가된 규칙이므로 다음 새 회차부터 적용.
 - 13편 https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0013
 - 14편 https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0014
+
+
+## 15·16편 제작 완료 (2026-11-06)
+- 15편 장 쉐프 / 호박 보리죽. 주재료 보리·호박, 곡물죽은 1편 이후 10편 이상 경과. 재사용 26편부터. 익힌 찰보리 120mL의 식이섬유 약 3g, FDA 표시 DV 28g의 약 11%. 호박 제외. 출처 미국 식생활 지침 Food Sources of Fiber 및 NIDDK. 음악 buoyant_kitchen_groove.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0015
+- 16편 근육 쉐프 / 레몬 닭가슴살 그릴구이. 주재료 닭가슴살, 그릴 팬 양면 굽기와 온도계 확인. 재사용 27편부터. 익힌 닭가슴살 약 85g의 칼륨 약 332mg, FDA 표시 DV 4700mg의 약 7%. 다른 재료 제외. 출처 NIH ODS Potassium 및 FoodSafety.gov. 음악 nimble_motifs.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0016
+- 한영 네 MP4, 자막·레시피·검수·업로드 자산 각 12개 게시. MP4 네 해시가 Actions 검수 로그와 일치. 전체 디코딩·음성·음량·음악·레시피 고정과 발화에 연동된 3단계 입모양 및 해설·무음 정지 자동검수 통과. 직접 시청·청취 및 실물 조리 검수는 수행하지 않음. https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/42148321362
