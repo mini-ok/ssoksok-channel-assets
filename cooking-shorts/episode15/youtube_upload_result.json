@@ -1,0 +1,29 @@
+{
+  "episode": 15,
+  "title": "Pumpkin Barley Porridge",
+  "verified_at": "2026-11-06T09:06:46Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "-WmBDqrocDI",
+      "video_url": "https://youtu.be/-WmBDqrocDI",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "PumpkinBarleyPorridge_KO.mp4",
+      "sha256": "9ac3c3ead8d58e557f976bba28be4647014c3f474269c7f3291261983408f594"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "hxEP6Qv1Flo",
+      "video_url": "https://youtu.be/hxEP6Qv1Flo",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "PumpkinBarleyPorridge_EN.mp4",
+      "sha256": "f95cc8ae90101e6a9d2ff49faf022bf4a4a9bfae98dd75c9d4e5b81e62afc5ce"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "episode": 16,
+  "title": "Lemon Grilled Chicken Breast",
+  "verified_at": "2026-11-06T09:06:46Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "oIak_FQ3f3A",
+      "video_url": "https://youtu.be/oIak_FQ3f3A",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LemonGrilledChickenBreast_KO.mp4",
+      "sha256": "b9f8f80c54c8b1111aa0954e34efbf5cc526587a3dab1084ea8d2a6b44004eae"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "Nmj_tfyRXeI",
+      "video_url": "https://youtu.be/Nmj_tfyRXeI",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LemonGrilledChickenBreast_EN.mp4",
+      "sha256": "3f1c4a3a84cc2e0ca6d367658bff28b8f8862c0dacacf0f2d8476a60d8e47528"
+    }
+  ]
+}
