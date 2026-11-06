@@ -1,0 +1,96 @@
+{
+  "episode": 16,
+  "dish": "레몬 닭가슴살 그릴구이",
+  "organ": "근육",
+  "chef": "근육 쉐프",
+  "main_ingredients": [
+    "닭가슴살"
+  ],
+  "cooking_style": "그릴 팬에서 통 닭가슴살 양면 직화형 굽기. 5편의 반죽 전, 7편의 오븐구이와 구분.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "생 닭가슴살",
+      "레몬즙",
+      "식용유"
+    ],
+    "substitutions": [
+      "가정용 그릴 사용 가능. 구운 뼈 없는 가슴살 85g 기준 유지."
+    ],
+    "basic_tools": [
+      "그릴 팬",
+      "집게",
+      "식품 온도계"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 장, 근육 순서",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+  "reason_for_chef": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+      "title": "NIH ODS potassium",
+      "checked_at": "2026-11-06",
+      "supported_claim": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+      "conditions_and_limits": "정상 기능을 설명하는 식품 영양 정보. 치료·예방 효과나 흡수량 보장 아님. 표준 재료 값의 추정치."
+    },
+    {
+      "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+      "title": "FoodSafety.gov safe minimum temperature",
+      "checked_at": "2026-11-06",
+      "supported_claim": "가금류 중심 온도 74°C",
+      "conditions_and_limits": "가장 두꺼운 부분에서 온도계로 확인"
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+    "context": "화면 수치는 익힌 고기 기준이에요. 칼륨을 제한해야 한다면 개인 식사 지침을 따라요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼륨",
+    "recipe_amount": "332 mg",
+    "per_serving_amount": "332 mg",
+    "servings": 1,
+    "daily_reference_amount": "4700 mg",
+    "percent_of_daily_reference": 7.0638297872340425,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "뼈 없는 그릴 구이 닭가슴살 3oz 약85g 익힌 고기만. 레몬즙과 기름 제외. 생고기 120g은 준비 예시이며 수율은 달라짐.",
+    "calculation": "Source reference serving: 332 mg; 332/4700 × 100 = 7.06%, rounded to 7%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+      "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-06",
+    "uncertainty_note": "재료 표준값 추정. 완성품 실측치·흡수량·질병 예방률 아님.",
+    "display": "구운 닭가슴살 85g / 칼륨 약 332mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리별 차이 / 출처: 미국 NIH ODS / 칼륨 약 332mg / 미국 표시 DV의 약 7% / 표시 기준 4700mg · 개인 권장량 아님 / 칼륨 제한 시 개인 식사 지침 준수 / 출처: FDA · 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 27,
+  "menu_overlap_review": "그릴 팬에서 통 닭가슴살 양면 직화형 굽기. 5편의 반죽 전, 7편의 오븐구이와 구분."
+}

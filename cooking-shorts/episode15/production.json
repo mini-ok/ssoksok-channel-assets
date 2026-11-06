@@ -1,0 +1,250 @@
+{
+  "character": "gut",
+  "voice": "Puck",
+  "chef_ko": "장 쉐프",
+  "chef_en": "Chef Gut",
+  "dish_ko": "호박 보리죽",
+  "dish_en": "Pumpkin Barley Porridge",
+  "slug": "PumpkinBarleyPorridge",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "미국 식생활 지침 · NIDDK",
+  "source_en": "U.S. Dietary Guidelines / NIDDK",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "익힌 찰보리",
+      "Cooked pearled barley",
+      "120mL",
+      "½ US cup (about 120 mL)",
+      "barley"
+    ],
+    [
+      "익힌 호박",
+      "Cooked pumpkin",
+      "120g",
+      "120 g",
+      "pumpkin"
+    ],
+    [
+      "물",
+      "Water",
+      "120mL",
+      "120 mL",
+      "water"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "호박 으깨기",
+    "냄비에 재료 섞기",
+    "약불에서 저어 끓이기",
+    "한 그릇 완성",
+    "이 요리를 고른 이유",
+    "수치의 기준과 조건",
+    "쉐프의 한마디",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Meet Today's Chef",
+    "Ingredients and Amounts",
+    "Mash the Pumpkin",
+    "Combine in the Saucepan",
+    "Stir and Simmer",
+    "Ready to Serve",
+    "Why This Chef Chose It",
+    "Numbers and Conditions",
+    "A Word from the Chef",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "장 쉐프 출동! 익힌 보리와 호박으로 부드러운 죽을 만들어요!",
+    "익힌 보리와 호박, 물을 준비해요. 정확한 분량은 화면에 있어요.",
+    "껍질을 벗겨 익힌 호박을 포크로 부드럽게 으깨요.",
+    "냄비에 으깬 호박과 물을 넣고 풀어요. 익힌 보리를 넣고 골고루 섞어요.",
+    "끓기 시작하면 불을 낮춰요. 바닥을 저으면서 걸쭉해질 때까지 끓여요.",
+    "따뜻한 그릇에 담아요. 너무 되직하면 물을 조금 더 넣어요.",
+    "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+    "화면 수치는 익힌 보리만 계산했어요. 섬유질은 한꺼번에 늘리기보다 조금씩 늘려요.",
+    "오늘 장 쉐프의 요리 구호는 천천히, 그리고 따뜻하게!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Gut reporting! Let us make a cozy porridge with cooked barley and pumpkin!",
+    "Get cooked barley, cooked pumpkin, and water. The amounts are on screen.",
+    "Mash the cooked, peeled pumpkin with a fork until smooth.",
+    "Put the pumpkin and water in a saucepan. Add the cooked barley and stir well.",
+    "Once it starts bubbling, lower the heat. Stir the bottom and simmer until thick.",
+    "Serve in a bowl. Add a splash of water if the porridge gets too thick.",
+    "Barley adds fiber to a diet that supports regular bowel movements. Drink enough fluids too.",
+    "The number counts only the cooked barley. Increase fiber gradually as your body adjusts.",
+    "Chef Gut says slow and steady makes a cozy bowl!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "익힌 찰보리 120mL / 익힌 호박 120g",
+    "물 120mL",
+    "1 껍질 벗긴 익힌 호박을 으깬다.",
+    "2 냄비에 호박·물·익힌 보리를 넣고 섞는다.",
+    "3 끓으면 약불에서 저어 걸쭉하게 만든다.",
+    "4 그릇에 담고 필요하면 물을 조금 더한다.",
+    "보리는 익힌 상태로 계량 / 보리에는 글루텐이 있음"
+  ],
+  "recipe_en": [
+    "Cooked pearled barley ½ US cup (about 120 mL)",
+    "Cooked pumpkin 120 g / water 120 mL",
+    "1 Mash the cooked, peeled pumpkin.",
+    "2 Stir pumpkin, water and cooked barley in a saucepan.",
+    "3 Bring to a bubble and stir on low until thick.",
+    "4 Serve and add a splash of water if needed.",
+    "Measure barley cooked / barley contains gluten"
+  ],
+  "health_focus": "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+  "main_ingredients": [
+    "보리",
+    "호박"
+  ],
+  "cooking_style": "익힌 보리를 호박 퓌레에 저어 끓이는 곡물죽. 1편 이후 10편 이상 경과.",
+  "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "3 g",
+    "per_serving_amount": "3 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 10.714285714285714,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "익힌 정제 보리 120mL 부피, 원자료 cooked pearled barley ½ US cup의 식이섬유 3.0g. 호박 제외.",
+    "calculation": "Source reference serving: 3 g; 3/28 × 100 = 10.71%, rounded to 11%",
+    "source_urls": [
+      "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-06",
+    "uncertainty_note": "재료 표준값 추정. 완성품 실측치·흡수량·질병 예방률 아님.",
+    "display": "익힌 찰보리 120mL / 식이섬유 약 3g / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리별 차이 / 출처: 미국 식생활 지침 · NIDDK / 식이섬유 약 3g / 미국 표시 DV의 약 11% / 표시 기준 28g · 개인 권장량 아님 / 식이섬유는 조금씩 늘리고 수분 충분히 / 출처: FDA · 미국 식생활 지침 · NIDDK"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 찰보리 120mL",
+      "식이섬유 약 3g",
+      "해당 재료만 계산 · 다른 재료 제외",
+      "표준값 추정 · 제품·조리별 차이",
+      "출처: 미국 식생활 지침 · NIDDK"
+    ],
+    [
+      "식이섬유 약 3g",
+      "미국 표시 DV의 약 11%",
+      "표시 기준 28g · 개인 권장량 아님",
+      "식이섬유는 조금씩 늘리고 수분 충분히",
+      "출처: FDA · 미국 식생활 지침 · NIDDK"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Cooked pearled barley: ½ US cup (about 120 mL)",
+      "About 3 g Dietary fiber",
+      "Ingredient contribution only",
+      "Standard estimate / preparation varies",
+      "Source: U.S. Dietary Guidelines / NIDDK"
+    ],
+    [
+      "About 3 g Dietary fiber",
+      "About 11% of the U.S. Daily Value",
+      "Labeling DV: 28 g / not individual intake advice",
+      "Increase fiber gradually and drink enough fluids",
+      "Source: FDA / U.S. Dietary Guidelines / NIDDK"
+    ]
+  ],
+  "episode": 15,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet Today's Chef",
+      "text_ko": "장 쉐프 출동! 익힌 보리와 호박으로 부드러운 죽을 만들어요!",
+      "text_en": "Chef Gut reporting! Let us make a cozy porridge with cooked barley and pumpkin!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients and Amounts",
+      "text_ko": "익힌 보리와 호박, 물을 준비해요. 정확한 분량은 화면에 있어요.",
+      "text_en": "Get cooked barley, cooked pumpkin, and water. The amounts are on screen.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "호박 으깨기",
+      "title_en": "Mash the Pumpkin",
+      "text_ko": "껍질을 벗겨 익힌 호박을 포크로 부드럽게 으깨요.",
+      "text_en": "Mash the cooked, peeled pumpkin with a fork until smooth.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "냄비에 재료 섞기",
+      "title_en": "Combine in the Saucepan",
+      "text_ko": "냄비에 으깬 호박과 물을 넣고 풀어요. 익힌 보리를 넣고 골고루 섞어요.",
+      "text_en": "Put the pumpkin and water in a saucepan. Add the cooked barley and stir well.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "약불에서 저어 끓이기",
+      "title_en": "Stir and Simmer",
+      "text_ko": "끓기 시작하면 불을 낮춰요. 바닥을 저으면서 걸쭉해질 때까지 끓여요.",
+      "text_en": "Once it starts bubbling, lower the heat. Stir the bottom and simmer until thick.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "한 그릇 완성",
+      "title_en": "Ready to Serve",
+      "text_ko": "따뜻한 그릇에 담아요. 너무 되직하면 물을 조금 더 넣어요.",
+      "text_en": "Serve in a bowl. Add a splash of water if the porridge gets too thick.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Chef Chose It",
+      "text_ko": "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+      "text_en": "Barley adds fiber to a diet that supports regular bowel movements. Drink enough fluids too.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치의 기준과 조건",
+      "title_en": "Numbers and Conditions",
+      "text_ko": "화면 수치는 익힌 보리만 계산했어요. 섬유질은 한꺼번에 늘리기보다 조금씩 늘려요.",
+      "text_en": "The number counts only the cooked barley. Increase fiber gradually as your body adjusts.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "오늘 장 쉐프의 요리 구호는 천천히, 그리고 따뜻하게!",
+      "text_en": "Chef Gut says slow and steady makes a cozy bowl!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "장 쉐프의 호박 보리죽 #Shorts",
+  "upload_title_en": "Chef Gut's Pumpkin Barley Porridge #Shorts",
+  "health_description_en": "Barley adds fiber to a diet that supports regular bowel movements. Drink enough fluids too. The number counts only the cooked barley. Increase fiber gradually as your body adjusts."
+}

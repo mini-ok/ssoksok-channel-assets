@@ -1,0 +1,249 @@
+{
+  "character": "muscle",
+  "voice": "Puck",
+  "chef_ko": "근육 쉐프",
+  "chef_en": "Chef Muscle",
+  "dish_ko": "레몬 닭가슴살 그릴구이",
+  "dish_en": "Lemon Grilled Chicken Breast",
+  "slug": "LemonGrilledChickenBreast",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "생 닭가슴살",
+      "Raw chicken breast",
+      "약 120g",
+      "About 120 g",
+      "chicken"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "15g",
+      "15 g",
+      "lemon"
+    ],
+    [
+      "식용유",
+      "Cooking oil",
+      "5g",
+      "5 g",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "두께 맞추고 기름 바르기",
+    "그릴 팬에서 양면 굽기",
+    "중심 온도 확인",
+    "한 그릇 완성",
+    "이 요리를 고른 이유",
+    "수치의 기준과 조건",
+    "쉐프의 한마디",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Meet Today's Chef",
+    "Ingredients and Amounts",
+    "Flatten and Brush with Oil",
+    "Grill Both Sides",
+    "Check Internal Temperature",
+    "Ready to Serve",
+    "Why This Chef Chose It",
+    "Numbers and Conditions",
+    "A Word from the Chef",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "근육 쉐프 출동! 레몬 향을 더한 닭가슴살을 그릴에 구워요!",
+    "껍질과 뼈를 뺀 닭가슴살, 레몬즙, 식용유를 준비해요.",
+    "닭을 비슷한 두께로 펴고 기름을 얇게 발라요. 생닭을 만진 도구는 따로 씻어요.",
+    "달군 그릴 팬에 닭을 올려요. 집게로 뒤집어 양쪽을 고르게 구워요.",
+    "가장 두꺼운 부분의 중심 온도가 칠십사 도에 도달했는지 온도계로 확인해요.",
+    "깨끗한 접시에 옮겨 레몬즙을 뿌려요. 익힌 고기 팔십오 그램을 한 접시에 담아요.",
+    "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+    "화면 수치는 익힌 고기 기준이에요. 칼륨을 제한해야 한다면 개인 식사 지침을 따라요.",
+    "그릴 줄무늬까지 완성! 오늘 근육 유니폼은 줄무늬입니다!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Muscle reporting! Let us grill a chicken breast and finish it with lemon!",
+    "Get skinless boneless chicken breast, lemon juice, and cooking oil.",
+    "Flatten the chicken to an even thickness. Brush lightly with oil and wash tools that touched raw meat.",
+    "Put the chicken on a hot grill pan. Turn it with tongs and cook both sides evenly.",
+    "Use a thermometer to check that the thickest part reaches seventy four degrees Celsius.",
+    "Transfer to a clean plate and add lemon juice. Serve eighty five grams of cooked chicken.",
+    "Potassium is needed for nerve signals and normal muscle contraction. Grilled chicken can contribute potassium.",
+    "The numbers are for the cooked meat. Follow your own dietary advice if you need to limit potassium.",
+    "Grill marks complete! Today's muscle uniform comes with stripes!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "생 닭가슴살 약 120g / 레몬즙 15g / 식용유 5g",
+    "익힌 닭가슴살 85g을 1인분으로 담기",
+    "1 고기 두께를 고르게 펴고 기름을 얇게 바른다.",
+    "2 그릴 팬에서 집게로 뒤집어 양면을 굽는다.",
+    "3 가장 두꺼운 부분의 중심 온도 74°C 확인.",
+    "4 깨끗한 접시에 담고 레몬즙을 뿌린다.",
+    "생닭용과 익힌 고기용 도구를 구분"
+  ],
+  "recipe_en": [
+    "Raw chicken breast about 120 g / lemon juice 15 g / oil 5 g",
+    "Serve 85 g cooked chicken per portion",
+    "1 Flatten to even thickness and brush with oil.",
+    "2 Grill both sides, turning with tongs.",
+    "3 Check 165°F (74°C) in the thickest part.",
+    "4 Serve on a clean plate and add lemon juice.",
+    "Separate raw chicken tools from serving utensils"
+  ],
+  "health_focus": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+  "main_ingredients": [
+    "닭가슴살"
+  ],
+  "cooking_style": "그릴 팬에서 통 닭가슴살 양면 직화형 굽기. 5편의 반죽 전, 7편의 오븐구이와 구분.",
+  "source_url": "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼륨",
+    "recipe_amount": "332 mg",
+    "per_serving_amount": "332 mg",
+    "servings": 1,
+    "daily_reference_amount": "4700 mg",
+    "percent_of_daily_reference": 7.0638297872340425,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "뼈 없는 그릴 구이 닭가슴살 3oz 약85g 익힌 고기만. 레몬즙과 기름 제외. 생고기 120g은 준비 예시이며 수율은 달라짐.",
+    "calculation": "Source reference serving: 332 mg; 332/4700 × 100 = 7.06%, rounded to 7%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+      "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-06",
+    "uncertainty_note": "재료 표준값 추정. 완성품 실측치·흡수량·질병 예방률 아님.",
+    "display": "구운 닭가슴살 85g / 칼륨 약 332mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리별 차이 / 출처: 미국 NIH ODS / 칼륨 약 332mg / 미국 표시 DV의 약 7% / 표시 기준 4700mg · 개인 권장량 아님 / 칼륨 제한 시 개인 식사 지침 준수 / 출처: FDA · 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "구운 닭가슴살 85g",
+      "칼륨 약 332mg",
+      "해당 재료만 계산 · 다른 재료 제외",
+      "표준값 추정 · 제품·조리별 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "칼륨 약 332mg",
+      "미국 표시 DV의 약 7%",
+      "표시 기준 4700mg · 개인 권장량 아님",
+      "칼륨 제한 시 개인 식사 지침 준수",
+      "출처: FDA · 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Grilled boneless chicken breast: 3 oz (about 85 g)",
+      "About 332 mg Potassium",
+      "Ingredient contribution only",
+      "Standard estimate / preparation varies",
+      "Source: NIH Office of Dietary Supplements"
+    ],
+    [
+      "About 332 mg Potassium",
+      "About 7% of the U.S. Daily Value",
+      "Labeling DV: 4700 mg / not individual intake advice",
+      "Follow personal advice for potassium restrictions",
+      "Source: FDA / NIH Office of Dietary Supplements"
+    ]
+  ],
+  "episode": 16,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet Today's Chef",
+      "text_ko": "근육 쉐프 출동! 레몬 향을 더한 닭가슴살을 그릴에 구워요!",
+      "text_en": "Chef Muscle reporting! Let us grill a chicken breast and finish it with lemon!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients and Amounts",
+      "text_ko": "껍질과 뼈를 뺀 닭가슴살, 레몬즙, 식용유를 준비해요.",
+      "text_en": "Get skinless boneless chicken breast, lemon juice, and cooking oil.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "두께 맞추고 기름 바르기",
+      "title_en": "Flatten and Brush with Oil",
+      "text_ko": "닭을 비슷한 두께로 펴고 기름을 얇게 발라요. 생닭을 만진 도구는 따로 씻어요.",
+      "text_en": "Flatten the chicken to an even thickness. Brush lightly with oil and wash tools that touched raw meat.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "그릴 팬에서 양면 굽기",
+      "title_en": "Grill Both Sides",
+      "text_ko": "달군 그릴 팬에 닭을 올려요. 집게로 뒤집어 양쪽을 고르게 구워요.",
+      "text_en": "Put the chicken on a hot grill pan. Turn it with tongs and cook both sides evenly.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "중심 온도 확인",
+      "title_en": "Check Internal Temperature",
+      "text_ko": "가장 두꺼운 부분의 중심 온도가 칠십사 도에 도달했는지 온도계로 확인해요.",
+      "text_en": "Use a thermometer to check that the thickest part reaches seventy four degrees Celsius.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "한 그릇 완성",
+      "title_en": "Ready to Serve",
+      "text_ko": "깨끗한 접시에 옮겨 레몬즙을 뿌려요. 익힌 고기 팔십오 그램을 한 접시에 담아요.",
+      "text_en": "Transfer to a clean plate and add lemon juice. Serve eighty five grams of cooked chicken.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Chef Chose It",
+      "text_ko": "칼륨은 신경 신호와 정상적인 근육 수축에 필요해요. 구운 닭가슴살에서도 섭취할 수 있어요.",
+      "text_en": "Potassium is needed for nerve signals and normal muscle contraction. Grilled chicken can contribute potassium.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치의 기준과 조건",
+      "title_en": "Numbers and Conditions",
+      "text_ko": "화면 수치는 익힌 고기 기준이에요. 칼륨을 제한해야 한다면 개인 식사 지침을 따라요.",
+      "text_en": "The numbers are for the cooked meat. Follow your own dietary advice if you need to limit potassium.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "그릴 줄무늬까지 완성! 오늘 근육 유니폼은 줄무늬입니다!",
+      "text_en": "Grill marks complete! Today's muscle uniform comes with stripes!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "근육 쉐프의 레몬 닭가슴살 그릴구이 #Shorts",
+  "upload_title_en": "Chef Muscle's Lemon Grilled Chicken Breast #Shorts",
+  "health_description_en": "Potassium is needed for nerve signals and normal muscle contraction. Grilled chicken can contribute potassium. The numbers are for the cooked meat. Follow your own dietary advice if you need to limit potassium."
+}

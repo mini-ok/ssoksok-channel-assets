@@ -1,0 +1,90 @@
+{
+  "episode": 15,
+  "dish": "호박 보리죽",
+  "organ": "장",
+  "chef": "장 쉐프",
+  "main_ingredients": [
+    "보리",
+    "호박"
+  ],
+  "cooking_style": "익힌 보리를 호박 퓌레에 저어 끓이는 곡물죽. 1편 이후 10편 이상 경과.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "익힌 찰보리",
+      "익힌 호박",
+      "물"
+    ],
+    "substitutions": [
+      "무가당 익힌 냉동 호박을 사용해도 보리 기준 수치는 동일"
+    ],
+    "basic_tools": [
+      "냄비",
+      "포크",
+      "숟가락"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 장, 근육 순서",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+  "reason_for_chef": "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+  "evidence": [
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "title": "NIDDK fiber and fluids",
+      "checked_at": "2026-11-06",
+      "supported_claim": "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+      "conditions_and_limits": "정상 기능을 설명하는 식품 영양 정보. 치료·예방 효과나 흡수량 보장 아님. 표준 재료 값의 추정치."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "보리의 식이섬유는 배변을 돕는 식단의 한 부분이에요. 물도 충분히 마셔요.",
+    "context": "화면 수치는 익힌 보리만 계산했어요. 섬유질은 한꺼번에 늘리기보다 조금씩 늘려요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "3 g",
+    "per_serving_amount": "3 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 10.714285714285714,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "익힌 정제 보리 120mL 부피, 원자료 cooked pearled barley ½ US cup의 식이섬유 3.0g. 호박 제외.",
+    "calculation": "Source reference serving: 3 g; 3/28 × 100 = 10.71%, rounded to 11%",
+    "source_urls": [
+      "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-06",
+    "uncertainty_note": "재료 표준값 추정. 완성품 실측치·흡수량·질병 예방률 아님.",
+    "display": "익힌 찰보리 120mL / 식이섬유 약 3g / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리별 차이 / 출처: 미국 식생활 지침 · NIDDK / 식이섬유 약 3g / 미국 표시 DV의 약 11% / 표시 기준 28g · 개인 권장량 아님 / 식이섬유는 조금씩 늘리고 수분 충분히 / 출처: FDA · 미국 식생활 지침 · NIDDK"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 26,
+  "menu_overlap_review": "익힌 보리를 호박 퓌레에 저어 끓이는 곡물죽. 1편 이후 10편 이상 경과."
+}

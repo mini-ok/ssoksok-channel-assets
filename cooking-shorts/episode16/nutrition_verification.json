@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "칼륨",
+  "recipe_amount": "332 mg",
+  "per_serving_amount": "332 mg",
+  "servings": 1,
+  "daily_reference_amount": "4700 mg",
+  "percent_of_daily_reference": 7.0638297872340425,
+  "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+  "basis": "뼈 없는 그릴 구이 닭가슴살 3oz 약85g 익힌 고기만. 레몬즙과 기름 제외. 생고기 120g은 준비 예시이며 수율은 달라짐.",
+  "calculation": "Source reference serving: 332 mg; 332/4700 × 100 = 7.06%, rounded to 7%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/Potassium-HealthProfessional/",
+    "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-06",
+  "uncertainty_note": "재료 표준값 추정. 완성품 실측치·흡수량·질병 예방률 아님.",
+  "display": "구운 닭가슴살 85g / 칼륨 약 332mg / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리별 차이 / 출처: 미국 NIH ODS / 칼륨 약 332mg / 미국 표시 DV의 약 7% / 표시 기준 4700mg · 개인 권장량 아님 / 칼륨 제한 시 개인 식사 지침 준수 / 출처: FDA · 미국 NIH ODS",
+  "status": "passed"
+}

@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "식이섬유",
+  "recipe_amount": "3 g",
+  "per_serving_amount": "3 g",
+  "servings": 1,
+  "daily_reference_amount": "28 g",
+  "percent_of_daily_reference": 10.714285714285714,
+  "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+  "basis": "익힌 정제 보리 120mL 부피, 원자료 cooked pearled barley ½ US cup의 식이섬유 3.0g. 호박 제외.",
+  "calculation": "Source reference serving: 3 g; 3/28 × 100 = 10.71%, rounded to 11%",
+  "source_urls": [
+    "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-06",
+  "uncertainty_note": "재료 표준값 추정. 완성품 실측치·흡수량·질병 예방률 아님.",
+  "display": "익힌 찰보리 120mL / 식이섬유 약 3g / 해당 재료만 계산 · 다른 재료 제외 / 표준값 추정 · 제품·조리별 차이 / 출처: 미국 식생활 지침 · NIDDK / 식이섬유 약 3g / 미국 표시 DV의 약 11% / 표시 기준 28g · 개인 권장량 아님 / 식이섬유는 조금씩 늘리고 수분 충분히 / 출처: FDA · 미국 식생활 지침 · NIDDK",
+  "status": "passed"
+}
