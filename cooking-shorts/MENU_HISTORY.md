@@ -90,3 +90,9 @@
 - 15편 장 쉐프 / 호박 보리죽. 주재료 보리·호박, 곡물죽은 1편 이후 10편 이상 경과. 재사용 26편부터. 익힌 찰보리 120mL의 식이섬유 약 3g, FDA 표시 DV 28g의 약 11%. 호박 제외. 출처 미국 식생활 지침 Food Sources of Fiber 및 NIDDK. 음악 buoyant_kitchen_groove.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0015
 - 16편 근육 쉐프 / 레몬 닭가슴살 그릴구이. 주재료 닭가슴살, 그릴 팬 양면 굽기와 온도계 확인. 재사용 27편부터. 익힌 닭가슴살 약 85g의 칼륨 약 332mg, FDA 표시 DV 4700mg의 약 7%. 다른 재료 제외. 출처 NIH ODS Potassium 및 FoodSafety.gov. 음악 nimble_motifs.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0016
 - 한영 네 MP4, 자막·레시피·검수·업로드 자산 각 12개 게시. MP4 네 해시가 Actions 검수 로그와 일치. 전체 디코딩·음성·음량·음악·레시피 고정과 발화에 연동된 3단계 입모양 및 해설·무음 정지 자동검수 통과. 직접 시청·청취 및 실물 조리 검수는 수행하지 않음. https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/42148321362
+
+
+## 17·18편 제작 완료 (2026-11-07)
+- 17편 뼈 쉐프 / 생강간장 두부. 주재료 두부. 단단한 두부를 썰어 전자레인지로 데운 후 생강간장을 얹음. 재사용 28편부터. 황산칼슘 응고 단단한 두부 120mL의 칼슘 약 253mg, 표시 DV 1300mg의 약 19%. 제품·응고제 차이. NIH ODS Calcium. 음악 buant_pop_groove.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0017
+- 18편 뇌 쉐프 / 파프리카 삶은 달걀. 주재료 달걀. 껍질째 완숙으로 삶아 반으로 잘라 가루를 얹음. 재사용 29편부터. 완숙 큰 달걀 1개의 콜린 약 147mg, 표시 DV 550mg의 약 27%. NIH ODS Choline. 음악 buoyant_kitchen_groove.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0018
+- 정식 Release 두 건에 한영 MP4·자막·레시피·검수·업로드 자료 각 12개 게시. 네 영상의 SHA-256이 Actions 로그와 일치. 디코딩·음성·음량·음악·레시피 고정·3단계 입모양과 해설·무음 정지 검사 통과. 17편 한글 농담을 수정한 뒤 같은 기준으로 재검수. 직접 시청·청취와 유튜브 업로드 미실행. https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/42328151591
