@@ -1,0 +1,29 @@
+{
+  "episode": 18,
+  "title": "Paprika Hard Boiled Egg",
+  "verified_at": "2026-11-07T02:52:31Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "MH_MoCmcHPo",
+      "video_url": "https://youtu.be/MH_MoCmcHPo",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "PaprikaHardBoiledEgg_KO.mp4",
+      "sha256": "c381f8d65596eedd18b0148951b2f3096cba8d160b690af93e6a16bbc828a05a"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "tu2e17XSBjM",
+      "video_url": "https://youtu.be/tu2e17XSBjM",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "PaprikaHardBoiledEgg_EN.mp4",
+      "sha256": "c1c6a1f1bfbe8c707d1f0af0bf4acf6e05487b5049a9432c64e2653e6c74f53d"
+    }
+  ]
+}

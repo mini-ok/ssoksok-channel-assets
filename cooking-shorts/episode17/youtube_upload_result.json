@@ -1,0 +1,29 @@
+{
+  "episode": 17,
+  "title": "Ginger Soy Tofu",
+  "verified_at": "2026-11-07T02:52:31Z",
+  "uploads": [
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "yyKyYwVBYew",
+      "video_url": "https://youtu.be/yyKyYwVBYew",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "GingerSoyTofu_KO.mp4",
+      "sha256": "d0ef23ab91a94833856de53e28491c04a8d030c1550ff3c86749031fd297ea7a"
+    },
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "TapOhs42eps",
+      "video_url": "https://youtu.be/TapOhs42eps",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "GingerSoyTofu_EN.mp4",
+      "sha256": "fe740562b4acedb7d9d90c2ab052707cfbb9b7c34ebe8a59a0bd77fe80826eaa"
+    }
+  ]
+}
