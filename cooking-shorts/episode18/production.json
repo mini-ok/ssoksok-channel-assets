@@ -1,0 +1,247 @@
+{
+  "character": "brain",
+  "voice": "Puck",
+  "chef_ko": "뇌 쉐프",
+  "chef_en": "Chef Brain",
+  "dish_ko": "파프리카 삶은 달걀",
+  "dish_en": "Paprika Hard Boiled Egg",
+  "slug": "PaprikaHardBoiledEgg",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "큰 달걀",
+      "Large egg",
+      "1개",
+      "1 large",
+      "egg"
+    ],
+    [
+      "파프리카 가루",
+      "Paprika powder",
+      "1g",
+      "1 g",
+      "paprika"
+    ],
+    [
+      "조리용 물",
+      "Cooking water",
+      "달걀이 잠길 만큼",
+      "Enough to cover the egg",
+      "water"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "냄비에 달걀 담기",
+    "흰자와 노른자 익히기",
+    "식혀서 반으로 자르기",
+    "파프리카 가루 뿌리기",
+    "이 요리를 고른 이유",
+    "수치의 기준과 조건",
+    "쉐프의 한마디",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Meet Today's Chef",
+    "Ingredients and Amounts",
+    "Put Egg in the Saucepan",
+    "Cook Until Firm",
+    "Cool, Peel and Halve",
+    "Dust with Paprika",
+    "Why This Chef Chose It",
+    "Numbers and Conditions",
+    "A Word from the Chef",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "뇌 쉐프 출동! 삶은 달걀에 파프리카 가루로 색을 더해요!",
+    "큰 달걀 한 개, 파프리카 가루, 조리용 물을 준비해요.",
+    "달걀을 냄비에 담고 찬물을 부어요. 달걀이 잠길 만큼 넣어요.",
+    "물이 끓으면 불을 낮추고 흰자와 노른자가 단단해질 때까지 익혀요.",
+    "찬물에 식혀 껍질을 벗겨요. 반으로 잘라 완숙인지 확인해요.",
+    "노른자 위에 파프리카 가루를 고르게 뿌리면 완성이에요!",
+    "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+    "이 수치는 완숙한 큰 달걀 한 개 기준이에요. 한 끼를 먹고 기억력이 좋아진다는 뜻은 아니에요.",
+    "반으로 잘랐더니 작은 해가 두 개! 뇌 쉐프 주방은 맑음!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Brain reporting! Let us give a boiled egg a little color with paprika!",
+    "Get one large egg, paprika powder, and enough water for cooking.",
+    "Put the egg in a saucepan and add enough cold water to cover it.",
+    "Bring the water to a boil, lower the heat, and cook until the white and yolk are firm.",
+    "Cool in cold water, peel the shell, and cut the egg in half to check it is firm.",
+    "Dust the yolks evenly with paprika and the dish is ready!",
+    "Choline helps the body make a chemical messenger used by the brain and nervous system. Eggs provide choline.",
+    "The number is for one large hard boiled egg. One meal does not mean your memory will improve.",
+    "Two little suns on the plate! Chef Brain forecasts a sunny kitchen!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "큰 달걀 1개 / 파프리카 가루 1g",
+    "조리용 물은 달걀이 잠길 만큼",
+    "1 냄비에 달걀과 찬물을 넣는다.",
+    "2 끓으면 불을 낮추고 흰자·노른자 모두 익힌다.",
+    "3 찬물에 식혀 껍질을 벗기고 반으로 자른다.",
+    "4 완숙인지 확인하고 파프리카 가루를 뿌린다.",
+    "달걀 알레르기 확인 / 1개 기준"
+  ],
+  "recipe_en": [
+    "1 large egg / paprika powder 1 g",
+    "Cooking water enough to cover the egg",
+    "1 Put the egg and cold water in a saucepan.",
+    "2 Bring to a boil, then cook gently until firm.",
+    "3 Cool, peel and halve the egg.",
+    "4 Check that the yolk is firm and dust with paprika.",
+    "Check egg allergens / one egg per serving"
+  ],
+  "health_focus": "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+  "main_ingredients": [
+    "달걀"
+  ],
+  "cooking_style": "껍질째 삶고 찬물로 식힌 다음 반으로 잘라 파프리카 가루 얹기",
+  "source_url": "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "콜린",
+    "recipe_amount": "147 mg",
+    "per_serving_amount": "147 mg",
+    "servings": 1,
+    "daily_reference_amount": "550 mg",
+    "percent_of_daily_reference": 26.727272727272727,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "완숙 큰 달걀 1개. 원자료 hard-boiled egg, one large. 파프리카 가루와 조리용 물 제외.",
+    "calculation": "NIH ODS Table 2: 1 source serving = 147 mg; 147/550 × 100 = 26.73%, rounded to 27%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-07",
+    "uncertainty_note": "해당 재료 표준값 추정. 제품·크기에 따라 다름. 완성품 실측·흡수량·질병 예방률 아님.",
+    "display": "완숙 큰 달걀 1개 / 콜린 약 147mg / 해당 재료만 계산 · 다른 재료 제외 / 달걀 크기에 따라 달라요 / 출처: 미국 NIH ODS / 콜린 약 147mg / 미국 표시 DV의 약 27% / 표시 기준 550mg · 개인 권장량 아님 / 신경 신호 전달 물질의 재료 / 출처: 미국 NIH ODS · FDA 표시 DV"
+  },
+  "nutrition_ko": [
+    [
+      "완숙 큰 달걀 1개",
+      "콜린 약 147mg",
+      "해당 재료만 계산 · 다른 재료 제외",
+      "달걀 크기에 따라 달라요",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "콜린 약 147mg",
+      "미국 표시 DV의 약 27%",
+      "표시 기준 550mg · 개인 권장량 아님",
+      "신경 신호 전달 물질의 재료",
+      "출처: 미국 NIH ODS · FDA 표시 DV"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "One large hard boiled egg",
+      "About 147 mg Choline",
+      "Ingredient contribution only",
+      "Amount varies with egg size",
+      "Source: NIH Office of Dietary Supplements"
+    ],
+    [
+      "About 147 mg Choline",
+      "About 27% of the U.S. Daily Value",
+      "Labeling DV: 550 mg / not individual intake advice",
+      "Choline helps make a nerve messenger",
+      "Source: NIH ODS / FDA labeling DV"
+    ]
+  ],
+  "episode": 18,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet Today's Chef",
+      "text_ko": "뇌 쉐프 출동! 삶은 달걀에 파프리카 가루로 색을 더해요!",
+      "text_en": "Chef Brain reporting! Let us give a boiled egg a little color with paprika!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients and Amounts",
+      "text_ko": "큰 달걀 한 개, 파프리카 가루, 조리용 물을 준비해요.",
+      "text_en": "Get one large egg, paprika powder, and enough water for cooking.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "냄비에 달걀 담기",
+      "title_en": "Put Egg in the Saucepan",
+      "text_ko": "달걀을 냄비에 담고 찬물을 부어요. 달걀이 잠길 만큼 넣어요.",
+      "text_en": "Put the egg in a saucepan and add enough cold water to cover it.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "흰자와 노른자 익히기",
+      "title_en": "Cook Until Firm",
+      "text_ko": "물이 끓으면 불을 낮추고 흰자와 노른자가 단단해질 때까지 익혀요.",
+      "text_en": "Bring the water to a boil, lower the heat, and cook until the white and yolk are firm.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "식혀서 반으로 자르기",
+      "title_en": "Cool, Peel and Halve",
+      "text_ko": "찬물에 식혀 껍질을 벗겨요. 반으로 잘라 완숙인지 확인해요.",
+      "text_en": "Cool in cold water, peel the shell, and cut the egg in half to check it is firm.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "파프리카 가루 뿌리기",
+      "title_en": "Dust with Paprika",
+      "text_ko": "노른자 위에 파프리카 가루를 고르게 뿌리면 완성이에요!",
+      "text_en": "Dust the yolks evenly with paprika and the dish is ready!",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Chef Chose It",
+      "text_ko": "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+      "text_en": "Choline helps the body make a chemical messenger used by the brain and nervous system. Eggs provide choline.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치의 기준과 조건",
+      "title_en": "Numbers and Conditions",
+      "text_ko": "이 수치는 완숙한 큰 달걀 한 개 기준이에요. 한 끼를 먹고 기억력이 좋아진다는 뜻은 아니에요.",
+      "text_en": "The number is for one large hard boiled egg. One meal does not mean your memory will improve.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "반으로 잘랐더니 작은 해가 두 개! 뇌 쉐프 주방은 맑음!",
+      "text_en": "Two little suns on the plate! Chef Brain forecasts a sunny kitchen!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "뇌 쉐프의 파프리카 삶은 달걀 #Shorts",
+  "upload_title_en": "Chef Brain's Paprika Hard Boiled Egg #Shorts",
+  "health_description_en": "Choline helps the body make a chemical messenger used by the brain and nervous system. Eggs provide choline. The number is for one large hard boiled egg. One meal does not mean your memory will improve."
+}

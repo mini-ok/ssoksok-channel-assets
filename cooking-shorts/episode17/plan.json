@@ -1,0 +1,87 @@
+{
+  "episode": 17,
+  "dish": "생강간장 두부",
+  "organ": "뼈",
+  "chef": "뼈 쉐프",
+  "main_ingredients": [
+    "두부"
+  ],
+  "cooking_style": "단단한 두부를 썰어 전자레인지로 데우고 생강간장 소스를 얹기",
+  "global_accessibility": {
+    "common_ingredients": [
+      "황산칼슘 응고 두부",
+      "간장",
+      "다진 생강"
+    ],
+    "substitutions": [
+      "다른 응고제를 사용한 두부는 칼슘 표준값을 재사용하지 않는다. 제품 표시로 재계산."
+    ],
+    "basic_tools": [
+      "칼",
+      "도마",
+      "전자레인지용 접시"
+    ]
+  },
+  "organ_rotation_note": "근육 다음 뼈, 뇌 순서",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+  "reason_for_chef": "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/",
+      "title": "NIH ODS Calcium",
+      "checked_at": "2026-11-07",
+      "supported_claim": "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+      "conditions_and_limits": "황산칼슘으로 응고한 단단한 두부에 한해 원자료 값 적용. 골절이나 질병 예방 보장 아님."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+    "context": "화면 수치는 황산칼슘을 쓴 단단한 두부 기준이에요. 다른 응고제를 쓰거나 제품이 다르면 함량도 달라져요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount": "253 mg",
+    "per_serving_amount": "253 mg",
+    "servings": 1,
+    "daily_reference_amount": "1300 mg",
+    "percent_of_daily_reference": 19.46153846153846,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "황산칼슘으로 응고한 단단한 두부 120mL. 원자료 ½ US cup. 두부만 계산하며 제품에 따라 차이.",
+    "calculation": "NIH ODS Table 2: 1 source serving = 253 mg; 253/1300 × 100 = 19.46%, rounded to 19%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-07",
+    "uncertainty_note": "해당 재료 표준값 추정. 제품·크기에 따라 다름. 완성품 실측·흡수량·질병 예방률 아님.",
+    "display": "황산칼슘 응고 단단한 두부 120mL / 칼슘 약 253mg / 해당 재료만 계산 · 다른 재료 제외 / 제품과 응고제에 따라 달라요 / 출처: 미국 NIH ODS / 칼슘 약 253mg / 미국 표시 DV의 약 19% / 표시 기준 1300mg · 개인 권장량 아님 / 뼈의 구조를 이루는 영양소 / 출처: 미국 NIH ODS · FDA 표시 DV"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 28,
+  "menu_overlap_review": "두부 주재료 첫 사용. 전자레인지 데우기와 소스 얹기."
+}

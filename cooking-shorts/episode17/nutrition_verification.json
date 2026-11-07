@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "칼슘",
+  "recipe_amount": "253 mg",
+  "per_serving_amount": "253 mg",
+  "servings": 1,
+  "daily_reference_amount": "1300 mg",
+  "percent_of_daily_reference": 19.46153846153846,
+  "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+  "basis": "황산칼슘으로 응고한 단단한 두부 120mL. 원자료 ½ US cup. 두부만 계산하며 제품에 따라 차이.",
+  "calculation": "NIH ODS Table 2: 1 source serving = 253 mg; 253/1300 × 100 = 19.46%, rounded to 19%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-07",
+  "uncertainty_note": "해당 재료 표준값 추정. 제품·크기에 따라 다름. 완성품 실측·흡수량·질병 예방률 아님.",
+  "display": "황산칼슘 응고 단단한 두부 120mL / 칼슘 약 253mg / 해당 재료만 계산 · 다른 재료 제외 / 제품과 응고제에 따라 달라요 / 출처: 미국 NIH ODS / 칼슘 약 253mg / 미국 표시 DV의 약 19% / 표시 기준 1300mg · 개인 권장량 아님 / 뼈의 구조를 이루는 영양소 / 출처: 미국 NIH ODS · FDA 표시 DV",
+  "status": "passed"
+}

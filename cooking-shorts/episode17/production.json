@@ -1,0 +1,247 @@
+{
+  "character": "bone",
+  "voice": "Achird",
+  "chef_ko": "뼈 쉐프",
+  "chef_en": "Chef Bone",
+  "dish_ko": "생강간장 두부",
+  "dish_en": "Ginger Soy Tofu",
+  "slug": "GingerSoyTofu",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "황산칼슘 응고 두부",
+      "Calcium-set firm tofu",
+      "120mL",
+      "½ US cup (about 120 mL)",
+      "tofu"
+    ],
+    [
+      "간장",
+      "Soy sauce",
+      "5g",
+      "5 g",
+      "sauce"
+    ],
+    [
+      "다진 생강",
+      "Grated ginger",
+      "2g",
+      "2 g",
+      "ginger"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "두부 썰기",
+    "두부 따뜻하게 데우기",
+    "생강간장 얹기",
+    "따뜻한 한 접시",
+    "이 요리를 고른 이유",
+    "수치의 기준과 조건",
+    "쉐프의 한마디",
+    "캡처해서 다음 한 끼로"
+  ],
+  "headings_en": [
+    "Meet Today's Chef",
+    "Ingredients and Amounts",
+    "Slice the Tofu",
+    "Warm the Tofu",
+    "Add Ginger Soy Sauce",
+    "Serve While Warm",
+    "Why This Chef Chose It",
+    "Numbers and Conditions",
+    "A Word from the Chef",
+    "Screenshot Your Next Meal"
+  ],
+  "ko": [
+    "뼈 쉐프 출동! 따뜻한 두부에 생강 향을 얹어볼게요!",
+    "단단한 두부와 간장, 생강을 준비해요. 두부의 원재료에서 황산칼슘을 확인해요.",
+    "두부의 물기를 빼고 먹기 좋은 크기로 잘라요.",
+    "전자레인지용 접시에 두부를 놓고 제품 안내에 따라 따뜻하게 데워요.",
+    "간장과 다진 생강을 섞어요. 데운 두부 위에 가볍게 뿌려요.",
+    "부드러운 두부와 향긋한 생강! 따뜻할 때 한 접시로 즐겨요.",
+    "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+    "화면 수치는 황산칼슘을 쓴 단단한 두부 기준이에요. 다른 응고제를 쓰거나 제품이 다르면 함량도 달라져요.",
+    "두부는 부드럽게, 뼈 쉐프는 오늘도 씩씩하게!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Bone reporting! Let us warm some tofu and add a little ginger!",
+    "Get firm tofu, soy sauce and ginger. Check the tofu ingredients for calcium sulfate.",
+    "Drain the tofu and slice it into bite sized pieces.",
+    "Put the tofu on a microwave safe plate and warm it according to the package directions.",
+    "Mix the soy sauce and grated ginger. Spoon it lightly over the warm tofu.",
+    "Soft tofu and fragrant ginger! Enjoy this little plate while it is warm.",
+    "Calcium helps form the structure of bones and teeth. Tofu made with calcium sulfate can provide calcium.",
+    "The amount shown is for firm tofu made with calcium sulfate. Different coagulants and products can change the amount.",
+    "Soft tofu, sturdy spirit! Chef Bone is ready to serve!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "황산칼슘 응고 단단한 두부 120mL",
+    "간장 5g / 다진 생강 2g",
+    "1 두부 물기를 빼고 한입 크기로 썬다.",
+    "2 전자레인지용 접시에 담는다.",
+    "3 제품 안내에 따라 두부를 따뜻하게 데운다.",
+    "4 간장과 생강을 섞어 두부에 뿌린다.",
+    "콩 알레르기 확인 / 제품별 칼슘 함량 차이"
+  ],
+  "recipe_en": [
+    "Calcium-set firm tofu ½ US cup (about 120 mL)",
+    "Soy sauce 5 g / grated ginger 2 g",
+    "1 Drain tofu and slice into bite sized pieces.",
+    "2 Put the slices on a microwave safe plate.",
+    "3 Warm according to package directions.",
+    "4 Mix soy sauce and ginger, then spoon over tofu.",
+    "Check soy allergens / calcium varies by product"
+  ],
+  "health_focus": "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+  "main_ingredients": [
+    "두부"
+  ],
+  "cooking_style": "단단한 두부를 썰어 전자레인지로 데우고 생강간장 소스를 얹기",
+  "source_url": "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount": "253 mg",
+    "per_serving_amount": "253 mg",
+    "servings": 1,
+    "daily_reference_amount": "1300 mg",
+    "percent_of_daily_reference": 19.46153846153846,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "황산칼슘으로 응고한 단단한 두부 120mL. 원자료 ½ US cup. 두부만 계산하며 제품에 따라 차이.",
+    "calculation": "NIH ODS Table 2: 1 source serving = 253 mg; 253/1300 × 100 = 19.46%, rounded to 19%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-07",
+    "uncertainty_note": "해당 재료 표준값 추정. 제품·크기에 따라 다름. 완성품 실측·흡수량·질병 예방률 아님.",
+    "display": "황산칼슘 응고 단단한 두부 120mL / 칼슘 약 253mg / 해당 재료만 계산 · 다른 재료 제외 / 제품과 응고제에 따라 달라요 / 출처: 미국 NIH ODS / 칼슘 약 253mg / 미국 표시 DV의 약 19% / 표시 기준 1300mg · 개인 권장량 아님 / 뼈의 구조를 이루는 영양소 / 출처: 미국 NIH ODS · FDA 표시 DV"
+  },
+  "nutrition_ko": [
+    [
+      "황산칼슘 응고 단단한 두부 120mL",
+      "칼슘 약 253mg",
+      "해당 재료만 계산 · 다른 재료 제외",
+      "제품과 응고제에 따라 달라요",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "칼슘 약 253mg",
+      "미국 표시 DV의 약 19%",
+      "표시 기준 1300mg · 개인 권장량 아님",
+      "뼈의 구조를 이루는 영양소",
+      "출처: 미국 NIH ODS · FDA 표시 DV"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "Calcium-set firm tofu: ½ US cup (about 120 mL)",
+      "About 253 mg Calcium",
+      "Ingredient contribution only",
+      "Amount varies by product and coagulant",
+      "Source: NIH Office of Dietary Supplements"
+    ],
+    [
+      "About 253 mg Calcium",
+      "About 19% of the U.S. Daily Value",
+      "Labeling DV: 1300 mg / not individual intake advice",
+      "Calcium helps form bones and teeth",
+      "Source: NIH ODS / FDA labeling DV"
+    ]
+  ],
+  "episode": 17,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet Today's Chef",
+      "text_ko": "뼈 쉐프 출동! 따뜻한 두부에 생강 향을 얹어볼게요!",
+      "text_en": "Chef Bone reporting! Let us warm some tofu and add a little ginger!",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients and Amounts",
+      "text_ko": "단단한 두부와 간장, 생강을 준비해요. 두부의 원재료에서 황산칼슘을 확인해요.",
+      "text_en": "Get firm tofu, soy sauce and ginger. Check the tofu ingredients for calcium sulfate.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "두부 썰기",
+      "title_en": "Slice the Tofu",
+      "text_ko": "두부의 물기를 빼고 먹기 좋은 크기로 잘라요.",
+      "text_en": "Drain the tofu and slice it into bite sized pieces.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "두부 따뜻하게 데우기",
+      "title_en": "Warm the Tofu",
+      "text_ko": "전자레인지용 접시에 두부를 놓고 제품 안내에 따라 따뜻하게 데워요.",
+      "text_en": "Put the tofu on a microwave safe plate and warm it according to the package directions.",
+      "narrator": true
+    },
+    {
+      "id": "cook",
+      "title_ko": "생강간장 얹기",
+      "title_en": "Add Ginger Soy Sauce",
+      "text_ko": "간장과 다진 생강을 섞어요. 데운 두부 위에 가볍게 뿌려요.",
+      "text_en": "Mix the soy sauce and grated ginger. Spoon it lightly over the warm tofu.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "따뜻한 한 접시",
+      "title_en": "Serve While Warm",
+      "text_ko": "부드러운 두부와 향긋한 생강! 따뜻할 때 한 접시로 즐겨요.",
+      "text_en": "Soft tofu and fragrant ginger! Enjoy this little plate while it is warm.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Chef Chose It",
+      "text_ko": "칼슘은 뼈와 치아의 구조를 이루는 영양소예요. 황산칼슘으로 만든 두부도 칼슘 공급원이 될 수 있어요.",
+      "text_en": "Calcium helps form the structure of bones and teeth. Tofu made with calcium sulfate can provide calcium.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치의 기준과 조건",
+      "title_en": "Numbers and Conditions",
+      "text_ko": "화면 수치는 황산칼슘을 쓴 단단한 두부 기준이에요. 다른 응고제를 쓰거나 제품이 다르면 함량도 달라져요.",
+      "text_en": "The amount shown is for firm tofu made with calcium sulfate. Different coagulants and products can change the amount.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "두부는 부드럽게, 뼈 쉐프는 오늘도 씩씩하게!",
+      "text_en": "Soft tofu, sturdy spirit! Chef Bone is ready to serve!",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "캡처해서 다음 한 끼로",
+      "title_en": "Screenshot Your Next Meal",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "뼈 쉐프의 생강간장 두부 #Shorts",
+  "upload_title_en": "Chef Bone's Ginger Soy Tofu #Shorts",
+  "health_description_en": "Calcium helps form the structure of bones and teeth. Tofu made with calcium sulfate can provide calcium. The amount shown is for firm tofu made with calcium sulfate. Different coagulants and products can change the amount."
+}

@@ -1,0 +1,87 @@
+{
+  "episode": 18,
+  "dish": "파프리카 삶은 달걀",
+  "organ": "뇌",
+  "chef": "뇌 쉐프",
+  "main_ingredients": [
+    "달걀"
+  ],
+  "cooking_style": "껍질째 삶고 찬물로 식힌 다음 반으로 잘라 파프리카 가루 얹기",
+  "global_accessibility": {
+    "common_ingredients": [
+      "큰 달걀",
+      "파프리카 가루",
+      "조리용 물"
+    ],
+    "substitutions": [
+      "기호에 따라 파프리카 가루는 생략 가능. 큰 완숙 달걀 1개 기준 유지."
+    ],
+    "basic_tools": [
+      "냄비",
+      "볼",
+      "칼"
+    ]
+  },
+  "organ_rotation_note": "근육 다음 뼈, 뇌 순서",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+  "reason_for_chef": "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/",
+      "title": "NIH ODS Choline",
+      "checked_at": "2026-11-07",
+      "supported_claim": "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+      "conditions_and_limits": "완숙 큰 달걀만 계산. 식품 한 끼로 기억 개선·질병 예방이 보장되지 않음."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "콜린은 뇌와 신경계에서 쓰이는 신호 전달 물질을 만드는 데 필요해요. 달걀로 콜린을 섭취할 수 있어요.",
+    "context": "이 수치는 완숙한 큰 달걀 한 개 기준이에요. 한 끼를 먹고 기억력이 좋아진다는 뜻은 아니에요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "콜린",
+    "recipe_amount": "147 mg",
+    "per_serving_amount": "147 mg",
+    "servings": 1,
+    "daily_reference_amount": "550 mg",
+    "percent_of_daily_reference": 26.727272727272727,
+    "reference_population": "미국 FDA 표시 DV 성인·4세 이상. 개인 RDA·AI와 구분.",
+    "basis": "완숙 큰 달걀 1개. 원자료 hard-boiled egg, one large. 파프리카 가루와 조리용 물 제외.",
+    "calculation": "NIH ODS Table 2: 1 source serving = 147 mg; 147/550 × 100 = 26.73%, rounded to 27%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-07",
+    "uncertainty_note": "해당 재료 표준값 추정. 제품·크기에 따라 다름. 완성품 실측·흡수량·질병 예방률 아님.",
+    "display": "완숙 큰 달걀 1개 / 콜린 약 147mg / 해당 재료만 계산 · 다른 재료 제외 / 달걀 크기에 따라 달라요 / 출처: 미국 NIH ODS / 콜린 약 147mg / 미국 표시 DV의 약 27% / 표시 기준 550mg · 개인 권장량 아님 / 신경 신호 전달 물질의 재료 / 출처: 미국 NIH ODS · FDA 표시 DV"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 29,
+  "menu_overlap_review": "6편 달걀찜 이후 11회차 경과. 껍질째 완숙으로 삶고 반으로 자르는 별도 방식."
+}
