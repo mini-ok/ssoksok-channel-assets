@@ -1,0 +1,247 @@
+{
+  "character": "eye",
+  "voice": "Puck",
+  "chef_ko": "눈 쉐프",
+  "chef_en": "Chef Eye",
+  "dish_ko": "커민 고구마 오븐 그라탱",
+  "dish_en": "Cumin Sweet Potato Boats",
+  "slug": "CuminSweetPotatoBoats",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "고구마",
+      "Sweet potato",
+      "1개",
+      "1",
+      "main"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "커민 가루",
+      "Ground cumin",
+      "1g",
+      "1 g",
+      "spice"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "고구마 굽기",
+    "커민과 으깨기",
+    "속 채워 다시 굽기",
+    "접시에 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Bake the Potato",
+    "Mash with Cumin",
+    "Refill and Bake",
+    "Plate the Dish",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "고구마의 비타민 에이로 눈 이야기를 해볼게요. 오늘은 고구마 그라탱입니다.",
+    "고구마 한 개와 올리브유, 커민 가루를 준비해요.",
+    "고구마를 씻어 껍질째 포크로 찔러요. 이백 도 오븐에서 속이 부드러워질 때까지 구워요.",
+    "반으로 잘라 속을 덜어내요. 커민과 올리브유를 넣어 곱게 으깨요.",
+    "으깬 속을 껍질에 도로 채워요. 같은 온도에서 표면이 노릇해질 때까지 다시 구워요.",
+    "겉은 노릇하고 속은 폭신해요. 껍질과 속을 함께 떠먹어요.",
+    "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요.",
+    "고구마 배 두 척이 오븐에서 나왔어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Today Chef Eye is making golden sweet potato boats. Let us talk about vitamin A.",
+    "Get one sweet potato, olive oil, and ground cumin.",
+    "Scrub and prick the potato. Bake it whole at two hundred degrees Celsius until soft.",
+    "Cut it in half and scoop out the flesh. Mash it with cumin and olive oil.",
+    "Fill the skins with the mash. Bake again at the same temperature until golden on top.",
+    "Golden on top and fluffy inside. Eat the skin and filling together.",
+    "Your body can turn beta carotene from sweet potatoes into vitamin A. The retina needs vitamin A to detect light.",
+    "The number is a reference for one sweet potato baked in its skin. The actual amount varies by size and variety.",
+    "Two sweet potato boats just sailed out of the oven.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "고구마 1개",
+    "올리브유 5g",
+    "커민 가루 1g",
+    "씻고 포크로 찔러 200°C에서 40~60분 굽는다.",
+    "부드러워지면 반으로 갈라 속을 덜어낸다.",
+    "속에 기름과 커민을 넣어 으깨고 다시 채운다.",
+    "200°C에서 약 10분 더 굽고 껍질째 먹는다."
+  ],
+  "recipe_en": [
+    "Sweet potato 1",
+    "Olive oil 5 g",
+    "Ground cumin 1 g",
+    "Scrub, prick, and bake at 200°C for 40–60 min.",
+    "When soft, halve and scoop out the flesh.",
+    "Mash with oil and cumin, then refill the skins.",
+    "Bake 10 min more at 200°C. Eat with the skin."
+  ],
+  "health_focus": "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "main_ingredients": [
+    "고구마"
+  ],
+  "cooking_style": "껍질째 구운 속을 커민과 기름에 으깨 다시 채워 구워, 폭신한 속과 노릇한 표면을 만든다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=a8d0353219195s16",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 A",
+    "recipe_amount": "1403 mcg RAE",
+    "per_serving_amount": "1403 mcg RAE",
+    "servings": 1,
+    "daily_reference_amount": "900 mcg RAE",
+    "percent_of_daily_reference": 155.88888888888889,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: One sweet potato baked in its skin (껍질째 구운 고구마 1개). 주재료만 계산.",
+    "calculation": "1403 × 1 = 1403 mcg RAE; 1403/900 × 100 ≈ 156%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=a8d0353219195s16"
+    ],
+    "checked_at": "2026-11-08",
+    "uncertainty_note": "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요.",
+    "display": "껍질째 구운 고구마 1개 / 비타민 A 약 1403 mcg RAE / 주재료 1인분 기준 / 조리·원재료에 따라 차이 / 출처: 미국 NIH ODS / 비타민 A 약 1403 mcg RAE / 미국 표시 DV 약 156% / 표시 기준 900 mcg RAE / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "껍질째 구운 고구마 1개",
+      "비타민 A 약 1403 mcg RAE",
+      "주재료 1인분 기준",
+      "조리·원재료에 따라 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 A 약 1403 mcg RAE",
+      "미국 표시 DV 약 156%",
+      "표시 기준 900 mcg RAE",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "One sweet potato baked in its skin",
+      "About 1403 mcg RAE Vitamin A",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 1403 mcg RAE Vitamin A",
+      "About 156% of the U.S. Daily Value",
+      "Labeling DV: 900 mcg RAE",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 19,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "고구마의 비타민 에이로 눈 이야기를 해볼게요. 오늘은 고구마 그라탱입니다.",
+      "text_en": "Today Chef Eye is making golden sweet potato boats. Let us talk about vitamin A.",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "고구마 한 개와 올리브유, 커민 가루를 준비해요.",
+      "text_en": "Get one sweet potato, olive oil, and ground cumin.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "고구마 굽기",
+      "title_en": "Bake the Potato",
+      "text_ko": "고구마를 씻어 껍질째 포크로 찔러요. 이백 도 오븐에서 속이 부드러워질 때까지 구워요.",
+      "text_en": "Scrub and prick the potato. Bake it whole at two hundred degrees Celsius until soft.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "커민과 으깨기",
+      "title_en": "Mash with Cumin",
+      "text_ko": "반으로 잘라 속을 덜어내요. 커민과 올리브유를 넣어 곱게 으깨요.",
+      "text_en": "Cut it in half and scoop out the flesh. Mash it with cumin and olive oil.",
+      "narrator": false
+    },
+    {
+      "id": "cook",
+      "title_ko": "속 채워 다시 굽기",
+      "title_en": "Refill and Bake",
+      "text_ko": "으깬 속을 껍질에 도로 채워요. 같은 온도에서 표면이 노릇해질 때까지 다시 구워요.",
+      "text_en": "Fill the skins with the mash. Bake again at the same temperature until golden on top.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "접시에 담기",
+      "title_en": "Plate the Dish",
+      "text_ko": "겉은 노릇하고 속은 폭신해요. 껍질과 속을 함께 떠먹어요.",
+      "text_en": "Golden on top and fluffy inside. Eat the skin and filling together.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+      "text_en": "Your body can turn beta carotene from sweet potatoes into vitamin A. The retina needs vitamin A to detect light.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요.",
+      "text_en": "The number is a reference for one sweet potato baked in its skin. The actual amount varies by size and variety.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "고구마 배 두 척이 오븐에서 나왔어요.",
+      "text_en": "Two sweet potato boats just sailed out of the oven.",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "눈 쉐프의 커민 고구마 오븐 그라탱 #Shorts",
+  "upload_title_en": "Chef Eye's Cumin Sweet Potato Boats #Shorts",
+  "health_description_en": "Your body can turn beta carotene from sweet potatoes into vitamin A. The retina needs vitamin A to detect light. The number is a reference for one sweet potato baked in its skin. The actual amount varies by size and variety."
+}

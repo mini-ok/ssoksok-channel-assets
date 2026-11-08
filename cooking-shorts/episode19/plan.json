@@ -1,0 +1,90 @@
+{
+  "episode": 19,
+  "dish": "커민 고구마 오븐 그라탱",
+  "organ": "눈",
+  "chef": "눈 쉐프",
+  "main_ingredients": [
+    "고구마"
+  ],
+  "cooking_style": "껍질째 구운 속을 커민과 기름에 으깨 다시 채워 구워, 폭신한 속과 노릇한 표면을 만든다.",
+  "core_cooking_step": "껍질째 구운 속을 커민과 기름에 으깨 다시 채워 구워, 폭신한 속과 노릇한 표면을 만든다.",
+  "main_ingredient_health_rationale": "고구마 → 1인분 비타민 A 약 1403 mcg RAE → 고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "고구마",
+      "올리브유",
+      "커민 가루"
+    ],
+    "substitutions": [
+      "속이 주황색인 고구마를 우선 사용. 품종에 따라 함량은 달라진다."
+    ],
+    "basic_tools": [
+      "오븐",
+      "포크",
+      "볼",
+      "칼"
+    ]
+  },
+  "organ_rotation_note": "뇌 다음 눈, 면역",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "reason_for_chef": "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=a8d0353219195s16",
+      "title": "NIH ODS Vitamin A",
+      "checked_at": "2026-11-08",
+      "supported_claim": "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+      "conditions_and_limits": "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "고구마의 베타카로틴은 몸에서 비타민 에이로 바뀔 수 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "context": "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 A",
+    "recipe_amount": "1403 mcg RAE",
+    "per_serving_amount": "1403 mcg RAE",
+    "servings": 1,
+    "daily_reference_amount": "900 mcg RAE",
+    "percent_of_daily_reference": 155.88888888888889,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: One sweet potato baked in its skin (껍질째 구운 고구마 1개). 주재료만 계산.",
+    "calculation": "1403 × 1 = 1403 mcg RAE; 1403/900 × 100 ≈ 156%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=a8d0353219195s16"
+    ],
+    "checked_at": "2026-11-08",
+    "uncertainty_note": "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요.",
+    "display": "껍질째 구운 고구마 1개 / 비타민 A 약 1403 mcg RAE / 주재료 1인분 기준 / 조리·원재료에 따라 차이 / 출처: 미국 NIH ODS / 비타민 A 약 1403 mcg RAE / 미국 표시 DV 약 156% / 표시 기준 900 mcg RAE / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 30,
+  "menu_overlap_review": "고구마 첫 사용. 5편 감자전, 7편 생선 통구이와 달리 속을 으깨 껍질에 채워 두 번 굽는다."
+}

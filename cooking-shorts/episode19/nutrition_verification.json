@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 A",
+  "recipe_amount": "1403 mcg RAE",
+  "per_serving_amount": "1403 mcg RAE",
+  "servings": 1,
+  "daily_reference_amount": "900 mcg RAE",
+  "percent_of_daily_reference": 155.88888888888889,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: One sweet potato baked in its skin (껍질째 구운 고구마 1개). 주재료만 계산.",
+  "calculation": "1403 × 1 = 1403 mcg RAE; 1403/900 × 100 ≈ 156%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=a8d0353219195s16"
+  ],
+  "checked_at": "2026-11-08",
+  "uncertainty_note": "화면 수치는 껍질째 구운 고구마 한 개의 참고값이에요. 크기와 품종에 따라 실제 함량은 달라져요.",
+  "display": "껍질째 구운 고구마 1개 / 비타민 A 약 1403 mcg RAE / 주재료 1인분 기준 / 조리·원재료에 따라 차이 / 출처: 미국 NIH ODS / 비타민 A 약 1403 mcg RAE / 미국 표시 DV 약 156% / 표시 기준 900 mcg RAE / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

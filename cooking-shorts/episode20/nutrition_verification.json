@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 C",
+  "recipe_amount": "51 mg",
+  "per_serving_amount": "51 mg",
+  "servings": 1,
+  "daily_reference_amount": "90 mg",
+  "percent_of_daily_reference": 56.666666666666664,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: ½ US cup cooked broccoli (about 120 mL) (익힌 브로콜리 120mL). 주재료만 계산.",
+  "calculation": "51 × 1 = 51 mg; 51/90 × 100 ≈ 57%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-08",
+  "uncertainty_note": "이 수치는 익힌 브로콜리만 계산했어요. 비타민 씨는 열에 민감해서 익히는 방법과 시간에 따라 달라져요.",
+  "display": "익힌 브로콜리 120mL / 비타민 C 약 51 mg / 주재료 1인분 기준 / 조리·원재료에 따라 차이 / 출처: 미국 NIH ODS / 비타민 C 약 51 mg / 미국 표시 DV 약 57% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

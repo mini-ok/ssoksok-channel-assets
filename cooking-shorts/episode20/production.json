@@ -1,0 +1,256 @@
+{
+  "character": "immune",
+  "voice": "Aoede",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "레몬 마늘 브로콜리 볶음",
+  "dish_en": "Lemon Garlic Broccoli",
+  "slug": "LemonGarlicBroccoli",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "브로콜리",
+      "Broccoli",
+      "익힌 뒤 120mL",
+      "½ US cup cooked (about 120 mL)",
+      "main"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "다진 마늘",
+      "Minced garlic",
+      "3g",
+      "3 g",
+      "spice"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "5g",
+      "5 g",
+      "lemon"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "브로콜리 찌기",
+    "마늘기름 내기",
+    "빠르게 볶기",
+    "접시에 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Steam the Broccoli",
+    "Infuse the Oil",
+    "Toss in the Pan",
+    "Plate the Dish",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "면역 쉐프입니다. 비타민 씨가 들어 있는 브로콜리로 향긋한 볶음을 만들어요.",
+    "브로콜리, 올리브유, 마늘, 레몬즙을 준비해요.",
+    "브로콜리를 작은 송이로 잘라요. 김이 오른 찜기에 넣고 삼 분에서 사 분 쪄요.",
+    "팬에 기름과 마늘을 넣어요. 중약불에서 마늘 향이 올라올 때까지 저어요.",
+    "찐 브로콜리를 넣고 일 분 정도 빠르게 볶아요. 마늘기름이 골고루 묻게 해요.",
+    "불을 끄고 레몬즙을 넣어 가볍게 섞어요. 아삭할 때 접시에 담아요.",
+    "브로콜리에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 일하는 데 필요한 영양소예요.",
+    "이 수치는 익힌 브로콜리만 계산했어요. 비타민 씨는 열에 민감해서 익히는 방법과 시간에 따라 달라져요.",
+    "마늘 향이 나니 주방에 손님이 찾아왔어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune here. We are making fragrant broccoli with vitamin C.",
+    "Get broccoli, olive oil, garlic, and lemon juice.",
+    "Cut the broccoli into small florets. Steam for three to four minutes.",
+    "Add oil and garlic to a pan. Stir over medium low heat until fragrant.",
+    "Add the steamed broccoli and toss for about a minute to coat it with garlic oil.",
+    "Turn off the heat and toss with lemon juice. Plate while still crisp.",
+    "Broccoli supplies vitamin C. Your immune system needs vitamin C to work normally.",
+    "This reference counts cooked broccoli alone. Vitamin C is sensitive to heat, so the amount varies with cooking method and time.",
+    "That garlic smells so good. Someone just wandered into the kitchen.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "브로콜리 익힌 뒤 120mL",
+    "올리브유 5g",
+    "다진 마늘 3g",
+    "레몬즙 5g",
+    "작은 송이로 잘라 김 오른 찜기에 3~4분 찐다.",
+    "팬에 기름과 마늘을 넣고 중약불로 저어 향을 낸다.",
+    "찐 브로콜리를 넣고 약 1분 볶는다.",
+    "불을 끄고 레몬즙을 섞어 담는다."
+  ],
+  "recipe_en": [
+    "Broccoli ½ US cup cooked (about 120 mL)",
+    "Olive oil 5 g",
+    "Minced garlic 3 g",
+    "Lemon juice 5 g",
+    "Cut into small florets and steam 3–4 min.",
+    "Stir garlic and oil over medium-low heat.",
+    "Add broccoli and toss in the pan for 1 min.",
+    "Turn off heat, toss with lemon juice and serve."
+  ],
+  "health_focus": "브로콜리에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 일하는 데 필요한 영양소예요.",
+  "main_ingredients": [
+    "브로콜리"
+  ],
+  "cooking_style": "찐 브로콜리를 마늘기름에 짧게 볶아 향을 입히고 레몬으로 산미를 더한다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 C",
+    "recipe_amount": "51 mg",
+    "per_serving_amount": "51 mg",
+    "servings": 1,
+    "daily_reference_amount": "90 mg",
+    "percent_of_daily_reference": 56.666666666666664,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup cooked broccoli (about 120 mL) (익힌 브로콜리 120mL). 주재료만 계산.",
+    "calculation": "51 × 1 = 51 mg; 51/90 × 100 ≈ 57%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-08",
+    "uncertainty_note": "이 수치는 익힌 브로콜리만 계산했어요. 비타민 씨는 열에 민감해서 익히는 방법과 시간에 따라 달라져요.",
+    "display": "익힌 브로콜리 120mL / 비타민 C 약 51 mg / 주재료 1인분 기준 / 조리·원재료에 따라 차이 / 출처: 미국 NIH ODS / 비타민 C 약 51 mg / 미국 표시 DV 약 57% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 브로콜리 120mL",
+      "비타민 C 약 51 mg",
+      "주재료 1인분 기준",
+      "조리·원재료에 따라 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 C 약 51 mg",
+      "미국 표시 DV 약 57%",
+      "표시 기준 90 mg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "½ US cup cooked broccoli (about 120 mL)",
+      "About 51 mg Vitamin C",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 51 mg Vitamin C",
+      "About 57% of the U.S. Daily Value",
+      "Labeling DV: 90 mg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 20,
+  "scenes": [
+    {
+      "id": "hook",
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "면역 쉐프입니다. 비타민 씨가 들어 있는 브로콜리로 향긋한 볶음을 만들어요.",
+      "text_en": "Chef Immune here. We are making fragrant broccoli with vitamin C.",
+      "narrator": false
+    },
+    {
+      "id": "ingredients",
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "브로콜리, 올리브유, 마늘, 레몬즙을 준비해요.",
+      "text_en": "Get broccoli, olive oil, garlic, and lemon juice.",
+      "narrator": true
+    },
+    {
+      "id": "prep",
+      "title_ko": "브로콜리 찌기",
+      "title_en": "Steam the Broccoli",
+      "text_ko": "브로콜리를 작은 송이로 잘라요. 김이 오른 찜기에 넣고 삼 분에서 사 분 쪄요.",
+      "text_en": "Cut the broccoli into small florets. Steam for three to four minutes.",
+      "narrator": false
+    },
+    {
+      "id": "mix",
+      "title_ko": "마늘기름 내기",
+      "title_en": "Infuse the Oil",
+      "text_ko": "팬에 기름과 마늘을 넣어요. 중약불에서 마늘 향이 올라올 때까지 저어요.",
+      "text_en": "Add oil and garlic to a pan. Stir over medium low heat until fragrant.",
+      "narrator": false
+    },
+    {
+      "id": "cook",
+      "title_ko": "빠르게 볶기",
+      "title_en": "Toss in the Pan",
+      "text_ko": "찐 브로콜리를 넣고 일 분 정도 빠르게 볶아요. 마늘기름이 골고루 묻게 해요.",
+      "text_en": "Add the steamed broccoli and toss for about a minute to coat it with garlic oil.",
+      "narrator": false
+    },
+    {
+      "id": "serve",
+      "title_ko": "접시에 담기",
+      "title_en": "Plate the Dish",
+      "text_ko": "불을 끄고 레몬즙을 넣어 가볍게 섞어요. 아삭할 때 접시에 담아요.",
+      "text_en": "Turn off the heat and toss with lemon juice. Plate while still crisp.",
+      "narrator": true
+    },
+    {
+      "id": "benefit",
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "브로콜리에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 일하는 데 필요한 영양소예요.",
+      "text_en": "Broccoli supplies vitamin C. Your immune system needs vitamin C to work normally.",
+      "narrator": true
+    },
+    {
+      "id": "context",
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "이 수치는 익힌 브로콜리만 계산했어요. 비타민 씨는 열에 민감해서 익히는 방법과 시간에 따라 달라져요.",
+      "text_en": "This reference counts cooked broccoli alone. Vitamin C is sensitive to heat, so the amount varies with cooking method and time.",
+      "narrator": true
+    },
+    {
+      "id": "joke",
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "마늘 향이 나니 주방에 손님이 찾아왔어요.",
+      "text_en": "That garlic smells so good. Someone just wandered into the kitchen.",
+      "narrator": false
+    },
+    {
+      "id": "end",
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!",
+      "narrator": false
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 레몬 마늘 브로콜리 볶음 #Shorts",
+  "upload_title_en": "Chef Immune's Lemon Garlic Broccoli #Shorts",
+  "health_description_en": "Broccoli supplies vitamin C. Your immune system needs vitamin C to work normally. This reference counts cooked broccoli alone. Vitamin C is sensitive to heat, so the amount varies with cooking method and time."
+}
