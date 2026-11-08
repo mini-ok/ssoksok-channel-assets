@@ -96,3 +96,8 @@
 - 17편 뼈 쉐프 / 생강간장 두부. 주재료 두부. 단단한 두부를 썰어 전자레인지로 데운 후 생강간장을 얹음. 재사용 28편부터. 황산칼슘 응고 단단한 두부 120mL의 칼슘 약 253mg, 표시 DV 1300mg의 약 19%. 제품·응고제 차이. NIH ODS Calcium. 음악 buant_pop_groove.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0017
 - 18편 뇌 쉐프 / 파프리카 삶은 달걀. 주재료 달걀. 껍질째 완숙으로 삶아 반으로 잘라 가루를 얹음. 재사용 29편부터. 완숙 큰 달걀 1개의 콜린 약 147mg, 표시 DV 550mg의 약 27%. NIH ODS Choline. 음악 buoyant_kitchen_groove.mp3. https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0018
 - 정식 Release 두 건에 한영 MP4·자막·레시피·검수·업로드 자료 각 12개 게시. 네 영상의 SHA-256이 Actions 로그와 일치. 디코딩·음성·음량·음악·레시피 고정·3단계 입모양과 해설·무음 정지 검사 통과. 17편 한글 농담을 수정한 뒤 같은 기준으로 재검수. 직접 시청·청취와 유튜브 업로드 미실행. https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/42328151591
+
+## 19·20편 제작 완료 (2026-11-08)
+- 19편 눈 쉐프 / 커민 고구마 오븐 그라탱. 주재료 고구마. 껍질째 굽고 속을 커민·올리브유에 으깬 뒤 다시 채워 표면을 굽는다. 주재료·스타일 재사용 30편부터. 껍질째 구운 고구마 1개의 비타민 A 약 1,403mcg RAE(미국 표시 DV의 약 156%). 크기·품종 차이. 음악 nimble_motifs.mp3. 출처 https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=a8d0353219195s16 . https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0019
+- 20편 면역 쉐프 / 레몬 마늘 브로콜리 볶음. 주재료 브로콜리. 찐 뒤 마늘기름에 짧게 볶고 불을 끄고 레몬즙을 버무린다. 주재료·스타일 재사용 31편부터. 익힌 브로콜리 120mL의 비타민 C 약 51mg(미국 표시 DV의 약 57%). 조리 시간·방식 차이. 음악 buant_pop_groove.mp3. 출처 https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/ . https://github.com/mini-ok/ssoksok-channel-assets/releases/tag/cooking-episode-0020
+- 한영 MP4 4개 전체 디코딩·음성·음량·음악·레시피 고정·3단계 입모양 및 무음·해설 정지 자동 검수 통과. Release MP4의 SHA-256 4개가 Actions 검수 로그와 일치. 직접 시청·청취와 실물 조리는 미검수. https://github.com/mini-ok/ssoksok-channel-assets/actions/runs/42437280364
