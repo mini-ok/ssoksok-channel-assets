@@ -6,11 +6,11 @@ def eye(cv,x,y,s=1.0,mood='happy',lt=0.0):
     blob(cv,circle_path(0,-25,76),0x7DB6B0,0xB4DAD0,shade=0x5C8D91,ow=5)
     cv.drawCircle(0,-25,43,P(INK));cv.drawCircle(-18,-46,17,P(WHITE));cv.drawCircle(21,-9,8,P(WHITE))
     for xx in [-91,91]:cv.drawOval(skia.Rect.MakeXYWH(xx-14,53,28,14),P(0xECAFA6))
-    mouth=skia.Path();mouth.moveTo(-22,69);mouth.quadTo(0,94,22,69);cv.drawPath(mouth,P(INK,'stroke',5))
-    if mood=='shock':cv.drawOval(skia.Rect.MakeXYWH(-11,67,22,29),P(INK))
+    mouth=skia.Path();mouth.moveTo(-22,43);mouth.quadTo(0,57,22,43);cv.drawPath(mouth,P(INK,'stroke',5))
+    if mood=='shock':cv.drawOval(skia.Rect.MakeXYWH(-11,40,22,19),P(INK))
     if lt:
         size=(3,8,18)[int(lt)%3]
-        cv.drawOval(skia.Rect.MakeXYWH(-size,73-size/2,size*2,size),P(INK))
+        cv.drawOval(skia.Rect.MakeXYWH(-size,46-size/2,size*2,size),P(INK))
     cv.restore()
 
 
