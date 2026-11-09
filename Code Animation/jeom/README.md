@@ -14,6 +14,20 @@
 | 결정 사항 | 낙관 = 허상공방, 악기 = 거문고(점)·대금(용) | `preproduction.md` 5장, `audio/sketch.py` |
 | 애니마틱 v1(126초, 960×540, 임시음) | **확인 대기** | `animatic.py`, `anim_audio.py`, `sheets/animatic_v1_contact.png` |
 
+## v3 최종 (2026-11-10) — 1차 완성
+- 1920×1080, 24fps(그림은 투스 12장), 3분 11초, 소리(거문고 + 북 + 용 소리 합성 + 비·천둥) 포함. 씬 리스트 `scenelist_v3.md`, 렌더 `animatic3.py`, 소리 `anim_audio3.py`.
+- 새 엔진: `engine/rain.py`(붓으로 그린 비), `engine/room.py`(화실 원경·실루엣·벽 그림자·새벽 햇살), `engine/after.py`(폭풍이 지나간 아침 종이 — 어느 화면에서든 같은 상태), `engine/scale.py`(배율).
+- 다시 만들기(2코어, 약 1시간 30분):
+```bash
+export JEOM_SCALE=2
+JEOM_RES=0.25 python3 tests/test_hand2.py      # C2·C3 (약 13분)
+python3 tests/test_knife.py; python3 tests/test_leap.py   # C4, C17 + 아침 종이 기록(after.npz)
+python3 animatic3.py cut C1 C2 C3 C4 C5 C6 J C14 C15 C16 &   # 메모리 8GB에서 두 개까지(세 개는 OOM)
+python3 animatic3.py cut C17 C18 C19 C20 C21 C22 C23 C24 C25
+# 인코딩: anim_audio3.build(wav, 191.5) 후 ffmpeg -framerate 12 -i cache/anim3_1920/a%05d.png -i wav -vf fps=24 -crf 17
+```
+- 캐시는 배율별 폴더(`cache/*_1920`)로 분리된다. 두 프로세스가 같은 캐시를 동시에 처음 만들면 깨진 파일을 읽을 수 있다 — 첫 렌더 전에 한 번 단독으로 import해 캐시를 만들어 둘 것.
+
 ## v2 상태
 | 단계 | 상태 | 파일 |
 |---|---|---|
