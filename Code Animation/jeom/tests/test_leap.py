@@ -17,13 +17,13 @@ from look import INK_ABS, light, film, letterbox
 import dragon
 
 F32 = np.float32
-W, H = 960, 540
+from scale import S, W, H, SUF
 FPS = 12; DUR = 5.5
-F = 640.0; CX, CY = W / 2, H / 2
+F = 640.0 * S; CX, CY = W / 2, H / 2
 PC = np.array((400.0, 215.0))        # 화면 가운데에 오는 종이 좌표(mm)
 U = 1 / 50.0                         # mm → 월드
 Z0 = F * U / (W / 600.0)             # 종이 평면 깊이: 종이 600mm가 화면 폭
-CACHE = os.path.join(JE, 'cache', 'leap'); os.makedirs(CACHE, exist_ok=True)
+CACHE = os.path.join(JE, 'cache', 'leap' + SUF); os.makedirs(CACHE, exist_ok=True)
 rng = np.random.default_rng(3)
 
 def ease(u): return u * u * (3 - 2 * u)
@@ -169,7 +169,7 @@ def live_strokes(t_leave, k_load=1.0):
 
 # ---------------------------------------------------------------- 판
 SV = View(W / 2, H / 2, W, W, H)
-PV = View(320, 210, 900, 1440, 810)                                   # 종이 전체 + 책상(1.6px/mm)
+PV = View(320, 210, 900, int(1440 * S), int(810 * S))                                   # 종이 전체 + 책상(1.6px/mm)
 def plates():
     fn = os.path.join(CACHE, 'plates.npz')
     if os.path.exists(fn):
@@ -195,7 +195,7 @@ BODY_ON_PAPER = np.clip(DRG - CLOUD, 0, None)
 
 
 # ---------------------------------------------------------------- 유체(풀려 흐르는 먹) — 화면 공간
-GS = 2; GW, GH = W // GS, H // GS
+GS = int(2 * S); GW, GH = W // GS, H // GS
 class Fluid:
     def __init__(s):
         s.u = np.zeros((GH, GW), F32); s.v = np.zeros((GH, GW), F32); s.d = np.zeros((GH, GW), F32)
@@ -259,6 +259,7 @@ def splat_mm(dens, x, y, r, seed, spray=True, ang=None):
 DRIPS = []                                  # [t0, 낙하시간, 세계 시작점, 착지 mm, 반지름 mm, seed]
 SPLAT = np.zeros((PV.H, PV.W), F32)
 WETS = np.zeros((PV.H, PV.W), F32)
+WETS_MM = []                                # 젖은 자국(mm): 엔딩 종이를 다른 배율로 다시 그릴 때 쓴다
 RAIN_SP = np.random.default_rng(91)
 NRAIN = 260
 RAIN_XY = RAIN_SP.uniform(0, 1, (NRAIN, 2)); RAIN_PH = RAIN_SP.uniform(0, 1, NRAIN)
@@ -292,7 +293,8 @@ def render():
         # 비: 종이에 젖은 자국이 쌓인다
         for _ in range(6):
             rx, ry = rng.uniform(0, 640), rng.uniform(0, 420)
-            px, py = PV.to_px(rx, ry); rad = rng.uniform(1.5, 4) * PV.ppm
+            rmm = rng.uniform(1.5, 4); WETS_MM.append((rx, ry, rmm))
+            px, py = PV.to_px(rx, ry); rad = rmm * PV.ppm
             cv2.circle(WETS, (int(px), int(py)), int(rad), 1.0, -1, cv2.LINE_AA)
         # 날아간 먹방울이 종이에 닿는다
         for dr in DRIPS:
@@ -344,8 +346,8 @@ def render():
         # 살아 있는 용은 종이 위로 떠 있다: 아래에 그림자(높이만큼 밀리고 흐림)
         if lift > 0:
             hgt = min(1.0, tl * 1.2)
-            sh = cv2.GaussianBlur(np.clip(live, 0, 1.5), (0, 0), 2 + 14 * hgt)
-            sh = np.roll(np.roll(sh, int(18 * hgt), 1), int(26 * hgt), 0)
+            sh = cv2.GaussianBlur(np.clip(live, 0, 1.5), (0, 0), (2 + 14 * hgt) * S)
+            sh = np.roll(np.roll(sh, int(18 * hgt * S), 1), int(26 * hgt * S), 0)
             img = img * (1 - 0.35 * np.clip(sh, 0, 1) * (1 - 0.5 * hgt))[..., None]
             # 젖은 먹: 몸 굵은 곳의 한쪽 가장자리에 번개·창빛 반사, 속은 조금 더 깊게
             lv = cv2.GaussianBlur(np.clip(live, 0, 2).astype(F32), (0, 0), 2.0)
@@ -374,7 +376,8 @@ def render():
 
 if __name__ == '__main__':
     FR = render()
-    np.savez_compressed(os.path.join(CACHE, 'after.npz'), splat=SPLAT, wets=WETS)          # 떠난 뒤 종이에 남은 것(엔딩에 쓴다)
+    dr = np.array([(d[3][0], d[3][1], d[4], d[5], d[7]) for d in DRIPS if d[6]], float)
+    np.savez_compressed(os.path.join(CACHE, 'after.npz'), splat=SPLAT, wets=WETS, drips=dr, wets_mm=np.array(WETS_MM, float))          # 떠난 뒤 종이에 남은 것(엔딩에 쓴다)
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', os.path.join(CACHE, 'f%04d.png'),
                     '-vf', 'fps=24', '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', os.path.join(JE, 'cache', 'leap_test.mp4')])
     pick = [26, 27, 28, 29, 30, 31, 32, 44, 64]

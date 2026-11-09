@@ -8,7 +8,8 @@ import math
 import numpy as np, cv2
 
 F32 = np.float32
-SS = 2                                    # 슈퍼샘플
+import os
+SS = 1 if float(os.environ.get('JEOM_SCALE', '1')) >= 2 else 2   # 슈퍼샘플(1080p에서는 불필요)
 
 POSES = {
     # 서안 쪽으로 몸을 기울여 붓을 든 자세(붓끝 hand가 종이 위)
@@ -130,7 +131,7 @@ class Room:
         img[floor] *= (1 + 0.1 * self.grain[floor])[:, None]
         # 창(열린 창): 하늘 + 비
         win = (X > 0.56) & (X < 0.84) & (Y > 0.14) & (Y < 0.50)
-        sky_night = np.array((0.17, 0.19, 0.25), F32); sky_dawn = np.array((0.62, 0.60, 0.55), F32)
+        sky_night = np.array((0.17, 0.19, 0.25), F32); sky_dawn = np.array((0.95, 0.80, 0.55), F32)   # 해가 뜬 뒤: 금빛
         sky = sky_night * (1 - dawn) + sky_dawn * dawn
         cl = np.clip(0.5 + 0.6 * _noise(h, w, 77, 90) * (1 - 0.6 * dawn), 0, 1)
         skyimg = sky[None, None, :] * (0.75 + 0.35 * cl[..., None]) * (1 - 0.25 * dawn * (1 - np.clip((Y - 0.14) / 0.36, 0, 1)))[..., None] + flash * 0.9
@@ -210,6 +211,22 @@ class Room:
         wl = np.exp(-(r2 / 0.45) ** 2) * (0.35 + 1.2 * dawn + 2.0 * flash)
         wl = wl * (1 - win)
         img = img * (1 + wl[..., None] * (sky / max(sky.max(), 1e-3)) * 0.8)
+        # 새벽 햇살: 창에서 왼쪽 아래로 들어오는 빛기둥 + 바닥·벽에 떨어진 창 모양 빛
+        if dawn > 0:
+            dx, dy = -0.30, 0.50
+            win_pts = [(0.56, 0.14), (0.84, 0.14), (0.84, 0.50), (0.56, 0.50)]
+            beam = np.zeros((h, w), F32)
+            hull = cv2.convexHull(self.P(win_pts + [(x + dx, y + dy) for x, y in win_pts]))
+            cv2.fillConvexPoly(beam, hull, 1.0, cv2.LINE_AA)
+            fade = np.clip(1.0 - np.hypot(X - 0.70, Y - 0.32) / 0.75, 0, 1)
+            beam = cv2.GaussianBlur(beam, (0, 0), 14 * SS) * fade
+            patch = np.zeros((h, w), F32)                                    # 바닥에 떨어진 창 모양 빛(원근으로 납작한 사다리꼴)
+            self.poly(patch, [(0.31, 0.83), (0.57, 0.83), (0.51, 0.95), (0.23, 0.95)])
+            patch = cv2.GaussianBlur(patch, (0, 0), 7 * SS) * 0.6
+            warm = np.array((1.0, 0.82, 0.55), F32)
+            img = img * (1 + (beam * 0.9 * dawn)[..., None] * warm) + (beam * 0.05 * dawn)[..., None] * warm
+            img = img + (patch * 0.30 * dawn)[..., None] * warm
+            fig_lit = fig * 0                                                 # (화가는 빛 속 실루엣)
         # 화가는 검은 실루엣 + 등잔/창 쪽 가장자리 빛
         edge = np.clip(fig - cv2.GaussianBlur(np.roll(fig, -3 * SS, 1), (0, 0), 1.2 * SS), 0, 1)
         figcol = np.array((0.018, 0.015, 0.014), F32)[None, None, :] + edge[..., None] * (

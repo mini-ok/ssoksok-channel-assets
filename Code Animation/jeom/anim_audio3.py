@@ -24,6 +24,29 @@ def daehyeon(amp=0.8, dur=4.0, scrape_=0.0):
         x = x + S.bandnoise(n, 120, 900) * np.exp(-t / 0.25) * scrape_
     return x
 
+def roar(dur=3.6, amp=0.8, f0=(72.0, 52.0), formants=((380, 640, 1.0), (900, 1150, 0.6), (2300, 2600, 0.25)), seed=1):
+    """용의 소리: 거친 성대 진동(톱니파 + 반 주파수 으르렁 + 떨림) + 숨소리를 입 모양 공명(열리며 F1이 오름)에 통과."""
+    from scipy.signal import butter, lfilter
+    r = np.random.default_rng(seed)
+    n = int(dur * SR); t = np.arange(n) / SR
+    u = t / dur
+    f = f0[0] + (f0[1] - f0[0]) * u + 6 * np.sin(2 * np.pi * 5.5 * t) + np.cumsum(r.normal(0, 0.4, n)) / SR * 40
+    ph = np.cumsum(f) / SR
+    saw = 2 * (ph % 1.0) - 1
+    sub = np.sign(np.sin(np.pi * ph)) * 0.5                               # 반 주파수: 으르렁거리는 거칠음
+    src = (saw + sub) * (1 + 0.3 * r.normal(0, 1, n)) + S.bandnoise(n, 200, 5000) * 1.2
+    out = np.zeros(n)
+    for lo, hi, g in formants:
+        fc_s = lo + (hi - lo) * np.clip(u * 2, 0, 1)                      # 입이 열리며 공명이 오른다(블록 단위로 근사)
+        for k in range(8):
+            a, b = int(k * n / 8), int((k + 1) * n / 8)
+            fc = float(fc_s[(a + b) // 2])
+            bb, aa = butter(2, [fc * 0.75 / (SR / 2), min(0.99, fc * 1.3 / (SR / 2))], btype='band')
+            out[a:b] += lfilter(bb, aa, src[a:b]) * g
+    env = np.clip(t / 0.35, 0, 1) ** 1.5 * np.exp(-np.clip(t - dur * 0.55, 0, None) / (dur * 0.25))
+    x = out * env
+    return x / (np.abs(x).max() + 1e-9) * amp
+
 def growl(dur=3.5, amp=0.6):
     n = int(dur * SR); t = np.arange(n) / SR
     base = S.bandnoise(n, 40, 260) * (0.5 + 0.5 * np.sin(2 * np.pi * 23 * t))
@@ -69,7 +92,9 @@ def build(out, T):
     # 폭풍(126.5~148.5): 북 + 대현 반복 음형, 포효(134.7) 으르렁 + 대현 긁기, 하늘 접수에서 북 몰아쳐 최고조
     for ts in np.arange(122.5, 134.5, 0.45): put(mix, buk(0.5, 64.0, 0.7), ts)
     for ts in np.arange(124.0, 134.5, 1.8): put(mix, daehyeon(0.55, 2.0, 0.1), ts)
-    put(mix, growl(3.5, 0.7), 134.7); put(mix, daehyeon(1.0, 4.0, 0.6), 134.8); put(mix, buk(1.0, 48.0, 2.2), 134.8)
+    put(mix, roar(3.8, 0.85), 134.9); put(mix, growl(3.5, 0.45), 134.9); put(mix, daehyeon(1.0, 4.0, 0.6), 135.0); put(mix, buk(1.0, 48.0, 2.2), 135.0)
+    put(mix, roar(1.6, 0.45, f0=(80, 64), seed=3), 108.7)                    # 벗어나는 순간의 짧은 숨 소리
+    put(mix, roar(4.0, 0.75, f0=(96, 120), formants=((500, 800, 1.0), (1100, 1500, 0.7), (2600, 3000, 0.3)), seed=5), 148.9)   # 승천: 높아지는 외침
     for ts in np.arange(138.5, 153.0, 0.3): put(mix, buk(0.5 + 0.35 * min(1, (ts - 138.5) / 12), 68.0, 0.5), ts)
     for ts in np.arange(139.0, 153.0, 1.2): put(mix, daehyeon(0.6, 1.6, 0.15), ts)
     # 해가 뜨는 순간(151.6) 정적 1초 → 거문고 낮은 화음 길게
@@ -80,7 +105,7 @@ def build(out, T):
     put(mix, tap(0.25, 0.08, 200, 1500, 0.02), 173.2)
     put(mix, tap(0.20, 0.08, 500, 4000, 0.015), 177.4)
     put(mix, S.geomungo(130.8, 5.0, 0.8, nonghyeon=0.2), 177.5)
-    put(mix, S.geomungo(196.0, 4.0, 0.6, nonghyeon=0.2), 182.3)
+    put(mix, S.geomungo(196.0, 4.0, 0.6, nonghyeon=0.2), 185.7); put(mix, S.geomungo(98.0, 6.0, 0.5, nonghyeon=0.1), 187.1)
     mix = S.reverb(mix, 2.6, 0.30)
     mix[mute | mute2] *= 0.0
     mix[(tt > 105.4) & (tt < 108.6)] += S.rain(int(mute.sum()), np.full(int(mute.sum()), 0.6))[:int(mute.sum())] * 1.0   # 바닥: 빗소리만

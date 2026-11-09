@@ -6,7 +6,7 @@
 import sys, os, math, subprocess, glob
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, 'engine')); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, 'tests'))
-os.environ['JEOM_RES'] = '0.5'
+os.environ.setdefault('JEOM_RES', '0.5')
 import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFont
 from paper import View, paper_layers, paper_rgb
@@ -15,8 +15,9 @@ import timeline as TL
 import inkmm
 
 F32 = np.float32
-W, H, FPS = 960, 540, 12
-OUT = os.path.join(HERE, 'cache', 'anim2'); os.makedirs(OUT, exist_ok=True)
+from scale import S, W, H, SUF
+FPS = 12
+OUT = os.path.join(HERE, 'cache', 'anim2' + SUF); os.makedirs(OUT, exist_ok=True)
 C = os.path.join(HERE, 'cache')
 def ease(u): return u * u * (3 - 2 * u)
 def ramp(t, a, b): return float(np.clip((t - a) / (b - a), 0, 1))
@@ -104,7 +105,7 @@ def room():
     global _room
     if _room is None:
         from room import Room
-        _room = Room()
+        _room = Room(W, H)
     return _room
 from room import POSES, mix
 

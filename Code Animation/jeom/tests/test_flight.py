@@ -15,15 +15,15 @@ from look import INK_ABS, film, letterbox
 import dragon
 
 F32 = np.float32
-W, H = 960, 540
-GS = 2; GW, GH = W // GS, H // GS
+from scale import S, W, H, SUF
+GS = int(2 * S); GW, GH = W // GS, H // GS
 FPS = 12; DUR = 4.5
-F = 640.0; CX, CY = W / 2, H / 2
+F = 640.0 * S; CX, CY = W / 2, H / 2
 R_BODY = 0.50                        # 몸 반지름(월드)
 LT = 2.7                             # 몸 길이 = 머리 경로 1.45초 분량
 NS = 140                             # 등뼈 표본 수
 rng = np.random.default_rng(7)
-CACHE = os.path.join(JE, 'cache', 'flight'); os.makedirs(CACHE, exist_ok=True)
+CACHE = os.path.join(JE, 'cache', 'flight' + SUF); os.makedirs(CACHE, exist_ok=True)
 
 def ease(u): return u * u * (3 - 2 * u)
 
@@ -133,12 +133,12 @@ def fbm(shape, seed, scales=(64, 32, 16, 8), amps=(1, .55, .3, .16)):
     return out / sum(amps)
 CLOUD_A = fbm((H + 200, W + 400), 11); CLOUD_B = fbm((H + 200, W + 400), 12, scales=(128, 64, 32, 16))
 
-CL1 = fbm((H + 200, W + 400), 11, scales=(256, 128, 64, 24), amps=(1, .6, .3, .12))
-CL2 = fbm((H + 200, W + 400), 12, scales=(320, 160, 80, 32), amps=(1, .5, .25, .1))
+CL1 = fbm((H + int(200 * S), W + int(400 * S)), 11, scales=tuple(int(v * S) for v in (256, 128, 64, 24)), amps=(1, .6, .3, .12))
+CL2 = fbm((H + int(200 * S), W + int(400 * S)), 12, scales=tuple(int(v * S) for v in (320, 160, 80, 32)), amps=(1, .5, .25, .1))
 def wash(c, thr):
     m = np.clip((c - thr) * 2.2, 0, None)
     m = np.tanh(m * 1.2)
-    rim = np.clip(m - cv2.GaussianBlur(m, (0, 0), 6), 0, None) * 1.6     # 마르며 생긴 가장자리 테
+    rim = np.clip(m - cv2.GaussianBlur(m, (0, 0), 6 * S), 0, None) * 1.6     # 마르며 생긴 가장자리 테
     return m * 0.55 + rim
 def sky(t):
     yy = np.linspace(0, 1, H, dtype=F32)[:, None]

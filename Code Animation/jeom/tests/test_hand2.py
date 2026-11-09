@@ -18,7 +18,7 @@ sys.path.insert(0, JE)
 import animatic as A
 import inkmm
 
-W, H = 960, 540
+from scale import S, W, H, SUF
 F32 = np.float32
 E = (300.0, 112.0); CORNER = (38.0, 392.0)          # timeline WATERS[0]과 같은 자리
 S_DIR = np.array((0.6, -0.8)); K = 0.45          # 그림자 방향(오른쪽 위)과 높이 1mm당 밀림
@@ -29,7 +29,7 @@ def ease(u): return u * u * (3 - 2 * u)
 def lerp(a, b, u): return (a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u)
 
 # ---------------------------------------------------------------- 판(종이+용)
-PA = A.Plate('eyecu', 296, 140, 210, 960 / 170 * 1.05)
+PA = A.Plate('eyecu', 296, 140, 210, W / 170 * 1.05)
 PB = A.plate_for('C2')                           # 'corner' 판
 VA = View(296, 136, 170, W, H)
 VB = View(56, 382, 150, W, H)
@@ -221,7 +221,7 @@ def frame(t):
     return (np.clip(img, 0, 1)[..., ::-1] * 255 + 0.5).astype(np.uint8)
 
 if __name__ == '__main__':
-    out = os.path.join(JE, 'cache', 'hand_test2'); os.makedirs(out, exist_ok=True)
+    out = os.path.join(JE, 'cache', 'hand_test2' + SUF); os.makedirs(out, exist_ok=True)
     N = int(8.6 * 12); FR = []
     for k in range(N):
         f = frame(k / 12); FR.append(f)

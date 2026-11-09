@@ -17,7 +17,7 @@ from look import INK_ABS, light, film, letterbox
 import dragon, inkmm
 import timeline as TL
 
-W, H = 960, 540
+from scale import S, W, H, SUF
 F32 = np.float32
 FONT_K = '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
 FONT_T = '/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc'
@@ -64,7 +64,7 @@ def cam_at(t):
 class Plate:
     def __init__(self, key, cx, cy, wmm, ppm, strokes_filter=None, with_dragon=True):
         self.v = View(cx, cy, wmm, int(wmm * ppm), int(wmm * ppm * 0.75))
-        fn = os.path.join(CACHE, f'plate_{key}.npz')
+        fn = os.path.join(CACHE, f'plate_{key}{SUF}.npz')
         if os.path.exists(fn):
             z = np.load(fn); self.rgb, self.fib, self.drg = z['rgb'], z['fib'], z['drg']
         else:
@@ -100,19 +100,19 @@ def plate_for(name):
     if name in _plates:
         return _plates[name]
     if name in ('C5', 'C11a', 'C1', 'C11b'):
-        p = Plate('whole', 320, 210, 680, 2.4)
+        p = Plate('whole', 320, 210, 680, 2.4 * S)
     elif name in ('C12', 'CR'):
-        p = Plate('morning', 320, 210, 680, 2.4, strokes_filter=lambda s: s.name.startswith('cloud'))
+        p = Plate('morning', 320, 210, 680, 2.4 * S, strokes_filter=lambda s: s.name.startswith('cloud'))
     elif name in ('C2', 'C3', 'C4'):
-        p = Plate('corner', 60, 378, 190, 960 / 72 * 1.05)
+        p = Plate('corner', 60, 378, 190, W / 72 * 1.05)
     elif name in ('C6',):
-        p = Plate('c6', 200, 267, 110, 960 / 88 * 1.05)
+        p = Plate('c6', 200, 267, 110, W / 88 * 1.05)
     elif name in ('C7',):
-        p = Plate('c7', 245, 238, 150, 960 / 110 * 1.05)
+        p = Plate('c7', 245, 238, 150, W / 110 * 1.05)
     elif name in ('C8',):
-        p = Plate('c8', 286, 164, 160, 960 / 110 * 1.05)
+        p = Plate('c8', 286, 164, 160, W / 110 * 1.05)
     else:                                                             # C9, C10
-        p = Plate('eye', 300, 115, 80, 960 / 48 * 1.0)
+        p = Plate('eye', 300, 115, 80, W / 48 * 1.0)
     _plates[name] = p
     return p
 

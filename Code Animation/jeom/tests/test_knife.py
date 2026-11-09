@@ -15,7 +15,8 @@ import animatic as A
 import inkmm
 
 F32 = np.float32
-W, H = 960, 540; FPS = 12; DUR = 6.0
+from scale import S, W, H, SUF
+FPS = 12; DUR = 6.0
 V = View(62, 372, 175, W, H)
 X, Y = V.grid_mm()
 P0 = np.array((0.0, 318.0)); U = np.array((1.0, 1.0)) / math.sqrt(2); NRM = np.array((1.0, -1.0)) / math.sqrt(2)
@@ -83,10 +84,39 @@ def knife_polys(s, n):
     tip = P0 + U * s + NRM * n
     f = U; g = -NRM                                                   # f: 손잡이 쪽, g: 잘린 조각 쪽(칼날 폭)
     blade = [tip, tip + f * 30 + g * 0.8, tip + f * 30 + g * 9.5, tip + f * 13 + g * 9.5]
-    handle = [tip + f * 30 + g * 0.2, tip + f * 115 + g * 0.6, tip + f * 115 + g * 10.2, tip + f * 30 + g * 10.0]
+    handle = [tip + f * 30 + g * 0.2, tip + f * 160 + g * 0.6, tip + f * 160 + g * 10.2, tip + f * 30 + g * 10.0]
     return blade, handle, tip
 
+def setview(t):
+    """카메라가 칼끝을 따라간다(손잡이는 늘 화면 오른쪽 아래 밖으로 — 손은 화면 밖에서 쥐고 있다)."""
+    global V, X, Y, RGB, FIB, DRG, OFF, DOT
+    ts = np.linspace(max(0.0, t - 0.5), t, 6)
+    tips = []
+    for tt in ts:
+        s_, n_, h_ = blade_state(tt); tips.append(P0 + U * s_ + NRM * n_)
+    c = np.mean(tips, 0)
+    V = View(c[0] + 10, c[1] + 6, 112, W, H)
+    X, Y = V.grid_mm()
+    RGB, FIB, DRG = plate.sample(X, Y)
+    OFF = ((X < 0) | (X > 640) | (Y < 0) | (Y > 420)).astype(F32)
+    d = inkmm.sample(D.density(15.5), V, X, Y)
+    hh = cv2.GaussianBlur(d, (0, 0), max(0.6, 0.3 * V.ppm))
+    DOT = d + np.clip(hh - d, 0, 0.6) * np.clip(FIB * 1.5 - 0.2, 0, 1.3) * 1.4
+
+def hand_shadow(tip, h):
+    """화면 밖에서 칼자루를 쥔 손과 소매의 그림자(등잔이 왼쪽 아래 낮은 곳 → 오른쪽 위로 드리움, 높을수록 흐림)."""
+    m = np.zeros((H, W), F32)
+    S_DIR = np.array((0.6, -0.8))
+    for (along, z, rx, ry, wgt) in ((120, 40 + h, 24, 17, 1.0), (175, 70 + h, 46, 30, 0.8)):
+        c = tip + U * along + S_DIR * 0.45 * z
+        px, py = V.to_px(c[0], c[1])
+        mm = np.zeros((H, W), F32)
+        cv2.ellipse(mm, (int(px), int(py)), (int(rx * V.ppm), int(ry * V.ppm)), 45, 0, 360, 1.0, -1, cv2.LINE_AA)
+        m = np.maximum(m, cv2.GaussianBlur(mm, (0, 0), 0.06 * z * V.ppm) * wgt)
+    return m
+
 def frame(t):
+    setview(t)
     s, n, h = blade_state(t)
     if 0.7 <= t < 3.85 and h == 0.0:
         p = P0 + U * s + NRM * n
@@ -110,11 +140,19 @@ def frame(t):
     cv2.fillPoly(sh, [poly_px(blade, hoff * 0.5)], 1.0); cv2.fillPoly(sh, [poly_px(handle, hoff * 1.3)], 1.0)
     sh = cv2.GaussianBlur(sh, (0, 0), 1.2 * V.ppm)
     img = img * (1 - 0.45 * sh[..., None])
+    img = img * (1 - 0.5 * hand_shadow(P0 + U * s + NRM * n, h)[..., None])
     lay = np.zeros_like(img); m = np.zeros((H, W), F32)
-    cv2.fillPoly(lay, [poly_px(ruler)], (0.74, 0.62, 0.40)); cv2.fillPoly(m, [poly_px(ruler)], 1.0)
+    # 대나무 자: 결(길이 방향 가는 줄), 마디, 모서리 빛 — 납작한 면처럼 보이지 않게
+    ac = (X - P0[0]) * NRM[0] + (Y - P0[1]) * NRM[1]; al = (X - P0[0]) * U[0] + (Y - P0[1]) * U[1]
+    rm = ((ac >= 0) & (ac <= 24) & (al >= -40) & (al <= 200)).astype(F32)
+    gr = 0.05 * np.sin(ac * 9.0 + 0.7 * np.sin(al * 0.07)) + 0.03 * np.sin(ac * 23.0 + al * 0.02) + 0.04 * (FIB - 0.3)
+    nd = np.zeros_like(ac)
     for k in range(-20, 200, 46):
-        a_, b_ = P0 + U * k, P0 + U * k + NRM * 24
-        q = poly_px([a_, b_]); cv2.line(lay, tuple(q[0]), tuple(q[1]), (0.52, 0.40, 0.24), max(1, int(V.ppm * 0.8)))
+        nd = np.maximum(nd, np.exp(-((al - k) / 0.9) ** 2))
+    bev = np.exp(-(ac / 0.9) ** 2) * 0.18 - np.exp(-((24 - ac) / 1.2) ** 2) * 0.15
+    rcol = np.array((0.74, 0.61, 0.38), F32)[None, None, :] * (1 + gr + bev - 0.28 * nd)[..., None]
+    lay = lay * (1 - rm[..., None]) + rcol * rm[..., None]; m = np.maximum(m, rm)
+
     cv2.fillPoly(lay, [poly_px(handle)], (0.30, 0.19, 0.12)); cv2.fillPoly(m, [poly_px(handle)], 1.0)
     cv2.fillPoly(lay, [poly_px(blade)], (0.66, 0.68, 0.70)); cv2.fillPoly(m, [poly_px(blade)], 1.0)
     # 날의 반사(등잔빛 한 줄)
@@ -132,7 +170,7 @@ def frame(t):
     return (np.clip(img, 0, 1)[..., ::-1] * 255 + 0.5).astype(np.uint8)
 
 if __name__ == '__main__':
-    out = os.path.join(JE, 'cache', 'knife_test'); os.makedirs(out, exist_ok=True)
+    out = os.path.join(JE, 'cache', 'knife_test' + SUF); os.makedirs(out, exist_ok=True)
     FR = []
     for k in range(int(DUR * FPS)):
         f = frame(k / FPS); FR.append(f); cv2.imwrite(os.path.join(out, f'k{k:04d}.png'), f)
