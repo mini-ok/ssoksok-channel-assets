@@ -1,0 +1,294 @@
+"""〈점〉 표현 시험: 그림 속 용이 그대로 움직여 종이에서 솟아오른다(4.5초, 960×540, 투스).
+원칙: 날아가는 용은 새로 만든 모델이 아니라 본편 그림의 획 그 자체다.
+  - 모든 획의 제어점을 그림 속 등뼈(SPINE) 기준 좌표(s: 등뼈 길이, a: 접선 방향, d: 법선 방향)로 바꿔 둔다.
+    머리 획은 s=0(목) 틀에 단단히 붙인다.
+  - 새 등뼈 = '머리가 지나온 길'. t=0에는 그 길이 그림 속 등뼈 자체라서 화면은 그림과 똑같다.
+    머리가 앞으로 나가면 몸은 자기가 그려진 곡선을 따라 미끄러져 나오고, 그다음 머리가 지나간 3D 길을 따라간다.
+  - 회전 최소 틀(RMF)로 등뼈를 따라 틀을 옮겨, 획 평면이 3D 공간에서 자연스럽게 기울고 원근으로 줄고 커진다.
+  - 종이에는 섬유에 스민 먹이 옅은 용(유령)으로 남는다. 몸에서 풀린 먹은 2D 유체로 흘러내린다.
+"""
+import sys, os, math, copy, subprocess
+HERE = os.path.dirname(os.path.abspath(__file__)); JE = os.path.dirname(HERE)
+sys.path.insert(0, os.path.join(JE, 'engine'))
+import numpy as np, cv2
+from paper import View, paper_layers, paper_rgb
+from brush import Stroke, Wash, render_strokes
+from look import INK_ABS, light, film, letterbox
+import dragon
+
+F32 = np.float32
+W, H = 960, 540
+FPS = 12; DUR = 5.5
+F = 640.0; CX, CY = W / 2, H / 2
+PC = np.array((400.0, 215.0))        # 화면 가운데에 오는 종이 좌표(mm)
+U = 1 / 50.0                         # mm → 월드
+Z0 = F * U / (W / 600.0)             # 종이 평면 깊이: 종이 600mm가 화면 폭
+CACHE = os.path.join(JE, 'cache', 'leap'); os.makedirs(CACHE, exist_ok=True)
+rng = np.random.default_rng(3)
+
+def ease(u): return u * u * (3 - 2 * u)
+def ramp(t, a, b): return float(np.clip((t - a) / (b - a), 0, 1))
+
+def paper_to_world(xy):
+    xy = np.asarray(xy, float)
+    return np.stack([(xy[..., 0] - PC[0]) * U, -(xy[..., 1] - PC[1]) * U, np.full(xy.shape[:-1], Z0)], -1)
+
+CAM = {'pos': np.zeros(3), 'tilt': 0.0}
+def cam_at(t):
+    u = ease(ramp(t, 1.6, 4.2))
+    return np.array((0.0, -1.2 * u, -4.0 * u)), math.radians(16) * u        # 뒤로 물러나며 위로 젖힌다
+def project(P):
+    c, ti = CAM['pos'], CAM['tilt']
+    Q = np.asarray(P, float) - c
+    ct, st_ = math.cos(ti), math.sin(ti)
+    y = Q[..., 1] * ct - Q[..., 2] * st_; z = Q[..., 1] * st_ + Q[..., 2] * ct      # 위로 젖힘: 위쪽이 화면 가운데로
+    z = np.maximum(z, 0.3)
+    return np.stack([CX + F * Q[..., 0] / z, CY - F * y / z], -1), z
+
+# ---------------------------------------------------------------- 그림 속 용 → 등뼈 좌표
+SP = dragon.SPINE; SS = dragon._S; SL = dragon.SPINE_L
+_T = np.gradient(SP, axis=0); _T /= np.linalg.norm(_T, axis=1, keepdims=True)
+_N = np.stack([-_T[:, 1], _T[:, 0]], 1)
+HEAD_NAMES = {'head_wash', 'topline', 'bridge', 'nose', 'lipcurl', 'lip', 'jaw', 'fang', 'cheek', 'beard', 'eye_up', 'eye_low',
+              'brow', 'horn1', 'horn1b', 'horn2', 'mane', 'whisker1', 'whisker2'}
+
+def to_spine(p, head=False):
+    p = np.asarray(p, float)
+    if head:
+        i = np.zeros(len(p), int)
+    else:
+        d2 = ((p[:, None, :] - SP[None, :, :]) ** 2).sum(-1); i = d2.argmin(1)
+    r = p - SP[i]
+    return np.stack([SS[i], (r * _T[i]).sum(1), (r * _N[i]).sum(1)], 1)
+
+ALL = [s for s in dragon.strokes() if not s.name.startswith('cloud')]
+REC = []
+for st in ALL:
+    head = st.name in HEAD_NAMES
+    if isinstance(st, Stroke):
+        REC.append(('S', st, to_spine(st.c, head)))
+    else:
+        REC.append(('W', st, to_spine(np.array([(b[0], b[1]) for b in st.blobs]), head)))
+
+# ---------------------------------------------------------------- 머리의 길(3D)
+HEAD0 = paper_to_world(SP[0])
+KEYS = np.array([HEAD0,
+                 (-2.4, 2.2, 7.6),
+                 (-3.3, 1.5, 5.8),
+                 (-1.8, 0.2, 4.3),
+                 (1.0, 0.3, 3.6),
+                 (3.0, 2.4, 4.3),
+                 (3.7, 6.4, 6.6),
+                 (3.9, 11.0, 9.0)], float)
+KT = np.array([0.0, 0.5, 1.1, 1.6, 2.1, 2.6, 3.3, 4.1])
+def head_path(tau):
+    """그림 속 방향(왼쪽 위)으로 미끄러져 나오다 → 카메라 쪽으로 솟아 크게 다가오고 → 오른쪽으로 휘감아 → 위로 빠진다."""
+    tau = np.atleast_1d(np.asarray(tau, float))
+    P = np.vstack([KEYS[:1] * 2 - KEYS[1:2], KEYS, KEYS[-1:] * 2 - KEYS[-2:-1]])
+    i = np.clip(np.searchsorted(KT, tau, side='right') - 1, 0, len(KT) - 2)
+    u = ((tau - KT[i]) / (KT[i + 1] - KT[i]))[:, None]
+    p0, p1, p2, p3 = P[i], P[i + 1], P[i + 2], P[i + 3]
+    return 0.5 * ((2 * p1) + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u ** 2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u ** 3)
+
+def trail(t_leave):
+    """머리가 지나온 길: 그림 속 등뼈(꼬리→목) + 떠난 뒤의 3D 길. 호 길이로 다시 표본."""
+    painted = paper_to_world(SP[::-1])
+    if t_leave > 0:
+        taus = np.linspace(0, t_leave, max(2, int(t_leave * 90)))
+        path = head_path(taus)[1:]
+        pts = np.vstack([painted, path])
+    else:
+        pts = painted
+    seg = np.linalg.norm(np.diff(pts, axis=0), axis=1); cum = np.concatenate([[0], np.cumsum(seg)])
+    return pts, cum
+
+def frame_along(pts, cum, s_world):
+    """머리에서 s_world만큼 뒤의 위치와 회전 최소 틀(T, N, B). 그림 속에서는 N이 종이 평면의 법선 방향(그림의 _N)과 같다."""
+    Ltot = cum[-1]
+    # 틀을 trail 전체에 대해 한 번 계산(회전 최소 틀)
+    T = np.gradient(pts, axis=0); T /= np.linalg.norm(T, axis=1, keepdims=True) + 1e-9
+    T = -T                                                           # 머리 쪽(끝)을 향하도록: 원래 trail은 꼬리→머리
+    # 그림 평면이 늘 카메라를 보게(빌보드 띠): N = 시선 × T, 이웃과 부호를 이어 붙인다
+    vd = pts - CAM['pos']; vd /= np.linalg.norm(vd, axis=1, keepdims=True) + 1e-9
+    Ns = np.cross(vd, T); Ns /= np.linalg.norm(Ns, axis=1, keepdims=True) + 1e-9
+    for k in range(1, len(pts)):
+        if Ns[k] @ Ns[k - 1] < 0:
+            Ns[k] = -Ns[k]
+    q = np.clip(Ltot - s_world, 0, Ltot)
+    idx = np.clip(np.searchsorted(cum, q) , 1, len(cum) - 1)
+    w = ((q - cum[idx - 1]) / (cum[idx] - cum[idx - 1] + 1e-9))[:, None]
+    P = pts[idx - 1] * (1 - w) + pts[idx] * w
+    Tq = T[idx - 1] * (1 - w) + T[idx] * w; Nq = Ns[idx - 1] * (1 - w) + Ns[idx] * w
+    return P, Tq, Nq
+
+# 그림의 _N과 RMF의 N이 같은 쪽을 보게 부호를 맞춘다(t=0 기준)
+_p, _c = trail(0)
+_P, _Tq, _Nq = frame_along(_p, _c, np.array([0.0, 1.0]) * 0 + np.array([SS[5] * U, SS[5] * U]))
+_nw = paper_to_world(SP[5] + _N[5]) - paper_to_world(SP[5])
+NSIGN = 1.0 if (_Nq[0] @ _nw) > 0 else -1.0
+_tw = paper_to_world(SP[5] - _T[5]) - paper_to_world(SP[5])         # 그림 _T(목→꼬리)의 반대 = 머리 쪽
+TSIGN = 1.0 if (_Tq[0] @ _tw) > 0 else -1.0
+
+def live_strokes(t_leave, k_load=1.0):
+    pts, cum = trail(t_leave)
+    out = []
+    for kind, st, sad in REC:
+        s, a, d = sad[:, 0] * U, sad[:, 1] * U, sad[:, 2] * U
+        P, Tq, Nq = frame_along(pts, cum, s)
+        Pw = P + (-TSIGN) * Tq * a[:, None] + NSIGN * Nq * d[:, None]
+        S2, Z = project(Pw)
+        k = F * U / Z                                                  # 그 점의 px/mm
+        if kind == 'S':
+            ns = copy.copy(st)
+            ns.c = S2; seg = np.linalg.norm(np.diff(S2, axis=0), axis=1)
+            ns.s = np.concatenate([[0], np.cumsum(seg)]); ns.L = float(ns.s[-1])
+            ns.width = st.width * float(np.median(k)); ns.load = st.load * k_load
+            out.append(ns)
+        else:
+            ns = copy.copy(st)
+            ns.blobs = [(S2[j, 0], S2[j, 1], st.blobs[j][2] * float(k[j])) for j in range(len(st.blobs))]
+            ns.load = st.load * k_load
+            out.append(ns)
+    return out, pts, cum
+
+# ---------------------------------------------------------------- 판
+SV = View(W / 2, H / 2, W, W, H)
+PV = View(320, 210, 900, 1440, 810)                                   # 종이 전체 + 책상(1.6px/mm)
+def plates():
+    fn = os.path.join(CACHE, 'plates.npz')
+    if os.path.exists(fn):
+        z = np.load(fn); return z['rgb'], z['fib'], z['drg'], z['sfib']
+    fib, flk, mot, X, Y = paper_layers(PV)
+    rgb = paper_rgb(fib, flk, mot).astype(F32)
+    off = ((X < 0) | (X > 640) | (Y < 0) | (Y > 420))
+    rgb[off] = np.array((0.16, 0.11, 0.075), F32)                     # 책상
+    drg = (render_strokes(PV, dragon.strokes(), fib) * dragon.eye_blank(X, Y)).astype(F32)
+    sfib = paper_layers(SV)[0].astype(F32)
+    np.savez_compressed(fn, rgb=rgb, fib=fib.astype(F32), drg=drg, sfib=sfib)
+    return rgb, fib.astype(F32), drg, sfib
+RGB, FIB, DRG, SFIB = plates()
+def paper_H():
+    """종이 판(PV 픽셀) → 화면 호모그래피(카메라 따라)."""
+    cs = np.array([[0, 0], [PV.W, 0], [PV.W, PV.H], [0, PV.H]], F32)
+    mm = np.stack([(cs[:, 0] - PV.W / 2) / PV.ppm + PV.cx, (cs[:, 1] - PV.H / 2) / PV.ppm + PV.cy], 1)
+    sc, _ = project(paper_to_world(mm))
+    return cv2.getPerspectiveTransform(cs, sc.astype(F32))
+# 그림 속 구름만 따로(종이에 그대로 남는다)
+CLOUD = render_strokes(PV, [s for s in dragon.strokes() if s.name.startswith('cloud')], FIB)
+BODY_ON_PAPER = np.clip(DRG - CLOUD, 0, None)
+
+
+# ---------------------------------------------------------------- 유체(풀려 흐르는 먹) — 화면 공간
+GS = 2; GW, GH = W // GS, H // GS
+class Fluid:
+    def __init__(s):
+        s.u = np.zeros((GH, GW), F32); s.v = np.zeros((GH, GW), F32); s.d = np.zeros((GH, GW), F32)
+        s.gx, s.gy = np.meshgrid(np.arange(GW, dtype=F32), np.arange(GH, dtype=F32))
+    def adv(s, f, dt):
+        return cv2.remap(f, s.gx - s.u * dt, s.gy - s.v * dt, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+    def step(s, dt):
+        w = (np.roll(s.v, -1, 1) - np.roll(s.v, 1, 1) - np.roll(s.u, -1, 0) + np.roll(s.u, 1, 0)) * 0.5
+        aw = np.abs(w); nx = (np.roll(aw, -1, 1) - np.roll(aw, 1, 1)) * 0.5; ny = (np.roll(aw, -1, 0) - np.roll(aw, 1, 0)) * 0.5
+        nn = np.hypot(nx, ny) + 1e-5
+        s.u += dt * 4.0 * (ny / nn * w); s.v += dt * 4.0 * (-nx / nn * w)
+        s.v += dt * 60.0 * np.tanh(s.d * 0.8)
+        s.u, s.v = s.adv(s.u, dt), s.adv(s.v, dt)
+        div = (np.roll(s.u, -1, 1) - np.roll(s.u, 1, 1) + np.roll(s.v, -1, 0) - np.roll(s.v, 1, 0)) * 0.5
+        p = np.zeros_like(div)
+        for _ in range(25):
+            p = (np.roll(p, 1, 1) + np.roll(p, -1, 1) + np.roll(p, 1, 0) + np.roll(p, -1, 0) - div) * 0.25
+        s.u -= (np.roll(p, -1, 1) - np.roll(p, 1, 1)) * 0.5; s.v -= (np.roll(p, -1, 0) - np.roll(p, 1, 0)) * 0.5
+        s.d = s.adv(s.d, dt) * 0.965; s.u *= 0.99; s.v *= 0.99
+    def add(s, dens_src, amt, vx, vy):
+        src = cv2.resize(dens_src, (GW, GH), interpolation=cv2.INTER_AREA)
+        s.d += src * amt
+        m = np.clip(src * 2, 0, 1)
+        s.u += m * (vx / GS - s.u) * 0.5; s.v += m * (vy / GS - s.v) * 0.5
+
+# ---------------------------------------------------------------- 시간표
+T_LEAVE = 1.0                         # 머리가 움직이기 시작
+def t_leave(t):
+    if t < T_LEAVE: return 0.0
+    u = t - T_LEAVE
+    return u * u / 1.0 if u < 0.5 else (0.25 + (u - 0.5) * 1.0)        # 천천히 떼다가 가속
+
+def flash(t):
+    f = 0.0
+    for tf, a in ((0.85, 1.0), (1.0, 0.5), (2.6, 0.7)):
+        if t >= tf: f = max(f, a * math.exp(-(t - tf) / 0.12))
+    return f
+
+def render():
+    fl = Fluid(); FR = []; prev = None
+    for k in range(int(DUR * FPS)):
+        t = k / FPS
+        CAM['pos'], CAM['tilt'] = cam_at(t)
+        tl = t_leave(t)
+        HM = paper_H()
+        lift = ramp(t, T_LEAVE, T_LEAVE + 0.5)
+        # 종이: 구름은 그대로, 용은 떠날수록 섬유에 스민 만큼만(35%) 남는다
+        ghost = 1.0 - 0.65 * lift
+        dens = CLOUD + BODY_ON_PAPER * ghost
+        # 살아 움직이는 용(그림 그대로의 획)
+        live = np.zeros((H, W), F32)
+        if lift > 0:
+            sts, pts, cum = live_strokes(tl)
+            live = render_strokes(SV, sts, SFIB)
+            # 눈동자(점)
+            P, Tq, Nq = frame_along(pts, cum, np.array([0.0]))
+            sad = to_spine(np.array([dragon.E]), head=True)
+            Pe = P + (-TSIGN) * Tq * sad[:, 1:2] * U + NSIGN * Nq * sad[:, 2:3] * U
+            e2, ze = project(Pe); kk = F * U / ze[0]
+            yy, xx = np.mgrid[0:H, 0:W].astype(F32)
+            r = np.hypot(xx - e2[0, 0] - 1.0 * kk, yy - e2[0, 1])
+            live = live + 2.6 * np.clip((4.3 * kk - r) / (0.8 * kk), 0, 1)
+            eye = e2[0]
+            # 몸에서 먹이 풀린다(움직이는 만큼)
+            if prev is not None:
+                mv = live - prev
+                fl.add(np.clip(live, 0, 2) * 0.5, 0.05 * lift, (e2[0, 0] - eye_prev[0]) * FPS * 0.3, (e2[0, 1] - eye_prev[1]) * FPS * 0.3)
+            prev = live.copy(); eye_prev = eye.copy()
+        else:
+            ex, ey = PV.to_px(*dragon.E)
+            yy, xx = np.mgrid[0:PV.H, 0:PV.W].astype(F32)
+            kk = PV.ppm
+            r = np.hypot(xx - ex - 1.0 * kk, yy - ey)
+            dens = dens + 2.6 * np.clip((4.3 * kk - r) / (0.8 * kk), 0, 1)
+            e2, _ = project(paper_to_world(np.array([dragon.E]))); eye = e2[0]; eye_prev = eye
+        for _ in range(2):
+            fl.step(1 / (FPS * 2))
+        smoke = cv2.resize(fl.d, (W, H), interpolation=cv2.INTER_CUBIC)
+        smoke = 0.9 * np.tanh(np.clip(smoke, 0, None) * 1.2)
+        fx = flash(t)
+        pap = RGB * np.exp(-dens[..., None] * INK_ABS)
+        pap = cv2.warpPerspective(pap, HM, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0.12, 0.08, 0.055))
+        img = pap * np.exp(-smoke[..., None] * INK_ABS)
+        # 살아 있는 용은 종이 위로 떠 있다: 아래에 그림자(높이만큼 밀리고 흐림)
+        if lift > 0:
+            hgt = min(1.0, tl * 1.2)
+            sh = cv2.GaussianBlur(np.clip(live, 0, 1.5), (0, 0), 2 + 14 * hgt)
+            sh = np.roll(np.roll(sh, int(18 * hgt), 1), int(26 * hgt), 0)
+            img = img * (1 - 0.35 * np.clip(sh, 0, 1) * (1 - 0.5 * hgt))[..., None]
+            a = np.clip(live * 1.5, 0, 1)[..., None]
+            img = img * (1 - a) + (np.array((0.92, 0.90, 0.86), F32) * np.exp(-live[..., None] * INK_ABS)) * a   # 떠 있는 먹
+        img = light(img, 'night', extra=fx)
+        img = img * (1 + 0.4 * fx)
+        yy, xx = np.mgrid[0:H, 0:W].astype(F32)
+        rr = max(1.5, 0.9 * kk)
+        g = np.exp(-((xx - eye[0] + 0.5 * rr) ** 2 + (yy - eye[1] + 0.5 * rr) ** 2) / (rr * rr))
+        img = img + (g * 0.6)[..., None]
+        img = film(img, t, H=H, W=W, vig=0.26, grain=0.013, weave=0.5)
+        img = letterbox(img)
+        f8 = (np.clip(img, 0, 1)[..., ::-1] * 255 + 0.5).astype(np.uint8)
+        FR.append(f8); cv2.imwrite(os.path.join(CACHE, f'f{k:04d}.png'), f8)
+    return FR
+
+if __name__ == '__main__':
+    FR = render()
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', os.path.join(CACHE, 'f%04d.png'),
+                    '-vf', 'fps=24', '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', os.path.join(JE, 'cache', 'leap_test.mp4')])
+    pick = [12, 18, 23, 27, 31, 35, 40, 47, 62]
+    pick = [p for p in pick if p < len(FR)]
+    rows = [np.hstack([FR[i] for i in pick[r * 3:(r + 1) * 3]]) for r in range(len(pick) // 3)]
+    cv2.imwrite(os.path.join(JE, 'cache', 'leap_test_sheet.jpg'), cv2.resize(np.vstack(rows), (1440, 270 * len(rows))), [cv2.IMWRITE_JPEG_QUALITY, 90])
+    print('ok', len(FR))
