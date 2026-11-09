@@ -1,0 +1,29 @@
+{
+  "episode": 19,
+  "title": "Cumin Sweet Potato Boats",
+  "verified_at": "2026-11-09T05:30:01Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "wj77hQ_eWVA",
+      "video_url": "https://youtu.be/wj77hQ_eWVA",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "CuminSweetPotatoBoats_EN.mp4",
+      "sha256": "3ec021223e22a3ede6599f0be31e0b1b0e799700f12274a5908f33f99d56161b"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "_X0mv4OK5BA",
+      "video_url": "https://youtu.be/_X0mv4OK5BA",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "CuminSweetPotatoBoats_KO.mp4",
+      "sha256": "da9c2a6327408f529724aa6f54d96fde70bdeb7bb278a6c9e0dd8b7c49cb2118"
+    }
+  ]
+}

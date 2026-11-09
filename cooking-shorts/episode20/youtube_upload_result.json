@@ -1,0 +1,29 @@
+{
+  "episode": 20,
+  "title": "Lemon Garlic Broccoli",
+  "verified_at": "2026-11-09T05:30:01Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "S2bCqMAUSH8",
+      "video_url": "https://youtu.be/S2bCqMAUSH8",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LemonGarlicBroccoli_EN.mp4",
+      "sha256": "6cee92c890cac6a5dfd060212cacb99f531b416fcf91657b3aca1ed0c965fbdc"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "Pe7Ohzu9t80",
+      "video_url": "https://youtu.be/Pe7Ohzu9t80",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LemonGarlicBroccoli_KO.mp4",
+      "sha256": "3505a5a2c92d0bb6164243115d64f5667a8c8cdc40025d5ba1fdf4e428accade"
+    }
+  ]
+}
