@@ -53,25 +53,37 @@ def blade_state(t):
     return s, n + tr, h
 
 CUT = []                                                 # 칼집 자취(mm)
-def cut_mask():
-    m = np.zeros((H * 2, W * 2), F32)
-    if len(CUT) < 2: return m[::2, ::2]
+def cut_layers(tip):
+    """칼집: 종이가 실제로 갈라져 틈이 벌어진다. 틈 사이로 아래 깔개(모전)가 보이고, 잘린 조각 쪽 가장자리는 살짝 들려 빛을 받는다.
+    틈 폭은 칼끝에서 멀어질수록 벌어진다(0.15 → 0.7mm)."""
+    gap = np.zeros((H * 2, W * 2), F32); lipm = np.zeros_like(gap); shd = np.zeros_like(gap)
+    if len(CUT) < 2: return gap[::2, ::2], lipm[::2, ::2], shd[::2, ::2]
     pts = np.array(CUT)
-    px, py = V.to_px(pts[:, 0], pts[:, 1])
-    q = (np.stack([px, py], 1) * 2).astype(np.int32)
-    cv2.polylines(m, [q], False, 1.0, max(1, int(0.32 * V.ppm * 2)), cv2.LINE_AA)
-    return cv2.resize(m, (W, H), interpolation=cv2.INTER_AREA)
+    px, py = V.to_px(pts[:, 0], pts[:, 1]); q = np.stack([px, py], 1) * 2
+    dist = np.linalg.norm(pts - np.array(tip), axis=1) if tip is not None else np.full(len(pts), 99.0)
+    flapn = np.array((-1.0, 1.0)) / math.sqrt(2) * V.ppm * 2            # 잘린 조각(구석) 쪽 화면 방향
+    for i in range(len(pts) - 1):
+        w = 0.15 + 0.55 * min(1.0, dist[i] / 14.0)                        # mm
+        a_, b_ = q[i], q[i + 1]
+        cv2.line(gap, tuple(a_.astype(int)), tuple(b_.astype(int)), 1.0, max(1, int(w * V.ppm * 2)), cv2.LINE_AA)
+        o = flapn * (w * 0.5 + 0.18)
+        cv2.line(lipm, tuple((a_ + o).astype(int)), tuple((b_ + o).astype(int)), 1.0, max(1, int(0.22 * V.ppm * 2)), cv2.LINE_AA)
+        o2 = -flapn * (w * 0.5 + 0.35)
+        cv2.line(shd, tuple((a_ + o2).astype(int)), tuple((b_ + o2).astype(int)), 1.0, max(1, int(0.6 * V.ppm * 2)), cv2.LINE_AA)
+    r = lambda m: cv2.resize(m, (W, H), interpolation=cv2.INTER_AREA)
+    return r(gap), r(lipm), cv2.GaussianBlur(r(shd), (0, 0), 1.2)
 
 def poly_px(pts, off=(0, 0)):
     pts = np.array(pts, float) + np.array(off)
     px, py = V.to_px(pts[:, 0], pts[:, 1]); return np.stack([px, py], 1).astype(np.int32)
 
 def knife_polys(s, n):
+    """서도용 종이칼: 넓고 납작한 외날, 비스듬히 깎인 칼끝. 자를 따라 몸 쪽(+U, 화면 오른쪽 아래)으로 당기므로
+    칼등은 자 쪽에 붙고, 손잡이는 당기는 방향(화가 쪽)으로 뻗는다."""
     tip = P0 + U * s + NRM * n
-    d = -NRM * 0.15 + np.array((0.25, 1.0)); d /= np.linalg.norm(d)      # 칼은 화가 쪽(화면 아래, 약간 오른쪽)으로 누움
-    e = np.array((-d[1], d[0]))
-    blade = [tip, tip + d * 26 + e * 3.2, tip + d * 26 - e * 3.2, tip - e * 0.6]
-    handle = [tip + d * 26 + e * 4.2, tip + d * 120 + e * 5.0, tip + d * 120 - e * 5.0, tip + d * 26 - e * 4.2]
+    f = U; g = -NRM                                                   # f: 손잡이 쪽, g: 잘린 조각 쪽(칼날 폭)
+    blade = [tip, tip + f * 30 + g * 0.8, tip + f * 30 + g * 9.5, tip + f * 13 + g * 9.5]
+    handle = [tip + f * 30 + g * 0.2, tip + f * 115 + g * 0.6, tip + f * 115 + g * 10.2, tip + f * 30 + g * 10.0]
     return blade, handle, tip
 
 def frame(t):
@@ -84,9 +96,11 @@ def frame(t):
     img = RGB * np.exp(-dens[..., None] * INK_ABS)
     img = img * (1 - OFF[..., None]) + np.array((0.16, 0.10, 0.065), F32) * OFF[..., None]
     # 칼집: 갈라진 틈(어둡게) + 잘린 면 한쪽 테(밝게)
-    cm = cut_mask()
-    lip = np.roll(np.roll(cm, -1, 0), 1, 1)
-    img = img * (1 - 0.75 * cm[..., None]) + 0.10 * np.clip(lip - cm, 0, 1)[..., None]
+    tip_now = (P0 + U * s + NRM * n) if (0.7 <= t < 3.85 and h == 0.0) else None
+    gap, lipm, shd = cut_layers(tip_now)
+    img = img * (1 - 0.18 * shd[..., None])                                   # 들린 조각이 드리운 얇은 그림자
+    img = img * (1 - gap[..., None]) + gap[..., None] * np.array((0.13, 0.13, 0.12), F32)   # 틈 사이로 보이는 모전
+    img = img + 0.09 * np.clip(lipm - gap, 0, 1)[..., None]                   # 잘린 가장자리가 등잔빛을 받는다
     # 자(대나무) — 지킬 쪽(NRM)에 놓임
     ruler = [P0 + U * -40, P0 + U * 200, P0 + U * 200 + NRM * 24, P0 + U * -40 + NRM * 24]
     sh = np.zeros((H, W), F32)
@@ -104,8 +118,10 @@ def frame(t):
     cv2.fillPoly(lay, [poly_px(handle)], (0.30, 0.19, 0.12)); cv2.fillPoly(m, [poly_px(handle)], 1.0)
     cv2.fillPoly(lay, [poly_px(blade)], (0.66, 0.68, 0.70)); cv2.fillPoly(m, [poly_px(blade)], 1.0)
     # 날의 반사(등잔빛 한 줄)
-    q = poly_px([tip, blade[1] * 0.5 + blade[2] * 0.5])
-    cv2.line(lay, tuple(q[0]), tuple(q[1]), (0.95, 0.85, 0.65), max(1, int(V.ppm * 0.4)), cv2.LINE_AA)
+    q = poly_px([tip + U * 2 + (-NRM) * 1.2, blade[1] + (-NRM) * 1.2])        # 칼등을 따라 반사광 한 줄
+    cv2.line(lay, tuple(q[0]), tuple(q[1]), (0.95, 0.86, 0.66), max(1, int(V.ppm * 0.5)), cv2.LINE_AA)
+    q = poly_px([tip, blade[3]])                                                # 비스듬한 칼끝 날
+    cv2.line(lay, tuple(q[0]), tuple(q[1]), (0.85, 0.86, 0.88), max(1, int(V.ppm * 0.3)), cv2.LINE_AA)
     m = cv2.GaussianBlur(m, (0, 0), 0.7)[..., None]
     img = img * (1 - m) + lay * m
     img = light(img, 'lamp')

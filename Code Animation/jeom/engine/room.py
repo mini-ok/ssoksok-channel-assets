@@ -93,9 +93,16 @@ class Room:
         self.circle(m, head, 0.0175)
         hc = self.P([head])[0]
         cv2.ellipse(m, tuple(hc), (int(0.0185 * self.w), int(0.0155 * self.w)), 0, 0, 360, 1.0, -1, cv2.LINE_AA)
+        # 상투: 정수리에 솟은 뚜렷한 틀어 올린 머리 + 가로로 꽂은 동곳(실루엣에서도 읽히게)
         ang = math.atan2(head[1] - sy, head[0] - sx)
-        top = (head[0] + 0.019 * math.cos(ang) - 0.004, head[1] + 0.019 * math.sin(ang))
-        self.circle(m, top, 0.0068)
+        ca, sa = math.cos(ang), math.sin(ang)
+        base = (head[0] + 0.015 * ca, head[1] + 0.015 * sa)
+        knot = (head[0] + 0.026 * ca, head[1] + 0.026 * sa)
+        self.line(m, base, knot, 0.011)
+        kc = self.P([knot])[0]
+        cv2.ellipse(m, tuple(kc), (int(0.0078 * self.w), int(0.0098 * self.w)), math.degrees(ang) + 90, 0, 360, 1.0, -1, cv2.LINE_AA)
+        pa = (knot[0] - 0.013 * sa, knot[1] + 0.013 * ca); pb = (knot[0] + 0.013 * sa, knot[1] - 0.013 * ca)
+        self.line(m, pa, pb, 0.0026)
         # 팔: 소매가 넓게 늘어진다
         self.line(m, (sx + 0.008, sy + 0.018), elb, 0.024)
         self.line(m, elb, hand, 0.014)
