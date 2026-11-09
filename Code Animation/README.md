@@ -15,6 +15,8 @@
 | `holssi/` | 〈홀씨〉 HOLSSI | 97초 | Python cairo, 24fps | **v2 완료** — 엔딩 교체, C7 마을 부감 질감 수정 |
 | `scarecrow/` | 〈허수아비의 겨울〉 | 137초 | Python cairo + painter.py, 24fps | **v2 완료** — 컷 수정(아래) |
 | `sumbi/` | 〈숨비〉 | 172초 | three.js 3D + Python 셀 마감 | 1차 완성 후 종료. 회고 `sumbi/postmortem.md` |
+| `jeom/` | 〈점〉 JEOM | 약 2분(예정) | Python numpy·cv2(수묵 엔진) | **제작 중** — 제작 전 검토·브리프·씬 리스트·모델 시트 v1 완료, 모델 시트 확인 대기 → 애니마틱. `jeom/README.md` |
+| `ideas/` | 다음 작품 기획 | — | — | 후보 검토(`2026-11-09_review_and_pitches.md`), 〈점〉·〈파루〉 스토리 확장(`2026-11-09_jeom_paru_story.md`), 무음 기술 시험(`tests/`). 〈파루〉는 다음 후보 |
 
 ### 2026-11-09 v2 변경 공통
 - 엔딩의 `GoXoN × Claude · every frame is code` 문구 **전부 삭제**.
@@ -49,7 +51,7 @@ pip install pycairo numpy scipy opencv-python pillow --break-system-packages
 ## 작업 규칙 (사용자 지시)
 - 시간이 드는 전체 렌더 전에 **정지 샘플 → 짧은 무음 움직임 시험 → 컨펌 → 전체 렌더**.
 - 샘플은 실제 크기로 확인하고 보낸다. 컷 경계 앞뒤(위치·크기 연결)를 반드시 확인 — v2에서 6→6-1 매 위치 불연속을 사용자가 지적함.
-- 노하우 누적: Claude 스킬 `cel-anime-direction`(셀 질감 수치·체크리스트), `scarecrow/knowhow.md`, `sumbi/postmortem.md`.
+- 노하우 누적: Claude 스킬 `cel-anime-direction`(셀 질감 수치·체크리스트, 사본 `_kit/skills/` — 다른 계정에서는 `_kit/README.md`대로 등록), `scarecrow/knowhow.md`, `sumbi/postmortem.md`, `jeom/preproduction.md`.
 
 ## 공용 자산 `_shared/`
 - `credit_overlay.py` — `apply(img, t_since_start, side='right'|'left', bottom=px)`. 그림 영역(float 0..1) 위에 합성.
