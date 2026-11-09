@@ -1,0 +1,27 @@
+<!doctype html><html><body style="margin:0;background:transparent">
+<canvas id="c" width="1920" height="1040"></canvas>
+<script src="node_modules/three/build/three.min.js"></script>
+<script src="sol3d.js"></script>
+<script src="chars3d.js"></script>
+<script src="core.js"></script>
+<script src="props.js"></script>
+<script src="env_coast.js"></script>
+<script src="env_forest.js"></script>
+<script src="env_under.js"></script>
+<script src="lips.js"></script>
+<script>window.CUTS = {};</script>
+<script src="cuts_s1.js"></script>
+<script src="cuts_s2.js"></script>
+<script src="cuts_s3.js"></script>
+<script src="cuts_s4.js"></script>
+<script>
+// film.html?cut=N : builds the cut's environment and actors; render.js then calls renderAt(t, pass) for t in [0, dur)
+const cutId = new URLSearchParams(location.search).get('cut');
+const CUT = window.CUTS[cutId];
+const F = makeCore(Object.assign({seed: 7}, CUT.core || {}));
+const E = CUT.env === 'coast' ? buildCoast(F, CUT.mode || 'dawn') : CUT.env === 'forest' ? buildForest(F, CUT.mode) : CUT.env === 'under' ? buildUnder(F, CUT.mode) : {};
+CUT.setup(F, E);
+F.meta.env = CUT.env; F.meta.mode = CUT.mode || ''; F.meta.dur = CUT.dur; F.meta.finish = CUT.finish || CUT.env;
+// lip track helper: mouth shape at time t for a line id placed at t0 (0 closed / 1 half / 2 open), on twos
+window.mouthAt = (id, t0, t) => { const L = (window.LIPS || {})[id]; if (!L) return 0; const k = Math.floor((F.q2(t) - t0) * 12); return k >= 0 && k < L.length ? L[k] : 0; };
+</script></body></html>

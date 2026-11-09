@@ -1,0 +1,320 @@
+<!doctype html><html><body style="margin:0;background:transparent">
+<canvas id="c" width="1920" height="1040"></canvas>
+<script src="node_modules/three/build/three.min.js"></script>
+<script src="sol3d.js"></script>
+<script src="chars3d.js"></script>
+<script>
+// 〈숨비〉 C30 tech test: the kelp forest under the Jeju sea. 솔이 holds her breath; 꾸럭이's family rises in colours;
+// 엄마's hand takes 솔이's. Passes: color / id / normal / depth / char.
+const W = 1920, H = 1040;
+const renderer = new THREE.WebGLRenderer({canvas: document.getElementById('c'), antialias: true, alpha: true, preserveDrawingBuffer: true});
+renderer.setPixelRatio(1); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.BasicShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const scene = new THREE.Scene();
+const DEEP = new THREE.Color(0x1b6f84);
+scene.fog = new THREE.FogExp2(0x1b6f84, 0.16);
+const cam = new THREE.PerspectiveCamera(42, W / H, 0.05, 80);
+let seed = 11; const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; const rr = (a, b) => a + (b - a) * rnd();
+const ramp = new THREE.DataTexture(new Uint8Array([80, 80, 80, 255, 160, 160, 160, 255, 255, 255, 255, 255]), 3, 1);
+ramp.minFilter = ramp.magFilter = THREE.NearestFilter; ramp.needsUpdate = true;
+function toon(hex) { return new THREE.MeshToonMaterial({color: hex, gradientMap: ramp}); }
+
+const sun = new THREE.DirectionalLight(0xd8fff6, 1.7); sun.position.set(1.5, 12, 2); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.002; sun.shadow.normalBias = 0.05;
+Object.assign(sun.shadow.camera, {left: -6, right: 6, top: 6, bottom: -6, near: 1, far: 30});
+scene.add(sun); scene.add(new THREE.HemisphereLight(0x9ff2ee, 0x0b3550, 1.6));
+
+const objects = [], charSet = new Set(), colorOnly = [];
+let nextId = 1;
+const idKeys = {};
+function reg(m, isChar) { const k = m.userData.idKey; m.userData.id = k ? (idKeys[k] = idKeys[k] || nextId++) : nextId++; m.userData.colorMat = m.material; objects.push(m); if (isChar) charSet.add(m); return m; }
+function add(m, isChar = false, cast = true) { m.castShadow = cast; m.receiveShadow = true; scene.add(m); return reg(m, isChar); }
+
+const SEA = -2.6;                                   // seabed height; the surface is at y = +2.6
+// seabed: sand with lumps
+{
+  const g = new THREE.PlaneGeometry(40, 40, 100, 100); g.rotateX(-Math.PI / 2);
+  const p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) { const x = p.getX(i), z = p.getZ(i); p.setY(i, SEA + 0.18 * Math.sin(x * 0.9) * Math.cos(z * 0.7) + 0.08 * Math.sin(x * 2.7 + z * 1.9)); }
+  g.computeVertexNormals(); add(new THREE.Mesh(g, toon(0xc9c08e)), false, false);
+}
+// basalt reefs with coralline pink crust
+for (let i = 0; i < 26; i++) {
+  const s = rr(0.3, 1.2), g = new THREE.IcosahedronGeometry(s, 1), p = g.attributes.position;
+  for (let k = 0; k < p.count; k++) { const v = new THREE.Vector3().fromBufferAttribute(p, k); v.multiplyScalar(1 + 0.25 * Math.sin(v.x * 4 + v.z * 3)); v.y *= 0.7; p.setXYZ(k, v.x, v.y, v.z); }
+  g.computeVertexNormals();
+  const m = add(new THREE.Mesh(g, toon(0x3c4250))); m.position.set(rr(-8, 8), SEA + s * 0.2, rr(-9, 3));
+  const crust = add(new THREE.Mesh(new THREE.SphereGeometry(s * 0.9, 10, 6, 0, 6.28, 0, 0.9), toon(i % 3 ? 0xd98b9a : 0xe8a77a)));
+  crust.position.copy(m.position); crust.position.y += s * 0.15; crust.scale.set(1.05, 0.5, 1.05);
+}
+// kelp (감태/모자반): tall ribbons that sway; rebuilt each drawing
+const kelps = [];
+const kelpTex = (() => {
+  const c = document.createElement('canvas'); c.width = 64; c.height = 256; const x = c.getContext('2d');
+  const g = x.createLinearGradient(0, 0, 64, 0);
+  g.addColorStop(0, '#d8e6a0'); g.addColorStop(0.12, '#ffffff'); g.addColorStop(0.42, '#e8efd0'); g.addColorStop(0.5, '#8a9a60');
+  g.addColorStop(0.58, '#e8efd0'); g.addColorStop(0.88, '#ffffff'); g.addColorStop(1, '#d8e6a0');
+  x.fillStyle = g; x.fillRect(0, 0, 64, 256);
+  x.strokeStyle = 'rgba(120,140,80,0.55)'; x.lineWidth = 1.5;
+  for (let y = 10; y < 256; y += 14) { x.beginPath(); x.moveTo(32, y); x.quadraticCurveTo(18, y - 4, 4, y - 12); x.moveTo(32, y + 6); x.quadraticCurveTo(46, y + 2, 60, y - 6); x.stroke(); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+})();
+const kelpMats = [0x6f7a2c, 0x8a8a34, 0x566c2a].map(c => new THREE.MeshToonMaterial({color: c, map: kelpTex, gradientMap: ramp}));
+kelpMats.forEach(m => m.side = THREE.DoubleSide);
+for (let i = 0; i < 90; i++) {
+  const x = rr(-7, 7), z = rr(-8, 1.0);
+  if (Math.hypot(x, z + 0.3) < 1.5) continue;            // clear water around the actors
+  const h = rr(2.2, 4.4), w = rr(0.12, 0.22);
+  const g = new THREE.PlaneGeometry(w, h, 2, 24); g.translate(0, h / 2, 0);
+  { const p = g.attributes.position; for (let q = 0; q < p.count; q++) { const u = p.getY(q) / h; p.setX(q, p.getX(q) * (0.45 + 1.1 * Math.sin(Math.min(1, u * 1.25) * Math.PI * 0.55)) * (1 - u ** 6)); } }
+  const m = add(new THREE.Mesh(g, kelpMats[i % 3]), false, true);
+  m.position.set(x, SEA, z); m.rotation.y = rr(0, 6.28);
+  m.userData.base = Float32Array.from(g.attributes.position.array); m.userData.ph = rr(0, 6.28); m.userData.h = h; m.userData.twist = rr(-2.2, 2.2);
+  kelps.push(m);
+}
+function swayKelp(t) {
+  for (const k of kelps) {
+    const p = k.geometry.attributes.position, b = k.userData.base;
+    for (let i = 0; i < p.count; i++) {
+      const y = b[i * 3 + 1], u = y / k.userData.h;
+      const sw = 0.35 * u * u * Math.sin(t * 1.3 + k.userData.ph + u * 2.2);
+      const tw = u * k.userData.twist + 0.25 * Math.sin(t * 0.9 + k.userData.ph + u * 3);
+      const bx = b[i * 3] * Math.cos(tw), bz = b[i * 3] * Math.sin(tw);
+      p.setX(i, bx + sw); p.setZ(i, bz + 0.18 * u * u * Math.cos(t * 1.1 + k.userData.ph));
+      // leaf edge ruffle
+      p.setX(i, p.getX(i) + (b[i * 3] > 0 ? 1 : -1) * 0.02 * Math.sin(y * 9 + t * 2));
+    }
+    p.needsUpdate = true; k.geometry.computeVertexNormals();
+  }
+}
+// water volume gradient (colour pass only)
+{
+  const g = new THREE.SphereGeometry(30, 32, 16); const col = [];
+  const p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) { const y = p.getY(i) / 30; const c = new THREE.Color().lerpColors(new THREE.Color(0x14607e), new THREE.Color(0xa8f0e0), Math.max(0, Math.min(1, y * 1.5)) ** 1.3); col.push(c.r, c.g, c.b); }
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  const vol = new THREE.Mesh(g, new THREE.MeshBasicMaterial({vertexColors: true, side: THREE.BackSide, fog: false, depthWrite: false}));
+  vol.renderOrder = -1; scene.add(vol); colorOnly.push(vol);
+}
+// the surface seen from below: a silver ceiling with moving light
+const surfCv = document.createElement('canvas'); surfCv.width = surfCv.height = 512;
+const surfTex = new THREE.CanvasTexture(surfCv); surfTex.wrapS = surfTex.wrapT = THREE.RepeatWrapping; surfTex.repeat.set(14, 14);
+const surface = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshBasicMaterial({map: surfTex, fog: true, side: THREE.DoubleSide}));
+surface.rotation.x = Math.PI / 2; surface.position.y = 2.6; scene.add(surface); reg(surface, false);
+// caustics on the seabed (colour pass only)
+const causCv = document.createElement('canvas'); causCv.width = causCv.height = 512;
+const causTex = new THREE.CanvasTexture(causCv); causTex.wrapS = causTex.wrapT = THREE.RepeatWrapping; causTex.repeat.set(2, 2);
+const causG = new THREE.CircleGeometry(7, 48);
+{ const p = causG.attributes.position, col = []; for (let i = 0; i < p.count; i++) { const f = Math.max(0, 1 - Math.hypot(p.getX(i), p.getY(i)) / 7) ** 1.5; col.push(f, f, f); }
+  causG.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); }
+const caus = new THREE.Mesh(causG, new THREE.MeshBasicMaterial({map: causTex, vertexColors: true, transparent: true, blending: THREE.AdditiveBlending,
+  depthWrite: false, opacity: 0.28, fog: false}));
+caus.rotation.x = -Math.PI / 2; caus.position.y = SEA + 0.22; scene.add(caus); colorOnly.push(caus);
+function cellNet(cv, t, bright, back) {
+  const ctx = cv.getContext('2d'); ctx.fillStyle = back; ctx.fillRect(0, 0, 512, 512);
+  ctx.strokeStyle = bright; ctx.lineCap = 'round';
+  let s2 = 5;
+  const r2 = () => { s2 = (s2 * 16807) % 2147483647; return (s2 - 1) / 2147483646; };
+  const pts = [];
+  for (let i = 0; i < 46; i++) pts.push([r2() * 512 + 18 * Math.sin(t * 1.4 + i), r2() * 512 + 18 * Math.cos(t * 1.1 + i * 1.7)]);
+  for (const [x, y] of pts) for (const [x2, y2] of pts) {
+    const d = Math.hypot(x - x2, y - y2);
+    if (d > 20 && d < 95 && x < x2) { ctx.lineWidth = 1.5 + 3.5 * (1 - d / 95); ctx.beginPath(); ctx.moveTo(x, y);
+      ctx.quadraticCurveTo((x + x2) / 2 + 10 * Math.sin(t + x), (y + y2) / 2 + 10 * Math.cos(t + y), x2, y2); ctx.stroke(); }
+  }
+}
+// actors
+const ACT = new THREE.Vector3(0, 0, 0);
+const sol = makeSol(THREE, toon, {underwater: true}); scene.add(sol.group); sol.parts.forEach(m => reg(m, true)); colorOnly.push(...sol.colorOnly);
+const mom = makeMom(THREE, toon); scene.add(mom.group); mom.parts.forEach(m => reg(m, true)); colorOnly.push(...mom.colorOnly);
+mom.tewak.visible = false; mom.setMask(1);
+const ku = makeKuruk(THREE, toon, 1.3); scene.add(ku.group); ku.parts.forEach(m => reg(m, true)); colorOnly.push(...ku.colorOnly);
+const family = [];
+const FCOL = ['orange', 'pink', 'white', 'orange', 'pink', 'orange'];
+for (let i = 0; i < 34; i++) {
+  const k = makeKuruk(THREE, toon, rr(0.9, 1.7)); scene.add(k.group); k.parts.forEach(m => reg(m, true)); colorOnly.push(...k.colorOnly);
+  k.home = new THREE.Vector3(rr(-2.6, 2.8), SEA + rr(1.2, 3.0), rr(-3.0, -0.7)); k.ph = rr(0, 6.28); k.col = i;
+  family.push(k);
+}
+const HERO = [[0.55, 0.15, 0.35, 2.0], [-0.35, -0.1, 0.4, 1.8], [1.0, 0.85, -0.1, 2.0], [0.45, 1.55, -0.35, 1.7], [-1.3, 0.3, -0.2, 2.0]];
+HERO.forEach(([x, y, z, sz], i) => {
+  const k = makeKuruk(THREE, toon, sz); scene.add(k.group); k.parts.forEach(m => reg(m, true)); colorOnly.push(...k.colorOnly);
+  k.home = new THREE.Vector3(x, y, z); k.ph = i * 1.3; k.col = i; k.hero = true; family.push(k);
+});
+// a few bubbles from 솔이's mouth (colour pass only)
+const bubbles = [];
+for (let i = 0; i < 0; i++) {
+  const b = new THREE.Mesh(new THREE.SphereGeometry(0.008 + 0.006 * (i % 3), 10, 8),
+                           new THREE.MeshBasicMaterial({color: 0xe8ffff, transparent: true, opacity: 0.75, fog: false}));
+  scene.add(b); colorOnly.push(b); bubbles.push(b);
+}
+
+// ===== 환상적인 바다: 거품(셀 스프라이트), 몸 위로 흐르는 물빛(코스틱 스포트라이트), 수면의 빛 창, 빛나는 문어 가족 =====
+function bubbleTex() {
+  const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d');
+  x.fillStyle = 'rgba(190,250,245,0.18)'; x.beginPath(); x.arc(64, 64, 54, 0, 7); x.fill();
+  x.strokeStyle = 'rgba(245,255,252,0.95)'; x.lineWidth = 7; x.beginPath(); x.arc(64, 64, 54, 0, 7); x.stroke();
+  x.strokeStyle = 'rgba(255,255,255,1)'; x.lineWidth = 9; x.lineCap = 'round'; x.beginPath(); x.arc(64, 64, 36, 3.6, 4.5); x.stroke();
+  x.fillStyle = '#fff'; x.beginPath(); x.arc(84, 86, 6, 0, 7); x.fill();
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const BTEX = bubbleTex();
+const bubMat = new THREE.SpriteMaterial({map: BTEX, transparent: true, depthWrite: false, fog: true});
+const magicBubbles = [];
+function addBubble(src, phase, size, speed, life) {
+  const s = new THREE.Sprite(bubMat); scene.add(s); colorOnly.push(s);
+  magicBubbles.push({s, src, phase, size, speed, life, rnd: Math.random() * 6.28}); return s;
+}
+// 엄마의 날숨: 1.6초마다 한 줌, 솔이는 작게 새는 거품, 해저 틈 6곳에서 계속 오르는 거품 기둥, 카메라 앞을 지나는 큰 거품
+for (let i = 0; i < 30; i++) addBubble('mom', (i % 15) * 0.04 + Math.floor(i / 15) * 0.8, rr(0.025, 0.075), rr(0.5, 0.8), 3.2);
+for (let i = 0; i < 12; i++) addBubble('sol', i * 0.2 + (i % 3) * 0.03, rr(0.02, 0.04), rr(0.45, 0.65), 2.4);
+const VENTS = [[-1.6, -1.2], [1.5, -1.6], [-0.4, -2.4], [2.4, -0.6], [-2.6, -0.2], [0.7, -0.9]].map(([x, z]) => new THREE.Vector3(x, SEA + 0.1, z));
+for (let i = 0; i < 120; i++) addBubble(VENTS[i % 6], (Math.floor(i / 6)) * 0.3 + (i % 6) * 0.11, rr(0.03, 0.09), rr(0.6, 0.95), 6.0);
+for (let i = 0; i < 7; i++) addBubble('near', i * 0.9, rr(0.06, 0.12), rr(0.35, 0.55), 6.5);
+
+// 코스틱 스포트라이트: 수면의 빛그물이 몸과 바위 위로 흘러감 (툰 램프가 계단으로 끊어 셀 느낌)
+const causLCv = document.createElement('canvas'); causLCv.width = causLCv.height = 512;
+const causLTex = new THREE.CanvasTexture(causLCv); causLTex.wrapS = causLTex.wrapT = THREE.RepeatWrapping;
+const causSpot = new THREE.SpotLight(0xe8fff4, 140, 30, 0.75, 0.5, 1.2);
+causSpot.position.set(0.3, 9, 0.6); causSpot.target.position.set(0, 0, -0.5); causSpot.castShadow = true; causSpot.map = causLTex;
+causSpot.shadow.mapSize.set(1024, 1024); causSpot.shadow.bias = -0.002;
+scene.add(causSpot); scene.add(causSpot.target);
+// 수면의 빛 창(스넬의 창): 머리 위로 둥글게 열린 밝은 빛
+{
+  const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d');
+  const g = x.createRadialGradient(128, 128, 0, 128, 128, 128);
+  g.addColorStop(0, 'rgba(255,255,235,1)'); g.addColorStop(0.35, 'rgba(210,255,240,0.65)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+  x.fillStyle = g; x.fillRect(0, 0, 256, 256);
+  const win = new THREE.Mesh(new THREE.CircleGeometry(5.5, 48), new THREE.MeshBasicMaterial({map: new THREE.CanvasTexture(c), transparent: true,
+    blending: THREE.AdditiveBlending, depthWrite: false, fog: false, side: THREE.DoubleSide, opacity: 0.4}));
+  win.rotation.x = Math.PI / 2; win.position.set(0.8, 2.5, -1.2); scene.add(win); colorOnly.push(win);
+}
+// 문어 가족의 빛: 색이 바뀔 때마다 몸 둘레가 은은하게 빛남(신호처럼)
+function glowTex() {
+  const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d');
+  const g = x.createRadialGradient(64, 64, 0, 64, 64, 64); g.addColorStop(0, 'rgba(255,255,255,0.9)'); g.addColorStop(0.3, 'rgba(255,255,255,0.35)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  x.fillStyle = g; x.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c);
+}
+const GTEX = glowTex();
+const GLOWC = {orange: 0xffb050, pink: 0xff8fd0, white: 0xc8fbff, grey: 0x8899aa};
+function addGlow(k, scale) {
+  const m = new THREE.SpriteMaterial({map: GTEX, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, fog: true, opacity: 0.0});
+  const s = new THREE.Sprite(m); s.scale.setScalar(scale); scene.add(s); colorOnly.push(s); k.glow = s;
+}
+
+const ss = x => { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
+const lerp = (a, b, u) => a + (b - a) * u;
+const v3 = (x, y, z) => new THREE.Vector3(x, y, z);
+
+window.animate = (t) => {
+  const tq = Math.floor(t * 12) / 12;
+  swayKelp(tq);
+  cellNet(surfCv, tq, 'rgba(235,255,250,0.55)', '#8fdcd8'); surfTex.needsUpdate = true;
+  cellNet(causCv, tq * 1.2, 'rgba(230,255,240,0.9)', 'rgba(0,0,0,0)'); causTex.needsUpdate = true;
+  // 솔이: drifting, body tilted forward, hair floats, arms out for balance; cheeks puffed (holding breath)
+  const sp = v3(0.0, 0.05 + 0.04 * Math.sin(tq * 1.6), 0.0);
+  sol.group.position.copy(sp); sol.group.rotation.set(0.3, 0.35, 0.05);
+  const take = ss((tq - 3.4) / 0.6);                 // 엄마 takes her hand at ~3.4 s
+  sol.pose({pitch: lerp(0.25, -0.1, take), yaw: lerp(0.3, -0.7, take), roll: 0, armL: lerp(0.5 + 0.14 * Math.sin(tq * 1.4 + 1.0), 0.75, take), armLx: lerp(0.15, -0.55, take),
+            armR: 0.6 + 0.16 * Math.sin(tq * 1.4), armRx: 0.2 + 0.1 * Math.sin(tq * 0.9), breath: 0,
+            elbowL: lerp(0.65 + 0.25 * Math.sin(tq * 1.4 + 0.1), 0.15, take), elbowR: 0.7 + 0.28 * Math.sin(tq * 1.4 - 0.9), spread: 0.14,
+            wristL: lerp(0.4 * Math.sin(tq * 1.4 - 0.8), 0.0, take), wristR: 0.45 * Math.sin(tq * 1.4 - 1.8),
+            legL: 0.25 + 0.2 * Math.sin(Math.floor(t * 8) / 8 * 3.2), legR: 0.1 - 0.2 * Math.sin(Math.floor(t * 8) / 8 * 3.2),
+            kneeL: 0.55 + 0.25 * Math.sin(Math.floor(t * 8) / 8 * 3.2 + 0.8), kneeR: 0.35 - 0.25 * Math.sin(Math.floor(t * 8) / 8 * 3.2 + 0.8)});
+  sol.floatHair(tq, 0.9);
+  const blink = tq > 2.6 && tq < 2.7 ? 'blink' : (tq > 4.4 ? 'wide' : 'open');
+  sol.setFace({mouth: tq > 4.6 && tq < 5.3 ? 1 : 0, eyes: blink, look: lerp(0.4, -0.9, take), down: lerp(0.3, -0.2, take)});
+  // 꾸럭이 leaves the jar line toward the family, turns once to look back (2.0 s)
+  const kt = ss((tq - 0.4) / 2.6);
+  ku.group.position.set(lerp(0.35, 0.9, kt), lerp(0.55, -0.6, kt) + 0.05 * Math.sin(tq * 4), lerp(0.25, -1.6, kt));
+  ku.group.rotation.set(0.3, tq > 1.9 && tq < 2.5 ? 2.6 : lerp(0.0, 0.6, kt), 0);
+  ku.setState(tq > 1.0 ? 'orange' : 'grey'); ku.blink(tq > 2.2 && tq < 2.3);
+  family.forEach((k, i) => {
+    if (k.hero) { const r2 = ss((tq - 2.6 - k.col * 0.25) / 1.6);
+      k.group.position.set(k.home.x + 0.12 * Math.sin(tq * 1.3 + k.ph), lerp(SEA, k.home.y, r2) + 0.07 * Math.sin(tq * 2.2 + k.ph), k.home.z + 0.08 * Math.cos(tq + k.ph));
+      k.group.rotation.set(0.25 * Math.sin(tq * 1.5 + k.ph), Math.atan2(-k.home.x, 2 - k.home.z) + 0.3 * Math.sin(tq * 0.8 + k.ph), 0);
+      k.setState(FCOL[(i + Math.floor(tq * 1.5 + k.ph)) % FCOL.length]); k.blink((tq + k.ph) % 2.3 > 2.2); return; }
+    const rise = ss((tq - 0.6 - (i % 7) * 0.12) / 2.2);
+    k.group.position.set(k.home.x + 0.15 * Math.sin(tq * 1.1 + k.ph), lerp(SEA - 0.1, k.home.y, rise) + 0.06 * Math.sin(tq * 2 + k.ph), k.home.z);
+    k.group.rotation.set(0.2 * Math.sin(tq + k.ph), k.ph + tq * 0.2, 0);
+    k.setState(FCOL[(i + Math.floor(tq * 1.5 + k.ph)) % FCOL.length]);       // colours flicker like a signal
+  });
+  // 엄마: glides in from behind-left; her right hand meets 솔이's left hand
+  sol.group.updateMatrixWorld(true);
+  const solHand = new THREE.Vector3(); sol.arms[-1].userData.hand.getWorldPosition(solHand);
+  mom.group.rotation.set(lerp(0.95, 0.55, take), 0.85, -0.1);
+  { const kq = Math.floor(t * 8) / 8, kk = 0.3 * Math.sin(kq * 3.6) * (1 - 0.6 * take);
+  mom.pose({pitch: lerp(-0.45, -0.2, take), yaw: 0.25, roll: 0, armR: lerp(0.3, 0.75, take), armRx: lerp(-1.4, -0.9, take),
+            armL: 0.15, armLx: lerp(0.9, 0.4, take), legL: -0.3 + kk, legR: -0.3 - kk, kneeL: 0.45 + kk, kneeR: 0.45 - kk}); }
+  mom.setFace({mouth: 0, eyes: tq > 5.1 && tq < 5.2 ? 'blink' : 'open', smile: 1, look: 0.6});
+  mom.group.position.set(0, 0, 0); mom.group.updateMatrixWorld(true);
+  const momHand = new THREE.Vector3(); mom.arms[1].userData.hand.getWorldPosition(momHand);
+  const reach = solHand.clone().sub(momHand);
+  const away = v3(-1.2, 1.0, -1.4);                  // where she is before she arrives
+  mom.group.position.copy(reach.clone().add(away.multiplyScalar(1 - ss((tq - 1.8) / 1.6))));
+
+  // --- magic update (on twos)
+  if (!ku.glow) { addGlow(ku, 0.8); family.forEach(k => addGlow(k, k.hero ? 0.6 : 0.85)); }
+  cellNet(causLCv, tq * 1.1, 'rgba(255,255,255,1)', '#000000'); causLTex.needsUpdate = true;
+  causLTex.offset.set(tq * 0.03, tq * 0.017); causLTex.repeat.set(3, 3);
+  const momM = new THREE.Vector3(0, -0.06, 0.14); mom.head.localToWorld(momM);
+  const solM = new THREE.Vector3(0, -0.075, 0.16); sol.head.localToWorld(solM);
+  for (const b of magicBubbles) {
+    let age, o;
+    if (b.src === 'mom') { age = ((tq + 10 - b.phase) % 1.6); o = momM; if (tq < 2.2) age = -1; }
+    else if (b.src === 'sol') { age = ((tq + 10 - b.phase) % 2.4) * 0.8; o = solM; }
+    else if (b.src === 'near') { age = (tq + b.phase * 3) % b.life; o = new THREE.Vector3(1.0 + 1.6 * Math.sin(b.rnd * 3), SEA + 0.6, 1.2 + 0.4 * Math.cos(b.rnd)); }
+    else { age = (tq + b.phase) % b.life; o = b.src; }
+    b.s.userData.on = age >= 0;
+    if (age < 0) continue;
+    const rise = age * b.speed * (1 + 0.35 * age);           // bubbles speed up as they rise
+    const wob = 0.025 * (1 + age) * Math.sin(age * 9 + b.rnd);
+    b.s.position.set(o.x + wob + (b.src === 'mom' ? 0.08 * Math.sin(b.rnd * 5) * age : 0), o.y + 0.02 + rise, o.z + 0.6 * wob);
+    const sz = b.size * (1 + 0.25 * age) * (1 + 0.12 * Math.sin(age * 14 + b.rnd));   // wobble = squash on twos
+    b.s.scale.set(sz * (1 + 0.1 * Math.sin(age * 11)), sz, 1);
+    if (b.s.position.y > 2.55) b.s.userData.on = false;
+  }
+  for (const k of [ku, ...family]) {
+    k.glow.position.copy(k.group.position); k.glow.position.y += 0.03;
+    const st = k === ku ? (tq > 1.0 ? 'orange' : 'grey') : FCOL[(family.indexOf(k) + Math.floor(tq * 1.5 + k.ph)) % FCOL.length];
+    k.glow.material.color.set(GLOWC[st]);
+    k.glow.material.opacity = (k === ku ? 0.8 : 1.0) * (0.6 + 0.4 * Math.sin(tq * 3 + (k.ph || 0)));
+  }
+  // bubbles from 솔이's mouth: a small burst when she says 엄마… (4.6 s)
+  const mouth = new THREE.Vector3(0, -0.075, 0.16); sol.head.localToWorld(mouth);
+  bubbles.forEach((b, i) => {
+    const bt = tq - 4.6 - i * 0.07;
+    b.visible = bt > 0;
+    b.position.set(mouth.x + 0.03 * Math.sin(i * 2 + bt * 6), mouth.y + 0.04 + bt * 0.9, mouth.z + 0.02 * Math.cos(i));
+  });
+};
+// camera: from below looking up at the silhouettes against the light -> around to a 3/4 two-shot through the kelp
+const CK = [[0.0, v3(0.7, -1.2, 2.5), v3(0.1, 0.8, -0.3)], [2.2, v3(1.8, -0.5, 2.7), v3(0.2, 0.8, -0.5)],
+            [3.6, v3(1.0, 0.2, 2.2), v3(-0.3, 0.6, -0.1)], [6.0, v3(-0.2, 0.55, 2.0), v3(-0.4, 0.65, -0.1)]];
+function camAt(t) {
+  const tq = Math.floor(t * 12) / 12;
+  let i = 0; while (i < CK.length - 2 && tq > CK[i + 1][0]) i++;
+  const u = ss((tq - CK[i][0]) / (CK[i + 1][0] - CK[i][0]));
+  cam.position.lerpVectors(CK[i][1], CK[i + 1][1], u);
+  cam.lookAt(new THREE.Vector3().lerpVectors(CK[i][2], CK[i + 1][2], u));
+}
+const normalMat = new THREE.MeshNormalMaterial({side: THREE.DoubleSide}), depthMat = new THREE.ShaderMaterial({side: THREE.DoubleSide,   // linear eye distance: 1 at the lens -> 0 at 10 m
+  vertexShader: 'varying float vD; void main(){ vec4 mv = modelViewMatrix * vec4(position, 1.0); vD = -mv.z; gl_Position = projectionMatrix * mv; }',
+  fragmentShader: 'varying float vD; void main(){ float v = clamp(1.0 - vD / 10.0, 0.0, 1.0); gl_FragColor = vec4(v, v, v, 1.0); }'});
+const white = new THREE.MeshBasicMaterial({color: 0xffffff, side: THREE.DoubleSide}), black = new THREE.MeshBasicMaterial({color: 0, side: THREE.DoubleSide});
+objects.forEach(o => { const id = o.userData.id;
+  o.userData.idMat = new THREE.MeshBasicMaterial({color: new THREE.Color(((id * 97) % 256) / 255, ((id * 57 + 40) % 256) / 255, ((id * 23 + 90) % 256) / 255), side: THREE.DoubleSide}); });
+window.renderAt = (t, pass) => {
+  window.animate(t); camAt(t);
+  colorOnly.forEach(m => { if (!bubbles.includes(m)) m.visible = pass === 'color' && m.userData.on !== false; });
+  if (pass !== 'color') bubbles.forEach(b => b.visible = false);
+  if (pass === 'color') { scene.background = DEEP; scene.fog.color.set(0x1b6f84); objects.forEach(o => o.material = o.userData.colorMat); }
+  else {
+    scene.background = new THREE.Color(0);
+    objects.forEach(o => o.material = pass === 'id' ? o.userData.idMat : pass === 'normal' ? normalMat : pass === 'depth' ? depthMat : (charSet.has(o) ? white : black));
+  }
+  const fog = scene.fog; if (pass !== 'color') scene.fog = null;
+  renderer.render(scene, cam); scene.fog = fog; return true;
+};
+window.info = () => objects.length;
+</script></body></html>

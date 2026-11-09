@@ -1,0 +1,233 @@
+<!doctype html><html><body style="margin:0;background:transparent">
+<canvas id="c" width="1920" height="1040"></canvas>
+<script src="node_modules/three/build/three.min.js"></script>
+<script>
+// 〈숨비〉 tech test: 곶자왈 forest, C9 tracking shot. Renders four passes per frame for the Python cel finish:
+//   color (toon, 3 tones + hard shadows), id (flat per-object colour), normal (view space), depth.
+const W = 1920, H = 1040;
+const renderer = new THREE.WebGLRenderer({canvas: document.getElementById('c'), antialias: true, alpha: true, preserveDrawingBuffer: true});
+renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.BasicShadowMap;          // hard-edged shadow shapes (cel)
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+const SKY = new THREE.Color(0xb9d3c4);
+scene.background = SKY;
+scene.fog = new THREE.Fog(0xaccbbb, 9, 34);
+
+const cam = new THREE.PerspectiveCamera(38, W / H, 0.1, 80);
+
+// --- deterministic random
+let seed = 7;
+function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+function rr(a, b) { return a + (b - a) * rnd(); }
+
+// --- toon materials: 3 tones, nearest-filtered ramp
+const ramp = new THREE.DataTexture(new Uint8Array([70, 70, 70, 255, 150, 150, 150, 255, 255, 255, 255, 255]), 3, 1);
+ramp.minFilter = ramp.magFilter = THREE.NearestFilter; ramp.needsUpdate = true;
+function toon(hex) { return new THREE.MeshToonMaterial({color: hex, gradientMap: ramp}); }
+
+const objects = [];                     // every mesh, for pass overrides
+let nextId = 1;
+function add(mesh, cast = true, recv = true) {
+  mesh.castShadow = cast; mesh.receiveShadow = recv;
+  mesh.userData.id = nextId++;
+  mesh.userData.colorMat = mesh.material;
+  scene.add(mesh); objects.push(mesh); return mesh;
+}
+
+// --- lights
+const sun = new THREE.DirectionalLight(0xfff1d6, 2.6);
+sun.position.set(-8, 14, 6); sun.target.position.set(2, 0, -4);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+sun.shadow.bias = -0.003; sun.shadow.normalBias = 0.12;
+Object.assign(sun.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18, near: 1, far: 50});
+scene.add(sun, sun.target);
+scene.add(new THREE.HemisphereLight(0xcfe6ff, 0x3c4a2c, 0.9));
+
+// --- ground: lumpy mossy lava floor
+{
+  const g = new THREE.PlaneGeometry(60, 40, 120, 80); g.rotateX(-Math.PI / 2);
+  const p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i), z = p.getZ(i);
+    p.setY(i, 0.25 * Math.sin(x * 0.7) * Math.cos(z * 0.9) + 0.15 * Math.sin(x * 2.3 + z * 1.7));
+  }
+  g.computeVertexNormals();
+  add(new THREE.Mesh(g, toon(0x5f7a3c)), false, true);
+}
+
+// --- lava rocks with moss caps (two meshes: rock + moss lid)
+function rock(x, z, s) {
+  const g = new THREE.IcosahedronGeometry(s, 1);
+  const p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const v = new THREE.Vector3().fromBufferAttribute(p, i);
+    const k = 1 + 0.22 * Math.sin(v.x * 5.1 + v.z * 3.7) + 0.15 * Math.cos(v.y * 6.3);
+    v.multiplyScalar(k); v.y *= 0.62; p.setXYZ(i, v.x, v.y, v.z);
+  }
+  g.computeVertexNormals();
+  const m = add(new THREE.Mesh(g, toon(0x3e3a3c)));
+  m.position.set(x, s * 0.25, z); m.rotation.y = rr(0, 6.28);
+  const moss = new THREE.Mesh(new THREE.SphereGeometry(s * 0.92, 10, 6, 0, 6.28, 0, 1.0), toon(0x6f8d3a));
+  moss.scale.set(1.05, 0.55, 1.05); moss.position.copy(m.position); moss.position.y += s * 0.18;
+  add(moss);
+}
+for (let i = 0; i < 55; i++) rock(rr(-14, 22), rr(-16, 2.2), rr(0.25, 1.1));
+
+// --- trees: bent trunks (tube along a curve), a few branches, canopy blobs high up
+const branchTips = [];
+function tree(x, z, h, lean) {
+  const pts = [];
+  for (let k = 0; k <= 6; k++) {
+    const t = k / 6;
+    pts.push(new THREE.Vector3(x + lean * t * t * 1.4 + 0.25 * Math.sin(t * 5 + x), t * h, z + 0.3 * Math.sin(t * 3 + z)));
+  }
+  const curve = new THREE.CatmullRomCurve3(pts);
+  const r0 = rr(0.16, 0.3);
+  const g = new THREE.TubeGeometry(curve, 24, r0, 7, false);
+  // taper
+  const p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const seg = Math.floor(i / 8) / 24;
+    const c = curve.getPoint(Math.min(1, seg));
+    const v = new THREE.Vector3().fromBufferAttribute(p, i).sub(c).multiplyScalar(1.15 - 0.55 * seg).add(c);
+    p.setXYZ(i, v.x, v.y, v.z);
+  }
+  g.computeVertexNormals();
+  add(new THREE.Mesh(g, toon(0x6a5a4e)));
+  for (let k = 0; k < 5; k++) {                          // ivy patches clinging to the trunk
+    const o = curve.getPoint(rr(0.05, 0.6));
+    if (k > 2) break;
+    const iv = new THREE.Mesh(new THREE.SphereGeometry(r0 * 1.08, 9, 6, 0, rr(2.0, 3.4)), toon(k % 2 ? 0x3d5f2a : 0x4c7031));
+    iv.scale.set(1, rr(2.5, 4.0), 1); iv.rotation.y = rr(0, 6.28); iv.position.copy(o); add(iv, false, true);
+  }
+  for (let b = 0; b < 3; b++) {
+    const t = rr(0.45, 0.85), o = curve.getPoint(t);
+    const a = rr(0, 6.28), L = rr(1.0, 2.2);
+    const tip = o.clone().add(new THREE.Vector3(Math.cos(a) * L, rr(0.3, 0.9), Math.sin(a) * L * 0.6));
+    const bc = new THREE.CatmullRomCurve3([o, o.clone().lerp(tip, 0.5).add(new THREE.Vector3(0, 0.25, 0)), tip]);
+    add(new THREE.Mesh(new THREE.TubeGeometry(bc, 8, r0 * 0.35, 5, false), toon(0x6a5a4e)));
+    branchTips.push(tip);
+  }
+  const top = curve.getPoint(1);
+  for (let k = 0; k < 6; k++) {
+    const s = rr(1.0, 1.9);
+    const blob = new THREE.Mesh(new THREE.IcosahedronGeometry(s, 3), toon(k % 2 ? 0x3f6a2e : 0x4f7d34));
+    blob.position.set(top.x + rr(-1.6, 1.6), top.y + rr(-0.6, 1.0), top.z + rr(-1.4, 1.4));
+    add(blob);
+  }
+}
+for (let i = 0; i < 34; i++) tree(rr(-14, 24), rr(-18, -1.2), rr(5.5, 8.5), rr(-1, 1));
+// a high canopy layer so the sky only shows through gaps
+for (let i = 0; i < 40; i++) { const b = new THREE.Mesh(new THREE.IcosahedronGeometry(rr(2, 3.5), 3), toon(i % 2 ? 0x355c27 : 0x426b2f)); b.position.set(rr(-12, 22), rr(7.5, 9.5), rr(-16, 2)); add(b); }
+
+// --- seaweed thrown up by the storm, hanging from branches (flat ribbons)
+function ribbon(o, len, hue) {
+  const pts = [];
+  for (let k = 0; k <= 8; k++) pts.push(new THREE.Vector3(o.x + 0.05 * Math.sin(k * 0.7), o.y - k * len / 8, o.z + 0.03 * k));
+  const curve = new THREE.CatmullRomCurve3(pts);
+  const g = new THREE.TubeGeometry(curve, 16, 0.11, 4, false);
+  g.scale(1, 1, 0.22);
+  add(new THREE.Mesh(g, toon(hue)), true, false);
+}
+branchTips.forEach((tp, i) => { if (i % 2 === 0) ribbon(tp, rr(0.6, 1.4), i % 4 ? 0x6b5a2a : 0x52602c); });
+
+// --- ferns: radial fronds made of a leaf shape, bent upward
+const frondShape = new THREE.Shape();
+frondShape.moveTo(0, 0);
+for (let k = 0; k <= 10; k++) { const t = k / 10; frondShape.lineTo(t * 1.0, 0.13 * Math.sin(t * Math.PI) * (1 + 0.35 * Math.sin(t * 16))); }
+for (let k = 10; k >= 0; k--) { const t = k / 10; frondShape.lineTo(t * 1.0, -0.13 * Math.sin(t * Math.PI) * (1 + 0.35 * Math.sin(t * 16 + 1))); }
+const frondGeo = new THREE.ShapeGeometry(frondShape, 2);
+frondGeo.rotateX(Math.PI / 2);   // leaf lies in the xz plane before the lift
+function fern(x, z, s) {
+  const grp = new THREE.Group();
+  const n = 7 + Math.floor(rnd() * 4);
+  for (let k = 0; k < n; k++) {
+    const m = new THREE.Mesh(frondGeo, toon(k % 3 ? 0x6e9a3e : 0x89ad4a));
+    m.material.side = THREE.DoubleSide;
+    m.rotation.set(0, (k / n) * 6.28 + rr(-0.2, 0.2), rr(0.6, 1.05), 'YXZ');   // leaf axis = local x; z-rot lifts it up
+    m.scale.setScalar(s * rr(0.8, 1.2));
+    m.position.set(x, 0.05, z);
+    add(m, true, true);
+  }
+}
+for (let i = 0; i < 160; i++) fern(rr(-14, 24), rr(-12, 3.4), rr(0.5, 1.1));
+for (let i = 0; i < 260; i++) {
+  const f = new THREE.Mesh(new THREE.CircleGeometry(rr(0.05, 0.1), 7), toon(i % 3 ? 0xfdf6e4 : 0xffd84a));
+  f.rotation.x = -Math.PI / 2 + rr(-0.3, 0.3); f.position.set(rr(-14, 24), 0.18, rr(-12, 4)); add(f, false, false);
+}
+// foreground framing: a big fern and a mossy boulder close to the lens
+fern(-0.9, 3.9, 1.5); fern(4.4, 3.7, 1.4); rock(-2.4, 2.6, 0.8); rock(5.6, 2.2, 0.9);
+// moss/ivy clumps on the floor
+for (let i = 0; i < 120; i++) {
+  const s2 = rr(0.15, 0.45);
+  const c = new THREE.Mesh(new THREE.SphereGeometry(s2, 8, 5), toon(i % 3 ? 0x56762f : 0x7c9a3f));
+  c.scale.set(1.4, 0.45, 1.2); c.position.set(rr(-14, 24), 0.08, rr(-14, 4)); add(c);
+}
+
+// --- light shafts (drawn in a separate pass, additive)
+const shafts = [];
+for (let i = 0; i < 0; i++) {
+  const g = new THREE.CylinderGeometry(0.5, 1.4, 16, 8, 1, true);
+  const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({color: 0xfff3c8, transparent: true, opacity: 0.12, depthWrite: false,
+    blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false}));
+  m.position.set(rr(-6, 18), 7, rr(-12, -2)); m.rotation.z = 0.45; m.rotation.x = -0.15;
+  scene.add(m); shafts.push(m);
+}
+
+// --- pass materials
+const normalMat = new THREE.MeshNormalMaterial({side: THREE.DoubleSide});
+const depthMat = new THREE.MeshDepthMaterial({side: THREE.DoubleSide});
+function idMat(id) {
+  const r = (id * 97) % 256, g = (id * 57 + 40) % 256, b = (id * 23 + 90) % 256;
+  return new THREE.MeshBasicMaterial({color: new THREE.Color(r / 255, g / 255, b / 255), side: THREE.DoubleSide, fog: false});
+}
+objects.forEach(o => {
+  o.userData.idMat = idMat(o.userData.id);
+  o.geometry.computeBoundingSphere();
+  const c = o.geometry.boundingSphere.center.clone(); o.updateMatrixWorld(); c.applyMatrix4(o.matrixWorld);
+  o.userData.cz = c.z;
+});
+const groundMesh = objects[0];
+
+// --- camera path: low (child height), tracking left->right, on twos
+function camAt(t) {
+  const tq = Math.floor(t * 12) / 12;
+  const x = -1.0 + tq * 0.55, y = 1.25 + 0.03 * Math.sin(tq * 3.1);
+  cam.position.set(x, y, 5.2);
+  cam.lookAt(x + 1.6, 1.4, -3.0);
+}
+
+window.renderAt = (t, pass, keepCam) => {
+  if (!keepCam) camAt(t);
+  if (pass === 'color') {
+    scene.background = window.PLATE_ALPHA ? null : SKY; scene.fog.color.set(0xaccbbb);
+    objects.forEach(o => o.material = o.userData.colorMat);
+    shafts.forEach(s => s.visible = true);
+    renderer.shadowMap.enabled = true;
+  } else {
+    scene.background = window.PLATE_ALPHA ? null : new THREE.Color(0x000000);
+    shafts.forEach(s => s.visible = false);
+    objects.forEach(o => o.material = pass === 'id' ? o.userData.idMat : (pass === 'normal' ? normalMat : depthMat));
+  }
+  const fogKeep = scene.fog;
+  if (pass !== 'color') scene.fog = null;
+  renderer.render(scene, cam);
+  scene.fog = fogKeep;
+  return true;
+};
+window.info = () => objects.length;
+// multiplane plates: render only objects whose centre z lies in [zmin, zmax), from the mid-shot camera, on a wide canvas
+window.renderLayer = (pass, zmin, zmax, w, withGround, tmid) => {
+  renderer.setSize(w, H, false); cam.aspect = w / H; cam.updateProjectionMatrix();
+  camAt(tmid);
+  objects.forEach(o => o.visible = (o === groundMesh) ? withGround : (o.userData.cz >= zmin && o.userData.cz < zmax));
+  const bg = scene.background;
+  const r = window.renderAt(tmid, pass, true);
+  objects.forEach(o => o.visible = true);
+  return r;
+};
+</script></body></html>
