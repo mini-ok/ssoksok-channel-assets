@@ -360,8 +360,6 @@ def render():
                 P = dr[2].copy(); P[2] = dr[2][2] + (Z0 - dr[2][2]) * u * u
                 q2, zq = project(P[None]); kq = F * U / zq[0]
                 cv2.circle(img, (int(q2[0, 0]), int(q2[0, 1])), max(1, int(dr[4] * 0.6 * kq)), (0.03, 0.03, 0.04), -1, cv2.LINE_AA)
-        rs = rain_streaks(t)
-        img = img * (1 - 0.18 * rs[..., None]) + 0.10 * rs[..., None] * fx
         img = light(img, 'night', extra=fx)
         img = img * (1 + 0.4 * fx)
         yy, xx = np.mgrid[0:H, 0:W].astype(F32)

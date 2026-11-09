@@ -135,16 +135,16 @@ class Room:
         cl = np.clip(0.5 + 0.6 * _noise(h, w, 77, 90) * (1 - 0.6 * dawn), 0, 1)
         skyimg = sky[None, None, :] * (0.75 + 0.35 * cl[..., None]) * (1 - 0.25 * dawn * (1 - np.clip((Y - 0.14) / 0.36, 0, 1)))[..., None] + flash * 0.9
         img[win] = skyimg[win]
-        if rain > 0:
-            rm = np.zeros((h, w), F32)
-            q = math.floor(t * 12) / 12
-            for i, (rx, ry, rz) in enumerate(self.rain):
-                y0 = (ry + q * (1.6 + rz)) % 1.0
-                x0 = 0.56 + rx * 0.28 - 0.25 * (y0 - 0.5) * 0.36
-                a = (x0, 0.14 + y0 * 0.36); b = (x0 + 0.006, a[1] - 0.04)
-                if 0.56 < a[0] < 0.84:
-                    self.line(rm, a, b, 0.0012, 0.6 + 0.4 * rz)
-            img = img * (1 - 0.0 * rm[..., None]) + rm[..., None] * np.array((0.55, 0.58, 0.65), F32) * 0.35 * rain * (1 - dawn * 0.7) * (win[..., None])
+        if rain > 0:                                                         # 붓으로 그린 비(창 안쪽만)
+            if not hasattr(self, 'inkrain'):
+                from rain import InkRain
+                x0, x1, y0, y1 = int(0.56 * w), int(0.84 * w), int(0.14 * h), int(0.50 * h)
+                self.win_box = (x0, x1, y0, y1)
+                self.inkrain = InkRain(x1 - x0, y1 - y0, angle=-16, seed=13, fib=self.fiber[y0:y1, x0:x1] * 2, scale=1.4)
+            x0, x1, y0, y1 = self.win_box
+            rn = self.inkrain.render(t, amount=rain, gust=0.8)
+            sub = img[y0:y1, x0:x1]
+            img[y0:y1, x0:x1] = sub * np.exp(-(rn * 0.9 * rain * (1 - 0.6 * dawn))[..., None] * np.array((1.0, 1.0, 0.95), F32))
         # 창틀·문살·열린 창짝
         fr = np.zeros((h, w), F32)
         for (a, b) in (((0.555, 0.135), (0.845, 0.135)), ((0.555, 0.505), (0.845, 0.505)), ((0.557, 0.135), (0.557, 0.505)), ((0.843, 0.135), (0.843, 0.505))):
