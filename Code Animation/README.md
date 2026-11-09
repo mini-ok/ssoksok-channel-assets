@@ -15,7 +15,7 @@
 | `holssi/` | 〈홀씨〉 HOLSSI | 97초 | Python cairo, 24fps | **v2 완료** — 엔딩 교체, C7 마을 부감 질감 수정 |
 | `scarecrow/` | 〈허수아비의 겨울〉 | 137초 | Python cairo + painter.py, 24fps | **v2 완료** — 컷 수정(아래) |
 | `sumbi/` | 〈숨비〉 | 172초 | three.js 3D + Python 셀 마감 | 1차 완성 후 종료. 회고 `sumbi/postmortem.md` |
-| `jeom/` | 〈점〉 JEOM | 약 2분(예정) | Python numpy·cv2(수묵 엔진) | **제작 중** — 제작 전 검토·브리프·씬 리스트·모델 시트 v1 완료, 모델 시트 확인 대기 → 애니마틱. `jeom/README.md` |
+| `jeom/` | 〈점〉 JEOM | 약 2분 40초(예정) | Python numpy·cv2(수묵 엔진) | **제작 중** — 이야기 v2(떨리는 손)로 다시 씀. 씬 리스트 v2·애니마틱 v2(157초) 확인 대기. `jeom/README.md` |
 | `ideas/` | 다음 작품 기획 | — | — | 후보 검토(`2026-11-09_review_and_pitches.md`), 〈점〉·〈파루〉 스토리 확장(`2026-11-09_jeom_paru_story.md`), 무음 기술 시험(`tests/`). 〈파루〉는 다음 후보 |
 
 ### 2026-11-09 v2 변경 공통

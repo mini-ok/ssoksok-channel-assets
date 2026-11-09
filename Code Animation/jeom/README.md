@@ -1,6 +1,8 @@
 # 〈점〉 JEOM — 제작 중
 
-먹 한 방울이 화선지 구석에서 눈 없는 용의 눈동자 자리까지 가는 약 2분 단편. 결말 (c): 용은 날아가고 점이 지나온 길이 한 획 그림으로 남는다.
+**v2 (2026-11-09, 현재):** 손이 떨려 용의 눈을 찍지 못하는 늙은 화가. 그 떨림에서 떨어져 잘려 나갈 뻔한 먹 한 점이, 화가가 흘린 실패한 방울들을 모아 눈이 되고, 폭우에 지워져 가는 그림을 지키려 용과 함께 종이를 떠난다. 아침의 종이에는 밤사이의 흔적이 그림으로 남고, 화가의 눈물이 마지막 점을 찍는다. → `scenelist_v2.md`, `animatic2.py`
+
+(v1: 먹 한 방울이 구석에서 눈자리까지 가는 약 2분 단편. 아래 v1 표·엔진 설명은 그대로 유효하고, v2는 그 엔진 위에 시험 장면들을 더했다.)
 
 ## 상태 (2026-11-09)
 | 단계 | 상태 | 파일 |
@@ -11,6 +13,22 @@
 | 모델 시트 v1(용·지도·눈·발톱·점 상태) | 확인됨(형태 유지, 접사 부분만 보강) | `sheets/model_sheet_v1.png` |
 | 결정 사항 | 낙관 = 허상공방, 악기 = 거문고(점)·대금(용) | `preproduction.md` 5장, `audio/sketch.py` |
 | 애니마틱 v1(126초, 960×540, 임시음) | **확인 대기** | `animatic.py`, `anim_audio.py`, `sheets/animatic_v1_contact.png` |
+
+## v2 상태
+| 단계 | 상태 | 파일 |
+|---|---|---|
+| 씬 리스트 v2(21컷, 약 157초) | **확인 대기** | `scenelist_v2.md` |
+| 애니마틱 v2(960×540, 임시음) | **확인 대기** | `animatic2.py`, `anim_audio2.py` → `cache/jeom_animatic_v2.mp4` |
+| 떨리는 손(붓·그림자만) | 확인됨 | `tests/test_hand2.py` (v1 `test_hand.py`는 버린 방식) |
+| 칼로 자르다 멈춤 | 시험 | `tests/test_knife.py` (칼집 자취 → `cache/knife_cut.npy`, 번짐 장벽으로도 씀) |
+| 그림 속 용이 그대로 솟아오름 | 확인됨(방향) | `tests/test_leap.py` (등뼈 좌표 리그, 머리가 지나온 길, 구르는 돌아서기, 먹 뿌림) |
+| 창밖 폭풍·비가 멎음 | 시험 | `tests/test_storm.py` |
+| 눈물 → 눈동자 테 | 시험 | `tests/test_tear.py` |
+| 화실 원경(실루엣·벽 그림자·바구니) | 시험 | `engine/room.py` |
+| 비행(새 머리+새 몸) | 버림 | `tests/test_flight.py` — 붓 머리와 사실적 몸이 안 어울림, 원안 그림이 베이스여야 함 |
+
+애니마틱 v2 다시 만들기: 시험들을 먼저 돌린 뒤(`JEOM_RES=0.25 python3 tests/test_hand2.py`, `test_knife.py`, `test_leap.py`, `test_storm.py`, `test_tear.py`)
+`python3 animatic2.py cut J & python3 animatic2.py cut C1 C2 C3 C4 C5 C13 C14 C15 C16 C17 C18 C19 C20 C21` (2코어 약 8분) → `python3 animatic2.py encode`.
 
 ## 엔진 (`engine/`)
 - `paper.py`: 화선지. mm 좌표, 20mm 칸 시드로 섬유를 만들어 배율과 무관하게 같은 자리 = 같은 섬유. 칸 타일은 `cache/paper/`에 저장(첫 전체 화면 약 45초, 이후 몇 초).

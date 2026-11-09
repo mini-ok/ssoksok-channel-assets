@@ -85,7 +85,7 @@ KEYS = np.array([HEAD0,
                  (2.0, 2.0, 2.4),
                  (2.6, 4.0, 2.6)], float)
 KT = np.array([0.0, 0.5, 1.0, 1.5, 1.95, 2.35, 2.75, 3.15, 3.6])
-MIRROR = {'m': 1.0}
+MIRROR = {'m': 1.0, 'p': 0.0}       # m: 목표(+1/−1), p: 구르기 진행(0 → 1이면 뒤집힘). 뒤집기는 0.45초 동안 몸을 굴려서
 def head_path(tau):
     """그림 속 방향(왼쪽 위)으로 미끄러져 나오다 → 카메라 쪽으로 솟아 크게 다가오고 → 오른쪽으로 휘감아 → 위로 빠진다."""
     tau = np.atleast_1d(np.asarray(tau, float))
@@ -138,9 +138,13 @@ def live_strokes(t_leave, k_load=1.0):
     pts, cum = trail(t_leave)
     hs, _ = project(pts[-6:])
     hx = hs[-1, 0] - hs[0, 0]
-    if MIRROR['m'] > 0 and hx > 25: MIRROR['m'] = -1.0                  # 오른쪽으로 돌면 그림을 뒤집어 등이 위로(손그림의 돌아서기)
+    if MIRROR['m'] > 0 and hx > 25: MIRROR['m'] = -1.0                  # 오른쪽으로 돌면 몸을 굴려 등이 위로 오게
     elif MIRROR['m'] < 0 and hx < -25: MIRROR['m'] = 1.0
-    mir = MIRROR['m']
+    tgt = 0.0 if MIRROR['m'] > 0 else 1.0
+    step = 1.0 / (0.45 * FPS)
+    MIRROR['p'] += np.clip(tgt - MIRROR['p'], -step, step)
+    mir = math.cos(math.pi * ease(MIRROR['p']))                         # +1 → 0(옆으로 누움) → −1: 끊김 없이 구른다
+    MIRROR['mir'] = mir
     out = []; bodyw = []
     for kind, st, sad in REC:
         s, a, d = sad[:, 0] * U, sad[:, 1] * U, sad[:, 2] * U
@@ -231,16 +235,26 @@ def flash(t):
     return f
 
 # ---------------------------------------------------------------- 먹방울(날며 뿌린 먹)·빗방울
-def splat_mm(dens, x, y, r, seed, spray=True):
-    """종이(PV)에 떨어진 먹방울: 불규칙한 방울 + 튄 위성 방울들."""
+def splat_mm(dens, x, y, r, seed, spray=True, ang=None):
+    """종이에 떨어진 먹방울: 날아온 방향(ang)으로 늘어진 몸 + 앞쪽으로 튄 꼬리 방울 + 고운 안개 점."""
     rr = np.random.default_rng(seed)
-    blobs = [(x, y, r)] + [(x + rr.normal(0, r * 0.35), y + rr.normal(0, r * 0.35), r * rr.uniform(0.5, 0.8)) for _ in range(3)]
+    ang = rr.uniform(0, 2 * np.pi) if ang is None else ang
+    ca, sa = math.cos(ang), math.sin(ang)
+    blobs = []
+    for j in range(5):                                              # 늘어진 몸(뒤가 굵고 앞이 가늘다)
+        f = j / 4
+        blobs.append((x + ca * r * 1.6 * f + rr.normal(0, r * 0.12), y + sa * r * 1.6 * f + rr.normal(0, r * 0.12), r * (1.0 - 0.55 * f) * rr.uniform(0.85, 1.1)))
     if spray:
-        ang = rr.uniform(0, 2 * np.pi)
-        for j in range(rr.integers(2, 6)):
-            dd = r * rr.uniform(1.6, 4.5); a2 = ang + rr.normal(0, 0.5)
-            blobs.append((x + math.cos(a2) * dd, y + math.sin(a2) * dd, r * rr.uniform(0.12, 0.3)))
-    Wash(blobs, load=rr.uniform(0.9, 1.6), soft=0.25, seed=int(seed), rim=0.4).render(PV, dens, FIB)
+        for j in range(int(rr.integers(3, 8))):                     # 앞으로 튄 방울(부채꼴)
+            a2 = ang + rr.normal(0, 0.45); dd = r * rr.uniform(2.2, 6.0)
+            blobs.append((x + math.cos(a2) * dd, y + math.sin(a2) * dd, r * rr.uniform(0.10, 0.32)))
+        for j in range(int(rr.integers(4, 12))):                    # 고운 안개 점
+            a2 = rr.uniform(0, 2 * np.pi); dd = r * rr.uniform(1.5, 4.0)
+            blobs.append((x + math.cos(a2) * dd, y + math.sin(a2) * dd, r * rr.uniform(0.05, 0.12)))
+    Wash(blobs[:5], load=rr.uniform(1.1, 1.7), soft=0.18, seed=int(seed), rim=0.5).render(PV, dens, FIB)
+    if len(blobs) > 5:
+        for j, bb in enumerate(blobs[5:]):
+            Wash([bb], load=rr.uniform(0.9, 1.5), soft=0.15, seed=int(seed) + j + 1, rim=0.3).render(PV, dens, FIB)
 
 DRIPS = []                                  # [t0, 낙하시간, 세계 시작점, 착지 mm, 반지름 mm, seed]
 SPLAT = np.zeros((PV.H, PV.W), F32)
@@ -283,7 +297,7 @@ def render():
         # 날아간 먹방울이 종이에 닿는다
         for dr in DRIPS:
             if not dr[6] and t >= dr[0] + dr[1]:
-                splat_mm(SPLAT, dr[3][0], dr[3][1], dr[4], dr[5]); dr[6] = True
+                splat_mm(SPLAT, dr[3][0], dr[3][1], dr[4], dr[5], ang=dr[7]); dr[6] = True
         # 살아 움직이는 용(그림 그대로의 획)
         live = np.zeros((H, W), F32)
         if lift > 0:
@@ -292,7 +306,7 @@ def render():
             # 눈동자(점)
             P, Tq, Nq = frame_along(pts, cum, np.array([0.0]))
             sad = to_spine(np.array([dragon.E]), head=True)
-            Pe = P + (-TSIGN) * Tq * sad[:, 1:2] * U + MIRROR['m'] * NSIGN * Nq * sad[:, 2:3] * U
+            Pe = P + (-TSIGN) * Tq * sad[:, 1:2] * U + MIRROR.get('mir', 1.0) * NSIGN * Nq * sad[:, 2:3] * U
             e2, ze = project(Pe); kk = F * U / ze[0]
             yy, xx = np.mgrid[0:H, 0:W].astype(F32)
             r = np.hypot(xx - e2[0, 0] - 1.0 * kk, yy - e2[0, 1])
@@ -310,7 +324,8 @@ def render():
                     hgt = max(0.05, Z0 - P0[2])
                     lx, ly = P0[0] / U + PC[0], -P0[1] / U + PC[1]
                     if 0 < lx < 640 and 0 < ly < 420:
-                        DRIPS.append([t, 0.12 + 0.12 * math.sqrt(hgt), P0.copy(), (lx, ly), rng.uniform(1.2, 3.4), int(rng.integers(1e6)), False])
+                        hv = pts[-1] - pts[-4]; ang = math.atan2(-hv[1], hv[0]) + rng.normal(0, 0.4)   # 용이 날던 방향(종이 mm 좌표)
+                        DRIPS.append([t, 0.12 + 0.12 * math.sqrt(hgt), P0.copy(), (lx, ly), rng.uniform(1.0, 2.8), int(rng.integers(1e6)), False, ang])
         else:
             ex, ey = PV.to_px(*dragon.E)
             yy, xx = np.mgrid[0:PV.H, 0:PV.W].astype(F32)
@@ -332,8 +347,13 @@ def render():
             sh = cv2.GaussianBlur(np.clip(live, 0, 1.5), (0, 0), 2 + 14 * hgt)
             sh = np.roll(np.roll(sh, int(18 * hgt), 1), int(26 * hgt), 0)
             img = img * (1 - 0.35 * np.clip(sh, 0, 1) * (1 - 0.5 * hgt))[..., None]
+            # 젖은 먹: 몸 굵은 곳의 한쪽 가장자리에 번개·창빛 반사, 속은 조금 더 깊게
+            lv = cv2.GaussianBlur(np.clip(live, 0, 2).astype(F32), (0, 0), 2.0)
+            gx = cv2.Sobel(lv, cv2.CV_32F, 1, 0, ksize=5); gy = cv2.Sobel(lv, cv2.CV_32F, 0, 1, ksize=5)
+            gl = np.clip((gx * 0.6 - gy * 0.8) * 0.06, 0, 1) * np.clip(lv - 0.6, 0, 1)
             a = np.clip(live * 1.5, 0, 1)[..., None]
-            img = img * (1 - a) + (np.array((0.92, 0.90, 0.86), F32) * np.exp(-live[..., None] * INK_ABS)) * a   # 떠 있는 먹
+            img = img * (1 - a) + (np.array((0.92, 0.90, 0.86), F32) * np.exp(-live[..., None] * 1.12 * INK_ABS)) * a   # 떠 있는 먹
+            img = img + (gl * (0.35 + 0.6 * fx))[..., None] * np.array((0.85, 0.9, 1.0), F32)
         for dr in DRIPS:
             if not dr[6] and t >= dr[0]:
                 u = (t - dr[0]) / dr[1]
@@ -356,9 +376,10 @@ def render():
 
 if __name__ == '__main__':
     FR = render()
+    np.savez_compressed(os.path.join(CACHE, 'after.npz'), splat=SPLAT, wets=WETS)          # 떠난 뒤 종이에 남은 것(엔딩에 쓴다)
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', os.path.join(CACHE, 'f%04d.png'),
                     '-vf', 'fps=24', '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', os.path.join(JE, 'cache', 'leap_test.mp4')])
-    pick = [14, 20, 25, 28, 31, 35, 39, 44, 64]
+    pick = [26, 27, 28, 29, 30, 31, 32, 44, 64]
     pick = [p for p in pick if p < len(FR)]
     rows = [np.hstack([FR[i] for i in pick[r * 3:(r + 1) * 3]]) for r in range(len(pick) // 3)]
     cv2.imwrite(os.path.join(JE, 'cache', 'leap_test_sheet.jpg'), cv2.resize(np.vstack(rows), (1440, 270 * len(rows))), [cv2.IMWRITE_JPEG_QUALITY, 90])
