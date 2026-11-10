@@ -109,7 +109,7 @@ apt-get update -q && apt-get install -y -q libegl1 fonts-noto-cjk
 ## 예약 구조 (2026-10-26)
 예약 트리거(trig_0193ogMvGJmp7kibSF8vCVvv)의 프롬프트는 짧은 포인터다: 저장소를 clone → `docs/schedule_prompt.md`를 읽고 그대로 따른다.
 따라서 지시 변경은 `docs/schedule_prompt.md`를 고쳐 push하면 끝이다(update_trigger 불필요, 전체 프롬프트 재전송 불필요).
-제작 대기열은 `docs/episodes/NEXT.md`. 예약 실행은 저장소에 쓰지 못하므로 다음 대본 초안은 실행이 SendUserFile/send_message로 보내고 대화 세션이 대기열에 올린다.
+제작 대기열은 `docs/episodes/NEXT.md`(사용자가 직접 지정한 주제만, 기본은 비어 있음). 주제 선정·구조는 `docs/content_guide.md`, 중복 대조는 `docs/content_ledger.md`. 다음 대본을 미리 쓰는 단계는 없다.
 
 ## 자막 상자 상하 여백 (2026-10-26)
 `render.py cap_sp()`: 마지막 줄 글자가 상자 아래에 닿던 문제를 고쳤다. 상자 높이를 `62 + 0.98·size + 줄간격·(줄수−1) + (22 + 0.22·size) + 40`으로 늘려
