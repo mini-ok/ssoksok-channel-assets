@@ -1,0 +1,29 @@
+{
+  "episode": 21,
+  "title": "Cinnamon Raspberry Compote",
+  "verified_at": "2026-11-10T02:52:13Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "558hfTXqV4I",
+      "video_url": "https://youtu.be/558hfTXqV4I",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "CinnamonRaspberryCompote_EN.mp4",
+      "sha256": "df01a50fa0b0e20408ea1476ff1ec52a965fc2d2c4026f835d5c606e4937898f"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "O1EsBdO-W9U",
+      "video_url": "https://youtu.be/O1EsBdO-W9U",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "CinnamonRaspberryCompote_KO.mp4",
+      "sha256": "4e0f6405e31c4405cbe50e57c4a9aaff5e3c41be3e44343f8625596dd554eea7"
+    }
+  ]
+}

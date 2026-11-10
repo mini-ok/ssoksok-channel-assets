@@ -1,0 +1,29 @@
+{
+  "episode": 22,
+  "title": "Pepper Roast Beef Lettuce Wraps",
+  "verified_at": "2026-11-10T02:52:13Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "iDS1O4r6dR4",
+      "video_url": "https://youtu.be/iDS1O4r6dR4",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "PepperRoastBeefWraps_EN.mp4",
+      "sha256": "ae2d94a9f2e4f09d6c8b5d1dc944798c4becfdec39f4d66a51397cd8e16f9260"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "Bij6sQXNJkE",
+      "video_url": "https://youtu.be/Bij6sQXNJkE",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "PepperRoastBeefWraps_KO.mp4",
+      "sha256": "c9a883fce86c6e1867090e9059d404e819b9d6cd7cdec59364dfc98a9f736f56"
+    }
+  ]
+}
