@@ -1,4 +1,31 @@
-# 〈점〉 JEOM — 제작 중
+# 〈점〉 JEOM — 최종 완성 (2026-11-10, 1920×1080, 3분 11초)
+
+**최종본 v3 〈떨리는 손〉:** 손이 떨려 용의 눈을 찍지 못하는 늙은 화가. 실수로 떨어진 먹 한 점이 잘려 나갈 뻔하다가, 비바람 속에 화가의 실패한 방울들을 모아 용의 눈이 되고, 깨어난 용은 젖어 가는 종이를 벗어나 잠든 화가를 돌아본 뒤 창을 넘어 폭풍을 이기고 승천한다 — 용이 사라진 자리에서 해가 뜬다. 아침의 종이에는 밤사이의 흔적이 걸작으로 남고, 화가의 눈물이 마지막 점을 찍는다.
+→ 씬 리스트 `scenelist_v3.md`, 렌더 `animatic3.py`, 소리 `anim_audio3.py`. 기법 정리는 스킬 `../_kit/skills/ink-wash-animation/SKILL.md`, 작업 규칙은 `../CLAUDE.md`.
+
+### 다시 만들기(최종본)
+영상(mp4)·캐시는 저장소에 없다. 새 환경에서 처음부터(2코어·8GB 기준 약 2시간 + 인코딩 25분):
+```bash
+pip install numpy scipy opencv-python-headless pillow --break-system-packages
+sudo apt-get install -y ffmpeg fonts-noto-cjk          # 크레딧 글꼴 Noto Serif CJK KR
+cd "Code Animation/jeom"; export JEOM_SCALE=2
+python3 -c "import sys; sys.path[:0]=['.','engine','tests']; import animatic3 as A; A.trail_pv()"   # 공용 캐시(종이·점의 길) — 단독으로 먼저
+JEOM_RES=0.25 python3 tests/test_hand2.py               # C2·C3
+python3 tests/test_knife.py && python3 tests/test_leap.py   # C4, C17 + 아침 종이 기록(after.npz)
+python3 animatic3.py cut C1 C2 C3 C4 C5 C6 J C14 C15 C16 &  # 무거운 렌더는 동시에 두 개까지(세 개는 OOM)
+python3 animatic3.py cut C20 C21; wait                    # 폭풍은 상태가 있어 한 프로세스에서 순서대로
+python3 animatic3.py cut C17 C18 C19 C22 C23 C25          # C25는 C23 마지막 화면에서 이어지므로 같은 프로세스에서
+python3 anim_audio3.py cache/jeom_final.wav 191.5
+ffmpeg -framerate 12 -i cache/anim3_1920/a%05d.png -i cache/jeom_final.wav -vf fps=24 -c:v libx264 -preset slow -crf 17 \
+       -pix_fmt yuv420p -c:a aac -b:a 256k -movflags +faststart jeom_final_1080p.mp4
+```
+- 시험(960×540): `JEOM_SCALE=1`. 정지 프레임: `python3 animatic3.py still <컷> <컷 안 시각...>`(1/12초 배수, 상태 있는 컷도 처음부터 순서대로 그림).
+- 컨펌용 짧은 미리보기(540p + 소리): `JEOM_SCALE=1 python3 tools/preview.py <시작초> <끝초> out.mp4` (소리는 `cache/jeom_final.wav`).
+- 폭풍 시점 바꾸기: `JEOM_STORM=up`(최종) / `flat`(1차 완성판) / `down`(내려다봄 시안).
+
+---
+(아래는 제작 과정 기록)
+
 
 **v2 (2026-11-09, 현재):** 손이 떨려 용의 눈을 찍지 못하는 늙은 화가. 그 떨림에서 떨어져 잘려 나갈 뻔한 먹 한 점이, 화가가 흘린 실패한 방울들을 모아 눈이 되고, 폭우에 지워져 가는 그림을 지키려 용과 함께 종이를 떠난다. 아침의 종이에는 밤사이의 흔적이 그림으로 남고, 화가의 눈물이 마지막 점을 찍는다. → `scenelist_v2.md`, `animatic2.py`
 
@@ -30,9 +57,7 @@
 export JEOM_SCALE=2
 JEOM_RES=0.25 python3 tests/test_hand2.py      # C2·C3 (약 13분)
 python3 tests/test_knife.py; python3 tests/test_leap.py   # C4, C17 + 아침 종이 기록(after.npz)
-python3 animatic3.py cut C1 C2 C3 C4 C5 C6 J C14 C15 C16 &   # 메모리 8GB에서 두 개까지(세 개는 OOM)
-python3 animatic3.py cut C20 C21 &                                  # 폭풍은 상태가 있어 한 프로세스에서 순서대로
-python3 animatic3.py cut C17 C18 C19 C22 C23 C25                       # C25는 C23 마지막 화면에서 이어지므로 같은 프로세스에서
+# (최종본 순서는 맨 위 '다시 만들기(최종본)' 참고)
 # 인코딩: anim_audio3.build(wav, 191.5) 후 ffmpeg -framerate 12 -i cache/anim3_1920/a%05d.png -i wav -vf fps=24 -crf 17
 ```
 - 캐시는 배율별 폴더(`cache/*_1920`)로 분리된다. 두 프로세스가 같은 캐시를 동시에 처음 만들면 깨진 파일을 읽을 수 있다 — 첫 렌더 전에 한 번 단독으로 import해 캐시를 만들어 둘 것.

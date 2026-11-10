@@ -13,5 +13,6 @@ pip install -r "$(dirname "$0")/requirements.txt" --break-system-packages
 (cd "$CA/sumbi/three" && npm install three@0.160.0)
 python3 -m playwright install chromium 2>/dev/null || true
 # 4) 원래 작업 경로로 링크 (스크립트 일부가 /home/claude/<작품> 절대경로 사용)
+# 〈점〉(jeom)은 상대경로만 써서 링크가 필요 없다: cd "$CA/jeom" && JEOM_SCALE=2 python3 animatic3.py ...
 for d in orbit keeper holssi scarecrow sumbi; do [ -e /home/claude/$d ] || ln -s "$CA/$d" /home/claude/$d; done
 echo "OK: $CA"
