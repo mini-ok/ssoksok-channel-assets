@@ -196,6 +196,11 @@ def paper_H():
 # 그림 속 구름만 따로(종이에 그대로 남는다)
 CLOUD = render_strokes(PV, [s for s in dragon.strokes() if s.name.startswith('cloud')], FIB)
 BODY_ON_PAPER = np.clip(DRG - CLOUD, 0, None)
+_tfn = os.path.join(JE, 'cache', f'trail_pv{SUF}.npz')                 # 점이 지나온 길 + 눈동자였던 먹의 흔적(animatic3.trail_pv가 만든다)
+if os.path.exists(_tfn):
+    _tz = np.load(_tfn); TRAIL_ON_PAPER = _tz['trail'] * 0.9 + _tz['pupil'] * 0.10
+else:
+    TRAIL_ON_PAPER = np.zeros_like(CLOUD)
 
 
 # ---------------------------------------------------------------- 유체(풀려 흐르는 먹) — 화면 공간
@@ -293,7 +298,7 @@ def render():
         # 종이: 구름은 그대로, 용은 떠날수록 섬유에 스민 만큼만(25%) 남는다
         ghost = 1.0 - 0.75 * lift
         wet = np.clip(cv2.GaussianBlur(WETS, (0, 0), 1.2), 0, 1)
-        dens = CLOUD + BODY_ON_PAPER * ghost * (1 - 0.15 * wet) + SPLAT + 0.05 * wet
+        dens = CLOUD + TRAIL_ON_PAPER * (1 - 0.1 * wet) + BODY_ON_PAPER * ghost * (1 - 0.15 * wet) + SPLAT + 0.05 * wet
         # 비: 종이에 젖은 자국이 쌓인다
         for _ in range(6):
             rx, ry = rng.uniform(0, 640), rng.uniform(0, 420)

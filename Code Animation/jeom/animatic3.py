@@ -104,7 +104,7 @@ def live3(pts, cum, t=0.0, k_load=1.0, breathe=0.0, curl=0.0, jaw=0.0, lift=None
         out.append(ns)
     return out, (np.vstack(bodyw) if bodyw else np.zeros((0, 3)))
 
-def pupil(img_dens, pts, cum, mir=1.0, amt=2.6, jaw=0.0, scale=1.0):
+def pupil(img_dens, pts, cum, mir=1.0, amt=2.6, jaw=0.0, scale=1.0, rs=1.0):
     """눈동자(점) 밀도를 더하고 화면 위치를 돌려준다."""
     sad = L.to_spine(np.array([dragon.E]), head=True)
     P, Tq, Nq = L.frame_along(pts, cum, np.array([0.0]))
@@ -112,7 +112,7 @@ def pupil(img_dens, pts, cum, mir=1.0, amt=2.6, jaw=0.0, scale=1.0):
     e2, ze = L.project(Pe); kk = L.F * L.U / ze[0] * scale
     yy, xx = np.mgrid[0:H, 0:W].astype(F32)
     r = np.hypot(xx - e2[0, 0] - 1.0 * kk, yy - e2[0, 1])
-    return img_dens + amt * np.clip((4.3 * kk - r) / (0.8 * kk), 0, 1), e2[0], kk
+    return img_dens + amt * np.clip((4.3 * kk * rs - r) / (0.8 * kk * rs), 0, 1), e2[0], kk
 
 def glint(img, e, kk, amt=0.6):
     yy, xx = np.mgrid[0:H, 0:W].astype(F32)
@@ -154,6 +154,23 @@ def paper_view(dens_pv, cam_pos):
     HM = L.paper_H()
     pap = L.RGB * np.exp(-dens_pv[..., None] * INK_ABS)
     return cv2.warpPerspective(pap, HM, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0.12, 0.08, 0.055))
+
+_tp = {}
+def trail_pv():
+    """여정이 끝난 상태(88초)의 점이 지나온 길과 눈에 맺힌 먹(덩어리)을 위에서 본 종이 판(L.PV)에. 엔딩(after.py)과 같은 원천.
+    test_leap.py가 읽도록 cache/trail_pv{SUF}.npz에도 저장한다."""
+    if 't' not in _tp:
+        fn = os.path.join(C, f'trail_pv{SUF}.npz')
+        if os.path.exists(fn):
+            z = np.load(fn); _tp['t'], _tp['p'] = z['trail'], z['pupil']
+        else:
+            import inkmm
+            A2.build_dot(); D = A2.A.dot(); dg = D.density(88.0); pup = D.pupil
+            X, Y = L.PV.grid_mm()
+            _tp['t'] = inkmm.sample(dg - (pup if pup is not None else 0), L.PV, X, Y).astype(F32)
+            _tp['p'] = (inkmm.sample(pup, L.PV, X, Y) if pup is not None else 0 * X).astype(F32)
+            np.savez(fn, trail=_tp['t'], pupil=_tp['p'])
+    return _tp['t'], _tp['p']
 
 def ink_over(img, live, k=1.0, halo=0.0):
     """종이 위에 붙은 먹(살아 있는 획). halo: 젖어서 번지는 정도."""
@@ -244,13 +261,19 @@ def life(lt):
     L.CAM['pos'] = np.array(cam); L.CAM['tilt'] = 0.0
     sts, _ = live3(pts, cum, t=lt, breathe=breathe, curl=curl, wh=1.0)
     live = render_strokes(L.SV, sts, L.SFIB)
-    live, e, kk = pupil(live, pts, cum)
-    pap = paper_view(L.CLOUD, cam)
+    # 눈에 맺힌 먹(여정 끝의 번진 덩어리)이 2~4.2초에 안쪽으로 모여 또렷한 둥근 눈동자가 된다. 종이엔 10%가 흔적으로 남는다(엔딩과 같음)
+    g = ease(ramp(lt, 2.0, 4.2))
+    if g > 0:
+        live, e, kk = pupil(live, pts, cum, amt=2.6 * g ** 0.7, rs=1.0 + 0.9 * (1 - g))
+    else:
+        _, e, kk = pupil(np.zeros((H, W), F32), pts, cum)
+    trl, blob = trail_pv()
+    pap = paper_view(L.CLOUD + trl + blob * (0.10 + 2.3 * (1 - g)), cam)       # 여정 끝 근접처럼 짙은 먹 덩어리 → 모여서 눈동자, 10%만 흔적
     if lt > 3: _bl_life.add(lt, int(_bl_life.r.integers(0, 3)))
     wet, rim = _bl_life.render(lt)
     img = rain_on_paper(ink_over(pap, live, halo=0.15 * ramp(lt, 3, 10)), wet, rim)
     img = light(img, 'night', extra=0.0)
-    return glint(img, e, kk, 0.55 + 0.25 * math.sin(lt * 2.0))
+    return glint(img, e, kk, (0.55 + 0.25 * math.sin(lt * 2.0)) * (0.35 + 0.65 * g))
 
 # ---------------------------------------------------------------- C16 몸부림
 _bl_str = Blooms(9); _smear = None; _prev_live = None
@@ -279,7 +302,8 @@ def struggle(lt):
     if _prev_live is not None and (l1 + l2) > 0.05:                        # 종이에 붙은 채 끌린 자리마다 먹이 문질러 남는다
         _smear = np.maximum(_smear * 0.995, cv2.GaussianBlur(_prev_live, (0, 0), 3.0 * S) * 0.22)
     _prev_live = live.copy()
-    pap = paper_view(L.CLOUD + L.BODY_ON_PAPER * 0.25 * ramp(lt, 0.8, 1.2), cam)
+    trl, blob = trail_pv()
+    pap = paper_view(L.CLOUD + L.BODY_ON_PAPER * 0.25 * ramp(lt, 0.8, 1.2) + trl * (1.0 - 0.1 * ramp(lt, 0, 14)) + blob * 0.10, cam)   # 점이 지나온 길은 남아 있다(비에 조금씩 옅어짐)
     _bl_str.add(lt, int(_bl_str.r.integers(1, 4)))
     wet, rim = _bl_str.render(lt)
     img = rain_on_paper(pap * np.exp(-_smear[..., None] * INK_ABS), wet, rim)

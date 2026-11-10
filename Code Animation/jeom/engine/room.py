@@ -170,7 +170,8 @@ class Room:
         img = img * (1 - dk[..., None]) + dk[..., None] * np.array((0.07, 0.045, 0.03), F32)
         pp = np.zeros((h, w), F32)
         self.poly(pp, [(0.545, 0.655), (0.845, 0.655), (0.835, 0.643), (0.553, 0.643)])
-        pcol = np.array((0.78, 0.72, 0.60), F32)
+        amb = 0.30 + 0.70 * max(lamp_on, dawn, min(1.0, flash))                  # 불이 꺼진 밤엔 종이도 어둡다(혼자 빛나지 않게)
+        pcol = np.array((0.78, 0.72, 0.60), F32) * (0.45 + 0.55 * amb)
         if paper_ink is not None:
             pcol = pcol * (1 - 0.15 * paper_ink)
         img = img * (1 - pp[..., None]) + pp[..., None] * pcol
@@ -188,7 +189,7 @@ class Room:
             weave = (np.abs(((Y - 0.755) / 0.012) % 1 - 0.5) < 0.18).astype(F32) * 0.5 + (np.abs(((X - 0.12) / 0.01) % 1 - 0.5) < 0.12).astype(F32) * 0.3
             img = img * (1 - bk[..., None]) + bk[..., None] * (np.array((0.16, 0.11, 0.06), F32) * (1 - 0.4 * weave[..., None]))
             sc = sc * (1 - bk * 0.0)
-            img = img * (1 - sc[..., None]) + sc[..., None] * np.array((0.72, 0.66, 0.55), F32)
+            img = img * (1 - sc[..., None]) + sc[..., None] * np.array((0.72, 0.66, 0.55), F32) * amb
             img = img * (1 - 0.85 * (dots * sc)[..., None])
         # 등잔대
         lp = np.zeros((h, w), F32)
