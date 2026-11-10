@@ -1,0 +1,99 @@
+{
+  "episode": 22,
+  "dish": "후추 로스트비프 상추쌈",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "소고기 설로인 하단"
+  ],
+  "cooking_style": "통고기에 후추기름을 발라 오븐에 굽고, 휴지 후 결 반대로 썰어 아삭한 상추로 감싼다.",
+  "core_cooking_step": "통고기에 후추기름을 발라 오븐에 굽고, 휴지 후 결 반대로 썰어 아삭한 상추로 감싼다.",
+  "main_ingredient_health_rationale": "소고기 설로인 하단 → 1인분 아연 약 3.8 mg → 소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "소고기 설로인 하단",
+      "상추",
+      "올리브유",
+      "굵게 간 후추"
+    ],
+    "substitutions": [
+      "다른 통소고기 부위도 구울 수 있지만 아연 함량은 해당 부위 자료로 다시 계산한다."
+    ],
+    "basic_tools": [
+      "오븐",
+      "오븐용 팬",
+      "식품용 온도계",
+      "칼"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 장, 그다음 주재료의 아연에 맞춰 면역",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+  "reason_for_chef": "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/?c=MY2024",
+      "title": "NIH ODS Zinc",
+      "checked_at": "2026-11-10",
+      "supported_claim": "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+      "conditions_and_limits": "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요."
+    },
+    {
+      "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+      "title": "FoodSafety.gov Safe Minimum Internal Temperatures",
+      "checked_at": "2026-11-10",
+      "supported_claim": "통소고기 중심 63°C 이상, 3분 이상 휴지.",
+      "conditions_and_limits": "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+    "context": "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "아연",
+    "recipe_amount": "3.8 mg",
+    "per_serving_amount": "3.8 mg",
+    "servings": 1,
+    "daily_reference_amount": "11 mg",
+    "percent_of_daily_reference": 34.54545454545455,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 3 oz roasted bottom sirloin (about 85 g). 주재료만 계산.",
+    "calculation": "3.8 × 1 = 3.8 mg; 3.8/11 × 100 ≈ 35%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/?c=MY2024",
+      "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+    ],
+    "checked_at": "2026-11-10",
+    "uncertainty_note": "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요. 완성품 실측값 아님.",
+    "display": "구운 소고기 설로인 하단 약 85g / 아연 약 3.8 mg / 주재료 1인분 기준 / 부위와 조리 상태에 따라 차이 / 출처: 미국 NIH ODS / 아연 약 3.8 mg / 미국 표시 DV 약 35% / 표시 기준 11 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 33,
+  "menu_overlap_review": "소고기 첫 사용. 16편 그릴구이, 19편 속을 채워 다시 굽는 채소와 달리 통고기를 로스팅하고 썰어 생상추로 감싼다."
+}

@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "식이섬유",
+  "recipe_amount": "8 g",
+  "per_serving_amount": "8 g",
+  "servings": 1,
+  "daily_reference_amount": "28 g",
+  "percent_of_daily_reference": 28.57142857142857,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "USDA/HHS Food Sources of Fiber: 1 US cup raw raspberries (about 240 mL). 주재료만 계산.",
+  "calculation": "8 × 1 = 8 g; 8/28 × 100 ≈ 29%",
+  "source_urls": [
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+    "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-10",
+  "uncertainty_note": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요. 완성품 실측값 아님.",
+  "display": "생 라즈베리 240mL / 식이섬유 약 8 g / 주재료 1인분 기준 / 과육과 씨를 함께 먹는 분량 / 출처: 미국 NIDDK · 식생활지침 / 식이섬유 약 8 g / 미국 표시 DV 약 29% / 표시 기준 28 g / 개인 권장량과 구분 / 출처: 미국 NIDDK · 식생활지침",
+  "status": "passed"
+}

@@ -1,0 +1,257 @@
+{
+  "character": "immune",
+  "voice": "Aoede",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "후추 로스트비프 상추쌈",
+  "dish_en": "Pepper Roast Beef Lettuce Wraps",
+  "slug": "PepperRoastBeefWraps",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "소고기 설로인 하단",
+      "Whole bottom sirloin",
+      "구운 뒤 85g",
+      "3 oz cooked (about 85 g)",
+      "main"
+    ],
+    [
+      "상추",
+      "Lettuce",
+      "3장",
+      "3 leaves",
+      "leaf"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "water"
+    ],
+    [
+      "굵게 간 후추",
+      "Cracked black pepper",
+      "1g",
+      "1 g",
+      "spice"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "후추기름 만들기",
+    "통고기에 바르기",
+    "굽고 쉬게 하기",
+    "결 반대로 썰어 싸기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Mix the Pepper Oil",
+    "Coat the Beef",
+    "Roast and Rest",
+    "Slice and Wrap",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "면역 쉐프입니다. 후추 향이 밴 로스트비프로 아삭한 상추쌈을 만들어요.",
+    "덩어리 소고기와 상추, 올리브유, 굵게 간 후추를 준비해요.",
+    "작은 그릇에서 올리브유와 후추를 섞어요.",
+    "후추기름을 소고기 표면에 고르게 발라요.",
+    "오븐에 구워 중심이 최소 육십삼 도가 되면 꺼내요. 자르기 전에 삼 분 이상 쉬게 해요.",
+    "고기를 결 반대로 얇게 썰어요. 씻은 상추에 올리고 양옆을 접어요.",
+    "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+    "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요.",
+    "오늘 상추가 포장 담당입니다. 고기는 제가 맡을게요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune here. Let us make crisp lettuce wraps with pepper roast beef.",
+    "Get a whole piece of beef, lettuce, olive oil, and cracked black pepper.",
+    "Mix the olive oil and black pepper in a small bowl.",
+    "Rub the pepper oil evenly over the outside of the beef.",
+    "Roast until the center reaches at least sixty three degrees Celsius. Let it rest for at least three minutes before cutting.",
+    "Slice the beef thinly across the grain. Put it on washed lettuce and fold the sides in.",
+    "Beef supplies zinc, a mineral that helps the immune system work normally.",
+    "The number is a reference for roasted bottom sirloin. It varies by the cut and the weight after cooking.",
+    "Lettuce is in charge of wrapping. I will handle the beef.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "소고기 설로인 하단 구운 뒤 85g",
+    "상추 3장",
+    "올리브유 5g",
+    "굵게 간 후추 1g",
+    "오븐을 200°C로 예열한다. 후추와 기름을 섞어 통고기에 바른다.",
+    "가장 두꺼운 곳이 최소 63°C가 될 때까지 굽는다.",
+    "3분 이상 쉬게 한 뒤 결 반대로 썬다.",
+    "익힌 고기 85g을 씻은 상추에 나눠 담는다."
+  ],
+  "recipe_en": [
+    "Whole bottom sirloin 3 oz cooked (about 85 g)",
+    "Lettuce 3 leaves",
+    "Olive oil 5 g",
+    "Cracked black pepper 1 g",
+    "Preheat to 200°C. Rub pepper and oil over the whole cut.",
+    "Roast until the thickest part reaches at least 63°C (145°F).",
+    "Rest at least 3 min, then slice across the grain.",
+    "Divide 3 oz (85 g) cooked beef among washed lettuce leaves."
+  ],
+  "health_focus": "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+  "main_ingredients": [
+    "소고기 설로인 하단"
+  ],
+  "cooking_style": "통고기에 후추기름을 발라 오븐에 굽고, 휴지 후 결 반대로 썰어 아삭한 상추로 감싼다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/?c=MY2024",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "아연",
+    "recipe_amount": "3.8 mg",
+    "per_serving_amount": "3.8 mg",
+    "servings": 1,
+    "daily_reference_amount": "11 mg",
+    "percent_of_daily_reference": 34.54545454545455,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 3 oz roasted bottom sirloin (about 85 g). 주재료만 계산.",
+    "calculation": "3.8 × 1 = 3.8 mg; 3.8/11 × 100 ≈ 35%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/?c=MY2024",
+      "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+    ],
+    "checked_at": "2026-11-10",
+    "uncertainty_note": "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요. 완성품 실측값 아님.",
+    "display": "구운 소고기 설로인 하단 약 85g / 아연 약 3.8 mg / 주재료 1인분 기준 / 부위와 조리 상태에 따라 차이 / 출처: 미국 NIH ODS / 아연 약 3.8 mg / 미국 표시 DV 약 35% / 표시 기준 11 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "구운 소고기 설로인 하단 약 85g",
+      "아연 약 3.8 mg",
+      "주재료 1인분 기준",
+      "부위와 조리 상태에 따라 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "아연 약 3.8 mg",
+      "미국 표시 DV 약 35%",
+      "표시 기준 11 mg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "3 oz roasted bottom sirloin (about 85 g)",
+      "About 3.8 mg Zinc",
+      "Main ingredient, one serving",
+      "Amount varies by cut and preparation",
+      "Source: NIH Office of Dietary Supplements"
+    ],
+    [
+      "About 3.8 mg Zinc",
+      "About 35% of the U.S. Daily Value",
+      "Labeling DV: 11 mg",
+      "Individual needs vary",
+      "Source: NIH Office of Dietary Supplements"
+    ]
+  ],
+  "episode": 22,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "면역 쉐프입니다. 후추 향이 밴 로스트비프로 아삭한 상추쌈을 만들어요.",
+      "text_en": "Chef Immune here. Let us make crisp lettuce wraps with pepper roast beef."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "덩어리 소고기와 상추, 올리브유, 굵게 간 후추를 준비해요.",
+      "text_en": "Get a whole piece of beef, lettuce, olive oil, and cracked black pepper."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "후추기름 만들기",
+      "title_en": "Mix the Pepper Oil",
+      "text_ko": "작은 그릇에서 올리브유와 후추를 섞어요.",
+      "text_en": "Mix the olive oil and black pepper in a small bowl."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "통고기에 바르기",
+      "title_en": "Coat the Beef",
+      "text_ko": "후추기름을 소고기 표면에 고르게 발라요.",
+      "text_en": "Rub the pepper oil evenly over the outside of the beef."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "굽고 쉬게 하기",
+      "title_en": "Roast and Rest",
+      "text_ko": "오븐에 구워 중심이 최소 육십삼 도가 되면 꺼내요. 자르기 전에 삼 분 이상 쉬게 해요.",
+      "text_en": "Roast until the center reaches at least sixty three degrees Celsius. Let it rest for at least three minutes before cutting."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "결 반대로 썰어 싸기",
+      "title_en": "Slice and Wrap",
+      "text_ko": "고기를 결 반대로 얇게 썰어요. 씻은 상추에 올리고 양옆을 접어요.",
+      "text_en": "Slice the beef thinly across the grain. Put it on washed lettuce and fold the sides in."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "소고기는 아연을 공급해요. 아연은 면역 체계가 정상적으로 작동하는 데 필요한 무기질이에요.",
+      "text_en": "Beef supplies zinc, a mineral that helps the immune system work normally."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 구운 설로인 하단의 참고값이에요. 고기 부위와 익힌 뒤의 분량에 따라 달라져요.",
+      "text_en": "The number is a reference for roasted bottom sirloin. It varies by the cut and the weight after cooking."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "오늘 상추가 포장 담당입니다. 고기는 제가 맡을게요.",
+      "text_en": "Lettuce is in charge of wrapping. I will handle the beef."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 후추 로스트비프 상추쌈 #Shorts",
+  "upload_title_en": "Chef Immune's Pepper Roast Beef Lettuce Wraps #Shorts",
+  "health_description_en": "Beef supplies zinc, a mineral that helps the immune system work normally. The number is a reference for roasted bottom sirloin. It varies by the cut and the weight after cooking."
+}

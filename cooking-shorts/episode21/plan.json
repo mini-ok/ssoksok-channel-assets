@@ -1,0 +1,106 @@
+{
+  "episode": 21,
+  "dish": "시나몬 라즈베리 콩포트",
+  "organ": "장",
+  "chef": "장 쉐프",
+  "main_ingredients": [
+    "라즈베리"
+  ],
+  "cooking_style": "과육 일부를 으깨고 약불에 졸여 통열매와 걸쭉한 과즙이 남는 디저트를 만든다.",
+  "core_cooking_step": "과육 일부를 으깨고 약불에 졸여 통열매와 걸쭉한 과즙이 남는 디저트를 만든다.",
+  "main_ingredient_health_rationale": "라즈베리 → 1인분 식이섬유 약 8 g → 라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "라즈베리",
+      "물",
+      "레몬즙",
+      "시나몬 가루"
+    ],
+    "substitutions": [
+      "무가당 냉동 라즈베리로 조리할 수 있다. 화면 수치는 생과일 기준이다."
+    ],
+    "basic_tools": [
+      "냄비",
+      "주걱",
+      "포크"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 장, 그다음 주재료의 아연에 맞춰 면역",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+  "reason_for_chef": "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+  "evidence": [
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "title": "NIDDK Eating, Diet & Nutrition for Constipation",
+      "checked_at": "2026-11-10",
+      "supported_claim": "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+      "conditions_and_limits": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요."
+    },
+    {
+      "url": "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "title": "USDA/HHS Food Sources of Fiber",
+      "checked_at": "2026-11-10",
+      "supported_claim": "라즈베리 240mL의 식이섬유 약 8 g.",
+      "conditions_and_limits": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요."
+    },
+    {
+      "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+      "title": "FDA Daily Values",
+      "checked_at": "2026-11-10",
+      "supported_claim": "미국 식이섬유 표시 DV 28 g.",
+      "conditions_and_limits": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+    "context": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "8 g",
+    "per_serving_amount": "8 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 28.57142857142857,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA/HHS Food Sources of Fiber: 1 US cup raw raspberries (about 240 mL). 주재료만 계산.",
+    "calculation": "8 × 1 = 8 g; 8/28 × 100 ≈ 29%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-10",
+    "uncertainty_note": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요. 완성품 실측값 아님.",
+    "display": "생 라즈베리 240mL / 식이섬유 약 8 g / 주재료 1인분 기준 / 과육과 씨를 함께 먹는 분량 / 출처: 미국 NIDDK · 식생활지침 / 식이섬유 약 8 g / 미국 표시 DV 약 29% / 표시 기준 28 g / 개인 권장량과 구분 / 출처: 미국 NIDDK · 식생활지침"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 32,
+  "menu_overlap_review": "라즈베리 첫 사용. 곡물죽과 달리 과일 과즙을 걸쭉하게 농축하는 콩포트."
+}

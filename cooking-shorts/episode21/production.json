@@ -1,0 +1,256 @@
+{
+  "character": "gut",
+  "voice": "Puck",
+  "chef_ko": "장 쉐프",
+  "chef_en": "Chef Gut",
+  "dish_ko": "시나몬 라즈베리 콩포트",
+  "dish_en": "Cinnamon Raspberry Compote",
+  "slug": "CinnamonRaspberryCompote",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "미국 NIDDK · 식생활지침",
+  "source_en": "NIDDK / U.S. Dietary Guidelines",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "라즈베리",
+      "Raspberries",
+      "240mL",
+      "1 US cup (about 240 mL)",
+      "main"
+    ],
+    [
+      "물",
+      "Water",
+      "15mL",
+      "15 mL",
+      "water"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "5g",
+      "5 g",
+      "lemon"
+    ],
+    [
+      "시나몬 가루",
+      "Ground cinnamon",
+      "0.5g",
+      "0.5 g",
+      "spice"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "라즈베리 씻기",
+    "절반 으깨기",
+    "약불에 졸이기",
+    "레몬즙으로 마무리",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Rinse the Berries",
+    "Crush Half",
+    "Simmer Gently",
+    "Finish with Lemon",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "장 쉐프입니다. 오늘은 라즈베리로 새콤한 콩포트를 만들어요.",
+    "라즈베리와 물, 레몬즙, 시나몬 가루를 준비해요.",
+    "라즈베리를 씻고 물기를 빼요. 작은 냄비에 담아요.",
+    "열매의 절반만 포크로 으깨요. 물과 시나몬 가루를 넣어요.",
+    "약불에서 저어가며 졸여요. 주걱으로 바닥을 그었을 때 길이 잠깐 보이면 불을 꺼요.",
+    "레몬즙을 섞어요. 통열매와 걸쭉한 과즙을 그릇에 담아요.",
+    "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+    "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요.",
+    "반은 으깨고 반은 살려요. 라즈베리 반반 작전 성공!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Gut here. Today we are making a tart raspberry compote.",
+    "Get raspberries, water, lemon juice, and ground cinnamon.",
+    "Rinse and drain the raspberries. Put them in a small saucepan.",
+    "Crush half the berries with a fork. Add water and cinnamon.",
+    "Simmer gently and stir. When a spoon leaves a brief trail on the bottom, turn off the heat.",
+    "Stir in lemon juice. Serve the whole berries with their thick sauce.",
+    "Raspberries supply dietary fiber. Getting enough fluid along with fiber can help keep stools soft and easier to pass.",
+    "The estimate uses the amount of raspberries before cooking. It assumes you eat all the fruit and seeds without straining.",
+    "Crush half and save half. The berry rescue is complete!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "라즈베리 240mL",
+    "물 15mL",
+    "레몬즙 5g",
+    "시나몬 가루 0.5g",
+    "씻은 라즈베리의 절반만 냄비에서 으깬다.",
+    "물과 시나몬을 넣고 약불에서 5~8분 저으며 졸인다.",
+    "주걱 자국이 잠깐 남으면 불을 끄고 레몬즙을 섞는다."
+  ],
+  "recipe_en": [
+    "Raspberries 1 US cup (about 240 mL)",
+    "Water 15 mL",
+    "Lemon juice 5 g",
+    "Ground cinnamon 0.5 g",
+    "Rinse berries and crush half in a saucepan.",
+    "Add water and cinnamon. Simmer and stir for 5–8 min.",
+    "When a spoon leaves a brief trail, turn off heat and add lemon juice."
+  ],
+  "health_focus": "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+  "main_ingredients": [
+    "라즈베리"
+  ],
+  "cooking_style": "과육 일부를 으깨고 약불에 졸여 통열매와 걸쭉한 과즙이 남는 디저트를 만든다.",
+  "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "8 g",
+    "per_serving_amount": "8 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 28.57142857142857,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA/HHS Food Sources of Fiber: 1 US cup raw raspberries (about 240 mL). 주재료만 계산.",
+    "calculation": "8 × 1 = 8 g; 8/28 × 100 ≈ 29%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-10",
+    "uncertainty_note": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요. 완성품 실측값 아님.",
+    "display": "생 라즈베리 240mL / 식이섬유 약 8 g / 주재료 1인분 기준 / 과육과 씨를 함께 먹는 분량 / 출처: 미국 NIDDK · 식생활지침 / 식이섬유 약 8 g / 미국 표시 DV 약 29% / 표시 기준 28 g / 개인 권장량과 구분 / 출처: 미국 NIDDK · 식생활지침"
+  },
+  "nutrition_ko": [
+    [
+      "생 라즈베리 240mL",
+      "식이섬유 약 8 g",
+      "주재료 1인분 기준",
+      "과육과 씨를 함께 먹는 분량",
+      "출처: 미국 NIDDK · 식생활지침"
+    ],
+    [
+      "식이섬유 약 8 g",
+      "미국 표시 DV 약 29%",
+      "표시 기준 28 g",
+      "개인 권장량과 구분",
+      "출처: 미국 NIDDK · 식생활지침"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 US cup raw raspberries (about 240 mL)",
+      "About 8 g Dietary fiber",
+      "Main ingredient, one serving",
+      "Includes all pulp and seeds",
+      "Source: NIDDK / U.S. Dietary Guidelines"
+    ],
+    [
+      "About 8 g Dietary fiber",
+      "About 29% of the U.S. Daily Value",
+      "Labeling DV: 28 g",
+      "Individual needs vary",
+      "Source: NIDDK / U.S. Dietary Guidelines"
+    ]
+  ],
+  "episode": 21,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "장 쉐프입니다. 오늘은 라즈베리로 새콤한 콩포트를 만들어요.",
+      "text_en": "Chef Gut here. Today we are making a tart raspberry compote."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "라즈베리와 물, 레몬즙, 시나몬 가루를 준비해요.",
+      "text_en": "Get raspberries, water, lemon juice, and ground cinnamon."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "라즈베리 씻기",
+      "title_en": "Rinse the Berries",
+      "text_ko": "라즈베리를 씻고 물기를 빼요. 작은 냄비에 담아요.",
+      "text_en": "Rinse and drain the raspberries. Put them in a small saucepan."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "절반 으깨기",
+      "title_en": "Crush Half",
+      "text_ko": "열매의 절반만 포크로 으깨요. 물과 시나몬 가루를 넣어요.",
+      "text_en": "Crush half the berries with a fork. Add water and cinnamon."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "약불에 졸이기",
+      "title_en": "Simmer Gently",
+      "text_ko": "약불에서 저어가며 졸여요. 주걱으로 바닥을 그었을 때 길이 잠깐 보이면 불을 꺼요.",
+      "text_en": "Simmer gently and stir. When a spoon leaves a brief trail on the bottom, turn off the heat."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "레몬즙으로 마무리",
+      "title_en": "Finish with Lemon",
+      "text_ko": "레몬즙을 섞어요. 통열매와 걸쭉한 과즙을 그릇에 담아요.",
+      "text_en": "Stir in lemon juice. Serve the whole berries with their thick sauce."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "라즈베리는 식이섬유를 제공해요. 식이섬유를 충분한 수분과 함께 먹으면 변을 부드럽게 하고 배변을 돕는 데 도움이 돼요.",
+      "text_en": "Raspberries supply dietary fiber. Getting enough fluid along with fiber can help keep stools soft and easier to pass."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 졸이기 전 라즈베리 분량에서 계산했어요. 과육과 씨를 거르지 않고 모두 먹는 기준이에요.",
+      "text_en": "The estimate uses the amount of raspberries before cooking. It assumes you eat all the fruit and seeds without straining."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "반은 으깨고 반은 살려요. 라즈베리 반반 작전 성공!",
+      "text_en": "Crush half and save half. The berry rescue is complete!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "장 쉐프의 시나몬 라즈베리 콩포트 #Shorts",
+  "upload_title_en": "Chef Gut's Cinnamon Raspberry Compote #Shorts",
+  "health_description_en": "Raspberries supply dietary fiber. Getting enough fluid along with fiber can help keep stools soft and easier to pass. The estimate uses the amount of raspberries before cooking. It assumes you eat all the fruit and seeds without straining."
+}
