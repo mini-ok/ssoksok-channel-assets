@@ -168,7 +168,13 @@ class Fluid:
         eps = 5.0
         s.u += dt * eps * (ny * w); s.v += dt * eps * (-nx * w)
         s.u += dt * s.cu * 14; s.v += dt * s.cv * 14
-        s.v += dt * 55.0 * np.tanh(s.d * 0.8)          # 먹은 무겁다: 짙은 곳은 아래로 흘러내린다
+        g = getattr(s, 'grav', None)                    # (cx, cy, 부호): 원근 화면에서는 '아래'가 소실점 쪽(−) 또는 바깥(+)
+        if g is None:
+            s.v += dt * 55.0 * np.tanh(s.d * 0.8)      # 먹은 무겁다: 짙은 곳은 아래로 흘러내린다
+        else:
+            rx, ry = s.gx - g[0], s.gy - g[1]; rn = np.hypot(rx, ry) + 1e-3
+            f = dt * 55.0 * np.tanh(s.d * 0.8) * g[2]
+            s.u += f * rx / rn; s.v += f * ry / rn
         s.u, s.v = s.adv(s.u, dt), s.adv(s.v, dt)
         # 압력 투영(Jacobi)
         div = (np.roll(s.u, -1, 1) - np.roll(s.u, 1, 1) + np.roll(s.v, -1, 0) - np.roll(s.v, 1, 0)) * 0.5

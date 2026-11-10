@@ -188,8 +188,7 @@ class Wash:
         x1, y1 = min(view.W, int(max(px0, px1)) + 1), min(view.H, int(max(py0, py1)) + 1)
         if x1 <= x0 or y1 <= y0:
             return
-        X, Y = view.grid_mm()
-        X = X[y0:y1, x0:x1]; Y = Y[y0:y1, x0:x1]
+        X, Y = view.grid_mm_crop(x0, y0, x1, y1)
         f = np.zeros_like(X)
         for (bx, by, br) in self.blobs:
             f += np.exp(-((X - bx) ** 2 + (Y - by) ** 2) / (br * br))

@@ -72,3 +72,50 @@ class InkRain:
         if self.fib is not None:
             out = out * np.clip(0.55 + 1.2 * self.fib, 0, 1.2)
         return out
+
+
+class RadialRain(InkRain):
+    """원근이 있는 붓 비: 같은 붓 결(InkRain)을 극좌표(각도 × log 반지름)에 감아, 빗줄기가 소실점(vp)으로 모이게 한다.
+    toward=True: 하늘을 올려다봄 — 비가 소실점에서 카메라 쪽(바깥)으로 쏟아진다.
+    toward=False: 내려다봄 — 비가 카메라 뒤에서 와 소실점(땅) 쪽으로 빨려 들어간다.
+    가까운(바깥) 빗줄기일수록 굵고 길며, 소실점 가까이는 가늘고 짧다(로그 반지름이라 저절로)."""
+    def __init__(self, W, H, vp, seed=5, fib=None, scale=1.0, toward=True, K=None):
+        super().__init__(W, H, angle=0.0, seed=seed, fib=fib, scale=scale)
+        self.vp, self.toward = vp, toward
+        self.K = K if K is not None else 470.0 * scale
+        k = scale                                                              # 앞쪽 비는 짧고 넓게(소실점으로 꽂히는 선처럼 보이지 않게)
+        self.band = _tex(self.S, seed + 12, 6 * k, 75 * k)
+        self.hair = _tex(self.S, seed + 13, 0.7 * k, 22 * k)
+        self.near = _tex(self.S, seed + 14, 1.8 * k, 11 * k)
+        dx, dy = self.xx - vp[0], self.yy - vp[1]
+        self.R = np.hypot(dx, dy) + 1e-3
+        self.TH = np.arctan2(dy, dx)
+
+    def render(self, t, amount=1.0, gust=0.6, flow=None, fps=12, light=False, speed=1.0):
+        if amount <= 0:
+            return np.zeros((self.H, self.W), F32)
+        q = math.floor(t * fps) / fps
+        S = self.S
+        u = (self.TH / (2 * math.pi)) * (S - 1)                                 # 둘레 = 결 한 주기(이음매 없음)
+        v = self.K * np.log(self.R / (60.0 * self.K / 380.0))
+        if flow is not None:
+            v = v - flow
+        sgn = 1.0 if self.toward else -1.0
+        W, H = self.W, self.H
+        gx = ((self.xx * 0.33 + q * 40) % (W * 3 - 1)).astype(F32); gy = ((self.yy * 0.33 - q * 150) % (H * 3 - 1)).astype(F32)
+        gm = cv2.remap(self.gust, gx, gy, cv2.INTER_LINEAR)
+        dens_amt = np.clip(amount * (1 + gust * 0.6 * gm), 0, 1.6)
+        sp = speed * sgn
+        haze = self._sample(self.haze, u, v, q * 380 * sp)
+        haze = np.clip((haze - 0.6) * 0.6, 0, 1) * 0.30
+        band = self._sample(self.band, u, v, q * 560 * sp)
+        hair = self._sample(self.hair, u, v, q * 560 * sp)
+        sweep = np.clip((band - 1.15 + 0.9 * (1 - dens_amt)) * 1.6, 0, 1) * np.clip((hair + 0.2) * 1.4, 0, 1)
+        near = self._sample(self.near, u * 0.9, v, q * 900 * sp)
+        near = np.clip((near - 2.5 + 1.0 * (1 - dens_amt)) * 2.0, 0, 1)
+        fade = np.clip((self.R - 30.0 * self.K / 380.0) / (120.0 * self.K / 380.0), 0, 1)   # 소실점 가까이는 비가 안개처럼 사라진다
+        far = np.clip(self.R / (0.30 * min(W, H)), 0, 1)                          # 굵은 앞쪽 방울은 화면 가장자리 쪽에만
+        out = (haze * dens_amt * 1.25 + sweep * 0.7 * fade + near * 0.35 * fade ** 2 * far)
+        if self.fib is not None:
+            out = out * np.clip(0.55 + 1.2 * self.fib, 0, 1.2)
+        return out

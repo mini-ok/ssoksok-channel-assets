@@ -28,6 +28,13 @@ class View:
             x, y = x * c - y * s, x * s + y * c
         return x + self.cx, y + self.cy
 
+    def grid_mm_crop(self, x0, y0, x1, y1):
+        """grid_mm()[y0:y1, x0:x1]과 같은 값(화면 전체 격자를 만들지 않음 — 큰 판에서 작은 덩어리를 많이 그릴 때)."""
+        if self.rot:
+            X, Y = self.grid_mm(); return X[y0:y1, x0:x1], Y[y0:y1, x0:x1]
+        yy, xx = np.mgrid[y0:y1, x0:x1].astype(F32)
+        return (xx - self.W / 2) / self.ppm + self.cx, (yy - self.H / 2) / self.ppm + self.cy
+
     def to_px(self, x, y):
         dx, dy = (np.asarray(x) - self.cx), (np.asarray(y) - self.cy)
         if self.rot:

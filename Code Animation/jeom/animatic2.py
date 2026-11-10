@@ -137,9 +137,11 @@ def room_cut(lt):
 
 def room_wake(lt):
     dawn = 0.35 + 0.65 * ease(ramp(lt, 0, 4))
-    u1 = ease(ramp(lt, 2.5, 5.5)); u2 = ease(ramp(lt, 6.5, 9.0))
-    look = dict(POSES['paint']); look['brush'] = 0.0
-    pose = mix(mix(POSES['sleep'], POSES['wake'], math.floor(u1 * 6) / 6), look, math.floor(u2 * 6) / 6)
+    # 깨어 고개를 듦 → 몸을 일으켜 서안으로 다가앉음 → 몸을 숙여 그림을 들여다봄(다음 컷이 화가의 시선)
+    u1 = ease(ramp(lt, 2.5, 5.0)); u2 = ease(ramp(lt, 5.6, 7.6)); u3 = ease(ramp(lt, 7.6, 9.4))
+    pose = mix(POSES['sleep'], POSES['wake'], u1)
+    if u2 > 0: pose = mix(pose, POSES['move'], u2)
+    if u3 > 0: pose = mix(pose, POSES['peer'], u3)
     return room().render(lt + 90, pose, lamp_on=0.0, rain=0.0, dawn=dawn)
 
 # ---------------------------------------------------------------- 여정(구 애니마틱 엔진)

@@ -45,8 +45,7 @@ CUTS = [
     ('C20', 'storm', 126.5, 22.0),        # 씻김 → 포효 → 하늘 접수
     ('C21', 'ascend', 148.5, 10.0),       # 승천, 해돋이
     ('C22', 'room_wake', 158.5, 7.0),
-    ('C23', 'trace', 165.5, 9.0),
-    ('C24', 'tear', 174.5, 7.0),
+    ('C23', 'gaze', 165.5, 16.0),         # 화가의 시선: 그림 전체 → 눈(같은 컷 안에서 눈물)
     ('C25', 'title', 181.5, 10.0),
 ]
 TOTAL = CUTS[-1][2] + CUTS[-1][3]
@@ -68,14 +67,17 @@ def jaw_sad(st, ang):
         _jaw_cache[key] = L.to_spine(q, head=True)
     return _jaw_cache[key]
 
-def live3(pts, cum, t=0.0, k_load=1.0, breathe=0.0, curl=0.0, jaw=0.0, lift=None, mir=1.0, scale=1.0, wh=1.0):
+ARMN = ('arm', 'arm_wash', 'wrist', 'claw')
+ARM2 = [(k, st, np.stack([sad[:, 0] + 18.0, sad[:, 1], -sad[:, 2] * 0.85], 1)) for (k, st, sad) in L.REC if st.name in ARMN]   # 몸 건너편의 다른 팔(앞발 둘)
+def live3(pts, cum, t=0.0, k_load=1.0, breathe=0.0, curl=0.0, jaw=0.0, lift=None, mir=1.0, scale=1.0, wh=1.0, fore=1.0, arms2=False):
     """L.live_strokes와 같되, 살아 있는 변형을 더한다. lift(s_world) → 카메라 쪽으로 들리는 양(월드 z)."""
     out = []; bodyw = []
-    for j, (kind, st, sad) in enumerate(L.REC):
+    for j, (kind, st, sad) in enumerate(L.REC + (ARM2 if arms2 else [])):
         name = st.name
         if name in JAWN and jaw != 0.0:
             sad = jaw_sad(st, -jaw)
         s, a, d = sad[:, 0] * L.U, sad[:, 1] * L.U * scale, sad[:, 2] * L.U * scale
+        if fore != 1.0 and name in L.HEAD_NAMES: a = a * fore                 # 머리가 카메라 쪽으로 돌 때 앞뒤 길이가 짧아 보인다
         if breathe and name.startswith(BODYN):
             d = d * (1 + 0.05 * breathe)
         if name.startswith(('whisker', 'beard')) and wh:
@@ -302,7 +304,7 @@ def hover_trail(t, turn, drift=(0.0, 0.0)):
     sig = np.linspace(0, SLW, n)                                           # 머리에서 꼬리 쪽으로
     env = np.clip(sig / (0.18 * SLW), 0, 1)
     wave = 0.50 * np.sin(2 * np.pi * (sig / (0.55 * SLW)) - 2.0 * t) * env
-    neck = math.pi * turn * np.clip(1 - sig / (0.24 * SLW), 0, 1) ** 1.4
+    neck = math.pi * turn * np.clip(1 - sig / (0.17 * SLW), 0, 1) ** 1.2
     phi = 0.25 + wave + neck                                               # 머리 쪽으로 향하는 방향각(월드, y 위)
     d = np.stack([np.cos(phi), np.sin(phi)], 1)
     ds = np.diff(sig, prepend=0)[:, None]
@@ -330,53 +332,182 @@ def place(room_img, d, e, kk, cx, cy, s, clip=None, k_load=1.0):
     e2 = (e[0] * s + cx - s * W / 2, e[1] * s + cy - s * H / 2)
     return img, e2, kk * s
 
-def lookback(lt):
-    """창 앞에 떠서(몸은 물결치며 숨 쉼) 창을 보다가 → 목을 꺾어 잠든 화가를 오래 돌아보고 → 다시 창으로."""
-    R = A2.room()
-    base = R.render(lt + 200, dict(POSES['sleep']), lamp_on=0.0, rain=1.0, flash=0.0)
-    turn = ease(ramp(lt, 1.0, 2.6)) * (1 - ease(ramp(lt, 5.0, 5.9)))
+# C18·C19는 한 줄기의 움직임(τ = C18 시작부터 초): 종이(책상)에서 솟아올라 → 방 안, 창 앞에 떠서 화가를 돌아보고
+# → 창으로 헤엄쳐 들어가 빗속 위로 멀어진다. 몸은 머리가 지나온 길을 따라가고(뱀처럼), 떠 있을 때만 제자리 물결(hover_trail).
+RD_SC = 0.52                                                              # 화면 배치 배율(가운데 기준)
+RD_C = (0.60, 0.42)                                                       # 떠 있을 때 몸 가운데(화면 비)
+DESK_Y = 0.646                                                            # 책상 위 종이 윗변(이 아래는 아직 종이 속)
+WIN_IN = (0.562, 0.838, 0.140, 0.500)                                     # 창 안쪽(문살·창틀 안)
+def scr2w(fx, fy, zf):
+    z = L.Z0 * zf
+    return np.array(((fx * W - W / 2) * z / (RD_SC * L.F), -(fy * H - H / 2) * z / (RD_SC * L.F), z))
+def w2scr(P):
+    q, z = L.project(P)
+    return W / 2 + RD_SC * (q[..., 0] - W / 2), H / 2 + RD_SC * (q[..., 1] - H / 2), z
+def hover_shape(t, turn):
+    pts, _ = hover_trail(t, turn)
+    c = scr2w(RD_C[0], RD_C[1], 1.0)
+    return pts + np.array((c[0], c[1], 0.0))
+def cr_path(keys, tau):
+    """Catmull-Rom: keys = [(τ, P3)], 끝은 그대로 이어 늘인다."""
+    T = np.array([k[0] for k in keys]); P = np.array([k[1] for k in keys])
+    P = np.vstack([P[:1] * 2 - P[1:2], P, P[-1:] * 2 - P[-2:-1]])
+    tau = np.clip(np.atleast_1d(tau), T[0], T[-1])
+    i = np.clip(np.searchsorted(T, tau, side='right') - 1, 0, len(T) - 2)
+    u = ((tau - T[i]) / (T[i + 1] - T[i]))[:, None]
+    p0, p1, p2, p3 = P[i], P[i + 1], P[i + 2], P[i + 3]
+    return 0.5 * ((2 * p1) + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u ** 2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u ** 3)
+def tail_of(poly, n=320):
+    """꼬리→머리 폴리라인에서 머리 쪽 SLW 길이만 잘라 n점으로 다시 표본."""
+    seg = np.linalg.norm(np.diff(poly, axis=0), axis=1); cum = np.concatenate([[0], np.cumsum(seg)])
+    q = np.linspace(max(0.0, cum[-1] - SLW), cum[-1], n)
+    out = np.stack([np.interp(q, cum, poly[:, k]) for k in range(3)], 1)
+    seg = np.linalg.norm(np.diff(out, axis=0), axis=1)
+    return out, np.concatenate([[0], np.cumsum(seg)])
+_rd = {}
+def rd_keys():
+    if _rd: return _rd
+    H0 = hover_shape(2.1, 0.0)[-1]                                        # 떠 있을 때 머리 자리(τ=2.1)
+    hx, hy, _ = w2scr(H0[None])
+    hx, hy = float(hx[0]) / W, float(hy[0]) / H
+    _rd['rise'] = [(0.0, scr2w(hx - 0.04, 0.86, 1.0)), (0.5, scr2w(hx - 0.10, 0.60, 1.0)), (1.0, scr2w(hx - 0.13, 0.44, 1.0)),
+                   (1.5, scr2w(hx - 0.08, hy - 0.02, 1.0)), (2.1, H0)]        # 솟으며 왼쪽으로 휘었다가 창 쪽으로 감아 돈다
+    _rd['hx'] = (hx, hy)
+    return _rd
+def rd_shape(tau):
+    """τ에서의 등뼈(꼬리→머리, 월드)와 turn·mir·exit 정보."""
+    K = rd_keys()
+    turn = ease(ramp(tau, 2.4, 3.3)) * (1 - ease(ramp(tau, 4.7, 5.4)))
     turn = step(turn, 6)
-    bob = (0.0, 0.10 * math.sin(lt * 1.7))
-    d, e, kk = dragon_hover(lt, turn, bob)
-    img, e2, k2 = place(base, d, e, kk, W * 0.70, H * 0.31, 0.27)
-    look = ramp(lt, 2.6, 3.0) * (1 - ramp(lt, 4.8, 5.0))
-    return glint(img, e2, k2, 0.35 + 0.35 * look)
+    if tau < 2.1:
+        taus = np.linspace(0, tau, max(2, int(tau * 120)))
+        path = cr_path(K['rise'], taus)
+        base = np.stack([np.full(60, path[0, 0]), np.linspace(path[0, 1] - SLW * 1.2, path[0, 1], 60), np.full(60, path[0, 2])], 1)
+        tr, _ = tail_of(np.vstack([base, path[1:]]))
+        w = ease(ramp(tau, 1.3, 2.1))
+        pts = tr * (1 - w) + hover_shape(tau, 0.0) * w
+    elif tau < 5.6:
+        pts = hover_shape(tau, turn)
+    else:
+        P0 = hover_shape(5.6, 0.0)
+        keys = [(5.6, P0[-1]), (6.5, scr2w(K['hx'][0] - 0.02, K['hx'][1] - 0.02, 1.2)), (7.3, scr2w(0.72, 0.31, 1.7)),
+                (8.1, scr2w(0.71, 0.22, 2.2)), (8.9, scr2w(0.70, 0.10, 2.6)), (9.6, scr2w(0.70, -0.05, 3.0)), (10.4, scr2w(0.70, -0.25, 3.3))]
+        # 창으로 들어가(깊이) → 빗속에서 위로 솟구쳐 처마(창 윗변) 너머로 사라진다. 몸은 머리가 간 길을 그대로 따라 나간다.
+        taus = np.linspace(5.6, tau, max(2, int((tau - 5.6) * 120)))
+        pts, _ = tail_of(np.vstack([P0, cr_path(keys, taus)[1:]]))
+    seg = np.linalg.norm(np.diff(pts, axis=0), axis=1)
+    return pts, np.concatenate([[0], np.cumsum(seg)]), turn
 
-def exitw(lt):
+def rimlight(img, dd, amt, L_dir=(0.55, -0.83)):
+    """젖은 먹 몸의 창 쪽 가장자리에 비치는 푸른 창빛(어두운 벽 앞에서도 몸이 읽히게)."""
+    lv = cv2.GaussianBlur(np.clip(dd, 0, 2).astype(F32), (0, 0), 1.6 * S)
+    gx = cv2.Sobel(lv, cv2.CV_32F, 1, 0, ksize=5); gy = cv2.Sobel(lv, cv2.CV_32F, 0, 1, ksize=5)
+    rim = np.clip(-(gx * L_dir[0] + gy * L_dir[1]) * 0.09 / S, 0, 1) * np.clip(lv * 3, 0, 1)
+    rim = cv2.GaussianBlur(rim, (0, 0), 0.6 * S)
+    rim = rim * np.clip(1.6 - img.mean(-1) * 4.0, 0, 1)                    # 밝은 창 앞에서는 실루엣 그대로(테두리 빛 없음)
+    return img + (rim * amt)[..., None] * np.array((0.50, 0.58, 0.74), F32)
+
+def rd_flash(tau):
+    f = 0.0
+    for tf, a in ((0.15, 0.9), (0.32, 0.45), (8.2, 0.7), (8.35, 0.3)):
+        if tau >= tf: f = max(f, a * math.exp(-(tau - tf) / 0.12))
+    return f
+
+def room_dragon(tau):
     R = A2.room()
-    base = R.render(lt + 210, dict(POSES['sleep']), lamp_on=0.0, rain=1.0, flash=0.7 * math.exp(-(lt - 2.2) / 0.12) if lt >= 2.2 else 0)
-    u = ease(ramp(lt, 0.2, 3.2))
-    d, e, kk = dragon_hover(lt + 6.0, 0.0, (0.0, 0.0))
-    cx = W * (0.70 + 0.05 * u); cy = H * (0.31 - 0.07 * u); s_ = 0.27 * (1 - 0.8 * u)
+    fx = rd_flash(tau)
+    base = R.render(tau + 200, dict(POSES['sleep']), lamp_on=0.0, rain=1.0, flash=fx)
+    L.CAM['pos'] = np.zeros(3); L.CAM['tilt'] = 0.0
+    pts, cum, turn = rd_shape(tau)
+    mir = -math.cos(math.pi * turn); mir = math.copysign(max(0.12, abs(mir)), mir if mir != 0 else 1)
+    # 배율을 그리기 전에 적용(등뼈 x·y와 단면·굵기를 함께 줄임) → 화면 밖으로 잘리지 않고 최종 크기로 바로 그린다
+    ps = pts * np.array((RD_SC, RD_SC, 1.0)); cs = np.concatenate([[0], np.cumsum(np.linalg.norm(np.diff(ps, axis=0), axis=1))])
+    sts, _ = live3(ps, cs, t=tau, breathe=math.sin(tau * 2.4), curl=0.4 + 0.3 * math.sin(tau * 1.3), wh=1.4, mir=mir, scale=RD_SC,
+                   fore=max(0.3, abs(math.cos(math.pi * turn))))
+    dd = render_strokes(L.SV, sts, L.SFIB)
+    dd, e2, k2 = pupil(dd, ps, cs, mir=mir, scale=RD_SC)
     yy, xx = np.mgrid[0:H, 0:W].astype(F32)
-    win = ((xx > W * 0.565) & (xx < W * 0.835) & (yy > H * 0.145) & (yy < H * 0.495)).astype(F32)
-    clip = np.clip(win + (1 - ramp(lt, 1.0, 1.6)), 0, 1)
-    img, e2, k2 = place(base, d, e, kk, cx, cy, s_, clip=clip)
-    return img
+    # 아직 종이 속인 부분(책상 윗변 아래)은 보이지 않는다
+    vis = np.clip((DESK_Y * H - yy) / (1.5 * S), 0, 1) if tau < 2.4 else np.ones((H, W), F32)
+    # 창을 넘은 부분: 창 안에서만 보이고(창틀·벽 뒤로 가려짐) 멀수록 빗속에 흐려진다
+    ZC = 1.9 * L.Z0
+    sx, sy, z = w2scr(pts)
+    outside = z > ZC
+    if outside.any():
+        # 아직 방 안인 몸(꼬리 쪽)의 넉넉한 띠만 '안'으로 두고, 나머지(머리·수염·넘어간 몸)는 모두 '밖'
+        m_in = np.zeros((H, W), F32)
+        for k in range(len(pts) - 1):
+            if outside[k]: continue
+            th = max(2, int(3.0 * L.F / z[k] * RD_SC))
+            cv2.line(m_in, (int(sx[k]), int(sy[k])), (int(sx[k + 1]), int(sy[k + 1])), 1.0, th, cv2.LINE_AA)
+        m_in = cv2.GaussianBlur(m_in, (0, 0), 3 * S)
+        w_out = 1 - np.clip(m_in, 0, 1)
+        x0, x1, y0, y1 = WIN_IN
+        win = np.clip((xx - x0 * W) / S, 0, 1) * np.clip((x1 * W - xx) / S, 0, 1) * np.clip((yy - y0 * H) / S, 0, 1) * np.clip((y1 * H - yy) / S, 0, 1)
+        zo = float(np.median(z[outside]))
+        fog = 0.5 * np.clip((zo / L.Z0 - 1.9) / 1.5, 0, 1)
+        vis = vis * (1 - w_out + w_out * win * (1 - fog))
+    else:
+        w_out = np.zeros((H, W), F32)
+    fade = 1 - 0.5 * ease(ramp(tau, 9.4, 10.0))
+    dd = dd * vis * fade
+    img = base * np.exp(-dd[..., None] * INK_ABS * 1.4)
+    img = rimlight(img, dd * (1 - w_out), 0.45 + 0.8 * fx)
+    eye_out = bool(z[-1] > ZC)
+    ga = (0.35 + 0.35 * ramp(tau, 3.6, 4.0) * (1 - ramp(tau, 4.4, 4.6))) * (0.25 if eye_out else 1.0) * fade
+    if tau < 2.4 and e2[1] > DESK_Y * H: ga = 0.0
+    return glint(img, e2, k2, ga)
+
+def lookback(lt): return room_dragon(lt)
+def exitw(lt): return room_dragon(6.0 + lt)
 
 # ---------------------------------------------------------------- C20 폭풍 / C21 승천·해돋이
 _storm = {}
 def storm_init():
     if _storm: return
-    _storm['rain'] = InkRain(W, H, angle=-12, seed=7, fib=TF.FIB, scale=S)
+    if STORM_MODE in ('up', 'down'):
+        from rain import RadialRain
+        _storm['rain'] = RadialRain(W, H, (W / 2, H / 2), seed=7, fib=TF.FIB, scale=S, toward=(STORM_MODE == 'up'))
+    else:
+        _storm['rain'] = InkRain(W, H, angle=-12, seed=7, fib=TF.FIB, scale=S)
     _storm['fl'] = TF.Fluid()
+    if STORM_MODE in ('up', 'down'):
+        _storm['fl'].grav = (TF.GW / 2, TF.GH / 2, 1.0 if STORM_MODE == 'up' else -1.0)
     _storm['prev'] = None
 KS = np.array([(-7, -9, 9), (-4, -5.5, 8.5), (-1.5, -2.5, 8.2), (1.8, -0.5, 8.6), (2.6, 1.6, 9.4), (0.4, 2.4, 10.2),
                (-2.4, 1.4, 10.6), (-2.6, -0.4, 10.4), (-0.8, -1.2, 9.6), (1.4, -0.2, 9.2), (1.2, 1.4, 9.8), (-0.6, 1.8, 10.6),
                (-1.6, 0.6, 11.0), (0.0, 0.0, 10.4), (0.0, 0.2, 10.0), (0.0, 3.0, 11.0), (0.0, 9.0, 13.0), (0.0, 20.0, 16.0)], float)
 KST = np.array([-3.0, -1.5, 0.0, 2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 13.5, 15.0, 16.5, 18.0, 19.5, 22.0, 25.0, 28.5, 31.5])
+# 원근 폭풍(시안): 'up' = 하늘을 올려다봄(비가 쏟아져 오고 용은 소용돌이 눈으로 멀어지며 승천),
+#                  'down' = 내려다봄(비가 아래로 빨려 들고 용은 폭풍 속에서 카메라 쪽으로 솟구침)
+STORM_MODE = os.environ.get('JEOM_STORM', 'up')                       # 확정: 올려다봄(2026-11-10)
+KS_UP = KS.copy(); KS_UP[0] = (-3.0, -9.0, 3.0); KS_UP[1] = (-2.5, -5.0, 4.5); KS_UP[2] = (-1.5, -2.5, 7.0)
+KS_UP[-4] = (3.0, 1.2, 13.0); KS_UP[-3] = (-3.4, 2.6, 19.0); KS_UP[-2] = (-2.4, -4.2, 30.0); KS_UP[-1] = (2.6, -2.4, 48.0)   # 승천: 소용돌이 눈을 감아 돌며 멀어진다(곧장 멀어지면 몸이 한 점으로 눌림)
+# 올려다봄 승천: 감아 돌다가 마지막에 소실점(화면 가운데)으로 곧장 높이·빠르게 — 사라진 그 자리에서 해가 뜬다
+KS_UP = np.vstack([KS_UP[:14], [(2.6, 1.0, 11.5), (-2.6, 2.0, 14.0), (-1.6, -2.2, 21.0), (0.4, -0.8, 55.0), (0.0, 0.0, 180.0), (0.0, 0.0, 520.0)]])
+KST_UP = np.concatenate([KST[:14], [21.5, 23.0, 24.2, 24.9, 25.4, 26.5]])
+ASC_VANISH, ASC_SUN = 4.5, 5.5                                             # C21 시각: 용이 한 점으로 사라짐(정적 시작) → 해가 터져 나옴(화음)
+KS_DOWN = np.array([(0.5, 0.3, 34), (0.9, -0.2, 27), (1.4, -0.8, 21), (2.6, 0.6, 16), (0.4, 2.4, 13.5), (-2.4, 1.4, 12.0),
+                    (-2.6, -0.6, 11.0), (-0.8, -1.4, 10.0), (1.4, -0.4, 9.4), (1.4, 1.4, 9.6), (-0.6, 1.8, 10.0),
+                    (-1.6, 0.6, 10.2), (0.0, 0.0, 9.6), (0.0, 0.2, 9.0), (0.0, 0.3, 6.5), (0.0, 0.4, 3.6), (0.0, 0.5, 1.4), (0.0, 0.6, -1.5)], float)
 def storm_path(tau):
     tau = np.atleast_1d(np.asarray(tau, float))
-    P = np.vstack([KS[:1] * 2 - KS[1:2], KS, KS[-1:] * 2 - KS[-2:-1]])
-    i = np.clip(np.searchsorted(KST, tau, side='right') - 1, 0, len(KST) - 2)
-    u = np.clip((tau - KST[i]) / (KST[i + 1] - KST[i]), 0, 1.5)[:, None]
+    KSm = KS_UP if STORM_MODE == 'up' else (KS_DOWN if STORM_MODE == 'down' else KS)
+    KT_ = KST_UP if STORM_MODE == 'up' else KST
+    P = np.vstack([KSm[:1] * 2 - KSm[1:2], KSm, KSm[-1:] * 2 - KSm[-2:-1]])
+    i = np.clip(np.searchsorted(KT_, tau, side='right') - 1, 0, len(KT_) - 2)
+    u = np.clip((tau - KT_[i]) / (KT_[i + 1] - KT_[i]), 0, 1.5)[:, None]
     p0, p1, p2, p3 = P[i], P[i + 1], P[i + 2], P[i + 3]
     return 0.5 * ((2 * p1) + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u ** 2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u ** 3)
 
 def storm_trail(t):
-    taus = np.linspace(t - 6.0, t, 600)
-    pts = storm_path(taus)
-    seg = np.linalg.norm(np.diff(pts, axis=0), axis=1); cum = np.concatenate([[0], np.cumsum(seg)])
+    """머리가 지나온 길. 느리게 감아 돌 때도 몸 길이(배율 포함)보다 길게 잡는다(짧으면 몸이 시작점에 뭉쳐 엉킨다)."""
+    Lb = SLW * 1.5
+    for back in (6.0, 10.0, 16.0, 24.0):
+        taus = np.linspace(t - back, t, int(back * 100))
+        pts = storm_path(taus)
+        seg = np.linalg.norm(np.diff(pts, axis=0), axis=1); cum = np.concatenate([[0], np.cumsum(seg)])
+        if cum[-1] >= Lb: break
     return pts, cum
 
 yyS, xxS = np.mgrid[0:H, 0:W].astype(F32)
@@ -413,21 +544,40 @@ def storm_frame(t, phase_t, total_t, ascend=False):
     if 8.2 <= T < 11.4: jaw = 0.42 * math.sin(math.pi * ramp(T, 8.2, 11.4)) ** 0.6
     L.CAM['pos'] = np.array((0.04 * math.sin(T * 47) * math.exp(-(T - 8.7) / 0.6) if T > 8.7 else 0.0, 0, 0)); L.CAM['tilt'] = 0.0
     pts, cum = storm_trail(T)
-    sts, bodyw = live3(pts, cum, t=T, k_load=k_load, breathe=math.sin(T * 3), curl=0.6, jaw=jaw, scale=scale, wh=1.6)
+    whip = 0.0
+    if ascend and STORM_MODE == 'up' and WHIP[0] <= phase_t < WHIP[1]:      # 승천하며 꼬리로 화면을 한 번 '탁' 치고 올라간다
+        ph = (phase_t - WHIP[0]) / (WHIP[1] - WHIP[0]); whip = math.sin(math.pi * ph)
+        sfh = cum[-1] - cum                                                    # 머리에서 잰 길이 → 몸의 꼬리 쪽 40%만 휜다
+        Lb = SLW * (1.0 + 0.45 * ease(ramp(T, 12.0, 19.5)))
+        fq = np.clip((sfh - 0.55 * Lb) / (0.45 * Lb), 0, 1)                 # 0: 꼬리 마디 시작 … 1: 꼬리 끝
+        wgt = fq ** 0.6
+        dirm = np.array((0.87, 0.48))                                         # 왼쪽 아래 → 오른쪽 위로 쓸고 지나감
+        base = np.array(((-1.0 + 2.0 * ph) * 0.9 * dirm[0], (-1.0 + 2.0 * ph) * 0.9 * dirm[1], 0.75 + 1.6 * (1 - whip)))   # 가운데(치는 순간)에서 렌즈에 가장 가깝다
+        # 꼬리 끝은 카메라 바로 앞을 옆으로 가로지르고(옆으로 누워야 보인다), 꼬리 뿌리 쪽은 깊이로 몸에 이어진다
+        tgt = base[None, :] + (1 - fq)[:, None] * np.array((-0.9 * dirm[0], -0.9 * dirm[1], 3.0))[None, :] \
+            + fq[:, None] * np.array((-0.35 * dirm[1], 0.35 * dirm[0], 0.0))[None, :] * math.sin(ph * math.pi * 2)
+        pts = pts * (1 - (whip * wgt)[:, None]) + tgt * (whip * wgt)[:, None]
+        # cum은 휘기 전 길이 그대로 둔다: 몸의 각 마디가 같은 매개변수 자리를 따라가 꼬리 끝까지 휘어 나온다(늘어난 길이에 몸이 모자라지 않게)
+    sts, bodyw = live3(pts, cum, t=T, k_load=k_load, breathe=math.sin(T * 3), curl=0.6, jaw=jaw, scale=scale, wh=1.6, arms2=(STORM_MODE == 'up'))
     live = render_strokes(L.SV, sts, L.SFIB)
     live, e, kk = pupil(live, pts, cum, scale=scale)
     vis = 1.0
     if ascend:
-        vis = 1.0 - ease(ramp(T, 26.0, 28.0))
+        vis = 1.0 - (ease(ramp(phase_t, ASC_VANISH - 0.25, ASC_VANISH)) if STORM_MODE == 'up' else ease(ramp(T, 26.0, 28.0)))
     live = live * vis
     # 유체: 씻겨 내리는 먹(무거워 아래로 흐름), 몸의 움직임이 공기를 끈다
     S2, Z = L.project(pts[-80::4])
     if _storm['prev'] is not None:
         v = (S2[-1] - _storm['prev']) * FPS
         for j in range(0, len(S2), 2):
-            fl.splat(S2[j][0], S2[j][1] + 10 * S, (0.02 + 0.22 * wash) * vis, v[0] * 0.4, v[1] * 0.4 + 140 * S * wash, 18 * S)
+            if STORM_MODE in ('up', 'down'):                                # 씻긴 먹은 땅 쪽으로: 올려다보면 바깥(카메라)으로, 내려다보면 소실점으로
+                rx, ry = S2[j][0] - W / 2, S2[j][1] - H / 2; rn_ = math.hypot(rx, ry) + 1e-3
+                g_ = 140 * S * wash * (1 if STORM_MODE == 'up' else -1)
+                fl.splat(S2[j][0], S2[j][1], (0.02 + 0.22 * wash) * vis, v[0] * 0.4 + g_ * rx / rn_, v[1] * 0.4 + g_ * ry / rn_, 18 * S)
+            else:
+                fl.splat(S2[j][0], S2[j][1] + 10 * S, (0.02 + 0.22 * wash) * vis, v[0] * 0.4, v[1] * 0.4 + 140 * S * wash, 18 * S)
     _storm['prev'] = S2[-1].copy()
-    center = (W * 0.5, H * 0.44)
+    center = (W * 0.5, H * 0.5) if STORM_MODE in ('up', 'down') else (W * 0.5, H * 0.44)
     if take > 0:
         DX, DY = xxS - center[0], yyS - center[1]; RR = np.hypot(DX, DY) + 1e-3
         wv = 70 * S * take * (1 - ramp(T, 21, 24))
@@ -435,26 +585,33 @@ def storm_frame(t, phase_t, total_t, ascend=False):
         fl.v += cv2.resize((DX / RR) * wv * np.exp(-RR / (300 * S)), (TF.GW, TF.GH)) / TF.GS * 0.02
     for _ in range(2): fl.step(1 / (FPS * 2))
     smoke = 0.9 * np.tanh(np.clip(cv2.resize(fl.d, (W, H), interpolation=cv2.INTER_CUBIC), 0, None) * 1.2)
-    clear = 0.2 * ease(ramp(T, 22.5, 26.5)) if ascend else 0.0
+    if ascend and STORM_MODE == 'up': smoke = smoke * (1 - ease(ramp(phase_t, 3.4, ASC_VANISH)))   # 해가 뜰 자리에 먹 얼룩이 남지 않게
+    clear = (0.2 * ease(ramp(phase_t, ASC_SUN, ASC_SUN + 3.0)) if STORM_MODE == 'up' else 0.2 * ease(ramp(T, 22.5, 26.5))) if ascend else 0.0
     swirl = 2.6 * take
     roar_r = (80 + 900 * roar) * S if 8.6 <= T < 11.5 else None
-    part = ease(ramp(T, 22.0, 27.0)) if ascend else 0.0
+    part = (ease(ramp(phase_t, ASC_SUN, ASC_SUN + 3.5)) if STORM_MODE == 'up' else ease(ramp(T, 22.0, 27.0))) if ascend else 0.0
     cl = clouds_take(T, swirl, take, clear, center, roar_r, part)
     if part > 0:
-        hole = np.exp(-(np.hypot(xxS - center[0], (yyS - center[1] + 20) * 1.6) / (50 + 150 * part)) ** 2)
+        oy = 0.0 if STORM_MODE == 'up' else 20.0                           # 올려다볼 때는 용이 사라진 바로 그 점에서 갈라진다
+        hole = np.exp(-(np.hypot(xxS - center[0], (yyS - center[1] + oy) * (1.0 if STORM_MODE == 'up' else 1.6)) / (50 + 150 * part)) ** 2)
         cl = cl * (1 - 0.75 * hole * part)
     # 비: 붓 비. 포효 때 빗줄기가 바깥으로 튕긴다(유체 변위), 접수하며 줄고, 승천 때 멎는다
-    rain_amt = (1.0 - 0.5 * take) * (1 - ease(ramp(T, 21.5, 24.0)) if ascend else 1.0 - 0.5 * take)
+    if ascend and STORM_MODE == 'up': rain_amt = (1.0 - 0.5 * take) * (1 - ease(ramp(phase_t, 3.3, ASC_VANISH - 0.2)))
+    else: rain_amt = (1.0 - 0.5 * take) * (1 - ease(ramp(T, 21.5, 24.0)) if ascend else 1.0 - 0.5 * take)
     fdx = np.zeros((H, W), F32); fdy = np.zeros((H, W), F32)                 # 비는 거의 곧게(유체로 휘게 하면 마블링처럼 보였다)
     if roar_r is not None:
         DX, DY = xxS - e[0], yyS - e[1]; RR = np.hypot(DX, DY) + 1e-3
         push = 30 * S * np.exp(-((RR - roar_r) / (60.0 * S)) ** 2)
         fdx = fdx + push * DX / RR; fdy = fdy + push * DY / RR
-    rn = _storm['rain'].render(T + 100, amount=rain_amt, gust=0.8, flow=(fdx, fdy))
+    if STORM_MODE in ('up', 'down'):
+        rn = _storm['rain'].render(T + 100, amount=rain_amt, gust=0.8)
+        if ascend: rn = rn * (1 - ease(ramp(phase_t, 3.3, ASC_VANISH - 0.2)))   # 용이 사라지기 직전에 비가 완전히 멎는다(결이 문턱 때문에 남지 않게)
+    else:
+        rn = _storm['rain'].render(T + 100, amount=rain_amt, gust=0.8, flow=(fdx, fdy))
     fx = 0.0
     for tf, a in ((1.2, 0.8), (5.0, 0.6), (8.7, 1.0), (8.85, 0.6), (14.0, 0.7)):
         if T >= tf: fx = max(fx, a * math.exp(-(T - tf) / 0.12))
-    dens = cl * (1 - 0.6 * fx) + smoke + rn * 0.55
+    dens = cl * (1 - 0.6 * fx) + smoke + rn * (0.85 if STORM_MODE == 'up' else 0.55)   # 올려다볼 때는 쏟아지는 비가 주인공
     img = TF.PAPER * np.exp(-dens[..., None] * INK_ABS)
     img = img * (1 + 0.35 * fx)
     img = light(img, 'night', extra=fx) * 0.45 + light(img, 'silver', extra=fx) * 0.75
@@ -469,8 +626,10 @@ def storm_frame(t, phase_t, total_t, ascend=False):
         img = cv2.remap(img.astype(F32), (xxS - disp * DX / RR).astype(F32), (yyS - disp * DY / RR).astype(F32), cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
         img = img * (1 - 0.10 * ringd[..., None])
     if ascend:                                                              # 해돋이: 구름 사이로 금빛 해, 빛줄기, 구름 테 — 원반 하나로 끝내지 않는다
-        sun = ease(ramp(T, 23.0, 27.5))
-        sc = (center[0], center[1] - 10 * S + 70 * S * (1 - sun))
+        if STORM_MODE == 'up':
+            sun = ease(ramp(phase_t, ASC_SUN, ASC_SUN + 2.1)); sc = center
+        else:
+            sun = ease(ramp(T, 23.0, 27.5)); sc = (center[0], center[1] - 10 * S + 70 * S * (1 - sun))
         r = np.hypot(xxS - sc[0], yyS - sc[1])
         yv = yyS / H
         dawn_sky = np.stack([0.30 + 0.62 * yv, 0.30 + 0.45 * yv, 0.34 + 0.22 * yv], -1).astype(F32)   # 위는 서늘한 먹빛, 아래로 갈수록 금빛
@@ -486,14 +645,51 @@ def storm_frame(t, phase_t, total_t, ascend=False):
         rays = cv2.GaussianBlur(rays, (0, 0), 3 * S) * np.clip(1 - occl * 0.6, 0, 1)
         gold = np.array((1.0, 0.86, 0.60), F32); amber = np.array((1.0, 0.62, 0.30), F32)
         img = img + (halo * (1 - 0.5 * occl))[..., None] * amber * 0.45 + rays[..., None] * gold * 0.45
-        rimc = np.clip(np.abs(cv2.Laplacian(cl.astype(F32), cv2.CV_32F, ksize=5)) * 0.10, 0, 1) * np.exp(-(r / (520 * S)) ** 2) * sun
+        clb = cv2.GaussianBlur(cl.astype(F32), (0, 0), 3.0 * S)              # 종이 결 잡음까지 금빛으로 반짝이지 않게 구름 덩어리만
+        rimc = np.clip(np.abs(cv2.Laplacian(clb, cv2.CV_32F, ksize=5)) * 0.10 * (3.0 * S) ** 1.2, 0, 1) * np.exp(-(r / (520 * S)) ** 2) * sun
         img = img + rimc[..., None] * gold * 0.8                           # 해를 향한 구름 가장자리가 금빛으로
         img = img * (1 - core[..., None] * 0.6) + core[..., None] * np.array((1.0, 0.95, 0.82), F32) * 1.05 * np.clip(1 - occl, 0.25, 1)[..., None]
+        if STORM_MODE == 'up' and phase_t >= ASC_VANISH - 0.1:              # 용이 사라진 자리에 빛의 '점' 하나 → 정적 1초 → 해가 터져 나온다
+            pt = ease(ramp(phase_t, ASC_VANISH - 0.1, ASC_VANISH + 0.15)) * (1 - sun)
+            rp = (2.5 + 4.0 * ramp(phase_t, ASC_VANISH, ASC_SUN)) * S
+            dot = np.exp(-(r / rp) ** 2) + 0.35 * np.exp(-(r / (rp * 5)) ** 2)
+            img = img + (dot * pt)[..., None] * np.array((1.0, 0.93, 0.78), F32)
+            if phase_t >= ASC_SUN:
+                ub = phase_t - ASC_SUN
+                Rb = (40 + 1400 * ub ** 0.7) * S                            # 터지는 빛의 고리(한 번)
+                ring = np.exp(-((r - Rb) / (60 * S)) ** 2) * math.exp(-ub / 0.5)
+                img = img + (ring * 0.35)[..., None] * np.array((1.0, 0.88, 0.62), F32) + 0.25 * math.exp(-ub / 0.18)
     a_ = np.clip(live * 1.5, 0, 1)[..., None]
     lit = light(TF.PAPER * np.exp(-live[..., None] * INK_ABS), 'silver', extra=fx) * 1.1
     img = img * (1 - a_) + lit * a_
     img = glint(img, e, kk, 0.6 + 0.6 * roar * (1 - roar))
+    if ascend and STORM_MODE == 'up' and phase_t >= WHIP[2]:               # 꼬리가 렌즈를 친 자국: 흐린 먹 방울이 렌즈에 남았다가 흘러내리며 옅어짐
+        u_ = phase_t - WHIP[2]
+        if u_ < 2.4:
+            lens = _whip_splat()
+            M = np.float32([[1, 0, 0], [0, 1, 60 * S * u_ ** 1.6]])
+            lens = cv2.warpAffine(lens, M, (W, H))
+            img = img * np.exp(-(lens * (1 - ease(ramp(u_, 0.4, 1.8))))[..., None] * INK_ABS)
+            if u_ < 0.35:                                                  # 맞는 순간: 흔들림 + 번쩍
+                dx_ = int(14 * S * math.sin(u_ * 90) * (1 - u_ / 0.35)); dy_ = int(9 * S * math.cos(u_ * 70) * (1 - u_ / 0.35))
+                img = np.roll(np.roll(img, dx_, 1), dy_, 0)
+                img = img * (1 + 0.5 * math.exp(-u_ / 0.06))
     return img
+
+WHIP = (0.55, 1.45, 1.0)                                                   # C21 시각: 꼬리 휘두름 시작, 끝, 렌즈를 치는 순간
+_ws = {}
+def _whip_splat():
+    if 'm' not in _ws:
+        r = np.random.default_rng(77); m = np.zeros((H, W), F32)
+        for _ in range(5):                                                  # 꼬리가 쓸고 간 방향(왼쪽 아래 → 오른쪽 위)으로 흩뿌려진 몇 방울
+            f_ = r.uniform(0.1, 0.9); cx, cy = (0.12 + 0.76 * f_) * W + r.normal(0, 0.05 * W), (0.72 - 0.40 * f_) * H + r.normal(0, 0.06 * H)
+            rad = r.uniform(10, 34) * S
+            cv2.ellipse(m, (int(cx), int(cy)), (int(rad * 1.5), int(rad)), -25, 0, 360, float(r.uniform(0.5, 0.9)), -1, cv2.LINE_AA)
+            for _ in range(int(r.integers(2, 6))):
+                a_ = math.radians(-25) + r.normal(0, 0.5); dd = rad * r.uniform(1.6, 3.2)
+                cv2.circle(m, (int(cx + math.cos(a_) * dd), int(cy + math.sin(a_) * dd)), max(1, int(rad * r.uniform(0.1, 0.25))), 0.6, -1, cv2.LINE_AA)
+        _ws['m'] = cv2.GaussianBlur(m, (0, 0), 5 * S) * 0.9                 # 렌즈 위라 초점이 안 맞아 흐림
+    return _ws['m']
 
 # ---------------------------------------------------------------- 아침의 종이(남은 그림) — C23·C24가 같은 상태
 import after as AF
@@ -527,20 +723,93 @@ def morning_light(img, X=None):
     warm = np.clip(1.0 - np.hypot(xx / W - 0.85, yy / H - 0.05) / 1.3, 0, 1)   # 창(오른쪽 위)에서 드는 햇살
     return img * (0.90 + 0.22 * warm[..., None] * np.array((1.0, 0.93, 0.80), F32))
 
-def trace(lt):
-    rgb, fib, dens, pv, X, Y = after_plate('trace', TP)
-    if 'trace_img' not in _after:
-        _after['trace_img'] = (rgb * np.exp(-dens[..., None] * INK_ABS)).astype(F32)
-    pap = _after['trace_img']
-    u = ease(ramp(lt, 2.2, 5.4))
-    cx, cy, wmm = 320 + (110 - 320) * u, 215 + (360 - 215) * u, 700 + (260 - 700) * u
-    sc = TP.ppm * wmm / W
-    M = np.array([[sc, 0, (cx - TP.cx) * TP.ppm + TP.W / 2 - sc * W / 2], [0, sc, (cy - TP.cy) * TP.ppm + TP.H / 2 - sc * H / 2]], F32)
-    img = cv2.warpAffine(pap, M, (W, H), flags=cv2.WARP_INVERSE_MAP | cv2.INTER_AREA, borderValue=(0.12, 0.08, 0.055))
-    view = View(cx, cy, wmm, W, H)
+# ---------------------------------------------------------------- C23 화가의 시선(그림 전체 → 눈, 눈물) / C25 제목
+# 같은 아침 종이를 세 배율의 판으로 그려 두고(먼 판 TP → 중간 MP → 눈 EP) 카메라 폭에 맞는 판에서 잘라 쓴다.
+EYEC = (dragon.E[0] + 2.0, dragon.E[1] + 1.0)
+PAINT_C, PAINT_W, EYE_W = (320.0, 212.0), 620.0, 74.0                    # 그림 전체(종이 안쪽만 — 양옆에 책상이 비치지 않게) ↔ 눈
+_kz = EYE_W / PAINT_W
+ZOOM_P = ((EYEC[0] - _kz * PAINT_C[0]) / (1 - _kz), (EYEC[1] - _kz * PAINT_C[1]) / (1 - _kz))   # 이 한 점을 중심으로 한 번에 줌(움직임이 중간에 바뀌지 않게)
+def zoom_center(wmm):
+    f = wmm / PAINT_W
+    return ZOOM_P[0] + (PAINT_C[0] - ZOOM_P[0]) * f, ZOOM_P[1] + (PAINT_C[1] - ZOOM_P[1]) * f
+_mc = zoom_center(220.0); _ec = zoom_center(95.0)
+MP = View(_mc[0], _mc[1], 300, int(W * 300 / 110), int(W * 300 / 110 * 9 / 16))
+EP = View(_ec[0], _ec[1], 120, int(W * 120 / 74), int(W * 120 / 74 * 9 / 16))
+
+def ring_state(X, Y, fib, pv, dens, lt):
+    """눈물 상태(눈 근접 test_tear 방식). lt: 눈물 시계(2.6에 떨어지기 시작, 2.9에 닿음). 밀도와 젖은 정도(w, 안쪽, r)를 돌려준다."""
+    Cc = np.array(dragon.E) + np.array((1.0, 0.0))
+    R = np.hypot(X - Cc[0], Y - Cc[1]).astype(F32); ANG = np.arctan2(Y - Cc[1], X - Cc[0])
+    WOB = 1 + 0.035 * np.sin(ANG * 3 + 1.1) + 0.015 * np.sin(ANG * 5 + 0.4) + 0.02 * (fib - 0.3)
+    OLD = pv * 0.10
+    T_DROP, FALL, R_MAX = 2.6, 0.30, 4.5
+    land = T_DROP + FALL
+    if lt < land: return dens, 0.0, None, 0.0, R, Cc
+    uu = lt - land; r = R_MAX * (1 - math.exp(-uu / 0.18)); w = 1.0 - ramp(lt, land + 1.2, land + 3.6) * 0.85; g = ease(ramp(lt, land + 0.25, land + 3.4))
+    inside = np.clip((r * WOB - R) / 0.25, 0, 1)
+    mass = float((OLD * inside).sum())
+    d2 = dens - OLD * inside * g * 0.8
+    q = np.clip(R / (r * WOB), 0, 1.2)
+    prof = (inside * q ** 7 + 0.55 * np.exp(-((R - r * WOB) / 0.28) ** 2)) * (0.75 + 0.5 * fib)
+    ring = prof * (mass * 0.8 * g / (float(prof.sum()) + 1e-6)) + prof * 0.75 * g
+    ppm = X.shape[1] / float(X[0, -1] - X[0, 0])                             # 판의 px/mm(테 번짐 0.046mm는 어느 판에서나 같게)
+    d2 = d2 + cv2.GaussianBlur(ring.astype(F32), (0, 0), max(0.5, 0.046 * ppm))
+    return d2, w, inside, r, R, Cc
+
+def plate_img(key, view, lt_tear=None, title_ink=None):
+    """판 하나의 그림(빛 전). lt_tear가 있으면 눈 둘레만 잘라 눈물 상태를 덧그린다(어느 판에서나 같은 테 — 물러날 때도 남는다)."""
+    rgb, fib, dens, pv, X, Y = after_plate(key, view)
+    bk = (key, None if title_ink is None else round(title_ink.amount, 3))
+    if _after.get('pbase_key', {}).get(key) != bk:
+        d = dens if title_ink is None else dens + title_ink(view, fib)
+        _after.setdefault('pbase', {})[key] = (rgb * np.exp(-d[..., None] * INK_ABS)).astype(F32)
+        _after.setdefault('pbase_key', {})[key] = bk
+    base = _after['pbase'][key]
+    if lt_tear is None or lt_tear < 2.9: return base
+    ck = (bk, round(lt_tear * 12))
+    if _after.get('pimg_key', {}).get(key) == ck: return _after['pimg'][key]
+    Cc = np.array(dragon.E) + np.array((1.0, 0.0))
+    px0, py0 = view.to_px(Cc[0] - 12, Cc[1] - 12); px1, py1 = view.to_px(Cc[0] + 12, Cc[1] + 12)
+    x0, y0 = max(0, int(px0)), max(0, int(py0)); x1, y1 = min(view.W, int(px1) + 2), min(view.H, int(py1) + 2)
+    img = base.copy()
+    sl = (slice(y0, y1), slice(x0, x1))
+    Xc, Yc, fc, pc, dc = X[sl], Y[sl], fib[sl], pv[sl], dens[sl]
+    d, w, inside, r, R, Cc = ring_state(Xc, Yc, fc, pc, dc, lt_tear)
+    if title_ink is not None: d = d + title_ink(view, fib)[sl]
+    sub = rgb[sl] * np.exp(-d[..., None] * INK_ABS)
+    if inside is not None:
+        sub = sub * (1 - 0.05 * (inside * w)[..., None])
+        hl = np.exp(-(((Xc - Cc[0] + 0.35 * r) ** 2 + (Yc - Cc[1] + 0.35 * r) ** 2) / (0.35 * r + 0.3) ** 2)) * w * inside
+        sub = sub + (hl * 0.35)[..., None]
+    img[sl] = sub
+    _after.setdefault('pimg', {})[key] = img; _after.setdefault('pimg_key', {})[key] = ck
+    return img
+
+def cam_cut(img_plate, view, cx, cy, wmm):
+    sc = view.ppm * wmm / W
+    M = np.array([[sc, 0, (cx - view.cx) * view.ppm + view.W / 2 - sc * W / 2], [0, sc, (cy - view.cy) * view.ppm + view.H / 2 - sc * H / 2]], F32)
+    return cv2.warpAffine(img_plate, M, (W, H), flags=cv2.WARP_INVERSE_MAP | cv2.INTER_AREA, borderValue=(0.12, 0.08, 0.055))
+
+def paper_cam(cx, cy, wmm, lt_tear=None, title_ink=None):
+    """카메라 폭에 맞는 판을 골라(경계에서는 겹쳐 넘김) 화면을 만든다."""
+    out = None
+    stages = [('trace', TP, 235, 210), ('mid', MP, 112, 96), ('eye', EP, 0, 0)]
+    for i, (key, view, hi, lo) in enumerate(stages):
+        prev_lo = stages[i - 1][3] if i else 1e9; prev_hi = stages[i - 1][2] if i else 1e9
+        # 이 판이 쓰이는 폭: (lo .. prev_hi), 위 경계 prev_hi~prev_lo에서 서서히 들어오고 아래 경계 hi~lo에서 서서히 나감
+        a_in = 1.0 if i == 0 else float(np.clip((prev_hi - wmm) / (prev_hi - prev_lo), 0, 1))
+        a_out = 1.0 if hi == 0 else float(np.clip((wmm - lo) / (hi - lo), 0, 1))
+        a = min(a_in, a_out) if i else a_out
+        if a <= 0: continue
+        im = cam_cut(plate_img(key, view, lt_tear, title_ink if key == 'trace' else None), view, cx, cy, wmm)
+        out = im if out is None else out * (1 - a) + im * a
+    return out
+
+def ruler_and_slit(img, view):
     img = A2.slit(img, view)
     P0 = np.array((0.0, 318.0)); Uu = np.array((1.0, 1.0)) / math.sqrt(2); N = np.array((1.0, -1.0)) / math.sqrt(2)
-    # 밤새 그대로 놓여 있던 대나무 자(C4와 같은 자리·결)
+    x0, y0, x1, y1 = view.bbox_mm(0)
+    if x0 > 200 or y1 < 280: return img                                     # 자가 화면 밖
     Xv, Yv = view.grid_mm()
     ac = (Xv - P0[0]) * N[0] + (Yv - P0[1]) * N[1]; al = (Xv - P0[0]) * Uu[0] + (Yv - P0[1]) * Uu[1]
     rm = ((ac >= 0) & (ac <= 24) & (al >= -40) & (al <= 200)).astype(F32)
@@ -553,103 +822,131 @@ def trace(lt):
     px_, py_ = view.to_px(rq[:, 0], rq[:, 1]); cv2.fillPoly(rsh, [np.stack([px_, py_], 1).astype(np.int32)], 1.0)
     img = img * (1 - 0.35 * cv2.GaussianBlur(rsh, (0, 0), 1.2 * view.ppm)[..., None])
     rcol = np.array((0.74, 0.61, 0.38), F32)[None, None, :] * (1 + gr + bev - 0.28 * nd)[..., None]
-    img = img * (1 - rm[..., None]) + rcol * rm[..., None]
-    base = P0 + Uu * 110 + N * 8; hover = P0 + Uu * 112 - N * 3; away = np.array((-60.0, 470.0))
-    away = base + np.array((40.0, 30.0))                                      # 거둬서 종이 밖(책상)에 내려놓는다
-    if lt < 5.6: pos, h = base, 0.0
-    elif lt < 6.4: pos, h = base + (hover - base) * ease(ramp(lt, 5.6, 6.4)), 12 * ease(ramp(lt, 5.6, 6.4))
-    elif lt < 7.6: pos, h = hover + np.array(A2.trem(lt, 0.9)), 12.0
-    else: pos, h = hover + (away - hover) * ease(ramp(lt, 7.6, 8.8)), 12 * (1 - ease(ramp(lt, 7.6, 8.8)))
-    f_ = Uu; g_ = -N
-    blade = [pos, pos + f_ * 30 + g_ * 0.8, pos + f_ * 30 + g_ * 9.5, pos + f_ * 13 + g_ * 9.5]
-    handle = [pos + f_ * 30 + g_ * 0.2, pos + f_ * 115 + g_ * 0.6, pos + f_ * 115 + g_ * 10.2, pos + f_ * 30 + g_ * 10.0]
-    def pp(pts, off=(0, 0)):
-        a_ = np.array(pts) + np.array(off); x, y = view.to_px(a_[:, 0], a_[:, 1]); return np.stack([x, y], 1).astype(np.int32)
-    sh = np.zeros((H, W), F32); off = np.array((-0.6, 0.5)) * (h + 4)
-    cv2.fillPoly(sh, [pp(blade, off)], 1.0); cv2.fillPoly(sh, [pp(handle, off * 1.2)], 1.0)
-    handle = [pos + f_ * 30 + g_ * 0.2, pos + f_ * 170 + g_ * 0.6, pos + f_ * 170 + g_ * 10.2, pos + f_ * 30 + g_ * 10.0]   # 자루는 화면 밖(손)까지
-    if 5.4 < lt < 9.0:                                                        # 칼을 쥔 손·소매 그림자(창빛: 오른쪽 위 → 왼쪽 아래로 드리움)
-        hm = np.zeros((H, W), F32)
-        for along, z, rx, ry in ((125, 40 + h, 22, 16), (185, 70 + h, 44, 28)):
-            c_ = pos + f_ * along + np.array((-0.6, 0.5)) * 0.4 * z; px_, py_ = view.to_px(c_[0], c_[1])
-            cv2.ellipse(hm, (int(px_), int(py_)), (int(rx * view.ppm), int(ry * view.ppm)), 45, 0, 360, 1.0, -1, cv2.LINE_AA)
-        sh = np.maximum(sh, cv2.GaussianBlur(hm, (0, 0), 3 * view.ppm) * 0.8 * ramp(lt, 5.4, 5.8) * (1 - ramp(lt, 8.6, 9.0)))
-    img = img * (1 - 0.4 * cv2.GaussianBlur(sh, (0, 0), 1 + 0.15 * h * view.ppm)[..., None])
-    lay = np.zeros_like(img); m = np.zeros((H, W), F32)
-    cv2.fillPoly(lay, [pp(handle)], (0.30, 0.19, 0.12)); cv2.fillPoly(m, [pp(handle)], 1.0)
-    cv2.fillPoly(lay, [pp(blade)], (0.68, 0.70, 0.72)); cv2.fillPoly(m, [pp(blade)], 1.0)
-    m = cv2.GaussianBlur(m, (0, 0), 0.7 * S)[..., None]
-    img = img * (1 - m) + lay * m
-    return morning_light(img)
+    return img * (1 - rm[..., None]) + rcol * rm[..., None]
 
-VE = View(dragon.E[0] + 2, dragon.E[1] + 1, 74, W, H)
-def tear(lt):
-    """같은 아침 종이(after)의 눈 근접. 눈물 → 남은 점의 흔적이 녹아 테로 모임(test_tear와 같은 방식)."""
-    rgb, fib, dens, pv, X, Y = after_plate('tear', VE)
+def logzoom(u, w0, w1): return w0 * (w1 / w0) ** u
+PUSH = (0.8, 11.6)                                                         # 응시: 그림 전체 → 눈(서두르지 않고)
+TEAR_OFS = 9.8                                                             # 응시 컷 시각 − 눈물 시계(12.4초에 눈물이 떨어지기 시작)
+def gaze_cam(lt):
+    u = ease(ramp(lt, *PUSH))
+    wmm = logzoom(u, PAINT_W, EYE_W)
+    cx, cy = zoom_center(wmm)
+    return cx, cy, wmm
+
+def gaze(lt):
+    """깨어난 화가가 자기 그림을 가만히 바라본다: 그림 전체에서 아주 천천히 눈으로 다가가고, 같은 컷 안에서 눈물이 떨어진다."""
+    cx, cy, wmm = gaze_cam(lt)
+    lt_t = lt - TEAR_OFS
+    img = paper_cam(cx, cy, wmm, lt_tear=lt_t)
+    view = View(cx, cy, wmm, W, H)
+    img = A2.slit(img, view)                                                # 자는 화면에 두지 않는다(시선은 그림에만)
+    X, Y = view.grid_mm()
     Cc = np.array(dragon.E) + np.array((1.0, 0.0))
-    R = np.hypot(X - Cc[0], Y - Cc[1]).astype(F32); ANG = np.arctan2(Y - Cc[1], X - Cc[0])
-    WOB = 1 + 0.035 * np.sin(ANG * 3 + 1.1) + 0.015 * np.sin(ANG * 5 + 0.4) + 0.02 * (fib - 0.3)
-    OLD = pv * 0.10                                                          # 눈동자였던 점의 흔적(종이 dens 안에 이미 들어 있음)
-    T_DROP, FALL, R_MAX = 2.6, 0.30, 4.5
-    land = T_DROP + FALL
-    if lt < land: r, w, g = 0.0, 0.0, 0.0
-    else:
-        uu = lt - land; r = R_MAX * (1 - math.exp(-uu / 0.18)); w = 1.0 - ramp(lt, land + 1.2, land + 3.6) * 0.85; g = ease(ramp(lt, land + 0.25, land + 3.4))
-    inside = np.clip((r * WOB - R) / 0.25, 0, 1) if r > 0 else np.zeros_like(R)
-    mass = float((OLD * inside).sum())
-    d2 = dens - OLD * inside * g * 0.8
-    if r > 0:
-        q = np.clip(R / (r * WOB), 0, 1.2)
-        prof = (inside * q ** 7 + 0.55 * np.exp(-((R - r * WOB) / 0.28) ** 2)) * (0.75 + 0.5 * fib)
-        ring = prof * (mass * 0.8 * g / (float(prof.sum()) + 1e-6)) + prof * 0.75 * g
-        d2 = d2 + cv2.GaussianBlur(ring.astype(F32), (0, 0), 0.6 * S)
-    img = rgb * np.exp(-d2[..., None] * INK_ABS)
-    img = img * (1 - 0.05 * (inside * w)[..., None])
+    # 몸을 숙인 화가의 머리 그림자(창빛: 오른쪽 위에서) — 가까이 갈수록 짙어진다
     hx, hy = Cc[0] + 13 + 0.6 * math.sin(lt * 1.3), Cc[1] - 15
     shd = np.exp(-(((X - hx) / 15) ** 2 + ((Y - hy) / 12) ** 2) * 1.5) + np.exp(-(((X - hx - 14) / 20) ** 2 + ((Y - hy + 12) / 18) ** 2) * 1.5)
-    img = img * (1 - 0.30 * np.clip(shd, 0, 1)[..., None])
-    if T_DROP - 0.6 <= lt < land:
-        hgt = 40.0 if lt < T_DROP else 40.0 * (1 - ((lt - T_DROP) / FALL) ** 2)
-        sm = np.exp(-(((X - Cc[0] - 0.275 * hgt) ** 2 + (Y - Cc[1] + 0.425 * hgt) ** 2) / (1.1 + 0.03 * hgt) ** 2))
-        img = img * (1 - 0.35 * sm[..., None])
-        if lt >= T_DROP:
-            rr = 1.3 * (1 + 0.15 * (1 - (lt - T_DROP) / FALL)); dd = np.hypot(X - Cc[0], Y - Cc[1])
-            edge = np.exp(-((dd - rr) / 0.25) ** 2); core = np.clip((rr - dd) / 0.4, 0, 1)
-            img = img * (1 - 0.25 * edge[..., None]) + 0.12 * core[..., None] * np.exp(-((X - Cc[0] + 0.4) ** 2 + (Y - Cc[1] + 0.4) ** 2) / 0.3)[..., None]
-    if r > 0:
-        hl = np.exp(-(((X - Cc[0] + 0.35 * r) ** 2 + (Y - Cc[1] + 0.35 * r) ** 2) / (0.35 * r + 0.3) ** 2)) * w * inside
-        img = img + (hl * 0.35)[..., None]
+    img = img * (1 - 0.30 * ramp(lt, 8.0, 11.5) * np.clip(shd, 0, 1)[..., None])
+    # 떨어지는 눈물: 화가의 눈(= 카메라 바로 앞)에서 떨어지므로 화면에서는 착지점 바로 아래에서 크게·흐리게 나타나
+    # 착지점으로 모이며 작아진다. 종이에는 착지하기 전까지 아무것도 생기지 않는다(그림자만 착지점으로 다가옴).
+    T_FALL0, LAND = 2.35, 2.9
+    drop = None
+    if T_FALL0 <= lt_t < LAND:
+        uq = ((lt_t - T_FALL0) / (LAND - T_FALL0)) ** 2                    # 점점 빨라짐
+        ex, ey = view.to_px(Cc[0], Cc[1])
+        rs = (0.15 * H) * (1 - uq) + 1.3 * view.ppm * uq                    # 화면 반지름(가까울수록 크다)
+        dx_, dy_ = ex + 0.02 * W * (1 - uq), ey + 0.26 * H * (1 - uq)
+        sh_off = 40.0 * (1 - uq)                                              # 그림자: 높이만큼 왼쪽 아래로 밀림, 높을수록 흐리고 옅음
+        sm = np.exp(-(((X - Cc[0] + 0.55 * sh_off) ** 2 + (Y - Cc[1] - 0.80 * sh_off) ** 2) / (1.2 + 0.25 * sh_off) ** 2))
+        img = img * (1 - (0.10 + 0.25 * uq) * sm[..., None])
+        drop = (dx_, dy_, rs, uq)
     out = morning_light(img)
-    _after['last_tear'] = out
+    if drop is not None:
+        dx_, dy_, rs, uq = drop
+        yy, xx = np.mgrid[0:H, 0:W].astype(F32)
+        rr = np.hypot(xx - dx_, (yy - dy_) * 1.08)
+        inside = np.clip((rs - rr) / max(1.0, 0.06 * rs), 0, 1)
+        q = np.clip(rr / rs, 0, 1)
+        mag = 0.55 + 0.25 * q ** 2                                            # 물방울 렌즈: 가운데가 확대되고 뒤집혀 보임
+        lens = cv2.remap(out.astype(F32), (dx_ - (xx - dx_) * mag).astype(F32), (dy_ - (yy - dy_) * mag).astype(F32), cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+        lens = lens * (0.92 + 0.08 * (1 - q))[..., None]
+        rim = np.exp(-((rr - rs * 0.93) / (0.07 * rs + 0.6)) ** 2)
+        spec = np.exp(-((xx - dx_ - 0.35 * rs) ** 2 + (yy - dy_ + 0.40 * rs) ** 2) / (0.12 * rs + 0.8) ** 2)
+        a_ = (inside * (0.55 + 0.45 * uq))[..., None]
+        drop_img = lens * (1 - 0.30 * rim[..., None]) + (spec * 0.55)[..., None]
+        blur = (1 - uq) * 0.04 * H                                           # 눈앞이라 초점이 안 맞음
+        if blur > 1.0:
+            drop_img = cv2.GaussianBlur(drop_img, (0, 0), blur * 0.35); a_ = cv2.GaussianBlur(a_[..., 0], (0, 0), blur * 0.5)[..., None]
+        out = out * (1 - a_) + drop_img * a_
+    _after['last_gaze'] = out
     return out
 
+# ---- 제목: 우리 붓 엔진으로 쓴 '점'(종이에 스며드는 먹) + 좌하단 허상공방 낙관과 크레딧(명조, 타자 효과·소리 없음)
+TITLE_BOX = (500.0, 58.0, 100.0)                                           # 종이 mm: 왼쪽 위 x, y, 글자 크기
+def title_strokes():
+    x0, y0, sz = TITLE_BOX
+    q = lambda pts: [(x0 + px * sz / 100, y0 + py * sz / 100) for px, py in pts]
+    k = sz / 100
+    def pr(*v):                                                            # 압력 곡선(u 0~1에 고르게 놓인 값)
+        return lambda u: np.interp(u, np.linspace(0, 1, len(v)), v)
+    return [
+        Stroke(q([(4, 15), (17, 11), (31, 10), (44, 12)]), 11 * k, load=1.35, dry=0.22, seed=401, press=pr(1.0, 0.8, 0.72, 0.75, 0.95), wet=0.3),       # ㅈ 가로(끝을 눌러 멈춤)
+        Stroke(q([(33, 15), (29, 25), (20, 37), (6, 49)]), 12 * k, load=1.35, dry=0.35, seed=402, press=pr(1.0, 0.95, 0.8, 0.5, 0.12), wet=0.3),       # ㅈ 삐침(빠지며 갈라짐)
+        Stroke(q([(24, 30), (33, 36), (42, 42), (51, 48)]), 13 * k, load=1.3, dry=0.28, seed=403, press=pr(0.4, 0.7, 0.95, 1.05, 0.85), wet=0.3),      # ㅈ 파임(끝을 눌러 뻗음)
+        Stroke(q([(53, 31), (61, 31.5), (70, 32)]), 10 * k, load=1.3, dry=0.2, seed=404, press=pr(0.95, 0.8, 0.85), wet=0.3),                          # ㅓ 짧은 가로
+        Stroke(q([(75, 1), (74.5, 20), (74, 41), (73, 62)]), 14 * k, load=1.4, dry=0.42, seed=405, press=pr(1.05, 0.92, 0.88, 0.75, 0.3), wet=0.3),    # ㅓ 세로(비백)
+        Stroke(q([(18, 69), (19, 84), (20, 98)]), 11 * k, load=1.3, dry=0.22, seed=406, press=pr(1.0, 0.85, 0.85, 0.8), wet=0.3),                      # ㅁ 왼 세로
+        Stroke(q([(19, 69), (47, 67), (77, 67)]), 11 * k, load=1.3, dry=0.25, seed=407, press=pr(0.95, 0.75, 0.75, 1.0), wet=0.3),                     # ㅁ 위
+        Stroke(q([(78, 66), (79, 72), (78, 86), (77, 99)]), 11.5 * k, load=1.3, dry=0.3, seed=409, press=pr(1.05, 0.9, 0.85, 0.85), wet=0.3),          # ㅁ 오른(꺾어 내림)
+        Stroke(q([(21, 97), (48, 96), (77, 96.5)]), 10.5 * k, load=1.3, dry=0.3, seed=408, press=pr(0.9, 0.8, 0.75), wet=0.3),                         # ㅁ 아래
+    ]
+
+def title_ink_fn(amount):
+    def f(view, fib):
+        key = ('title_d', view.W)
+        if key not in _after: _after[key] = render_strokes(view, title_strokes(), fib)
+        d = _after[key]
+        if amount >= 0.999: return d
+        bl = cv2.GaussianBlur(d, (0, 0), max(1.0, 1.4 * view.ppm))        # 스며드는 동안: 흐린 먹 → 선명한 먹
+        return (bl * (1 - amount) + d * amount) * ease(min(1.0, amount * 1.6))
+    f.amount = amount
+    return f
+
+CREDIT = ['Created & Coded by L.S.M.', '허상공방 虛像工房 Project']
+def credit_layer():
+    if 'credit' in _after: return _after['credit']
+    from PIL import Image, ImageDraw, ImageFont
+    fnt = ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSerifCJK-Medium.ttc', int(15 * S), index=1)   # Noto Serif CJK KR
+    sz = int(46 * S); x_seal, y_seal = int(W * 0.06), int(H * 0.845 - sz / 2)
+    im = Image.new('L', (W, H), 0); d = ImageDraw.Draw(im)
+    tx = x_seal + sz + int(15 * S)
+    d.text((tx, y_seal + int(1 * S)), CREDIT[0], font=fnt, fill=255)
+    d.text((tx, y_seal + sz - int(21 * S)), CREDIT[1], font=fnt, fill=255)
+    tm = np.asarray(im, F32) / 255
+    tm = cv2.GaussianBlur(tm, (0, 0), 0.35 * S)
+    seal = cv2.resize(A2.A.seal_rgba(), (sz, sz), interpolation=cv2.INTER_AREA)
+    _after['credit'] = (tm, seal, x_seal, y_seal, sz)
+    return _after['credit']
+
 def title(lt):
-    """눈물로 찍힌 눈에서 천천히 물러나 그림 전체(밤사이의 흔적 + 눈)를 보여 주고, 제목과 허상공방 낙관."""
-    rgb, fib, dens, pv, X, Y = after_plate('trace', TP)
-    if 'final_img' not in _after:
-        Cc = np.array(dragon.E) + np.array((1.0, 0.0))
-        R = np.hypot(X - Cc[0], Y - Cc[1]).astype(F32)
-        ring = np.exp(-((R - 4.4) / 0.35) ** 2) * 1.3 + np.clip(R / 4.4, 0, 1) ** 7 * (R < 4.4) * 0.5
-        _after['final_img'] = (rgb * np.exp(-(dens + ring)[..., None] * INK_ABS)).astype(F32)
-    pap = _after['final_img']
-    u = ease(ramp(lt, 0.4, 4.0))
-    cx, cy, wmm = dragon.E[0] + 2 + (330 - dragon.E[0] - 2) * u, dragon.E[1] + 1 + (212 - dragon.E[1] - 1) * u, 150 * (1 - u) + 690 * u
-    sc = TP.ppm * wmm / W
-    M = np.array([[sc, 0, (cx - TP.cx) * TP.ppm + TP.W / 2 - sc * W / 2], [0, sc, (cy - TP.cy) * TP.ppm + TP.H / 2 - sc * H / 2]], F32)
-    img = cv2.warpAffine(pap, M, (W, H), flags=cv2.WARP_INVERSE_MAP | cv2.INTER_AREA, borderValue=(0.12, 0.08, 0.055))
+    """눈물로 찍힌 눈에서 천천히 물러나 그림 전체를 보이고, '점'이 종이에 스며든 뒤 낙관과 크레딧."""
+    u = ease(ramp(lt, 0.5, 4.6))
+    wmm = logzoom(u, EYE_W, PAINT_W)
+    cx, cy = zoom_center(wmm)
+    a_t = ease(ramp(lt, 4.7, 6.2))
+    img = paper_cam(cx, cy, wmm, lt_tear=16.0 - TEAR_OFS + lt, title_ink=title_ink_fn(a_t) if a_t > 0 else None)
+    img = A2.slit(img, View(cx, cy, wmm, W, H))
     img = morning_light(img)
-    base = _after.get('last_tear')
-    if base is not None and lt < 1.0:                                       # 눈물 장면에서 이어지게 겹쳐 넘김
-        k = ease(ramp(lt, 0.0, 1.0)); img = base * (1 - k) + img * k
-    tm = A2.A.text_mask('점', int(120 * S))
-    a = ease(ramp(lt, 4.2, 5.0))
-    img = img * np.exp(-(tm * 2.4 * a)[..., None] * INK_ABS)
-    if lt > 5.6:
-        rgba = A2.A.seal_rgba(); sz = int(62 * S)
-        sm = cv2.resize(rgba, (sz, sz), interpolation=cv2.INTER_AREA)
-        al = sm[..., 3:4] * ease(ramp(lt, 5.6, 5.9)); y0, x0 = int(H * 0.10 + 150 * S), int(W * 0.66 + 10 * S)
-        sub = img[y0:y0 + sz, x0:x0 + sz]; img[y0:y0 + sz, x0:x0 + sz] = sub * (1 - al) + sub * sm[..., :3] * 1.15 * al
-    return img * (1 - ease(ramp(lt, 8.6, 10.0)))
+    base = _after.get('last_gaze')
+    if base is not None and lt < 0.5:
+        k = ease(ramp(lt, 0.0, 0.5)); img = base * (1 - k) + img * k
+    if lt > 6.4:
+        tm, seal, xs, ys, sz = credit_layer()
+        a1 = ease(ramp(lt, 6.4, 6.6))                                       # 낙관: 찍힌다
+        al = seal[..., 3:4] * a1 * np.clip((seal[..., 0:1] - seal[..., 1:2]) * 4, 0, 1)   # 인주가 묻은 곳만(흰 바탕 테두리 없이)
+        sub = img[ys:ys + sz, xs:xs + sz]; img[ys:ys + sz, xs:xs + sz] = sub * (1 - al + al * seal[..., :3])       # 인주: 종이에 곱해짐(흰 바탕은 그대로)
+        a2 = ease(ramp(lt, 6.9, 7.9))                                       # 크레딧: 먹이 스며들 듯
+        img = img * np.exp(-(tm * 1.9 * a2)[..., None] * INK_ABS)
+    return img * (1 - ease(ramp(lt, 8.8, 10.0)))
 
 def storm(lt): return storm_frame(lt, lt, 22.0)
 def ascend(lt): return storm_frame(20.0 + lt * 0.85, lt, 10.0, ascend=True) if False else storm_frame(22.0 + lt * 0.75, lt, 10.0, ascend=True)
@@ -679,8 +976,7 @@ def frame(k):
     elif kind == 'exit': f8 = fin(exitw(lt), t)
     elif kind == 'storm': f8 = fin(storm(lt), t, vig=0.26)
     elif kind == 'ascend': f8 = fin(ascend(lt), t, vig=0.24)
-    elif kind == 'trace': f8 = fin(trace(lt), t)
-    elif kind == 'tear': f8 = fin(tear(lt), t)
+    elif kind == 'gaze': f8 = fin(gaze(lt), t)
     elif kind == 'title': f8 = fin(title(lt), t, vig=0.15)
     return A2.lab(f8, name, t) if S == 1 else f8                            # 최종(배율 2)에는 컷 이름표 없음
 

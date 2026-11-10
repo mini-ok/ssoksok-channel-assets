@@ -33,10 +33,23 @@ def after_density(view, fib, X, Y, D, drips, wets_mm, u=0.75):
     body = [s for s in st if not s.name.startswith('cloud')]
     cloud = render_strokes(view, [s for s in st if s.name.startswith('cloud')], fib)
     drg = render_strokes(view, body, fib) * dragon.eye_blank(X, Y)
-    Lp = max(1, int(30 * u * view.ppm))
-    k = np.zeros((2 * Lp + 1, 1), F32); k[Lp:, 0] = np.exp(-np.arange(Lp + 1) / max(1, Lp * 0.45)); k /= k.sum()
-    run = cv2.filter2D(drg.astype(F32), -1, k[::-1], borderType=cv2.BORDER_CONSTANT)
-    runs = drg * (1 - 0.55 * u) + run * 0.9 * u
+    # 빗물에 흘러내린 먹: 한 덩어리 띠가 아니라 가늘고 길이가 제각각인 줄기(종이 x(mm)에 묶인 잡음 → 어느 화면에서도 같은 줄기)
+    def run_of(Lmm):
+        Lp = max(1, int(Lmm * u * view.ppm))
+        k = np.zeros((2 * Lp + 1, 1), F32); k[Lp:, 0] = np.exp(-np.arange(Lp + 1) / max(1, Lp * 0.45)); k /= k.sum()
+        return cv2.filter2D(drg.astype(F32), -1, k[::-1], borderType=cv2.BORDER_CONSTANT)
+    xs = X[0] if X.ndim == 2 else X
+    rr = np.random.default_rng(7)
+    def colnoise(nw, lo, hi):
+        v = np.zeros_like(xs, dtype=np.float64)
+        for _ in range(nw):
+            lam = rr.uniform(lo, hi); v += np.sin(2 * np.pi * xs / lam + rr.uniform(0, 6.28)) / nw ** 0.5
+        return v
+    streak = 0.6 + 0.4 * np.clip(0.5 + 0.5 * colnoise(7, 2.5, 14.0), 0, 1)   # 줄기마다 진하기가 조금씩 다르고
+    longer = np.clip(0.5 + 0.7 * colnoise(6, 4.0, 24.0), 0, 1)               # 길게 흐른 곳/짧게 멎은 곳이 섞인다(끝이 들쭉날쭉)
+    run = run_of(12) * (1 - longer) + run_of(34) * longer
+    run = run * streak[None, :].astype(F32)
+    runs = drg * (1 - 0.55 * u) + run * 0.85 * u
     dens_g = D.density(88.0); pup = D.pupil
     trail = inkmm.sample(dens_g - (pup if pup is not None else 0), view, X, Y)
     pv = inkmm.sample(pup, view, X, Y) if pup is not None else 0 * X
