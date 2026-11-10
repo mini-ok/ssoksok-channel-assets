@@ -4,9 +4,9 @@
 모델링·텍스처·음원 소스 없이 형상·채색·소리를 모두 코드로 생성한다(Python cairo/numpy, three.js).
 영상(mp4)은 용량 때문에 저장소에 넣지 않는다. 소스·음악(mp3)·시트 이미지·문서만 보관한다.
 
-> 다른 Claude 계정/세션에서 이어 작업할 때는 **이 파일 → 각 작품 README → `_shared/`** 순서로 읽으면 된다.
+> 다른 Claude 계정/세션에서 이어 작업할 때는 **이 파일 → `CLAUDE.md`(작업 규칙) → 각 작품 README → `_kit/README.md`(스킬 등록·환경) → `_shared/`** 순서로 읽으면 된다.
 
-## 작품 목록과 상태 (2026-11-09 기준)
+## 작품 목록과 상태 (2026-11-10 기준)
 
 | 폴더 | 작품 | 길이 | 엔진 | 상태 |
 |---|---|---|---|---|
@@ -15,6 +15,8 @@
 | `holssi/` | 〈홀씨〉 HOLSSI | 97초 | Python cairo, 24fps | **v2 완료** — 엔딩 교체, C7 마을 부감 질감 수정 |
 | `scarecrow/` | 〈허수아비의 겨울〉 | 137초 | Python cairo + painter.py, 24fps | **v2 완료** — 컷 수정(아래) |
 | `sumbi/` | 〈숨비〉 | 172초 | three.js 3D + Python 셀 마감 | 1차 완성 후 종료. 회고 `sumbi/postmortem.md` |
+| `jeom/` | 〈점〉 JEOM | 3분 11초 | Python numpy·cv2(수묵 엔진) + 합성 거문고·북 | **최종 완성(2026-11-10, 1080p)** — 떨리는 손 이야기 v3. 다시 만들기: `jeom/README.md` '다시 만들기(최종본)'. 기법 정리: `_kit/skills/ink-wash-animation`. 영상(mp4)은 저장소 제외 |
+| `ideas/` | 다음 작품 기획 | — | — | 후보 검토(`2026-11-09_review_and_pitches.md`), 〈점〉·〈파루〉 스토리 확장(`2026-11-09_jeom_paru_story.md`), 무음 기술 시험(`tests/`). 〈파루〉는 다음 후보 |
 
 ### 2026-11-09 v2 변경 공통
 - 엔딩의 `GoXoN × Claude · every frame is code` 문구 **전부 삭제**.
@@ -49,7 +51,7 @@ pip install pycairo numpy scipy opencv-python pillow --break-system-packages
 ## 작업 규칙 (사용자 지시)
 - 시간이 드는 전체 렌더 전에 **정지 샘플 → 짧은 무음 움직임 시험 → 컨펌 → 전체 렌더**.
 - 샘플은 실제 크기로 확인하고 보낸다. 컷 경계 앞뒤(위치·크기 연결)를 반드시 확인 — v2에서 6→6-1 매 위치 불연속을 사용자가 지적함.
-- 노하우 누적: Claude 스킬 `cel-anime-direction`(셀 질감 수치·체크리스트), `scarecrow/knowhow.md`, `sumbi/postmortem.md`.
+- 노하우 누적: Claude 스킬 `cel-anime-direction`(셀), `ink-wash-animation`(수묵) — 사본 `_kit/skills/`, 다른 계정에서는 `_kit/README.md`대로 등록. 그 밖에 `scarecrow/knowhow.md`, `sumbi/postmortem.md`, `jeom/preproduction.md`.
 
 ## 공용 자산 `_shared/`
 - `credit_overlay.py` — `apply(img, t_since_start, side='right'|'left', bottom=px)`. 그림 영역(float 0..1) 위에 합성.

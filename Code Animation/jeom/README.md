@@ -1,0 +1,96 @@
+# 〈점〉 JEOM — 최종 완성 (2026-11-10, 1920×1080, 3분 11초)
+
+**최종본 v3 〈떨리는 손〉:** 손이 떨려 용의 눈을 찍지 못하는 늙은 화가. 실수로 떨어진 먹 한 점이 잘려 나갈 뻔하다가, 비바람 속에 화가의 실패한 방울들을 모아 용의 눈이 되고, 깨어난 용은 젖어 가는 종이를 벗어나 잠든 화가를 돌아본 뒤 창을 넘어 폭풍을 이기고 승천한다 — 용이 사라진 자리에서 해가 뜬다. 아침의 종이에는 밤사이의 흔적이 걸작으로 남고, 화가의 눈물이 마지막 점을 찍는다.
+→ 씬 리스트 `scenelist_v3.md`, 렌더 `animatic3.py`, 소리 `anim_audio3.py`. 기법 정리는 스킬 `../_kit/skills/ink-wash-animation/SKILL.md`, 작업 규칙은 `../CLAUDE.md`.
+
+### 다시 만들기(최종본)
+영상(mp4)·캐시는 저장소에 없다. 새 환경에서 처음부터(2코어·8GB 기준 약 2시간 + 인코딩 25분):
+```bash
+pip install numpy scipy opencv-python-headless pillow --break-system-packages
+sudo apt-get install -y ffmpeg fonts-noto-cjk          # 크레딧 글꼴 Noto Serif CJK KR
+cd "Code Animation/jeom"; export JEOM_SCALE=2
+python3 -c "import sys; sys.path[:0]=['.','engine','tests']; import animatic3 as A; A.trail_pv()"   # 공용 캐시(종이·점의 길) — 단독으로 먼저
+JEOM_RES=0.25 python3 tests/test_hand2.py               # C2·C3
+python3 tests/test_knife.py && python3 tests/test_leap.py   # C4, C17 + 아침 종이 기록(after.npz)
+python3 animatic3.py cut C1 C2 C3 C4 C5 C6 J C14 C15 C16 &  # 무거운 렌더는 동시에 두 개까지(세 개는 OOM)
+python3 animatic3.py cut C20 C21; wait                    # 폭풍은 상태가 있어 한 프로세스에서 순서대로
+python3 animatic3.py cut C17 C18 C19 C22 C23 C25          # C25는 C23 마지막 화면에서 이어지므로 같은 프로세스에서
+python3 anim_audio3.py cache/jeom_final.wav 191.5
+ffmpeg -framerate 12 -i cache/anim3_1920/a%05d.png -i cache/jeom_final.wav -vf fps=24 -c:v libx264 -preset slow -crf 17 \
+       -pix_fmt yuv420p -c:a aac -b:a 256k -movflags +faststart jeom_final_1080p.mp4
+```
+- 시험(960×540): `JEOM_SCALE=1`. 정지 프레임: `python3 animatic3.py still <컷> <컷 안 시각...>`(1/12초 배수, 상태 있는 컷도 처음부터 순서대로 그림).
+- 컨펌용 짧은 미리보기(540p + 소리): `JEOM_SCALE=1 python3 tools/preview.py <시작초> <끝초> out.mp4` (소리는 `cache/jeom_final.wav`).
+- 폭풍 시점 바꾸기: `JEOM_STORM=up`(최종) / `flat`(1차 완성판) / `down`(내려다봄 시안).
+
+---
+(아래는 제작 과정 기록)
+
+
+**v2 (2026-11-09, 현재):** 손이 떨려 용의 눈을 찍지 못하는 늙은 화가. 그 떨림에서 떨어져 잘려 나갈 뻔한 먹 한 점이, 화가가 흘린 실패한 방울들을 모아 눈이 되고, 폭우에 지워져 가는 그림을 지키려 용과 함께 종이를 떠난다. 아침의 종이에는 밤사이의 흔적이 그림으로 남고, 화가의 눈물이 마지막 점을 찍는다. → `scenelist_v2.md`, `animatic2.py`
+
+(v1: 먹 한 방울이 구석에서 눈자리까지 가는 약 2분 단편. 아래 v1 표·엔진 설명은 그대로 유효하고, v2는 그 엔진 위에 시험 장면들을 더했다.)
+
+## 상태 (2026-11-09)
+| 단계 | 상태 | 파일 |
+|---|---|---|
+| 제작 전 검토 | 완료 | `preproduction.md` |
+| 브리프 | 완료(확인 대기) | `brief.md` |
+| 씬 리스트 v1 + 종이 지도 | 완료(확인 대기) | `scenelist.md`, `sheets/ms_map.png` |
+| 모델 시트 v1(용·지도·눈·발톱·점 상태) | 확인됨(형태 유지, 접사 부분만 보강) | `sheets/model_sheet_v1.png` |
+| 결정 사항 | 낙관 = 허상공방, 악기 = 거문고(점)·대금(용) | `preproduction.md` 5장, `audio/sketch.py` |
+| 애니마틱 v1(126초, 960×540, 임시음) | **확인 대기** | `animatic.py`, `anim_audio.py`, `sheets/animatic_v1_contact.png` |
+
+## v3 최종 (2026-11-10) — 최종 마무리
+- 1차 완성 뒤 고친 것: 정적 두 곳의 소리 끊김(곡선 페이드), 거문고·북 물리 모형 합성(`audio/instruments.py`),
+  C17 끝까지 움직임, C18~C19 방 안에서 솟아올라 돌아보고 창으로 빠져 위로 사라짐(넘어간 부분만 창 안에 보임),
+  C20~C21 하늘을 올려다보는 원근 폭풍(`engine/rain.py` `RadialRain`) — 꼬리가 렌즈를 치고, 용이 한 점으로 사라진 자리에서 해가 뜸,
+  C22 화가가 서안으로 다가앉음, C23 그림 전체 → 눈으로 한 번에 다가가는 화가의 시선 + 같은 컷의 눈물(C24는 C23에 합침),
+  C25 붓 엔진으로 쓴 제목 '점'(우상단)과 좌하단 낙관 + 크레딧(명조, 타자 효과 없음).
+- 폭풍 시점: `JEOM_STORM=up`(기본, 확정) / `flat`(1차 완성판) / `down`(내려다봄 시안).
+
+## v3 1차 완성 (2026-11-10)
+- 1920×1080, 24fps(그림은 투스 12장), 3분 11초, 소리(거문고 + 북 + 용 소리 합성 + 비·천둥) 포함. 씬 리스트 `scenelist_v3.md`, 렌더 `animatic3.py`, 소리 `anim_audio3.py`.
+- 새 엔진: `engine/rain.py`(붓으로 그린 비), `engine/room.py`(화실 원경·실루엣·벽 그림자·새벽 햇살), `engine/after.py`(폭풍이 지나간 아침 종이 — 어느 화면에서든 같은 상태), `engine/scale.py`(배율).
+- 다시 만들기(2코어, 약 1시간 30분):
+```bash
+export JEOM_SCALE=2
+JEOM_RES=0.25 python3 tests/test_hand2.py      # C2·C3 (약 13분)
+python3 tests/test_knife.py; python3 tests/test_leap.py   # C4, C17 + 아침 종이 기록(after.npz)
+# (최종본 순서는 맨 위 '다시 만들기(최종본)' 참고)
+# 인코딩: anim_audio3.build(wav, 191.5) 후 ffmpeg -framerate 12 -i cache/anim3_1920/a%05d.png -i wav -vf fps=24 -crf 17
+```
+- 캐시는 배율별 폴더(`cache/*_1920`)로 분리된다. 두 프로세스가 같은 캐시를 동시에 처음 만들면 깨진 파일을 읽을 수 있다 — 첫 렌더 전에 한 번 단독으로 import해 캐시를 만들어 둘 것.
+
+## v2 상태
+| 단계 | 상태 | 파일 |
+|---|---|---|
+| 씬 리스트 v2(21컷, 약 157초) | **확인 대기** | `scenelist_v2.md` |
+| 애니마틱 v2(960×540, 임시음) | **확인 대기** | `animatic2.py`, `anim_audio2.py` → `cache/jeom_animatic_v2.mp4` |
+| 떨리는 손(붓·그림자만) | 확인됨 | `tests/test_hand2.py` (v1 `test_hand.py`는 버린 방식) |
+| 칼로 자르다 멈춤 | 시험 | `tests/test_knife.py` (칼집 자취 → `cache/knife_cut.npy`, 번짐 장벽으로도 씀) |
+| 그림 속 용이 그대로 솟아오름 | 확인됨(방향) | `tests/test_leap.py` (등뼈 좌표 리그, 머리가 지나온 길, 구르는 돌아서기, 먹 뿌림) |
+| 창밖 폭풍·비가 멎음 | 시험 | `tests/test_storm.py` |
+| 눈물 → 눈동자 테 | 시험 | `tests/test_tear.py` |
+| 화실 원경(실루엣·벽 그림자·바구니) | 시험 | `engine/room.py` |
+| 비행(새 머리+새 몸) | 버림 | `tests/test_flight.py` — 붓 머리와 사실적 몸이 안 어울림, 원안 그림이 베이스여야 함 |
+
+애니마틱 v2 다시 만들기: 시험들을 먼저 돌린 뒤(`JEOM_RES=0.25 python3 tests/test_hand2.py`, `test_knife.py`, `test_leap.py`, `test_storm.py`, `test_tear.py`)
+`python3 animatic2.py cut J & python3 animatic2.py cut C1 C2 C3 C4 C5 C13 C14 C15 C16 C17 C18 C19 C20 C21` (2코어 약 8분) → `python3 animatic2.py encode`.
+
+## 엔진 (`engine/`)
+- `paper.py`: 화선지. mm 좌표, 20mm 칸 시드로 섬유를 만들어 배율과 무관하게 같은 자리 = 같은 섬유. 칸 타일은 `cache/paper/`에 저장(첫 전체 화면 약 45초, 이후 몇 초).
+- `brush.py`: 붓 획 v2(`Stroke`)와 발묵 덩어리(`Wash`). 붓털 64가닥의 먹 양 표를 획 좌표로 펴서 찍음. 젖으면 한 덩어리, 마르면 바깥 털부터 끊겨 비백. 가장자리는 섬유로 거칠게, 젖은 획은 섬유를 따라 번짐.
+- `dragon.py`: 눈 없는 용. 모든 획이 여기서만 나온다. 몸통은 척추 곡선 매개변수로 정의(C11에서 몸 선을 따라 밀기 위함). 눈자리 `E = (300, 112)`, `eye_blank()`가 눈 안쪽을 비운다.
+- `look.py`: 먹 흡수 합성, 조명(등잔·밤·번개·은빛·아침), 필름 마감, 레터박스.
+- `inkmm.py`: 점의 번짐 사슬(mm 격자, t의 순수 함수). 물(둥근 방울·길쭉한 방울·바람 물줄기), 단계별 블룸, 이어지는 가는 물줄기, 튄 먹 합류, 건조 테두리, 규칙 깨기(E로 세 번 모임), 눈동자(`pupil`).
+- `timeline.py`: 컷 시각표, 물·단계·튄 먹·번개·자·낙관·제목의 위치(mm)와 시각. scenelist.md와 같은 숫자.
+
+## 다시 만들기
+```bash
+pip install pycairo numpy scipy opencv-python-headless pillow scikit-image --break-system-packages
+python3 model_sheet.py        # sheets/ 에 모델 시트
+python3 animatic.py frames 0 63 & python3 animatic.py frames 63 126   # 2코어 약 5분
+python3 animatic.py encode    # cache/jeom_animatic_v1.mp4 (임시음 포함)
+```
+애니마틱 자리표시: C1 화실, C2 붓, C11b 창밖은 회색 상자 수준. 본 제작에서 다시 그린다.
