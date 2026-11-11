@@ -1,0 +1,256 @@
+{
+  "character": "muscle",
+  "voice": "Charon",
+  "chef_ko": "근육 쉐프",
+  "chef_en": "Chef Muscle",
+  "dish_ko": "옥수수 검은콩 팬패티",
+  "dish_en": "Corn Black Bean Patties",
+  "slug": "CornBlackBeanPatties",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "삶은 검은콩",
+      "Cooked black beans",
+      "240mL",
+      "1 US cup (about 240 mL)",
+      "main"
+    ],
+    [
+      "익힌 옥수수",
+      "Cooked corn kernels",
+      "30g",
+      "30 g",
+      "add"
+    ],
+    [
+      "귀리가루",
+      "Oat flour",
+      "20g",
+      "20 g",
+      "powder"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "콩 으깨기",
+    "섞고 납작하게 빚기",
+    "뒤집어 굽기",
+    "패티 식히기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Mash the Beans",
+    "Mix and Shape",
+    "Cook and Flip",
+    "Rest the Patties",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "근육 쉐프입니다. 검은콩과 옥수수로 바삭한 패티를 만들어요.",
+    "삶은 검은콩, 익힌 옥수수, 귀리가루, 올리브유를 준비해요.",
+    "콩의 물기를 빼고 포크로 으깨요. 몇 알은 식감을 위해 남겨요.",
+    "옥수수와 귀리가루를 섞어요. 두 덩이로 나눠 손바닥으로 납작하게 눌러요.",
+    "팬에 기름을 두르고 중불에서 구워요. 밑면이 단단해지면 뒤집어요.",
+    "양쪽이 노릇해지면 꺼내요. 잠깐 식히면 모양이 잘 잡혀요.",
+    "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+    "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요.",
+    "패티 두 장이면 뒤집기도 두 번. 오늘 운동 끝!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Muscle here. Let us make crisp black bean and corn patties.",
+    "Get cooked black beans, cooked corn, oat flour, and olive oil.",
+    "Drain the beans and mash them with a fork. Leave a few whole for texture.",
+    "Mix in the corn and oat flour. Divide in two and flatten with your palms.",
+    "Heat oil in a skillet over medium heat. Flip the patties when the bottoms are firm.",
+    "Take them out once both sides are golden. Let them rest briefly to firm up.",
+    "Black beans supply magnesium. Your body needs magnesium for normal muscle contraction and nerve signaling.",
+    "The estimate is based on the cooked black beans in both patties. It does not count the corn or the oats.",
+    "Two patties and two flips. That is my workout for today!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "삶은 검은콩 240mL",
+    "익힌 옥수수 30g",
+    "귀리가루 20g",
+    "올리브유 5g",
+    "물기 뺀 콩을 으깨 옥수수·귀리가루와 섞는다.",
+    "두 덩이로 나눠 납작하게 빚는다.",
+    "기름 두른 팬에서 중불로 한 면당 3~4분 굽는다.",
+    "양면이 노릇해지면 꺼내 잠깐 식힌다."
+  ],
+  "recipe_en": [
+    "Cooked black beans 1 US cup (about 240 mL)",
+    "Cooked corn kernels 30 g",
+    "Oat flour 20 g",
+    "Olive oil 5 g",
+    "Mash drained beans. Mix in corn and oat flour.",
+    "Divide into two portions and shape into flat patties.",
+    "Cook in an oiled skillet over medium heat, 3–4 min per side.",
+    "Once golden on both sides, remove and rest briefly."
+  ],
+  "health_focus": "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+  "main_ingredients": [
+    "검은콩"
+  ],
+  "cooking_style": "콩을 으깨 옥수수와 귀리가루를 섞고 납작하게 빚어 양면을 바삭하게 굽는다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "마그네슘",
+    "recipe_amount": "120 mg",
+    "per_serving_amount": "120 mg",
+    "servings": 1,
+    "daily_reference_amount": "420 mg",
+    "percent_of_daily_reference": 28.57142857142857,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 US cup cooked black beans (about 240 mL). 주재료만 계산.",
+    "calculation": "60 mg per ½ US cup × 2 = 120 mg; 120/420 × 100 ≈ 29%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-11",
+    "uncertainty_note": "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요. 완성품 실측값 아님.",
+    "display": "삶은 검은콩 240mL / 마그네슘 약 120 mg / 주재료 1인분 기준 / 삶은 콩만 계산 / 출처: 미국 NIH ODS / 마그네슘 약 120 mg / 미국 표시 DV 약 29% / 표시 기준 420 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "삶은 검은콩 240mL",
+      "마그네슘 약 120 mg",
+      "주재료 1인분 기준",
+      "삶은 콩만 계산",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "마그네슘 약 120 mg",
+      "미국 표시 DV 약 29%",
+      "표시 기준 420 mg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 US cup cooked black beans (about 240 mL)",
+      "About 120 mg Magnesium",
+      "Main ingredient, one serving",
+      "Cooked beans only",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 120 mg Magnesium",
+      "About 29% of the U.S. Daily Value",
+      "Labeling DV: 420 mg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 23,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "근육 쉐프입니다. 검은콩과 옥수수로 바삭한 패티를 만들어요.",
+      "text_en": "Chef Muscle here. Let us make crisp black bean and corn patties."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "삶은 검은콩, 익힌 옥수수, 귀리가루, 올리브유를 준비해요.",
+      "text_en": "Get cooked black beans, cooked corn, oat flour, and olive oil."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "콩 으깨기",
+      "title_en": "Mash the Beans",
+      "text_ko": "콩의 물기를 빼고 포크로 으깨요. 몇 알은 식감을 위해 남겨요.",
+      "text_en": "Drain the beans and mash them with a fork. Leave a few whole for texture."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "섞고 납작하게 빚기",
+      "title_en": "Mix and Shape",
+      "text_ko": "옥수수와 귀리가루를 섞어요. 두 덩이로 나눠 손바닥으로 납작하게 눌러요.",
+      "text_en": "Mix in the corn and oat flour. Divide in two and flatten with your palms."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "뒤집어 굽기",
+      "title_en": "Cook and Flip",
+      "text_ko": "팬에 기름을 두르고 중불에서 구워요. 밑면이 단단해지면 뒤집어요.",
+      "text_en": "Heat oil in a skillet over medium heat. Flip the patties when the bottoms are firm."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "패티 식히기",
+      "title_en": "Rest the Patties",
+      "text_ko": "양쪽이 노릇해지면 꺼내요. 잠깐 식히면 모양이 잘 잡혀요.",
+      "text_en": "Take them out once both sides are golden. Let them rest briefly to firm up."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+      "text_en": "Black beans supply magnesium. Your body needs magnesium for normal muscle contraction and nerve signaling."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요.",
+      "text_en": "The estimate is based on the cooked black beans in both patties. It does not count the corn or the oats."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "패티 두 장이면 뒤집기도 두 번. 오늘 운동 끝!",
+      "text_en": "Two patties and two flips. That is my workout for today!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "근육 쉐프의 옥수수 검은콩 팬패티 #Shorts",
+  "upload_title_en": "Chef Muscle's Corn Black Bean Patties #Shorts",
+  "health_description_en": "Black beans supply magnesium. Your body needs magnesium for normal muscle contraction and nerve signaling. The estimate is based on the cooked black beans in both patties. It does not count the corn or the oats."
+}

@@ -1,0 +1,91 @@
+{
+  "episode": 23,
+  "dish": "옥수수 검은콩 팬패티",
+  "organ": "근육",
+  "chef": "근육 쉐프",
+  "main_ingredients": [
+    "검은콩"
+  ],
+  "cooking_style": "콩을 으깨 옥수수와 귀리가루를 섞고 납작하게 빚어 양면을 바삭하게 굽는다.",
+  "core_cooking_step": "콩을 으깨 옥수수와 귀리가루를 섞고 납작하게 빚어 양면을 바삭하게 굽는다.",
+  "main_ingredient_health_rationale": "검은콩 → 1인분 마그네슘 약 120 mg → 검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "삶은 검은콩",
+      "익힌 옥수수",
+      "귀리가루",
+      "올리브유"
+    ],
+    "substitutions": [
+      "삶은 콩 대신 무염 통조림 검은콩도 사용 가능. 물기를 빼고 제품별 수치는 재확인한다."
+    ],
+    "basic_tools": [
+      "볼",
+      "포크",
+      "팬",
+      "뒤집개"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 근육, 그다음 뼈",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+  "reason_for_chef": "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "title": "NIH ODS Magnesium",
+      "checked_at": "2026-11-11",
+      "supported_claim": "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+      "conditions_and_limits": "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "검은콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하고 신경 신호가 전달되는 데 필요해요.",
+    "context": "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "마그네슘",
+    "recipe_amount": "120 mg",
+    "per_serving_amount": "120 mg",
+    "servings": 1,
+    "daily_reference_amount": "420 mg",
+    "percent_of_daily_reference": 28.57142857142857,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 US cup cooked black beans (about 240 mL). 주재료만 계산.",
+    "calculation": "60 mg per ½ US cup × 2 = 120 mg; 120/420 × 100 ≈ 29%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-11",
+    "uncertainty_note": "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요. 완성품 실측값 아님.",
+    "display": "삶은 검은콩 240mL / 마그네슘 약 120 mg / 주재료 1인분 기준 / 삶은 콩만 계산 / 출처: 미국 NIH ODS / 마그네슘 약 120 mg / 미국 표시 DV 약 29% / 표시 기준 420 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 34,
+  "menu_overlap_review": "검은콩 첫 사용. 패티와 유사한 5편 전과 사이에 17편이 지났다."
+}

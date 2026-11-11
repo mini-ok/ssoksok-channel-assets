@@ -1,0 +1,92 @@
+{
+  "episode": 24,
+  "dish": "레몬 우유소스 양송이",
+  "organ": "뼈",
+  "chef": "뼈 쉐프",
+  "main_ingredients": [
+    "자외선 처리 양송이"
+  ],
+  "cooking_style": "양송이 단면을 노릇하게 굽고 팬의 갈색 풍미를 우유에 풀어 걸쭉한 레몬 소스를 만든다.",
+  "core_cooking_step": "양송이 단면을 노릇하게 굽고 팬의 갈색 풍미를 우유에 풀어 걸쭉한 레몬 소스를 만든다.",
+  "main_ingredient_health_rationale": "자외선 처리 양송이 → 1인분 비타민 D 약 18.4 mcg → 자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "자외선 처리 양송이",
+      "우유",
+      "밀가루",
+      "올리브유",
+      "레몬즙"
+    ],
+    "substitutions": [
+      "일반 양송이로 요리할 수 있지만 같은 비타민 D 수치를 적용하지 않는다. 자외선 처리 제품의 포장을 확인한다."
+    ],
+    "basic_tools": [
+      "팬",
+      "칼",
+      "볼",
+      "거품기"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 근육, 그다음 뼈",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+  "reason_for_chef": "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/?c=METABOLISM",
+      "title": "NIH ODS Vitamin D",
+      "checked_at": "2026-11-11",
+      "supported_claim": "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+      "conditions_and_limits": "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+    "context": "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 D",
+    "recipe_amount": "18.4 mcg",
+    "per_serving_amount": "18.4 mcg",
+    "servings": 1,
+    "daily_reference_amount": "20 mcg",
+    "percent_of_daily_reference": 92,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 US cup sliced raw UV-treated mushrooms (about 240 mL). 주재료만 계산.",
+    "calculation": "9.2 mcg per ½ US cup × 2 = 18.4 mcg; 18.4/20 × 100 ≈ 92%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/?c=METABOLISM"
+    ],
+    "checked_at": "2026-11-11",
+    "uncertainty_note": "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요. 완성품 실측값 아님.",
+    "display": "썬 생 자외선 처리 양송이 240mL / 비타민 D 약 18.4 mcg / 주재료 1인분 기준 / 조리 전 기준 · 제품별 차이 / 출처: 미국 NIH ODS / 비타민 D 약 18.4 mcg / 미국 표시 DV 약 92% / 표시 기준 20 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 35,
+  "menu_overlap_review": "양송이 첫 채택. 20편은 짧은 기름 볶음, 이번은 단면을 갈색으로 굽고 우유를 졸여 소스를 만든다."
+}

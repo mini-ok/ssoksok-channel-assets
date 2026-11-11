@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 D",
+  "recipe_amount": "18.4 mcg",
+  "per_serving_amount": "18.4 mcg",
+  "servings": 1,
+  "daily_reference_amount": "20 mcg",
+  "percent_of_daily_reference": 92,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 1 US cup sliced raw UV-treated mushrooms (about 240 mL). 주재료만 계산.",
+  "calculation": "9.2 mcg per ½ US cup × 2 = 18.4 mcg; 18.4/20 × 100 ≈ 92%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/?c=METABOLISM"
+  ],
+  "checked_at": "2026-11-11",
+  "uncertainty_note": "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요. 완성품 실측값 아님.",
+  "display": "썬 생 자외선 처리 양송이 240mL / 비타민 D 약 18.4 mcg / 주재료 1인분 기준 / 조리 전 기준 · 제품별 차이 / 출처: 미국 NIH ODS / 비타민 D 약 18.4 mcg / 미국 표시 DV 약 92% / 표시 기준 20 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

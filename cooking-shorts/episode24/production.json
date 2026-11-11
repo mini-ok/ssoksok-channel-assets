@@ -1,0 +1,267 @@
+{
+  "character": "bone",
+  "voice": "Achird",
+  "chef_ko": "뼈 쉐프",
+  "chef_en": "Chef Bone",
+  "dish_ko": "레몬 우유소스 양송이",
+  "dish_en": "Lemon Cream Pan Mushrooms",
+  "slug": "LemonCreamMushrooms",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "자외선 처리 양송이",
+      "UV-treated white mushrooms",
+      "240mL",
+      "1 US cup (about 240 mL)",
+      "main"
+    ],
+    [
+      "우유",
+      "Milk",
+      "60mL",
+      "60 mL",
+      "add"
+    ],
+    [
+      "밀가루",
+      "Flour",
+      "4g",
+      "4 g",
+      "powder"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "5g",
+      "5 g",
+      "lemon"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "양송이 두툼하게 썰기",
+    "우유에 밀가루 풀기",
+    "노릇하게 굽고 졸이기",
+    "레몬 향 더하기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Slice the Mushrooms",
+    "Whisk Milk and Flour",
+    "Brown and Simmer",
+    "Finish with Lemon",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "뼈 쉐프입니다. 노릇한 양송이에 부드러운 레몬 소스를 입혀요.",
+    "자외선 처리 양송이와 우유, 밀가루, 올리브유, 레몬즙을 준비해요.",
+    "양송이의 물기를 닦고 두툼하게 썰어요. 단면이 넓으면 굽기 쉬워요.",
+    "찬 우유에 밀가루를 풀어요. 덩어리가 없도록 잘 저어요.",
+    "팬에 기름을 두르고 양송이를 노릇하게 구워요. 우유를 부어 약불에서 저어가며 졸여요.",
+    "소스가 걸쭉해지면 불을 꺼요. 레몬즙을 넣고 바로 저어서 담아요.",
+    "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+    "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요.",
+    "양송이가 따뜻한 소스 이불을 덮었어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Bone here. Golden mushrooms are getting a silky lemon sauce.",
+    "Get UV treated white mushrooms, milk, flour, olive oil, and lemon juice.",
+    "Wipe the mushrooms dry and cut thick slices. Wide flat sides are easy to brown.",
+    "Whisk the flour into cold milk until smooth.",
+    "Brown the mushrooms in oil. Add the milk mixture and stir over low heat until thick.",
+    "Turn off the heat when the sauce thickens. Stir in the lemon juice and serve.",
+    "UV treated white mushrooms can supply vitamin D. Vitamin D helps your body absorb calcium.",
+    "The estimate uses raw white mushrooms exposed to ultraviolet light. Amounts vary, so check the vitamin D on the package.",
+    "These mushrooms just tucked themselves into a blanket of sauce.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "자외선 처리 양송이 240mL",
+    "우유 60mL",
+    "밀가루 4g",
+    "올리브유 5g",
+    "레몬즙 5g",
+    "물기 닦은 양송이를 두툼하게 썬다.",
+    "찬 우유에 밀가루를 풀어 둔다.",
+    "팬에 기름을 두르고 양송이 양면을 노릇하게 굽는다.",
+    "우유물을 넣고 약불로 저어 2~3분 졸인다.",
+    "불을 끄고 레몬즙을 섞어 바로 담는다."
+  ],
+  "recipe_en": [
+    "UV-treated white mushrooms 1 US cup (about 240 mL)",
+    "Milk 60 mL",
+    "Flour 4 g",
+    "Olive oil 5 g",
+    "Lemon juice 5 g",
+    "Wipe mushrooms dry and slice them thickly.",
+    "Whisk the flour into the cold milk.",
+    "Brown mushrooms on both sides in an oiled skillet.",
+    "Add the milk mixture and stir over low heat for 2–3 min.",
+    "Turn off heat, stir in lemon juice, and serve."
+  ],
+  "health_focus": "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+  "main_ingredients": [
+    "자외선 처리 양송이"
+  ],
+  "cooking_style": "양송이 단면을 노릇하게 굽고 팬의 갈색 풍미를 우유에 풀어 걸쭉한 레몬 소스를 만든다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/?c=METABOLISM",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 D",
+    "recipe_amount": "18.4 mcg",
+    "per_serving_amount": "18.4 mcg",
+    "servings": 1,
+    "daily_reference_amount": "20 mcg",
+    "percent_of_daily_reference": 92,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 US cup sliced raw UV-treated mushrooms (about 240 mL). 주재료만 계산.",
+    "calculation": "9.2 mcg per ½ US cup × 2 = 18.4 mcg; 18.4/20 × 100 ≈ 92%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/?c=METABOLISM"
+    ],
+    "checked_at": "2026-11-11",
+    "uncertainty_note": "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요. 완성품 실측값 아님.",
+    "display": "썬 생 자외선 처리 양송이 240mL / 비타민 D 약 18.4 mcg / 주재료 1인분 기준 / 조리 전 기준 · 제품별 차이 / 출처: 미국 NIH ODS / 비타민 D 약 18.4 mcg / 미국 표시 DV 약 92% / 표시 기준 20 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "썬 생 자외선 처리 양송이 240mL",
+      "비타민 D 약 18.4 mcg",
+      "주재료 1인분 기준",
+      "조리 전 기준 · 제품별 차이",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 D 약 18.4 mcg",
+      "미국 표시 DV 약 92%",
+      "표시 기준 20 mcg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 US cup sliced raw UV-treated mushrooms (about 240 mL)",
+      "About 18.4 mcg Vitamin D",
+      "Main ingredient, one serving",
+      "Before cooking / varies by product",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 18.4 mcg Vitamin D",
+      "About 92% of the U.S. Daily Value",
+      "Labeling DV: 20 mcg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 24,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "뼈 쉐프입니다. 노릇한 양송이에 부드러운 레몬 소스를 입혀요.",
+      "text_en": "Chef Bone here. Golden mushrooms are getting a silky lemon sauce."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "자외선 처리 양송이와 우유, 밀가루, 올리브유, 레몬즙을 준비해요.",
+      "text_en": "Get UV treated white mushrooms, milk, flour, olive oil, and lemon juice."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "양송이 두툼하게 썰기",
+      "title_en": "Slice the Mushrooms",
+      "text_ko": "양송이의 물기를 닦고 두툼하게 썰어요. 단면이 넓으면 굽기 쉬워요.",
+      "text_en": "Wipe the mushrooms dry and cut thick slices. Wide flat sides are easy to brown."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "우유에 밀가루 풀기",
+      "title_en": "Whisk Milk and Flour",
+      "text_ko": "찬 우유에 밀가루를 풀어요. 덩어리가 없도록 잘 저어요.",
+      "text_en": "Whisk the flour into cold milk until smooth."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "노릇하게 굽고 졸이기",
+      "title_en": "Brown and Simmer",
+      "text_ko": "팬에 기름을 두르고 양송이를 노릇하게 구워요. 우유를 부어 약불에서 저어가며 졸여요.",
+      "text_en": "Brown the mushrooms in oil. Add the milk mixture and stir over low heat until thick."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "레몬 향 더하기",
+      "title_en": "Finish with Lemon",
+      "text_ko": "소스가 걸쭉해지면 불을 꺼요. 레몬즙을 넣고 바로 저어서 담아요.",
+      "text_en": "Turn off the heat when the sauce thickens. Stir in the lemon juice and serve."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "자외선을 쬔 양송이는 비타민 디를 공급할 수 있어요. 비타민 디는 몸이 칼슘을 흡수하는 데 도움을 줘요.",
+      "text_en": "UV treated white mushrooms can supply vitamin D. Vitamin D helps your body absorb calcium."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 조리 전 자외선 처리 양송이의 참고값이에요. 제품마다 다르니 포장의 비타민 디 표시를 확인해요.",
+      "text_en": "The estimate uses raw white mushrooms exposed to ultraviolet light. Amounts vary, so check the vitamin D on the package."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "양송이가 따뜻한 소스 이불을 덮었어요.",
+      "text_en": "These mushrooms just tucked themselves into a blanket of sauce."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "뼈 쉐프의 레몬 우유소스 양송이 #Shorts",
+  "upload_title_en": "Chef Bone's Lemon Cream Pan Mushrooms #Shorts",
+  "health_description_en": "UV treated white mushrooms can supply vitamin D. Vitamin D helps your body absorb calcium. The estimate uses raw white mushrooms exposed to ultraviolet light. Amounts vary, so check the vitamin D on the package."
+}

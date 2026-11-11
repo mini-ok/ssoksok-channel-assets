@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "마그네슘",
+  "recipe_amount": "120 mg",
+  "per_serving_amount": "120 mg",
+  "servings": 1,
+  "daily_reference_amount": "420 mg",
+  "percent_of_daily_reference": 28.57142857142857,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 1 US cup cooked black beans (about 240 mL). 주재료만 계산.",
+  "calculation": "60 mg per ½ US cup × 2 = 120 mg; 120/420 × 100 ≈ 29%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-11",
+  "uncertainty_note": "수치는 패티 두 장에 넣은 삶은 검은콩 분량으로 계산했어요. 옥수수와 귀리의 함량은 포함하지 않았어요. 완성품 실측값 아님.",
+  "display": "삶은 검은콩 240mL / 마그네슘 약 120 mg / 주재료 1인분 기준 / 삶은 콩만 계산 / 출처: 미국 NIH ODS / 마그네슘 약 120 mg / 미국 표시 DV 약 29% / 표시 기준 420 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}
