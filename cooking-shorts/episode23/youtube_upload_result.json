@@ -1,0 +1,29 @@
+{
+  "episode": 23,
+  "title": "Corn Black Bean Patties",
+  "verified_at": "2026-11-11T05:35:19Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "Q4QBuAcNbPQ",
+      "video_url": "https://youtu.be/Q4QBuAcNbPQ",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "CornBlackBeanPatties_EN.mp4",
+      "sha256": "257128050e06835d38cda01e3e0e70b6df6b17e2571baf07421ad6f6aa39d941"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "TldihI6ChLs",
+      "video_url": "https://youtu.be/TldihI6ChLs",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "CornBlackBeanPatties_KO.mp4",
+      "sha256": "b55dd80bd72246b53ba6cb815ebf53e979e4aeaf70262e0af9e21a8a37b462cd"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "episode": 24,
+  "title": "Lemon Cream Pan Mushrooms",
+  "verified_at": "2026-11-11T05:35:19Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "G2VAbFrHBPU",
+      "video_url": "https://youtu.be/G2VAbFrHBPU",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LemonCreamMushrooms_EN.mp4",
+      "sha256": "dc57b03f9ccd612ae098dba7cc0a513e11aaf4698c1cbc082045f7c23d30d814"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "Dr0ra8DT9oI",
+      "video_url": "https://youtu.be/Dr0ra8DT9oI",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LemonCreamMushrooms_KO.mp4",
+      "sha256": "d13f5ba93822806397a440139bf11c06f7fb045bbed5ae6f07434022e8a20d7e"
+    }
+  ]
+}
