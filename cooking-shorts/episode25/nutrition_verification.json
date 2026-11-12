@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "DHA",
+  "recipe_amount": "0.74 g",
+  "per_serving_amount": "0.74 g",
+  "servings": 1,
+  "daily_reference_amount": null,
+  "percent_of_daily_reference": null,
+  "reference_population": "미국 DHA 단독 일일 기준치 미설정",
+  "basis": "NIH ODS Table 2: 3 oz drained canned sardines (about 85 g). 주재료만 계산.",
+  "calculation": "0.74 g per 3 oz × 3 oz / 3 oz = 0.74 g",
+  "source_urls": [
+    "https://ods.od.nih.gov/FACTSHEETS/OMEGA3FATTYACIDS-HEALTHPROFESSIONAL/"
+  ],
+  "checked_at": "2026-11-12",
+  "uncertainty_note": "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요. 완성품 실측값 아님.",
+  "display": "소스를 뺀 통조림 정어리 약 85g / DHA 약 0.74 g / 주재료 1인분 기준 / 토마토소스 제외 / 출처: 미국 NIH ODS / DHA 약 0.74 g / 미국 DHA 단독 기준치 미설정 / 제품별 함량 차이 / 뇌세포막의 구성 성분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

@@ -1,0 +1,91 @@
+{
+  "episode": 26,
+  "dish": "코코아 해바라기씨 한입볼",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "건식 볶은 해바라기씨"
+  ],
+  "cooking_style": "해바라기씨 일부를 곱게 갈고 대추야자 페이스트와 반죽한 뒤, 남은 씨로 바삭한 겉면을 입혀 냉장한다.",
+  "core_cooking_step": "해바라기씨 일부를 곱게 갈고 대추야자 페이스트와 반죽한 뒤, 남은 씨로 바삭한 겉면을 입혀 냉장한다.",
+  "main_ingredient_health_rationale": "건식 볶은 해바라기씨 → 1인분 비타민 E 약 7.4 mg → 해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "무염 건식 볶은 해바라기씨",
+      "씨 뺀 대추야자",
+      "무가당 코코아",
+      "물"
+    ],
+    "substitutions": [
+      "씨를 볶은 상태로 구입. 부드러운 대추야자를 사용한다."
+    ],
+    "basic_tools": [
+      "포크",
+      "분쇄기",
+      "볼",
+      "냉장고"
+    ]
+  },
+  "organ_rotation_note": "뼈 다음 뇌와 면역",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+  "reason_for_chef": "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/?uid=7a56ba2337aabs16",
+      "title": "NIH ODS Vitamin E",
+      "checked_at": "2026-11-12",
+      "supported_claim": "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+      "conditions_and_limits": "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+    "context": "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 E",
+    "recipe_amount": "7.4 mg",
+    "per_serving_amount": "7.4 mg",
+    "servings": 1,
+    "daily_reference_amount": "15 mg",
+    "percent_of_daily_reference": 49.333333333333336,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 oz dry-roasted sunflower kernels (about 28 g). 주재료만 계산.",
+    "calculation": "7.4 mg × 1 oz / 1 oz = 7.4 mg; 7.4/15 × 100 ≈ 49%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/?uid=7a56ba2337aabs16"
+    ],
+    "checked_at": "2026-11-12",
+    "uncertainty_note": "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요. 완성품 실측값 아님.",
+    "display": "건식 볶은 해바라기씨 약 28g / 비타민 E 약 7.4 mg / 주재료 1인분 기준 / 세 알 전체 분량 / 출처: 미국 NIH ODS / 비타민 E 약 7.4 mg / 미국 표시 DV 약 49% / 표시 기준 15 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 37,
+  "menu_overlap_review": "해바라기씨 첫 사용. 11편 성형 주먹밥 후 14편이 지났으며 이번에는 대추야자 반죽의 코코아 디저트."
+}

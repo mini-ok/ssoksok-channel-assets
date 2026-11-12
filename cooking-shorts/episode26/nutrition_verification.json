@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 E",
+  "recipe_amount": "7.4 mg",
+  "per_serving_amount": "7.4 mg",
+  "servings": 1,
+  "daily_reference_amount": "15 mg",
+  "percent_of_daily_reference": 49.333333333333336,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 1 oz dry-roasted sunflower kernels (about 28 g). 주재료만 계산.",
+  "calculation": "7.4 mg × 1 oz / 1 oz = 7.4 mg; 7.4/15 × 100 ≈ 49%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/?uid=7a56ba2337aabs16"
+  ],
+  "checked_at": "2026-11-12",
+  "uncertainty_note": "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요. 완성품 실측값 아님.",
+  "display": "건식 볶은 해바라기씨 약 28g / 비타민 E 약 7.4 mg / 주재료 1인분 기준 / 세 알 전체 분량 / 출처: 미국 NIH ODS / 비타민 E 약 7.4 mg / 미국 표시 DV 약 49% / 표시 기준 15 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

@@ -1,0 +1,256 @@
+{
+  "character": "immune",
+  "voice": "Aoede",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "코코아 해바라기씨 한입볼",
+  "dish_en": "Cocoa Sunflower Seed Bites",
+  "slug": "CocoaSunflowerBites",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "무염 건식 볶은 해바라기씨",
+      "Unsalted dry-roasted sunflower kernels",
+      "28g",
+      "1 oz (about 28 g)",
+      "main"
+    ],
+    [
+      "씨 뺀 대추야자",
+      "Pitted dates",
+      "30g",
+      "30 g",
+      "add"
+    ],
+    [
+      "무가당 코코아",
+      "Unsweetened cocoa",
+      "4g",
+      "4 g",
+      "powder"
+    ],
+    [
+      "물",
+      "Water",
+      "5mL",
+      "5 mL",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "씨 갈고 대추야자 으깨기",
+    "반죽 섞기",
+    "굴려서 코팅하기",
+    "냉장해 굳히기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Grind Seeds and Mash Dates",
+    "Mix the Dough",
+    "Roll and Coat",
+    "Chill Until Firm",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "면역 쉐프입니다. 해바라기씨로 초콜릿 향이 나는 한입 간식을 만들어요.",
+    "무염으로 볶은 해바라기씨와 대추야자, 무가당 코코아, 물을 준비해요.",
+    "해바라기씨는 일부만 곱게 갈아요. 씨를 뺀 부드러운 대추야자는 포크로 으깨요.",
+    "간 씨와 대추야자에 코코아와 물을 넣어요. 손으로 뭉칠 수 있게 섞어요.",
+    "반죽을 세 덩이로 나눠 동그랗게 빚어요. 남은 씨를 잘게 부숴 겉에 묻혀요.",
+    "냉장고에서 이십 분 굳혀요. 겉은 바삭하고 속은 쫀득해요.",
+    "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+    "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요.",
+    "동그랗게 빚었더니 간식이 굴러갈 준비를 해요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune here. Today we are making chocolate flavored sunflower seed bites.",
+    "Get unsalted roasted sunflower seeds, soft dates, unsweetened cocoa, and water.",
+    "Finely grind most of the seeds. Take the pits out of the soft dates and mash them with a fork.",
+    "Mix the ground seeds and dates with cocoa and water. Stir until it holds together.",
+    "Roll the mixture into three balls. Crush the remaining seeds and coat the outside.",
+    "Chill for twenty minutes to firm up. Crisp outside and chewy inside.",
+    "Sunflower seeds supply vitamin E. Vitamin E supports normal immune function and helps protect cells from oxidative damage.",
+    "The amount shown counts all the sunflower seeds in three bites. One bite provides about a third of the amount shown.",
+    "Roll them round, and your snack is ready to roll!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "무염 건식 볶은 해바라기씨 28g",
+    "씨 뺀 대추야자 30g",
+    "무가당 코코아 4g",
+    "물 5mL",
+    "씨 20g을 갈고 나머지 8g은 잘게 부순다.",
+    "대추야자를 으깨 간 씨·코코아·물과 섞는다.",
+    "세 알로 빚고 남은 씨를 굴려 겉에 입힌다.",
+    "냉장고에서 20분 굳힌다."
+  ],
+  "recipe_en": [
+    "Unsalted dry-roasted sunflower kernels 1 oz (about 28 g)",
+    "Pitted dates 30 g",
+    "Unsweetened cocoa 4 g",
+    "Water 5 mL",
+    "Grind 20 g seeds. Crush the remaining 8 g for coating.",
+    "Mash dates and mix with ground seeds, cocoa, and water.",
+    "Roll three balls and coat them in the crushed seeds.",
+    "Chill for 20 min until firm."
+  ],
+  "health_focus": "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+  "main_ingredients": [
+    "건식 볶은 해바라기씨"
+  ],
+  "cooking_style": "해바라기씨 일부를 곱게 갈고 대추야자 페이스트와 반죽한 뒤, 남은 씨로 바삭한 겉면을 입혀 냉장한다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/?uid=7a56ba2337aabs16",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 E",
+    "recipe_amount": "7.4 mg",
+    "per_serving_amount": "7.4 mg",
+    "servings": 1,
+    "daily_reference_amount": "15 mg",
+    "percent_of_daily_reference": 49.333333333333336,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 oz dry-roasted sunflower kernels (about 28 g). 주재료만 계산.",
+    "calculation": "7.4 mg × 1 oz / 1 oz = 7.4 mg; 7.4/15 × 100 ≈ 49%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/?uid=7a56ba2337aabs16"
+    ],
+    "checked_at": "2026-11-12",
+    "uncertainty_note": "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요. 완성품 실측값 아님.",
+    "display": "건식 볶은 해바라기씨 약 28g / 비타민 E 약 7.4 mg / 주재료 1인분 기준 / 세 알 전체 분량 / 출처: 미국 NIH ODS / 비타민 E 약 7.4 mg / 미국 표시 DV 약 49% / 표시 기준 15 mg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "건식 볶은 해바라기씨 약 28g",
+      "비타민 E 약 7.4 mg",
+      "주재료 1인분 기준",
+      "세 알 전체 분량",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 E 약 7.4 mg",
+      "미국 표시 DV 약 49%",
+      "표시 기준 15 mg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 oz dry-roasted sunflower kernels (about 28 g)",
+      "About 7.4 mg Vitamin E",
+      "Main ingredient, one serving",
+      "All three bites",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 7.4 mg Vitamin E",
+      "About 49% of the U.S. Daily Value",
+      "Labeling DV: 15 mg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 26,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "면역 쉐프입니다. 해바라기씨로 초콜릿 향이 나는 한입 간식을 만들어요.",
+      "text_en": "Chef Immune here. Today we are making chocolate flavored sunflower seed bites."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "무염으로 볶은 해바라기씨와 대추야자, 무가당 코코아, 물을 준비해요.",
+      "text_en": "Get unsalted roasted sunflower seeds, soft dates, unsweetened cocoa, and water."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "씨 갈고 대추야자 으깨기",
+      "title_en": "Grind Seeds and Mash Dates",
+      "text_ko": "해바라기씨는 일부만 곱게 갈아요. 씨를 뺀 부드러운 대추야자는 포크로 으깨요.",
+      "text_en": "Finely grind most of the seeds. Take the pits out of the soft dates and mash them with a fork."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "반죽 섞기",
+      "title_en": "Mix the Dough",
+      "text_ko": "간 씨와 대추야자에 코코아와 물을 넣어요. 손으로 뭉칠 수 있게 섞어요.",
+      "text_en": "Mix the ground seeds and dates with cocoa and water. Stir until it holds together."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "굴려서 코팅하기",
+      "title_en": "Roll and Coat",
+      "text_ko": "반죽을 세 덩이로 나눠 동그랗게 빚어요. 남은 씨를 잘게 부숴 겉에 묻혀요.",
+      "text_en": "Roll the mixture into three balls. Crush the remaining seeds and coat the outside."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "냉장해 굳히기",
+      "title_en": "Chill Until Firm",
+      "text_ko": "냉장고에서 이십 분 굳혀요. 겉은 바삭하고 속은 쫀득해요.",
+      "text_en": "Chill for twenty minutes to firm up. Crisp outside and chewy inside."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "해바라기씨에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고, 세포를 산화 손상으로부터 보호하는 역할도 해요.",
+      "text_en": "Sunflower seeds supply vitamin E. Vitamin E supports normal immune function and helps protect cells from oxidative damage."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "이 수치는 세 알에 들어간 해바라기씨 전체 분량 기준이에요. 한 알만 먹으면 화면에 나온 양의 삼분의 일이에요.",
+      "text_en": "The amount shown counts all the sunflower seeds in three bites. One bite provides about a third of the amount shown."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "동그랗게 빚었더니 간식이 굴러갈 준비를 해요.",
+      "text_en": "Roll them round, and your snack is ready to roll!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 코코아 해바라기씨 한입볼 #Shorts",
+  "upload_title_en": "Chef Immune's Cocoa Sunflower Seed Bites #Shorts",
+  "health_description_en": "Sunflower seeds supply vitamin E. Vitamin E supports normal immune function and helps protect cells from oxidative damage. The amount shown counts all the sunflower seeds in three bites. One bite provides about a third of the amount shown."
+}

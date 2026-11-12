@@ -1,0 +1,91 @@
+{
+  "episode": 25,
+  "dish": "구운 마늘 정어리 딥",
+  "organ": "뇌",
+  "chef": "뇌 쉐프",
+  "main_ingredients": [
+    "토마토소스 통조림 정어리"
+  ],
+  "cooking_style": "마늘을 올리브유에 노릇하게 익힌 뒤 정어리를 으깨 넣고, 레몬즙으로 농도와 산미를 맞추는 딥.",
+  "core_cooking_step": "마늘을 올리브유에 노릇하게 익힌 뒤 정어리를 으깨 넣고, 레몬즙으로 농도와 산미를 맞추는 딥.",
+  "main_ingredient_health_rationale": "토마토소스 통조림 정어리 → 1인분 DHA 약 0.74 g → 정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "토마토소스 통조림 정어리",
+      "다진 마늘",
+      "올리브유",
+      "레몬즙"
+    ],
+    "substitutions": [
+      "다른 유형의 정어리 통조림을 쓸 경우 해당 형태의 수치를 확인한다."
+    ],
+    "basic_tools": [
+      "체",
+      "팬",
+      "포크",
+      "볼"
+    ]
+  },
+  "organ_rotation_note": "뼈 다음 뇌와 면역",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+  "reason_for_chef": "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/FACTSHEETS/OMEGA3FATTYACIDS-HEALTHPROFESSIONAL/",
+      "title": "NIH ODS Omega-3 Fatty Acids",
+      "checked_at": "2026-11-12",
+      "supported_claim": "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+      "conditions_and_limits": "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+    "context": "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "DHA",
+    "recipe_amount": "0.74 g",
+    "per_serving_amount": "0.74 g",
+    "servings": 1,
+    "daily_reference_amount": null,
+    "percent_of_daily_reference": null,
+    "reference_population": "미국 DHA 단독 일일 기준치 미설정",
+    "basis": "NIH ODS Table 2: 3 oz drained canned sardines (about 85 g). 주재료만 계산.",
+    "calculation": "0.74 g per 3 oz × 3 oz / 3 oz = 0.74 g",
+    "source_urls": [
+      "https://ods.od.nih.gov/FACTSHEETS/OMEGA3FATTYACIDS-HEALTHPROFESSIONAL/"
+    ],
+    "checked_at": "2026-11-12",
+    "uncertainty_note": "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요. 완성품 실측값 아님.",
+    "display": "소스를 뺀 통조림 정어리 약 85g / DHA 약 0.74 g / 주재료 1인분 기준 / 토마토소스 제외 / 출처: 미국 NIH ODS / DHA 약 0.74 g / 미국 DHA 단독 기준치 미설정 / 제품별 함량 차이 / 뇌세포막의 구성 성분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 36,
+  "menu_overlap_review": "정어리 첫 사용. 마늘을 굽고 으깬 생선 딥으로 완성하며 5편 생선 패티와 다름."
+}

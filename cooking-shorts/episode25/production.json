@@ -1,0 +1,256 @@
+{
+  "character": "brain",
+  "voice": "Puck",
+  "chef_ko": "뇌 쉐프",
+  "chef_en": "Chef Brain",
+  "dish_ko": "구운 마늘 정어리 딥",
+  "dish_en": "Toasted Garlic Sardine Dip",
+  "slug": "GarlicSardineDip",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "토마토소스 통조림 정어리",
+      "Sardines canned in tomato sauce",
+      "소스를 빼고 85g",
+      "3 oz drained (about 85 g)",
+      "main"
+    ],
+    [
+      "다진 마늘",
+      "Minced garlic",
+      "4g",
+      "4 g",
+      "add"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "10g",
+      "10 g",
+      "lemon"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "정어리 물기 빼기",
+    "마늘 향 내기",
+    "으깨고 섞기",
+    "딥 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Drain Sardines",
+    "Toast the Garlic",
+    "Mash and Mix",
+    "Serve the Dip",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "뇌 쉐프입니다. 정어리를 부드러운 마늘 딥으로 만들어요.",
+    "토마토소스에 든 정어리 통조림과 마늘, 올리브유, 레몬즙을 준비해요.",
+    "정어리를 체에 받쳐 소스를 빼요. 정어리만 그릇에 담아요.",
+    "팬에 기름과 마늘을 넣어요. 약불에서 마늘이 옅은 갈색이 될 때까지 저어요.",
+    "불을 끄고 마늘기름을 정어리에 넣어요. 포크로 으깨고 레몬즙을 섞어요.",
+    "걸쭉한 딥을 그릇에 담아요. 오이나 통밀빵과 곁들여도 좋아요.",
+    "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+    "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요.",
+    "정어리 한 접시가 딥 한 그릇으로 변신했어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Brain here. Let us turn sardines into a creamy garlic dip.",
+    "Get sardines canned in tomato sauce, garlic, olive oil, and lemon juice.",
+    "Drain the sardines in a strainer. Put the drained fish in a bowl.",
+    "Add oil and garlic to a skillet. Stir over low heat until the garlic turns pale gold.",
+    "Turn off the heat. Add the garlic oil to the sardines. Mash with a fork and stir in lemon juice.",
+    "Spoon the thick dip into a dish. Try it with cucumber or whole wheat bread.",
+    "Sardines supply DHA, a type of omega three fat. DHA is part of the membranes that surround brain cells.",
+    "The estimate is for sardines drained from tomato sauce. It varies by product. There is no separate United States daily value for this fatty acid.",
+    "A plate of sardines just became a bowl of dip!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "토마토소스 통조림 정어리 소스를 빼고 85g",
+    "다진 마늘 4g",
+    "올리브유 5g",
+    "레몬즙 10g",
+    "정어리를 체에 받쳐 소스를 뺀다.",
+    "기름에 마늘을 넣고 약불에서 옅은 갈색까지 젓는다.",
+    "불을 끄고 정어리에 마늘기름을 넣어 으깬다.",
+    "레몬즙을 섞고 그릇에 담는다."
+  ],
+  "recipe_en": [
+    "Sardines canned in tomato sauce 3 oz drained (about 85 g)",
+    "Minced garlic 4 g",
+    "Olive oil 5 g",
+    "Lemon juice 10 g",
+    "Drain the sardines in a strainer.",
+    "Stir garlic in oil over low heat until pale gold.",
+    "Turn off heat. Add the garlic oil and mash the fish.",
+    "Stir in lemon juice and spoon into a bowl."
+  ],
+  "health_focus": "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+  "main_ingredients": [
+    "토마토소스 통조림 정어리"
+  ],
+  "cooking_style": "마늘을 올리브유에 노릇하게 익힌 뒤 정어리를 으깨 넣고, 레몬즙으로 농도와 산미를 맞추는 딥.",
+  "source_url": "https://ods.od.nih.gov/FACTSHEETS/OMEGA3FATTYACIDS-HEALTHPROFESSIONAL/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "DHA",
+    "recipe_amount": "0.74 g",
+    "per_serving_amount": "0.74 g",
+    "servings": 1,
+    "daily_reference_amount": null,
+    "percent_of_daily_reference": null,
+    "reference_population": "미국 DHA 단독 일일 기준치 미설정",
+    "basis": "NIH ODS Table 2: 3 oz drained canned sardines (about 85 g). 주재료만 계산.",
+    "calculation": "0.74 g per 3 oz × 3 oz / 3 oz = 0.74 g",
+    "source_urls": [
+      "https://ods.od.nih.gov/FACTSHEETS/OMEGA3FATTYACIDS-HEALTHPROFESSIONAL/"
+    ],
+    "checked_at": "2026-11-12",
+    "uncertainty_note": "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요. 완성품 실측값 아님.",
+    "display": "소스를 뺀 통조림 정어리 약 85g / DHA 약 0.74 g / 주재료 1인분 기준 / 토마토소스 제외 / 출처: 미국 NIH ODS / DHA 약 0.74 g / 미국 DHA 단독 기준치 미설정 / 제품별 함량 차이 / 뇌세포막의 구성 성분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "소스를 뺀 통조림 정어리 약 85g",
+      "DHA 약 0.74 g",
+      "주재료 1인분 기준",
+      "토마토소스 제외",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "DHA 약 0.74 g",
+      "미국 DHA 단독 기준치 미설정",
+      "제품별 함량 차이",
+      "뇌세포막의 구성 성분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "3 oz drained canned sardines (about 85 g)",
+      "About 0.74 g DHA",
+      "Main ingredient, one serving",
+      "Tomato sauce drained",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 0.74 g DHA",
+      "No U.S. Daily Value for DHA alone",
+      "Amounts vary by product",
+      "Part of brain cell membranes",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 25,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "뇌 쉐프입니다. 정어리를 부드러운 마늘 딥으로 만들어요.",
+      "text_en": "Chef Brain here. Let us turn sardines into a creamy garlic dip."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "토마토소스에 든 정어리 통조림과 마늘, 올리브유, 레몬즙을 준비해요.",
+      "text_en": "Get sardines canned in tomato sauce, garlic, olive oil, and lemon juice."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "정어리 물기 빼기",
+      "title_en": "Drain Sardines",
+      "text_ko": "정어리를 체에 받쳐 소스를 빼요. 정어리만 그릇에 담아요.",
+      "text_en": "Drain the sardines in a strainer. Put the drained fish in a bowl."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "마늘 향 내기",
+      "title_en": "Toast the Garlic",
+      "text_ko": "팬에 기름과 마늘을 넣어요. 약불에서 마늘이 옅은 갈색이 될 때까지 저어요.",
+      "text_en": "Add oil and garlic to a skillet. Stir over low heat until the garlic turns pale gold."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "으깨고 섞기",
+      "title_en": "Mash and Mix",
+      "text_ko": "불을 끄고 마늘기름을 정어리에 넣어요. 포크로 으깨고 레몬즙을 섞어요.",
+      "text_en": "Turn off the heat. Add the garlic oil to the sardines. Mash with a fork and stir in lemon juice."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "딥 담기",
+      "title_en": "Serve the Dip",
+      "text_ko": "걸쭉한 딥을 그릇에 담아요. 오이나 통밀빵과 곁들여도 좋아요.",
+      "text_en": "Spoon the thick dip into a dish. Try it with cucumber or whole wheat bread."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "정어리에는 오메가 삼 지방산의 한 종류가 들어 있어요. 화면에 표시한 이 지방산은 뇌세포를 둘러싼 막의 구성 성분이에요.",
+      "text_en": "Sardines supply DHA, a type of omega three fat. DHA is part of the membranes that surround brain cells."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 토마토소스에서 건져 낸 정어리 분량 기준이에요. 제품마다 다를 수 있고, 이 지방산의 미국 일일 기준치는 정해져 있지 않아요.",
+      "text_en": "The estimate is for sardines drained from tomato sauce. It varies by product. There is no separate United States daily value for this fatty acid."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "정어리 한 접시가 딥 한 그릇으로 변신했어요.",
+      "text_en": "A plate of sardines just became a bowl of dip!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "뇌 쉐프의 구운 마늘 정어리 딥 #Shorts",
+  "upload_title_en": "Chef Brain's Toasted Garlic Sardine Dip #Shorts",
+  "health_description_en": "Sardines supply DHA, a type of omega three fat. DHA is part of the membranes that surround brain cells. The estimate is for sardines drained from tomato sauce. It varies by product. There is no separate United States daily value for this fatty acid."
+}
