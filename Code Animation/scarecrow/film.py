@@ -1,3 +1,4 @@
+import os
 # -*- coding: utf-8 -*-
 """〈허수아비의 겨울〉 — full film, 22 cuts, ~125 s. Each cut is a function of local time u returning a Comp."""
 import sys, os, time, math, subprocess
@@ -1153,9 +1154,10 @@ def C22(u, T):         # 7 s  spring ELS, C1 framing; the raised sleeve waves; t
     def fxp(c):
         if gust > 0.05:
             wind_marks(c, T, alpha=gust * 0.6)
-        title_card(c, min(1, max(0, (u - 2.2) / 1.0)), 0.0)
+        if not os.environ.get('NOCREDIT'):
+            title_card(c, min(1, max(0, (u - 2.2) / 1.0)), 0.0)
     cp = frame2('spring', (1330, 700, 0.88), chars, u, T, fx_post=fxp)
-    if u >= C22_CREDIT:
+    if u >= C22_CREDIT and not os.environ.get('NOCREDIT'):
         cp.post.append(lambda img, u=u: credit_overlay.apply(img, u - C22_CREDIT, 'left'))
     cp.fade *= min(1.0, max(0.0, (C22_LEN - u) / 1.2))
     return cp

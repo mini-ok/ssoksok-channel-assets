@@ -14,6 +14,7 @@
 | `keeper/` | 〈빛지기〉 THE KEEPER | 67초 | Python cairo, 2.39:1, 30fps | **v2 완료** — 엔딩 교체 |
 | `holssi/` | 〈홀씨〉 HOLSSI | 97초 | Python cairo, 24fps | **v2 완료** — 엔딩 교체, C7 마을 부감 질감 수정 |
 | `scarecrow/` | 〈허수아비의 겨울〉 | 137초 | Python cairo + painter.py, 24fps | **v2 완료** — 컷 수정(아래) |
+| `shorts/` | 세로 숏츠 3편(빛지기·홀씨·허수아비) | 67/97/137초 | 가로 v2 재구성 | 완료(2026-11-13) — `shorts/README.md` |
 | `sumbi/` | 〈숨비〉 | 172초 | three.js 3D + Python 셀 마감 | 1차 완성 후 종료. 회고 `sumbi/postmortem.md` |
 | `jeom/` | 〈점〉 JEOM | 3분 11초 | Python numpy·cv2(수묵 엔진) + 합성 거문고·북 | **최종 완성(2026-11-10, 1080p)** — 떨리는 손 이야기 v3. 다시 만들기: `jeom/README.md` '다시 만들기(최종본)'. 기법 정리: `_kit/skills/ink-wash-animation`. 영상(mp4)은 저장소 제외 |
 | `ideas/` | 다음 작품 기획 | — | — | 후보 검토(`2026-11-09_review_and_pitches.md`), 〈점〉·〈파루〉 스토리 확장(`2026-11-09_jeom_paru_story.md`), 무음 기술 시험(`tests/`). 〈파루〉는 다음 후보 |

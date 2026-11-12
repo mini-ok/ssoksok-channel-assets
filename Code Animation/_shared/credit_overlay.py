@@ -48,6 +48,8 @@ def layout(W, H, side, bottom=205):
     y1 = H - bottom
     if side == 'right':
         sx = int(W - MARGIN - s.shape[1]); x0 = sx - SGAP - MAXW
+    elif side == 'center':                       # whole block (both lines + seal) centred on the frame
+        x0 = int((W - (MAXW + SGAP + s.shape[1])) / 2); sx = int(x0 + MAXW + SGAP)
     else:
         x0 = MARGIN; sx = int(x0 + MAXW + SGAP)
     return x0, y1, sx, int(y1 - 8)

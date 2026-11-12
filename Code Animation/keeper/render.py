@@ -50,8 +50,8 @@ def put_text(img, mask, cx, cy, col, alpha, glow=0.6):
 def overlays(img, t):
     if t >= 57.7:
         a = sm(57.8, 58.7, t)
-        put_text(img, TITLE, 760, 190, (1.0, 0.97, 0.92), a, glow=0.5)
-        put_text(img, SUB, 760, 278, (1.0, 0.93, 0.86), sm(57.9, 58.8, t) * 0.9, glow=0.2)
+        put_text(img, TITLE, int(os.environ.get('TITLE_X', 760)), 190, (1.0, 0.97, 0.92), a, glow=0.5)
+        put_text(img, SUB, int(os.environ.get('TITLE_X', 760)), 278, (1.0, 0.93, 0.86), sm(57.9, 58.8, t) * 0.9, glow=0.2)
 
 def render_frame(i):
     t = i / FPS
@@ -61,7 +61,7 @@ def render_frame(i):
     else:
         img = develop(shot_at(t)(t))
     overlays(img, t)
-    if t >= CREDIT_T0:
+    if t >= CREDIT_T0 and not os.environ.get('NOCREDIT'):
         img = credit_overlay.apply(img, t - CREDIT_T0, 'right', bottom=170)
     fade = sm(0, 0.6, t) * (1 - sm(66.0, 67.0, t))
     return finalize(img, i, fade)

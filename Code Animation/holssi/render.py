@@ -31,7 +31,7 @@ def render_frame(i):
         eng.Static._cache.clear(); eng.StaticArr._cache.clear()
         _cur[0] = f
     cp = f(t, i)
-    if t >= CREDIT_T0:
+    if t >= CREDIT_T0 and not os.environ.get('NOCREDIT'):
         cp.post.append(lambda img, t=t: credit_overlay.apply(img, t - CREDIT_T0, 'right'))
     cp.fade *= sm(0, 1.2, t) * (1 - sm(96.0, 97.0, t))
     return cp.finish(i)
