@@ -52,3 +52,8 @@
 | 10/24 | B | 거북목 3동작 | 턱 당기기, 가슴 근육 늘리기, 어깨뼈 모으기 (627명 메타분석) |
 | 10/24 | C | 스마트폰 목 부담 | 60도 27kg은 모형 추정, 자세·통증 연관 근거 약함 |
 | 10/24 | 금지 | 낮잠 | 20분 이내, 오후 3시 전 (수면 주제 금지) |
+
+## 비공개로 내린 영상 (2026-11-12, 사용자 지시: 반복·모호·저조 콘텐츠 정리 — 삭제 아님, Studio에서 공개로 되돌릴 수 있음)
+같은 주제는 다시 만들지 않는다(위 대장 행은 그대로 둔다).
+- KO: 노래 테스트 중복 `iSCUwaqluto`·`SKDZDXKIwlQ`(11/3 원본은 유지) · 기억력 운동 `t5qn32rtIdY`·`cRjbtHB2xw8` · 지방간 운동 `04Zgmgw-rLA`·`OjdOL08eR0c` · 계단 숨참 호흡 `5O-lyMz66JQ`·`1Hne3Fc0J6s` · 식곤증 롱폼 `_iUz4gaIpFs`(쇼츠는 조회수가 좋아 유지)
+- EN: 말하기 테스트 11/3판 `HiaUJV6mJ7I`·`gXbXGGQmJ_Y`(11/7판은 쇼츠 441회라 유지) · 기억력 `heanyreQW-8`·`qoVSAqFVZS0` · 지방간 `vKdLrwNeAOQ`·`fra8e5fKzNA` · 계단 호흡 `vQlwZeEMj_s`·`Zjgm_gGE7VE` · 식곤증 `s0ROnzFAjjM`·`eEbrcMdDzOg` · 7천 보 `MZT4IgJTImM`·`1fhhbvnqdvM`
