@@ -1,0 +1,29 @@
+{
+  "episode": 25,
+  "title": "Toasted Garlic Sardine Dip",
+  "verified_at": "2026-11-12T02:52:18Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "BE0KZm193w8",
+      "video_url": "https://youtu.be/BE0KZm193w8",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "GarlicSardineDip_EN.mp4",
+      "sha256": "f75a2684bf7d5ed21f652b5aa53d3d3ce61f2994345004bb64166dfbe9c2c410"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "cF_FHcZSmLA",
+      "video_url": "https://youtu.be/cF_FHcZSmLA",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "GarlicSardineDip_KO.mp4",
+      "sha256": "418051b54dbbc9517826b0649557e6c509459e4987fa546c6e900d1a32033ffd"
+    }
+  ]
+}

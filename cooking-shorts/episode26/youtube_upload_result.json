@@ -1,0 +1,29 @@
+{
+  "episode": 26,
+  "title": "Cocoa Sunflower Seed Bites",
+  "verified_at": "2026-11-12T02:52:18Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "p03-xn5-KA4",
+      "video_url": "https://youtu.be/p03-xn5-KA4",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "CocoaSunflowerBites_EN.mp4",
+      "sha256": "ceedf328360f64ef36a83bf32ca0f593a8f5028f5a28b226c5f0eeda6f8d5e8c"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "pX3cwVeMEgU",
+      "video_url": "https://youtu.be/pX3cwVeMEgU",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "CocoaSunflowerBites_KO.mp4",
+      "sha256": "6f404c8f1ed1d72c1da430cc151b2bca52c3bb2a3a58125899b1a72e89c770cc"
+    }
+  ]
+}
