@@ -8,7 +8,7 @@
   ],
   "cooking_style": "마른 케일 잎에 훈제 파프리카 기름을 얇게 입혀 오븐에서 수분을 날리고 식혀 바삭한 칩으로 만든다.",
   "core_cooking_step": "마른 케일 잎에 훈제 파프리카 기름을 얇게 입혀 오븐에서 수분을 날리고 식혀 바삭한 칩으로 만든다.",
-  "main_ingredient_health_rationale": "케일 → 1인분 비타민 K 약 113 mcg → 케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+  "main_ingredient_health_rationale": "케일 → 1인분 비타민 K 약 113 mcg → 이 채소에는 비타민 K가 들어 있어요. 뼈 속 단백질이 정상적으로 작동하는 데 필요한 영양소예요.",
   "global_accessibility": {
     "common_ingredients": [
       "생 케일 잎",
@@ -30,15 +30,15 @@
     "previous_episode_file": "nimble_motifs.mp3",
     "reason": "직전 편과 다른 곡"
   },
-  "health_focus": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
-  "reason_for_chef": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+  "health_focus": "이 채소에는 비타민 K가 들어 있어요. 뼈 속 단백질이 정상적으로 작동하는 데 필요한 영양소예요.",
+  "reason_for_chef": "이 채소에는 비타민 K가 들어 있어요. 뼈 속 단백질이 정상적으로 작동하는 데 필요한 영양소예요.",
   "evidence": [
     {
       "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
       "title": "NIH ODS Vitamin K",
       "checked_at": "2026-11-13",
-      "supported_claim": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
-      "conditions_and_limits": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요."
+      "supported_claim": "이 채소에는 비타민 K가 들어 있어요. 뼈 속 단백질이 정상적으로 작동하는 데 필요한 영양소예요.",
+      "conditions_and_limits": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 K 섭취량을 일정하게 유지하는 것이 중요해요."
     }
   ],
   "cooking_scene_ids": [
@@ -56,8 +56,8 @@
     "context"
   ],
   "health_narration_expected": {
-    "benefit": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
-    "context": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요."
+    "benefit": "이 채소에는 비타민 K가 들어 있어요. 뼈 속 단백질이 정상적으로 작동하는 데 필요한 영양소예요.",
+    "context": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 K 섭취량을 일정하게 유지하는 것이 중요해요."
   },
   "review": {
     "evidence_matches_recipe": true,
@@ -80,7 +80,7 @@
       "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
     ],
     "checked_at": "2026-11-13",
-    "uncertainty_note": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요. 완성품 실측값 아님.",
+    "uncertainty_note": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 K 섭취량을 일정하게 유지하는 것이 중요해요. 완성품 실측값 아님.",
     "display": "생 케일 240mL / 비타민 K 약 113 mcg / 주재료 1인분 기준 / 미국 NIH ODS 참고값 / 출처: 미국 NIH ODS / 비타민 K 약 113 mcg / 미국 표시 DV 약 94% / 표시 기준 120 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
   },
   "status": "source_ready_not_rendered",
