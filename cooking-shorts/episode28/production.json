@@ -1,0 +1,247 @@
+{
+  "character": "bone",
+  "voice": "Achird",
+  "chef_ko": "뼈 쉐프",
+  "chef_en": "Chef Bone",
+  "dish_ko": "훈제 파프리카 케일칩",
+  "dish_en": "Smoky Paprika Kale Chips",
+  "slug": "SmokyKaleChips",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "생 케일 잎",
+      "Raw kale leaves",
+      "240mL",
+      "1 US cup (about 240 mL)",
+      "main"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "3g",
+      "3 g",
+      "oil"
+    ],
+    [
+      "훈제 파프리카 가루",
+      "Smoked paprika",
+      "0.5g",
+      "0.5 g",
+      "powder"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "케일 씻고 찢기",
+    "훈제 기름 입히기",
+    "한 겹으로 굽기",
+    "식혀 바삭하게",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Wash and Tear",
+    "Coat the Leaves",
+    "Bake in One Layer",
+    "Cool and Crisp",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "뼈 쉐프입니다. 케일 잎을 바삭한 칩으로 만들어요.",
+    "케일과 올리브유, 훈제 파프리카 가루를 준비해요.",
+    "케일을 씻고 물기를 완전히 닦아요. 질긴 줄기를 떼고 잎을 찢어요.",
+    "기름과 훈제 파프리카를 섞어요. 케일 잎에 얇게 발라요.",
+    "오븐용 팬에 잎을 겹치지 않게 펴요. 낮은 온도에서 가장자리가 바삭해질 때까지 구워요.",
+    "팬에서 꺼내 식혀요. 식으면서 더 바삭해져요.",
+    "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+    "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요.",
+    "케일이 바삭 소리를 내면 오늘 요리 끝!",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Bone here. Let us make crisp chips from kale leaves.",
+    "Get kale, olive oil, and smoked paprika.",
+    "Wash and dry the kale thoroughly. Remove the tough stems and tear the leaves.",
+    "Mix the oil and smoked paprika. Rub a thin coat onto the leaves.",
+    "Spread the leaves in one layer. Bake at low heat until the edges are crisp.",
+    "Take the tray out and let the chips cool. They crisp up as they cool.",
+    "Kale supplies vitamin K. Vitamin K helps proteins in your bones do their job.",
+    "The estimate is for raw kale before baking. If you take warfarin, keeping your vitamin K intake consistent is important.",
+    "When the kale crunches, my work is done!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "생 케일 잎 240mL",
+    "올리브유 3g",
+    "훈제 파프리카 가루 0.5g",
+    "잎을 씻어 완전히 말리고 줄기를 뗀 뒤 찢는다.",
+    "기름에 훈제 파프리카를 섞어 잎에 얇게 바른다.",
+    "팬에 한 겹으로 펴고 150°C에서 12~18분 굽는다.",
+    "가장자리가 바삭해지면 꺼내 식힌다."
+  ],
+  "recipe_en": [
+    "Raw kale leaves 1 US cup (about 240 mL)",
+    "Olive oil 3 g",
+    "Smoked paprika 0.5 g",
+    "Wash and dry leaves. Remove the stems and tear.",
+    "Mix oil and smoked paprika. Rub a thin coat onto the leaves.",
+    "Spread in a single layer. Bake at 150°C for 12–18 min.",
+    "Remove when crisp at the edges and cool."
+  ],
+  "health_focus": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+  "main_ingredients": [
+    "케일"
+  ],
+  "cooking_style": "마른 케일 잎에 훈제 파프리카 기름을 얇게 입혀 오븐에서 수분을 날리고 식혀 바삭한 칩으로 만든다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 K",
+    "recipe_amount": "113 mcg",
+    "per_serving_amount": "113 mcg",
+    "servings": 1,
+    "daily_reference_amount": "120 mcg",
+    "percent_of_daily_reference": 94.16666666666667,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 US cup raw kale (about 240 mL). 주재료만 계산.",
+    "calculation": "113 × 1 = 113 mcg; 113/120 × 100 ≈ 94%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-13",
+    "uncertainty_note": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요. 완성품 실측값 아님.",
+    "display": "생 케일 240mL / 비타민 K 약 113 mcg / 주재료 1인분 기준 / 미국 NIH ODS 참고값 / 출처: 미국 NIH ODS / 비타민 K 약 113 mcg / 미국 표시 DV 약 94% / 표시 기준 120 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "생 케일 240mL",
+      "비타민 K 약 113 mcg",
+      "주재료 1인분 기준",
+      "미국 NIH ODS 참고값",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 K 약 113 mcg",
+      "미국 표시 DV 약 94%",
+      "표시 기준 120 mcg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 US cup raw kale (about 240 mL)",
+      "About 113 mcg Vitamin K",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 113 mcg Vitamin K",
+      "About 94% of the U.S. Daily Value",
+      "Labeling DV: 120 mcg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 28,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "뼈 쉐프입니다. 케일 잎을 바삭한 칩으로 만들어요.",
+      "text_en": "Chef Bone here. Let us make crisp chips from kale leaves."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "케일과 올리브유, 훈제 파프리카 가루를 준비해요.",
+      "text_en": "Get kale, olive oil, and smoked paprika."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "케일 씻고 찢기",
+      "title_en": "Wash and Tear",
+      "text_ko": "케일을 씻고 물기를 완전히 닦아요. 질긴 줄기를 떼고 잎을 찢어요.",
+      "text_en": "Wash and dry the kale thoroughly. Remove the tough stems and tear the leaves."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "훈제 기름 입히기",
+      "title_en": "Coat the Leaves",
+      "text_ko": "기름과 훈제 파프리카를 섞어요. 케일 잎에 얇게 발라요.",
+      "text_en": "Mix the oil and smoked paprika. Rub a thin coat onto the leaves."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "한 겹으로 굽기",
+      "title_en": "Bake in One Layer",
+      "text_ko": "오븐용 팬에 잎을 겹치지 않게 펴요. 낮은 온도에서 가장자리가 바삭해질 때까지 구워요.",
+      "text_en": "Spread the leaves in one layer. Bake at low heat until the edges are crisp."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "식혀 바삭하게",
+      "title_en": "Cool and Crisp",
+      "text_ko": "팬에서 꺼내 식혀요. 식으면서 더 바삭해져요.",
+      "text_en": "Take the tray out and let the chips cool. They crisp up as they cool."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+      "text_en": "Kale supplies vitamin K. Vitamin K helps proteins in your bones do their job."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요.",
+      "text_en": "The estimate is for raw kale before baking. If you take warfarin, keeping your vitamin K intake consistent is important."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "케일이 바삭 소리를 내면 오늘 요리 끝!",
+      "text_en": "When the kale crunches, my work is done!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "뼈 쉐프의 훈제 파프리카 케일칩 #Shorts",
+  "upload_title_en": "Chef Bone's Smoky Paprika Kale Chips #Shorts",
+  "health_description_en": "Kale supplies vitamin K. Vitamin K helps proteins in your bones do their job. The estimate is for raw kale before baking. If you take warfarin, keeping your vitamin K intake consistent is important."
+}

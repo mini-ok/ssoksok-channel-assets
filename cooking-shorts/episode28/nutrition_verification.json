@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 K",
+  "recipe_amount": "113 mcg",
+  "per_serving_amount": "113 mcg",
+  "servings": 1,
+  "daily_reference_amount": "120 mcg",
+  "percent_of_daily_reference": 94.16666666666667,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 1 US cup raw kale (about 240 mL). 주재료만 계산.",
+  "calculation": "113 × 1 = 113 mcg; 113/120 × 100 ≈ 94%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-13",
+  "uncertainty_note": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요. 완성품 실측값 아님.",
+  "display": "생 케일 240mL / 비타민 K 약 113 mcg / 주재료 1인분 기준 / 미국 NIH ODS 참고값 / 출처: 미국 NIH ODS / 비타민 K 약 113 mcg / 미국 표시 DV 약 94% / 표시 기준 120 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

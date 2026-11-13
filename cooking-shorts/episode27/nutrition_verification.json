@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 B12",
+  "recipe_amount": "17 mcg",
+  "per_serving_amount": "17 mcg",
+  "servings": 1,
+  "daily_reference_amount": "2.4 mcg",
+  "percent_of_daily_reference": 708.3333333333334,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 3 oz cooked clam meat (about 85 g). 주재료만 계산.",
+  "calculation": "17 × 1 = 17 mcg; 17/2.4 × 100 ≈ 708%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/?uid=f85c3e51f1a2s16"
+  ],
+  "checked_at": "2026-11-13",
+  "uncertainty_note": "화면은 껍데기를 뺀 익힌 조갯살의 참고값이에요. 조개 종류에 따라 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+  "display": "익힌 조갯살 약 85g / 비타민 B12 약 17 mcg / 주재료 1인분 기준 / 미국 NIH ODS 참고값 / 출처: 미국 NIH ODS / 비타민 B12 약 17 mcg / 미국 표시 DV 약 708% / 표시 기준 2.4 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS",
+  "status": "passed"
+}

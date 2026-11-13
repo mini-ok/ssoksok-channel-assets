@@ -1,0 +1,89 @@
+{
+  "episode": 28,
+  "dish": "훈제 파프리카 케일칩",
+  "organ": "뼈",
+  "chef": "뼈 쉐프",
+  "main_ingredients": [
+    "케일"
+  ],
+  "cooking_style": "마른 케일 잎에 훈제 파프리카 기름을 얇게 입혀 오븐에서 수분을 날리고 식혀 바삭한 칩으로 만든다.",
+  "core_cooking_step": "마른 케일 잎에 훈제 파프리카 기름을 얇게 입혀 오븐에서 수분을 날리고 식혀 바삭한 칩으로 만든다.",
+  "main_ingredient_health_rationale": "케일 → 1인분 비타민 K 약 113 mcg → 케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "생 케일 잎",
+      "올리브유",
+      "훈제 파프리카 가루"
+    ],
+    "substitutions": [
+      "훈제 파프리카 대신 순한 파프리카 가루 사용 가능."
+    ],
+    "basic_tools": [
+      "볼",
+      "오븐",
+      "오븐용 팬"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 뇌와 뼈",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+  "reason_for_chef": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+      "title": "NIH ODS Vitamin K",
+      "checked_at": "2026-11-13",
+      "supported_claim": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+      "conditions_and_limits": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "케일은 비타민 케이를 공급해요. 비타민 케이는 뼈에 들어 있는 단백질이 제 기능을 하는 데 필요해요.",
+    "context": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 K",
+    "recipe_amount": "113 mcg",
+    "per_serving_amount": "113 mcg",
+    "servings": 1,
+    "daily_reference_amount": "120 mcg",
+    "percent_of_daily_reference": 94.16666666666667,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1 US cup raw kale (about 240 mL). 주재료만 계산.",
+    "calculation": "113 × 1 = 113 mcg; 113/120 × 100 ≈ 94%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-13",
+    "uncertainty_note": "화면은 굽기 전 생 케일의 참고값이에요. 와파린을 복용 중이라면 비타민 케이 섭취량을 일정하게 유지하는 것이 중요해요. 완성품 실측값 아님.",
+    "display": "생 케일 240mL / 비타민 K 약 113 mcg / 주재료 1인분 기준 / 미국 NIH ODS 참고값 / 출처: 미국 NIH ODS / 비타민 K 약 113 mcg / 미국 표시 DV 약 94% / 표시 기준 120 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 39,
+  "menu_overlap_review": "케일 첫 사용. 낮은 열로 얇은 잎을 말려 바삭한 칩을 만드는 방식은 기존 오븐구이와 구분."
+}

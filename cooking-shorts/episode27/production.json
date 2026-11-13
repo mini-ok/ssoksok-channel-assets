@@ -1,0 +1,265 @@
+{
+  "character": "brain",
+  "voice": "Puck",
+  "chef_ko": "뇌 쉐프",
+  "chef_en": "Chef Brain",
+  "dish_ko": "마늘 조개 감자 수프",
+  "dish_en": "Garlic Clam Potato Soup",
+  "slug": "GarlicClamSoup",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "미국 NIH ODS",
+  "source_en": "NIH Office of Dietary Supplements",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "완전히 익힌 조갯살",
+      "Fully cooked clam meat",
+      "85g",
+      "3 oz (about 85 g)",
+      "main"
+    ],
+    [
+      "감자",
+      "Potato",
+      "100g",
+      "100 g",
+      "add"
+    ],
+    [
+      "다진 마늘",
+      "Minced garlic",
+      "4g",
+      "4 g",
+      "powder"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "물",
+      "Water",
+      "250mL",
+      "250 mL",
+      "water"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "감자 썰기",
+    "마늘 향 내기",
+    "감자 으깨고 조개 넣기",
+    "수프 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Dice the Potato",
+    "Soften the Garlic",
+    "Mash and Add Clams",
+    "Ladle the Soup",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "뇌 쉐프입니다. 조개와 감자로 따뜻한 수프를 만들어요.",
+    "익힌 조갯살과 감자, 다진 마늘, 기름과 물을 준비해요.",
+    "감자 껍질을 벗기고 작은 네모로 잘라요.",
+    "냄비에 기름과 마늘을 넣고 약불로 저어요. 향이 나면 감자와 물을 넣어요.",
+    "감자가 부드러워지면 절반을 으깨요. 익힌 조갯살을 넣고 전체가 뜨거워질 때까지 데워요.",
+    "걸쭉해진 수프를 그릇에 담아요. 감자 알갱이와 조개를 함께 떠먹어요.",
+    "조개는 비타민 비 십이를 공급해요. 이 영양소는 뇌를 포함한 중추 신경계가 정상적으로 기능하는 데 필요해요.",
+    "화면은 껍데기를 뺀 익힌 조갯살의 참고값이에요. 조개 종류에 따라 함량이 달라질 수 있어요.",
+    "감자를 으깨니 수프가 한층 부드러워졌어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Brain here. Today we are making warm clam and potato soup.",
+    "Get cooked clam meat, a potato, garlic, olive oil, and water.",
+    "Peel the potato and cut it into small cubes.",
+    "Stir garlic in oil over low heat. When fragrant, add the potato and water.",
+    "When the potato is tender, mash half of it. Add the cooked clams and heat the soup through.",
+    "Ladle into a bowl. Each spoonful has tender potato and clams.",
+    "Clams supply vitamin B twelve. Your central nervous system, including the brain, needs it to function normally.",
+    "The estimate uses cooked clam meat without shells. Amounts can vary by species.",
+    "A little mashing makes the whole soup silky.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "완전히 익힌 조갯살 85g",
+    "감자 100g",
+    "다진 마늘 4g",
+    "올리브유 5g",
+    "물 250mL",
+    "감자를 작은 네모로 썬다.",
+    "기름에 마늘을 익히고 감자와 물을 넣는다.",
+    "감자가 부드러워질 때까지 약 12~15분 끓이고 절반을 으깬다.",
+    "익힌 조갯살을 넣고 국물이 끓어 전체가 뜨거워지면 담는다."
+  ],
+  "recipe_en": [
+    "Fully cooked clam meat 3 oz (about 85 g)",
+    "Potato 100 g",
+    "Minced garlic 4 g",
+    "Olive oil 5 g",
+    "Water 250 mL",
+    "Dice the potato. Stir garlic in oil over low heat.",
+    "Add potato and water. Simmer until tender, 12–15 min.",
+    "Mash half the potato. Add fully cooked clams.",
+    "Bring back to a simmer and heat through before serving."
+  ],
+  "health_focus": "조개는 비타민 비 십이를 공급해요. 이 영양소는 뇌를 포함한 중추 신경계가 정상적으로 기능하는 데 필요해요.",
+  "main_ingredients": [
+    "조개"
+  ],
+  "cooking_style": "감자를 끓여 일부를 으깨 국물을 걸쭉하게 만들고 익힌 조갯살과 마늘을 넣는다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/?uid=f85c3e51f1a2s16",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 B12",
+    "recipe_amount": "17 mcg",
+    "per_serving_amount": "17 mcg",
+    "servings": 1,
+    "daily_reference_amount": "2.4 mcg",
+    "percent_of_daily_reference": 708.3333333333334,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 3 oz cooked clam meat (about 85 g). 주재료만 계산.",
+    "calculation": "17 × 1 = 17 mcg; 17/2.4 × 100 ≈ 708%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/?uid=f85c3e51f1a2s16"
+    ],
+    "checked_at": "2026-11-13",
+    "uncertainty_note": "화면은 껍데기를 뺀 익힌 조갯살의 참고값이에요. 조개 종류에 따라 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "익힌 조갯살 약 85g / 비타민 B12 약 17 mcg / 주재료 1인분 기준 / 미국 NIH ODS 참고값 / 출처: 미국 NIH ODS / 비타민 B12 약 17 mcg / 미국 표시 DV 약 708% / 표시 기준 2.4 mcg / 개인 권장량과 구분 / 출처: 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 조갯살 약 85g",
+      "비타민 B12 약 17 mcg",
+      "주재료 1인분 기준",
+      "미국 NIH ODS 참고값",
+      "출처: 미국 NIH ODS"
+    ],
+    [
+      "비타민 B12 약 17 mcg",
+      "미국 표시 DV 약 708%",
+      "표시 기준 2.4 mcg",
+      "개인 권장량과 구분",
+      "출처: 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "3 oz cooked clam meat (about 85 g)",
+      "About 17 mcg Vitamin B12",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 17 mcg Vitamin B12",
+      "About 708% of the U.S. Daily Value",
+      "Labeling DV: 2.4 mcg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 27,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "뇌 쉐프입니다. 조개와 감자로 따뜻한 수프를 만들어요.",
+      "text_en": "Chef Brain here. Today we are making warm clam and potato soup."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "익힌 조갯살과 감자, 다진 마늘, 기름과 물을 준비해요.",
+      "text_en": "Get cooked clam meat, a potato, garlic, olive oil, and water."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "감자 썰기",
+      "title_en": "Dice the Potato",
+      "text_ko": "감자 껍질을 벗기고 작은 네모로 잘라요.",
+      "text_en": "Peel the potato and cut it into small cubes."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "마늘 향 내기",
+      "title_en": "Soften the Garlic",
+      "text_ko": "냄비에 기름과 마늘을 넣고 약불로 저어요. 향이 나면 감자와 물을 넣어요.",
+      "text_en": "Stir garlic in oil over low heat. When fragrant, add the potato and water."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "감자 으깨고 조개 넣기",
+      "title_en": "Mash and Add Clams",
+      "text_ko": "감자가 부드러워지면 절반을 으깨요. 익힌 조갯살을 넣고 전체가 뜨거워질 때까지 데워요.",
+      "text_en": "When the potato is tender, mash half of it. Add the cooked clams and heat the soup through."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "수프 담기",
+      "title_en": "Ladle the Soup",
+      "text_ko": "걸쭉해진 수프를 그릇에 담아요. 감자 알갱이와 조개를 함께 떠먹어요.",
+      "text_en": "Ladle into a bowl. Each spoonful has tender potato and clams."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "조개는 비타민 비 십이를 공급해요. 이 영양소는 뇌를 포함한 중추 신경계가 정상적으로 기능하는 데 필요해요.",
+      "text_en": "Clams supply vitamin B twelve. Your central nervous system, including the brain, needs it to function normally."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면은 껍데기를 뺀 익힌 조갯살의 참고값이에요. 조개 종류에 따라 함량이 달라질 수 있어요.",
+      "text_en": "The estimate uses cooked clam meat without shells. Amounts can vary by species."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "감자를 으깨니 수프가 한층 부드러워졌어요.",
+      "text_en": "A little mashing makes the whole soup silky."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "뇌 쉐프의 마늘 조개 감자 수프 #Shorts",
+  "upload_title_en": "Chef Brain's Garlic Clam Potato Soup #Shorts",
+  "health_description_en": "Clams supply vitamin B twelve. Your central nervous system, including the brain, needs it to function normally. The estimate uses cooked clam meat without shells. Amounts can vary by species."
+}
