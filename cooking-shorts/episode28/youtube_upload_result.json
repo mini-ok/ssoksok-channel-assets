@@ -1,0 +1,29 @@
+{
+  "episode": 28,
+  "title": "Smoky Paprika Kale Chips",
+  "verified_at": "2026-11-13T02:52:39Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "onHLX8bGwXQ",
+      "video_url": "https://youtu.be/onHLX8bGwXQ",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "SmokyKaleChips_EN.mp4",
+      "sha256": "519c9cf9428b2b7b664cf3e8c8e6d6dd40cf0c21bfbf1561cd7e5e74ad1af925"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "UOPEFsk3swo",
+      "video_url": "https://youtu.be/UOPEFsk3swo",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "SmokyKaleChips_KO.mp4",
+      "sha256": "5bb64fc1977f1fef826b8b63bc2ef5cbcd41528b792718eb3fa8656801442519"
+    }
+  ]
+}

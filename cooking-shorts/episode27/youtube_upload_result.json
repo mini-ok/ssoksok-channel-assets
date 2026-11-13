@@ -1,0 +1,29 @@
+{
+  "episode": 27,
+  "title": "Garlic Clam Potato Soup",
+  "verified_at": "2026-11-13T02:52:39Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "ythRjV4YS9Q",
+      "video_url": "https://youtu.be/ythRjV4YS9Q",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "GarlicClamSoup_EN.mp4",
+      "sha256": "4c489c31d549a479efbac19fdf7538386220ed9c9954bce78cb0b990ed446b91"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "bp3eVlqX44o",
+      "video_url": "https://youtu.be/bp3eVlqX44o",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "GarlicClamSoup_KO.mp4",
+      "sha256": "c3bb5f1b65da0ee9ac9662e6943ea076219b9debea7cadcb56cd28ff6f5b8bb5"
+    }
+  ]
+}
