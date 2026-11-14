@@ -86,5 +86,5 @@ export function buildGutLab() {
   // 소파 위치: u(컨베이어 위 위치)
   const setSofa = u => { const { p, yaw } = beltAt(u); sofa.position.set(p.x, BELT_Y + 0.003, p.z); sofa.rotation.y = yaw + Math.PI / 2; return { p, yaw, rot: yaw + Math.PI / 2 }; };
   setSofa(SOFA_U);
-  return { group: g, SOLID, setTime, atmo: { fog: '#3a9a7e', near: 7, far: 55 }, beltAt, setSofa, SOFA_U, BELT_Y, beltLen: L, bench, SEAT_Y: BELT_Y + 0.003 + 0.16 * 1.5 };
+  return { group: g, SOLID, setTime, atmo: { fog: '#3a9a7e', near: 7, far: 55 }, beltAt, setSofa, parcels, sofa, SOFA_U, BELT_Y, beltLen: L, bench, SEAT_Y: BELT_Y + 0.003 + 0.16 * 1.5 };
 }

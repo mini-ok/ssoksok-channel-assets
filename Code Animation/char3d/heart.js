@@ -30,7 +30,7 @@ function paintBody(cv, st) {
   // 얼굴: chars.py heart의 face(cv, 0, -20) → 3D (0, 0.0667)
   const [fx, fy] = p2(0, -20);
   c.setTransform(k * PX, 0, 0, k * PX, TEX / 2 + fx * k, TEX / 2 - fy * k);
-  drawFace(c, st.mood, { blush: '#FFD0DA', look: st.look, blink: st.blink });
+  drawFace(c, st.mood, { blush: '#FFD0DA', look: st.look, blink: st.blink, talk: st.talk || 0 });
 }
 
 export async function buildHeart({ outline = false, bodyUrl = 'cache/heart_body.glb' } = {}) {
@@ -110,9 +110,9 @@ export async function buildHeart({ outline = false, bodyUrl = 'cache/heart_body.
   const rig = {
     root, squash, body, armL, armR, feet, cap, box, st, meshes, boxGroup, ticket, boxMesh: bm,
     hold(what) { boxGroup.visible = what === 'box'; ticket.visible = what === 'ticket'; footTicket.visible = what === 'foot'; },
-    setFace(mood, look = [0, 0], blink = 0) {
-      if (st.mood === mood && st.look[0] === look[0] && st.look[1] === look[1] && st.blink === blink && rig._painted) return;
-      Object.assign(st, { mood, look, blink }); paintBody(cv, st); tex.needsUpdate = true; rig._painted = true;
+    setFace(mood, look = [0, 0], blink = 0, talk = 0) {
+      if (st.mood === mood && st.look[0] === look[0] && st.look[1] === look[1] && st.blink === blink && (st.talk || 0) === talk && rig._painted) return;
+      Object.assign(st, { mood, look, blink, talk }); paintBody(cv, st); tex.needsUpdate = true; rig._painted = true;
     },
     // 기본 자세 값(디자인 그대로): 왼팔 흔들기, 오른팔 상자
     pose({ armL: aL = 2.35, armR: aR = 0.75, elbowL = 0, elbowR = 0, fwdL = 0, fwdR = 0, lean = 0, turn = 0, sq = 1, hop = 0, tiltZ = 0, footL = 0, footR = 0, footLz = 0, footRz = 0, x = 0, z = 0, jump = 0 } = {}) {

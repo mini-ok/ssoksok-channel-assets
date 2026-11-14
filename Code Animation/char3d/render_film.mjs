@@ -10,7 +10,7 @@ const br = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', he
 const pg = await br.newPage(); pg.on('pageerror', e => console.log('PAGEERR', String(e).slice(0, 500)));
 pg.on('console', m => { if (m.type() === 'error') console.log('CONSOLE', m.text().slice(0, 300)); });
 await pg.setViewport({ width: W, height: H });
-await pg.goto(`http://localhost:8124/film.html?w=${W}&h=${H}&wall=${process.env.WALL || 'C'}${process.env.DBG ? '&dbg=1' : ''}`); await pg.waitForFunction('window.ready === true', { timeout: 0 });
+await pg.goto(`http://localhost:8124/${process.env.PAGE || 'film.html'}?w=${W}&h=${H}&wall=${process.env.WALL || 'C'}${process.env.DBG ? '&dbg=1' : ''}`); await pg.waitForFunction('window.ready === true', { timeout: 0 });
 if (process.env.NORENDER) await pg.evaluate(() => { window.NORENDER = true; });   // 검사만(그리기 생략)
 const durs = await pg.evaluate(() => window.cuts);
 const grab = async (q = 'image/png') => Buffer.from((await pg.evaluate(q => document.querySelector('canvas').toDataURL(q, 0.93), q)).split(',')[1], 'base64');

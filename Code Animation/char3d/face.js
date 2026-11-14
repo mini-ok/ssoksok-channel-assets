@@ -11,7 +11,7 @@ function drop(c, x, y, s = 1) {
   c.fillStyle = '#8ED8F8'; c.fill(); stroke(c, 3.5); c.restore();
 }
 
-export function drawFace(c, mood = 'happy', { blush = PINK, look = [0, 0], gap = 46, blink = 0 } = {}) {
+export function drawFace(c, mood = 'happy', { blush = PINK, look = [0, 0], gap = 46, blink = 0, talk = 0 } = {}) {
   for (const sx of [-1, 1]) {
     const ex = sx * gap + look[0] * 6, ey = look[1] * 5;
     let m = mood;
@@ -57,7 +57,13 @@ export function drawFace(c, mood = 'happy', { blush = PINK, look = [0, 0], gap =
   oval(c, -gap - 38, 22, 34, 18, blush); oval(c, gap + 4, 22, 34, 18, blush); c.restore();
   const my = 30; c.beginPath();
   const m = mood;
-  if (m === 'awake' || m === 'sparkle') {
+  if (talk > 0.05) {   // 말하는 입(시트콤): 음성 크기 단계(0.35/0.7/1)로 벌림. 웃는 표정은 D자, 나머지는 타원
+    const hgt = 5 + 19 * talk, wid = 13 + 5 * talk, smile = ['happy', 'happy_closed', 'relieved', 'proud', 'sparkle', 'awake', 'smug', 'wow'].includes(m);
+    if (smile) { c.moveTo(-wid, my - 3); c.quadraticCurveTo(0, my - 3 + hgt * 1.7, wid, my - 3); c.closePath(); }
+    else c.ellipse(0, my + hgt / 2 - 3, wid * 0.8, hgt / 2 + 1, 0, 0, Math.PI * 2);
+    c.fillStyle = INK; c.fill();
+    if (talk > 0.5) { c.save(); c.clip(); oval(c, -wid * 0.5, my - 3 + hgt * 0.62, wid, hgt * 0.7, PINK); c.restore(); }
+  } else if (m === 'awake' || m === 'sparkle') {
     c.moveTo(-16, my - 4); c.quadraticCurveTo(0, my + 20, 16, my - 4); c.closePath(); c.fillStyle = INK; c.fill();
     if (m === 'sparkle') oval(c, -7, my + 6, 14, 7, PINK);
   } else if (['happy', 'happy_closed', 'sleepy', 'relieved'].includes(m)) {

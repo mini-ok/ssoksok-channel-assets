@@ -63,7 +63,7 @@ export async function buildChar(id, base = 'cache/chars/') {
 
   // 몸 + 얼굴 텍스처
   const fill = bodyFill(D.C0, D.L0, D.box);
-  const T = paintTex((c, st) => { fill(c); c.save(); c.translate(D.face[0], D.face[1]); drawFace(c, st.mood, { blush: hex(D.blush), look: st.look, blink: st.blink }); if (D.extra) D.extra(c); c.restore(); });
+  const T = paintTex((c, st) => { fill(c); c.save(); c.translate(D.face[0], D.face[1]); drawFace(c, st.mood, { blush: hex(D.blush), look: st.look, blink: st.blink, talk: st.talk || 0 }); if (D.extra) D.extra(c); c.restore(); });
   add(new THREE.Mesh(await loadGeo(`${base}${id}_body.glb`), clay('#ffffff', { map: T.tex })), 'body', body);
   for (const [name, p] of Object.entries(D.parts || {})) {
     let mat;
@@ -138,9 +138,9 @@ export async function buildChar(id, base = 'cache/chars/') {
     id, root, hip, body, arms, feet, hold, meshes, allow, st,
     ...rigExtra,
     prop(which) { if (rigExtra.bottleG) { rigExtra.bottleG.visible = which === 'bottle'; rigExtra.mopParts.forEach(m => { m.visible = which === 'mop'; }); } },
-    setFace(mood, look = [0, 0], blink = 0) {
-      if (painted && st.mood === mood && st.look[0] === look[0] && st.look[1] === look[1] && st.blink === blink) return;
-      Object.assign(st, { mood, look, blink }); T.redraw(st); painted = true;
+    setFace(mood, look = [0, 0], blink = 0, talk = 0) {
+      if (painted && st.mood === mood && st.look[0] === look[0] && st.look[1] === look[1] && st.blink === blink && (st.talk || 0) === talk) return;
+      Object.assign(st, { mood, look, blink, talk }); T.redraw(st); painted = true;
     },
     // armL/armR: 아래로부터 벌린 각(라디안). 생략하면 디자인 기본 자세
     pose({ armL = arms[0].rest, armR = arms[1].rest, elbowL = 0, elbowR = 0, fwdL = 0, fwdR = 0, lean = 0, turn = 0, sq = 1, hop = 0, tiltZ = 0, footL = 0, footR = 0, footLz = 0, footRz = 0, x = 0, z = 0, jump = 0 } = {}) {
