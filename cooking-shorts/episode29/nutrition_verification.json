@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "마그네슘",
+  "recipe_amount": "50 mg",
+  "per_serving_amount": "50 mg",
+  "servings": 1,
+  "daily_reference_amount": "420 mg",
+  "percent_of_daily_reference": 11.904761904761903,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: ½ US cup cooked shelled edamame (about 120 mL). 주재료만 계산.",
+  "calculation": "50 × 1 = 50 mg; 50/420 × 100 ≈ 12%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/?os=winDhGBITyl"
+  ],
+  "checked_at": "2026-11-14",
+  "uncertainty_note": "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요. 완성품 실측값 아님.",
+  "display": "익힌 껍질 벗긴 풋콩 120mL / 마그네슘 약 50 mg / 주재료 1인분 기준 / 만두 여섯 개 기준 / 출처: NIH ODS / 마그네슘 약 50 mg / 미국 표시 DV 약 12% / 표시 기준 420 mg / 개인 권장량과 구분 / 출처: NIH ODS",
+  "status": "passed"
+}

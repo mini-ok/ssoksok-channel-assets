@@ -1,0 +1,254 @@
+{
+  "character": "muscle",
+  "voice": "Charon",
+  "chef_ko": "근육 쉐프",
+  "chef_en": "Chef Muscle",
+  "dish_ko": "생강 풋콩 만두",
+  "dish_en": "Ginger Edamame Dumplings",
+  "slug": "GingerEdamameDumplings",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "익힌 껍질 벗긴 풋콩",
+      "Cooked shelled edamame",
+      "120mL",
+      "½ US cup (about 120 mL)",
+      "main"
+    ],
+    [
+      "만두피",
+      "Dumpling wrappers",
+      "6장",
+      "6 wrappers",
+      "add"
+    ],
+    [
+      "간 생강",
+      "Grated ginger",
+      "2g",
+      "2 g",
+      "powder"
+    ],
+    [
+      "간장",
+      "Soy sauce",
+      "4g",
+      "4 g",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "익힌 콩 으깨기",
+    "생강 넣고 빚기",
+    "김 오른 찜기에 찌기",
+    "만두 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Mash Cooked Beans",
+    "Season and Fold",
+    "Steam the Dumplings",
+    "Plate the Dumplings",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "근육 쉐프입니다. 풋콩으로 부드러운 찐만두를 만들어요.",
+    "익힌 풋콩과 만두피, 간 생강, 간장을 준비해요.",
+    "풋콩의 물기를 빼고 포크로 으깨요. 작은 알갱이는 조금 남겨요.",
+    "생강과 간장을 섞어요. 만두피에 나눠 담고 가장자리에 물을 묻혀 눌러 닫아요.",
+    "김이 오른 찜기에 만두를 올려요. 서로 붙지 않게 놓고 피가 부드러워질 때까지 쪄요.",
+    "만두를 접시에 담아요. 부드러운 피 안에 풋콩 알갱이가 씹혀요.",
+    "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+    "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요.",
+    "만두 여섯 개가 찜기에서 나란히 나왔어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Muscle here. Let us make tender steamed dumplings with edamame.",
+    "Get cooked shelled edamame, wrappers, ginger, and soy sauce.",
+    "Drain the beans and mash with a fork. Leave some small pieces for texture.",
+    "Mix in ginger and soy sauce. Divide among the wrappers, wet the edges, and press to seal.",
+    "Put the dumplings in a hot steamer with space between them. Steam until the wrappers are tender.",
+    "Plate the dumplings. The tender wrapper gives way to little pieces of edamame.",
+    "Edamame supplies magnesium. Your body needs magnesium for normal muscle contraction.",
+    "The estimate counts the cooked edamame in all six dumplings. The other ingredients are excluded.",
+    "Six dumplings came out of the steamer in a neat row.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "익힌 껍질 벗긴 풋콩 120mL",
+    "만두피 6장",
+    "간 생강 2g",
+    "간장 4g",
+    "풋콩을 으깨고 생강과 간장을 섞는다.",
+    "만두피 6장에 나눠 담고 가장자리에 물을 묻혀 닫는다.",
+    "김 오른 찜기에 간격을 두고 약 8~10분 찐다."
+  ],
+  "recipe_en": [
+    "Cooked shelled edamame ½ US cup (about 120 mL)",
+    "Dumpling wrappers 6 wrappers",
+    "Grated ginger 2 g",
+    "Soy sauce 4 g",
+    "Mash the cooked beans and mix with ginger and soy sauce.",
+    "Divide among 6 wrappers. Wet and press edges to seal.",
+    "Steam 8–10 min with space between the dumplings."
+  ],
+  "health_focus": "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+  "main_ingredients": [
+    "풋콩(에다마메)"
+  ],
+  "cooking_style": "풋콩을 으깨 생강과 섞고 만두피에 싸서 찐다. 부드러운 피 안에 알갱이 식감을 남긴다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/?os=winDhGBITyl",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "마그네슘",
+    "recipe_amount": "50 mg",
+    "per_serving_amount": "50 mg",
+    "servings": 1,
+    "daily_reference_amount": "420 mg",
+    "percent_of_daily_reference": 11.904761904761903,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup cooked shelled edamame (about 120 mL). 주재료만 계산.",
+    "calculation": "50 × 1 = 50 mg; 50/420 × 100 ≈ 12%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/?os=winDhGBITyl"
+    ],
+    "checked_at": "2026-11-14",
+    "uncertainty_note": "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요. 완성품 실측값 아님.",
+    "display": "익힌 껍질 벗긴 풋콩 120mL / 마그네슘 약 50 mg / 주재료 1인분 기준 / 만두 여섯 개 기준 / 출처: NIH ODS / 마그네슘 약 50 mg / 미국 표시 DV 약 12% / 표시 기준 420 mg / 개인 권장량과 구분 / 출처: NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 껍질 벗긴 풋콩 120mL",
+      "마그네슘 약 50 mg",
+      "주재료 1인분 기준",
+      "만두 여섯 개 기준",
+      "출처: NIH ODS"
+    ],
+    [
+      "마그네슘 약 50 mg",
+      "미국 표시 DV 약 12%",
+      "표시 기준 420 mg",
+      "개인 권장량과 구분",
+      "출처: NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "½ US cup cooked shelled edamame (about 120 mL)",
+      "About 50 mg Magnesium",
+      "Main ingredient, one serving",
+      "All six dumplings",
+      "Source: NIH ODS"
+    ],
+    [
+      "About 50 mg Magnesium",
+      "About 12% of the U.S. Daily Value",
+      "Labeling DV: 420 mg",
+      "Individual needs vary",
+      "Source: NIH ODS"
+    ]
+  ],
+  "episode": 29,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "근육 쉐프입니다. 풋콩으로 부드러운 찐만두를 만들어요.",
+      "text_en": "Chef Muscle here. Let us make tender steamed dumplings with edamame."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "익힌 풋콩과 만두피, 간 생강, 간장을 준비해요.",
+      "text_en": "Get cooked shelled edamame, wrappers, ginger, and soy sauce."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "익힌 콩 으깨기",
+      "title_en": "Mash Cooked Beans",
+      "text_ko": "풋콩의 물기를 빼고 포크로 으깨요. 작은 알갱이는 조금 남겨요.",
+      "text_en": "Drain the beans and mash with a fork. Leave some small pieces for texture."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "생강 넣고 빚기",
+      "title_en": "Season and Fold",
+      "text_ko": "생강과 간장을 섞어요. 만두피에 나눠 담고 가장자리에 물을 묻혀 눌러 닫아요.",
+      "text_en": "Mix in ginger and soy sauce. Divide among the wrappers, wet the edges, and press to seal."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "김 오른 찜기에 찌기",
+      "title_en": "Steam the Dumplings",
+      "text_ko": "김이 오른 찜기에 만두를 올려요. 서로 붙지 않게 놓고 피가 부드러워질 때까지 쪄요.",
+      "text_en": "Put the dumplings in a hot steamer with space between them. Steam until the wrappers are tender."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "만두 담기",
+      "title_en": "Plate the Dumplings",
+      "text_ko": "만두를 접시에 담아요. 부드러운 피 안에 풋콩 알갱이가 씹혀요.",
+      "text_en": "Plate the dumplings. The tender wrapper gives way to little pieces of edamame."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+      "text_en": "Edamame supplies magnesium. Your body needs magnesium for normal muscle contraction."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요.",
+      "text_en": "The estimate counts the cooked edamame in all six dumplings. The other ingredients are excluded."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "만두 여섯 개가 찜기에서 나란히 나왔어요.",
+      "text_en": "Six dumplings came out of the steamer in a neat row."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "근육 쉐프의 생강 풋콩 만두 #Shorts",
+  "upload_title_en": "Chef Muscle's Ginger Edamame Dumplings #Shorts",
+  "health_description_en": "Edamame supplies magnesium. Your body needs magnesium for normal muscle contraction. The estimate counts the cooked edamame in all six dumplings. The other ingredients are excluded."
+}

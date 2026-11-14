@@ -1,0 +1,248 @@
+{
+  "character": "immune",
+  "voice": "Aoede",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "라임 망고 그라니타",
+  "dish_en": "Lime Mango Granita",
+  "slug": "LimeMangoGranita",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "USDA · NIH ODS",
+  "source_en": "USDA · NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "깍둑 썬 생 망고",
+      "Raw mango pieces",
+      "240mL",
+      "1 US cup (about 240 mL)",
+      "main"
+    ],
+    [
+      "라임즙",
+      "Lime juice",
+      "10g",
+      "10 g",
+      "add"
+    ],
+    [
+      "찬물",
+      "Cold water",
+      "60mL",
+      "60 mL",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "망고 깍둑썰기",
+    "망고와 라임 갈기",
+    "얼리고 긁기",
+    "얼음 결정 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Dice the Mango",
+    "Blend with Lime",
+    "Freeze and Scrape",
+    "Spoon into a Glass",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "면역 쉐프입니다. 망고로 사각사각한 얼음 디저트를 만들어요.",
+    "잘 익은 망고와 라임즙, 찬물을 준비해요.",
+    "망고의 껍질과 씨를 빼고 과육을 네모로 썰어요.",
+    "망고에 라임즙과 물을 넣고 곱게 갈아요. 얕은 용기에 부어요.",
+    "냉동실에 넣어요. 가장자리가 얼면 포크로 긁어요. 다시 얼려 같은 과정을 반복해요.",
+    "작은 얼음 결정이 생기면 차가운 잔에 담아요. 바로 먹으면 사각사각해요.",
+    "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+    "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요.",
+    "망고가 얼음이 되니 한 숟갈에도 사각 소리가 나요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune here. Today we are making a crunchy mango ice dessert.",
+    "Get a ripe mango, lime juice, and cold water.",
+    "Remove the skin and pit. Cut the mango flesh into small cubes.",
+    "Blend the mango with lime juice and water until smooth. Pour it into a shallow dish.",
+    "Put it in the freezer. Scrape with a fork when the edges freeze, and repeat as it sets.",
+    "When small ice crystals form, spoon them into a chilled glass and serve right away.",
+    "Mango supplies vitamin C. Your immune system needs vitamin C to work normally.",
+    "The estimate is for raw mango before freezing. The amount can vary by variety and storage.",
+    "That mango just learned to crunch!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "깍둑 썬 생 망고 240mL",
+    "라임즙 10g",
+    "찬물 60mL",
+    "망고 과육에 라임즙과 물을 넣어 곱게 간다.",
+    "얕은 용기에 붓고 가장자리가 얼 때까지 약 30분 얼린다.",
+    "30분 간격으로 포크로 긁어 결정을 만든다. 약 3회 반복한다.",
+    "잘게 얼면 차가운 잔에 담아 바로 먹는다."
+  ],
+  "recipe_en": [
+    "Raw mango pieces 1 US cup (about 240 mL)",
+    "Lime juice 10 g",
+    "Cold water 60 mL",
+    "Blend mango flesh, lime juice, and water until smooth.",
+    "Pour into a shallow dish and freeze until the edges set, about 30 min.",
+    "Scrape with a fork about every 30 min. Repeat about 3 times.",
+    "Spoon the fine crystals into a chilled glass and serve."
+  ],
+  "health_focus": "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+  "main_ingredients": [
+    "망고"
+  ],
+  "cooking_style": "망고와 라임을 갈아 얕게 얼린 후 포크로 세 차례 긁어 작은 얼음 결정을 만든다.",
+  "source_url": "https://www.nal.usda.gov/sites/default/files/page-files/Vitamin%20C.pdf",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 C",
+    "recipe_amount": "60.1 mg",
+    "per_serving_amount": "60.1 mg",
+    "servings": 1,
+    "daily_reference_amount": "90 mg",
+    "percent_of_daily_reference": 66.77777777777779,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA National Nutrient Database Vitamin C: 1 US cup raw mango pieces (about 240 mL). 주재료만 계산.",
+    "calculation": "60.1 × 1 = 60.1 mg; 60.1/90 × 100 ≈ 67%",
+    "source_urls": [
+      "https://www.nal.usda.gov/sites/default/files/page-files/Vitamin%20C.pdf",
+      "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-14",
+    "uncertainty_note": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "깍둑 썬 생 망고 240mL / 비타민 C 약 60.1 mg / 주재료 1인분 기준 / 얼리기 전 참고값 / 출처: USDA · NIH ODS / 비타민 C 약 60.1 mg / 미국 표시 DV 약 67% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처: USDA · NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "깍둑 썬 생 망고 240mL",
+      "비타민 C 약 60.1 mg",
+      "주재료 1인분 기준",
+      "얼리기 전 참고값",
+      "출처: USDA · NIH ODS"
+    ],
+    [
+      "비타민 C 약 60.1 mg",
+      "미국 표시 DV 약 67%",
+      "표시 기준 90 mg",
+      "개인 권장량과 구분",
+      "출처: USDA · NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1 US cup raw mango pieces (about 240 mL)",
+      "About 60.1 mg Vitamin C",
+      "Main ingredient, one serving",
+      "Reference before freezing",
+      "Source: USDA · NIH ODS"
+    ],
+    [
+      "About 60.1 mg Vitamin C",
+      "About 67% of the U.S. Daily Value",
+      "Labeling DV: 90 mg",
+      "Individual needs vary",
+      "Source: USDA · NIH ODS"
+    ]
+  ],
+  "episode": 30,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "면역 쉐프입니다. 망고로 사각사각한 얼음 디저트를 만들어요.",
+      "text_en": "Chef Immune here. Today we are making a crunchy mango ice dessert."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "잘 익은 망고와 라임즙, 찬물을 준비해요.",
+      "text_en": "Get a ripe mango, lime juice, and cold water."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "망고 깍둑썰기",
+      "title_en": "Dice the Mango",
+      "text_ko": "망고의 껍질과 씨를 빼고 과육을 네모로 썰어요.",
+      "text_en": "Remove the skin and pit. Cut the mango flesh into small cubes."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "망고와 라임 갈기",
+      "title_en": "Blend with Lime",
+      "text_ko": "망고에 라임즙과 물을 넣고 곱게 갈아요. 얕은 용기에 부어요.",
+      "text_en": "Blend the mango with lime juice and water until smooth. Pour it into a shallow dish."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "얼리고 긁기",
+      "title_en": "Freeze and Scrape",
+      "text_ko": "냉동실에 넣어요. 가장자리가 얼면 포크로 긁어요. 다시 얼려 같은 과정을 반복해요.",
+      "text_en": "Put it in the freezer. Scrape with a fork when the edges freeze, and repeat as it sets."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "얼음 결정 담기",
+      "title_en": "Spoon into a Glass",
+      "text_ko": "작은 얼음 결정이 생기면 차가운 잔에 담아요. 바로 먹으면 사각사각해요.",
+      "text_en": "When small ice crystals form, spoon them into a chilled glass and serve right away."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+      "text_en": "Mango supplies vitamin C. Your immune system needs vitamin C to work normally."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요.",
+      "text_en": "The estimate is for raw mango before freezing. The amount can vary by variety and storage."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "망고가 얼음이 되니 한 숟갈에도 사각 소리가 나요.",
+      "text_en": "That mango just learned to crunch!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 라임 망고 그라니타 #Shorts",
+  "upload_title_en": "Chef Immune's Lime Mango Granita #Shorts",
+  "health_description_en": "Mango supplies vitamin C. Your immune system needs vitamin C to work normally. The estimate is for raw mango before freezing. The amount can vary by variety and storage."
+}

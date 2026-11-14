@@ -1,0 +1,90 @@
+{
+  "episode": 29,
+  "dish": "생강 풋콩 만두",
+  "organ": "근육",
+  "chef": "근육 쉐프",
+  "main_ingredients": [
+    "풋콩(에다마메)"
+  ],
+  "cooking_style": "풋콩을 으깨 생강과 섞고 만두피에 싸서 찐다. 부드러운 피 안에 알갱이 식감을 남긴다.",
+  "core_cooking_step": "풋콩을 으깨 생강과 섞고 만두피에 싸서 찐다. 부드러운 피 안에 알갱이 식감을 남긴다.",
+  "main_ingredient_health_rationale": "풋콩(에다마메) → 1인분 마그네슘 약 50 mg → 풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "익힌 껍질 벗긴 풋콩",
+      "만두피",
+      "간 생강",
+      "간장"
+    ],
+    "substitutions": [
+      "냉동 껍질 벗긴 풋콩을 포장 안내에 따라 익혀 사용한다."
+    ],
+    "basic_tools": [
+      "볼",
+      "포크",
+      "찜기"
+    ]
+  },
+  "organ_rotation_note": "뼈 다음 근육과 면역",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+  "reason_for_chef": "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/?os=winDhGBITyl",
+      "title": "NIH ODS Magnesium",
+      "checked_at": "2026-11-14",
+      "supported_claim": "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+      "conditions_and_limits": "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "풋콩에는 마그네슘이 들어 있어요. 마그네슘은 근육이 정상적으로 수축하는 데 필요한 영양소예요.",
+    "context": "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "마그네슘",
+    "recipe_amount": "50 mg",
+    "per_serving_amount": "50 mg",
+    "servings": 1,
+    "daily_reference_amount": "420 mg",
+    "percent_of_daily_reference": 11.904761904761903,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup cooked shelled edamame (about 120 mL). 주재료만 계산.",
+    "calculation": "50 × 1 = 50 mg; 50/420 × 100 ≈ 12%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/?os=winDhGBITyl"
+    ],
+    "checked_at": "2026-11-14",
+    "uncertainty_note": "화면 수치는 만두 여섯 개에 들어간 익힌 풋콩만 계산했어요. 나머지 재료는 계산에서 뺐어요. 완성품 실측값 아님.",
+    "display": "익힌 껍질 벗긴 풋콩 120mL / 마그네슘 약 50 mg / 주재료 1인분 기준 / 만두 여섯 개 기준 / 출처: NIH ODS / 마그네슘 약 50 mg / 미국 표시 DV 약 12% / 표시 기준 420 mg / 개인 권장량과 구분 / 출처: NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 40,
+  "menu_overlap_review": "풋콩 첫 사용. 6편 그릇 달걀찜과는 22편 차이. 23편 팬패티와 달리 반죽을 피로 감싸 찐다."
+}

@@ -1,0 +1,99 @@
+{
+  "episode": 30,
+  "dish": "라임 망고 그라니타",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "망고"
+  ],
+  "cooking_style": "망고와 라임을 갈아 얕게 얼린 후 포크로 세 차례 긁어 작은 얼음 결정을 만든다.",
+  "core_cooking_step": "망고와 라임을 갈아 얕게 얼린 후 포크로 세 차례 긁어 작은 얼음 결정을 만든다.",
+  "main_ingredient_health_rationale": "망고 → 1인분 비타민 C 약 60.1 mg → 망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "깍둑 썬 생 망고",
+      "라임즙",
+      "찬물"
+    ],
+    "substitutions": [
+      "무가당 냉동 망고도 해동해 사용할 수 있다. 화면 수치는 생 망고 기준이다."
+    ],
+    "basic_tools": [
+      "칼",
+      "믹서",
+      "얕은 용기",
+      "포크",
+      "냉동고"
+    ]
+  },
+  "organ_rotation_note": "뼈 다음 근육과 면역",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+  "reason_for_chef": "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+  "evidence": [
+    {
+      "url": "https://www.nal.usda.gov/sites/default/files/page-files/Vitamin%20C.pdf",
+      "title": "USDA Vitamin C Nutrient Table",
+      "checked_at": "2026-11-14",
+      "supported_claim": "깍둑 썬 생 망고 240mL 기준 비타민 C 약 60.1mg.",
+      "conditions_and_limits": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요."
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+      "title": "NIH ODS Vitamin C",
+      "checked_at": "2026-11-14",
+      "supported_claim": "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+      "conditions_and_limits": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "망고에는 비타민 씨가 들어 있어요. 비타민 씨는 면역 체계가 정상적으로 작동하는 데 필요한 영양소예요.",
+    "context": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 C",
+    "recipe_amount": "60.1 mg",
+    "per_serving_amount": "60.1 mg",
+    "servings": 1,
+    "daily_reference_amount": "90 mg",
+    "percent_of_daily_reference": 66.77777777777779,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA National Nutrient Database Vitamin C: 1 US cup raw mango pieces (about 240 mL). 주재료만 계산.",
+    "calculation": "60.1 × 1 = 60.1 mg; 60.1/90 × 100 ≈ 67%",
+    "source_urls": [
+      "https://www.nal.usda.gov/sites/default/files/page-files/Vitamin%20C.pdf",
+      "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-14",
+    "uncertainty_note": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "깍둑 썬 생 망고 240mL / 비타민 C 약 60.1 mg / 주재료 1인분 기준 / 얼리기 전 참고값 / 출처: USDA · NIH ODS / 비타민 C 약 60.1 mg / 미국 표시 DV 약 67% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처: USDA · NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 41,
+  "menu_overlap_review": "망고 첫 사용. 8편 냉동 디저트 이후 21편이 지났으며, 이번에는 포크로 긁어 작은 얼음 결정을 만든다."
+}

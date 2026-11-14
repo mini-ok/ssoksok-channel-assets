@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 C",
+  "recipe_amount": "60.1 mg",
+  "per_serving_amount": "60.1 mg",
+  "servings": 1,
+  "daily_reference_amount": "90 mg",
+  "percent_of_daily_reference": 66.77777777777779,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "USDA National Nutrient Database Vitamin C: 1 US cup raw mango pieces (about 240 mL). 주재료만 계산.",
+  "calculation": "60.1 × 1 = 60.1 mg; 60.1/90 × 100 ≈ 67%",
+  "source_urls": [
+    "https://www.nal.usda.gov/sites/default/files/page-files/Vitamin%20C.pdf",
+    "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-14",
+  "uncertainty_note": "화면 수치는 얼리기 전 생 망고의 참고값이에요. 망고 품종과 보관 상태에 따라 실제 양은 달라질 수 있어요. 완성품 실측값 아님.",
+  "display": "깍둑 썬 생 망고 240mL / 비타민 C 약 60.1 mg / 주재료 1인분 기준 / 얼리기 전 참고값 / 출처: USDA · NIH ODS / 비타민 C 약 60.1 mg / 미국 표시 DV 약 67% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처: USDA · NIH ODS",
+  "status": "passed"
+}
