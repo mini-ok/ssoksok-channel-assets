@@ -1,0 +1,29 @@
+{
+  "episode": 29,
+  "title": "Ginger Edamame Dumplings",
+  "verified_at": "2026-11-14T02:52:03Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "fBx4QhHRSYY",
+      "video_url": "https://youtu.be/fBx4QhHRSYY",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "GingerEdamameDumplings_EN.mp4",
+      "sha256": "1097001fad4e47c501d97d3bbe14a35cb9ff3c2dda4dfa56baca5db4ca0c819f"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "dfDZzyaPjK4",
+      "video_url": "https://youtu.be/dfDZzyaPjK4",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "GingerEdamameDumplings_KO.mp4",
+      "sha256": "ec3f2d33c9a3d3d7f0d97d9645f7b1ac4833280a7c4d87dd3a5ef60b332882b1"
+    }
+  ]
+}

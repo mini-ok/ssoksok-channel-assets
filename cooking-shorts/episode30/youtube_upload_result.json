@@ -1,0 +1,29 @@
+{
+  "episode": 30,
+  "title": "Lime Mango Granita",
+  "verified_at": "2026-11-14T02:52:03Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "JiPxNMKj5gI",
+      "video_url": "https://youtu.be/JiPxNMKj5gI",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LimeMangoGranita_EN.mp4",
+      "sha256": "35f682d0e3b89a2ba1018e9dbf9c0d90770d73ce666417ba5716ddd71ce2e3e0"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "rn17jqoE_ZA",
+      "video_url": "https://youtu.be/rn17jqoE_ZA",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LimeMangoGranita_KO.mp4",
+      "sha256": "e0d168a09fbd142268d000d6ed911bb74aacac0758db0529ca52de11f15c5626"
+    }
+  ]
+}
