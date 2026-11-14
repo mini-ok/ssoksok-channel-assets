@@ -19,4 +19,5 @@
 - 영상(mp4)과 `*/cache/`는 저장소에 넣지 않는다(코드로 다시 만든다).
 - 상태가 있는 컷(유체·번짐 누적)은 한 프로세스에서 처음부터 순서대로 렌더. 8GB 메모리에서 무거운 렌더는 두 프로세스까지.
 - 문자열 키 캐시는 코드를 바꿔도 옛 결과를 재사용한다 — 그림 로직을 고치면 관련 캐시를 지운다.
-- 수묵 작품은 `_kit/skills/ink-wash-animation`, 셀 작품은 `_kit/skills/cel-anime-direction` 스킬을 따른다.
+- 수묵 작품은 `_kit/skills/ink-wash-animation`, 셀 작품은 `_kit/skills/cel-anime-direction`, 3D 캐릭터 작품은 `_kit/skills/code-3d-character-animation` 스킬을 따른다.
+- 애니매틱을 Blender 등 다른 도구로 넘길 때는 차이 점검 → 보완안 의논 → 보완해서 내보내기(저장소 루트 `CLAUDE.md`).

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body><script type="module">
+// 캐릭터 라인업 시험: window.shot({moods:{heart,brain,gut,liver}, cam})  window.collide()
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { buildHeart } from './heart.js';
+import { buildChar } from './chars3d.js';
+import { MeshBVH } from './node_modules/three-mesh-bvh/src/index.js';
+const qs = new URLSearchParams(location.search); const W = +(qs.get('w') || 960), H = +(qs.get('h') || 540);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap; document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); const BG = new THREE.Color('#D8D0F0'); scene.background = BG; scene.fog = new THREE.Fog(BG, 6, 14);
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.55;
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: '#D8D0F0', roughness: 0.95 }));
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const key = new THREE.DirectionalLight('#fff1e2', 2.6); key.position.set(-2.2, 3.4, 3.0); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 10; key.shadow.blurSamples = 16; key.shadow.bias = -0.0004;
+Object.assign(key.shadow.camera, { left: -3, right: 3, top: 2, bottom: -2, near: 0.5, far: 12 }); scene.add(key);
+const rim = new THREE.DirectionalLight('#cfe0ff', 1.6); rim.position.set(2.5, 2.2, -2.5); scene.add(rim);
+scene.add(new THREE.HemisphereLight('#f4f0ff', '#b9a8d8', 0.5));
+const R = { heart: await buildHeart(), brain: await buildChar('brain'), gut: await buildChar('gut'), liver: await buildChar('liver') };
+const X = { brain: -1.8, heart: -0.6, gut: 0.62, liver: 1.9 };
+for (const [k, r] of Object.entries(R)) { scene.add(r.root); r.pose({ x: X[k] }); }
+const camera = new THREE.PerspectiveCamera(30, W / H, 0.05, 60);
+window.shot = ({ moods = {}, turn = 0, cam = {} } = {}) => {
+  for (const [k, r] of Object.entries(R)) { if (moods[k]) r.setFace(moods[k]); r.pose({ x: X[k], turn }); }
+  const { pos = [0.05, 0.85, 4.6], target = [0.05, 0.5, 0], fov = 30 } = cam;
+  camera.fov = fov; camera.aspect = W / H; camera.position.set(...pos); camera.lookAt(...target); camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+};
+const bvh = new Map(); const bvhOf = m => { if (!bvh.has(m.geometry)) bvh.set(m.geometry, new MeshBVH(m.geometry)); return bvh.get(m.geometry); };
+const HEART_ALLOW = new Set(['body|upL', 'body|upR', 'upL|loL', 'upR|loR', 'loL|handL', 'loR|handR', 'upL|handL', 'upR|handR', 'handR|box', 'body|cap', 'body|brim', 'cap|brim', 'cap|btn', 'body|footL', 'body|footR'].map(k => k.split('|').sort().join('|')));
+const tmp = new THREE.Matrix4();
+window.collide = () => { scene.updateMatrixWorld(true); const out = [];
+  for (const [k, r] of Object.entries(R)) { const M = r.meshes, n = Object.keys(M), allow = r.allow || HEART_ALLOW;
+    for (let i = 0; i < n.length; i++) for (let j = i + 1; j < n.length; j++) { const key2 = [n[i], n[j]].sort().join('|'); if (allow.has(key2)) continue;
+      tmp.copy(M[n[i]].matrixWorld).invert().multiply(M[n[j]].matrixWorld); if (bvhOf(M[n[i]]).intersectsGeometry(M[n[j]].geometry, tmp)) out.push(k + ':' + key2); }
+    for (const nm of n) { const bb = new THREE.Box3().setFromObject(M[nm], true); if (bb.min.y < -0.005) out.push(k + ':' + nm + '|floor'); } }
+  return out; };
+window.ready = true;
+</script></body></html>

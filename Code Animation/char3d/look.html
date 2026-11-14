@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script type="importmap">{"imports":{
+ "three":"./node_modules/three/build/three.module.js",
+ "three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// 캐릭터 룩 시험(실시간 미리보기): ?w=&h=&outline=1   window.shot({mood, pose, cam})
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { buildHeart } from './heart.js';
+import { poseAt } from './act.js';
+import { buildSet } from './set.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const qs = new URLSearchParams(location.search);
+const W = +(qs.get('w') || 960), H = +(qs.get('h') || 540);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = 1.0; renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const BG = new THREE.Color('#D8D0F0'); scene.background = BG; scene.fog = new THREE.Fog(BG, 4, 10);
+const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.55;
+// 스튜디오: 바닥과 곡면 배경(사이클로라마)
+const cycMat = new THREE.MeshStandardMaterial({ color: '#D8D0F0', roughness: 0.95, toneMapped: false });  // 배경색과 이음매 없이
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), cycMat); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const shape = new THREE.Shape(); shape.moveTo(-15, 0); shape.lineTo(15, 0); shape.lineTo(15, 0.01); shape.lineTo(-15, 0.01);
+const curve = []; for (let i = 0; i <= 24; i++) { const a = i / 24 * Math.PI / 2; curve.push(new THREE.Vector3(0, 2 - 2 * Math.cos(a), -6 - 2 + 2 * Math.sin(a) * -1 + 2)); }
+const back = new THREE.Mesh(new THREE.PlaneGeometry(30, 12), cycMat); back.position.set(0, 6, -6); back.receiveShadow = true; /* 배경 벽 없이 바닥이 안개로 사라짐 */
+// 빛: 따뜻한 키 + 차가운 림 + 하늘빛
+const key = new THREE.DirectionalLight('#fff1e2', 2.6); key.position.set(-2.2, 3.4, 3.0); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 10; key.shadow.blurSamples = 16; key.shadow.bias = -0.0004;
+Object.assign(key.shadow.camera, { left: -2, right: 2, top: 2, bottom: -2, near: 0.5, far: 12 }); scene.add(key);
+const rim = new THREE.DirectionalLight('#cfe0ff', 1.6); rim.position.set(2.5, 2.2, -2.5); scene.add(rim);
+scene.add(new THREE.HemisphereLight('#f4f0ff', '#b9a8d8', 0.5));
+
+const rig = await buildHeart({ outline: qs.get('outline') === '1' }); scene.add(rig.root);
+const camera = new THREE.PerspectiveCamera(30, W / H, 0.05, 60);
+const comp = new EffectComposer(renderer); comp.addPass(new RenderPass(scene, camera));
+if (!qs.has('lite')) { const ao = new GTAOPass(scene, camera, W, H); ao.updateGtaoMaterial({ radius: 0.12, distanceExponent: 1.5, thickness: 1.0, scale: 1.2, samples: 16 }); comp.addPass(ao); }
+comp.addPass(new OutputPass());
+
+window.shot = ({ mood = 'happy', look = [0, 0], blink = 0, pose = {}, cam = {} } = {}) => {
+  rig.setFace(mood, look, blink); rig.pose(pose);
+  const { pos = [0.15, 0.7, 3.2], target = [0.05, 0.52, 0], fov = 30 } = cam;
+  camera.fov = fov; camera.aspect = W / H; camera.position.set(...pos); camera.lookAt(...target); camera.updateProjectionMatrix();
+  comp.render();
+};
+const { set, SOLID } = buildSet(); scene.add(set); set.visible = qs.has('set');
+// 충돌 검사: 캐릭터 부위끼리(붙어 있는 관절 쌍 제외) + 캐릭터 ↔ 세트. 겹치면 이름 쌍을 돌려준다
+import { MeshBVH } from './node_modules/three-mesh-bvh/src/index.js';
+const M = rig.meshes; const bvh = new Map();
+const bvhOf = m => { if (!bvh.has(m.geometry)) bvh.set(m.geometry, new MeshBVH(m.geometry)); return bvh.get(m.geometry); };
+const ALLOW = new Set(['body|upL', 'body|upR', 'upL|loL', 'upR|loR', 'loL|handL', 'loR|handR', 'upL|handL', 'upR|handR', 'handR|box', 'body|cap', 'body|brim', 'cap|brim', 'cap|btn', 'body|footL', 'body|footR']);
+const tmp = new THREE.Matrix4();
+function hit(a, b) { scene.updateMatrixWorld(true); tmp.copy(a.matrixWorld).invert().multiply(b.matrixWorld); return bvhOf(a).intersectsGeometry(b.geometry, tmp); }
+window.collide = () => {
+  const out = [], names = Object.keys(M);
+  for (let i = 0; i < names.length; i++) for (let j = i + 1; j < names.length; j++) {
+    const k = [names[i], names[j]].sort().join('|'); if (ALLOW.has(k) || ALLOW.has(names[i] + '|' + names[j]) || ALLOW.has(names[j] + '|' + names[i])) continue;
+    if (hit(M[names[i]], M[names[j]])) out.push(names[i] + '|' + names[j]);
+  }
+  if (set.visible) for (const n of names) for (const s2 of SOLID) if (hit(M[n], s2)) out.push(n + '|' + s2.name);
+  for (const n of names) { const bb = new THREE.Box3().setFromObject(M[n], true); if (bb.min.y < -0.005) out.push(n + '|floor'); }
+  return out;
+};
+window.frame = (t, cam) => {
+  const a = poseAt(t); rig.setFace(a.mood, a.look, a.blink); rig.pose(a.pose);
+  const { pos = [0.3, 0.95, 4.2], target = [0.3, 0.66, 0], fov = 30 } = cam || {};
+  camera.fov = fov; camera.aspect = W / H; camera.position.set(...pos); camera.lookAt(...target); camera.updateProjectionMatrix();
+  comp.render();
+};
+window.rigPose = a => { rig.setFace(a.mood, a.look, a.blink); rig.pose(a.pose); };
+window.ready = true;
+</script></body></html>
