@@ -1,0 +1,29 @@
+{
+  "episode": 31,
+  "title": "Lemon Crumb Artichoke Hearts",
+  "verified_at": "2026-11-15T02:52:03Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "AxOeLw_EAyU",
+      "video_url": "https://youtu.be/AxOeLw_EAyU",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LemonCrumbArtichokes_EN.mp4",
+      "sha256": "dc420ba1d24a490292f3be958bdd41df2b62ce8956dc19821f7895035704f07b"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "R9PeHr7xYLE",
+      "video_url": "https://youtu.be/R9PeHr7xYLE",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LemonCrumbArtichokes_KO.mp4",
+      "sha256": "fabca70d2dca832ded33cd5583f6df505fb6b0882441694a6fe58c301f14751e"
+    }
+  ]
+}

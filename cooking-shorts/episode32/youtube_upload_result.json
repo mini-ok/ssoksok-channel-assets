@@ -1,0 +1,29 @@
+{
+  "episode": 32,
+  "title": "Ginger Carrot Ribbon Pickles",
+  "verified_at": "2026-11-15T02:52:03Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "869alE431Ow",
+      "video_url": "https://youtu.be/869alE431Ow",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "GingerCarrotPickles_EN.mp4",
+      "sha256": "c0b4df773a171b38513155431170644fecc3e25f1fbe1d84b0eb3b6f5e56edcd"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "iAisRztnGG4",
+      "video_url": "https://youtu.be/iAisRztnGG4",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "GingerCarrotPickles_KO.mp4",
+      "sha256": "495804c304be6aafba87556591858de20fe5b8455374bdee40e0456b3bc62970"
+    }
+  ]
+}
