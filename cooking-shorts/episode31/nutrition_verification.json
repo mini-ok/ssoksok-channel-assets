@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "식이섬유",
+  "recipe_amount": "7.2 g",
+  "per_serving_amount": "7.2 g",
+  "servings": 1,
+  "daily_reference_amount": "28 g",
+  "percent_of_daily_reference": 25.71428571428572,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "USDA/HHS Dietary Guidelines 2010, Appendix 13: ½ US cup cooked artichoke hearts (about 120 mL). 주재료만 계산.",
+  "calculation": "7.2 × 1 = 7.2 g; 7.2/28 × 100 ≈ 26%",
+  "source_urls": [
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+    "https://www.dietaryguidelines.gov/sites/default/files/2019-05/DietaryGuidelines2010.pdf",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-15",
+  "uncertainty_note": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+  "display": "익힌 아티초크 하트 120mL / 식이섬유 약 7.2 g / 주재료 1인분 참고값 / 제품·조리 상태에 따라 차이 / 출처 USDA/HHS · NIDDK · FDA / 식이섬유 약 7.2 g / 미국 표시 DV 약 26% / 표시 기준 28 g / 개인 권장량과 구분 / 출처 USDA/HHS · NIDDK · FDA",
+  "status": "passed"
+}

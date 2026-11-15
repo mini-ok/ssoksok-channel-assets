@@ -1,0 +1,92 @@
+{
+  "episode": 32,
+  "dish": "생강 당근 리본 피클",
+  "organ": "눈",
+  "chef": "눈 쉐프",
+  "main_ingredients": [
+    "당근"
+  ],
+  "cooking_style": "당근을 얇게 깎고 따뜻한 생강 식초물로 짧게 절여 아삭한 식감을 살린다.",
+  "core_cooking_step": "당근을 얇게 깎고 따뜻한 생강 식초물로 짧게 절여 아삭한 식감을 살린다.",
+  "main_ingredient_health_rationale": "당근 → 1인분 비타민 A 약 459 mcg RAE → 당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "생 당근",
+      "쌀식초",
+      "물",
+      "생강",
+      "설탕"
+    ],
+    "substitutions": [
+      "쌀식초 대신 같은 산도의 양조식초 사용 가능."
+    ],
+    "basic_tools": [
+      "필러",
+      "내열 그릇",
+      "냄비",
+      "냉장고"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 장과 눈",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "reason_for_chef": "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=62210cbf4d30a8s16",
+      "title": "NIH ODS Vitamin A and Carotenoids",
+      "checked_at": "2026-11-15",
+      "supported_claim": "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+      "conditions_and_limits": "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "context": "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 A",
+    "recipe_amount": "459 mcg RAE",
+    "per_serving_amount": "459 mcg RAE",
+    "servings": 1,
+    "daily_reference_amount": "900 mcg RAE",
+    "percent_of_daily_reference": 51,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup raw carrots (about 120 mL). 주재료만 계산.",
+    "calculation": "459 × 1 = 459 mcg RAE; 459/900 × 100 ≈ 51%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=62210cbf4d30a8s16"
+    ],
+    "checked_at": "2026-11-15",
+    "uncertainty_note": "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "생 당근 120mL / 비타민 A 약 459 mcg RAE / 주재료 1인분 참고값 / 절이기 전 기준 / 출처 NIH ODS / 비타민 A 약 459 mcg RAE / 미국 표시 DV 약 51% / 표시 기준 900 mcg RAE / 개인 권장량과 구분 / 출처 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 43,
+  "menu_overlap_review": "6편 당근 이후 25편이 지남. 따뜻한 식초물에 절이는 피클 첫 사용."
+}

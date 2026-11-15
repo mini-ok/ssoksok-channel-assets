@@ -1,0 +1,107 @@
+{
+  "episode": 31,
+  "dish": "레몬 빵가루 아티초크 구이",
+  "organ": "장",
+  "chef": "장 쉐프",
+  "main_ingredients": [
+    "아티초크 하트"
+  ],
+  "cooking_style": "부드러운 아티초크에 레몬 향 빵가루를 묻히고 오븐에서 겉을 바삭하게 굽는다.",
+  "core_cooking_step": "부드러운 아티초크에 레몬 향 빵가루를 묻히고 오븐에서 겉을 바삭하게 굽는다.",
+  "main_ingredient_health_rationale": "아티초크 하트 → 1인분 식이섬유 약 7.2 g → 아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "익힌 아티초크 하트",
+      "빵가루",
+      "올리브유",
+      "레몬즙"
+    ],
+    "substitutions": [
+      "냉동 하트를 포장 안내에 따라 익혀 사용 가능. 통조림은 양념하지 않은 제품으로 고르고 표시값을 확인한다."
+    ],
+    "basic_tools": [
+      "칼",
+      "볼",
+      "오븐용 팬",
+      "오븐"
+    ]
+  },
+  "organ_rotation_note": "면역 다음 장과 눈",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buoyant_kitchen_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+  "reason_for_chef": "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+  "evidence": [
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "title": "NIDDK Eating, Diet & Nutrition for Constipation",
+      "checked_at": "2026-11-15",
+      "supported_claim": "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+      "conditions_and_limits": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요."
+    },
+    {
+      "url": "https://www.dietaryguidelines.gov/sites/default/files/2019-05/DietaryGuidelines2010.pdf",
+      "title": "USDA/HHS Dietary Guidelines, Appendix 13",
+      "checked_at": "2026-11-15",
+      "supported_claim": "익힌 아티초크 하트 120mL에 식이섬유 7.2g.",
+      "conditions_and_limits": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요."
+    },
+    {
+      "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+      "title": "FDA Daily Values",
+      "checked_at": "2026-11-15",
+      "supported_claim": "미국 표시 DV 28g.",
+      "conditions_and_limits": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+    "context": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "7.2 g",
+    "per_serving_amount": "7.2 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 25.71428571428572,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA/HHS Dietary Guidelines 2010, Appendix 13: ½ US cup cooked artichoke hearts (about 120 mL). 주재료만 계산.",
+    "calculation": "7.2 × 1 = 7.2 g; 7.2/28 × 100 ≈ 26%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.dietaryguidelines.gov/sites/default/files/2019-05/DietaryGuidelines2010.pdf",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-15",
+    "uncertainty_note": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "익힌 아티초크 하트 120mL / 식이섬유 약 7.2 g / 주재료 1인분 참고값 / 제품·조리 상태에 따라 차이 / 출처 USDA/HHS · NIDDK · FDA / 식이섬유 약 7.2 g / 미국 표시 DV 약 26% / 표시 기준 28 g / 개인 권장량과 구분 / 출처 USDA/HHS · NIDDK · FDA"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 42,
+  "menu_overlap_review": "아티초크 첫 사용. 28편은 잎을 말린 칩, 이번에는 빵가루로 부드러운 중심을 감싼다."
+}

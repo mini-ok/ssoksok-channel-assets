@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 A",
+  "recipe_amount": "459 mcg RAE",
+  "per_serving_amount": "459 mcg RAE",
+  "servings": 1,
+  "daily_reference_amount": "900 mcg RAE",
+  "percent_of_daily_reference": 51,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: ½ US cup raw carrots (about 120 mL). 주재료만 계산.",
+  "calculation": "459 × 1 = 459 mcg RAE; 459/900 × 100 ≈ 51%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=62210cbf4d30a8s16"
+  ],
+  "checked_at": "2026-11-15",
+  "uncertainty_note": "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요. 완성품 실측값 아님.",
+  "display": "생 당근 120mL / 비타민 A 약 459 mcg RAE / 주재료 1인분 참고값 / 절이기 전 기준 / 출처 NIH ODS / 비타민 A 약 459 mcg RAE / 미국 표시 DV 약 51% / 표시 기준 900 mcg RAE / 개인 권장량과 구분 / 출처 NIH ODS",
+  "status": "passed"
+}

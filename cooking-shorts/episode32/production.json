@@ -1,0 +1,265 @@
+{
+  "character": "eye",
+  "voice": "Puck",
+  "chef_ko": "눈 쉐프",
+  "chef_en": "Chef Eye",
+  "dish_ko": "생강 당근 리본 피클",
+  "dish_en": "Ginger Carrot Ribbon Pickles",
+  "slug": "GingerCarrotPickles",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "생 당근",
+      "Raw carrot",
+      "120mL",
+      "½ US cup (about 120 mL)",
+      "main"
+    ],
+    [
+      "쌀식초",
+      "Rice vinegar",
+      "30mL",
+      "30 mL",
+      "oil"
+    ],
+    [
+      "물",
+      "Water",
+      "30mL",
+      "30 mL",
+      "water"
+    ],
+    [
+      "생강",
+      "Ginger",
+      "3g",
+      "3 g",
+      "add"
+    ],
+    [
+      "설탕",
+      "Sugar",
+      "3g",
+      "3 g",
+      "powder"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "필러로 리본 만들기",
+    "생강 식초물 데우기",
+    "부어 냉장 절이기",
+    "차갑게 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Shave the Ribbons",
+    "Warm the Ginger Brine",
+    "Pour and Chill",
+    "Serve Cold",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "눈 쉐프입니다. 당근을 아삭한 리본 피클로 만들어요.",
+    "당근과 쌀식초, 물, 생강, 설탕을 준비해요.",
+    "당근을 씻고 필러로 길고 얇게 깎아요. 당근 리본을 내열 그릇에 담아요.",
+    "쌀식초와 물에 생강과 설탕을 넣어요. 저으면서 따뜻하게 데워요.",
+    "따뜻한 식초물을 당근 위에 부어요. 한 번 섞고 식힌 뒤 냉장고에서 절여요.",
+    "당근에 새콤한 맛이 배면 건져요. 차가울 때 곁들여요.",
+    "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+    "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요.",
+    "당근 리본이 새콤한 옷을 입었어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Eye here. Let us make crisp carrot ribbon pickles.",
+    "Get a carrot, rice vinegar, water, ginger, and sugar.",
+    "Wash the carrot and shave it into long ribbons. Place them in a heatproof bowl.",
+    "Mix the vinegar and water with ginger and sugar. Warm it while stirring.",
+    "Pour the warm brine over the carrot. Toss once, cool, then let it pickle in the fridge.",
+    "Lift out the ribbons when they taste tangy. Serve them cold.",
+    "Carrots contain beta carotene, which your body can turn into vitamin A. The retina needs vitamin A to detect light.",
+    "This estimate uses raw carrots before pickling. It can vary by variety and the amount used.",
+    "These carrot ribbons are dressed for a tangy dinner.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "생 당근 120mL",
+    "쌀식초 30mL",
+    "물 30mL",
+    "생강 3g",
+    "설탕 3g",
+    "씻은 당근을 필러로 길게 깎아 내열 그릇에 담는다.",
+    "식초·물·생강·설탕을 저으며 따뜻하게 데운다.",
+    "당근에 부어 섞고 식힌 뒤 냉장고에서 30분 절인다.",
+    "건져 차갑게 곁들인다."
+  ],
+  "recipe_en": [
+    "Raw carrot ½ US cup (about 120 mL)",
+    "Rice vinegar 30 mL",
+    "Water 30 mL",
+    "Ginger 3 g",
+    "Sugar 3 g",
+    "Shave the washed carrot into a heatproof bowl.",
+    "Warm vinegar, water, ginger, and sugar while stirring.",
+    "Pour over the ribbons, toss, cool, and chill for 30 min.",
+    "Drain the ribbons and serve cold."
+  ],
+  "health_focus": "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+  "main_ingredients": [
+    "당근"
+  ],
+  "cooking_style": "당근을 얇게 깎고 따뜻한 생강 식초물로 짧게 절여 아삭한 식감을 살린다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=62210cbf4d30a8s16",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 A",
+    "recipe_amount": "459 mcg RAE",
+    "per_serving_amount": "459 mcg RAE",
+    "servings": 1,
+    "daily_reference_amount": "900 mcg RAE",
+    "percent_of_daily_reference": 51,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup raw carrots (about 120 mL). 주재료만 계산.",
+    "calculation": "459 × 1 = 459 mcg RAE; 459/900 × 100 ≈ 51%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/?uid=62210cbf4d30a8s16"
+    ],
+    "checked_at": "2026-11-15",
+    "uncertainty_note": "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "생 당근 120mL / 비타민 A 약 459 mcg RAE / 주재료 1인분 참고값 / 절이기 전 기준 / 출처 NIH ODS / 비타민 A 약 459 mcg RAE / 미국 표시 DV 약 51% / 표시 기준 900 mcg RAE / 개인 권장량과 구분 / 출처 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "생 당근 120mL",
+      "비타민 A 약 459 mcg RAE",
+      "주재료 1인분 참고값",
+      "절이기 전 기준",
+      "출처 NIH ODS"
+    ],
+    [
+      "비타민 A 약 459 mcg RAE",
+      "미국 표시 DV 약 51%",
+      "표시 기준 900 mcg RAE",
+      "개인 권장량과 구분",
+      "출처 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "½ US cup raw carrots (about 120 mL)",
+      "About 459 mcg RAE Vitamin A",
+      "Main ingredient, one serving",
+      "Reference before pickling",
+      "Source NIH ODS"
+    ],
+    [
+      "About 459 mcg RAE Vitamin A",
+      "About 51% of the U.S. Daily Value",
+      "Labeling DV 900 mcg RAE",
+      "Individual needs vary",
+      "Source NIH ODS"
+    ]
+  ],
+  "episode": 32,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "눈 쉐프입니다. 당근을 아삭한 리본 피클로 만들어요.",
+      "text_en": "Chef Eye here. Let us make crisp carrot ribbon pickles."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "당근과 쌀식초, 물, 생강, 설탕을 준비해요.",
+      "text_en": "Get a carrot, rice vinegar, water, ginger, and sugar."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "필러로 리본 만들기",
+      "title_en": "Shave the Ribbons",
+      "text_ko": "당근을 씻고 필러로 길고 얇게 깎아요. 당근 리본을 내열 그릇에 담아요.",
+      "text_en": "Wash the carrot and shave it into long ribbons. Place them in a heatproof bowl."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "생강 식초물 데우기",
+      "title_en": "Warm the Ginger Brine",
+      "text_ko": "쌀식초와 물에 생강과 설탕을 넣어요. 저으면서 따뜻하게 데워요.",
+      "text_en": "Mix the vinegar and water with ginger and sugar. Warm it while stirring."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "부어 냉장 절이기",
+      "title_en": "Pour and Chill",
+      "text_ko": "따뜻한 식초물을 당근 위에 부어요. 한 번 섞고 식힌 뒤 냉장고에서 절여요.",
+      "text_en": "Pour the warm brine over the carrot. Toss once, cool, then let it pickle in the fridge."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "차갑게 담기",
+      "title_en": "Serve Cold",
+      "text_ko": "당근에 새콤한 맛이 배면 건져요. 차가울 때 곁들여요.",
+      "text_en": "Lift out the ribbons when they taste tangy. Serve them cold."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "당근에는 몸에서 비타민 에이로 바뀔 수 있는 성분이 들어 있어요. 비타민 에이는 망막이 빛을 감지하는 데 필요해요.",
+      "text_en": "Carrots contain beta carotene, which your body can turn into vitamin A. The retina needs vitamin A to detect light."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 절이기 전 생 당근의 참고값이에요. 당근의 품종과 실제 분량에 따라 달라질 수 있어요.",
+      "text_en": "This estimate uses raw carrots before pickling. It can vary by variety and the amount used."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "당근 리본이 새콤한 옷을 입었어요.",
+      "text_en": "These carrot ribbons are dressed for a tangy dinner."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "눈 쉐프의 생강 당근 리본 피클 #Shorts",
+  "upload_title_en": "Chef Eye's Ginger Carrot Ribbon Pickles #Shorts",
+  "health_description_en": "Carrots contain beta carotene, which your body can turn into vitamin A. The retina needs vitamin A to detect light. This estimate uses raw carrots before pickling. It can vary by variety and the amount used."
+}

@@ -1,0 +1,256 @@
+{
+  "character": "gut",
+  "voice": "Puck",
+  "chef_ko": "장 쉐프",
+  "chef_en": "Chef Gut",
+  "dish_ko": "레몬 빵가루 아티초크 구이",
+  "dish_en": "Lemon Crumb Artichoke Hearts",
+  "slug": "LemonCrumbArtichokes",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buoyant_kitchen_groove.mp3",
+  "source_ko": "USDA/HHS · NIDDK · FDA",
+  "source_en": "USDA/HHS · NIDDK · FDA",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "익힌 아티초크 하트",
+      "Cooked artichoke hearts",
+      "120mL",
+      "½ US cup (about 120 mL)",
+      "main"
+    ],
+    [
+      "빵가루",
+      "Breadcrumbs",
+      "15g",
+      "15 g",
+      "powder"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "5g",
+      "5 g",
+      "add"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "물기 닦고 반으로 자르기",
+    "레몬 빵가루 입히기",
+    "겉을 바삭하게 굽기",
+    "따뜻할 때 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Dry and Halve",
+    "Coat with Lemon and Crumbs",
+    "Bake Until Crisp",
+    "Serve Warm",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "장 쉐프입니다. 아티초크를 바삭한 한입 요리로 만들어요.",
+    "익힌 아티초크 하트와 빵가루, 올리브유, 레몬즙을 준비해요.",
+    "아티초크의 물기를 닦아요. 먹기 좋은 크기로 반을 갈라요.",
+    "아티초크에 레몬즙을 묻혀요. 빵가루에 기름을 섞어서 겉에 입혀요.",
+    "팬에 간격을 두고 올려요. 오븐에서 빵가루가 노릇해질 때까지 구워요.",
+    "따뜻할 때 먹어요. 겉은 바삭하고 속은 부드러워요.",
+    "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+    "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요.",
+    "겉이 바삭해지면 한 입 먹어 볼 시간이에요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Gut here. Let us make crispy little artichoke bites.",
+    "Get cooked artichoke hearts, breadcrumbs, olive oil, and lemon juice.",
+    "Pat the hearts dry. Cut them in half for bite sized pieces.",
+    "Coat the hearts with lemon juice. Mix the oil into the crumbs and coat the outside.",
+    "Space the pieces out on a tray. Bake until the crumbs turn golden.",
+    "Serve warm. The coating is crisp and the center is tender.",
+    "Artichokes supply dietary fiber. Getting enough fluids along with fiber can help make stools easier to pass.",
+    "The estimate counts only the cooked artichoke hearts. The actual amount can vary by product and preparation.",
+    "When the outside is crisp, it is time for a bite.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "익힌 아티초크 하트 120mL",
+    "빵가루 15g",
+    "올리브유 5g",
+    "레몬즙 5g",
+    "물기를 닦은 익힌 하트를 반으로 자르고 레몬즙을 묻힌다.",
+    "빵가루와 기름을 섞어 겉에 묻힌다.",
+    "한 겹으로 놓고 210°C에서 12~15분 노릇하게 굽는다."
+  ],
+  "recipe_en": [
+    "Cooked artichoke hearts ½ US cup (about 120 mL)",
+    "Breadcrumbs 15 g",
+    "Olive oil 5 g",
+    "Lemon juice 5 g",
+    "Pat dry, halve cooked hearts and coat with lemon juice.",
+    "Mix crumbs with oil and coat the hearts.",
+    "Bake in one layer at 210°C for 12–15 min until golden."
+  ],
+  "health_focus": "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+  "main_ingredients": [
+    "아티초크 하트"
+  ],
+  "cooking_style": "부드러운 아티초크에 레몬 향 빵가루를 묻히고 오븐에서 겉을 바삭하게 굽는다.",
+  "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "7.2 g",
+    "per_serving_amount": "7.2 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 25.71428571428572,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA/HHS Dietary Guidelines 2010, Appendix 13: ½ US cup cooked artichoke hearts (about 120 mL). 주재료만 계산.",
+    "calculation": "7.2 × 1 = 7.2 g; 7.2/28 × 100 ≈ 26%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.dietaryguidelines.gov/sites/default/files/2019-05/DietaryGuidelines2010.pdf",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-15",
+    "uncertainty_note": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "익힌 아티초크 하트 120mL / 식이섬유 약 7.2 g / 주재료 1인분 참고값 / 제품·조리 상태에 따라 차이 / 출처 USDA/HHS · NIDDK · FDA / 식이섬유 약 7.2 g / 미국 표시 DV 약 26% / 표시 기준 28 g / 개인 권장량과 구분 / 출처 USDA/HHS · NIDDK · FDA"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 아티초크 하트 120mL",
+      "식이섬유 약 7.2 g",
+      "주재료 1인분 참고값",
+      "제품·조리 상태에 따라 차이",
+      "출처 USDA/HHS · NIDDK · FDA"
+    ],
+    [
+      "식이섬유 약 7.2 g",
+      "미국 표시 DV 약 26%",
+      "표시 기준 28 g",
+      "개인 권장량과 구분",
+      "출처 USDA/HHS · NIDDK · FDA"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "½ US cup cooked artichoke hearts (about 120 mL)",
+      "About 7.2 g Dietary fiber",
+      "Main ingredient, one serving",
+      "Varies by product and preparation",
+      "Source USDA/HHS · NIDDK · FDA"
+    ],
+    [
+      "About 7.2 g Dietary fiber",
+      "About 26% of the U.S. Daily Value",
+      "Labeling DV 28 g",
+      "Individual needs vary",
+      "Source USDA/HHS · NIDDK · FDA"
+    ]
+  ],
+  "episode": 31,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "장 쉐프입니다. 아티초크를 바삭한 한입 요리로 만들어요.",
+      "text_en": "Chef Gut here. Let us make crispy little artichoke bites."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "익힌 아티초크 하트와 빵가루, 올리브유, 레몬즙을 준비해요.",
+      "text_en": "Get cooked artichoke hearts, breadcrumbs, olive oil, and lemon juice."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "물기 닦고 반으로 자르기",
+      "title_en": "Dry and Halve",
+      "text_ko": "아티초크의 물기를 닦아요. 먹기 좋은 크기로 반을 갈라요.",
+      "text_en": "Pat the hearts dry. Cut them in half for bite sized pieces."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "레몬 빵가루 입히기",
+      "title_en": "Coat with Lemon and Crumbs",
+      "text_ko": "아티초크에 레몬즙을 묻혀요. 빵가루에 기름을 섞어서 겉에 입혀요.",
+      "text_en": "Coat the hearts with lemon juice. Mix the oil into the crumbs and coat the outside."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "겉을 바삭하게 굽기",
+      "title_en": "Bake Until Crisp",
+      "text_ko": "팬에 간격을 두고 올려요. 오븐에서 빵가루가 노릇해질 때까지 구워요.",
+      "text_en": "Space the pieces out on a tray. Bake until the crumbs turn golden."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "따뜻할 때 담기",
+      "title_en": "Serve Warm",
+      "text_ko": "따뜻할 때 먹어요. 겉은 바삭하고 속은 부드러워요.",
+      "text_en": "Serve warm. The coating is crisp and the center is tender."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "아티초크에는 식이섬유가 들어 있어요. 수분도 충분히 섭취하면 식이섬유가 배변을 돕는 데 도움이 돼요.",
+      "text_en": "Artichokes supply dietary fiber. Getting enough fluids along with fiber can help make stools easier to pass."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 익힌 아티초크 하트만 계산했어요. 제품과 조리 상태에 따라 실제 함량이 달라질 수 있어요.",
+      "text_en": "The estimate counts only the cooked artichoke hearts. The actual amount can vary by product and preparation."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "겉이 바삭해지면 한 입 먹어 볼 시간이에요.",
+      "text_en": "When the outside is crisp, it is time for a bite."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "장 쉐프의 레몬 빵가루 아티초크 구이 #Shorts",
+  "upload_title_en": "Chef Gut's Lemon Crumb Artichoke Hearts #Shorts",
+  "health_description_en": "Artichokes supply dietary fiber. Getting enough fluids along with fiber can help make stools easier to pass. The estimate counts only the cooked artichoke hearts. The actual amount can vary by product and preparation."
+}
