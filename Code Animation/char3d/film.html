@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body><script type="module">
+// 〈심장의 휴가〉 애니매틱 렌더러: window.frame(cutId, t) / window.collide() / window.cuts
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { buildHeart } from './heart.js';
+import { buildChar } from './chars3d.js';
+import { buildPumpRoom } from './sets/pumproom.js';
+import { buildGutLab } from './sets/gutlab.js';
+import { buildLiverPlant } from './sets/liverplant.js';
+import { buildBrainControl } from './sets/braincontrol.js';
+import { buildRibNook } from './sets/ribnook.js';
+import { buildCorridor } from './sets/corridor.js';
+import { CUTS } from './cuts.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { MeshBVH } from './node_modules/three-mesh-bvh/src/index.js';
+
+const qs = new URLSearchParams(location.search); const W = +(qs.get('w') || 960), H = +(qs.get('h') || 540);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap; document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#2a1f2c');
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+const key = new THREE.DirectionalLight('#fff1e2', 1.6); key.position.set(-2.2, 3.4, 3.0); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 8; key.shadow.blurSamples = 16; key.shadow.bias = -0.0008; key.shadow.normalBias = 0.02;
+Object.assign(key.shadow.camera, { left: -4, right: 4, top: 3, bottom: -2, near: 0.5, far: 14 }); scene.add(key, key.target);
+const hemi = new THREE.HemisphereLight('#fff4f0', '#b98a8a', 0.4); scene.add(hemi);
+
+const SETS = { pump: buildPumpRoom({ wall: qs.get('wall') || 'C' }), gut: buildGutLab(), liver: buildLiverPlant(), brain: buildBrainControl(), nook: buildRibNook(), corridor: buildCorridor() };
+for (const s of Object.values(SETS)) { s.group.visible = false; scene.add(s.group); }
+const R = { heart: await buildHeart() };
+for (const id of ['brain', 'gut', 'liver']) R[id] = await buildChar(id);
+for (const r of Object.values(R)) { r.root.visible = false; scene.add(r.root); }
+const camera = new THREE.PerspectiveCamera(32, W / H, 0.05, 150);
+const comp = new EffectComposer(renderer); comp.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(W, H), 0.5, 0.55, 0.92); comp.addPass(bloom); comp.addPass(new OutputPass());
+const ctx = { THREE, scene, SETS, R, key, hemi, renderer, camera };
+
+let curSet = null, active = [];
+function frame(id, t) {
+  const cut = CUTS[id]; const s = SETS[cut.set];
+  for (const [k, v] of Object.entries(SETS)) v.group.visible = k === cut.set;
+  curSet = s; active = cut.cast;
+  for (const [k, r] of Object.entries(R)) r.root.visible = cut.cast.includes(k);
+  if (s.setTime && !cut.ownTime) s.setTime(t + (cut.t0 || 0));
+  if (s.atmo) { scene.fog = new THREE.Fog(s.atmo.fog, s.atmo.near, s.atmo.far); } else scene.fog = null;
+  const c = cut.apply(t, ctx) || {};
+  const { pos, target, fov = 32 } = c.cam;
+  camera.fov = fov; camera.aspect = W / H; camera.position.set(...pos); camera.lookAt(...target); camera.updateProjectionMatrix();
+  key.intensity = c.key ?? 1.6; hemi.intensity = c.hemi ?? 0.4; scene.environmentIntensity = c.env ?? 0.35;
+  bloom.strength = c.bloom ?? 0.5; if (!window.NORENDER) comp.render();
+  return c;
+}
+// 충돌 검사: 각 캐릭터 부위끼리(허용 쌍 제외) / 캐릭터 ↔ 세트 / 캐릭터 ↔ 캐릭터 / 바닥 아래
+const bvh = new Map(); const bvhOf = m => { if (!bvh.has(m.geometry)) bvh.set(m.geometry, new MeshBVH(m.geometry)); return bvh.get(m.geometry); };
+const HEART_ALLOW = new Set(['body|upL', 'body|upR', 'upL|loL', 'upR|loR', 'loL|handL', 'loR|handR', 'upL|handL', 'upR|handR', 'handR|box', 'handR|ticket', 'loR|ticket', 'body|cap', 'body|brim', 'cap|brim', 'cap|btn', 'body|footL', 'body|footR', 'footR|footTicket', 'body|footTicket'].map(k => k.split('|').sort().join('|')));
+const tmp = new THREE.Matrix4();
+const boxA = new THREE.Box3(), boxB = new THREE.Box3();
+const hit = (a, b) => {
+  if (!a.geometry.boundingBox) a.geometry.computeBoundingBox(); if (!b.geometry.boundingBox) b.geometry.computeBoundingBox();
+  boxA.copy(a.geometry.boundingBox).applyMatrix4(a.matrixWorld); boxB.copy(b.geometry.boundingBox).applyMatrix4(b.matrixWorld);
+  if (!boxA.intersectsBox(boxB)) return false;                                   // 상자끼리 안 겹치면 바로 통과
+  bvhOf(a); b.geometry.boundsTree = bvhOf(b);                                    // 양쪽 다 BVH(맞은편을 삼각형 하나하나 훑지 않게)
+  tmp.copy(a.matrixWorld).invert().multiply(b.matrixWorld); return bvhOf(a).intersectsGeometry(b.geometry, tmp); };
+const visibleMesh = m => { let o = m; while (o) { if (!o.visible) return false; o = o.parent; } return true; };
+function collide(extraAllow = []) {
+  scene.updateMatrixWorld(true); const out = [], ex = new Set([...extraAllow, ...(window.ALLOW || []),
+    ...['body', 'footL', 'footR', 'upL', 'upR', 'loL', 'loR', 'handL', 'handR', 'cap', 'brim', 'btn', 'ticket'].map(p => `heart:${p}|hammock`)]);   // 해먹(천)에 눕는 접촉은 정상
+  for (const k of active) { const r = R[k], M = r.meshes, n = Object.keys(M).filter(x => visibleMesh(M[x])), allow = r.allow || HEART_ALLOW;
+    for (let i = 0; i < n.length; i++) for (let j = i + 1; j < n.length; j++) { const kk = [n[i], n[j]].sort().join('|'); if (allow.has(kk)) continue; if (hit(M[n[i]], M[n[j]])) out.push(`${k}:${kk}`); }
+    for (const nm of n) { for (const s of curSet.SOLID) { if (!visibleMesh(s)) continue; const tag = `${k}:${nm}|${s.name}`; if (ex.has(tag) || ex.has(`${k}:*|${s.name}`)) continue; if (hit(M[nm], s)) { if (qs.get('dbg')) { const a = M[nm].getWorldPosition(new THREE.Vector3()), b = new THREE.Box3().setFromObject(s).getCenter(new THREE.Vector3()); out.push(tag + `@${a.x.toFixed(2)},${a.y.toFixed(2)},${a.z.toFixed(2)}~${b.x.toFixed(2)},${b.y.toFixed(2)},${b.z.toFixed(2)}`); } else out.push(tag); } }
+      const bb = new THREE.Box3().setFromObject(M[nm], true); if (bb.min.y < -0.005) out.push(`${k}:${nm}|floor`); } }
+  for (let a = 0; a < active.length; a++) for (let b = a + 1; b < active.length; b++) { const A = R[active[a]].meshes, B = R[active[b]].meshes;
+    for (const x of Object.keys(A)) for (const y of Object.keys(B)) if (visibleMesh(A[x]) && visibleMesh(B[y]) && hit(A[x], B[y])) out.push(`${active[a]}:${x}|${active[b]}:${y}`); }
+  return out;
+}
+window.R = R; window.SETS = SETS; window.THREE = THREE; window.probe = (pose) => { const H = R.heart; H.hold('ticket'); H.pose({ x: 0, z: 0, jump: 0, turn: 0, ...pose }); scene.updateMatrixWorld(true);
+  const t = H.ticket.getWorldPosition(new THREE.Vector3()), b = new THREE.Box3().setFromObject(H.ticket, true); return { c: [t.x, t.y, t.z].map(v => +v.toFixed(2)), min: [b.min.x, b.min.z].map(v => +v.toFixed(2)), max: [b.max.x, b.max.z].map(v => +v.toFixed(2)) }; };
+window.auditCut = async id => { const m = await import('./export_scene.js'); return m.auditCut(id, { frame, CUTS, SETS, R, scene, camera }); };
+window.exportCut = async id => { const m = await import('./export_scene.js'); const r = await m.exportCut(id, { frame, CUTS, SETS, R, scene, camera });
+  let b64 = ''; const u = r.glb; for (let i = 0; i < u.length; i += 0x8000) b64 += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); r.glb = btoa(b64); return r; };
+window.frame = frame; window.collide = collide; window.cuts = Object.fromEntries(Object.entries(CUTS).map(([k, v]) => [k, v.dur]));
+window.ready = true;
+</script></body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script type="importmap">{"imports":{
+ "three":"./node_modules/three/build/three.module.js",
+ "three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// 애니매틱용 실시간 미리보기: ?w=&h=  window.renderShot(id, t)
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { build } from './scene.js';
+import { addProps, shotPose, SHOTS } from './shots.js';
+
+const qs = new URLSearchParams(location.search);
+const W = +(qs.get('w') || 960), H = +(qs.get('h') || 540);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.toneMapping = THREE.AgXToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap;
+document.body.appendChild(renderer.domElement);
+const scene = build(); const S = scene.userData.S; const P = addProps(scene);
+const camera = new THREE.PerspectiveCamera(36, W / H, 0.02, 40);
+const pm = new THREE.PMREMGenerator(renderer);
+scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.background = new THREE.Color('#0d0b0a');
+const sun = new THREE.DirectionalLight('#ffc884', 10); scene.add(sun, sun.target);
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.radius = 6; sun.shadow.blurSamples = 12; sun.shadow.bias = -0.0003;
+Object.assign(sun.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 0.5, far: 14 });
+const hemi = new THREE.HemisphereLight('#bcd2ff', '#7a4a2a', 0.12); scene.add(hemi);
+for (const l of [P.lamp, P.doorSpot, P.corrLight, P.homeDoor, P.newLight, P.vacLight]) { l.castShadow = true; l.shadow.mapSize.set(1024, 1024); l.shadow.radius = 4; l.shadow.bias = -0.0005; }
+
+const LIGHTS = {
+  dawn:      { sun: ['#ff9050', 9, [-1, 0.88, 0.94]], hemi: 0.025, env: 0.025, exp: 1.0 },
+  morning:   { sun: ['#ffc884', 10, [-1, 1.05, -0.12]], hemi: 0.12, env: 0.12, exp: 0.85 },
+  afternoon: { sun: ['#ffb36a', 9, [-1, 0.7, 0.15]], hemi: 0.1, env: 0.1, exp: 0.85 },
+  night:     { sun: ['#7d95ff', 0.8, [-1, 0.8, -0.1]], hemi: 0.02, env: 0.01, exp: 0.95, lamp: 1.4 },
+  door:      { sun: ['#7d95ff', 0.25, [-1, 0.8, -0.1]], hemi: 0.02, env: 0.01, exp: 1.0, doorSpot: 14 },
+  corridor:  { sun: ['#000000', 0, [-1, 1, 0]], hemi: 0.006, env: 0.004, exp: 1.0, corr: 1.0, vac: 2.5 },
+  corridor_home: { sun: ['#000000', 0, [-1, 1, 0]], hemi: 0.006, env: 0.004, exp: 1.0, corr: 0.7, home: 4, vac: 2.5 },
+  newroom:   { sun: ['#ffe2bc', 4, [-0.6, 0.7, 0.5]], hemi: 0.05, env: 0.05, exp: 0.85, newl: 1.2 },
+};
+function applyLight(id, focusPos) {
+  const L = LIGHTS[id];
+  sun.color.set(L.sun[0]); sun.intensity = L.sun[1];
+  const d = new THREE.Vector3(...L.sun[2]).normalize();
+  sun.target.position.copy(focusPos).setY(0); sun.position.copy(sun.target.position).addScaledVector(d, 6);
+  hemi.intensity = L.hemi; scene.environmentIntensity = L.env; renderer.toneMappingExposure = L.exp;
+  P.lamp.intensity = L.lamp || 0; P.doorSpot.intensity = L.doorSpot || 0; P.corrLight.intensity = L.corr || 0; P.homeDoor.intensity = L.home || 0; P.newLight.intensity = L.newl || 0; P.vacLight.intensity = L.vac || 0;
+  for (const l of [P.lamp, P.doorSpot, P.corrLight, P.homeDoor, P.newLight, P.vacLight]) l.visible = l.intensity > 0;
+  sun.visible = sun.intensity > 0;
+}
+const comp = new EffectComposer(renderer);
+comp.addPass(new RenderPass(scene, camera));
+if (!qs.has('lite')) { const ao = new GTAOPass(scene, camera, W, H); ao.updateGtaoMaterial({ radius: 0.25, distanceExponent: 1.2, thickness: 2.5, scale: 1.6, samples: 12 }); comp.addPass(ao); }
+comp.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.4, 0.6, 0.85));
+const bokeh = new BokehPass(scene, camera, { focus: 1, aperture: 0.0025, maxblur: 0.006 }); comp.addPass(bokeh);
+comp.addPass(new OutputPass());
+
+window.renderShot = async (id, t) => {
+  const r = shotPose(S, id, t);
+  camera.fov = r.cam.fov; camera.position.set(...r.cam.pos); camera.lookAt(...r.cam.target); camera.updateProjectionMatrix();
+  const tgt = new THREE.Vector3(...r.cam.target);
+  applyLight(SHOTS[id].light, tgt);
+  bokeh.uniforms.focus.value = S.vac.position.clone().setY(0.06).distanceTo(camera.position);
+  comp.render();
+};
+window.ready = true;
+</script></body></html>

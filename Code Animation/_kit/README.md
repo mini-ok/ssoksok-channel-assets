@@ -5,6 +5,7 @@
 ## 1. 스킬 설치 (claude.ai → 설정 → Capabilities → Skills → 업로드)
 - `cel-anime-direction.skill` — 셀 애니메이션 연출·제작 스킬(〈숨비〉 회고까지 반영된 최신본). 셀 작품의 **핵심.**
 - `ink-wash-animation.skill` — 수묵·먹 번짐 코드 애니메이션 스킬(〈점〉 최종본까지의 검증 기법·작업 순서·체크리스트). 수묵 작품의 **핵심.**
+- `code-3d-character-animation.skill` — three.js 3D 캐릭터 애니매틱 + Blender 최종 렌더 스킬(〈심장의 휴가〉 검증: 충돌 검사, Blender 차이 보완, PC 대기열 렌더, 렌더 뒤 점검). 3D 작품의 **핵심.**
 - `screenplay-writing.skill`, `content-plan.skill` — 대본·기획 단계에 쓴 스킬(선택).
 - `skills/` 폴더는 같은 내용의 원본 SKILL.md.
 
@@ -13,6 +14,7 @@
 - Python 셀 엔진: `scarecrow/` (cel.py 캐릭터 셀, painter.py 포스터컬러 배경, eng.py 합성·필름 후처리, audio.py 합성 사운드) — 가장 완성도 높은 기준 구현.
 - three.js 3D 셀: `sumbi/three/` (core.js 패스 렌더, finish.py 셀 마감).
 - 수묵 엔진: `jeom/engine/` (paper·brush·inkmm 먹 번짐·rain 붓 비·room 화실·after 아침 종이) + `jeom/animatic3.py`(컷 렌더)·`jeom/anim_audio3.py`·`jeom/audio/instruments.py`(거문고·북 물리 모형). 다시 만들기: `jeom/README.md`.
+- 3D 캐릭터: `char3d/`(three.js 애니매틱·`export_scene.js`·`blender/heart_pixar.py`·`blender/run_pc.py`). 다시 만들기: `char3d/README.md`.
 - 공용 크레딧: `_shared/credit_overlay.py` (이 키트에도 사본).
 - 시작점: `Code Animation/README.md`.
 

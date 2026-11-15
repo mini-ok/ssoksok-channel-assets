@@ -1,0 +1,10 @@
+{
+  "name": "char3d",
+  "private": true,
+  "description": "〈심장의 휴가〉 3D 애니매틱(three.js) + Blender 내보내기",
+  "dependencies": {
+    "three": "0.187.0",
+    "three-mesh-bvh": "0.9.18",
+    "puppeteer-core": "^23"
+  }
+}
