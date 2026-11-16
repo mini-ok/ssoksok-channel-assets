@@ -1,0 +1,90 @@
+{
+  "episode": 34,
+  "dish": "토마토 모차렐라 케사디야",
+  "organ": "뼈",
+  "chef": "뼈 쉐프",
+  "main_ingredients": [
+    "부분 탈지 모차렐라"
+  ],
+  "cooking_style": "수분을 덜어낸 토마토와 치즈를 또띠아에 넣어 반으로 접고 두 면을 구워 치즈를 녹인다.",
+  "core_cooking_step": "수분을 덜어낸 토마토와 치즈를 또띠아에 넣어 반으로 접고 두 면을 구워 치즈를 녹인다.",
+  "main_ingredient_health_rationale": "부분 탈지 모차렐라 → 1인분 칼슘 약 333 mg → 치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "부분 탈지 모차렐라",
+      "또띠아",
+      "토마토"
+    ],
+    "substitutions": [
+      "일반 모차렐라를 쓸 때는 영양표시의 칼슘을 다시 확인한다."
+    ],
+    "basic_tools": [
+      "칼",
+      "도마",
+      "팬",
+      "뒤집개"
+    ]
+  },
+  "organ_rotation_note": "눈 다음 면역과 뼈",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+  "reason_for_chef": "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/",
+      "title": "NIH ODS Calcium",
+      "checked_at": "2026-11-16",
+      "supported_claim": "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+      "conditions_and_limits": "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+    "context": "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount": "333 mg",
+    "per_serving_amount": "333 mg",
+    "servings": 1,
+    "daily_reference_amount": "1300 mg",
+    "percent_of_daily_reference": 25.615384615384617,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1½ oz part-skim mozzarella (about 43 g). 주재료만 계산.",
+    "calculation": "333 × 1 = 333 mg; 333/1300 × 100 ≈ 26%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-16",
+    "uncertainty_note": "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요. 완성품 실측값 아님.",
+    "display": "부분 탈지 모차렐라 약 43g / 칼슘 약 333 mg / 주재료 1인분 참고값 / 제품마다 달라요 / 출처 미국 NIH ODS / 칼슘 약 333 mg / 미국 표시 DV 약 26% / 표시 기준 1300 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 45,
+  "menu_overlap_review": "모차렐라 첫 사용. 샌드위치형 반달 또띠아를 접어 마른 팬에 굽는 방식."
+}

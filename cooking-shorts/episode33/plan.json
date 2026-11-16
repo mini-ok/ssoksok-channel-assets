@@ -1,0 +1,91 @@
+{
+  "episode": 33,
+  "dish": "사과식초 방울양배추 볶음",
+  "organ": "면역",
+  "chef": "면역 쉐프",
+  "main_ingredients": [
+    "방울양배추"
+  ],
+  "cooking_style": "방울양배추를 얇게 썰어 볶고 사과식초를 졸여 새콤한 윤기를 낸다.",
+  "core_cooking_step": "방울양배추를 얇게 썰어 볶고 사과식초를 졸여 새콤한 윤기를 낸다.",
+  "main_ingredient_health_rationale": "방울양배추 → 1인분 비타민 C 약 48 mg → 방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "방울양배추",
+      "올리브유",
+      "사과식초",
+      "머스터드"
+    ],
+    "substitutions": [
+      "냉동 방울양배추는 포장 안내에 따라 익히고 수분을 제거해서 사용한다."
+    ],
+    "basic_tools": [
+      "칼",
+      "도마",
+      "팬",
+      "뒤집개"
+    ]
+  },
+  "organ_rotation_note": "눈 다음 면역과 뼈",
+  "music": {
+    "file": "nimble_motifs.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+  "reason_for_chef": "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/?uid=56e2b525127a58s16",
+      "title": "NIH ODS Vitamin C",
+      "checked_at": "2026-11-16",
+      "supported_claim": "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+      "conditions_and_limits": "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+    "context": "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 C",
+    "recipe_amount": "48 mg",
+    "per_serving_amount": "48 mg",
+    "servings": 1,
+    "daily_reference_amount": "90 mg",
+    "percent_of_daily_reference": 53.333333333333336,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup cooked Brussels sprouts (about 120 mL). 주재료만 계산.",
+    "calculation": "48 × 1 = 48 mg; 48/90 × 100 ≈ 53%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/?uid=56e2b525127a58s16"
+    ],
+    "checked_at": "2026-11-16",
+    "uncertainty_note": "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요. 완성품 실측값 아님.",
+    "display": "익힌 방울양배추 120mL / 비타민 C 약 48 mg / 주재료 1인분 참고값 / 익히는 방식과 시간에 따라 차이 / 출처 미국 NIH ODS / 비타민 C 약 48 mg / 미국 표시 DV 약 53% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 44,
+  "menu_overlap_review": "방울양배추 첫 사용. 20편 채소 볶음 후 12편이 지났다."
+}

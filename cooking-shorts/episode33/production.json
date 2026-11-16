@@ -1,0 +1,256 @@
+{
+  "character": "immune",
+  "voice": "Aoede",
+  "chef_ko": "면역 쉐프",
+  "chef_en": "Chef Immune",
+  "dish_ko": "사과식초 방울양배추 볶음",
+  "dish_en": "Cider Glazed Brussels Sprouts",
+  "slug": "CiderBrusselsSprouts",
+  "music": "nimble_motifs.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "방울양배추",
+      "Brussels sprouts",
+      "익힌 뒤 120mL",
+      "½ US cup cooked (about 120 mL)",
+      "main"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ],
+    [
+      "사과식초",
+      "Apple cider vinegar",
+      "8mL",
+      "8 mL",
+      "water"
+    ],
+    [
+      "머스터드",
+      "Mustard",
+      "3g",
+      "3 g",
+      "powder"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "얇게 썰기",
+    "식초와 머스터드 섞기",
+    "볶고 소스 졸이기",
+    "따뜻하게 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Slice Thinly",
+    "Mix the Sauce",
+    "Cook and Glaze",
+    "Serve Warm",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "면역 쉐프입니다. 오늘은 방울양배추를 새콤하게 볶아요.",
+    "방울양배추, 올리브유, 사과식초와 머스터드를 준비해요.",
+    "방울양배추를 씻고 밑동을 잘라요. 반을 가른 뒤 얇게 썰어요.",
+    "작은 그릇에 사과식초를 부어요. 머스터드를 넣고 고루 섞어요.",
+    "팬에서 방울양배추를 볶아요. 가장자리가 노릇해지면 소스를 넣고 짧게 졸여요.",
+    "잎이 부드럽고 가장자리가 살짝 바삭할 때 접시에 담아요.",
+    "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+    "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요.",
+    "작은 양배추가 팬을 가득 채웠어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Immune here. Today we are making tangy Brussels sprouts.",
+    "Get Brussels sprouts, olive oil, cider vinegar, and mustard.",
+    "Wash and trim the sprouts. Cut them in half and slice thinly.",
+    "Pour vinegar into a small bowl. Stir in the mustard.",
+    "Cook the sprouts in the skillet. When the edges turn golden, add the sauce and let it reduce briefly.",
+    "Serve when the leaves are tender and the edges are lightly crisp.",
+    "Brussels sprouts supply vitamin C. Your immune system needs vitamin C to work normally.",
+    "The estimate is for cooked sprouts alone. The actual amount can vary with cooking method and time.",
+    "These little sprouts filled the whole skillet!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "방울양배추 익힌 뒤 120mL",
+    "올리브유 5g",
+    "사과식초 8mL",
+    "머스터드 3g",
+    "방울양배추를 씻고 밑동을 잘라 얇게 썬다.",
+    "사과식초와 머스터드를 섞는다.",
+    "중불의 기름 두른 팬에서 채소를 4~6분 볶는다.",
+    "소스를 넣어 약 30초 졸인 뒤 담는다."
+  ],
+  "recipe_en": [
+    "Brussels sprouts ½ US cup cooked (about 120 mL)",
+    "Olive oil 5 g",
+    "Apple cider vinegar 8 mL",
+    "Mustard 3 g",
+    "Wash, trim and thinly slice the sprouts.",
+    "Stir cider vinegar and mustard together.",
+    "Cook sprouts in an oiled skillet over medium heat for 4–6 min.",
+    "Add the sauce, reduce about 30 seconds, and serve."
+  ],
+  "health_focus": "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+  "main_ingredients": [
+    "방울양배추"
+  ],
+  "cooking_style": "방울양배추를 얇게 썰어 볶고 사과식초를 졸여 새콤한 윤기를 낸다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/?uid=56e2b525127a58s16",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "비타민 C",
+    "recipe_amount": "48 mg",
+    "per_serving_amount": "48 mg",
+    "servings": 1,
+    "daily_reference_amount": "90 mg",
+    "percent_of_daily_reference": 53.333333333333336,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: ½ US cup cooked Brussels sprouts (about 120 mL). 주재료만 계산.",
+    "calculation": "48 × 1 = 48 mg; 48/90 × 100 ≈ 53%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/?uid=56e2b525127a58s16"
+    ],
+    "checked_at": "2026-11-16",
+    "uncertainty_note": "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요. 완성품 실측값 아님.",
+    "display": "익힌 방울양배추 120mL / 비타민 C 약 48 mg / 주재료 1인분 참고값 / 익히는 방식과 시간에 따라 차이 / 출처 미국 NIH ODS / 비타민 C 약 48 mg / 미국 표시 DV 약 53% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 방울양배추 120mL",
+      "비타민 C 약 48 mg",
+      "주재료 1인분 참고값",
+      "익히는 방식과 시간에 따라 차이",
+      "출처 미국 NIH ODS"
+    ],
+    [
+      "비타민 C 약 48 mg",
+      "미국 표시 DV 약 53%",
+      "표시 기준 90 mg",
+      "개인 권장량과 구분",
+      "출처 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "½ US cup cooked Brussels sprouts (about 120 mL)",
+      "About 48 mg Vitamin C",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source NIH ODS"
+    ],
+    [
+      "About 48 mg Vitamin C",
+      "About 53% of the U.S. Daily Value",
+      "Labeling DV 90 mg",
+      "Individual needs vary",
+      "Source NIH ODS"
+    ]
+  ],
+  "episode": 33,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "면역 쉐프입니다. 오늘은 방울양배추를 새콤하게 볶아요.",
+      "text_en": "Chef Immune here. Today we are making tangy Brussels sprouts."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "방울양배추, 올리브유, 사과식초와 머스터드를 준비해요.",
+      "text_en": "Get Brussels sprouts, olive oil, cider vinegar, and mustard."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "얇게 썰기",
+      "title_en": "Slice Thinly",
+      "text_ko": "방울양배추를 씻고 밑동을 잘라요. 반을 가른 뒤 얇게 썰어요.",
+      "text_en": "Wash and trim the sprouts. Cut them in half and slice thinly."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "식초와 머스터드 섞기",
+      "title_en": "Mix the Sauce",
+      "text_ko": "작은 그릇에 사과식초를 부어요. 머스터드를 넣고 고루 섞어요.",
+      "text_en": "Pour vinegar into a small bowl. Stir in the mustard."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "볶고 소스 졸이기",
+      "title_en": "Cook and Glaze",
+      "text_ko": "팬에서 방울양배추를 볶아요. 가장자리가 노릇해지면 소스를 넣고 짧게 졸여요.",
+      "text_en": "Cook the sprouts in the skillet. When the edges turn golden, add the sauce and let it reduce briefly."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "따뜻하게 담기",
+      "title_en": "Serve Warm",
+      "text_ko": "잎이 부드럽고 가장자리가 살짝 바삭할 때 접시에 담아요.",
+      "text_en": "Serve when the leaves are tender and the edges are lightly crisp."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "방울양배추에는 비타민 씨가 들어 있어요. 이 영양소는 면역 체계가 정상적으로 일하는 데 필요해요.",
+      "text_en": "Brussels sprouts supply vitamin C. Your immune system needs vitamin C to work normally."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요.",
+      "text_en": "The estimate is for cooked sprouts alone. The actual amount can vary with cooking method and time."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "작은 양배추가 팬을 가득 채웠어요.",
+      "text_en": "These little sprouts filled the whole skillet!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "면역 쉐프의 사과식초 방울양배추 볶음 #Shorts",
+  "upload_title_en": "Chef Immune's Cider Glazed Brussels Sprouts #Shorts",
+  "health_description_en": "Brussels sprouts supply vitamin C. Your immune system needs vitamin C to work normally. The estimate is for cooked sprouts alone. The actual amount can vary with cooking method and time."
+}

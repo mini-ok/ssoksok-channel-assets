@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 C",
+  "recipe_amount": "48 mg",
+  "per_serving_amount": "48 mg",
+  "servings": 1,
+  "daily_reference_amount": "90 mg",
+  "percent_of_daily_reference": 53.333333333333336,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: ½ US cup cooked Brussels sprouts (about 120 mL). 주재료만 계산.",
+  "calculation": "48 × 1 = 48 mg; 48/90 × 100 ≈ 53%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/?uid=56e2b525127a58s16"
+  ],
+  "checked_at": "2026-11-16",
+  "uncertainty_note": "화면은 익힌 방울양배추만 계산한 참고값이에요. 익히는 방법과 시간에 따라 실제 양은 달라져요. 완성품 실측값 아님.",
+  "display": "익힌 방울양배추 120mL / 비타민 C 약 48 mg / 주재료 1인분 참고값 / 익히는 방식과 시간에 따라 차이 / 출처 미국 NIH ODS / 비타민 C 약 48 mg / 미국 표시 DV 약 53% / 표시 기준 90 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS",
+  "status": "passed"
+}

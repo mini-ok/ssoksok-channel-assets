@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "칼슘",
+  "recipe_amount": "333 mg",
+  "per_serving_amount": "333 mg",
+  "servings": 1,
+  "daily_reference_amount": "1300 mg",
+  "percent_of_daily_reference": 25.615384615384617,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 1½ oz part-skim mozzarella (about 43 g). 주재료만 계산.",
+  "calculation": "333 × 1 = 333 mg; 333/1300 × 100 ≈ 26%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/"
+  ],
+  "checked_at": "2026-11-16",
+  "uncertainty_note": "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요. 완성품 실측값 아님.",
+  "display": "부분 탈지 모차렐라 약 43g / 칼슘 약 333 mg / 주재료 1인분 참고값 / 제품마다 달라요 / 출처 미국 NIH ODS / 칼슘 약 333 mg / 미국 표시 DV 약 26% / 표시 기준 1300 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS",
+  "status": "passed"
+}

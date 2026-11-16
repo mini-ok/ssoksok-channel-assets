@@ -1,0 +1,247 @@
+{
+  "character": "bone",
+  "voice": "Achird",
+  "chef_ko": "뼈 쉐프",
+  "chef_en": "Chef Bone",
+  "dish_ko": "토마토 모차렐라 케사디야",
+  "dish_en": "Tomato Mozzarella Quesadilla",
+  "slug": "TomatoMozzarellaQuesadilla",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "부분 탈지 모차렐라",
+      "Part-skim mozzarella",
+      "43g",
+      "1½ oz (about 43 g)",
+      "main"
+    ],
+    [
+      "또띠아",
+      "Tortilla",
+      "1장",
+      "1 tortilla",
+      "add"
+    ],
+    [
+      "토마토",
+      "Tomato",
+      "35g",
+      "35 g",
+      "powder"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "토마토 물기 빼기",
+    "속을 넣고 접기",
+    "두 면 굽기",
+    "세 조각으로 자르기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Dry the Tomato",
+    "Fill and Fold",
+    "Toast Both Sides",
+    "Slice Into Wedges",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "뼈 쉐프입니다. 치즈가 부드럽게 녹는 케사디야를 만들어요.",
+    "부분 탈지 모차렐라와 또띠아 한 장, 토마토를 준비해요.",
+    "토마토를 잘게 썰고 물기를 닦아요. 치즈도 잘게 썰어요.",
+    "또띠아 절반에 치즈와 토마토를 고르게 올려요. 남은 절반을 접어요.",
+    "기름 없는 팬에 올려 중약불로 구워요. 밑면이 노릇해지면 뒤집어서 치즈를 녹여요.",
+    "잠깐 식힌 뒤 세 조각으로 잘라요. 겉은 바삭하고 속은 부드러워요.",
+    "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+    "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요.",
+    "접어서 구웠더니 치즈가 안에 쏙 들어갔어요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Bone here. Let us make a quesadilla with melted cheese.",
+    "Get part skim mozzarella, a tortilla, and a tomato.",
+    "Dice the tomato and pat it dry. Cut the cheese into small pieces.",
+    "Spread cheese and tomato over half of the tortilla. Fold the other half over the filling.",
+    "Cook in a dry skillet over medium low heat. Flip when golden and cook until the cheese melts.",
+    "Rest briefly and cut into three pieces. Crisp outside and soft inside.",
+    "Cheese supplies calcium. Calcium is a mineral your body uses to build the structure of bones and teeth.",
+    "The estimate counts the part skim mozzarella alone. Calcium varies by product, so check the package label.",
+    "Fold it up, and the cheese has a little home!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "부분 탈지 모차렐라 43g",
+    "또띠아 1장",
+    "토마토 35g",
+    "토마토와 치즈를 잘게 썰고 토마토의 물기를 닦는다.",
+    "또띠아 절반에 치즈와 토마토를 올려 접는다.",
+    "마른 팬에서 중약불로 한 면당 2~3분 굽는다.",
+    "치즈가 녹으면 꺼내 잠시 식히고 세 조각으로 자른다."
+  ],
+  "recipe_en": [
+    "Part-skim mozzarella 1½ oz (about 43 g)",
+    "Tortilla 1 tortilla",
+    "Tomato 35 g",
+    "Dice the cheese and tomato. Pat tomato pieces dry.",
+    "Fill one half of the tortilla and fold it over.",
+    "Cook in a dry skillet on medium low, 2–3 min per side.",
+    "When cheese melts, let it rest briefly and cut into three wedges."
+  ],
+  "health_focus": "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+  "main_ingredients": [
+    "부분 탈지 모차렐라"
+  ],
+  "cooking_style": "수분을 덜어낸 토마토와 치즈를 또띠아에 넣어 반으로 접고 두 면을 구워 치즈를 녹인다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "칼슘",
+    "recipe_amount": "333 mg",
+    "per_serving_amount": "333 mg",
+    "servings": 1,
+    "daily_reference_amount": "1300 mg",
+    "percent_of_daily_reference": 25.615384615384617,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 1½ oz part-skim mozzarella (about 43 g). 주재료만 계산.",
+    "calculation": "333 × 1 = 333 mg; 333/1300 × 100 ≈ 26%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/calcium-HealthProfessional/"
+    ],
+    "checked_at": "2026-11-16",
+    "uncertainty_note": "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요. 완성품 실측값 아님.",
+    "display": "부분 탈지 모차렐라 약 43g / 칼슘 약 333 mg / 주재료 1인분 참고값 / 제품마다 달라요 / 출처 미국 NIH ODS / 칼슘 약 333 mg / 미국 표시 DV 약 26% / 표시 기준 1300 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "부분 탈지 모차렐라 약 43g",
+      "칼슘 약 333 mg",
+      "주재료 1인분 참고값",
+      "제품마다 달라요",
+      "출처 미국 NIH ODS"
+    ],
+    [
+      "칼슘 약 333 mg",
+      "미국 표시 DV 약 26%",
+      "표시 기준 1300 mg",
+      "개인 권장량과 구분",
+      "출처 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "1½ oz part-skim mozzarella (about 43 g)",
+      "About 333 mg Calcium",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source NIH ODS"
+    ],
+    [
+      "About 333 mg Calcium",
+      "About 26% of the U.S. Daily Value",
+      "Labeling DV 1300 mg",
+      "Individual needs vary",
+      "Source NIH ODS"
+    ]
+  ],
+  "episode": 34,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "뼈 쉐프입니다. 치즈가 부드럽게 녹는 케사디야를 만들어요.",
+      "text_en": "Chef Bone here. Let us make a quesadilla with melted cheese."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "부분 탈지 모차렐라와 또띠아 한 장, 토마토를 준비해요.",
+      "text_en": "Get part skim mozzarella, a tortilla, and a tomato."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "토마토 물기 빼기",
+      "title_en": "Dry the Tomato",
+      "text_ko": "토마토를 잘게 썰고 물기를 닦아요. 치즈도 잘게 썰어요.",
+      "text_en": "Dice the tomato and pat it dry. Cut the cheese into small pieces."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "속을 넣고 접기",
+      "title_en": "Fill and Fold",
+      "text_ko": "또띠아 절반에 치즈와 토마토를 고르게 올려요. 남은 절반을 접어요.",
+      "text_en": "Spread cheese and tomato over half of the tortilla. Fold the other half over the filling."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "두 면 굽기",
+      "title_en": "Toast Both Sides",
+      "text_ko": "기름 없는 팬에 올려 중약불로 구워요. 밑면이 노릇해지면 뒤집어서 치즈를 녹여요.",
+      "text_en": "Cook in a dry skillet over medium low heat. Flip when golden and cook until the cheese melts."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "세 조각으로 자르기",
+      "title_en": "Slice Into Wedges",
+      "text_ko": "잠깐 식힌 뒤 세 조각으로 잘라요. 겉은 바삭하고 속은 부드러워요.",
+      "text_en": "Rest briefly and cut into three pieces. Crisp outside and soft inside."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "치즈는 칼슘을 공급해요. 칼슘은 뼈와 치아의 구조를 이루는 데 필요한 무기질이에요.",
+      "text_en": "Cheese supplies calcium. Calcium is a mineral your body uses to build the structure of bones and teeth."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 부분 탈지 모차렐라만 계산했어요. 칼슘은 제품마다 다르니 포장의 영양 표시를 확인해요.",
+      "text_en": "The estimate counts the part skim mozzarella alone. Calcium varies by product, so check the package label."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "접어서 구웠더니 치즈가 안에 쏙 들어갔어요.",
+      "text_en": "Fold it up, and the cheese has a little home!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "뼈 쉐프의 토마토 모차렐라 케사디야 #Shorts",
+  "upload_title_en": "Chef Bone's Tomato Mozzarella Quesadilla #Shorts",
+  "health_description_en": "Cheese supplies calcium. Calcium is a mineral your body uses to build the structure of bones and teeth. The estimate counts the part skim mozzarella alone. Calcium varies by product, so check the package label."
+}
