@@ -1,0 +1,29 @@
+{
+  "episode": 33,
+  "title": "Cider Glazed Brussels Sprouts",
+  "verified_at": "2026-11-16T02:52:09Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "S5t2PiAir5A",
+      "video_url": "https://youtu.be/S5t2PiAir5A",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "CiderBrusselsSprouts_EN.mp4",
+      "sha256": "fb3fc26d58b53645a552ba6654d48c77bb8dcc86c614faf1792e8826dd96009d"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "2kFusFdww1g",
+      "video_url": "https://youtu.be/2kFusFdww1g",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "CiderBrusselsSprouts_KO.mp4",
+      "sha256": "45fbe582c0511912b3949b1f3695b0cedc23ea323a31865cd394fb4ed80440cc"
+    }
+  ]
+}
