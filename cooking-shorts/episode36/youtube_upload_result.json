@@ -1,0 +1,29 @@
+{
+  "episode": 36,
+  "title": "Lemon Parsley Bulgur Salad",
+  "verified_at": "2026-11-17T02:51:44Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "8qgUgdaqTUU",
+      "video_url": "https://youtu.be/8qgUgdaqTUU",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LemonParsleyBulgur_EN.mp4",
+      "sha256": "cefdc04dd0c4efb3a80fbd7a116105b737e1ed779a8ffe3c9263770786f21efa"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "sOVs7IBCYeg",
+      "video_url": "https://youtu.be/sOVs7IBCYeg",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LemonParsleyBulgur_KO.mp4",
+      "sha256": "81e6e45909dde6bcbcd5ee07d494ea2dc5dc9d9e19b13e2135c7ed210c4c5a25"
+    }
+  ]
+}
