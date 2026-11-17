@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "식이섬유",
+  "recipe_amount": "4.1 g",
+  "per_serving_amount": "4.1 g",
+  "servings": 1,
+  "daily_reference_amount": "28 g",
+  "percent_of_daily_reference": 14.64285714285714,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "USDA/HHS Food Sources of Fiber: ½ US cup cooked bulgur (about 120 mL). 주재료만 계산.",
+  "calculation": "4.1 × 1 = 4.1 g; 4.1/28 × 100 ≈ 15%",
+  "source_urls": [
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+    "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+    "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+  ],
+  "checked_at": "2026-11-17",
+  "uncertainty_note": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+  "display": "익힌 불구르 120mL / 식이섬유 약 4.1 g / 주재료 1인분 참고값 / 익힌 곡물의 참고값 / 출처 USDA/HHS · NIDDK · FDA / 식이섬유 약 4.1 g / 미국 표시 DV 약 15% / 표시 기준 28 g / 개인 권장량과 구분 / 출처 USDA/HHS · NIDDK · FDA",
+  "status": "passed"
+}

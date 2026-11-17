@@ -1,0 +1,267 @@
+{
+  "character": "gut",
+  "voice": "Puck",
+  "chef_ko": "장 쉐프",
+  "chef_en": "Chef Gut",
+  "dish_ko": "레몬 파슬리 불구르 샐러드",
+  "dish_en": "Lemon Parsley Bulgur Salad",
+  "slug": "LemonParsleyBulgur",
+  "music": "buant_pop_groove.mp3",
+  "previous_music": "nimble_motifs.mp3",
+  "source_ko": "USDA/HHS · NIDDK · FDA",
+  "source_en": "USDA/HHS · NIDDK · FDA",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "불구르",
+      "Whole-grain bulgur",
+      "익힌 뒤 120mL",
+      "½ US cup cooked (about 120 mL)",
+      "main"
+    ],
+    [
+      "파슬리",
+      "Parsley",
+      "15g",
+      "15 g",
+      "add"
+    ],
+    [
+      "오이",
+      "Cucumber",
+      "40g",
+      "40 g",
+      "powder"
+    ],
+    [
+      "레몬즙",
+      "Lemon juice",
+      "10g",
+      "10 g",
+      "water"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "불구르 익혀 식히기",
+    "채소와 드레싱 준비",
+    "가볍게 버무리기",
+    "그릇에 담기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Cook and Cool the Bulgur",
+    "Prep Herbs and Dressing",
+    "Fluff and Toss",
+    "Spoon into a Bowl",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "장 쉐프입니다. 잘게 부순 통밀로 상큼한 샐러드를 만들어요.",
+    "불구르와 파슬리, 오이, 레몬즙, 올리브유를 준비해요.",
+    "불구르를 포장 안내대로 익혀요. 접시에 넓게 펴서 김을 빼요.",
+    "파슬리를 다지고 오이를 잘게 썰어요. 레몬즙과 올리브유를 섞어요.",
+    "식힌 불구르를 포크로 풀어요. 오이와 파슬리, 레몬 드레싱을 넣어 버무려요.",
+    "그릇에 담아요. 통밀 알갱이 사이로 오이와 파슬리가 씹혀요.",
+    "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+    "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요.",
+    "통밀 알갱이가 뭉치지 않고 포크에서 잘 떨어져요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Gut here. Let us make a bright salad with cracked whole wheat.",
+    "Get bulgur, parsley, cucumber, lemon juice, and olive oil.",
+    "Cook the bulgur as directed on its package. Spread it out on a plate to release steam.",
+    "Chop the parsley and finely dice the cucumber. Whisk lemon juice with olive oil.",
+    "Fluff the cooled bulgur with a fork. Toss with the cucumber, parsley, and lemon dressing.",
+    "Spoon it into a bowl. Each bite has tender grains, crisp cucumber, and fresh herbs.",
+    "Bulgur supplies dietary fiber. Getting enough fiber and fluids can help keep stools soft and easier to pass.",
+    "The estimate counts cooked bulgur alone. The actual amount can vary with the product and how much water it absorbs.",
+    "The little grains are loose and ready to share a bowl.",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "불구르 익힌 뒤 120mL",
+    "파슬리 15g",
+    "오이 40g",
+    "레몬즙 10g",
+    "올리브유 5g",
+    "불구르를 포장 안내대로 익혀 접시에 펼쳐 식힌다.",
+    "파슬리를 다지고 오이를 잘게 썬다.",
+    "레몬즙과 올리브유를 섞어 드레싱을 만든다.",
+    "불구르를 포크로 풀고 채소와 드레싱을 버무린다."
+  ],
+  "recipe_en": [
+    "Whole-grain bulgur ½ US cup cooked (about 120 mL)",
+    "Parsley 15 g",
+    "Cucumber 40 g",
+    "Lemon juice 10 g",
+    "Olive oil 5 g",
+    "Cook bulgur as directed. Spread on a plate to cool.",
+    "Chop parsley and dice cucumber.",
+    "Whisk lemon juice and oil for the dressing.",
+    "Fluff the bulgur with a fork and toss everything together."
+  ],
+  "health_focus": "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+  "main_ingredients": [
+    "불구르"
+  ],
+  "cooking_style": "익힌 통밀 불구르를 펼쳐 식힌 뒤 다진 허브와 레몬 드레싱을 버무려 가볍게 흩어지는 식감을 낸다.",
+  "source_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "4.1 g",
+    "per_serving_amount": "4.1 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 14.64285714285714,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA/HHS Food Sources of Fiber: ½ US cup cooked bulgur (about 120 mL). 주재료만 계산.",
+    "calculation": "4.1 × 1 = 4.1 g; 4.1/28 × 100 ≈ 15%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-17",
+    "uncertainty_note": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "익힌 불구르 120mL / 식이섬유 약 4.1 g / 주재료 1인분 참고값 / 익힌 곡물의 참고값 / 출처 USDA/HHS · NIDDK · FDA / 식이섬유 약 4.1 g / 미국 표시 DV 약 15% / 표시 기준 28 g / 개인 권장량과 구분 / 출처 USDA/HHS · NIDDK · FDA"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 불구르 120mL",
+      "식이섬유 약 4.1 g",
+      "주재료 1인분 참고값",
+      "익힌 곡물의 참고값",
+      "출처 USDA/HHS · NIDDK · FDA"
+    ],
+    [
+      "식이섬유 약 4.1 g",
+      "미국 표시 DV 약 15%",
+      "표시 기준 28 g",
+      "개인 권장량과 구분",
+      "출처 USDA/HHS · NIDDK · FDA"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "½ US cup cooked bulgur (about 120 mL)",
+      "About 4.1 g Dietary fiber",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source USDA/HHS · NIDDK · FDA"
+    ],
+    [
+      "About 4.1 g Dietary fiber",
+      "About 15% of the U.S. Daily Value",
+      "Labeling DV 28 g",
+      "Individual needs vary",
+      "Source USDA/HHS · NIDDK · FDA"
+    ]
+  ],
+  "episode": 36,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "장 쉐프입니다. 잘게 부순 통밀로 상큼한 샐러드를 만들어요.",
+      "text_en": "Chef Gut here. Let us make a bright salad with cracked whole wheat."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "불구르와 파슬리, 오이, 레몬즙, 올리브유를 준비해요.",
+      "text_en": "Get bulgur, parsley, cucumber, lemon juice, and olive oil."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "불구르 익혀 식히기",
+      "title_en": "Cook and Cool the Bulgur",
+      "text_ko": "불구르를 포장 안내대로 익혀요. 접시에 넓게 펴서 김을 빼요.",
+      "text_en": "Cook the bulgur as directed on its package. Spread it out on a plate to release steam."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "채소와 드레싱 준비",
+      "title_en": "Prep Herbs and Dressing",
+      "text_ko": "파슬리를 다지고 오이를 잘게 썰어요. 레몬즙과 올리브유를 섞어요.",
+      "text_en": "Chop the parsley and finely dice the cucumber. Whisk lemon juice with olive oil."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "가볍게 버무리기",
+      "title_en": "Fluff and Toss",
+      "text_ko": "식힌 불구르를 포크로 풀어요. 오이와 파슬리, 레몬 드레싱을 넣어 버무려요.",
+      "text_en": "Fluff the cooled bulgur with a fork. Toss with the cucumber, parsley, and lemon dressing."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "그릇에 담기",
+      "title_en": "Spoon into a Bowl",
+      "text_ko": "그릇에 담아요. 통밀 알갱이 사이로 오이와 파슬리가 씹혀요.",
+      "text_en": "Spoon it into a bowl. Each bite has tender grains, crisp cucumber, and fresh herbs."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+      "text_en": "Bulgur supplies dietary fiber. Getting enough fiber and fluids can help keep stools soft and easier to pass."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요.",
+      "text_en": "The estimate counts cooked bulgur alone. The actual amount can vary with the product and how much water it absorbs."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "통밀 알갱이가 뭉치지 않고 포크에서 잘 떨어져요.",
+      "text_en": "The little grains are loose and ready to share a bowl."
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "장 쉐프의 레몬 파슬리 불구르 샐러드 #Shorts",
+  "upload_title_en": "Chef Gut's Lemon Parsley Bulgur Salad #Shorts",
+  "health_description_en": "Bulgur supplies dietary fiber. Getting enough fiber and fluids can help keep stools soft and easier to pass. The estimate counts cooked bulgur alone. The actual amount can vary with the product and how much water it absorbs."
+}

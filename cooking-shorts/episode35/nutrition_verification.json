@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "셀레늄",
+  "recipe_amount": "42 mcg",
+  "per_serving_amount": "42 mcg",
+  "servings": 1,
+  "daily_reference_amount": "55 mcg",
+  "percent_of_daily_reference": 76.36363636363637,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2 / USDA NDB 15151: 3 oz cooked shrimp (about 85 g). 주재료만 계산.",
+  "calculation": "42 × 1 = 42 mcg; 42/55 × 100 ≈ 76%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/selenium-HealthProfessional/",
+    "https://ods.od.nih.gov/pubs/usdandb/Selenium-Food.pdf",
+    "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+  ],
+  "checked_at": "2026-11-17",
+  "uncertainty_note": "화면 수치는 익힌 새우만 계산한 참고값이에요. 새우의 종류와 실제로 먹는 양에 따라 달라져요. 완성품 실측값 아님.",
+  "display": "익힌 새우 약 85g / 셀레늄 약 42 mcg / 주재료 1인분 참고값 / 새우 종류와 양에 따라 차이 / 출처 NIH ODS · USDA / 셀레늄 약 42 mcg / 미국 표시 DV 약 76% / 표시 기준 55 mcg / 개인 권장량과 구분 / 출처 NIH ODS · USDA",
+  "status": "passed"
+}

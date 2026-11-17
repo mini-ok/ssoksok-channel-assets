@@ -1,0 +1,108 @@
+{
+  "episode": 36,
+  "dish": "레몬 파슬리 불구르 샐러드",
+  "organ": "장",
+  "chef": "장 쉐프",
+  "main_ingredients": [
+    "불구르"
+  ],
+  "cooking_style": "익힌 통밀 불구르를 펼쳐 식힌 뒤 다진 허브와 레몬 드레싱을 버무려 가볍게 흩어지는 식감을 낸다.",
+  "core_cooking_step": "익힌 통밀 불구르를 펼쳐 식힌 뒤 다진 허브와 레몬 드레싱을 버무려 가볍게 흩어지는 식감을 낸다.",
+  "main_ingredient_health_rationale": "불구르 → 1인분 식이섬유 약 4.1 g → 불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "불구르",
+      "파슬리",
+      "오이",
+      "레몬즙",
+      "올리브유"
+    ],
+    "substitutions": [
+      "파슬리 일부를 민트로 바꿀 수 있다."
+    ],
+    "basic_tools": [
+      "냄비",
+      "포크",
+      "도마",
+      "볼"
+    ]
+  },
+  "organ_rotation_note": "뼈 다음 면역과 장",
+  "music": {
+    "file": "buant_pop_groove.mp3",
+    "previous_episode_file": "nimble_motifs.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+  "reason_for_chef": "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+  "evidence": [
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "title": "NIDDK Dietary Fiber",
+      "checked_at": "2026-11-17",
+      "supported_claim": "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+      "conditions_and_limits": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요."
+    },
+    {
+      "url": "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "title": "USDA/HHS Food Sources of Fiber",
+      "checked_at": "2026-11-17",
+      "supported_claim": "익힌 불구르 120mL의 식이섬유 참고값 4.1 g.",
+      "conditions_and_limits": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요."
+    },
+    {
+      "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+      "title": "FDA Daily Values",
+      "checked_at": "2026-11-17",
+      "supported_claim": "미국 표시 DV 28g.",
+      "conditions_and_limits": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "불구르에는 식이섬유가 들어 있어요. 식이섬유와 물을 충분히 섭취하면 변이 부드러워져 배변에 도움이 돼요.",
+    "context": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "식이섬유",
+    "recipe_amount": "4.1 g",
+    "per_serving_amount": "4.1 g",
+    "servings": 1,
+    "daily_reference_amount": "28 g",
+    "percent_of_daily_reference": 14.64285714285714,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "USDA/HHS Food Sources of Fiber: ½ US cup cooked bulgur (about 120 mL). 주재료만 계산.",
+    "calculation": "4.1 × 1 = 4.1 g; 4.1/28 × 100 ≈ 15%",
+    "source_urls": [
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "https://www.dietaryguidelines.gov/sites/default/files/2024-08/Food-Sources-Fiber-Standard-508C.pdf",
+      "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels"
+    ],
+    "checked_at": "2026-11-17",
+    "uncertainty_note": "화면은 익힌 불구르 분량만 계산한 값이에요. 물을 머금는 정도나 제품에 따라 실제 함량이 달라질 수 있어요. 완성품 실측값 아님.",
+    "display": "익힌 불구르 120mL / 식이섬유 약 4.1 g / 주재료 1인분 참고값 / 익힌 곡물의 참고값 / 출처 USDA/HHS · NIDDK · FDA / 식이섬유 약 4.1 g / 미국 표시 DV 약 15% / 표시 기준 28 g / 개인 권장량과 구분 / 출처 USDA/HHS · NIDDK · FDA"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 47,
+  "menu_overlap_review": "불구르 첫 사용. 13편 샐러드 이후 22편이 지났으며 이번에는 익힌 곡물이 중심."
+}
