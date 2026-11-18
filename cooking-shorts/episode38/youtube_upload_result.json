@@ -1,0 +1,29 @@
+{
+  "episode": 38,
+  "title": "Pear Hazelnut Crumble",
+  "verified_at": "2026-11-18T02:52:33Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "fWxbbb4lqHU",
+      "video_url": "https://youtu.be/fWxbbb4lqHU",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "PearHazelnutCrumble_EN.mp4",
+      "sha256": "2fe82e5c4e1c9d7cd9b46a8a36455d440bbfa3889457892a2b168975d8e029f2"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "ATqxc01N5uQ",
+      "video_url": "https://youtu.be/ATqxc01N5uQ",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "PearHazelnutCrumble_KO.mp4",
+      "sha256": "3f44e3eda08740f8ccb0e217ddb38fffa1b9395515e956002c141174b8eacb10"
+    }
+  ]
+}

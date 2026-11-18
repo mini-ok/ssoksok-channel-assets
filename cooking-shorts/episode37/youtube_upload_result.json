@@ -1,0 +1,29 @@
+{
+  "episode": 37,
+  "title": "Lemon Parsley Baked Cod",
+  "verified_at": "2026-11-18T02:52:33Z",
+  "uploads": [
+    {
+      "language": "en",
+      "channel": "@tinybodyco",
+      "channel_id": "UCPDFR4X7gcXfFEvnFozBsuw",
+      "video_id": "N9K_AiH_dAU",
+      "video_url": "https://youtu.be/N9K_AiH_dAU",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLHg-oCG5OwG8",
+      "uploaded_file": "LemonParsleyCod_EN.mp4",
+      "sha256": "6ae3976cd64401f3ce8a8c754483e81d193a412ae4bc45e7ba997bb4a8c6386f"
+    },
+    {
+      "language": "ko",
+      "channel": "@ssoksok-health",
+      "channel_id": "UCPHoB51NiWZRPr_Dz3o3spg",
+      "video_id": "95hY3lDh3dg",
+      "video_url": "https://youtu.be/95hY3lDh3dg",
+      "public": true,
+      "playlist_url": "https://www.youtube.com/playlist?list=PLXT3qZbENWVw",
+      "uploaded_file": "LemonParsleyCod_KO.mp4",
+      "sha256": "1c82363928acadaa2aaa9792db9c3d23f956a9899d8f8c515c8c4615ea1ab8ba"
+    }
+  ]
+}
