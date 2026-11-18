@@ -1,0 +1,98 @@
+{
+  "episode": 37,
+  "dish": "레몬 파슬리 대구 오븐구이",
+  "organ": "뇌",
+  "chef": "뇌 쉐프",
+  "main_ingredients": [
+    "대서양 대구"
+  ],
+  "cooking_style": "레몬 껍질과 파슬리를 기름에 섞어 대구 표면에 입히고 오븐에 굽는다.",
+  "core_cooking_step": "레몬 껍질과 파슬리를 기름에 섞어 대구 표면에 입히고 오븐에 굽는다.",
+  "main_ingredient_health_rationale": "대서양 대구 → 1인분 콜린 약 71 mg → 대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+  "global_accessibility": {
+    "common_ingredients": [
+      "대서양 대구 살",
+      "레몬 껍질 간 것",
+      "다진 파슬리",
+      "올리브유"
+    ],
+    "substitutions": [
+      "냉동 대서양 대구도 해동해 사용 가능. 다른 종은 영양 수치 재확인."
+    ],
+    "basic_tools": [
+      "오븐",
+      "식품용 온도계",
+      "볼"
+    ]
+  },
+  "organ_rotation_note": "장 다음 뇌와 면역",
+  "music": {
+    "file": "buoyant_kitchen_groove.mp3",
+    "previous_episode_file": "buant_pop_groove.mp3",
+    "reason": "직전 편과 다른 곡"
+  },
+  "health_focus": "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+  "reason_for_chef": "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+  "evidence": [
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/?uid=65b0570f9dd6as16",
+      "title": "NIH ODS Choline",
+      "checked_at": "2026-11-18",
+      "supported_claim": "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+      "conditions_and_limits": "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요."
+    },
+    {
+      "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+      "title": "FoodSafety.gov Safe Minimum Internal Temperatures",
+      "checked_at": "2026-11-18",
+      "supported_claim": "생선 중심 온도 63°C 이상.",
+      "conditions_and_limits": "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요."
+    }
+  ],
+  "cooking_scene_ids": [
+    "prep",
+    "mix",
+    "cook",
+    "serve"
+  ],
+  "health_narration_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "source_screen_scene_ids": [
+    "benefit",
+    "context"
+  ],
+  "health_narration_expected": {
+    "benefit": "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+    "context": "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요."
+  },
+  "review": {
+    "evidence_matches_recipe": true,
+    "organ_connection_is_specific": true,
+    "menu_history_checked": true
+  },
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "콜린",
+    "recipe_amount": "71 mg",
+    "per_serving_amount": "71 mg",
+    "servings": 1,
+    "daily_reference_amount": "550 mg",
+    "percent_of_daily_reference": 12.909090909090908,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 3 oz baked Atlantic cod (about 85 g). 주재료만 계산.",
+    "calculation": "71 × 1 = 71 mg; 71/550 × 100 ≈ 13%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/?uid=65b0570f9dd6as16",
+      "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+    ],
+    "checked_at": "2026-11-18",
+    "uncertainty_note": "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요. 완성품 실측값 아님.",
+    "display": "익힌 대서양 대구 약 85g / 콜린 약 71 mg / 주재료 1인분 참고값 / 다른 어종은 함량 차이 / 출처 미국 NIH ODS / 콜린 약 71 mg / 미국 표시 DV 약 13% / 표시 기준 550 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS"
+  },
+  "status": "source_ready_not_rendered",
+  "earliest_main_ingredient_or_style_reuse_episode": 48,
+  "menu_overlap_review": "대구 첫 사용. 7편 생선 오븐구이 이후 29편이 지났다. 35편은 새우를 습열로 익혔다."
+}

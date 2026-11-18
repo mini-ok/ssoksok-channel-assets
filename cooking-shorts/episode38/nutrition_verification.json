@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "spoken_numbers_required": false,
+  "nutrient": "비타민 E",
+  "recipe_amount": "4.3 mg",
+  "per_serving_amount": "4.3 mg",
+  "servings": 1,
+  "daily_reference_amount": "15 mg",
+  "percent_of_daily_reference": 28.666666666666668,
+  "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+  "basis": "NIH ODS Table 2: 1 oz dry-roasted hazelnuts (about 28 g). 주재료만 계산.",
+  "calculation": "4.3 × 1 = 4.3 mg; 4.3/15 × 100 ≈ 29%",
+  "source_urls": [
+    "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/?uid=b6aac6d8f95d08s16",
+    "https://ods.od.nih.gov/factsheets/ImmuneFunction-Consumer/"
+  ],
+  "checked_at": "2026-11-18",
+  "uncertainty_note": "화면은 건식으로 볶은 헤이즐넛만 계산한 참고값이에요. 배와 시나몬은 계산에서 뺐어요. 완성품 실측값 아님.",
+  "display": "건식 볶은 헤이즐넛 약 28g / 비타민 E 약 4.3 mg / 주재료 1인분 참고값 / 배와 시나몬 제외 / 출처 미국 NIH ODS / 비타민 E 약 4.3 mg / 미국 표시 DV 약 29% / 표시 기준 15 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS",
+  "status": "passed"
+}

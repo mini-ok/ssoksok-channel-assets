@@ -1,0 +1,255 @@
+{
+  "character": "brain",
+  "voice": "Puck",
+  "chef_ko": "뇌 쉐프",
+  "chef_en": "Chef Brain",
+  "dish_ko": "레몬 파슬리 대구 오븐구이",
+  "dish_en": "Lemon Parsley Baked Cod",
+  "slug": "LemonParsleyCod",
+  "music": "buoyant_kitchen_groove.mp3",
+  "previous_music": "buant_pop_groove.mp3",
+  "source_ko": "NIH ODS",
+  "source_en": "NIH ODS",
+  "time_ko": "1인분",
+  "time_en": "1 serving",
+  "ingredients": [
+    [
+      "대서양 대구 살",
+      "Atlantic cod fillet",
+      "익힌 뒤 85g",
+      "3 oz cooked (about 85 g)",
+      "main"
+    ],
+    [
+      "레몬 껍질 간 것",
+      "Lemon zest",
+      "1g",
+      "1 g",
+      "powder"
+    ],
+    [
+      "다진 파슬리",
+      "Chopped parsley",
+      "4g",
+      "4 g",
+      "add"
+    ],
+    [
+      "올리브유",
+      "Olive oil",
+      "5g",
+      "5 g",
+      "oil"
+    ]
+  ],
+  "headings_ko": [
+    "오늘의 장기 쉐프",
+    "재료와 분량",
+    "대구 물기 닦기",
+    "레몬 허브 기름 바르기",
+    "오븐에서 익히기",
+    "접시에 옮기기",
+    "이 요리를 고른 이유",
+    "수치 기준",
+    "쉐프의 한마디",
+    "전체 레시피"
+  ],
+  "headings_en": [
+    "Meet the Chef",
+    "Ingredients",
+    "Pat the Cod Dry",
+    "Coat with Lemon Herbs",
+    "Bake the Fish",
+    "Plate the Cod",
+    "Why This Dish",
+    "How to Read the Number",
+    "A Word from the Chef",
+    "Full Recipe"
+  ],
+  "ko": [
+    "뇌 쉐프입니다. 대구에 레몬과 파슬리 향을 입혀요.",
+    "대구 살과 레몬 껍질 간 것, 파슬리, 올리브유를 준비해요.",
+    "대구 표면을 종이 수건으로 가볍게 눌러 물기를 닦아요.",
+    "레몬 껍질과 파슬리를 기름에 섞어요. 대구 윗면에 고르게 발라요.",
+    "예열한 오븐에서 구워요. 가장 두꺼운 곳이 섭씨 육십삼 도에 도달하면 꺼내요.",
+    "대구를 접시에 옮겨요. 포크로 살을 떠 보면 결대로 갈라져요.",
+    "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+    "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요.",
+    "레몬 향이 나니까 식탁으로 바로 갈게요.",
+    "구독은 사원증 발급! 좋아요는 보너스!"
+  ],
+  "en": [
+    "Chef Brain here. Let us bake cod with lemon and parsley.",
+    "Get Atlantic cod, lemon zest, chopped parsley, and olive oil.",
+    "Gently pat the surface of the cod dry with a paper towel.",
+    "Mix the lemon zest and parsley with oil. Spread evenly over the top of the cod.",
+    "Bake in a preheated oven. Remove when the thickest part reaches sixty three degrees Celsius.",
+    "Transfer the cod to a plate. A fork lifts the cooked fish in flakes.",
+    "Cod supplies choline. Your body uses it to make a chemical messenger for the brain and nervous system.",
+    "The estimate counts only baked Atlantic cod. Other kinds of fish can have different amounts.",
+    "That lemon smells good. I am heading to the table!",
+    "Subscribe for your employee badge! Likes are your bonus!"
+  ],
+  "recipe_ko": [
+    "대서양 대구 살 익힌 뒤 85g",
+    "레몬 껍질 간 것 1g",
+    "다진 파슬리 4g",
+    "올리브유 5g",
+    "대구 물기를 닦고 오븐을 200°C로 예열한다.",
+    "레몬 껍질과 파슬리를 기름에 섞어 대구 윗면에 바른다.",
+    "가장 두꺼운 곳이 63°C에 도달할 때까지 굽는다."
+  ],
+  "recipe_en": [
+    "Atlantic cod fillet 3 oz cooked (about 85 g)",
+    "Lemon zest 1 g",
+    "Chopped parsley 4 g",
+    "Olive oil 5 g",
+    "Pat the cod dry and preheat the oven to 200°C.",
+    "Mix zest, parsley and oil. Coat the top of the fish.",
+    "Bake until the thickest part reaches 63°C (145°F)."
+  ],
+  "health_focus": "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+  "main_ingredients": [
+    "대서양 대구"
+  ],
+  "cooking_style": "레몬 껍질과 파슬리를 기름에 섞어 대구 표면에 입히고 오븐에 굽는다.",
+  "source_url": "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/?uid=65b0570f9dd6as16",
+  "nutrition_box": {
+    "required": true,
+    "spoken_numbers_required": false,
+    "nutrient": "콜린",
+    "recipe_amount": "71 mg",
+    "per_serving_amount": "71 mg",
+    "servings": 1,
+    "daily_reference_amount": "550 mg",
+    "percent_of_daily_reference": 12.909090909090908,
+    "reference_population": "미국 FDA 영양표시 DV, 성인 및 4세 이상. 개인 RDA와 구분.",
+    "basis": "NIH ODS Table 2: 3 oz baked Atlantic cod (about 85 g). 주재료만 계산.",
+    "calculation": "71 × 1 = 71 mg; 71/550 × 100 ≈ 13%",
+    "source_urls": [
+      "https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/?uid=65b0570f9dd6as16",
+      "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+    ],
+    "checked_at": "2026-11-18",
+    "uncertainty_note": "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요. 완성품 실측값 아님.",
+    "display": "익힌 대서양 대구 약 85g / 콜린 약 71 mg / 주재료 1인분 참고값 / 다른 어종은 함량 차이 / 출처 미국 NIH ODS / 콜린 약 71 mg / 미국 표시 DV 약 13% / 표시 기준 550 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS"
+  },
+  "nutrition_ko": [
+    [
+      "익힌 대서양 대구 약 85g",
+      "콜린 약 71 mg",
+      "주재료 1인분 참고값",
+      "다른 어종은 함량 차이",
+      "출처 미국 NIH ODS"
+    ],
+    [
+      "콜린 약 71 mg",
+      "미국 표시 DV 약 13%",
+      "표시 기준 550 mg",
+      "개인 권장량과 구분",
+      "출처 미국 NIH ODS"
+    ]
+  ],
+  "nutrition_en": [
+    [
+      "3 oz baked Atlantic cod (about 85 g)",
+      "About 71 mg Choline",
+      "Main ingredient, one serving",
+      "Reference estimate",
+      "Source NIH ODS"
+    ],
+    [
+      "About 71 mg Choline",
+      "About 13% of the U.S. Daily Value",
+      "Labeling DV 550 mg",
+      "Individual needs vary",
+      "Source NIH ODS"
+    ]
+  ],
+  "episode": 37,
+  "scenes": [
+    {
+      "id": "hook",
+      "narrator": false,
+      "title_ko": "오늘의 장기 쉐프",
+      "title_en": "Meet the Chef",
+      "text_ko": "뇌 쉐프입니다. 대구에 레몬과 파슬리 향을 입혀요.",
+      "text_en": "Chef Brain here. Let us bake cod with lemon and parsley."
+    },
+    {
+      "id": "ingredients",
+      "narrator": true,
+      "title_ko": "재료와 분량",
+      "title_en": "Ingredients",
+      "text_ko": "대구 살과 레몬 껍질 간 것, 파슬리, 올리브유를 준비해요.",
+      "text_en": "Get Atlantic cod, lemon zest, chopped parsley, and olive oil."
+    },
+    {
+      "id": "prep",
+      "narrator": false,
+      "title_ko": "대구 물기 닦기",
+      "title_en": "Pat the Cod Dry",
+      "text_ko": "대구 표면을 종이 수건으로 가볍게 눌러 물기를 닦아요.",
+      "text_en": "Gently pat the surface of the cod dry with a paper towel."
+    },
+    {
+      "id": "mix",
+      "narrator": false,
+      "title_ko": "레몬 허브 기름 바르기",
+      "title_en": "Coat with Lemon Herbs",
+      "text_ko": "레몬 껍질과 파슬리를 기름에 섞어요. 대구 윗면에 고르게 발라요.",
+      "text_en": "Mix the lemon zest and parsley with oil. Spread evenly over the top of the cod."
+    },
+    {
+      "id": "cook",
+      "narrator": false,
+      "title_ko": "오븐에서 익히기",
+      "title_en": "Bake the Fish",
+      "text_ko": "예열한 오븐에서 구워요. 가장 두꺼운 곳이 섭씨 육십삼 도에 도달하면 꺼내요.",
+      "text_en": "Bake in a preheated oven. Remove when the thickest part reaches sixty three degrees Celsius."
+    },
+    {
+      "id": "serve",
+      "narrator": true,
+      "title_ko": "접시에 옮기기",
+      "title_en": "Plate the Cod",
+      "text_ko": "대구를 접시에 옮겨요. 포크로 살을 떠 보면 결대로 갈라져요.",
+      "text_en": "Transfer the cod to a plate. A fork lifts the cooked fish in flakes."
+    },
+    {
+      "id": "benefit",
+      "narrator": true,
+      "title_ko": "이 요리를 고른 이유",
+      "title_en": "Why This Dish",
+      "text_ko": "대구에는 콜린이 들어 있어요. 우리 몸은 콜린을 써서 뇌와 신경계가 신호를 주고받는 데 필요한 물질을 만들어요.",
+      "text_en": "Cod supplies choline. Your body uses it to make a chemical messenger for the brain and nervous system."
+    },
+    {
+      "id": "context",
+      "narrator": true,
+      "title_ko": "수치 기준",
+      "title_en": "How to Read the Number",
+      "text_ko": "화면 수치는 구운 대서양 대구만 계산한 참고값이에요. 다른 종류의 생선에는 이 수치를 그대로 적용하지 않아요.",
+      "text_en": "The estimate counts only baked Atlantic cod. Other kinds of fish can have different amounts."
+    },
+    {
+      "id": "joke",
+      "narrator": false,
+      "title_ko": "쉐프의 한마디",
+      "title_en": "A Word from the Chef",
+      "text_ko": "레몬 향이 나니까 식탁으로 바로 갈게요.",
+      "text_en": "That lemon smells good. I am heading to the table!"
+    },
+    {
+      "id": "end",
+      "narrator": false,
+      "title_ko": "전체 레시피",
+      "title_en": "Full Recipe",
+      "text_ko": "구독은 사원증 발급! 좋아요는 보너스!",
+      "text_en": "Subscribe for your employee badge! Likes are your bonus!"
+    }
+  ],
+  "upload_title_ko": "뇌 쉐프의 레몬 파슬리 대구 오븐구이 #Shorts",
+  "upload_title_en": "Chef Brain's Lemon Parsley Baked Cod #Shorts",
+  "health_description_en": "Cod supplies choline. Your body uses it to make a chemical messenger for the brain and nervous system. The estimate counts only baked Atlantic cod. Other kinds of fish can have different amounts."
+}
