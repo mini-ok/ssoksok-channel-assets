@@ -62,7 +62,7 @@
   "ko": [
     "면역 쉐프입니다. 부드러운 배 위에 바삭한 견과 층을 만들어요.",
     "볶은 헤이즐넛과 배, 시나몬 가루를 준비해요.",
-    "배의 씨 부분을 빼고 얇게 썰어요. 작은 오븐용 그릇에 담아요.",
+    "배를 얇게 썰어요. 가운데 씨를 빼고 작은 그릇에 담아요.",
     "배에 시나몬을 묻혀 먼저 구워요. 그동안 헤이즐넛을 굵게 부숴요.",
     "배가 부드러워지면 견과를 위에 고르게 펼쳐요. 향이 날 때까지 짧게 더 구워요.",
     "잠깐 식힌 뒤 떠먹어요. 부드러운 배와 바삭한 견과가 한 숟갈에 들어와요.",
@@ -85,19 +85,21 @@
   ],
   "recipe_ko": [
     "건식 볶은 헤이즐넛 28g",
-    "배 120g",
-    "시나몬 가루 0.5g",
-    "씨를 제거한 배를 얇게 썰고 시나몬에 버무린다.",
-    "작은 오븐용 그릇에 담아 190°C에서 12~15분 굽는다.",
-    "부드러워지면 굵게 부순 헤이즐넛을 펼쳐 3~5분 더 굽는다."
+    "배 120g · 시나몬 가루 0.5g",
+    "배의 씨를 제거하고 얇게 썬다.",
+    "시나몬에 버무려 오븐용 그릇에 담는다.",
+    "190°C에서 12~15분 굽는다.",
+    "부순 견과를 올려 3~5분 더 굽는다.",
+    "잠시 식힌 뒤 따뜻하게 먹어요."
   ],
   "recipe_en": [
     "Dry-roasted hazelnuts 1 oz (about 28 g)",
-    "Pear 120 g",
-    "Ground cinnamon 0.5 g",
-    "Core and thinly slice the pear. Toss with cinnamon.",
-    "Bake in a small dish for 12–15 min at 190°C.",
-    "When tender, add crushed hazelnuts and bake 3–5 min more."
+    "Pear 120 g · ground cinnamon 0.5 g",
+    "Core and thinly slice the pear.",
+    "Toss with cinnamon and put in an ovenproof dish.",
+    "Bake for 12–15 min at 190°C.",
+    "Add crushed hazelnuts and bake 3–5 min more.",
+    "Cool briefly and serve warm."
   ],
   "health_focus": "헤이즐넛에는 비타민 이가 들어 있어요. 비타민 이는 정상적인 면역 기능에 필요하고 세포를 산화 손상으로부터 보호하는 역할도 해요.",
   "main_ingredients": [
@@ -180,7 +182,7 @@
       "narrator": false,
       "title_ko": "배 얇게 썰기",
       "title_en": "Slice the Pear",
-      "text_ko": "배의 씨 부분을 빼고 얇게 썰어요. 작은 오븐용 그릇에 담아요.",
+      "text_ko": "배를 얇게 썰어요. 가운데 씨를 빼고 작은 그릇에 담아요.",
       "text_en": "Remove the pear core and slice the flesh thinly. Put it in a small oven dish."
     },
     {
