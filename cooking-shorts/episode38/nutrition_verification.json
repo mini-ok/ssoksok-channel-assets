@@ -15,7 +15,7 @@
     "https://ods.od.nih.gov/factsheets/ImmuneFunction-Consumer/"
   ],
   "checked_at": "2026-11-18",
-  "uncertainty_note": "화면은 건식으로 볶은 헤이즐넛만 계산한 참고값이에요. 배와 시나몬은 계산에서 뺐어요. 완성품 실측값 아님.",
+  "uncertainty_note": "화면의 수치는 볶은 견과만 기준으로 삼았어요. 배와 계피의 영양 성분은 포함하지 않았어요. 완성품 실측값 아님.",
   "display": "건식 볶은 헤이즐넛 약 28g / 비타민 E 약 4.3 mg / 주재료 1인분 참고값 / 배와 시나몬 제외 / 출처 미국 NIH ODS / 비타민 E 약 4.3 mg / 미국 표시 DV 약 29% / 표시 기준 15 mg / 개인 권장량과 구분 / 출처 미국 NIH ODS",
   "status": "passed"
 }
