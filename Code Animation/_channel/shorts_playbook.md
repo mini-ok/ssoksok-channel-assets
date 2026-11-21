@@ -78,6 +78,8 @@ A wordless healing animation. Watch the full film — tap the related video belo
 
 ## B. 종이 지식 쇼츠
 
+> **2026-11-21부터 지식 쇼츠는 `trivia/`(알쓸신잡풍 자동 제작 엔진)로 12시간마다 한 편씩 만든다.** 사용법·검사 기준은 `trivia/README.md`, 주제 목록은 `trivia/topics.md`. 아래 B-2~B-3은 그 전에 손으로 만든 3편(haedal·simhae·hive) 방식이다.
+
 ### B-1. 컨셉
 - 한 편 = 질문 하나. 첫 화면에 질문을 크게(예: "24절기는 음력일까?", "벌집은 왜 육각형일까?").
 - 그림은 종이 오림·겹 종이: 크림색 종이, 그림자, 종이 결, 시차가 다른 여러 겹. 화면 글자는 한·영 병기.
