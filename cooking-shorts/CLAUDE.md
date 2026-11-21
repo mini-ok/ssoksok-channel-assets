@@ -73,6 +73,7 @@
   `privacy: public`이 기록된다.
 - **독립 재확인(스크립트 자체 성공 메시지만 믿지 않는다)**: 업로드 후 YouTube Videos API(`part=snippet,status`)로
   실제 `privacyStatus=public`과 `channelId`가 맞는 채널인지 다시 조회해 확인한다.
+- **일부공개로 전환(사용자 지시 2026-11-21: 채널은 건강백과 중심, 요리 쇼츠는 재생목록에서만 보이게)**: upload.py는 공개로 올리고 공개 여부를 검사하므로 그대로 실행한 뒤, 재확인이 끝나면 각 영상을 `videos.update(part=status)`로 `privacyStatus=unlisted`로 바꾼다(기존 status의 embeddable·license·publicStatsViewable·selfDeclaredMadeForKids 값은 그대로 보낸다). 다시 조회해 `unlisted`인지 확인한다. 재생목록(쏙쏙 건강요리 / Healthy Cooking Shorts)은 공개로 두고, 두 채널 홈 탭에서 요리 재생목록 섹션은 맨 아래에 둔다. 결과 파일에는 `"public": false, "privacy": "unlisted"`로 적는다.
 - **기록**: 비밀값 없는 `cooking-shorts/episodeNN/youtube_upload_result.json`(에피소드·언어·영상 URL/ID·채널·공개
   상태·업로드 파일 SHA256·확인 시각)을 써서 `git pull --rebase origin main` 후 커밋·푸시한다(다른 파이프라인의
   동시 커밋과 충돌하면 재시도). 이 파일의 존재가 "이미 올렸음"의 기준이 되므로 반드시 남긴다.
