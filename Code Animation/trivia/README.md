@@ -7,7 +7,7 @@
 | `engine.py` | 장면 틀(hook·number·compare·steps·fact·answer), 영·한 글자 배치(`bi_layout`: 영어 위, 한글 아래, 크기 비슷), 종이 질감 합성, 장면 넘김, 끝 낙관 카드 |
 | `audio.py` | 장면 시각표로 소리 자동 합성(가야금풍 튕김 고리, 거문고, 종이 휙, 막대 자랄 때 실소리, 숫자 셀 때 똑딱, 정답 북) |
 | `render.py` | 프레임 PNG(두 프로세스). `--stills`로 검사용 정지 화면 |
-| `make.sh` | 4초 구간 렌더 → mp4 → 소리 → 합치기(-14 LUFS) |
+| `make.sh` | 4초 구간 렌더 → mp4 → 소리 → `vfx.loud`로 음량 맞춰 붙이기 → `vfx.qa report` 검수 보고 |
 | `upload.py` | YouTube Data API로 업로드(영어 원문 + 한국어 번역, 채널 확인, 기록) |
 | `topics.md` | 출처를 확인한 주제 목록과 진행 상태 |
 | `episodes/lightning_vs_sun.py` | **검증된 예시**(첫 편). 새 편은 이 파일을 본떠 쓴다 |

@@ -29,10 +29,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, 'haedal'))
 sys.path.insert(0, os.path.join(ROOT, 'jamo28'))
+sys.path.insert(0, os.path.join(ROOT, '_kit'))
 os.environ.setdefault('MG_SCALE', os.environ.get('HD_SCALE', '1'))
 from mg import clamp, ramp, smooth, expo_out, expo_in_out, back_out, spring, lerp   # noqa: E402
 from paper import W, H, SC, Level, composite, grain, hexc, tex                     # noqa: E402
 import shapes as S                                                                   # noqa: E402
+from vfx import post as POST                                                        # noqa: E402
+from vfx.timeline import Beat                                                       # noqa: E402
 
 FPS = 30
 DW, DH = 1080, 1920
@@ -40,6 +43,9 @@ SERIF = 'Noto Serif CJK KR'
 BOLD, NORMAL = cairo.FONT_WEIGHT_BOLD, cairo.FONT_WEIGHT_NORMAL
 END = 4.2                     # 끝 카드 길이
 TR = 0.55                     # 장면 넘김(들어옴·나감) 시간
+OV = 0.35                     # 다음 장면이 앞 장면 끝과 겹쳐 들어오는 시간(빈 종이만 보이는 틈을 없앰)
+BEAT = Beat(bpm=120, beats_per_bar=4, fps=FPS)   # 그림·소리가 함께 읽는 박자표(반 박 = 0.25초)
+EV0 = 0.5                     # 장면 안 첫 사건 시각(박 위)
 MAXW = 920                    # 글 한 줄 최대 폭
 DEFAULT_PAL = dict(bg='#EFE6D2', ink='#22201C', accent='#E0442E', accent2='#2F6F8F', card='#FBF6EA', muted='#8A8172')
 
@@ -151,10 +157,11 @@ def fmt_num(v, fmt):
 
 
 # ---------------------------------------------------------------- 장면 넘김
-def enter_exit(b, t):
-    """들어옴 u_in(0→1, 스프링), 나감 u_out(0→1)."""
+def enter_exit(b, t, first=False):
+    """들어옴 u_in(0→1), 나감 u_out(0→1). 첫 장면이 아니면 앞 장면 끝 OV초 전부터 들어온다."""
     lt = t - b['t0']; d = b['dur']
-    u_in = clamp(lt / TR); u_out = clamp((lt - (d - TR * 0.8)) / (TR * 0.8))
+    u_in = clamp(lt / TR) if first else clamp((lt + OV) / TR)
+    u_out = clamp((lt - (d - TR * 0.8)) / (TR * 0.8))
     return u_in, u_out
 
 
@@ -200,7 +207,7 @@ def draw_compare(L, ep, b, lt, u):
     span = DW - 200; bw = min(250, span / n * 0.62)
     for i, it in enumerate(items):
         cx = 100 + span * (i + 0.5) / n
-        t0 = 0.6 + i * b.get('stagger', 1.3)
+        t0 = EV0 + i * b.get('stagger', 1.5)
         g = spring(clamp((lt - t0) / 1.1), zeta=0.6, freq=1.4)
         hh = (base_y - top_y) * it['value'] / vmax * g
         col = hexc(it['color']) if isinstance(it.get('color'), str) else (it.get('color') or (ep.pal['accent'] if i == n - 1 else ep.pal['accent2']))
@@ -233,7 +240,7 @@ def draw_steps(L, ep, b, lt, u):
     y = 230 + h + 90; gap = b.get('gap', 40)
     x_head = 150
     for i, it in enumerate(items):
-        t0 = 0.6 + i * b.get('stagger', 1.4)
+        t0 = EV0 + i * b.get('stagger', 1.5)
         a = smooth(ramp(lt, t0, t0 + 0.45))
         if a <= 0: break
         off = (1 - expo_out(ramp(lt, t0, t0 + 0.6))) * 60
@@ -265,7 +272,7 @@ def draw_answer(L, ep, b, lt, u):
     if fn: fn(L, lt, u, ep)
     lay = bi_layout(L['type'], b['a_en'], b['a_ko'], b.get('size', 80))
     y = b.get('y', 640)
-    pop = back_out(clamp((lt - 0.2) / 0.5))
+    pop = back_out(clamp((lt - 0.25) / 0.5))
     w, h = lay['w'] + 90, lay['h'] + 90
     cr = L['near']; cr.save(); cr.translate(DW / 2, y + h / 2); cr.scale(pop, pop); cr.translate(-DW / 2, -(y + h / 2))
     card(cr, (DW - w) / 2, y, w, h, ep.pal['accent'])
@@ -305,23 +312,31 @@ LEVELS = [('back', 0.4, 0.14), ('mid', 1.2, 0.30), ('card', 0.9, 0.26), ('near',
 
 
 def draw_all(ep, t, L):
-    draw_bg({n: L[n].cr for n in L}, ep, t)
-    b = ep.beat_at(t)
-    if b is None: return
-    lt = t - b['t0']
-    u_in, u_out = enter_exit(b, t)
-    dx = slide_dx(u_in, u_out)
-    if ep.beats[0] is b: dx = (1 - expo_out(u_in)) * 0 - expo_in_out(u_out) * 1150     # 첫 장면은 제자리에서 등장
-    names = [n for n, *_ in LEVELS if n != 'back']
-    for n in names: L[n].cr.save(); L[n].cr.translate(dx * {'mid': 1.0, 'card': 1.0, 'near': 1.15, 'type': 1.0}[n], 0)
-    if ep.beats[0] is b and lt < TR:                                                   # 첫 장면: 아래에서 올라옴
-        for n in names: L[n].cr.translate(0, (1 - spring(u_in, zeta=0.6, freq=1.5)) * 260)
     Lc = {n: L[n].cr for n in L}
-    DRAW[b['type']](Lc, ep, b, lt, u_in * (1 - u_out))
-    for n in names: L[n].cr.restore()
+    draw_bg(Lc, ep, t)
+    names = [n for n, *_ in LEVELS if n != 'back']
+    par = {'mid': 1.0, 'card': 1.0, 'near': 1.15, 'type': 1.0}
+    for k, b in enumerate(ep.beats):
+        first = k == 0
+        if not ((b['t0'] - (0 if first else OV)) <= t < b['t1']): continue
+        lt = t - b['t0']
+        u_in, u_out = enter_exit(b, t, first)
+        dx = -expo_in_out(u_out) * 1150 + (0 if first else (1 - back_out(u_in, 0.9)) * 1150)
+        dy = (1 - back_out(u_in, 0.9)) * 260 if first else 0
+        for n in names: L[n].cr.save(); L[n].cr.translate(dx * par[n], dy)
+        DRAW[b['type']](Lc, ep, b, lt, u_in * (1 - u_out))
+        for n in names: L[n].cr.restore()
 
 
-def frame(ep, t, samples=2, shutter=0.5):
+def in_transition(ep, t):
+    """장면이 들어오거나 나가는 중인가(빠른 움직임 → 하위 프레임을 늘려 모션 블러)."""
+    for k, b in enumerate(ep.beats):
+        if (b['t0'] - (0 if k == 0 else OV)) <= t < b['t0'] + TR or (b['t1'] - TR * 0.8) <= t < b['t1']: return True
+    return False
+
+
+def frame(ep, t, samples=None, shutter=0.5):
+    if samples is None: samples = 6 if in_transition(ep, t) else 1       # 멈춘 화면은 1장, 넘김은 6장 평균
     names = [n for n, *_ in LEVELS]
     acc = {}
     for si in range(samples):
@@ -383,10 +398,14 @@ def end_card(ep, img, t):
     return img * (1 - k) + np.array(ep.pal['ink'][::-1], np.float32) * k
 
 
-def final(ep, t, samples=2):
-    img = frame(ep, t, samples) * vignette()
+LOOK = dict(sat=1.06, split=((0.03, 0.012, -0.012), (-0.008, 0.004, 0.02), 0.5), s_curve=0.18, vignette=0.14, grain=0.008)
+
+
+def final(ep, t, samples=None, look=True):
+    img = frame(ep, t, samples)
     img = end_card(ep, img, t)
-    return grain(img, int(t * FPS), 0.008)
+    if not look: return grain(img * vignette(), int(t * FPS), 0.008)
+    return POST.grade(img, seed=int(t * FPS), **{**LOOK, **getattr(ep.m, 'LOOK', {})})
 
 
 def beat_marks(ep):
@@ -395,11 +414,11 @@ def beat_marks(ep):
     for b in ep.beats:
         out.append((b['t0'], 'in', b))
         if b['type'] == 'compare':
-            for i, it in enumerate(b['items']): out.append((b['t0'] + 0.6 + i * b.get('stagger', 1.3), 'grow', b))
+            for i, it in enumerate(b['items']): out.append((b['t0'] + EV0 + i * b.get('stagger', 1.5), 'grow', b))
             if b.get('note_en') or b.get('note_ko'): out.append((b['t0'] + b.get('note_t', b['dur'] - 2.4), 'hit', b))
         elif b['type'] == 'number': out.append((b['t0'] + 0.5, 'count', b))
         elif b['type'] == 'steps':
-            for i in range(len(b['items'])): out.append((b['t0'] + 0.6 + i * b.get('stagger', 1.4), 'tick', b))
-        elif b['type'] == 'answer': out.append((b['t0'] + 0.2, 'hit', b))
+            for i in range(len(b['items'])): out.append((b['t0'] + EV0 + i * b.get('stagger', 1.5), 'tick', b))
+        elif b['type'] == 'answer': out.append((b['t0'] + 0.25, 'hit', b))
     out.append((ep.T_END + 0.6, 'seal', None))
     return out

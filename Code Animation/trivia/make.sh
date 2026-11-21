@@ -17,9 +17,9 @@ while python3 -c "import sys; sys.exit(0 if $a < $DUR else 1)"; do
   fi
   echo "file '$WORK/$seg'" >> list.txt; a=$(python3 -c "print($a+$SEG)")
 done
-python3 "$HERE/audio.py" "$SLUG" audio.wav
-ffmpeg -y -loglevel error -f concat -safe 0 -i list.txt -i audio.wav -map 0:v -map 1:a \
-  -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 48000 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
-  -c:a aac -b:a 192k -shortest -movflags +faststart "$SLUG.mp4"
+python3 "$HERE/audio.py" "$SLUG" audio_raw.wav
+ffmpeg -y -loglevel error -f concat -safe 0 -i list.txt -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -an video.mp4
+(cd "$HERE/../_kit" && python3 -m vfx.loud "$WORK/audio_raw.wav" "$WORK/$SLUG.mp4" --mux "$WORK/video.mp4")   # −14 LUFS, 인코딩 뒤 트루 피크 −1.5 이하
+(cd "$HERE/../_kit" && python3 -m vfx.qa report "$WORK/$SLUG.mp4" --out "$WORK/qa" | head -20)       # 검수 보고(P0가 있으면 올리지 않는다)
 ffprobe -v error -show_entries format=duration:stream=width,height -of compact "$SLUG.mp4"
 echo "-> $WORK/$SLUG.mp4"

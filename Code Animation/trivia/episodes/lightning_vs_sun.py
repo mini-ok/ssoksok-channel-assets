@@ -80,10 +80,10 @@ BEATS = [
     dict(type='compare', dur=8.0, cap_en='Now, the air around a lightning bolt', cap_ko='그럼 번개가 지나가는 공기는?',
          items=[dict(en='Sun surface', ko='태양 표면', value=5500, alt='≈ 10,000 °F', color='#F2A13B'),
                 dict(en='Lightning', ko='번개', value=27800, alt='≈ 50,000 °F', color='#5B5FD6')],
-         fmt=fmt_c, stagger=1.6, note_en='About 5 times hotter', note_ko='약 5배 더 뜨겁다', note_t=5.0, base_y=1480),
+         fmt=fmt_c, stagger=1.5, note_en='About 5 times hotter', note_ko='약 5배 더 뜨겁다', note_t=5.0, base_y=1480),
     dict(type='fact', dur=6.0, cap_en='The air heats so fast it bursts outward.',
          cap_ko='공기가 순식간에 달아올라 터지듯 퍼진다.',
-         sub_en='That blast is the thunder you hear.', sub_ko='그 소리가 바로 천둥이다.', sub_t=2.2, sub_y=1500),
+         sub_en='That blast is the thunder you hear.', sub_ko='그 소리가 바로 천둥이다.', sub_t=2.0, sub_y=1500),
     dict(type='answer', dur=5.0, a_en='Lightning wins!', a_ko='정답은 번개!',
          sub_en='Source: U.S. National Weather Service', sub_ko='출처: 미국 국립기상청(NWS)'),
 ]

@@ -82,10 +82,10 @@ def make(ep, out):
     # 바탕 고리: 0.5초 간격 튕김, 4마디마다 무늬를 바꿈
     pat = [[0, 2, 4, 2], [0, 3, 5, 3], [1, 3, 5, 4], [0, 2, 4, 6]]
     step = snd.get('step', 0.5)
-    t = 0.3
+    t = 0.0
     while t < ep.T_END - 0.3:
-        bar = int(t / (step * 4)); p = pat[bar % len(pat)]; j = int(round((t - 0.3) / step)) % 4
-        put(mus, t, lib.pluck(root * scale[p[j]], 1.1, 0.22 if j else 0.3, 0.55))
+        bar = int(t / (step * 4)); p = pat[bar % len(pat)]; j = int(round(t / step)) % 4
+        put(mus, E.BEAT.hit(t), lib.pluck(root * scale[p[j]], 1.1, 0.22 if j else 0.3, 0.55))
         t += step
     # 장면 사건
     for tm, kind, b in E.beat_marks(ep):
@@ -100,12 +100,12 @@ def make(ep, out):
                 put(fx, tm + cnt * (1 - (1 - k / n) ** 2), lib.tink(0.035, 1500 + 60 * k))
             put(fx, tm + cnt, lib.tink(0.09, 2600))
         elif kind == 'tick':
-            put(fx, tm, lib.snap(0.35)); put(mus, tm + 0.05, lib.pluck(root * scale[5], 1.0, 0.25))
+            put(fx, E.BEAT.hit(tm), lib.snap(0.35)); put(mus, tm + 0.05, lib.pluck(root * scale[5], 1.0, 0.25))
         elif kind == 'hit':
-            put(fx, tm, buk(0.45, 60, 1.3, 0.35, seed=int(tm * 7)))
+            put(fx, E.BEAT.hit(tm), buk(0.45, 60, 1.3, 0.35, seed=int(tm * 7)))
             for jx, k in enumerate([0, 2, 4, 5]): put(mus, tm + 0.12 * jx, lib.pluck(root * scale[k] * 2, 1.6, 0.3))
         elif kind == 'seal':
-            put(fx, tm, lib.snap(0.5)); put(mus, tm, geomungo(root / 2 * 0.75, 3.0, 0.45, seed=9))
+            put(fx, E.BEAT.hit(tm), lib.snap(0.5)); put(mus, E.BEAT.hit(tm), geomungo(root / 2 * 0.75, 3.0, 0.45, seed=9))
     extra = getattr(ep.m, 'EXTRA_SOUND', None)
     if extra: extra(lambda t, x, g=1.0, bus='fx': put({'fx': fx, 'mus': mus, 'amb': amb}[bus], t, x, g), lib, ep)
 

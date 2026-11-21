@@ -8,7 +8,7 @@ import numpy as np, cv2
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import engine as E
 
-EP = None; OUT = None; SAMP = 2
+EP = None; OUT = None; SAMP = None
 
 
 def job(k):
@@ -28,7 +28,7 @@ if __name__ == '__main__':
             cv2.imwrite(os.path.join(OUT, f't{t:05.2f}.png'), np.clip(img * 255 + 0.5, 0, 255).astype(np.uint8))
         print('stills', OUT); sys.exit(0)
     OUT = sys.argv[2]; T0, T1 = float(sys.argv[3]), float(sys.argv[4])
-    SAMP = int(sys.argv[5]) if len(sys.argv) > 5 else 2
+    SAMP = int(sys.argv[5]) if len(sys.argv) > 5 else None
     os.makedirs(OUT, exist_ok=True)
     ks = list(range(int(round(T0 * E.FPS)), int(round(min(T1, EP.DUR) * E.FPS))))
     with Pool(2) as pool:
