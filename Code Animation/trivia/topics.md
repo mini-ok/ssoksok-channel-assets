@@ -9,7 +9,7 @@
 | # | slug | 질문(EN / KO) | 핵심 숫자·사실 | 출처 | 장면 틀 | 상태 |
 |---|---|---|---|---|---|---|
 | 1 | lightning_vs_sun | Which is hotter: lightning or the surface of the Sun? / 번개와 태양 표면, 어느 쪽이 더 뜨거울까? | 번개 주변 공기 약 50,000 °F(≈27,800 °C), 태양 표면의 약 5배 | NWS weather.gov/safety/lightning-temperature, NOAA NSSL | hook·number·compare·fact·answer | 견본 |
-| 2 | venus_day | Is a day on Venus longer than its year? / 금성의 하루는 1년보다 길까? | 자전 1회 243 지구일 > 공전 225 지구일(자전 기준 하루). 해가 서쪽에서 뜸 | NASA Space Place 'All About Venus', NASA Solar System '10 Need-to-Know Things About Venus' | hook·compare·fact·answer | 대기 |
+| 2 | venus_day | Is a day on Venus longer than its year? / 금성의 하루는 1년보다 길까? | 자전 1회 243 지구일 > 공전 225 지구일(자전 기준 하루). 해가 서쪽에서 뜸 | NASA Space Place 'All About Venus', NASA Solar System '10 Need-to-Know Things About Venus' | hook·compare·fact·answer | 완료 (outbox, 2026-11-24) |
 | 3 | sound_in_water | Does sound travel faster in air or in water? / 소리는 공기와 물 중 어디서 더 빠를까? | 공기(20 °C) 343 m/s(1,125 ft/s), 물 약 1,480 m/s(약 4,860 ft/s), 약 4.3배 | OpenStax University Physics 17.2 표(물 1,480 m/s), 공기 343 m/s(20 °C) | hook·compare·fact·answer | 대기 |
 | 4 | chimborazo | Which mountaintop is farthest from Earth's center? / 지구 중심에서 가장 먼 산꼭대기는? | 에베레스트가 해발로는 가장 높지만, 적도 부근 침보라소 정상이 지구 중심에서 2,072 m(6,800 ft) 이상 더 멀다. 침보라소 해발 6,268 m(NOAA) | NOAA Ocean Service 'highestpoint' | hook·compare·fact·answer | 대기 |
 | 5 | ant_count | How many ants live on Earth? / 지구에 개미는 몇 마리나 살까? | 약 2경(20 × 10¹⁵) 마리, 보수적 추정. 사람 1명당 약 250만 마리 | Schultheiss et al., PNAS 2022 (doi:10.1073/pnas.2201550119) | hook·number·fact·answer | 대기 |
