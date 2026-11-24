@@ -3,23 +3,24 @@
 이 문서는 유튜브 업로드 키를 가진 쪽 Claude 계정(업로더)이 읽는다. 영상 제작은 다른 계정이 하고, 12시간마다 GitHub 공개 릴리스로 영상을 올린다. 업로더는 그 릴리스를 가져와 허상공방 채널(@dreamloom_studio)에 올린다.
 
 ## 흐름
-1. 제작 쪽이 12시간마다 쇼츠 한 편을 만들어 `mini-ok/ssoksok-channel-assets`에 릴리스로 올린다.
-2. 업로더가 릴리스 목록을 읽어, 아직 올리지 않은 `short-*` 태그를 찾는다.
-3. 영상(mp4)과 `meta.json`을 내려받아 유튜브에 올린다.
-4. 올린 태그를 기록에 남겨 중복 업로드를 막는다.
+1. 제작 쪽이 12시간마다 쇼츠 한 편을 만들어 공개 저장소 `mini-ok/ssoksok-channel-assets`의 **`shorts-outbox` 브랜치**에 넣는다(릴리스가 아니라 브랜치 파일).
+2. 업로더가 `index.json`을 읽어 아직 올리지 않은 slug를 찾는다.
+3. 그 폴더의 `video.mp4`와 `meta.json`을 내려받아 유튜브에 올린다.
+4. 올린 slug와 영상 ID를 업로더 쪽 기록(예: `uploads.json`)에 남겨 중복을 막는다.
 
-## 릴리스 형식
-- 저장소: `mini-ok/ssoksok-channel-assets` (공개)
-- 목록 주소: `https://api.github.com/repos/mini-ok/ssoksok-channel-assets/releases` (로그인 없이 읽힘, 시간당 60회 한도)
-- 한 편 = 릴리스 하나. 태그는 `short-<slug>`, 첨부 파일은 `<slug>.mp4`와 `meta.json`.
-- `meta.json` 항목: `slug`, `title_en`, `title_ko`, `desc_en`, `desc_ko`, `tags`, `related`(관련 동영상 slug, 없을 수 있음), `mp4`(내려받기 주소), `created`(UTC).
-- 이 저장소는 공개라서, 릴리스가 올라오는 순간 누구나 영상을 내려받을 수 있다(유튜브 공개 전에도).
+## 주소 (로그인 없이 읽힘)
+- 목록: `https://raw.githubusercontent.com/mini-ok/ssoksok-channel-assets/shorts-outbox/index.json`
+  - 형식: `{"items":[{"slug","dir","created"}, ...]}` — 오래된 것부터.
+- 영상: `https://raw.githubusercontent.com/mini-ok/ssoksok-channel-assets/shorts-outbox/<dir>/video.mp4`
+- 메타: `https://raw.githubusercontent.com/mini-ok/ssoksok-channel-assets/shorts-outbox/<dir>/meta.json`
+- `meta.json` 항목: `slug`, `title_en`, `title_ko`, `desc_en`, `desc_ko`, `tags`, `related`(없으면 null), `file`, `created`(UTC).
+- 영상은 GitHub 파일 한도(100MB) 안으로 다시 인코딩해 넣는다(1080×1920, H.264).
+- 공개 저장소라 올라오는 순간 누구나 내려받을 수 있다.
 
 ## 가져오는 규칙
-- 태그가 `short-`로 시작하는 릴리스만 대상이다.
-- 업로더가 기록해 둔 태그(예: `uploads.json`)에 없는 것만 올린다. 올린 뒤 태그와 영상 ID를 한 줄 덧붙인다.
-- 한 번에 여러 개가 쌓여 있으면 `created` 순서대로 올린다.
-- mp4 용량과 길이가 0이거나 `meta.json`이 없으면 올리지 않고 보고한다.
+- 업로더 기록에 없는 slug만, `created` 순서대로 올린다.
+- `video.mp4` 크기가 0이거나 `meta.json`이 없으면 올리지 않고 보고한다.
+- 첫 항목 `fold42`(〈42번〉, 2026-11-24)부터 시작한다.
 
 ## 유튜브에 올릴 때 (채널 규칙)
 - 채널: `@dreamloom_studio`. 올리기 전에 `channels.list(mine=true)`로 주소를 확인하고, 다르면 올리지 않는다.
@@ -43,4 +44,4 @@
 ## 쓰지 말 것 / 지킬 것
 - 영상 제작 방법이나 작품 기획 내용을 공개 저장소에 옮겨 적지 않는다. 이 문서는 업로드에 필요한 것만 다룬다.
 - 올리다 실패하면(쿼터, 토큰 만료 `invalid_grant`, 403) 같은 태그를 다시 시도하지 말고 이유를 보고한다.
-- 제작 쪽은 이미 올라간 태그를 덮어쓰지 않는다(같은 태그는 새로 만들지 않음).
+- 제작 쪽은 이미 올라간 태그를 덮어쓰지 않는다(같은 slug는 다시 만들지 않음).
