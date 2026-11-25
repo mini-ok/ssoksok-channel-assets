@@ -74,6 +74,36 @@
    "slug": "breaths",
    "dir": "shorts/breaths",
    "created": "2026-11-25T18:28:25+00:00"
+  },
+  {
+   "slug": "water_ball_v2",
+   "dir": "shorts/water_ball_v2",
+   "created": "2026-11-25T19:00:16+00:00"
+  },
+  {
+   "slug": "sky_apple_v2",
+   "dir": "shorts/sky_apple_v2",
+   "created": "2026-11-25T19:00:17+00:00"
+  },
+  {
+   "slug": "solar_bead_v2",
+   "dir": "shorts/solar_bead_v2",
+   "created": "2026-11-25T19:00:18+00:00"
+  },
+  {
+   "slug": "heartbeats_v2",
+   "dir": "shorts/heartbeats_v2",
+   "created": "2026-11-25T19:00:19+00:00"
+  },
+  {
+   "slug": "earth_year_v2",
+   "dir": "shorts/earth_year_v2",
+   "created": "2026-11-25T19:00:20+00:00"
+  },
+  {
+   "slug": "sleep_v2",
+   "dir": "shorts/sleep_v2",
+   "created": "2026-11-25T19:00:21+00:00"
   }
  ],
  "per_run": 2
