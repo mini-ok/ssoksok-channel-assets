@@ -229,6 +229,16 @@
    "slug": "walk_earth",
    "dir": "shorts/walk_earth",
    "created": "2026-11-26T01:35:58+00:00"
+  },
+  {
+   "slug": "saturn_float",
+   "dir": "shorts/saturn_float",
+   "created": "2026-11-26T01:40:32+00:00"
+  },
+  {
+   "slug": "cloud_weight",
+   "dir": "shorts/cloud_weight",
+   "created": "2026-11-26T01:40:34+00:00"
   }
  ],
  "per_run": 2
