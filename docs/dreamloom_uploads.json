@@ -35,6 +35,20 @@
       "url": "https://youtube.com/shorts/YR81wWp6ukQ",
       "privacy": "public",
       "uploaded_at": "2026-11-25T15:21:12Z"
+    },
+    {
+      "slug": "gold_cube",
+      "video_id": "Bltdh1mnrjw",
+      "url": "https://youtube.com/shorts/Bltdh1mnrjw",
+      "privacy": "public",
+      "uploaded_at": "2026-11-26T03:21:37Z"
+    },
+    {
+      "slug": "octopus_hearts",
+      "video_id": "z52LQul9zcs",
+      "url": "https://youtube.com/shorts/z52LQul9zcs",
+      "privacy": "public",
+      "uploaded_at": "2026-11-26T03:21:37Z"
     }
   ]
 }
