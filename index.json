@@ -154,6 +154,21 @@
    "slug": "olympus_mons",
    "dir": "shorts/olympus_mons",
    "created": "2026-11-25T23:53:57+00:00"
+  },
+  {
+   "slug": "body_heat",
+   "dir": "shorts/body_heat",
+   "created": "2026-11-26T00:53:29+00:00"
+  },
+  {
+   "slug": "pantheon_dome",
+   "dir": "shorts/pantheon_dome",
+   "created": "2026-11-26T00:53:31+00:00"
+  },
+  {
+   "slug": "halley_once",
+   "dir": "shorts/halley_once",
+   "created": "2026-11-26T00:53:32+00:00"
   }
  ],
  "per_run": 2
