@@ -214,6 +214,16 @@
    "slug": "earth_day",
    "dir": "shorts/earth_day",
    "created": "2026-11-26T01:26:11+00:00"
+  },
+  {
+   "slug": "neutron_cube",
+   "dir": "shorts/neutron_cube",
+   "created": "2026-11-26T01:30:58+00:00"
+  },
+  {
+   "slug": "hummingbird_heart",
+   "dir": "shorts/hummingbird_heart",
+   "created": "2026-11-26T01:30:59+00:00"
   }
  ],
  "per_run": 2
