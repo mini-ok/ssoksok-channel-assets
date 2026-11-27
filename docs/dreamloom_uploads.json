@@ -77,6 +77,20 @@
       "url": "https://youtube.com/shorts/m3lni-2ZtUI",
       "privacy": "public",
       "uploaded_at": "2026-11-27T03:21:44Z"
+    },
+    {
+      "slug": "cleopatra_moon",
+      "video_id": "ryy8lQoXB9I",
+      "url": "https://youtube.com/shorts/ryy8lQoXB9I",
+      "privacy": "public",
+      "uploaded_at": "2026-11-27T15:15:32Z"
+    },
+    {
+      "slug": "stardust",
+      "video_id": "ggO21sb3AhU",
+      "url": "https://youtube.com/shorts/ggO21sb3AhU",
+      "privacy": "public",
+      "uploaded_at": "2026-11-27T15:15:32Z"
     }
   ]
 }
