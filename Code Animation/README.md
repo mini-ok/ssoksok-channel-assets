@@ -21,6 +21,10 @@
 | `jeom/` | 〈점〉 JEOM | 3분 11초 | Python numpy·cv2(수묵 엔진) + 합성 거문고·북 | **최종 완성(2026-11-10, 1080p)** — 떨리는 손 이야기 v3. 다시 만들기: `jeom/README.md` '다시 만들기(최종본)'. 기법 정리: `_kit/skills/ink-wash-animation`. 영상(mp4)은 저장소 제외 |
 | `char3d/` | 〈심장의 휴가〉 HEART'S DAY OFF | 2분 15초 | three.js 3D 애니매틱 + Blender Cycles(사용자 PC RTX 3070) | **Blender 판 v1 완성(2026-11-14, 1280×720)** — 무대사, 쏙쏙 건강백과 캐릭터 3D. 다시 만들기: `char3d/README.md`, `char3d/blender/README.md`. 기법: `_kit/skills/code-3d-character-animation` |
 | `jido/` | 〈지도〉 기술 시험 | — | three.js + three-gpu-pathtracer(브라우저 키트, PC GPU 경로 추적) | 이야기는 실패, 3D 기술만 이어 씀(`char3d`가 이 폴더의 node_modules를 씀) |
+| `jangdan/` | 〈장단〉 JANGDAN | 32초 | Python numpy·cv2(`_kit/vfx`) | 시험작(2026-11-22, 540p) — 박자 동기 먹→만화경 모션그래픽. `jangdan/README.md` |
+| `kkeokgi/` | 〈꺾기〉 KKEOKGI | 25.6초 | Python numpy·cv2(`_kit/vfx`) + 합성 거문고·북 | **1080p(2026-11-22)** — 로봇 춤 × 화풍 9종 전환 모션그래픽. `kkeokgi/README.md` |
+| `nova/` | 지식 쇼츠 2기(규모 체감) | 편당 약 32초 | Python cairo·numpy + `sfx.py` 합성 악기 + `_kit/vfx` | **45편(2026-11-26)** — 편마다 다른 화풍·소리, 영·한 자막, 출처 끝 화면. 이어 만들기: `nova/README.md`(규칙·코드 틀·쓴 화풍/주제 목록·업로드 대기열) |
+| `scale/` | 지식 쇼츠 1기(규모 체감) | 편당 약 25초 | Python cairo·numpy(`engine.py`, `episodes.py`) | 1기 10편. nova가 끝 화면·글자 엔진을 가져다 씀. 업로드 대기열 넣기 `scale/outbox_push.py` |
 | `ideas/` | 다음 작품 기획 | — | — | 후보 검토(`2026-11-09_review_and_pitches.md`), 〈점〉·〈파루〉 스토리 확장(`2026-11-09_jeom_paru_story.md`), 무음 기술 시험(`tests/`). 〈파루〉는 다음 후보 |
 
 ### 2026-11-09 v2 변경 공통
