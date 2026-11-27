@@ -142,5 +142,5 @@ Paper cut-outs, moved entirely with code. For a wordless short film from the sam
 실제로 쓴 제목·설명 전문은 `videos.md`.
 
 ## C. 지식 쇼츠 2기(nova, 규모 체감 모션그래픽)
-편마다 화풍·소리를 바꾸는 32초 세로 쇼츠. 규칙·코드 틀·이미 쓴 화풍/주제 목록·업로드 대기열(shorts-outbox, per_run 2)은 `../nova/README.md`에 있다.
+편마다 이야기에 맞는 화풍·소리로 만드는 30~70초 세로 쇼츠(2026-11-28 규칙 2판: 긴 여운, 끝 화면의 감성적인 구독·좋아요 권유, 아래쪽 글자 줄이기). 규칙·코드 틀·이미 쓴 화풍/주제 목록·업로드 대기열(shorts-outbox, per_run 2)은 `../nova/README.md`에 있다.
 제목·설명 형식: 영어 제목 `<궁금증을 거는 한 문장> #Shorts`, 설명은 영·한 각각 본문 + 출처(계산값은 "calculated/계산" 표시) + 서명(`Directed by L.S.M · Dreamloom Studio (Heosang Gongbang)`). 예시는 `../nova/tools/outbox_nova.py`의 META.

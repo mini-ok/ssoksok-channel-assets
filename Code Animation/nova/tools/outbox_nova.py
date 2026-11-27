@@ -200,6 +200,13 @@ META += [
   ['딱총새우', 'pistol shrimp', '캐비테이션', 'cavitation', '바다', 'ocean', '동물', 'animals']),
 ]
 
+META += [
+ ('new_skin', 'skin', "You Wear a Brand-New Skin Every Month #Shorts", '한 달마다 새 피부를 입는다',
+  "Your skin looks the same every day, but it sheds roughly 30,000 to 40,000 dead cells every minute. New cells rise from below and reach the surface in about a month, so over 80 years you wear close to 1,000 new skins.\n\nSources: KidsHealth (Nemours); Skin Cancer Foundation (about a month, slower with age). The 1,000 figure is calculated: 80 years divided by about one month.",
+  "피부는 날마다 그대로인 것 같지만 1분마다 죽은 세포 약 3만~4만 개가 떨어져 나갑니다. 새 세포가 아래에서 올라와 약 한 달이면 겉에 닿으니, 80년이면 새 피부를 천 번 가까이 입는 셈입니다.\n\n출처: KidsHealth(Nemours), Skin Cancer Foundation(약 한 달, 나이가 들면 느려짐). 천 번은 80년 ÷ 약 한 달로 계산",
+  ['피부', 'skin', '세포', 'cells', '인체', 'human body', '조각보', 'jogakbo']),
+]
+
 def sh(*a, cwd=None):
     r = subprocess.run(a, cwd=cwd, capture_output=True, text=True)
     if r.returncode: sys.exit(f'FAIL {a[:3]} {r.stderr[-300:]}')
